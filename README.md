@@ -1,2 +1,2 @@
 # chazz
-Re-design Web chazz design
+Re-design Web chazz design.
