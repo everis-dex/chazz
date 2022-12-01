@@ -1,0 +1,82 @@
+# Holds the environment configuration (backend type, available collections and fields)
+
+backend:
+  name: github
+  repo: everis-dex/chazz-website2
+  branch: main # Branch to update (optional; default to master)
+
+media_folder: "public/uploads" # where uploaded files are saved in the repo
+public_folder: "uploads" # where media files will be stored in the published site
+
+# List of available collections, their fields and metadata information
+collections:
+  ##############################
+  #         Project
+  ##############################
+
+  - name: project # Used in routes
+    label: Project # Used in the UI
+    folder: content/projects # Where the documents are stored, relative to the repo root
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
+    fields: # Fields for each document
+      - { label: Publish Date, name: date, widget: datetime } # For widgets, see https://www.netlifycms.org/docs/widgets/
+      - { label: Image, name: image, widget: image }
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string }
+      - { label: Branding, name: branding, widget: string }
+      - { label: Service, name: service, widget: string }
+      - { label: Value, name: value, widget: string }
+      - { label: Body, name: body, widget: markdown }
+    # filter:
+    #   field: rating
+    #   value: 5
+
+  ##############################
+  #         Partner
+  ##############################
+
+  - name: partner
+    label: Partner
+    folder: content/partners
+    create: true
+    fields:
+      - { label: Partner, name: partner, widget: string }
+      - {
+          label: Order,
+          name: sort,
+          widget: number,
+          value_type: int,
+          min: 1,
+          step: 1,
+          max: 100,
+        }
+
+  ##############################
+  #         Category
+  ##############################
+
+  - name: category
+    label: Category
+    folder: content/categories
+    create: true
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Title, name: title, widget: string }
+      - { label: Section, name: section, widget: string }
+      - { label: Body, name: body, widget: markdown }
+
+  ##############################
+  #         Office
+  ##############################
+
+  - name: office
+    label: Office
+    folder: content/offices
+    create: true
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: City, name: city, widget: string }
+      - { label: Phone, name: phone, widget: string }
+      - { label: Email, name: email, widget: string }
+      - { label: Address, name: address, widget: string }
