@@ -27,7 +27,13 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script>
+      // <!--
+      //   Redirect the user to "/admin/" path to complete the login and get back to the CMS.
+      //   This is because when a user logs in with the Netlify Identity widget, an access token directs to the site homepage.
+      //   See https://docs.netlify.com/visitor-access/identity/
+      // -->
       if (window.netlifyIdentity) {
+        // As using arrow functions, it requires modern JavaScript, not compatible with IE11
         window.netlifyIdentity.on("init", (user) => {
           if (!user) {
             window.netlifyIdentity.on("login", () => {
