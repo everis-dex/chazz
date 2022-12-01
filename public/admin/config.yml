@@ -2,17 +2,22 @@ backend:
   name: git-gateway
   branch: master # Branch to update (optional; default to master)
 
-media_folder: "uploads"
-public_folder: "/images" # Where media files will be stored in
-# collections:
-#   - name: "posts" # Used in routes, e.g., /admin/collections/blog
-#     label: "Blog Posts" # Used in the UI
-#     folder: "posts" # The path to the folder where the documents are stored
-#     create: true # Allow users to create new documents in this collection
-#     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-#     fields: # The fields for each document, usually in front matter
-#       - { label: "Title", name: "title", widget: "string" }
-#       - { label: "Author", name: "author", widget: "string" }
-#       - { label: "Publish Date", name: "date", widget: "datetime" }
-#       - { label: "Featured Image", name: "thumbnail", widget: "image" }
-#       - { label: "Body", name: "body", widget: "markdown" }
+media_folder: "uploads" # where uploaded files are saved in the repo
+public_folder: "/images" # where media files will be stored in the published site
+
+collections:
+  - name: "test" # Used in routes
+    label: "Test" # Used in the UI
+    # filter:
+    #   field: rating
+    #   value: 5
+    folder: "example/test" # Where the documents are stored, relative to the repo root.
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
+    fields: # Fields for each document
+      - { label: "Layout", name: "layout", widget: "hidden", default: "test" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown" }
