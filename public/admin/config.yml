@@ -4,9 +4,6 @@ backend:
   name: git-gateway
   repo: everis-dex/chazz-website2
   branch: main # Branch to update (optional; default to master)
-  create: Create {{collection}} "{{slug}}"
-  update: Update {{collection}} "{{slug}}"
-  delete: Delete {{collection}} "{{slug}}"
 
 media_folder: "uploads" # where uploaded files are saved in the repo
 public_folder: "/images" # where media files will be stored in the published site
