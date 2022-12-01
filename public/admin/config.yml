@@ -2,7 +2,7 @@
 
 backend:
   name: github
-  repo: everis-dex/chazz-website2
+  repo: everis-dex/chazz
   branch: main # Branch to update (optional; default to master)
 
 media_folder: "public/uploads" # where uploaded files are saved in the repo
