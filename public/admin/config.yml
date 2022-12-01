@@ -1,12 +1,12 @@
 # Holds the environment configuration (backend type, available collections and fields)
 
 backend:
-  name: git-gateway
+  name: github
   repo: everis-dex/chazz-website2
   branch: main # Branch to update (optional; default to master)
 
-media_folder: "uploads" # where uploaded files are saved in the repo
-public_folder: "/images" # where media files will be stored in the published site
+media_folder: "public/uploads" # where uploaded files are saved in the repo
+public_folder: "uploads" # where media files will be stored in the published site
 
 # List of available collections, their fields and metadata information
 collections:
@@ -16,7 +16,7 @@ collections:
 
   - name: project # Used in routes
     label: Project # Used in the UI
-    folder: example/projects # Where the documents are stored, relative to the repo root
+    folder: content/projects # Where the documents are stored, relative to the repo root
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
     fields: # Fields for each document
@@ -38,7 +38,7 @@ collections:
 
   - name: partner
     label: Partner
-    folder: example/partners
+    folder: content/partners
     create: true
     fields:
       - { label: Partner, name: partner, widget: string }
@@ -58,7 +58,7 @@ collections:
 
   - name: category
     label: Category
-    folder: example/categories
+    folder: content/categories
     create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
@@ -72,7 +72,7 @@ collections:
 
   - name: office
     label: Office
-    folder: example/offices
+    folder: content/offices
     create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
