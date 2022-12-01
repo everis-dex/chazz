@@ -1,7 +1,7 @@
 # Holds the environment configuration (backend type, available collections and fields)
 
 backend:
-  name: github
+  name: git-gateway
   repo: everis-dex/chazz-website2
   branch: main # Branch to update (optional; default to master)
   create: Create {{collection}} "{{slug}}"
@@ -13,17 +13,32 @@ public_folder: "/images" # where media files will be stored in the published sit
 
 # List of available collections, their fields and metadata information.
 collections:
-  - name: "test" # Used in routes
-    label: "Test" # Used in the UI
-    folder: "example/test" # Where the documents are stored, relative to the repo root.
+  - name: test # Used in routes
+    label: Test # Used in the UI
+    folder: example/test # Where the documents are stored, relative to the repo root.
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
     fields: # Fields for each document
-      - { label: "Title", name: "title", widget: "string" } # For widgets, see https://www.netlifycms.org/docs/widgets/
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: Title, name: title, widget: string } # For widgets, see https://www.netlifycms.org/docs/widgets/
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Featured Image, name: thumbnail, widget: image }
+      - { label: Rating (scale of 1-5), name: rating, widget: number }
+      - { label: Body, name: body, widget: markdown }
     # filter:
     #   field: rating
     #   value: 5
+
+  - name: project
+    label: Project
+    folder: example/projects
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Image, name: image, widget: image }
+      - { label: Branding, name: branding, widget: string }
+      - { label: Service, name: service, widget: string }
+      - { label: Value, name: value, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string }
+      - { label: Body, name: body, widget: markdown }
+      # - { label: Order, name: sort, widget: number, value_type: int, min: 1, step: 1, max: 100 }
