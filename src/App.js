@@ -1,12 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import PostList from "./components/postlist";
 
 function App() {
   return (
     <div className="App">
-      <p>
-        CHAZZ
-      </p>
+      <p>CHAZZ</p>
+      <PostList />
     </div>
   );
 }

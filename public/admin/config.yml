@@ -1,19 +1,28 @@
-# Holds the environment configuration (backend type, available collections and fields)
-
 backend:
   name: github
   repo: everis-dex/chazz
-  branch: main # Branch to update (optional; default to master)
+  branch: main # Branch to update (optional; defaults to master)
 
 media_folder: "public/uploads" # where uploaded files are saved in the repo
-public_folder: "uploads" # where media files will be stored in the published site
+public_folder: "/uploads" # where media files will be stored in the published site
 
 # List of available collections, their fields and metadata information
 collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
   ##############################
   #         Project
   ##############################
-
   - name: project # Used in routes
     label: Project # Used in the UI
     folder: content/projects # Where the documents are stored, relative to the repo root
