@@ -1,5 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './Header.scss'
+
+
 
 const Header = () => {
     
@@ -13,16 +17,20 @@ const Header = () => {
                         <div className='nav'>
                             <ul>
                                 <li>
-                                    <a href='#'>We are</a>
+                                    <a href='#weare'>We are</a> {/* Si desde el menú vamos al anchor #weare */}
+                                    <Link to="/weare">We are</Link> {/* Si desde el menú vamos a la sección weare */}
                                 </li>
                                 <li>
-                                    <a href='#'>Services</a>
+                                    <a href='services'>Services</a> {/* Si desde el menú vamos al anchor #services */}
+                                    <Link to="/services">Services</Link> {/* Si desde el menú vamos a la sección services */}
                                 </li>
                                 <li>
-                                    <a href='#'>Work</a>
+                                    <a href='#work'>Work</a> {/* Si desde el menú vamos al anchor #work */}
+                                    <Link to="/work">Work</Link> {/* Si desde el menú vamos a la sección work */}
                                 </li>
                                 <li>
-                                    <a href='#'>Thoughts</a>
+                                    <a href='#thougths'>Thoughts</a> {/* Si desde el menú vamos al anchor #thoughts */}
+                                    <Link to="/thoughts">Thoughts</Link> {/* Si desde el menú vamos a la sección thoughts */}
                                 </li>
                             </ul>
                         </div>
