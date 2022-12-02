@@ -54,12 +54,13 @@
 
 .chazz-cookies {
     background-color: var(--white);
-    width: 82%;
+    width: 76%;
     height: 176px;
     z-index: 10;
     position: relative;
-    top: -225px;
-    left: 16px;    
+    width: 83%;  
+    top: -14rem;
+    left: 5%; 
     padding: 16px;
 
     p {
@@ -68,8 +69,8 @@
     }
 
     button {
-        margin-top: 20px;
-        padding: 7% 28.6% 7% 28.6%;
+        padding: 6% 27% 6% 27%;
+        margin-top: 13px;
         color: #FFAFC4;
         font-weight: 700;
         font-size: 19px;
@@ -84,17 +85,24 @@
 // xxs
 @media (width: 320px) {
     .chazz-cookies {
+        width: 81%;
+        top: -14rem;
+        left: 4%;
+        
         button {
-            padding: 7% 25% 7% 25%;
+            padding: 6% 22% 6% 22%;
+            margin-top: 13px;
+            
         }
     }
 }
 
 @media (min-width: 425px) {
     .chazz-cookies {
-        width: 85%;
+        width: 82%;
+        top: -14rem;
         button {
-            padding: 7% 31% 7% 31%;
+            padding: 7% 30% 7% 30%;
         }
     }
 }
@@ -106,14 +114,36 @@
 }
 
 @media (min-width: 768px) {
-    
+    .chazz-cookies {
+        display: flex;
+        align-items: center;
+        height: 64px;
+        padding: 5px;
+        width: 96%;
+        top: -6rem;
+        left: 15px;
+
+        button {
+            padding: 1% 2% 1% 2%;
+            font-size: 16px;
+            margin-top: 0;
+        }
+
+        p {
+            margin-top: 0;
+            width: 79%;
+            position: relative;
+            left: 15px;
+        }
+    }
+        
 }
 
 @media (min-width: 1280px) {
     .chazz-header {
         background-size: 1280px;
-        height: 1024px;
-        background-position: 0 -49%;
+        height: 100vh;
+        background-position: 0 0%;
 
         .nav {
             float: right;
@@ -143,14 +173,21 @@
         }
 
         h4 {
-            margin-top: -20px;
+            margin-top: 4px;
+        }
+    }
+
+    .chazz-cookies {
+        width: 97%;
+        p {
+            width: 85%;
         }
     }
 }
 
 @media (min-width: 1440px) {
     .chazz-title {
-        top: 355px;
+        top: 179px;
         left: 85px;
     }
     .chazz-header {
