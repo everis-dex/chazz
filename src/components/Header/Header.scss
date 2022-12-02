@@ -119,7 +119,7 @@
         align-items: center;
         height: 64px;
         padding: 5px;
-        width: 96%;
+        width: 95%;
         top: -6rem;
         left: 15px;
 
@@ -204,5 +204,15 @@
     .chazz-header {
         background-size: cover;
         background-position: 0 -95px;
+    }
+
+    .chazz-cookies {
+        width: 98%;
+        p {
+            width: 92%;
+        }
+        button {
+            padding: 0.5% 1% 0.5% 1%;
+        }
     }
 }
