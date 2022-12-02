@@ -8,18 +8,6 @@ public_folder: "/uploads" # where media files will be stored in the published si
 
 # List of available collections, their fields and metadata information
 collections:
-  - name: "posts"
-    label: "Blog Posts"
-    folder: "posts"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
-
   ##############################
   #         Project
   ##############################
