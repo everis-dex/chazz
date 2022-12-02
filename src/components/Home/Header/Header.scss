@@ -139,9 +139,19 @@
         height: 100vh;
         background-position: 0 0%;
 
-    .nav {
-      float: right;
-      width: 33%;
+        .nav {
+        float: right;
+        width: 33%;
+        }
+
+        
+        .nav ul li a {
+        text-decoration: none;
+        color: var(--white);
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
 
     .chazz-title {
@@ -151,6 +161,8 @@
 
         h1 {
             font-size: 4rem;
+            position: relative;
+            top: -2rem;
         }
 
         h4 {
@@ -161,53 +173,34 @@
     .chazz-cookies {
         width: 97%;
         p {
-            width: 85%;
+            width: 86%;
         }
     }
 
-    .nav ul li a {
-      text-decoration: none;
-      color: var(--white);
-      &:hover {
-        text-decoration: none;
-      }
-    }
   }
 
-  .chazz-title {
-    width: 500px;
-    top: 190px;
-    left: 43px;
-
-    h1 {
-      font-size: 4rem;
-    }
-
-    h4 {
-      margin-top: -20px;
-    }
-  }
-}
 
 @media (min-width: 1440px) {
-    .chazz-title {
-        top: 179px;
-        left: 85px;
-    }
     .chazz-header {
         background-size: cover;
         background-position: 0 0;
     }
+
+    .chazz-title {
+        top: 179px;
+        left: 85px;
+    }
 }
 
 @media (min-width: 1920px) {
-    .chazz-title {
-        top: 475px;
-        left: 115px;
-    }
     .chazz-header {
         background-size: cover;
         background-position: 0 -95px;
+    }
+
+    .chazz-title {
+        top: 475px;
+        left: 115px;
     }
 
     .chazz-cookies {
