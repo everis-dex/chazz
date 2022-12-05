@@ -108,6 +108,37 @@
 }
 
 @media (min-width: 768px) {
+
+    .chazz-header{
+        background-position: 30% -100px;
+        .nav {
+            display: flex;
+            float: right;
+            padding-left: 0;
+        }
+        .nav ul {
+            display: flex;
+        }
+
+        .nav ul li {
+            list-style-type: none;
+            margin-right: 30px;
+        }
+
+        .nav ul li a {
+            text-decoration: none;
+            color: var(--white);
+        
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .chazz-title {
+        left: 44px;
+    }
+    
     .chazz-cookies {
         display: flex;
         align-items: center;
@@ -140,18 +171,13 @@
         background-position: 0 0%;
 
         .nav {
-        float: right;
-        width: 33%;
+            // margin-left: 0;
         }
 
-        
-        .nav ul li a {
-        text-decoration: none;
-        color: var(--white);
-            &:hover {
-                text-decoration: none;
-            }
+        .nav ul li {
+            margin-right: 36px;
         }
+    
     }
 
     .chazz-title {
