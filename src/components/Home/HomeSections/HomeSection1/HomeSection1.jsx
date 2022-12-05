@@ -1,16 +1,16 @@
 import React from "react";
-import './WeAre.scss'
+import './Section1.scss'
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-const WeAre = () => {
+const HomeSection1 = () => {
 
     return (
         <>
-            <Container>
+            <Container id="HomeSection1">
                 <Row className="weare">
                     <Col className="weare-title" xs={12} sm={6}> 
                         <h2>
@@ -54,4 +54,4 @@ const WeAre = () => {
     )
 }
 
-export default WeAre;
+export default HomeSection1;

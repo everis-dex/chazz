@@ -40,11 +40,11 @@ const slides = [
   },
 ];
 
-export const Carousel = () => {
+const ChazzCarousel = () => {
   return (
     <>
       <div className="carouselTitle">
-        <h1>Featured projects</h1>
+        <h3>Featured projects</h3>
       </div>
 
       <div className="carousel">
@@ -88,3 +88,5 @@ export const Carousel = () => {
     </>
   );
 };
+
+export default ChazzCarousel;

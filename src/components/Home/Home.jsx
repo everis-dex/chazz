@@ -1,19 +1,20 @@
 import React from "react";
 
-import Header from "./Header/Header";
-import WeAre from "../Sections/WeAre/WeAre";
-import OurServices from "../Sections/OurServices/OurServices";
-import OurWork from "../Sections/OurWork/OurWork";
-import Thoughts from "../Sections/Thoughts/Thoughts";
+import AppHeader from "./HomeHeader/HomeHeader";
+import HomeSection1 from "./HomeSections/HomeSection1/HomeSection1";
+import HomeSection2 from "./HomeSections/HomeSection2/HomeSection2";
+import HomeSection3 from "./HomeSections/HomeSection3/HomeSection3";
+import AppFooter from "../shared/AppFooter/AppFooter";
+
 
 const Home = () => {
   return (
     <>
-      <Header />
-      <WeAre />
-      {/* <OurServices />
-      <OurWork />
-      <Thoughts /> */}
+      <AppHeader />
+      <HomeSection1 />
+      <HomeSection2 />
+      <HomeSection3 />
+      <AppFooter />
     </>
   );
 };
