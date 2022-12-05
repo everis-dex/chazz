@@ -51,12 +51,12 @@
 
 .chazz-cookies {
     background-color: var(--white);
-    height: 27%;
+    height: 33%;
     z-index: 10;
     position: absolute;
     width: 90%; 
     left: 5%; 
-    top: 32rem;
+    bottom: 3%;
     padding: 16px;
 
   p {
@@ -83,13 +83,12 @@
 // xxs
 @media (width: 320px) {
     .chazz-cookies {
-        top: 33rem;
         left: 4%;
-        height: 25%;
+        // height: 25%;
         
         button {
             padding: 1% 25% 1% 25%;
-            margin-top: 13px;
+            margin-top: 22px;
             
         }
     }
@@ -115,7 +114,7 @@
     .chazz-header{
         background-position: 30% -100px;
         .nav {
-            margin-top: 2%;
+            margin-top: 1.5%;
             display: flex;
             float: right;
             padding-left: 0;
@@ -149,7 +148,7 @@
         height: 64px;
         padding: 5px;
         width: 95%;
-        top: 88%;
+        bottom: 2%;
         left: 15px;
 
         p {
@@ -236,7 +235,7 @@
 
     .chazz-cookies {
         width: 98%;
-        top: 90%;
+        bottom: 2%;
         p {
             width: 92%;
         }
