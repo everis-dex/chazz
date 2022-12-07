@@ -148,6 +148,7 @@ function getFilesContent(files, dirPath, folder) {
  * @return {object} structured element properties with defined content.
  */
 function constructElement(folder, metadata, data) {
+  if (!folder || !metadata) return {};
   let element = {};
   switch (folder) {
     case "projects":
