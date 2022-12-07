@@ -131,7 +131,7 @@ function getFilesContent(files, dirPath, folder) {
       if (indexList.length === files.length) {
         // Sort based on published time
         const sortedList = elementList.sort((a, b) => {
-          return a.id < b.id ? 1 : -1;
+          return a.id > b.id ? 1 : -1;
         });
         fs.writeFileSync(`src/content/${folder}.json`, JSON.stringify(sortedList));
       }
