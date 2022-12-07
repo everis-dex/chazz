@@ -1,11 +1,10 @@
 export const ChazzSlide = ({ slideSettings }) => {
-  console.log(slideSettings);
   const { image, title, subtitle, width, height, top } = slideSettings;
 
   return (
     <>
       <div style={{ paddingTop: top }}>
-        <img src={image} width={width} heigth={height} />
+        <img src={image} width={width} heigth={height} alt={title} />
         <br />
       </div>
       <h2>{title}</h2>

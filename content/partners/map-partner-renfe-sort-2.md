@@ -1,4 +1,4 @@
 ---
-partner: renfe
+partner: Renfe
 sort: 2
 ---
