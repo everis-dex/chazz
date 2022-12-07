@@ -1,1 +1,16 @@
-[{"id":1669976040,"city":"example\r","phone":"example\r","email":"example\r","address":"example\r"}]
+[
+  {
+    "id": 1669976040,
+    "city": "new-york\r",
+    "phone": "example\r",
+    "email": "example\r",
+    "address": "example\r"
+  },
+  {
+    "id": 1669976040,
+    "city": "example\r",
+    "phone": "example\r",
+    "email": "example\r",
+    "address": "example\r"
+  }
+]

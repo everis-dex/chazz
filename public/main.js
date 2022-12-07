@@ -36,53 +36,71 @@ const parseContent = ({ lines, metadataIndices }) => {
   return lines.join("\n");
 };
 
-const getCollection = (collection) => {
-  let elementList = [];
-  const dirPath = path.join(__dirname, `../content/${collection}`);
-  fs.readdir(dirPath, (err, files) => {
+const getCollections = () => {
+  const dir = path.join(__dirname, `../content/`);
+  // Get all subfolders of content/, those being the collections of Netlify CMS
+  fs.readdir(dir, (err, subfolders) => {
     if (err) {
-      return console.error("Failed to list contents of directory: " + err.message);
+      return console.error("Failed to list subfolders of directory: " + err.message);
     }
-    let indexList = [];
-    files.forEach((file, index) => {
-      fs.readFile(`${dirPath}/${file}`, "utf8", (err, contents) => {
-        if (err) {
-          return console.error("Failed to read file of directory: " + err.message);
-        }
-        const lines = contents.split("\n");
-        const metadataIndices = lines.reduce(getMetadataIndices, []);
-        const metadata = parseMetadata({ lines, metadataIndices });
-        const content = parseContent({ lines, metadataIndices });
-        let timestamp = -1;
-
-        if (metadata.date) {
-          const parsedDate = metadata.date ? formatDate(metadata.date) : new Date();
-          const datestring = `${parsedDate["year"]}-${parsedDate["month"]}-${parsedDate["day"]}T${parsedDate["time"]}:00`;
-          const date = new Date(datestring);
-          timestamp = date.getTime() / 1000;
-        }
-
-        const element = constructElement(collection, timestamp, metadata, content);
-        elementList.push(element);
-        indexList.push(index);
-
-        // Check if files and indexes match
-        if (indexList.length === files.length) {
-          // Sort based on published time
-          const sortedList = elementList.sort((a, b) => {
-            return a.id < b.id ? 1 : -1;
-          });
-          fs.writeFileSync(`src/content/${collection}.json`, JSON.stringify(sortedList));
-        }
-      });
-    });
+    // Get files from each collection
+    getSubfolderContent(subfolders);
+    return;
   });
   return;
 };
 
-function constructElement(type, timestamp, metadata, content) {
+function getSubfolderContent(subfolders) {
+  subfolders.forEach(folder => {
+    const dirPath = path.join(__dirname, `../content/${folder}`);
+    fs.readdir(dirPath, (err, files) => {
+      if (err) {
+        return console.error("Failed to list contents of directory: " + err.message);
+      }
+      getFilesContent(files, dirPath, folder);
+    });
+  });
+}
+
+function getFilesContent(files, dirPath, folder) {
+  let elementList = [], indexList = [];
+  files.forEach((file, index) => {
+    fs.readFile(`${dirPath}/${file}`, "utf8", (err, contents) => {
+      if (err) {
+        return console.error("Failed to read file of directory: " + err.message);
+      }
+      const lines = contents.split("\n");
+      const metadataIndices = lines.reduce(getMetadataIndices, []);
+      const metadata = parseMetadata({ lines, metadataIndices });
+      const content = parseContent({ lines, metadataIndices });
+      let timestamp = -1;
+
+      if (metadata.date) {
+        const parsedDate = metadata.date ? formatDate(metadata.date) : new Date();
+        const datestring = `${parsedDate["year"]}-${parsedDate["month"]}-${parsedDate["day"]}T${parsedDate["time"]}:00`;
+        const date = new Date(datestring);
+        timestamp = date.getTime() / 1000;
+      }
+
+      const element = constructElement(folder, timestamp, metadata, content);
+      elementList.push(element);
+      indexList.push(index);
+
+      // Check if files and indexes match
+      if (indexList.length === files.length) {
+        // Sort based on published time
+        const sortedList = elementList.sort((a, b) => {
+          return a.id < b.id ? 1 : -1;
+        });
+        fs.writeFileSync(`src/content/${folder}.json`, JSON.stringify(sortedList));
+      }
+    });
+  });
+}
+
+function constructElement(collection, timestamp, metadata, content) {
   let element = {};
-  switch (type) {
+  switch (collection) {
     case "projects":
       element = {
         id: timestamp,
@@ -124,7 +142,4 @@ function constructElement(type, timestamp, metadata, content) {
   return element;
 }
 
-getCollection("projects");
-getCollection("partners");
-getCollection("categories");
-getCollection("offices");
+getCollections();
