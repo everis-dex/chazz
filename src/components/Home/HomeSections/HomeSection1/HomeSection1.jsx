@@ -20,14 +20,14 @@ const HomeSection1 = () => {
           </Col>
 
           <Col className="weare-sections" xs={12} sm={6}>
-            {categories.map((category) => (
-              <>
+            {categories.map((category, index) => (
+              <div key={index}>
                 <h2>{category.title}</h2>
                 <p>{category.section}</p>
                 <p>{category.body}</p>
 
                 <hr></hr>
-              </>
+              </div>
             ))}
           </Col>
         </Row>
