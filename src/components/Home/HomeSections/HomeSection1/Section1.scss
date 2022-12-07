@@ -1,0 +1,58 @@
+// MOBILE FIRST
+
+.container {
+    padding-left: 15px!important;
+    padding-right: 15px!important;
+}
+
+.weare {
+    margin-bottom: 70px;
+    
+    .weare-title {
+        margin-top: 20%;
+        h2 {
+            font-weight: 500;
+            width: 87%;
+            font-size: 32px;
+        }
+    }
+
+    .weare-sections {
+        margin-top: 20%;
+        h2 + p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            margin-top: -5px;
+        }
+
+        hr {
+            margin-top: 40px;
+            margin-bottom: 50px;
+            border: 1px solid var(--hrColor);
+        }
+    }
+}
+
+
+
+// MEDIA QUERIES
+@media (min-width: 768px) {
+    .weare {
+
+        .weare-title {
+            margin-top: 10%;
+            h2 {
+                width: 90%;
+                font-size: 24px;
+            }
+        }
+    
+        .weare-sections {
+            margin-top: 10%;
+            hr {
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

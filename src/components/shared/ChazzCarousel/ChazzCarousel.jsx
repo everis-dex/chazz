@@ -2,53 +2,40 @@ import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ChazzSlide } from "./ChazzSlide";
 
-
 // import "swiper/css/bundle";
 import "swiper/css";
 import "swiper/css/pagination";
 
 import "./carouselStyles.css";
-
+import projects from "./../../../content/projects.json";
 
 const slides = [
   {
-    title: "doco",
-    description: "Maing mobility easier in any territory.",
-    imageUrl:
-      "https://web.extension.illinois.edu/treehouse/images/3306_1_large.jpg",
     width: 503,
     height: 374,
     top: 0,
   },
   {
-    title: "Tuio",
-    description: "Revamping a neobank for the new context.",
-    imageUrl:
-      "https://web.extension.illinois.edu/treehouse/images/3306_2_large.jpg",
     width: 528,
     height: 545,
     top: 100,
   },
   {
-    title: "Hogami",
-    description: "A home services platform.",
-    imageUrl:
-      "https://web.extension.illinois.edu/treehouse/images/3306_3_large.jpg",
     width: 305,
     height: 287,
     top: 20,
   },
 ];
 
-export const Carousel = () => {
+const ChazzCarousel = () => {
   return (
     <>
       <div className="carouselTitle">
-        <h1>Featured projects</h1>
+        <h3>Featured projects</h3>
       </div>
 
       <div className="carousel">
-      <div className="pagination" />
+        <div className="pagination" />
         <div className="slides">
           <Swiper
             modules={[Pagination, Autoplay]}
@@ -75,10 +62,14 @@ export const Carousel = () => {
               },
             }}
           >
-            {slides.map((slide, index) => {
+            {projects.map((project, index) => {
+              project.width = slides[index].width;
+              project.height = slides[index].height;
+              project.top = slides[index].top;
+              console.log(project);
               return (
                 <SwiperSlide key={index}>
-                  <ChazzSlide slideSettings={slide} />
+                  <ChazzSlide slideSettings={project} />
                 </SwiperSlide>
               );
             })}
@@ -88,3 +79,5 @@ export const Carousel = () => {
     </>
   );
 };
+
+export default ChazzCarousel;

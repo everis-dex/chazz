@@ -1,0 +1,246 @@
+@import "./src/styles.scss";
+
+// MOBILE FIRST
+.chazz-header {
+  // display: flex;
+  // flex-direction: row;
+  // align-content: space-between;
+  //
+  background-image: url("video.png");
+  background-repeat: no-repeat;
+  background-position: -330px -100px;
+  height: 100vh;
+
+  .velo {
+    background: #ca8b9b94;
+    z-index: 2;
+    height: 100vh;
+  }
+
+  .chazz-logo {
+    width: 157px;
+    height: 26px;
+    display: block;
+    float: left;
+  }
+
+  .nav {
+    display: none;
+  }
+}
+
+.chazz-title {
+  color: var(--white);
+  width: 300px;
+  position: absolute;
+  z-index: 9;
+  top: 208px;
+  left: 14px;
+  font-size: 23px;
+  line-height: 1.2;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  h4 {
+    margin-top: 12px;
+    width: 250px;
+  }
+}
+
+.chazz-cookies {
+    background-color: var(--white);
+    height: 33%;
+    z-index: 10;
+    position: absolute;
+    width: 90%; 
+    left: 5%; 
+    bottom: 3%;
+    padding: 16px;
+
+  p {
+    margin: 0;
+    // margin-top: 12px;
+  }
+
+    button {
+        padding: 3% 29% 3% 29%;
+        margin-top: 13px;
+        color: #FFAFC4;
+        font-weight: 700;
+        font-size: 19px;
+        background-color: var(--black);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+// MEDIA QUERIES
+
+// xxs
+@media (width: 320px) {
+    .chazz-cookies {
+        left: 4%;
+        // height: 25%;
+        
+        button {
+            padding: 1% 25% 1% 25%;
+            margin-top: 22px;
+            
+        }
+    }
+}
+
+@media (min-width: 425px) {
+    .chazz-cookies {
+        // top: -14rem;
+        button {
+            padding: 3% 31% 3% 31%;
+            margin-top: 23px;
+        }
+    }
+}
+
+//////////////////////
+
+@media (min-width: 480px) {
+}
+
+@media (min-width: 768px) {
+
+    .chazz-header{
+        background-position: 30% -100px;
+        .nav {
+            margin-top: 1.5%;
+            display: flex;
+            float: right;
+            padding-left: 0;
+        }
+        .nav ul {
+            display: flex;
+        }
+
+        .nav ul li {
+            list-style-type: none;
+            margin-right: 30px;
+        }
+
+        .nav ul li a {
+            text-decoration: none;
+            color: var(--white);
+        
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .chazz-title {
+        left: 44px;
+    }
+    
+    .chazz-cookies {
+        display: flex;
+        align-items: center;
+        height: 64px;
+        padding: 5px;
+        width: 95%;
+        bottom: 2%;
+        left: 15px;
+
+        p {
+            margin-top: 0;
+            width: 80%;
+            position: relative;
+            left: 15px;
+        }
+
+        button {
+            padding: 1% 2% 1% 2%;
+            font-size: 16px;
+            margin-top: 0;
+        }
+
+    }
+        
+}
+
+@media (min-width: 1280px) {
+    .chazz-header {
+        background-size: 1280px;
+        height: 100vh;
+        background-position: 0 0%;
+
+        // .nav {
+        //     // margin-left: 0;
+        // }
+
+        .nav ul li {
+            margin-right: 36px;
+        }
+    
+    }
+
+    .chazz-title {
+        width: 500px;
+        top: 190px;
+        left: 43px;
+
+        h1 {
+            font-size: 4rem;
+            position: relative;
+            top: -2rem;
+        }
+
+        h4 {
+            margin-top: 4px;
+        }
+    }
+
+    .chazz-cookies {
+        width: 97%;
+        p {
+            width: 86%;
+        }
+    }
+
+  }
+
+
+@media (min-width: 1440px) {
+    .chazz-header {
+        background-size: cover;
+        background-position: 0 0;
+    }
+
+    .chazz-title {
+        top: 179px;
+        left: 85px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .chazz-header {
+        background-size: cover;
+        background-position: 0 -95px;
+    }
+
+    .chazz-title {
+        top: 475px;
+        left: 115px;
+    }
+
+    .chazz-cookies {
+        width: 98%;
+        bottom: 2%;
+        p {
+            width: 92%;
+        }
+        button {
+            padding: 0.5% 1% 0.5% 1%;
+        }
+    }
+}
