@@ -37,7 +37,6 @@ const getMetadataIndexes = (acc, elem, index) => {
  * @return {object} obtained structured information of lines.
  */
 const parseMetadata = ({ lines, metadataIndexes }) => {
-  console.log("before", lines);
   if (metadataIndexes.length > 0) {
     let data = {};
     let metadata = lines.slice(
@@ -47,7 +46,6 @@ const parseMetadata = ({ lines, metadataIndexes }) => {
     metadata.forEach((line) => {
       data[line.split(": ")[0]] = line.split(": ")[1];
     });
-    console.log("after", data);
     return data;
   }
 };
