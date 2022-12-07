@@ -1,6 +1,12 @@
 const path = require("path");
 const fs = require("fs");
 
+/**
+ * Return recieved date into an object with different properties.
+ * @param {dateTime} date - date to be formatted.
+ * 
+ * @return {object} structured properties of recieved date.
+ */
 const formatDate = (date) => {
   const datetimeArray = date.split("T");
   const dateArray = datetimeArray[0].split("-");
@@ -10,32 +16,59 @@ const formatDate = (date) => {
   return { month: dateArray[1], day: dateArray[2], year: dateArray[0], time };
 };
 
-const getMetadataIndices = (acc, elem, i) => {
-  if (/^---/.test(elem)) acc.push(i);
+/**
+ * Callback used when reducing metadataIndexes.
+ * @param {array} acc - TODO: .
+ * @param {object} elem - content of the element.
+ * @param {int} index - index of the current element.
+ * 
+ * @return {object} indexes of where Metadata is defined.
+ */
+const getMetadataIndexes = (acc, elem, index) => {
+  if (/^---/.test(elem)) acc.push(index);
   return acc;
 };
 
-const parseMetadata = ({ lines, metadataIndices }) => {
-  if (metadataIndices.length > 0) {
+/**
+ * Remove all content info and format properties in an object.
+ * @param {array} lines - lines of the current read file.
+ * @param {array} metadataIndexes - obtained indexes from getMetadataIndexes function.
+ * 
+ * @return {object} obtained structured information of lines.
+ */
+const parseMetadata = ({ lines, metadataIndexes }) => {
+  console.log("before", lines);
+  if (metadataIndexes.length > 0) {
     let data = {};
     let metadata = lines.slice(
-      metadataIndices[0] + 1,
-      metadataIndices[1]
+      metadataIndexes[0] + 1,
+      metadataIndexes[1]
     );
     metadata.forEach((line) => {
       data[line.split(": ")[0]] = line.split(": ")[1];
     });
+    console.log("after", data);
     return data;
   }
 };
 
-const parseContent = ({ lines, metadataIndices }) => {
-  if (metadataIndices.length > 0) {
-    lines = lines.slice(metadataIndices[1] + 1, lines.length);
+/**
+ * Remove all metadata info and extract only the content after --- separator.
+ * @param {array} lines - lines of the current read file.
+ * @param {array} metadataIndexes - obtained indexes from getMetadataIndexes function.
+ * 
+ * @return {object} obtained lines of content.
+ */
+const parseContent = ({ lines, metadataIndexes }) => {
+  if (metadataIndexes.length > 0) {
+    lines = lines.slice(metadataIndexes[1] + 1, lines.length);
   }
   return lines.join("\n");
 };
 
+/**
+ * Reads .md files of each collection in /content/ subfolders and creates JSON file with all the information.
+ */
 const getCollections = () => {
   const dir = path.join(__dirname, `../content/`);
   // Get all subfolders of content/, those being the collections of Netlify CMS
@@ -50,6 +83,10 @@ const getCollections = () => {
   return;
 };
 
+/**
+ * Reads inside every subfolder to get the content of each file it contains.
+ * @param {array} subfolders - found folders inside /content/, the existing collections.
+ */
 function getSubfolderContent(subfolders) {
   subfolders.forEach(folder => {
     const dirPath = path.join(__dirname, `../content/${folder}`);
@@ -62,6 +99,12 @@ function getSubfolderContent(subfolders) {
   });
 }
 
+/**
+ * Reads the content of every file inside the folder and writes a JSON file with all the content condensed.
+ * @param {array} files - array of file names inside the folder.
+ * @param {string} dirPath - path of the folder where files are stored.
+ * @param {string} folder - name of the collection folder.
+ */
 function getFilesContent(files, dirPath, folder) {
   let elementList = [], indexList = [];
   files.forEach((file, index) => {
@@ -70,9 +113,9 @@ function getFilesContent(files, dirPath, folder) {
         return console.error("Failed to read file of directory: " + err.message);
       }
       const lines = contents.split("\n");
-      const metadataIndices = lines.reduce(getMetadataIndices, []);
-      const metadata = parseMetadata({ lines, metadataIndices });
-      const content = parseContent({ lines, metadataIndices });
+      const metadataIndexes = lines.reduce(getMetadataIndexes, []);
+      const metadata = parseMetadata({ lines, metadataIndexes });
+      const content = parseContent({ lines, metadataIndexes });
       let timestamp = -1;
 
       if (metadata.date) {
@@ -82,7 +125,7 @@ function getFilesContent(files, dirPath, folder) {
         timestamp = date.getTime() / 1000;
       }
 
-      const element = constructElement(folder, timestamp, metadata, content);
+      const element = constructElement(folder, metadata, { timestamp, content });
       elementList.push(element);
       indexList.push(index);
 
@@ -98,19 +141,27 @@ function getFilesContent(files, dirPath, folder) {
   });
 }
 
-function constructElement(collection, timestamp, metadata, content) {
+/**
+ * Construct the element object based on the collection they belong to.
+ * @param {string} folder - represents the collection of the file.
+ * @param {array} metadata - all parameters of collection from .md file.
+ * @param {array} data - timestamp and content of the file.
+ * 
+ * @return {object} structured element properties with defined content.
+ */
+function constructElement(folder, metadata, data) {
   let element = {};
-  switch (collection) {
+  switch (folder) {
     case "projects":
       element = {
-        id: timestamp,
+        id: data.timestamp,
         title: metadata.title ? metadata.title : "No title given",
         subtitle: metadata.subtitle ? metadata.subtitle : "No subtitle given",
         image: metadata.image,
         branding: metadata.branding,
         service: metadata.service,
         value: metadata.value,
-        body: content ? content : "No content given",
+        body: data.content ? data.content : "No content given",
       };
       break;
     case "partners":
@@ -121,15 +172,15 @@ function constructElement(collection, timestamp, metadata, content) {
       break;
     case "categories":
       element = {
-        id: timestamp,
+        id: data.timestamp,
         title: metadata.title ? metadata.title : "No title given",
         section: metadata.section,
-        body: content ? content : "No content given",
+        body: data.content ? data.content : "No content given",
       };
       break;
     case "offices":
       element = {
-        id: timestamp,
+        id: data.timestamp,
         city: metadata.city,
         phone: metadata.phone,
         email: metadata.email,
