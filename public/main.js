@@ -186,6 +186,9 @@ function constructElement(folder, metadata, data) {
       };
       break;
     default:
+      console.error("\n ----------------------------------- \n");
+      console.error(`ERROR: '${folder}' collection is missing. \n\nGo to public/main.js to add configuration in 'constructElement' method`);
+      console.error("\n ----------------------------------- \n");
       break;
   }
   return element;
