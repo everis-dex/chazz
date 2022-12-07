@@ -66,7 +66,6 @@ const ChazzCarousel = () => {
               project.width = slides[index].width;
               project.height = slides[index].height;
               project.top = slides[index].top;
-              console.log(project);
               return (
                 <SwiperSlide key={index}>
                   <ChazzSlide slideSettings={project} />
