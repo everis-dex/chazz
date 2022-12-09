@@ -1,9 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 import "./HomeHeader.scss";
+// import Nav from "../../Nav/Nav";
 
 const Header = () => {
+  const [menu, setMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setMenu(!menu);
+  };
   return (
     <>
       <div className="chazz-header">
@@ -31,6 +38,48 @@ const Header = () => {
               </li>
             </ul>
           </div>
+          <div className={`burger-menu ${menu ? "active" : ""}`}>
+            <button className="burger-button" onClick={toggleMenu}>
+              <svg
+                className="burger-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                />
+              </svg>
+            </button>
+            <nav className={`burger-nav ${menu ? "active" : ""}`}>
+              <ul className="burger-ul">
+                <li className="burger-li">
+                  <a className="burger-a" href="#">
+                    We are
+                  </a>
+                </li>
+                <li className="burger-li">
+                  <a className="burger-a" href="#">
+                    Services
+                  </a>
+                </li>
+                <li className="burger-li">
+                  <a className="burger-a" href="#">
+                    Work
+                  </a>
+                </li>
+                <li className="burger-li">
+                  <a className="burger-a" href="#">
+                    Thoughts
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          {/* <Nav></Nav> */}
         </div>
       </div>
       <div className="chazz-title">
