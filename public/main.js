@@ -165,7 +165,7 @@ function constructElement(folder, metadata, data) {
       break;
     case "partners":
       element = {
-        id: metadata.sort,
+        id: parseInt(metadata.sort),
         partner: metadata.partner
       };
       break;
