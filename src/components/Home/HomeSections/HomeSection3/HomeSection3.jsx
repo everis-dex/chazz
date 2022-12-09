@@ -7,13 +7,15 @@ import partners from "../../../../content/partners.json";
 const HomeSection3 = () => {
   return (
     <>
-      <h3>Partners in crime</h3>
-      <div className="partner-container">
-        {partners.map((partner, index) => (
-          <p className="partner" key={index}>
-            {partner.partner}
-          </p>
-        ))}
+      <div className="partner-section">
+        <h3>Partners in crime</h3>
+        <div className="partners-container">
+          {partners.map((partner, index) => (
+            <p className="partner" key={index}>
+              {partner.partner}
+            </p>
+          ))}
+        </div>
       </div>
     </>
   );
