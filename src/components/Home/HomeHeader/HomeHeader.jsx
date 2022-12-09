@@ -9,7 +9,7 @@ const Header = () => {
       <div className="chazz-header">
         <div className="velo">
           <div>
-            <img src="./Logo_Chazz.png" alt="logo" className="chazz-logo" />
+            <img src="Chazz_Logo.svg" alt="logo" className="chazz-logo" />
           </div>
           <div className="nav">
             <ul>

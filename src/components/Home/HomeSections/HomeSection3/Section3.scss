@@ -1,0 +1,31 @@
+// MOBILE FIRST
+
+.partner-container {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  align-items: center;
+  justify-content: center;
+}
+
+.partner {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  /* TODO: resolve hardcoded color */
+  color: rgba(25, 25, 25, 0.6);
+  padding: 1rem;
+  max-width: 200px;
+  margin: 1rem;
+}
+
+// MEDIA QUERIES
+@media (min-width: 768px) {
+  .partner-container {
+    grid-template-columns: repeat(5, 20%);
+  }
+  .parnter {
+    font-size: 30px;
+    line-height: 38px;
+  }
+}
