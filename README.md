@@ -46,14 +46,21 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+This is a project made for the improvement of the `Chazz` website, an NTT Data Company. The design, frontend and data management are changed for a better looking.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
+<div align="center">
+
 [![React][react.js]][react-url]
 [![Netlify][netlify.com]][netlify-url]
+
+</div>
+
+- **React** is used as a frontend framework
+- **Netlify** is used as CMS and to deploy the web application
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
