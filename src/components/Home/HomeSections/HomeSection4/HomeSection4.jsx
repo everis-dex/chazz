@@ -6,22 +6,25 @@ import offices from "./../../../../content/offices.json";
 const HomeSection4 = () => {
   return (
     <>
-      <h2>
-        <strong>
-          We are part of NTT Data Company & Tangity Design Network
-        </strong>
-      </h2>
+      <div className="offices-section">
+        <h2>
+          <strong>
+            We are part of NTT Data Company & Tangity Design Network
+          </strong>
+        </h2>
+        <div>
+          {offices.map((office, index) => (
+            <div key={index}>
+              <h3>{office.city}</h3>
+              <p>{office.phone}</p>
+              <p>{office.email}</p>
+              <p>{office.address}</p>
 
-      {offices.map((office, index) => (
-        <div key={index}>
-          <h2>{office.city}</h2>
-          <p>{office.phone}</p>
-          <p>{office.email}</p>
-          <p>{office.address}</p>
-
-          <hr></hr>
+              <hr></hr>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </>
   );
 };

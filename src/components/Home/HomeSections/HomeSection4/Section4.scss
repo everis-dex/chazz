@@ -1,0 +1,21 @@
+// MOBILE FIRST
+
+.offices-section{
+
+}
+
+// MEDIA QUERIES
+@media (min-width: 768px) {
+    .offices-section{
+        background-color: var(--black);
+        color: var(--white);
+        display: grid;
+        grid-template-columns: repeat(2, 30%);
+
+        h2{
+            color: #FFAFC4;
+            padding: 105px 132px 0 48px;
+            
+        }
+    }
+}
