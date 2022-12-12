@@ -18,10 +18,13 @@
   }
 
   .chazz-logo {
-    width: 157px;
-    height: 26px;
+    width: 137px;
     display: block;
     float: left;
+    position: relative;
+    left: 4%;
+    top: 30px;
+    
   }
 
   .nav {
@@ -115,6 +118,12 @@
 @media (min-width: 768px) {
 
     .chazz-header{
+        .chazz-logo {
+            width: 18%;
+            left: 5%;
+            top: 30px;
+        }
+
         background-position: 30% -100px;
         .nav {
             margin-top: 1.5%;
@@ -183,6 +192,11 @@
         // .nav {
         //     // margin-left: 0;
         // }
+
+        .chazz-logo {
+            width: 15%;
+            top: 40px;
+        }
 
         .nav ul li {
             margin-right: 36px;

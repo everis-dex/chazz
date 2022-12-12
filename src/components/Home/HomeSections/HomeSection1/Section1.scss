@@ -5,10 +5,10 @@
     padding-right: 15px!important;
 }
 
-.weare {
+.section1 {
     margin-bottom: 70px;
     
-    .weare-title {
+    .section1-title {
         margin-top: 20%;
         h2 {
             font-weight: 500;
@@ -17,7 +17,7 @@
         }
     }
 
-    .weare-sections {
+    .section1-sections {
         margin-top: 20%;
         h2 + p {
             color: var(--gray);
@@ -37,9 +37,9 @@
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
-    .weare {
+    .section1 {
 
-        .weare-title {
+        .section1-title {
             margin-top: 10%;
             h2 {
                 width: 90%;
@@ -47,7 +47,7 @@
             }
         }
     
-        .weare-sections {
+        .section1-sections {
             margin-top: 10%;
             hr {
                 margin-top: 30px;
