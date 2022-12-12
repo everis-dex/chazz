@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import "./HomeHeader.scss";
-// import Nav from "../../Nav/Nav";
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
@@ -66,7 +65,6 @@ const Header = () => {
               </ul>
             </nav>
           </div>
-          {/* <Nav></Nav> */}
         </div>
       </div>
       <div className="chazz-title">
