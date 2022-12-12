@@ -131,9 +131,11 @@
         .nav ul li a {
             text-decoration: none;
             color: var(--white);
+            font-weight: 500;
         
             &:hover {
                 text-decoration: none;
+                color: var(--black);
             }
         }
     }
