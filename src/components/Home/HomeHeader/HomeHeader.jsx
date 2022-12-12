@@ -59,7 +59,7 @@ const Header = () => {
                 </li>
                 <li className="burger-li">
                   <a className="burger-a" href="#">
-                    Thoughts
+                    Thoughtss
                   </a>
                 </li>
               </ul>
