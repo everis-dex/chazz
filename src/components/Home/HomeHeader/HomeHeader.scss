@@ -50,6 +50,7 @@
 }
 
 .chazz-cookies {
+    display: none;
     background-color: var(--white);
     height: 33%;
     z-index: 10;
@@ -83,6 +84,7 @@
 // xxs
 @media (width: 320px) {
     .chazz-cookies {
+        display: none;
         left: 4%;
         // height: 25%;
         
@@ -96,6 +98,7 @@
 
 @media (min-width: 425px) {
     .chazz-cookies {
+        display: none;
         // top: -14rem;
         button {
             padding: 3% 31% 3% 31%;
@@ -145,7 +148,8 @@
     }
     
     .chazz-cookies {
-        display: flex;
+        display: none;
+        // display: flex;
         align-items: center;
         height: 64px;
         padding: 5px;
