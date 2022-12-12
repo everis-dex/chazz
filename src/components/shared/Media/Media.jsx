@@ -1,5 +1,4 @@
 import Lottie from "lottie-react";
-import Video from "../../../../Video/Video";
 
 const Media = ({ data, style = {}, id }) => {
   return (
@@ -7,7 +6,18 @@ const Media = ({ data, style = {}, id }) => {
       {data && (
         <>
           {data instanceof Blob ? (
-            <Video id={id} style={style} data={data} />
+            <video
+              className={style}
+              width="auto"
+              height="auto"
+              onError={(error) => console.error(error)}
+              muted={true}
+              loop={false}
+              src={URL.createObjectURL(data)}
+              type="video/mp4"
+            >
+              Video not supported.
+            </video>
           ) : (
             <>
               {typeof data === "object" ? (
