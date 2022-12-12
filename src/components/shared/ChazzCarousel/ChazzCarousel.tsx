@@ -13,18 +13,18 @@ const slides = [
   {
     width: 503,
     height: 374,
-    top: 0,
+    top: 0
   },
   {
     width: 528,
     height: 545,
-    top: 100,
+    top: 100
   },
   {
     width: 305,
     height: 287,
-    top: 20,
-  },
+    top: 20
+  }
 ];
 
 const ChazzCarousel = () => {
@@ -43,23 +43,23 @@ const ChazzCarousel = () => {
             spaceBetween={10}
             pagination={{
               el: ".pagination",
-              clickable: true,
+              clickable: true
             }}
             loop={true}
             autoplay={{
               delay: 3000,
-              disableOnInteraction: false,
+              disableOnInteraction: false
             }}
             breakpoints={{
               "@0.00": {
-                slidesPerView: 1,
+                slidesPerView: 1
               },
               "@1.00": {
-                slidesPerView: 2,
+                slidesPerView: 2
               },
               "@1.50": {
-                slidesPerView: 3,
-              },
+                slidesPerView: 3
+              }
             }}
           >
             {projects.map((project, index) => {

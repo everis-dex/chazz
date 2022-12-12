@@ -15,8 +15,8 @@ const Media = ({ src, style = {}, alt }) => {
 
   if (extension === "json" && !lottie) {
     try {
-      fetch(src).then((response) => {
-        response.json().then((json) => setLottie(json));
+      fetch(src).then(response => {
+        response.json().then(json => setLottie(json));
       });
     } catch (error) {
       console.error(error);
@@ -33,7 +33,7 @@ const Media = ({ src, style = {}, alt }) => {
               width={width}
               height={height}
               controls
-              onError={(error) => console.error(error)}
+              onError={error => console.error(error)}
               muted={true}
               loop={false}
               src={src}
@@ -42,17 +42,9 @@ const Media = ({ src, style = {}, alt }) => {
               Video not supported.
             </video>
           )}
-          {supportedImageTags.includes(extension) && (
-            <img className={style} src={src} alt={alt} />
-          )}
+          {supportedImageTags.includes(extension) && <img className={style} src={src} alt={alt} />}
           {extension === "json" && (
-            <>
-              {lottie ? (
-                <Lottie animationData={lottie} loop={true} autoplay={true} />
-              ) : (
-                <>Loading</>
-              )}
-            </>
+            <>{lottie ? <Lottie animationData={lottie} loop={true} autoplay={true} /> : <>Loading</>}</>
           )}
         </>
       )}

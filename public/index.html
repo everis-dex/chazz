@@ -34,7 +34,7 @@
       // -->
       if (window.netlifyIdentity) {
         // As using arrow functions, it requires modern JavaScript, not compatible with IE11
-        window.netlifyIdentity.on("init", (user) => {
+        window.netlifyIdentity.on("init", user => {
           if (!user) {
             window.netlifyIdentity.on("login", () => {
               document.location.href = "/admin/";

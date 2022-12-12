@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "gh-pages": "^2.1.1",
+    "prettier": "2.8.1",
     "react-router-dom": "^6.4.4",
     "sass": "^1.56.1",
     "source-map-loader": "^4.0.1",
