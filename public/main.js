@@ -186,6 +186,12 @@ function constructElement(folder, metadata, data) {
         address: metadata.address,
       };
       break;
+    case "studios":
+      element = {
+        id: data.timestamp,
+        city: metadata.city
+      };
+      break;
     default:
       console.error("\n ----------------------------------- \n");
       console.error(`ERROR: '${folder}' collection is missing. \n\nGo to public/main.js to add configuration in 'constructElement' method`);
