@@ -4,10 +4,10 @@ const fs = require("fs");
 /**
  * Return recieved date into an object with different properties.
  * @param {dateTime} date - date to be formatted.
- * 
+ *
  * @return {object} structured properties of recieved date.
  */
-const formatDate = (date) => {
+const formatDate = date => {
   const datetimeArray = date.split("T");
   const dateArray = datetimeArray[0].split("-");
   const timeArray = datetimeArray[1].split(":");
@@ -21,7 +21,7 @@ const formatDate = (date) => {
  * @param {array} acc - TODO: .
  * @param {object} elem - content of the element.
  * @param {int} index - index of the current element.
- * 
+ *
  * @return {object} indexes of where Metadata is defined.
  */
 const getMetadataIndexes = (acc, elem, index) => {
@@ -33,17 +33,14 @@ const getMetadataIndexes = (acc, elem, index) => {
  * Remove all content info and format properties in an object.
  * @param {array} lines - lines of the current read file.
  * @param {array} metadataIndexes - obtained indexes from getMetadataIndexes function.
- * 
+ *
  * @return {object} obtained structured information of lines.
  */
 const parseMetadata = ({ lines, metadataIndexes }) => {
   if (metadataIndexes.length > 0) {
     let data = {};
-    let metadata = lines.slice(
-      metadataIndexes[0] + 1,
-      metadataIndexes[1]
-    );
-    metadata.forEach((line) => {
+    let metadata = lines.slice(metadataIndexes[0] + 1, metadataIndexes[1]);
+    metadata.forEach(line => {
       data[line.split(": ")[0]] = line.split(": ")[1];
     });
     return data;
@@ -54,7 +51,7 @@ const parseMetadata = ({ lines, metadataIndexes }) => {
  * Remove all metadata info and extract only the content after --- separator.
  * @param {array} lines - lines of the current read file.
  * @param {array} metadataIndexes - obtained indexes from getMetadataIndexes function.
- * 
+ *
  * @return {object} obtained lines of content.
  */
 const parseContent = ({ lines, metadataIndexes }) => {
@@ -104,7 +101,8 @@ function getSubfolderContent(subfolders) {
  * @param {string} folder - name of the collection folder.
  */
 function getFilesContent(files, dirPath, folder) {
-  let elementList = [], indexList = [];
+  let elementList = [],
+    indexList = [];
   files.forEach((file, index) => {
     fs.readFile(`${dirPath}/${file}`, "utf8", (err, contents) => {
       if (err) {
@@ -144,7 +142,7 @@ function getFilesContent(files, dirPath, folder) {
  * @param {string} folder - represents the collection of the file.
  * @param {array} metadata - all parameters of collection from .md file.
  * @param {array} data - timestamp and content of the file.
- * 
+ *
  * @return {object} structured element properties with defined content.
  */
 function constructElement(folder, metadata, data) {
@@ -160,7 +158,7 @@ function constructElement(folder, metadata, data) {
         branding: metadata.branding,
         service: metadata.service,
         value: metadata.value,
-        body: data.content ? data.content : "No content given",
+        body: data.content ? data.content : "No content given"
       };
       break;
     case "partners":
@@ -174,7 +172,7 @@ function constructElement(folder, metadata, data) {
         id: data.timestamp,
         title: metadata.title ? metadata.title : "No title given",
         section: metadata.section,
-        body: data.content ? data.content : "No content given",
+        body: data.content ? data.content : "No content given"
       };
       break;
     case "offices":
@@ -183,7 +181,7 @@ function constructElement(folder, metadata, data) {
         city: metadata.city,
         phone: metadata.phone,
         email: metadata.email,
-        address: metadata.address,
+        address: metadata.address
       };
       break;
     case "studios":
@@ -194,7 +192,9 @@ function constructElement(folder, metadata, data) {
       break;
     default:
       console.error("\n ----------------------------------- \n");
-      console.error(`ERROR: '${folder}' collection is missing. \n\nGo to public/main.js to add configuration in 'constructElement' method`);
+      console.error(
+        `ERROR: '${folder}' collection is missing. \n\nGo to public/main.js to add configuration in 'constructElement' method`
+      );
       console.error("\n ----------------------------------- \n");
       break;
   }

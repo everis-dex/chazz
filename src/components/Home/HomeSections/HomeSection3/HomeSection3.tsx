@@ -5,7 +5,6 @@ import partners from "../../../../content/partners.json";
 
 import { Partner } from "../../../../interfaces/interfaces";
 
-
 const HomeSection3 = () => {
   return (
     <>
