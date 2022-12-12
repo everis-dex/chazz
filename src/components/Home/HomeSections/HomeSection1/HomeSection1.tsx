@@ -4,7 +4,7 @@ import "./Section1.scss";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import categories from "./../../../../content/categories.json";
+import categories from "../../../../content/categories.json";
 
 const HomeSection1 = () => {
   return (
