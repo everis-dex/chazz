@@ -1,19 +1,65 @@
 // MOBILE FIRST
 
 .offices-section{
+    background-color: var(--black);
+    color: var(--white);
+    grid-template-columns: 100%;
+    padding-bottom: 62px;
+
+    h2{
+        color: #FFAFC4;
+        padding: 74px 38px 114px 16px;
+        margin-bottom: 0;
+        
+    }
+}
+
+.offices{
+    padding-left: 16px;
+
+    span{
+        font-size: 14px;
+        font-weight: 450;
+        line-height: 17.7px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    .offices-info{
+        .city{
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .phone, .email, .address, .social-media{
+            font-size: 16px;
+            font-weight: 450;
+            line-height: 24.4px;
+        }
+
+        .phone, .social-media{
+            margin-bottom: 5px;
+        }
+
+        .email{
+            margin-bottom: 24px;
+        }
+
+        .address{
+            margin-bottom: 47px;
+        }
+    }
 
 }
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
     .offices-section{
-        background-color: var(--black);
-        color: var(--white);
         display: grid;
         grid-template-columns: 30% 70%;
+        padding-bottom: 74px;
 
         h2{
-            color: #FFAFC4;
             padding: 105px 132px 0 48px;
             grid-row: 1 / 6;
             
@@ -24,39 +70,14 @@
         display: grid;
         grid-template-columns: 33% 33% 33%;
         margin-top: 74px;
+        padding-left: 0;
 
-        span{
-            grid-row: 1;
-            font-size: 14px;
-            font-weight: 450;
-            line-height: 17.7px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
 
         .offices-info{
             grid-row: 2 / 2;
             .city{
                 font-size: 32px;
-                font-weight: 700;
                 margin-bottom: 10px;
-            }
-            .phone, .email, .address, .social-media{
-                font-size: 16px;
-                font-weight: 450;
-                line-height: 24.4px;
-            }
-
-            .phone, .social-media{
-                margin-bottom: 5px;
-            }
-
-            .email{
-                margin-bottom: 24px;
-            }
-
-            .address{
-                margin-bottom: 47px;
             }
         }
 
