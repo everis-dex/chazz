@@ -1,37 +1,45 @@
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
 
-const Media = ({ data, style = {}, id }) => {
+const supportedVideoTags = ["mp4", "webm", "ogg"];
+const supportedImageTags = ["jpg", "jpeg", "gif", "png", "apng", "svg", "bmp"];
+
+const Media = ({ data, style = {}, alt }) => {
+  const { width, height } = style;
+  const extension = data
+    .substring(data.lastIndexOf(".") + 1)
+    .toLowerCase()
+    .replace("\r", "");
+
   return (
     <>
       {data && (
         <>
-          {data instanceof Blob ? (
+          {supportedVideoTags.includes(extension) && (
             <video
               className={style}
-              width="auto"
-              height="auto"
+              width={width}
+              height={height}
+              controls
               onError={(error) => console.error(error)}
               muted={true}
               loop={false}
-              src={URL.createObjectURL(data)}
+              src={data}
               type="video/mp4"
             >
               Video not supported.
             </video>
-          ) : (
-            <>
-              {typeof data === "object" ? (
-                <Lottie
-                  id={id}
-                  className={style}
-                  animationData={data}
-                  loop={true}
-                  autoplay={true}
-                />
-              ) : (
-                <img id={id} className={style} src={data} alt="" />
-              )}
-            </>
+          )}
+          {supportedImageTags.includes(extension) && (
+            <img className={style} src={data} alt={alt} />
+          )}
+          {extension === "json" && (
+            <></>
+            // <Lottie
+            //   className={style}
+            //   animationData={data}
+            //   loop={true}
+            //   autoplay={true}
+            // />
           )}
         </>
       )}
