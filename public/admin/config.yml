@@ -15,7 +15,7 @@ collections:
     label: Project # Used in the UI
     folder: content/projects # Where the documents are stored, relative to the repo root
     create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
+    slug: "{{year}}-{{month}}-{{day}}--{{title}}" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
     fields: # Fields for each document
       - { label: Publish Date, name: date, widget: datetime } # For widgets, see https://www.netlifycms.org/docs/widgets/
       - { label: Image, name: image, widget: image }
@@ -36,6 +36,7 @@ collections:
   - name: partner
     label: Partner
     folder: content/partners
+    slug: "{{sort}}--{{partner}}"
     create: true
     fields:
       - { label: Partner, name: partner, widget: string }
@@ -56,6 +57,7 @@ collections:
   - name: category
     label: Category
     folder: content/categories
+    slug: "{{year}}-{{month}}-{{day}}--{{title}}"
     create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
@@ -70,6 +72,7 @@ collections:
   - name: office
     label: Office
     folder: content/offices
+    slug: "{{year}}-{{month}}-{{day}}--{{title}}"
     create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
@@ -77,3 +80,15 @@ collections:
       - { label: Phone, name: phone, widget: string }
       - { label: Email, name: email, widget: string }
       - { label: Address, name: address, widget: string }
+
+  ##############################
+  #         Studio
+  ##############################
+
+  - name: studio
+    label: Studio
+    folder: content/studios
+    create: true
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: City, name: city, widget: string }
