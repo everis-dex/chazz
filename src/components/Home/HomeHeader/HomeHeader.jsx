@@ -15,7 +15,7 @@ const Header = () => {
       <div className="chazz-header">
         <div className="velo">
           <div>
-            <img src="./Logo_Chazz.png" alt="logo" className="chazz-logo" />
+            <img src="Chazz_Logo.svg" alt="logo" className="chazz-logo" />
           </div>
           <div className="nav">
             <ul>
@@ -75,9 +75,8 @@ const Header = () => {
       <div className="chazz-cookies">
         <p>
           <strong>We use cookies to improve your browsing experience. </strong>
-          If you want to know more, read more in our <a>
-            Privacy Policy
-          </a> and <a>Cookie Policy</a>.
+          If you want to know more, read more in our
+          <a href="/#">Privacy Policy</a> and <a href="/#">Cookie Policy</a>.
         </p>
         <button>Allow cookies</button>
       </div>
