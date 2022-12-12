@@ -10,12 +10,55 @@
         background-color: var(--black);
         color: var(--white);
         display: grid;
-        grid-template-columns: repeat(2, 30%);
+        grid-template-columns: 30% 70%;
 
         h2{
             color: #FFAFC4;
             padding: 105px 132px 0 48px;
+            grid-row: 1 / 6;
             
         }
+    }
+
+    .offices{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        margin-top: 74px;
+
+        span{
+            grid-row: 1;
+            font-size: 14px;
+            font-weight: 450;
+            line-height: 17.7px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .offices-info{
+            grid-row: 2 / 2;
+            .city{
+                font-size: 32px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            .phone, .email, .address{
+                font-size: 16px;
+                font-weight: 450;
+                line-height: 24.4px;
+            }
+
+            .phone{
+                margin-bottom: 5px;
+            }
+
+            .email{
+                margin-bottom: 24px;
+            }
+
+            .address{
+                margin-bottom: 47px;
+            }
+        }
+
     }
 }
