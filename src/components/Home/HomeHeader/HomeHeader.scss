@@ -30,6 +30,10 @@
 
   .nav {
     display: none;
+
+    a:hover{
+        color: var(--black);
+    }
   }
 
 
@@ -49,16 +53,62 @@
         background-color: var(--black);
     }
 
-    .burger-button{
-        background: none;
-        border: none;
+    input#open-close { 
+        visibility:hidden;
+        position: absolute;
+        top: -9999px;
+    }
+    
+    .toggle-button {
+        display:block;
+        width:26px;
+        height:26px;
+        position:relative;
         cursor: pointer;
+        box-sizing: border-box;
     }
 
-    .burger-svg{
-        fill: var(--white);
-        width: 26px;
-        height: 26px;
+    .toggle-button:before, .toggle-button:after {
+        position:absolute;
+        display:block;
+        content:" ";
+        width: 100%;               
+        box-sizing: border-box;
+        // left: calc(100% / 4);
+        transition: all 0.2s ease-out;
+    }
+
+    .toggle-button:before {
+        top: calc(100% / 3);
+        border-radius: 100px;
+        background-color:var(--white);
+        border-top:2px solid var(--white);
+        background-color: transparent;
+    }
+
+    .toggle-button:after {
+        border-radius: 100px;
+        background-color:var(--white);
+        border-top:2px solid var(--white);
+        bottom:calc(100% / 4);
+        width: 65%;
+        right: 0;
+    }
+
+    input#open-close:checked + .toggle-button:before, input#open-close:checked + .toggle-button:after {
+        top:calc(100% / 2);
+        height:1px;
+        border-bottom:0;
+    }
+
+    input#open-close:checked + .toggle-button:before {
+        transform: rotate(45deg);
+        width: 100%; 
+    }
+
+    input#open-close:checked + .toggle-button:after {
+        transform: rotate(-45deg);
+        width: 100%;
     }
 
     .burger-nav{
