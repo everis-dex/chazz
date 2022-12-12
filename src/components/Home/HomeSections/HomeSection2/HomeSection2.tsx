@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import ChazzCarousel from "../../../shared/ChazzCarousel/ChazzCarousel";
 
+// import { Project } from "../../../../interfaces/interfaces";
+
 const HomeSection2 = () => {
   return (
     <Container id="HomeSection2">

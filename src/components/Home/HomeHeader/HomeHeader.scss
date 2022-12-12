@@ -18,10 +18,12 @@
   }
 
   .chazz-logo {
-    width: 157px;
-    height: 26px;
+    width: 137px;
     display: block;
     float: left;
+    position: relative;
+    left: 4%;
+    top: 30px;
   }
 
   .nav {
@@ -31,7 +33,7 @@
 
 .chazz-title {
   color: var(--white);
-  width: 300px;
+  width: 250px;
   position: absolute;
   z-index: 9;
   top: 208px;
@@ -41,67 +43,71 @@
 
   h1 {
     margin-bottom: 0;
+    font-size: 48px;
   }
 
   h4 {
     margin-top: 12px;
-    width: 250px;
+    width: 245px;
   }
 }
 
 .chazz-cookies {
-    background-color: var(--white);
-    height: 33%;
-    z-index: 10;
-    position: absolute;
-    width: 90%; 
-    left: 5%; 
-    bottom: 3%;
-    padding: 16px;
+  // TO DO DISPLAY
+  display: none;
+  background-color: var(--white);
+  height: 33%;
+  z-index: 10;
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  bottom: 3%;
+  padding: 16px;
 
   p {
     margin: 0;
     // margin-top: 12px;
   }
 
-    button {
-        padding: 3% 29% 3% 29%;
-        margin-top: 13px;
-        color: #FFAFC4;
-        font-weight: 700;
-        font-size: 19px;
-        background-color: var(--black);
+  button {
+    padding: 3% 29% 3% 29%;
+    margin-top: 13px;
+    color: #ffafc4;
+    font-weight: 700;
+    font-size: 19px;
+    background-color: var(--black);
 
-        &:hover {
-            cursor: pointer;
-        }
+    &:hover {
+      cursor: pointer;
     }
+  }
 }
 
 // MEDIA QUERIES
 
 // xxs
 @media (width: 320px) {
-    .chazz-cookies {
-        left: 4%;
-        // height: 25%;
-        
-        button {
-            padding: 1% 25% 1% 25%;
-            margin-top: 22px;
-            
-        }
+  .chazz-cookies {
+    display: none;
+    left: 4%;
+    // height: 25%;
+
+    button {
+      padding: 1% 25% 1% 25%;
+      margin-top: 22px;
     }
+  }
 }
 
 @media (min-width: 425px) {
-    .chazz-cookies {
-        // top: -14rem;
-        button {
-            padding: 3% 31% 3% 31%;
-            margin-top: 23px;
-        }
+  .chazz-cookies {
+    display: none;
+    // top: -14rem;
+    button {
+      padding: 3% 31% 3% 31%;
+      margin-top: 23px;
     }
+  }
 }
 
 //////////////////////
@@ -110,137 +116,171 @@
 }
 
 @media (min-width: 768px) {
-
-    .chazz-header{
-        background-position: 30% -100px;
-        .nav {
-            margin-top: 1.5%;
-            display: flex;
-            float: right;
-            padding-left: 0;
-        }
-        .nav ul {
-            display: flex;
-        }
-
-        .nav ul li {
-            list-style-type: none;
-            margin-right: 30px;
-        }
-
-        .nav ul li a {
-            text-decoration: none;
-            color: var(--white);
-        
-            &:hover {
-                text-decoration: none;
-            }
-        }
+  .chazz-header {
+    .chazz-logo {
+      width: 18%;
+      left: 3%;
+      top: 30px;
     }
 
-    .chazz-title {
-        left: 44px;
+    background-position: 30% -100px;
+    .nav {
+      font-size: 1rem;
+      margin-top: 3.5%;
+      display: flex;
+      float: right;
+      padding-left: 0;
+      margin-right: 1%;
     }
-    
-    .chazz-cookies {
-        display: flex;
-        align-items: center;
-        height: 64px;
-        padding: 5px;
-        width: 95%;
-        bottom: 2%;
-        left: 15px;
-
-        p {
-            margin-top: 0;
-            width: 80%;
-            position: relative;
-            left: 15px;
-        }
-
-        button {
-            padding: 1% 2% 1% 2%;
-            font-size: 16px;
-            margin-top: 0;
-        }
-
+    .nav ul {
+      display: flex;
     }
-        
+
+    .nav ul li {
+      list-style-type: none;
+      margin-right: 30px;
+    }
+
+    .nav ul li a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: none;
+        color: var(--black);
+      }
+    }
+  }
+
+  .chazz-title {
+    width: 45%;
+    left: 3%;
+    top: 35%;
+
+    h1 {
+      font-size: 4rem;
+    }
+
+    h4 {
+      width: max-content;
+      font-size: 22px;
+    }
+  }
+
+  .chazz-cookies {
+    display: none;
+    // display: flex;   TO-DO
+    align-items: center;
+    height: 64px;
+    padding: 5px;
+    width: 95%;
+    bottom: 2%;
+    left: 15px;
+
+    p {
+      margin-top: 0;
+      width: 80%;
+      position: relative;
+      left: 15px;
+    }
+
+    button {
+      padding: 1% 2% 1% 2%;
+      font-size: 16px;
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .chazz-header {
+    .nav {
+      margin-top: 2.5%;
+      font-size: 19px;
+    }
+  }
 }
 
 @media (min-width: 1280px) {
-    .chazz-header {
-        background-size: 1280px;
-        height: 100vh;
-        background-position: 0 0%;
+  .chazz-header {
+    background-size: 1280px;
+    height: 100vh;
+    background-position: 0 0%;
 
-        // .nav {
-        //     // margin-left: 0;
-        // }
+    // .nav {
+    //     // margin-left: 0;
+    // }
 
-        .nav ul li {
-            margin-right: 36px;
-        }
-    
+    .chazz-logo {
+      width: 15%;
+      top: 40px;
     }
 
-    .chazz-title {
-        width: 500px;
-        top: 190px;
-        left: 43px;
-
-        h1 {
-            font-size: 4rem;
-            position: relative;
-            top: -2rem;
-        }
-
-        h4 {
-            margin-top: 4px;
-        }
+    .nav ul li {
+      margin-right: 36px;
     }
-
-    .chazz-cookies {
-        width: 97%;
-        p {
-            width: 86%;
-        }
-    }
-
   }
 
+  .chazz-title {
+    width: 500px;
+    top: 40%;
+    left: 43px;
+
+    h1 {
+      font-size: 6rem;
+      position: relative;
+      top: -2rem;
+    }
+
+    h4 {
+      margin-top: 4px;
+      font-size: 32px;
+    }
+  }
+
+  .chazz-cookies {
+    width: 97%;
+    p {
+      width: 86%;
+    }
+    button {
+      padding: 5px 20px 5px 20px;
+    }
+  }
+}
 
 @media (min-width: 1440px) {
-    .chazz-header {
-        background-size: cover;
-        background-position: 0 0;
-    }
+  .chazz-header {
+    background-size: cover;
+    background-position: 0 0;
+  }
 
-    .chazz-title {
-        top: 179px;
-        left: 85px;
-    }
+  .chazz-title {
+    top: 40%;
+    // left: 85px;
+  }
 }
 
 @media (min-width: 1920px) {
-    .chazz-header {
-        background-size: cover;
-        background-position: 0 -95px;
-    }
+  .chazz-header {
+    background-size: cover;
+    background-position: 0 -95px;
+  }
 
-    .chazz-title {
-        top: 475px;
-        left: 115px;
-    }
+  .chazz-title {
+    top: 50%;
+    left: 3%;
+  }
 
-    .chazz-cookies {
-        width: 98%;
-        bottom: 2%;
-        p {
-            width: 92%;
-        }
-        button {
-            padding: 0.5% 1% 0.5% 1%;
-        }
+  .chazz-cookies {
+    width: 98%;
+    bottom: 2%;
+    p {
+      width: 92%;
     }
+    button {
+      padding: 0.5% 1% 0.5% 1%;
+    }
+  }
 }

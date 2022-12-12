@@ -14,7 +14,7 @@ const Header = () => {
           <div className="nav">
             <ul>
               <li>
-                <a href="#/HomeSection1">We are</a>
+                <a href="/weare">We are</a>
                 {/* Si desde el menú vamos al anchor #weare */}
               </li>
               <li>
@@ -22,11 +22,11 @@ const Header = () => {
                 {/* Si desde el menú vamos al anchor #services */}
               </li>
               <li>
-                <a href="#/HomeSection2">Work</a>
+                <a href="/work">Work</a>
                 {/* Si desde el menú vamos al anchor #work */}
               </li>
               <li>
-                <Link to="thoughts">Thoughts</Link>
+                <Link to="/thoughts">Thoughts</Link>
                 {/* Si desde el menú vamos al anchor #thoughts */}
               </li>
             </ul>
