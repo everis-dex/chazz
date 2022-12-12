@@ -1,0 +1,33 @@
+name: Merge Main into develop
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  main:
+    name: Create PR Main to Develop
+    runs-on: ubuntu-latest
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v3
+
+      # https://github.com/marketplace/actions/github-pull-request-action
+      - name: create pull request
+        id: open-pr
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: develop
+          pr_title: "[Automated] Merge ${{ github.event.repository.default_branch }} into develop"
+          pr_body: "Automated Pull Request"
+          pr_reviewer: "adri-basterra"
+          pr_assignee: "adri-basterra"
+
+      # https://github.com/marketplace/actions/enable-pull-request-automerge
+      - name: enable automerge
+        if: steps.open-pr.outputs.pr_number != ''
+        uses: peter-evans/enable-pull-request-automerge@v2
+        with:
+          pull-request-number: ${{ steps.open-pr.outputs.pr_number }}
+          merge-method: merge

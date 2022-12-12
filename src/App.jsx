@@ -1,10 +1,10 @@
 import React from "react";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";import Home from "./components/Home/Home";
-import WeAre from "./components/Sections/WeAre/WeAre";
-import OurServices from "./components/Sections/OurServices/OurServices";
-import OurWork from "./components/Sections/OurWork/OurWork";
-import Thoughts from "./components/Sections/Thoughts/Thoughts";
+import WeAre from "./components/Pages/WeAre/WeAre";
+import OurServices from "./components/Pages/OurServices/OurServices";
+import OurWork from "./components/Pages/OurWork/OurWork";
+import Thoughts from "./components/Pages/Thoughts/Thoughts";
 
 
 
