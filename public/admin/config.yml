@@ -72,7 +72,7 @@ collections:
   - name: office
     label: Office
     folder: content/offices
-    slug: "{{year}}-{{month}}-{{day}}--{{title}}"
+    slug: "of-{{year}}-{{month}}-{{day}}--{{city}}"
     create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
@@ -88,6 +88,7 @@ collections:
   - name: studio
     label: Studio
     folder: content/studios
+    slug: "st-{{year}}-{{month}}-{{day}}--{{city}}"
     create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
