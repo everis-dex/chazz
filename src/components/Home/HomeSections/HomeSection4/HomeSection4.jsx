@@ -29,23 +29,27 @@ const HomeSection4 = () => {
           {offices.map((office, index) => (
             <div className="offices-info" key={index}>
               <p className="city">{office.city}</p>
-              <p className="phone">{office.phone}</p>
-              <p className="email">{office.email}</p>
-              <p className="address">{office.address}</p>
             </div>
           ))}
         </div>
         <hr></hr>
         <div className="offices">
           <span>GET IN TOUCH</span>
-          {offices.map((office, index) => (
-            <div className="offices-info" key={index}>
-              <p className="city">{office.city}</p>
-              <p className="phone">{office.phone}</p>
-              <p className="email">{office.email}</p>
-              <p className="address">{office.address}</p>
-            </div>
-          ))}
+          <div className="offices-info">
+            <p>General inquiries</p>
+            <p className="email">info@chazzdesign.com</p>
+          </div>
+          <div className="offices-info">
+            <p>Be part of the team</p>
+            <p className="email">info@chazzdesign.com</p>
+          </div>
+          <div className="offices-info">
+            <p className="social-media">Social</p>
+            <p className="social-media">Linkedin</p>
+            <p className="social-media">Instagram</p>
+            <p className="social-media">Medium</p>
+            <p className="social-media">Newsletter</p>
+          </div>
         </div>
       </div>
     </>
