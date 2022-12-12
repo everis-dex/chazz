@@ -12,6 +12,9 @@
         margin-bottom: 0;
         
     }
+    hr{
+        margin: 16px 16px 58px 16px;
+    }
 }
 
 .offices{
@@ -22,10 +25,11 @@
         font-weight: 450;
         line-height: 17.7px;
         text-transform: uppercase;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     .offices-info{
+        margin-bottom: 49px;
         .city{
             font-size: 24px;
             font-weight: 700;
@@ -35,34 +39,34 @@
             font-size: 16px;
             font-weight: 450;
             line-height: 24.4px;
-        }
-
-        .phone, .social-media{
             margin-bottom: 5px;
         }
 
-        .email{
-            margin-bottom: 24px;
+        .adress{
+            margin-bottom: 0;
         }
 
-        .address{
-            margin-bottom: 47px;
-        }
     }
 
 }
+
+
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
     .offices-section{
         display: grid;
         grid-template-columns: 30% 70%;
-        padding-bottom: 74px;
+        padding-bottom: 10px;
 
         h2{
             padding: 105px 132px 0 48px;
             grid-row: 1 / 6;
             
+        }
+
+        hr{
+            margin: 16px 0 ;
         }
     }
 
@@ -72,12 +76,24 @@
         margin-top: 74px;
         padding-left: 0;
 
+        span{
+            margin-bottom: 15px;
+        }
+
 
         .offices-info{
             grid-row: 2 / 2;
             .city{
                 font-size: 32px;
                 margin-bottom: 10px;
+            }
+
+            .phone, .social-media{
+                margin-bottom: 5px;
+            }
+    
+            .email{
+                margin-bottom: 24px;
             }
         }
 
