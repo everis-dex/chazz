@@ -4,7 +4,10 @@ import "./Section1.scss";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import categories from "./../../../../content/categories.json";
+import categories from "../../../../content/categories.json";
+
+import { Category } from "../../../../interfaces/interfaces";
+
 
 const HomeSection1 = () => {
   return (
@@ -20,7 +23,7 @@ const HomeSection1 = () => {
           </Col>
 
           <Col className="section1-sections" xs={12} sm={6}>
-            {categories.map((category, index) => (
+            {categories.map((category: Category, index) => (
               <div key={index}>
                 <h2>{category.title}</h2>
                 <p>{category.section}</p>
