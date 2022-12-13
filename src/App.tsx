@@ -1,11 +1,11 @@
 import React from "react";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./components/Home/Home";
-import OurServices from "./components/Pages/OurServices/OurServices";
-import OurWork from "./components/Pages/OurWork/OurWork";
-import Thoughts from "./components/Pages/Thoughts/Thoughts";
-import WeAre from "./components/Pages/WeAre/WeAre";
+
+import { Home } from "./components/Home/Home";
+import { WeAre, OurServices, OurWork, Thoughts } from "./components/Pages";
+
+
 
 export const App = () => {
   return (
@@ -21,5 +21,3 @@ export const App = () => {
     </Router>
   );
 };
-
-export default App;

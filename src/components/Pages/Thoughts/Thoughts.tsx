@@ -1,7 +1,9 @@
 import React from "react";
 
-const Thoughts = () => {
+// import { Thoughts } from "../../../interfaces/interfaces";
+
+
+
+export const Thoughts = () => {
   return <>Thoughts</>;
 };
-
-export default Thoughts;

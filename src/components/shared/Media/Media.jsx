@@ -4,7 +4,9 @@ import Lottie from "lottie-react";
 const supportedVideoTags = ["mp4", "webm", "ogg"];
 const supportedImageTags = ["jpg", "jpeg", "gif", "png", "apng", "svg", "bmp"];
 
-const Media = ({ src, style = {}, alt }) => {
+
+
+export const Media = ({ src, style = {}, alt }) => {
   const [lottie, setLottie] = useState(null);
   const { width, height } = style;
 
@@ -51,5 +53,3 @@ const Media = ({ src, style = {}, alt }) => {
     </>
   );
 };
-
-export default Media;

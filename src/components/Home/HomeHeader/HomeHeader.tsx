@@ -3,8 +3,9 @@ import React from "react";
 import "./HomeHeader.scss";
 import Nav from "../../Nav/Nav";
 
-const Header = () => {
 
+
+export const HomeHeader = () => {
   return (
     <>
       <div className="chazz-header">
@@ -28,5 +29,3 @@ const Header = () => {
     </>
   );
 };
-
-export default Header;
