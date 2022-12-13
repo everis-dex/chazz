@@ -1,0 +1,19 @@
+.carouselPagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: black;
+  height: 10px;
+  width: 10px;
+  margin-right: 6px;
+  opacity: 0.5;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ff5887;
+}

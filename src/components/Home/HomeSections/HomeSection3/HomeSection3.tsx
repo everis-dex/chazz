@@ -1,10 +1,13 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-// import ChazzCarousel from "../../../shared/ChazzCarousel/ChazzCarousel";
-import "./Section3.scss";
+
+import { Partner } from "../../../../interfaces/interfaces";
 import partners from "../../../../content/partners.json";
 
-const HomeSection3 = () => {
+import "./Section3.scss";
+
+
+
+export const HomeSection3 = () => {
   return (
     <>
       <div className="partner-section">
@@ -20,5 +23,3 @@ const HomeSection3 = () => {
     </>
   );
 };
-
-export default HomeSection3;
