@@ -36,29 +36,29 @@ const Header = () => {
           <div className={`burger-menu ${menu ? "active" : ""}`}>
             <input id="open-close" name="open-close" type="checkbox" value="" />
             <label
-              for="open-close"
-              class="toggle-button"
+              htmlFor="open-close"
+              className="toggle-button"
               onClick={toggleMenu}
             ></label>
             <nav className={`burger-nav ${menu ? "active" : ""}`}>
               <ul className="burger-ul">
                 <li className="burger-li">
-                  <a className="burger-a" href="#">
+                  <a className="burger-a" href="/#">
                     We are
                   </a>
                 </li>
                 <li className="burger-li">
-                  <a className="burger-a" href="#">
+                  <a className="burger-a" href="/#">
                     Services
                   </a>
                 </li>
                 <li className="burger-li">
-                  <a className="burger-a" href="#">
+                  <a className="burger-a" href="/#">
                     Work
                   </a>
                 </li>
                 <li className="burger-li">
-                  <a className="burger-a" href="#">
+                  <a className="burger-a" href="/#">
                     Thoughtss
                   </a>
                 </li>
