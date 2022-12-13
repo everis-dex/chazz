@@ -10,14 +10,11 @@ import "swiper/css/pagination";
 
 import "./carouselStyles.css";
 
-import { Project } from '../../../../../interfaces/interfaces';
+import { Project } from "../../../../../interfaces/interfaces";
 import projects from "./../../../../../content/projects.json";
 
-
-
 export const ChazzCarousel = () => {
-
-  const slides: Project[] = [...projects]
+  const slides: Project[] = [...projects];
 
   return (
     <>
@@ -54,7 +51,6 @@ export const ChazzCarousel = () => {
             }}
           >
             {slides.map((slide: Project, index: number) => {
-
               return (
                 <SwiperSlide key={index}>
                   <ChazzSlide {...slide} />

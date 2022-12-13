@@ -1,11 +1,9 @@
 import React from "react";
 
-import { Partner } from "../../../../interfaces/interfaces";
+// import { Partner } from "../../../../interfaces/interfaces";
 import partners from "../../../../content/partners.json";
 
 import "./Section3.scss";
-
-
 
 export const HomeSection3 = () => {
   return (

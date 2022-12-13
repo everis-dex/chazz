@@ -1,101 +1,129 @@
 // MOBILE FIRST
 
-.offices-section{
-    background-color: var(--black);
-    color: var(--white);
-    grid-template-columns: 100%;
-    padding-bottom: 62px;
+.offices-section {
+  background-color: var(--black);
+  color: var(--white);
+  grid-template-columns: 100%;
+  padding-bottom: 62px;
 
-    h2{
-        color: #FFAFC4;
-        padding: 74px 38px 114px 16px;
-        margin-bottom: 0;
-        
-    }
-    hr{
-        margin: 16px 16px 58px 16px;
-    }
+  h2 {
+    color: #ffafc4;
+    padding: 74px 38px 114px 16px;
+    margin-bottom: 0;
+  }
+  hr {
+    margin: 16px 16px 58px 16px;
+  }
 }
 
-.offices{
-    padding-left: 16px;
+.offices {
+  padding-left: 16px;
 
-    span{
-        font-size: 14px;
-        font-weight: 450;
-        line-height: 17.7px;
-        text-transform: uppercase;
-        margin-bottom: 10px;
+  span {
+    font-size: 14px;
+    font-weight: 450;
+    line-height: 17.7px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .offices-info {
+    margin-bottom: 49px;
+    .city {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .phone,
+    .email,
+    .address,
+    .social-media {
+      font-size: 16px;
+      font-weight: 450;
+      line-height: 24.4px;
+      margin-bottom: 5px;
     }
 
-    .offices-info{
-        margin-bottom: 49px;
-        .city{
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .phone, .email, .address, .social-media{
-            font-size: 16px;
-            font-weight: 450;
-            line-height: 24.4px;
-            margin-bottom: 5px;
-        }
-
-        .adress{
-            margin-bottom: 0;
-        }
-
+    .adress {
+      margin-bottom: 0;
     }
-
+  }
 }
 
+.studios-container {
+  display: block;
+}
 
+.studios {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(3, minmax(60px, 1fr));
+  grid-template-rows: repeat(3, 50px);
+  height: 100%;
+
+  span {
+    font-size: 14px;
+    font-weight: 450;
+    line-height: 17.7px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .studios-info {
+    margin-bottom: 49px;
+    .city {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .adress {
+      margin-bottom: 0;
+    }
+  }
+}
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
-    .offices-section{
-        display: grid;
-        grid-template-columns: 30% 70%;
-        padding-bottom: 10px;
+  .offices-section {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding-bottom: 10px;
 
-        h2{
-            padding: 105px 132px 0 48px;
-            grid-row: 1 / 6;
-            
-        }
-
-        hr{
-            margin: 16px 0 ;
-        }
+    h2 {
+      padding: 105px 132px 0 48px;
+      grid-row: 1 / 6;
     }
 
-    .offices{
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
-        margin-top: 74px;
-        padding-left: 0;
-
-        span{
-            margin-bottom: 15px;
-        }
-
-
-        .offices-info{
-            grid-row: 2 / 2;
-            .city{
-                font-size: 32px;
-                margin-bottom: 10px;
-            }
-
-            .phone, .social-media{
-                margin-bottom: 5px;
-            }
-    
-            .email{
-                margin-bottom: 24px;
-            }
-        }
-
+    hr {
+      margin: 16px 0;
     }
+  }
+
+  .offices {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin-top: 74px;
+    padding-left: 0;
+
+    span {
+      margin-bottom: 15px;
+    }
+
+    .offices-info {
+      grid-row: 2 / 2;
+      .city {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      .phone,
+      .social-media {
+        margin-bottom: 5px;
+      }
+
+      .email {
+        margin-bottom: 24px;
+      }
+    }
+  }
 }

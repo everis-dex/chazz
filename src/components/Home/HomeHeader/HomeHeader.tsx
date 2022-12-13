@@ -3,8 +3,6 @@ import React from "react";
 import "./HomeHeader.scss";
 import Nav from "../../Nav/Nav";
 
-
-
 export const HomeHeader = () => {
   return (
     <>

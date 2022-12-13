@@ -1,11 +1,8 @@
 import React from "react";
 
-import { Project } from '../../../../../interfaces/interfaces';
-
-
+import { Project } from "../../../../../interfaces/interfaces";
 
 export const ChazzSlide = (props: Project) => {
-
   return (
     <>
       <div>

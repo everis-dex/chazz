@@ -1,16 +1,16 @@
 import React from "react";
+
+import offices from "../../../../content/offices.json";
+import studios from "../../../../content/studios.json";
+
 import "./Section4.scss";
 
-import offices from "./../../../../content/offices.json";
-
-const HomeSection4 = () => {
+export const HomeSection4 = () => {
   return (
     <>
       <div className="offices-section">
         <h2>
-          <strong>
-            We are part of NTT Data Company & Tangity Design Network
-          </strong>
+          <strong>We are part of NTT Data Company & Tangity Design Network</strong>
         </h2>
         <div className="offices">
           <span>CHAZZ OFFICES</span>
@@ -24,13 +24,15 @@ const HomeSection4 = () => {
           ))}
         </div>
         <hr></hr>
-        <div className="offices">
+        <div className="studios-container">
           <span>TANGITY STUDIOS</span>
-          {offices.map((office, index) => (
-            <div className="offices-info" key={index}>
-              <p className="city">{office.city}</p>
-            </div>
-          ))}
+          <div className="studios">
+            {studios.map((studio, index) => (
+              <div className="studios-info" key={index}>
+                <p className="city">{studio.city}</p>
+              </div>
+            ))}
+          </div>
         </div>
         <hr></hr>
         <div className="offices">
@@ -55,5 +57,3 @@ const HomeSection4 = () => {
     </>
   );
 };
-
-export default HomeSection4;
