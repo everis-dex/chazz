@@ -1,12 +1,16 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+
 import { Link } from "react-router-dom";
 
-import ChazzCarousel from "../../../shared/ChazzCarousel/ChazzCarousel";
+import { ChazzCarousel } from "./ChazzCarousel/ChazzCarousel";
+
+import { Container } from "react-bootstrap";
 
 // import { Project } from "../../../../interfaces/interfaces";
 
-const HomeSection2 = () => {
+
+
+export const HomeSection2 = () => {
   return (
     <Container id="HomeSection2">
       <ChazzCarousel />
@@ -14,5 +18,3 @@ const HomeSection2 = () => {
     </Container>
   );
 };
-
-export default HomeSection2;

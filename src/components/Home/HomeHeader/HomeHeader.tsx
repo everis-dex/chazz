@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 
 import "./HomeHeader.scss";
 
-const Header = () => {
+
+
+export const HomeHeader = () => {
   return (
     <>
       <div className="chazz-header">
@@ -49,5 +51,3 @@ const Header = () => {
     </>
   );
 };
-
-export default Header;
