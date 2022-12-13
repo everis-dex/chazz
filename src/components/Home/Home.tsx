@@ -6,7 +6,6 @@ import HomeSection2 from "./HomeSections/HomeSection2/HomeSection2";
 import HomeSection3 from "./HomeSections/HomeSection3/HomeSection3";
 import AppFooter from "../shared/AppFooter/AppFooter";
 
-
 const Home = () => {
   return (
     <>
