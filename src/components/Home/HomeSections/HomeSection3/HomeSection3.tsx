@@ -5,8 +5,6 @@ import partners from "../../../../content/partners.json";
 
 import "./Section3.scss";
 
-
-
 export const HomeSection3 = () => {
   return (
     <>

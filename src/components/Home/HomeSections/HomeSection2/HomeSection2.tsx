@@ -8,8 +8,6 @@ import { Container } from "react-bootstrap";
 
 // import { Project } from "../../../../interfaces/interfaces";
 
-
-
 export const HomeSection2 = () => {
   return (
     <Container id="HomeSection2">

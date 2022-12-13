@@ -7,6 +7,4 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "typeface-raleway";
 
-
-
 ReactDOM.render(<App />, document.getElementById("root"));

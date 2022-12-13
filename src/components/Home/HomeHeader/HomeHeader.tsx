@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 import "./HomeHeader.scss";
 
-
-
 export const HomeHeader = () => {
   return (
     <>

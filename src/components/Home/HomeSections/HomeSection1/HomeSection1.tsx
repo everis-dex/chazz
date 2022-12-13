@@ -6,8 +6,6 @@ import categories from "../../../../content/categories.json";
 import "./Section1.scss";
 import { Col, Row, Container } from "react-bootstrap";
 
-
-
 export const HomeSection1 = () => {
   return (
     <>
