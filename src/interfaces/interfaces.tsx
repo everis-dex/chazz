@@ -33,3 +33,9 @@ export interface Studio {
   id: number;
   city: string;
 }
+
+export interface Slide {
+  title: string;
+  subtitle: string;
+  image: string;
+}

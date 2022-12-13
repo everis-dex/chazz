@@ -1,12 +1,14 @@
 import React from "react";
-import "./Section1.scss";
-
-import { Col, Row, Container } from "react-bootstrap";
-import categories from "../../../../content/categories.json";
 
 import { Category } from "../../../../interfaces/interfaces";
+import categories from "../../../../content/categories.json";
 
-const HomeSection1 = () => {
+import "./Section1.scss";
+import { Col, Row, Container } from "react-bootstrap";
+
+
+
+export const HomeSection1 = () => {
   return (
     <>
       <Container id="HomeSection1">
@@ -35,5 +37,3 @@ const HomeSection1 = () => {
     </>
   );
 };
-
-export default HomeSection1;
