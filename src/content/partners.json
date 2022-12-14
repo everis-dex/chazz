@@ -1,17 +1,17 @@
 [
   { "id": 1, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "Endesa\r" },
-  { "id": 2, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "Renfe\r" },
-  { "id": 3, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "Banco Santander\r" },
-  { "id": 4, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "Leroy Merlin\r" },
+  { "id": 2, "logo": "\"uploads/logo_renfe.svg\"\r", "partner": "Renfe\r" },
+  { "id": 3, "logo": "\"uploads/logo_santander.svg\"\r", "partner": "Banco Santander\r" },
+  { "id": 4, "logo": "\"uploads/logo_leroy.svg\"\r", "partner": "Leroy Merlin\r" },
   { "id": 5, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "UniLever\r" },
   { "id": 6, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "Gobierno de España\r" },
-  { "id": 7, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "Edp\r" },
+  { "id": 7, "logo": "\"uploads/logo_edp.svg\"\r", "partner": "Edp\r" },
   { "id": 8, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "Loewe\r" },
   { "id": 9, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "Generalitat de Catalunya\r" },
   { "id": 10, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "Seat\r" },
-  { "id": 11, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "Correos\r" },
+  { "id": 11, "logo": "\"uploads/logo_correos.svg\"\r", "partner": "Correos\r" },
   { "id": 12, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "Buff\r" },
   { "id": 13, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "Caixabank\r" },
-  { "id": 14, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "Vidacaixa\r" },
-  { "id": 15, "logo": "\"uploads/web_doco_mock_1-1.png\"\r", "partner": "Zurich Seguros\r" }
+  { "id": 14, "logo": "\"uploads/logo_vidaCaixa.svg\"\r", "partner": "Vidacaixa\r" },
+  { "id": 15, "logo": "\"uploads/logo_zurich.svg\"\r", "partner": "Zurich Seguros\r" }
 ]
