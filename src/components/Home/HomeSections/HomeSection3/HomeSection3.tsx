@@ -1,11 +1,13 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-import "./Section3.scss";
-import partners from "../../../../content/partners.json";
 
 import { Partner } from "../../../../interfaces/interfaces";
+import partners from "../../../../content/partners.json";
 
-const HomeSection3 = () => {
+import "./Section3.scss";
+
+
+
+export const HomeSection3 = () => {
   return (
     <>
       <h3>Partners in crime</h3>
@@ -19,5 +21,3 @@ const HomeSection3 = () => {
     </>
   );
 };
-
-export default HomeSection3;

@@ -1,7 +1,9 @@
 import React from "react";
 
-const OurServices = () => {
+// import { Services } from "../../../interfaces/interfaces";
+
+
+
+export const OurServices = () => {
   return <>Our Services</>;
 };
-
-export default OurServices;
