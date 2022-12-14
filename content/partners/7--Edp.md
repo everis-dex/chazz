@@ -1,5 +1,5 @@
 ---
 partner: Edp
-logo: "uploads/web_doco_mock_1-1.png"
+logo: "uploads/logo_edp.svg"
 sort: 7
 ---

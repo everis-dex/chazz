@@ -1,5 +1,5 @@
 ---
 partner: Correos
-logo: "uploads/web_doco_mock_1-1.png"
+logo: "uploads/logo_correos.svg"
 sort: 11
 ---
