@@ -10,18 +10,18 @@ import "./HomeSection3.scss";
 export const HomeSection3 = () => {
   return (
     <>
-    <div className="bg-section">
-      <Container id="HomeSection3">
-        <h3>Partners in crime</h3>
-        <div className="partner-container">
-          {partners.map((partner: Partner, index) => (
-            <p className="partner" key={index}>
-              {partner.partner}
-            </p>
-          ))}
-        </div>
-      </Container>
-    </div>
+      <div className="bg-section">
+        <Container id="HomeSection3">
+          <h3>Partners in crime</h3>
+          <div className="partner-container">
+            {partners.map((partner: Partner, index) => (
+              <p className="partner" key={index}>
+                {partner.partner}
+              </p>
+            ))}
+          </div>
+        </Container>
+      </div>
     </>
   );
 };
