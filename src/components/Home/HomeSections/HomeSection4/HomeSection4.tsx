@@ -34,7 +34,7 @@ export const HomeSection4 = () => {
             ))}
             <p className="email">tangity@nttdata.com</p>
           </div>
-            <p className="email">tangity@nttdata.com</p>
+          <p className="email">tangity@nttdata.com</p>
         </div>
         <hr></hr>
         <div className="in-touch-container">

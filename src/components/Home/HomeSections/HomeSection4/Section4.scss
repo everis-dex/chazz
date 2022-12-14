@@ -16,8 +16,10 @@
   }
 }
 
-.offices-container, .studios-container, .in-touch-container {
-padding-left: 16px;
+.offices-container,
+.studios-container,
+.in-touch-container {
+  padding-left: 16px;
 
   span {
     font-size: 14px;
@@ -26,36 +28,35 @@ padding-left: 16px;
     text-transform: uppercase;
     margin-bottom: 10px;
   }
-
 }
 
-  .offices-info, .studios-grid, .in-touch-info {
-    margin-bottom: 42px;
-    margin-top: 10px;
-    .city {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .phone,
-    .email,
-    .address,
-    .social-media {
-      font-size: 16px;
-      font-weight: 450;
-      line-height: 24.4px;
-      margin-bottom: 5px;
-    }
-
-    .adress {
-      margin-bottom: 0;
-    }
+.offices-info,
+.studios-grid,
+.in-touch-info {
+  margin-bottom: 42px;
+  margin-top: 10px;
+  .city {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .phone,
+  .email,
+  .address,
+  .social-media {
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 24.4px;
+    margin-bottom: 5px;
   }
 
+  .adress {
+    margin-bottom: 0;
+  }
+}
 
 .studios-container {
   display: block;
-
 
   .studios-grid {
     display: grid;
@@ -64,7 +65,7 @@ padding-left: 16px;
     grid-template-rows: repeat(4, 17%);
     height: 100%;
     margin-bottom: 0;
-  
+
     .studios-info {
       .city {
         font-size: 24px;
@@ -72,29 +73,27 @@ padding-left: 16px;
         margin-bottom: 8px;
       }
     }
-    .email{
+    .email {
       display: none;
     }
   }
 
-  .email{
+  .email {
     display: block;
     font-size: 16px;
     font-weight: 450;
   }
 }
 
-.in-touch-container{
-  .in-touch-info{
-    .in-touch-subtitle{
+.in-touch-container {
+  .in-touch-info {
+    .in-touch-subtitle {
       font-size: 16px;
       font-weight: 700;
       margin-bottom: 0;
     }
   }
 }
-
-
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
@@ -113,7 +112,8 @@ padding-left: 16px;
     }
   }
 
-  .offices-container, .studios-grid {
+  .offices-container,
+  .studios-grid {
     display: grid;
     grid-template-columns: 33% 33% 33%;
     margin-top: 74px;
@@ -137,47 +137,46 @@ padding-left: 16px;
     }
   }
 
-  .offices-container, .studios-container, .in-touch-container{
+  .offices-container,
+  .studios-container,
+  .in-touch-container {
     padding-left: 0;
 
     span {
-        margin-bottom: 15px;
-      }
-  
+      margin-bottom: 15px;
+    }
   }
 
-  .studios-container{
-    .studios-grid{
+  .studios-container {
+    .studios-grid {
       grid-template-rows: repeat(3, 20%);
       height: 100%;
       margin-top: 15px;
       margin-bottom: 0;
-      
-      .studios-info{
-       margin-bottom: 0;
-       
-       .city{
+
+      .studios-info {
         margin-bottom: 0;
-        font-size: 32px;
-       }
+
+        .city {
+          margin-bottom: 0;
+          font-size: 32px;
+        }
       }
-  
-      .email{
+
+      .email {
         display: block;
         margin-top: 36px;
       }
-  }
-  .email{
-    display: none;
-  }
+    }
+    .email {
+      display: none;
+    }
   }
 
-  .in-touch-container{
-    .in-touch-grid{
+  .in-touch-container {
+    .in-touch-grid {
       display: grid;
       grid-auto-flow: column;
     }
   }
-
 }
-
