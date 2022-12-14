@@ -8,9 +8,11 @@ export const ProjectCard = (data: Project) => {
   const style = { width: "100%", height: "auto" };
   const [openDropdown, setOpenDropdown] = useState<boolean>(true);
   const dropdownText = openDropdown ? "Less" : "More";
-
   const bodyParagraphs = data.body.replace("\r", "").split("\n");
-  console.log(bodyParagraphs);
+
+  const handleDropdown = () => {
+    setOpenDropdown(!openDropdown);
+  };
 
   return (
     <div className="project-container">
@@ -25,10 +27,13 @@ export const ProjectCard = (data: Project) => {
         </p>
       </div>
       <div className="project-dropdown">
-        <div className="dropdown">{dropdownText} information</div>
+        <div className="dropdown" onClick={handleDropdown}>
+          {dropdownText} information
+          <img id="arrow" className="arrow" src="/assets/dropdown_arrow.svg" alt="arrow" />
+        </div>
         <div className="body">
-          {bodyParagraphs.map((paragraph: string) => {
-            return paragraph !== "" ? <p>{paragraph}</p> : <></>;
+          {bodyParagraphs.map((paragraph: string, index: number) => {
+            return paragraph !== "" ? <p key={index}>{paragraph}</p> : "";
           })}
         </div>
       </div>
