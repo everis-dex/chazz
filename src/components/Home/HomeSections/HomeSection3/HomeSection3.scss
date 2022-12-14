@@ -1,5 +1,10 @@
 // MOBILE FIRST
 
+.bg-section {
+  background-color: var(--bgGray);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 .partner-container {
   display: grid;
   grid-template-columns: repeat(2, 50%);
