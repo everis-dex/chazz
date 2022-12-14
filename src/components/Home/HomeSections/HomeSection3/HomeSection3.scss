@@ -2,13 +2,13 @@
 
 .partner-section {
   background-color: var(--white);
-  padding: 64px 0px 50px 16px;
+  padding: 64px 0px 50px 0px;
 
   h3 {
     margin-bottom: 32px;
   }
 }
-.partners-container {
+.partner-container {
   display: grid;
   grid-template-columns: repeat(2, 50%);
   align-items: center;
@@ -31,13 +31,13 @@
 @media (min-width: 768px) {
   .partner-section {
     background-color: var(--bgGray);
-    padding: 98px 68px 82px 48px;
+    padding: 98px 0px 82px 0px;
 
     h3 {
       margin-bottom: 45px;
     }
   }
-  .partners-container {
+  .partner-container {
     grid-template-columns: repeat(5, 20%);
   }
   .parnter {
