@@ -1,6 +1,5 @@
-import React from "react";
-import { useState } from "react";
 import Lottie from "lottie-react";
+import React, { useState } from "react";
 
 const supportedVideoTags: Array<string> = ["mp4", "webm", "ogg"];
 const supportedImageTags: Array<string> = ["jpg", "jpeg", "gif", "png", "apng", "svg", "bmp"];

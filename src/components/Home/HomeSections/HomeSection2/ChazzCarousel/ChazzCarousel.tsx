@@ -1,7 +1,7 @@
 import React from "react";
-
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import { ChazzSlide } from "./ChazzSlide";
 
 // import "swiper/css/bundle";
