@@ -18,6 +18,8 @@
   </p>
 </div>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/326cff08-eb5a-4366-8976-6e714c3bab57/deploy-status)](https://app.netlify.com/sites/chazz-design/deploys)
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
