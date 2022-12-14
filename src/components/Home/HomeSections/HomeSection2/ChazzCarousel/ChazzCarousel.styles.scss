@@ -17,3 +17,9 @@
 .swiper-pagination-bullet-active {
   background-color: #ff5887;
 }
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin-bottom: 25px;
+  margin-top: 15px;
+}
