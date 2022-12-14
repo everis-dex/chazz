@@ -10,7 +10,7 @@ import { Project } from "../../../../../interfaces/interfaces";
 // import "swiper/css/bundle";
 import "swiper/css";
 import "swiper/css/pagination";
-import "./carouselStyles.scss";
+import "./Carrousel.styles.scss";
 
 export const Carrousel = () => {
   const slides: Project[] = [...projects];
