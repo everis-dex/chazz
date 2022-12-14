@@ -12,7 +12,7 @@ export const HomeSection4 = () => {
         <h2>
           <strong>We are part of NTT Data Company & Tangity Design Network</strong>
         </h2>
-        <div className="offices">
+        <div className="offices-container">
           <span>CHAZZ OFFICES</span>
           {offices.map((office, index) => (
             <div className="offices-info" key={index}>
@@ -26,31 +26,35 @@ export const HomeSection4 = () => {
         <hr></hr>
         <div className="studios-container">
           <span>TANGITY STUDIOS</span>
-          <div className="studios">
+          <div className="studios-grid">
             {studios.map((studio, index) => (
               <div className="studios-info" key={index}>
                 <p className="city">{studio.city}</p>
               </div>
             ))}
+            <p className="email">tangity@nttdata.com</p>
           </div>
+            <p className="email">tangity@nttdata.com</p>
         </div>
         <hr></hr>
-        <div className="offices">
+        <div className="in-touch-container">
           <span>GET IN TOUCH</span>
-          <div className="offices-info">
-            <p>General inquiries</p>
-            <p className="email">info@chazzdesign.com</p>
-          </div>
-          <div className="offices-info">
-            <p>Be part of the team</p>
-            <p className="email">info@chazzdesign.com</p>
-          </div>
-          <div className="offices-info">
-            <p className="social-media">Social</p>
-            <p className="social-media">Linkedin</p>
-            <p className="social-media">Instagram</p>
-            <p className="social-media">Medium</p>
-            <p className="social-media">Newsletter</p>
+          <div className="in-touch-grid">
+            <div className="in-touch-info">
+              <p className="in-touch-subtitle">General inquiries</p>
+              <p className="email">info@chazzdesign.com</p>
+            </div>
+            <div className="in-touch-info">
+              <p className="in-touch-subtitle">Be part of the team</p>
+              <p className="email">info@chazzdesign.com</p>
+            </div>
+            <div className="in-touch-info">
+              <p className="in-touch-subtitle">Social</p>
+              <p className="social-media">Linkedin</p>
+              <p className="social-media">Instagram</p>
+              <p className="social-media">Medium</p>
+              <p className="social-media">Newsletter</p>
+            </div>
           </div>
         </div>
       </div>

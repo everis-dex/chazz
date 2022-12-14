@@ -12,12 +12,12 @@
     margin-bottom: 0;
   }
   hr {
-    margin: 16px 16px 58px 16px;
+    margin: 58px 16px 58px 16px;
   }
 }
 
-.offices {
-  padding-left: 16px;
+.offices-container, .studios-container, .in-touch-container {
+padding-left: 16px;
 
   span {
     font-size: 14px;
@@ -27,8 +27,11 @@
     margin-bottom: 10px;
   }
 
-  .offices-info {
-    margin-bottom: 49px;
+}
+
+  .offices-info, .studios-grid, .in-touch-info {
+    margin-bottom: 42px;
+    margin-top: 10px;
     .city {
       font-size: 24px;
       font-weight: 700;
@@ -48,39 +51,50 @@
       margin-bottom: 0;
     }
   }
-}
+
 
 .studios-container {
   display: block;
-}
 
-.studios {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(3, minmax(60px, 1fr));
-  grid-template-rows: repeat(3, 50px);
-  height: 100%;
 
-  span {
-    font-size: 14px;
-    font-weight: 450;
-    line-height: 17.7px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+  .studios-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, minmax(60px, 1fr));
+    grid-template-rows: repeat(4, 17%);
+    height: 100%;
+    margin-bottom: 0;
+  
+    .studios-info {
+      .city {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+    }
+    .email{
+      display: none;
+    }
   }
 
-  .studios-info {
-    margin-bottom: 49px;
-    .city {
-      font-size: 24px;
+  .email{
+    display: block;
+    font-size: 16px;
+    font-weight: 450;
+  }
+}
+
+.in-touch-container{
+  .in-touch-info{
+    .in-touch-subtitle{
+      font-size: 16px;
       font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .adress {
       margin-bottom: 0;
     }
   }
 }
+
+
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
@@ -95,22 +109,18 @@
     }
 
     hr {
-      margin: 16px 0;
+      margin: 52px 48px 52px 0px;
     }
   }
 
-  .offices {
+  .offices-container, .studios-grid {
     display: grid;
     grid-template-columns: 33% 33% 33%;
     margin-top: 74px;
-    padding-left: 0;
-
-    span {
-      margin-bottom: 15px;
-    }
 
     .offices-info {
       grid-row: 2 / 2;
+      margin-bottom: 0px;
       .city {
         font-size: 32px;
         margin-bottom: 10px;
@@ -126,4 +136,47 @@
       }
     }
   }
+
+  .offices-container, .studios-container, .in-touch-container{
+    padding-left: 0;
+
+    span {
+        margin-bottom: 15px;
+      }
+  
+  }
+
+  .studios-container{
+    .studios-grid{
+      grid-template-rows: repeat(3, 20%);
+      height: 100%;
+      margin-top: 15px;
+      margin-bottom: 0;
+      
+      .studios-info{
+       margin-bottom: 0;
+       
+       .city{
+        margin-bottom: 0;
+        font-size: 32px;
+       }
+      }
+  
+      .email{
+        display: block;
+      }
+  }
+  .email{
+    display: none;
+  }
+  }
+
+  .in-touch-container{
+    .in-touch-grid{
+      display: grid;
+      grid-auto-flow: column;
+    }
+  }
+
 }
+
