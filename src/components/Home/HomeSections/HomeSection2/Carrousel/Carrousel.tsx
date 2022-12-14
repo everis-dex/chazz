@@ -1,23 +1,19 @@
 import React from "react";
-
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
-import { ChazzSlide } from "./ChazzSlide";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { CarrouselSlide } from "./CarrouselSlide";
+
+import projects from "../../../../../content/projects.json";
+import { Project } from "../../../../../interfaces/interfaces";
 
 // import "swiper/css/bundle";
 import "swiper/css";
 import "swiper/css/pagination";
+import "./Carrousel.styles.scss";
 
-import "./carouselStyles.css";
-
-import { Project } from '../../../../../interfaces/interfaces';
-import projects from "./../../../../../content/projects.json";
-
-
-
-export const ChazzCarousel = () => {
-
-  const slides: Project[] = [...projects]
+export const Carrousel = () => {
+  const slides: Project[] = [...projects];
 
   return (
     <>
@@ -54,10 +50,9 @@ export const ChazzCarousel = () => {
             }}
           >
             {slides.map((slide: Project, index: number) => {
-
               return (
                 <SwiperSlide key={index}>
-                  <ChazzSlide {...slide} />
+                  <CarrouselSlide {...slide} />
                 </SwiperSlide>
               );
             })}
