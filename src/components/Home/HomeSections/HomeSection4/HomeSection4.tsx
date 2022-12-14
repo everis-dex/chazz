@@ -42,7 +42,7 @@ export const HomeSection4 = () => {
           <div className="in-touch-grid">
             <div className="in-touch-info">
               <p className="in-touch-subtitle">General inquiries</p>
-              <p className="email">info@chazzdesign.com</p>
+              <p className="email">info@chazzzdesign.com</p>
             </div>
             <div className="in-touch-info">
               <p className="in-touch-subtitle">Be part of the team</p>
