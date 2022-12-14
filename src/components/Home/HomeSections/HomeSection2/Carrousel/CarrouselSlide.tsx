@@ -1,12 +1,14 @@
 import React from "react";
 
 import { Project } from "../../../../../interfaces/interfaces";
+import { Media } from "../../../../shared/Media/Media";
 
-export const ChazzSlide = (props: Project) => {
+export const CarrouselSlide = (props: Project) => {
+  const style = { width: 300, height: 500 };
   return (
     <>
       <div>
-        <img src={props.image} width={300} height={500} alt={props.title} />
+        <Media src={props.image} style={style} alt={props.title} />
         <br />
       </div>
       <h2>{props.title}</h2>

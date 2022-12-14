@@ -1,12 +1,11 @@
 import Lottie from "lottie-react";
 import React, { useState } from "react";
+import { Props } from "./Media.model";
 
 const supportedVideoTags: Array<string> = ["mp4", "webm", "ogg"];
 const supportedImageTags: Array<string> = ["jpg", "jpeg", "gif", "png", "apng", "svg", "bmp"];
 
-type Style = { width: number; height: number };
-
-export const Media = (src: string, style: Style, alt: string) => {
+export const Media = ({ src, style, alt }: Props) => {
   const [lottie, setLottie] = useState<Object | null>(null);
   const { width, height } = style;
 
