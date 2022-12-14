@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { ReactComponent as Logo } from "../../assets/Chazz_Logo.svg";
 import "./Nav.scss";
 
-const Nav = () => {
+type Props = { color: string };
+
+const Nav = ({ color }: Props) => {
   const [menu, setMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -11,7 +13,7 @@ const Nav = () => {
   };
   return (
     <>
-      <img src="assets/Chazz_Logo.svg" alt="logo" className="chazz-logo" />
+      <Logo fill={color} className="chazz-logo" />
       <div className="nav">
         <ul>
           <li>

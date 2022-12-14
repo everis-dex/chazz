@@ -11,7 +11,7 @@ export const OurWork = () => {
   return (
     <div className="work-container">
       <div className="header-nav">
-        <Nav />
+        <Nav color="black" />
       </div>
       <h1 className="work-header">Our work</h1>
       <div className="work-container--content">

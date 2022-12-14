@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-import "./Project.styles.scss";
-import { Project } from "../../../../interfaces/interfaces";
 import { Media } from "../../../../components/shared/Media/Media";
+import { Project } from "../../../../interfaces/interfaces";
+
+import "./Project.styles.scss";
 
 type Props = { data: Project; columns: string; height?: string; full?: boolean };
 
@@ -35,9 +36,9 @@ export const ProjectCard = ({ data, columns, height = "auto", full = false }: Pr
           {dropdownText} information
           <img id="arrow" className="arrow" src="/assets/dropdown_arrow.svg" alt="arrow" />
         </div>
-        <div className="body">
+        <div className="body" style={{ columnCount: full ? 2 : 1 }}>
           {bodyParagraphs.map((paragraph: string, index: number) => {
-            return paragraph !== "" ? <p key={index}>{paragraph}</p> : "";
+            return paragraph !== "" ? <p key={index}>{paragraph}</p> : paragraph;
           })}
         </div>
       </div>
