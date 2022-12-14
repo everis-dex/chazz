@@ -1,0 +1,45 @@
+.project-container {
+  display: block;
+}
+
+.project-media {
+  display: flex;
+  margin: auto;
+  width: 100%;
+}
+
+.project-details {
+  margin: 30px 0;
+  color: var(--black);
+
+  p {
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .title {
+    font-weight: 900;
+  }
+  .subtitle {
+    font-weight: 500;
+  }
+  .properties {
+    color: var(--grey);
+  }
+}
+
+.project-dropdown {
+  font-size: 16px;
+  .dropdown {
+    display: none;
+    font-weight: 700;
+    line-height: 20px;
+  }
+
+  .body {
+    margin-top: 30px;
+    font-weight: 450;
+    line-height: 137%;
+  }
+}

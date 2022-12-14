@@ -1,5 +1,5 @@
 export interface Props {
   src: string;
-  style: { width: number; height: number };
+  style: { width: string; height: string };
   alt: string;
 }

@@ -4,7 +4,7 @@ import { Project } from "../../../../../interfaces/interfaces";
 import { Media } from "../../../../shared/Media/Media";
 
 export const CarrouselSlide = (props: Project) => {
-  const style = { width: 300, height: 500 };
+  const style = { width: "300px", height: "500px" };
   return (
     <>
       <div>

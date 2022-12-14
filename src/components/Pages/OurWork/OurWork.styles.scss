@@ -1,0 +1,39 @@
+.header-nav {
+  display: block;
+  height: 10vh;
+}
+
+.work-container--content {
+  border-top: 1px solid var(--black);
+  margin: 5vw;
+  margin-top: 10vh;
+  display: grid;
+
+  .work-detail {
+    margin-bottom: 10vh;
+
+    .header {
+      padding-top: 30px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 107%;
+      color: var(--black);
+    }
+
+    .detail {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 131.3%;
+    }
+  }
+}
+
+// MEDIA QUERIES
+
+@media (min-width: 1280px) {
+  .work-container--content {
+    grid-template-columns: 50vw 50vw;
+  }
+}

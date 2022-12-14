@@ -11,9 +11,7 @@ const Nav = () => {
   };
   return (
     <>
-      <div>
-        <img src="assets/Chazz_Logo.svg" alt="logo" className="chazz-logo" />
-      </div>
+      <img src="assets/Chazz_Logo.svg" alt="logo" className="chazz-logo" />
       <div className="nav">
         <ul>
           <li>
