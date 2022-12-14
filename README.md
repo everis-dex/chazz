@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/everis-dex/chazz">
-    <img src="./public/Chazz_Logo.svg" alt="Logo" height="40">
+    <img src="./public/assets/Chazz_Logo.svg" alt="Logo" height="40">
   </a>
 
 <h3 align="center"><strong>Chazz</strong></h3>
@@ -17,6 +17,8 @@
     <br />
   </p>
 </div>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/326cff08-eb5a-4366-8976-6e714c3bab57/deploy-status)](https://app.netlify.com/sites/chazz-design/deploys)
 
 <!-- TABLE OF CONTENTS -->
 <details>

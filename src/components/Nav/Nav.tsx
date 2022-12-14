@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 import "./Nav.scss";
 
@@ -13,7 +12,7 @@ const Nav = () => {
   return (
     <>
       <div>
-        <img src="Chazz_Logo.svg" alt="logo" className="chazz-logo" />
+        <img src="assets/Chazz_Logo.svg" alt="logo" className="chazz-logo" />
       </div>
       <div className="nav">
         <ul>

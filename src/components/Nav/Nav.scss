@@ -196,13 +196,16 @@
 
 @media (min-width: 1024px) {
   .nav {
-    margin-top: 2.5%;
+    margin-top: 2.2%;
     font-size: 19px;
   }
 }
 
 @media (min-width: 1280px) {
-  .nav ul li {
+    .chazz-logo {
+        width: 185px;
+    }
+    .nav ul li {
     margin-right: 36px;
+    }
   }
-}

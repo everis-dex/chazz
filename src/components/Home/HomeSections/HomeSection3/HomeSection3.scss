@@ -1,7 +1,7 @@
 // MOBILE FIRST
 
 .partner-section {
-  background-color: #f7f7f7;
+  background-color: var(--white);
   padding: 64px 0px 50px 16px;
 
   h3 {
@@ -30,6 +30,7 @@
 // MEDIA QUERIES
 @media (min-width: 768px) {
   .partner-section {
+    background-color: var(--bgGray);
     padding: 98px 68px 82px 48px;
 
     h3 {

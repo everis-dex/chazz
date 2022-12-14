@@ -1,17 +1,16 @@
 import React from "react";
-
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
-import { ChazzSlide } from "./ChazzSlide";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { ChazzSlide } from "./ChazzSlide"
+
+import projects from "../../../../../content/projects.json";
+import { Project } from "../../../../../interfaces/interfaces";
 
 // import "swiper/css/bundle";
 import "swiper/css";
 import "swiper/css/pagination";
-
-import "./carouselStyles.css";
-
-import { Project } from "../../../../../interfaces/interfaces";
-import projects from "./../../../../../content/projects.json";
+import "./ChazzCarousel.styles.scss";
 
 export const ChazzCarousel = () => {
   const slides: Project[] = [...projects];
