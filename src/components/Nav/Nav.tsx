@@ -17,16 +17,16 @@ const Nav = () => {
       <div className="nav">
         <ul>
           <li>
-            <a href="/#HomeSection1">We are</a>{" "}
+            <Link to={"/weare"}>We are</Link>
           </li>
           <li>
-            <Link to={"/services"}>Services</Link>{" "}
+            <Link to={"/services"}>Services</Link>
           </li>
           <li>
-            <a href="/#HomeSection2">Work</a>{" "}
+            <Link to={"/work"}>Work</Link>
           </li>
           <li>
-            <Link to={"thoughts"}>Thoughts</Link>{" "}
+            <Link to={"thoughts"}>Thoughts</Link>
           </li>
         </ul>
       </div>
