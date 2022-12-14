@@ -9,6 +9,9 @@ export const ProjectCard = (data: Project) => {
   const [openDropdown, setOpenDropdown] = useState<boolean>(true);
   const dropdownText = openDropdown ? "Less" : "More";
 
+  const bodyParagraphs = data.body.replace("\r", "").split("\n");
+  console.log(bodyParagraphs);
+
   return (
     <div className="project-container">
       <div className="project-media">
@@ -23,7 +26,11 @@ export const ProjectCard = (data: Project) => {
       </div>
       <div className="project-dropdown">
         <div className="dropdown">{dropdownText} information</div>
-        <div className="body">{data.body}</div>
+        <div className="body">
+          {bodyParagraphs.map((paragraph: string) => {
+            return paragraph !== "" ? <p>{paragraph}</p> : <></>;
+          })}
+        </div>
       </div>
     </div>
   );
