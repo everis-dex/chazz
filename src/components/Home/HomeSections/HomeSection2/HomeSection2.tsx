@@ -1,21 +1,17 @@
 import React from "react";
-
+import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import { ChazzCarousel } from "./ChazzCarousel/ChazzCarousel";
-
-import { Container } from "react-bootstrap";
+import { Carrousel } from "./Carrousel/Carrousel";
 
 import './HomeSection2.scss';
 
 // import { Project } from "../../../../interfaces/interfaces";
 
-
-
 export const HomeSection2 = () => {
   return (
     <Container id="HomeSection2">
-      <ChazzCarousel />
+      <Carrousel />
       <Link to={"/work"} className="more-projects">More projects</Link>
     </Container>
   );

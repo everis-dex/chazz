@@ -1,12 +1,10 @@
 import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
-import { Category } from "../../../../interfaces/interfaces";
 import categories from "../../../../content/categories.json";
+import { Category } from "../../../../interfaces/interfaces";
 
 import "./Section1.scss";
-import { Col, Row, Container } from "react-bootstrap";
-
-
 
 export const HomeSection1 = () => {
   return (

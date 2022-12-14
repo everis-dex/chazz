@@ -1,13 +1,11 @@
 import React from "react";
 
-import { Partner } from "../../../../interfaces/interfaces";
 import partners from "../../../../content/partners.json";
+import { Partner } from "../../../../interfaces/interfaces";
 
 import { Container } from "react-bootstrap";
 
 import "./HomeSection3.scss";
-
-
 
 export const HomeSection3 = () => {
   return (

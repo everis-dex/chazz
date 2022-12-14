@@ -1,9 +1,7 @@
 import React from "react";
 
-import "./HomeHeader.scss";
 import Nav from "../../Nav/Nav";
-
-
+import "./HomeHeader.scss";
 
 export const HomeHeader = () => {
   return (
