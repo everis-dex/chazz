@@ -4,11 +4,15 @@ import "./Project.styles.scss";
 import { Project } from "../../../../interfaces/interfaces";
 import { Media } from "../../../../components/shared/Media/Media";
 
-export const ProjectCard = (data: Project) => {
-  const style = { width: "100%", height: "auto" };
+type Props = { data: Project; columns: string; height?: string; full?: boolean };
+
+export const ProjectCard = ({ data, columns, height = "auto", full = false }: Props) => {
+  const style = { width: "100%", height: height };
+  const bodyParagraphs: string[] = data.body.replace("\r", "").split("\n");
+
+  // Dropdown
   const [openDropdown, setOpenDropdown] = useState<boolean>(true);
-  const dropdownText = openDropdown ? "Less" : "More";
-  const bodyParagraphs = data.body.replace("\r", "").split("\n");
+  const dropdownText: string = openDropdown ? "Less" : "More";
 
   const handleDropdown = () => {
     setOpenDropdown(!openDropdown);

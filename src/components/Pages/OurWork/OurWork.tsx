@@ -22,7 +22,7 @@ export const OurWork = () => {
         {projects &&
           projects.map((project: Project, index: number) => (
             <div key={index}>
-              <ProjectCard {...project} />
+              <ProjectCard data={project} columns="adsf" />
             </div>
           ))}
       </div>
