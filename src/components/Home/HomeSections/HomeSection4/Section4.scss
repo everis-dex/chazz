@@ -1,0 +1,192 @@
+// MOBILE FIRST
+
+.we-are-section {
+  background-color: var(--black);
+  color: var(--white);
+
+  padding-bottom: 62px;
+
+  .we-are-grid{
+    display: grid;
+    grid-template-columns: 100%;
+    
+    h2 {
+      color: #ffafc4;
+      padding: 74px 38px 114px 0px;
+      margin-bottom: 0;
+    }
+    hr {
+      margin: 16px 0px 58px 0px;
+    }
+  }
+
+}
+
+
+
+.offices-container,
+.studios-container,
+.in-touch-container {
+
+  span {
+    font-size: 14px;
+    font-weight: 450;
+    line-height: 17.7px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+}
+
+.offices-info,
+.studios-grid,
+.in-touch-info {
+  margin-bottom: 42px;
+  margin-top: 10px;
+  .city {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .phone,
+  .email,
+  .address,
+  .social-media {
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 24.4px;
+    margin-bottom: 5px;
+  }
+
+  .adress {
+    margin-bottom: 0;
+  }
+}
+
+.studios-container {
+  display: block;
+
+  .studios-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2, minmax(60px, 1fr));
+    grid-template-rows: repeat(4, 17%);
+    height: 100%;
+    margin-bottom: 0;
+
+    .studios-info {
+      .city {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+    }
+    .email {
+      // display: none;
+    }
+  }
+
+  .email {
+    display: block;
+    font-size: 16px;
+    font-weight: 450;
+  }
+}
+
+.in-touch-container {
+  .in-touch-info {
+    .in-touch-subtitle {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// MEDIA QUERIES
+@media (min-width: 768px) {
+  .we-are-section{
+
+    .we-are-grid {
+      grid-template-columns: 33% 67%;
+      padding-bottom: 10px;
+  
+      h2 {
+        padding: 105px 132px 0 0px;
+        grid-row: 1 / 6;
+      }
+  
+      hr {
+        margin: 52px 0px 52px 0px;
+      }
+    }
+  }
+
+  .offices-container,
+  .studios-grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin-top: 74px;
+
+    .offices-info {
+      grid-row: 2 / 2;
+      margin-bottom: 0px;
+      .city {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      .phone,
+      .social-media {
+        margin-bottom: 5px;
+      }
+
+      .email {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  .offices-container,
+  .studios-container,
+  .in-touch-container {
+    padding-left: 0;
+
+    span {
+      margin-bottom: 15px;
+    }
+  }
+
+  .studios-container {
+    .studios-grid {
+      grid-template-columns: repeat(3, 33%);
+      grid-template-rows: repeat(3, 20%);
+      height: 100%;
+      margin-top: 15px;
+      margin-bottom: 0;
+
+      .studios-info {
+        margin-bottom: 0;
+
+        .city {
+          margin-bottom: 0;
+          font-size: 32px;
+        }
+      }
+
+      .email {
+        display: block;
+        margin-top: 36px;
+      }
+    }
+    .email {
+      display: none;
+    }
+  }
+
+  .in-touch-container {
+    .in-touch-grid {
+      display: grid;
+      grid-auto-flow: column;
+    }
+  }
+}

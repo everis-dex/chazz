@@ -87,3 +87,18 @@ collections:
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: City, name: city, widget: string }
+
+    ##############################
+  #         Get in touch
+  ##############################
+
+  - name: get_in_touch
+    label: "Get in touch"
+    folder: content/studios
+    slug: "st-{{year}}-{{month}}-{{day}}--{{title}}"
+    create: true
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Title, name: title, widget: string }
+      - { label: Emeal, name: email, widget: string }
+    
