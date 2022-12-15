@@ -17,9 +17,9 @@ export const HomeSection3 = () => {
           <h3>Partners in crime</h3>
           <div className="partner-container">
             {partners.map((partner: Partner, index) => (
-              <div key={index}>
+              <div className="partner" key={index}>
                 <a href={partner.website}>
-                  <img src={partner.logo} alt={partner.partner} height="40" />
+                  <img className="partner-logo" src={partner.logo} alt={partner.partner} width="100%" />
                 </a>
               </div>
             ))}
