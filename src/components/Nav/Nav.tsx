@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-import "./nav.scss";
 import { ChazzLogo } from './ChazzLogo/ChazzLogo';
 import { BurgerMenu } from './BurgerMenu/BurgerMenu';
 import { DesktopMenu } from './DesktopMenu/DesktopMenu';
+
+import "./nav.scss";
 
 const Nav = () => {
 
