@@ -7,7 +7,40 @@ import { Project } from "../../../interfaces/interfaces";
 
 import "./OurWork.styles.scss";
 
+const formats = {
+  big: 0, // When the Project occupies two columns
+  equal: 1, // When both Projects have the same image height
+  left: 2, // When Project in left column has bigger image
+  right: 3 // When Project in right column has bigger image
+};
+
+// la configuración se escoge por cada row, por cada par de columnas
+let config = [formats.right, formats.left, formats.big, formats.right, formats.equal];
+
 export const OurWork = () => {
+  const columnCount: number = 2;
+  let currentColumn: number = 0;
+  let currentRow: number = 0;
+  let configuration = config[0];
+
+  function handleProjectFormat(index: number) {
+    currentColumn++;
+    let imgHeight: string = "300px";
+    let columnPosition: number = currentColumn % columnCount;
+    // left column
+    if (columnPosition === 0) {
+      // Reset configuration, head to next row
+      currentRow = currentColumn / columnCount;
+      configuration = config[currentRow];
+      if (configuration === formats.left) imgHeight = "600px";
+    }
+    // right column
+    else if (columnPosition === 1) {
+      if (configuration === formats.right) imgHeight = "600px";
+    }
+    return imgHeight;
+  }
+
   return (
     <div className="work-container">
       <div className="header-nav">
@@ -21,24 +54,10 @@ export const OurWork = () => {
         </div>
         {projects &&
           projects.map((project: Project, index: number) => {
-            index = index + 1;
-            let esPar: number = index % 2;
-            let height: string = "300px";
-            // esPar === 0, la columna de la izquierda
-            if (esPar === 0) {
-              // take configuration
-              let currentRow: number = index / 2;
-              configuration = config[currentRow];
-              if (configuration === 2) height = "600px"; // left
-            }
-            // esPar === 1, la columna de la derecha
-            else if (esPar === 1) {
-              // extender imagen
-              if (configuration === 3) height = "600px";
-            }
+            let height = handleProjectFormat(index);
             return (
               <div key={index}>
-                <ProjectCard data={project} columns="adsf" height={height} />
+                <ProjectCard data={project} height={height} />
               </div>
             );
           })}
@@ -46,9 +65,3 @@ export const OurWork = () => {
     </div>
   );
 };
-
-let formats = { big: 0, equal: 1, left: 2, right: 3 };
-
-// la configuración se escoge por cada row, por cada par de columnas
-let config = [formats.right, formats.left, formats.big, formats.right, formats.equal];
-let configuration: number = config[0];

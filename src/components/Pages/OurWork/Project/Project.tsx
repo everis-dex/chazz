@@ -5,7 +5,7 @@ import { Project } from "../../../../interfaces/interfaces";
 
 import "./Project.styles.scss";
 
-type Props = { data: Project; columns: string; height?: string; full?: boolean };
+type Props = { data: Project; columns?: string; height?: string; full?: boolean };
 
 export const ProjectCard = ({ data, columns, height = "auto", full = false }: Props) => {
   const style = { width: "100%", height: height };
