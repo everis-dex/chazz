@@ -13,7 +13,9 @@ const Nav = ({ color }: Props) => {
   };
   return (
     <>
-      <Logo fill={color} className="chazz-logo" />
+      <div className="chazz-logo">
+        <Logo fill={color} />
+      </div>
       <div className="nav">
         <ul>
           <li>
@@ -30,10 +32,10 @@ const Nav = ({ color }: Props) => {
           </li>
         </ul>
       </div>
-      <div className={`burger-menu ${menu ? "active" : ""}`}>
+      <div className={`burger-menu ${menu && "active"}`}>
         <input id="open-close" name="open-close" type="checkbox" value="" />
         <label htmlFor="open-close" className="toggle-button" onClick={toggleMenu}></label>
-        <nav className={`burger-nav ${menu ? "active" : ""}`}>
+        <nav className={`burger-nav ${menu && "active"}`}>
           <ul className="burger-ul">
             <li className="burger-li">
               <a className="burger-a" href="/#">
