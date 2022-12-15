@@ -2,7 +2,7 @@ import React from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { ChazzSlide } from "./ChazzSlide"
+import { ChazzSlide } from "./ChazzSlide";
 
 import projects from "../../../../../content/projects.json";
 import { Project } from "../../../../../interfaces/interfaces";
