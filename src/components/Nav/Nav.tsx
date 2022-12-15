@@ -7,7 +7,6 @@ import { DesktopMenu } from "./DesktopMenu/DesktopMenu";
 import "./Nav.scss";
 
 type Props = { color: string };
-
 const Nav = ({ color }: Props) => {
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
 
@@ -17,8 +16,8 @@ const Nav = ({ color }: Props) => {
 
   return (
     <>
-      <ChazzLogo />
-      <DesktopMenu />
+      <ChazzLogo color={color} />
+      <DesktopMenu color={color} />
       <BurgerMenu isDesktop={isDesktop} toggleMenu={toggleMenu} />
     </>
   );
