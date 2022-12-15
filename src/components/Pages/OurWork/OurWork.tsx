@@ -38,6 +38,10 @@ export const OurWork = () => {
     else if (columnPosition === 1) {
       if (configuration === formats.right) imgHeight = "600px";
     }
+    //big column
+    else{
+      if (configuration === formats.big)  imgHeight = "600px";
+    }
     return imgHeight;
   }
 
