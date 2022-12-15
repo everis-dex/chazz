@@ -1,6 +1,6 @@
 ---
 partner: Caixabank
-logo: uploads/web_doco_mock_1-1.png
+logo: uploads/logo_caixaBank.svg
 website: #
 sort: 13
 ---

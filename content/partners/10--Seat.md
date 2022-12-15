@@ -1,6 +1,6 @@
 ---
 partner: Seat
-logo: uploads/web_doco_mock_1-1.png
+logo: uploads/logo_seat.svg
 website: #
 sort: 10
 ---

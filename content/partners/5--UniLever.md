@@ -1,6 +1,6 @@
 ---
 partner: UniLever
-logo: uploads/web_doco_mock_1-1.png
+logo: uploads/logo_unilever.svg
 website: #
 sort: 5
 ---
