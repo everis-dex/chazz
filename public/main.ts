@@ -1,74 +1,71 @@
 const path = require("path");
 const fs = require("fs");
 
-
-
 type FormatedDate = {
-  month: string,
-  day: string,
-  year: string,
-  time: string
-}
+  month: string;
+  day: string;
+  year: string;
+  time: string;
+};
 
 interface Metadata {
-  date?: string,
-  section?: string,
-  title?: string,
-  subtitle?: string,
-  image?: string,
-  branding?: string,
-  service?: string,
-  value?: string,
-  content?: string,
-  partner?: string,
-  logo?: string,
-  website?: string,
-  city?: string,
-  phone?: string,
-  email?: string,
-  address?: string,
-  sort?: string,
+  date?: string;
+  section?: string;
+  title?: string;
+  subtitle?: string;
+  image?: string;
+  branding?: string;
+  service?: string;
+  value?: string;
+  content?: string;
+  partner?: string;
+  logo?: string;
+  website?: string;
+  city?: string;
+  phone?: string;
+  email?: string;
+  address?: string;
+  sort?: string;
 }
 
 interface BuiltElement {
-  id: number,
-  section?: string,
-  title?: string,
-  subtitle?: string,
-  image?: string,
-  branding?: string,
-  service?: string,
-  value?: string,
-  partner?: string,
-  logo?: string,
-  website?: string,
-  city?: string,
-  phone?: string,
-  email?: string,
-  address?: string,
-  body?: string,
+  id: number;
+  section?: string;
+  title?: string;
+  subtitle?: string;
+  image?: string;
+  branding?: string;
+  service?: string;
+  value?: string;
+  partner?: string;
+  logo?: string;
+  website?: string;
+  city?: string;
+  phone?: string;
+  email?: string;
+  address?: string;
+  body?: string;
 }
 
 const blankMetadata: Metadata = {
-  date: '',
-  section: '',
-  title: '',
-  subtitle: '',
-  image: '',
-  branding: '',
-  service: '',
-  value: '',
-  content: '',
-  partner: '',
-  logo: '',
-  website: '',
-  city: '',
-  phone: '',
-  email: '',
-  address: '',
-  sort: '',
-}
-
+  date: "",
+  section: "",
+  title: "",
+  subtitle: "",
+  image: "",
+  branding: "",
+  service: "",
+  value: "",
+  content: "",
+  partner: "",
+  logo: "",
+  website: "",
+  city: "",
+  phone: "",
+  email: "",
+  address: "",
+  sort: ""
+};
 
 /**
  * Reads .md files of each collection in /content/ subfolders and creates JSON file with all the information.
@@ -87,7 +84,6 @@ const getCollections = () => {
   return;
 };
 
-
 /**
  * Reads inside every subfolder to get the content of each file it contains.
  */
@@ -101,17 +97,17 @@ const getSubfolderContent = (subfolders: string[]) => {
       getFilesContent(files, dirPath, folder);
     });
   });
-}
-
+};
 
 /**
  * Callback used when reducing metadataIndexes.
  */
 const getMetadataIndexes = (acc: number[], elem: string, index: number): number[] => {
-  if (/^---/.test(elem)) { acc.push(index); }
+  if (/^---/.test(elem)) {
+    acc.push(index);
+  }
   return acc;
 };
-
 
 /**
  * Remove all content info and format properties in an object.
@@ -129,7 +125,6 @@ const parseMetadata = (lines: string[], metadataIndexes: number[]): Metadata => 
   return blankMetadata;
 };
 
-
 /**
  * Remove all metadata info and extract only the content after --- separator.
  */
@@ -139,7 +134,6 @@ const parseContent = (lines: string[], metadataIndexes: number[]): string => {
   }
   return lines.join("\n");
 };
-
 
 /**
  * Return recieved date into an object with different properties.
@@ -153,11 +147,14 @@ const formatDate = (date: string): FormatedDate => {
   return { month: dateArray[1], day: dateArray[2], year: dateArray[0], time };
 };
 
-
 /**
  * Construct the element object based on the collection they belong to.
  */
-const constructElement = (folder: string, metadata: Metadata, data: { timestamp: number; content: string }): BuiltElement => {
+const constructElement = (
+  folder: string,
+  metadata: Metadata,
+  data: { timestamp: number; content: string }
+): BuiltElement => {
   if (!folder || !metadata) return { id: -1 };
   const element: BuiltElement = { id: -1 };
 
@@ -176,6 +173,8 @@ const constructElement = (folder: string, metadata: Metadata, data: { timestamp:
     case "partners":
       element.id = metadata.sort ? parseInt(metadata.sort) : -1;
       // element.id = data.timestamp;
+      element.logo = metadata.logo;
+      element.website = metadata.website;
       element.partner = metadata.partner;
       break;
 
@@ -199,7 +198,6 @@ const constructElement = (folder: string, metadata: Metadata, data: { timestamp:
       element.city = metadata.city;
       break;
 
-
     default:
       console.error("\n ----------------------------------- \n");
       console.error(
@@ -209,7 +207,7 @@ const constructElement = (folder: string, metadata: Metadata, data: { timestamp:
       break;
   }
   return element;
-}
+};
 
 /**
  * Reads the content of every file inside the folder and writes a JSON file with all the content condensed.
@@ -253,9 +251,6 @@ const getFilesContent = (files: string[], dirPath: string, folder: string) => {
       }
     });
   });
-}
-
-
-
+};
 
 getCollections();
