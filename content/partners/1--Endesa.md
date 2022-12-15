@@ -1,5 +1,6 @@
 ---
 partner: Endesa
-logo: "uploads/web_doco_mock_1-1.png"
+logo: uploads/logo_endesa.svg
+website: #
 sort: 1
 ---

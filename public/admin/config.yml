@@ -41,6 +41,7 @@ collections:
     fields:
       - { label: Partner, name: partner, widget: string }
       - { label: Logo, name: logo, widget: image }
+      - { label: Website, name: website, widget: string }
       - { label: Order, name: sort, widget: number, value_type: int, min: 1, step: 1, max: 100 }
 
   ##############################
@@ -86,3 +87,18 @@ collections:
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: City, name: city, widget: string }
+
+    ##############################
+  #         Get in touch
+  ##############################
+
+  - name: get_in_touch
+    label: "Get in touch"
+    folder: content/studios
+    slug: "st-{{year}}-{{month}}-{{day}}--{{title}}"
+    create: true
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Title, name: title, widget: string }
+      - { label: Emeal, name: email, widget: string }
+    

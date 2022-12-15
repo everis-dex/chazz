@@ -1,5 +1,6 @@
 ---
 partner: Generalitat de Catalunya
-logo: "uploads/web_doco_mock_1-1.png"
+logo: uploads/logo_generalitat_de_catalunya.svg
+website: #
 sort: 9
 ---

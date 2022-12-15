@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ChazzCarousel } from "./ChazzCarousel/ChazzCarousel";
+import { Carrousel } from "./Carrousel/Carrousel";
 import { Container } from "react-bootstrap";
 import "./HomeSection2.scss";
 
@@ -9,7 +9,7 @@ import "./HomeSection2.scss";
 export const HomeSection2 = () => {
   return (
     <Container id="HomeSection2">
-      <ChazzCarousel />
+      <Carrousel />
       <Link to={"/work"} className="more-projects">
         More projects
       </Link>

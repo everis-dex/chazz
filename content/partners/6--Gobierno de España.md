@@ -1,5 +1,6 @@
 ---
 partner: Gobierno de España
-logo: "uploads/web_doco_mock_1-1.png"
+logo: uploads/logo_gobierno_de_espana.svg
+website: #
 sort: 6
 ---
