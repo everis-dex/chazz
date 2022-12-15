@@ -41,6 +41,7 @@ collections:
     fields:
       - { label: Partner, name: partner, widget: string }
       - { label: Logo, name: logo, widget: image }
+      - { label: Website, name: website, widget: string }
       - { label: Order, name: sort, widget: number, value_type: int, min: 1, step: 1, max: 100 }
 
   ##############################
