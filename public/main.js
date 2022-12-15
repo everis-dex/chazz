@@ -165,6 +165,7 @@ function constructElement(folder, metadata, data) {
       element = {
         id: parseInt(metadata.sort),
         logo: metadata.logo,
+        website: metadata.website,
         partner: metadata.partner
       };
       break;
