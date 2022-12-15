@@ -1,5 +1,5 @@
 ---
 partner: Leroy Merlin
-logo: "uploads/logo_leroy.svg"
+logo: uploads/logo_leroy.svg
 sort: 4
 ---
