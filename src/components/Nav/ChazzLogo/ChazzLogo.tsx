@@ -1,11 +1,13 @@
 import React from "react";
-
+import { ReactComponent as Logo } from "../../../assets/Chazz_Logo.svg";
 import "../Nav.scss";
 
-export const ChazzLogo = () => {
+type Props = { color: string };
+
+export const ChazzLogo = ({ color }: Props) => {
   return (
-    <div>
-      <img src="assets/Chazz_Logo.svg" alt="logo" className="chazz-logo" />
+    <div className="chazz-logo">
+      <Logo fill={color} />
     </div>
   );
 };

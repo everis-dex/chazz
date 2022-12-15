@@ -3,8 +3,8 @@ import React from "react";
 import { Project } from "../../../../../interfaces/interfaces";
 import { Media } from "../../../../shared/Media/Media";
 
-export const ChazzSlide = (props: Project) => {
-  const style = { width: 300, height: 500 };
+export const CarrouselSlide = (props: Project) => {
+  const style = { width: "300px", height: "500px" };
   return (
     <>
       <div>

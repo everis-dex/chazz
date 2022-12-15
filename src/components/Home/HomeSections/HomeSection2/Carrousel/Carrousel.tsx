@@ -2,7 +2,7 @@ import React from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { ChazzSlide } from "./ChazzSlide";
+import { CarrouselSlide } from "./CarrouselSlide";
 
 import projects from "../../../../../content/projects.json";
 import { Project } from "../../../../../interfaces/interfaces";
@@ -10,9 +10,9 @@ import { Project } from "../../../../../interfaces/interfaces";
 // import "swiper/css/bundle";
 import "swiper/css";
 import "swiper/css/pagination";
-import "./ChazzCarousel.styles.scss";
+import "./Carrousel.styles.scss";
 
-export const ChazzCarousel = () => {
+export const Carrousel = () => {
   const slides: Project[] = [...projects];
 
   return (
@@ -52,7 +52,7 @@ export const ChazzCarousel = () => {
             {slides.map((slide: Project, index: number) => {
               return (
                 <SwiperSlide key={index}>
-                  <ChazzSlide {...slide} />
+                  <CarrouselSlide {...slide} />
                 </SwiperSlide>
               );
             })}

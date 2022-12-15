@@ -5,14 +5,17 @@ import { routesInfo } from "../../../constants";
 
 import "../Nav.scss";
 
-export const DesktopMenu = () => {
+type Props = { color: string };
+export const DesktopMenu = ({ color }: Props) => {
   return (
     <div className="nav">
       <ul>
         {routesInfo.map(route => {
           return (
             <li key={route.id}>
-              <Link to={route.route}>{route.name}</Link>{" "}
+              <Link style={{ color: color }} to={route.route}>
+                {route.name}
+              </Link>{" "}
             </li>
           );
         })}
