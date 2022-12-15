@@ -199,6 +199,7 @@ const constructElement = (folder: string, metadata: Metadata, data: { timestamp:
       element.city = metadata.city;
       break;
 
+
     default:
       console.error("\n ----------------------------------- \n");
       console.error(
@@ -209,7 +210,6 @@ const constructElement = (folder: string, metadata: Metadata, data: { timestamp:
   }
   return element;
 }
-
 
 /**
  * Reads the content of every file inside the folder and writes a JSON file with all the content condensed.

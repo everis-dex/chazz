@@ -178,4 +178,5 @@ var getFilesContent = function (files, dirPath, folder) {
         });
     });
 };
+
 getCollections();

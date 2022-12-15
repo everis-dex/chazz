@@ -22,10 +22,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "tsc public/main.ts && node public/main.js && react-scripts build",
+    "build": "tsc public/main.ts && node public/main.js && npm run prettier && react-scripts build",
+    "prettier": "npx prettier --write ./src",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "tsc public/main.ts && node public/main.js"
+    "server": "tsc public/main.ts && node public/main.js && npm run prettier"
   },
   "eslintConfig": {
     "extends": "react-app"
