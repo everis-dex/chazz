@@ -7,6 +7,8 @@ import { Container } from "react-bootstrap";
 
 import "./HomeSection3.scss";
 
+// La imagen no se carga porque partner.logo tiene comillas escapadas al principio y al final de la url.
+// Se debe añadir el campo website al partner para que se pueda linkar el logo.
 export const HomeSection3 = () => {
   return (
     <>
@@ -15,13 +17,15 @@ export const HomeSection3 = () => {
           <h3>Partners in crime</h3>
           <div className="partner-container">
             {partners.map((partner: Partner, index) => (
-              <p className="partner" key={index}>
-                {partner.partner}
-              </p>
+              <div key={index}>
+                <a href={""}>
+                  <img src={partner.logo} alt={partner.partner} />
+                </a>
+              </div>
             ))}
           </div>
         </Container>
-      </div>
+      </div >
     </>
   );
 };
