@@ -3,7 +3,7 @@ const fs = require("fs");
 
 
 
-interface FormatedDate {
+type FormatedDate = {
   month: string,
   day: string,
   year: string,
@@ -25,6 +25,7 @@ interface Metadata {
   phone?: string,
   email?: string,
   address?: string,
+  sort?: string,
 }
 
 interface BuiltElement {
@@ -59,8 +60,8 @@ const blankMetadata: Metadata = {
   phone: '',
   email: '',
   address: '',
+  sort: '',
 }
-
 
 
 /**
@@ -83,7 +84,6 @@ const getCollections = () => {
 
 /**
  * Reads inside every subfolder to get the content of each file it contains.
- * @param {string[]} subfolders - found folders inside /content/, the existing collections.
  */
 const getSubfolderContent = (subfolders: string[]) => {
   subfolders.forEach(folder => {
@@ -100,11 +100,6 @@ const getSubfolderContent = (subfolders: string[]) => {
 
 /**
  * Callback used when reducing metadataIndexes.
- * @param {number[]} acc - TODO: .
- * @param {string} elem - content of the element.
- * @param {number} index - index of the current element.
- *
- * @return {object} indexes of where Metadata is defined.
  */
 const getMetadataIndexes = (acc: number[], elem: string, index: number): number[] => {
   if (/^---/.test(elem)) { acc.push(index); }
@@ -114,10 +109,6 @@ const getMetadataIndexes = (acc: number[], elem: string, index: number): number[
 
 /**
  * Remove all content info and format properties in an object.
- * @param {string[]} lines - lines of the current read file.
- * @param {number[]} metadataIndexes - obtained indexes from getMetadataIndexes function.
- *
- * @return {object} obtained structured information of lines.
  */
 /** */
 const parseMetadata = (lines: string[], metadataIndexes: number[]): Metadata => {
@@ -135,10 +126,6 @@ const parseMetadata = (lines: string[], metadataIndexes: number[]): Metadata => 
 
 /**
  * Remove all metadata info and extract only the content after --- separator.
- * @param {array} lines - lines of the current read file.
- * @param {array} metadataIndexes - obtained indexes from getMetadataIndexes function.
- *
- * @return {object} obtained lines of content.
  */
 const parseContent = (lines: string[], metadataIndexes: number[]): string => {
   if (metadataIndexes.length > 0) {
@@ -150,9 +137,6 @@ const parseContent = (lines: string[], metadataIndexes: number[]): string => {
 
 /**
  * Return recieved date into an object with different properties.
- * @param {dateTime} date - date to be formatted.
- *
- * @return {FormatedDate} structured properties of recieved date.
  */
 const formatDate = (date: string): FormatedDate => {
   const datetimeArray: string[] = date.split("T");
@@ -166,16 +150,9 @@ const formatDate = (date: string): FormatedDate => {
 
 /**
  * Construct the element object based on the collection they belong to.
- * @param {string} folder - represents the collection of the file.
- * @param {array} metadata - all parameters of collection from .md file.
- * @param {object} data - timestamp and content of the file.
- *
- * @return {object} structured element properties with defined content.
  */
 const constructElement = (folder: string, metadata: Metadata, data: { timestamp: number; content: string }): BuiltElement => {
-  // if (!folder || !metadata) return {};
   if (!folder || !metadata) return { id: -1 };
-  // const element: BuiltElement = {};
   const element: BuiltElement = { id: -1 };
 
   switch (folder) {
@@ -191,8 +168,8 @@ const constructElement = (folder: string, metadata: Metadata, data: { timestamp:
       break;
 
     case "partners":
-      // element.id = parseInt(metadata.sort); // ESTABA ASÍ, DIFERENTE DE LOS DEMAS CASOS!!!!!!!!!!
-      element.id = data.timestamp;
+      element.id = metadata.sort ? parseInt(metadata.sort) : -1;
+      // element.id = data.timestamp;
       element.partner = metadata.partner;
       break;
 
@@ -230,9 +207,6 @@ const constructElement = (folder: string, metadata: Metadata, data: { timestamp:
 
 /**
  * Reads the content of every file inside the folder and writes a JSON file with all the content condensed.
- * @param {array} files - array of file names inside the folder.
- * @param {string} dirPath - path of the folder where files are stored.
- * @param {string} folder - name of the collection folder.
  */
 const getFilesContent = (files: string[], dirPath: string, folder: string) => {
   const elementList: BuiltElement[] = [];
@@ -245,13 +219,6 @@ const getFilesContent = (files: string[], dirPath: string, folder: string) => {
       }
       const lines: string[] = contents.split("\n");
       const metadataIndexes: number[] = lines.reduce(getMetadataIndexes, []);
-      // const indexes: number[] = [];
-      // lines.map((line: string, index: number) => {
-      //   if (/^---/.test(line)) {
-      //     metadataIndexes.push(index);
-      //   }
-      // });
-      // const metadataIndexes: number[] = indexes.filter(index => index);
       const metadata: Metadata = lines ? parseMetadata(lines, metadataIndexes) : blankMetadata;
       const content: string = parseContent(lines, metadataIndexes);
       const timestamp: number[] = [];
@@ -274,7 +241,7 @@ const getFilesContent = (files: string[], dirPath: string, folder: string) => {
           .sort((a, b) => {
             return a.id > b.id ? 1 : -1;
           })
-          .filter(element => element.id != -1); // PARA ELIMINAR EL PRIMER ELEMENTO QUE SE CREA EN constructElement !!!!!!!!!!!!!!!
+          .filter(element => element.id != -1);
 
         fs.writeFileSync(`src/content/${folder}.json`, JSON.stringify(sortedList));
       }
