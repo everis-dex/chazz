@@ -6,7 +6,9 @@ import { DesktopMenu } from "./DesktopMenu/DesktopMenu";
 
 import "./Nav.scss";
 
-const Nav = () => {
+type Props = { color: string };
+
+const Nav = ({ color }: Props) => {
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
 
   const toggleMenu = () => {

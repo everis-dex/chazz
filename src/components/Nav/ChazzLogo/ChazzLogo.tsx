@@ -1,5 +1,5 @@
 import React from "react";
-
+import { ReactComponent as Logo } from "../../../assets/Chazz_Logo.svg";
 import "../Nav.scss";
 
 export const ChazzLogo = () => {
