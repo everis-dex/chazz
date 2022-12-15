@@ -1,23 +1,23 @@
 var path = require("path");
 var fs = require("fs");
 var blankMetadata = {
-    date: '',
-    section: '',
-    title: '',
-    subtitle: '',
-    image: '',
-    branding: '',
-    service: '',
-    value: '',
-    content: '',
-    partner: '',
-    logo: '',
-    website: '',
-    city: '',
-    phone: '',
-    email: '',
-    address: '',
-    sort: ''
+    date: "",
+    section: "",
+    title: "",
+    subtitle: "",
+    image: "",
+    branding: "",
+    service: "",
+    value: "",
+    content: "",
+    partner: "",
+    logo: "",
+    website: "",
+    city: "",
+    phone: "",
+    email: "",
+    address: "",
+    sort: ""
 };
 /**
  * Reads .md files of each collection in /content/ subfolders and creates JSON file with all the information.
@@ -113,6 +113,8 @@ var constructElement = function (folder, metadata, data) {
         case "partners":
             element.id = metadata.sort ? parseInt(metadata.sort) : -1;
             // element.id = data.timestamp;
+            element.logo = metadata.logo;
+            element.website = metadata.website;
             element.partner = metadata.partner;
             break;
         case "categories":
@@ -178,5 +180,4 @@ var getFilesContent = function (files, dirPath, folder) {
         });
     });
 };
-
 getCollections();
