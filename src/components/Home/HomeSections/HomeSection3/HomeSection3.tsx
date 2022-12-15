@@ -12,7 +12,7 @@ import "./HomeSection3.scss";
 export const HomeSection3 = () => {
   return (
     <>
-      <div className="bg-section">
+      <div className="partner-section">
         <Container id="HomeSection3">
           <h3>Partners in crime</h3>
           <div className="partner-container">
