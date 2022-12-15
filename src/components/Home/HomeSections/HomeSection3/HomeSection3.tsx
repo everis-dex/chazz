@@ -18,14 +18,14 @@ export const HomeSection3 = () => {
           <div className="partner-container">
             {partners.map((partner: Partner, index) => (
               <div key={index}>
-                <a href={""}>
-                  <img src={partner.logo} alt={partner.partner} />
+                <a href={partner.website}>
+                  <img src={partner.logo} alt={partner.partner} height="40" />
                 </a>
               </div>
             ))}
           </div>
         </Container>
-      </div >
+      </div>
     </>
   );
 };
