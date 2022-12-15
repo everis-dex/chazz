@@ -1,9 +1,8 @@
 .footer {
   display: grid;
-  grid-template-columns: 34% auto;
   background-color: black;
-  grid-gap: 10px;
-  padding: 20px 30px;
+  grid-gap: 20px;
+  padding: 50px 25px;
 }
 
 .footer-item {
@@ -12,11 +11,25 @@
   line-height: 20px;
   color: var(--white);
   display: flex;
-  justify-content: space-between;
-  margin-right: 30px;
+  flex-direction: column;
+  gap: 20px;
 
   .item {
     color: var(--white);
     text-decoration: none;
+  }
+}
+
+// MEDIA QUERIES
+@media (min-width: 768px) {
+  .footer {
+    grid-template-columns: 34% auto;
+    padding: 20px 30px;
+  }
+
+  .footer-item {
+    justify-content: space-between;
+    flex-direction: row;
+    margin-right: 30px;
   }
 }
