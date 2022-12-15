@@ -19,6 +19,8 @@ export interface Project {
 export interface Partner {
   id: number;
   partner: string;
+  logo: string;
+  website: string;
 }
 
 export interface Office {
