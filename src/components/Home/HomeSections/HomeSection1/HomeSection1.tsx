@@ -22,9 +22,9 @@ export const HomeSection1 = () => {
           <Col className="section1-sections" xs={12} sm={6}>
             {categories.map((category: Category, index) => (
               <div key={index}>
-                <h2>{category.title}</h2>
-                <p>{category.section}</p>
-                <p>{category.body}</p>
+                {category.title && <h2>{category.title}</h2>}
+                {category.section && <p>{category.section}</p>}
+                {category.body && <p>{category.body}</p>}
                 <hr></hr>
               </div>
             ))}

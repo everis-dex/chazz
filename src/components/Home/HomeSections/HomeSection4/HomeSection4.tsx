@@ -32,7 +32,7 @@ export const HomeSection4 = () => {
             <div className="studios-grid">
               {studios.map((studio: Studio, index: number) => (
                 <div className="studios-info" key={index}>
-                  <p className="city">{studio.city}</p>
+                  <p className="city">{studio.city || ""}</p>
                 </div>
               ))}
               <p className="email">tangity@nttdata.com</p>

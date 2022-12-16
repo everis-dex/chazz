@@ -245,7 +245,7 @@ const getFilesContent = (files: string[], dirPath: string, folder: string) => {
           .sort((a, b) => {
             return a.id > b.id ? 1 : -1;
           })
-          .filter(element => element.id != -1);
+          .filter(element => element.id !== -1);
 
         fs.writeFileSync(`src/content/${folder}.json`, JSON.stringify(sortedList));
       }
