@@ -6,6 +6,7 @@ import { routesInfo } from "../../../constants";
 import "../Nav.scss";
 
 type Props = { color: string };
+
 export const DesktopMenu = ({ color }: Props) => {
   return (
     <div className="nav">

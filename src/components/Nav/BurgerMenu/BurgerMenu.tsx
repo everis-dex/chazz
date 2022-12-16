@@ -6,16 +6,20 @@ import { routesInfo } from "../../../constants";
 import "../Nav.scss";
 
 interface Props {
-  isDesktop: boolean;
+  isOpen: boolean;
   toggleMenu: (event: React.MouseEvent) => void;
+  color: string;
 }
-
-export const BurgerMenu = ({ isDesktop, toggleMenu }: Props) => {
+export const BurgerMenu = ({ isOpen, toggleMenu, color }: Props) => {
   return (
-    <div className={`burger-menu ${isDesktop ? "active" : ""}`}>
+    <div className={`burger-menu ${isOpen ? "active" : ""}`}>
       <input id="open-close" name="open-close" type="checkbox" value="" />
-      <label htmlFor="open-close" className="toggle-button" onClick={toggleMenu}></label>
-      <nav className={`burger-nav ${isDesktop ? "active" : ""}`}>
+      <label
+        htmlFor="open-close"
+        className={color === "white" ? "toggle-button" : "toggle-button-pages"}
+        onClick={toggleMenu}
+      ></label>
+      <nav className={`burger-nav ${isOpen ? "active" : ""}`}>
         <ul className="burger-ul">
           {routesInfo.map(route => {
             return (

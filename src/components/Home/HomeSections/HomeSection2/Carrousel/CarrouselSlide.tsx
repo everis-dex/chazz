@@ -5,6 +5,8 @@ import { Media } from "../../../../shared/Media/Media";
 
 export const CarrouselSlide = (props: Project) => {
   const style = { width: "300px", height: "500px" };
+  const maxTextLength: number = 10;
+
   return (
     <>
       <div>
@@ -13,6 +15,10 @@ export const CarrouselSlide = (props: Project) => {
       </div>
       <h2>{props.title}</h2>
       <h4>{props.subtitle}</h4>
+      <h6>
+        {/* {props.keywords.substring(0, maxTextLength)} */}
+        {/* {props.keywords.substring(maxTextLength).length > 0 ? "..." : ""} */}
+      </h6>
     </>
   );
 };
