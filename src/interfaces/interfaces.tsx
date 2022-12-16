@@ -18,7 +18,7 @@ export interface Project {
 
 export interface Partner {
   id: number;
-  partner: string;
+  name: string;
   logo: string;
   website: string;
 }
@@ -28,7 +28,7 @@ export interface Office {
   city: string;
   phone: string;
   email: string;
-  addres: string;
+  address: string;
 }
 
 export interface Studio {

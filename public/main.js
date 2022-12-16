@@ -10,7 +10,7 @@ var blankMetadata = {
     service: "",
     value: "",
     content: "",
-    partner: "",
+    name: "",
     logo: "",
     website: "",
     city: "",
@@ -115,7 +115,7 @@ var constructElement = function (folder, metadata, data) {
             // element.id = data.timestamp;
             element.logo = metadata.logo;
             element.website = metadata.website;
-            element.partner = metadata.partner;
+            element.name = metadata.name;
             break;
         case "categories":
             element.id = data.timestamp;
