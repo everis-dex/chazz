@@ -17,7 +17,7 @@ export const HomeSection3 = () => {
             {partners.map((partner: Partner, index) => (
               <div className="partner" key={index}>
                 <a href={partner.website}>
-                  <img className="partner-logo" src={partner.logo} alt={partner.partner} width="100%" />
+                  <img className="partner-logo" src={partner.logo} alt={partner.name} width="100%" />
                 </a>
               </div>
             ))}

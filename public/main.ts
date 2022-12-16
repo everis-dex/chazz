@@ -18,7 +18,7 @@ interface Metadata {
   service?: string;
   value?: string;
   content?: string;
-  partner?: string;
+  name?: string;
   logo?: string;
   website?: string;
   city?: string;
@@ -37,7 +37,7 @@ interface BuiltElement {
   branding?: string;
   service?: string;
   value?: string;
-  partner?: string;
+  name?: string;
   logo?: string;
   website?: string;
   city?: string;
@@ -57,7 +57,7 @@ const blankMetadata: Metadata = {
   service: "",
   value: "",
   content: "",
-  partner: "",
+  name: "",
   logo: "",
   website: "",
   city: "",
@@ -175,7 +175,7 @@ const constructElement = (
       // element.id = data.timestamp;
       element.logo = metadata.logo;
       element.website = metadata.website;
-      element.partner = metadata.partner;
+      element.name = metadata.name;
       break;
 
     case "categories":
