@@ -132,9 +132,9 @@ const parseMetadata = (lines: string[], metadataIndexes: number[]): Metadata => 
  * Remove all metadata info and extract only the content after --- separator.
  */
 const parseContent = (lines: string[], metadataIndexes: number[]): string => {
-  if (!lines || !metadataIndexes || metadataIndexes.length <= 0) return "";
-
-  lines = lines.slice(metadataIndexes[1] + 1, lines.length);
+  if (metadataIndexes.length > 0) {
+    lines = lines.slice(metadataIndexes[1] + 1, lines.length);
+  }
   return lines.join("\n");
 };
 
