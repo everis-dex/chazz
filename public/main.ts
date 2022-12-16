@@ -1,3 +1,5 @@
+import { info } from "console";
+
 const path = require("path");
 const fs = require("fs");
 
@@ -88,6 +90,7 @@ const getCollections = () => {
  * Reads inside every subfolder to get the content of each file it contains.
  */
 const getSubfolderContent = (subfolders: string[]) => {
+  if (!subfolders) return;
   subfolders.forEach(folder => {
     const dirPath: string = path.join(__dirname, `../content/${folder}`);
     fs.readdir(dirPath, (err: Error, files: string[]) => {
@@ -103,6 +106,7 @@ const getSubfolderContent = (subfolders: string[]) => {
  * Callback used when reducing metadataIndexes.
  */
 const getMetadataIndexes = (acc: number[], elem: string, index: number): number[] => {
+  if (!elem || !index || !acc) return [];
   if (/^---/.test(elem)) {
     acc.push(index);
   }
@@ -114,24 +118,23 @@ const getMetadataIndexes = (acc: number[], elem: string, index: number): number[
  */
 /** */
 const parseMetadata = (lines: string[], metadataIndexes: number[]): Metadata => {
-  if (metadataIndexes.length > 0) {
-    const metadata: Metadata = blankMetadata;
-    const metadataLines: string[] = lines.slice(metadataIndexes[0] + 1, metadataIndexes[1]);
-    metadataLines.forEach(line => {
-      metadata[line.split(": ")[0]] = line.split(": ")[1];
-    });
-    return metadata;
-  }
-  return blankMetadata;
+  if (!lines || !metadataIndexes) return blankMetadata;
+
+  const metadata: Metadata = blankMetadata;
+  const metadataLines: string[] = lines.slice(metadataIndexes[0] + 1, metadataIndexes[1]);
+  metadataLines.forEach(line => {
+    metadata[line.split(": ")[0]] = line.split(": ")[1];
+  });
+  return metadata;
 };
 
 /**
  * Remove all metadata info and extract only the content after --- separator.
  */
 const parseContent = (lines: string[], metadataIndexes: number[]): string => {
-  if (metadataIndexes.length > 0) {
-    lines = lines.slice(metadataIndexes[1] + 1, lines.length);
-  }
+  if (!lines || !metadataIndexes || metadataIndexes.length <= 0) return "";
+
+  lines = lines.slice(metadataIndexes[1] + 1, lines.length);
   return lines.join("\n");
 };
 
@@ -201,7 +204,7 @@ const constructElement = (
     default:
       console.error("\n ----------------------------------- \n");
       console.error(
-        `ERROR: '${folder}' collection is missing. \n\nGo to public/main.js to add configuration in 'constructElement' method`
+        `ERROR: '${folder}' collection is missing. \n\nGo to public/main.ts to add configuration in 'constructElement' method`
       );
       console.error("\n ----------------------------------- \n");
       break;
@@ -212,7 +215,9 @@ const constructElement = (
 /**
  * Reads the content of every file inside the folder and writes a JSON file with all the content condensed.
  */
-const getFilesContent = (files: string[], dirPath: string, folder: string) => {
+const getFilesContent = (files: string[], dirPath: string, folder: string): void => {
+  if (!files || !dirPath || !folder) return;
+
   const elementList: BuiltElement[] = [];
   const indexList: number[] = [];
 
