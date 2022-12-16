@@ -1,6 +1,6 @@
 ---
-partner: Caixabank
+name: Caixabank
 logo: uploads/logo_caixaBank.svg
-website: #
+website: https://www.caixabank.es/
 sort: 13
 ---

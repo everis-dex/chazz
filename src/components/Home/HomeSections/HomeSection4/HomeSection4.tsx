@@ -3,6 +3,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 
 import "./Section4.scss";
+
 import { ChazzOffices, TangityStudios, GetInTouch } from './footerSections/index';
 
 export const HomeSection4 = () => {
@@ -20,8 +21,8 @@ export const HomeSection4 = () => {
             <hr />
             <GetInTouch />
           </div>
-        </Container>
-      </div>
-    </>
+        </div>
+      </Container>
+    </div>
   );
 };

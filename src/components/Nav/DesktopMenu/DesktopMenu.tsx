@@ -14,9 +14,11 @@ export const DesktopMenu = ({ color }: Props) => {
         {routesInfo.map(route => {
           return (
             <li key={route.id}>
-              <Link style={{ color: color }} to={route.route}>
-                {route.name}
-              </Link>{" "}
+              {route.name && (
+                <Link style={{ color: color }} to={route.route}>
+                  {route.name}
+                </Link>
+              )}
             </li>
           );
         })}

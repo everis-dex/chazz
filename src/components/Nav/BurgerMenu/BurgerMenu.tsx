@@ -10,7 +10,9 @@ interface Props {
   toggleMenu: (event: React.MouseEvent) => void;
   color: string;
 }
+
 export const BurgerMenu = ({ isOpen, toggleMenu, color }: Props) => {
+
   return (
     <div className={`burger-menu ${isOpen ? "active" : ""}`}>
       <input id="open-close" name="open-close" type="checkbox" value="" />

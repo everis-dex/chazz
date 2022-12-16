@@ -1,6 +1,6 @@
 ---
-partner: Banco Santander
+name: Banco Santander
 logo: uploads/logo_santander.svg
-website: #
+website: https://www.bancosantander.es/
 sort: 3
 ---

@@ -1,6 +1,6 @@
 ---
-partner: Seat
+name: Seat
 logo: uploads/logo_seat.svg
-website: #
+website: https://www.seat.es/
 sort: 10
 ---

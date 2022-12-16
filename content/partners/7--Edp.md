@@ -1,6 +1,6 @@
 ---
-partner: Edp
+name: Edp
 logo: uploads/logo_edp.svg
-website: #
+website: https://www.edpenergia.es/es/
 sort: 7
 ---

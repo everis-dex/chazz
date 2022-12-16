@@ -10,7 +10,7 @@ var blankMetadata = {
     service: "",
     value: "",
     content: "",
-    partner: "",
+    name: "",
     logo: "",
     website: "",
     city: "",
@@ -115,7 +115,7 @@ var constructElement = function (folder, metadata, data) {
             // element.id = data.timestamp;
             element.logo = metadata.logo;
             element.website = metadata.website;
-            element.partner = metadata.partner;
+            element.name = metadata.name;
             break;
         case "categories":
             element.id = data.timestamp;
@@ -174,7 +174,7 @@ var getFilesContent = function (files, dirPath, folder) {
                     .sort(function (a, b) {
                     return a.id > b.id ? 1 : -1;
                 })
-                    .filter(function (element) { return element.id != -1; });
+                    .filter(function (element) { return element.id !== -1; });
                 fs.writeFileSync("src/content/".concat(folder, ".json"), JSON.stringify(sortedList));
             }
         });
