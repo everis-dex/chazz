@@ -174,7 +174,7 @@ var getFilesContent = function (files, dirPath, folder) {
                     .sort(function (a, b) {
                     return a.id > b.id ? 1 : -1;
                 })
-                    .filter(function (element) { return element.id != -1; });
+                    .filter(function (element) { return element.id !== -1; });
                 fs.writeFileSync("src/content/".concat(folder, ".json"), JSON.stringify(sortedList));
             }
         });
