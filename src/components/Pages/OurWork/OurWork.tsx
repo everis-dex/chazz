@@ -56,7 +56,7 @@ export const OurWork = () => {
           projects.map((project: Project, index: number) => {
             let height = handleProjectFormat(index);
             return (
-              <div key={index}>
+              <div className="work-project" key={index}>
                 <ProjectCard data={project} height={height} />
               </div>
             );
