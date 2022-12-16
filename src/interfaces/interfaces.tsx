@@ -28,7 +28,7 @@ export interface Office {
   city: string;
   phone: string;
   email: string;
-  addres: string;
+  address: string;
 }
 
 export interface Studio {

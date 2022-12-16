@@ -25,7 +25,6 @@ export const HomeSection1 = () => {
                 <h2>{category.title}</h2>
                 <p>{category.section}</p>
                 <p>{category.body}</p>
-
                 <hr></hr>
               </div>
             ))}
