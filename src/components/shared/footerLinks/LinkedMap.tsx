@@ -12,7 +12,7 @@ export const LinkedMap = ({ address, city }: MapProps) => {
 
   return (
     <p className="map">
-      <a className="footerLink" target="_blank" href={mapLink}>
+      <a className="footerLink" target="_blank" href={mapLink} rel="noreferrer">
         {address}
       </a>
     </p>
