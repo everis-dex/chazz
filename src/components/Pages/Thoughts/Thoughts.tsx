@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 
 // import { Thoughts } from "../../../interfaces/interfaces";
-import { Nav } from '../../Nav/Nav';
-import { AppFooter } from '../../shared/AppFooter/AppFooter';
+import { Nav } from "../../Nav/Nav";
+import { AppFooter } from "../../shared/AppFooter/AppFooter";
 
 export const Thoughts = () => {
   useEffect(() => window.scrollTo(0, 0), []);
@@ -13,6 +13,5 @@ export const Thoughts = () => {
       <p>Thoughts</p>
       <AppFooter />
     </>
-  )
-
+  );
 };

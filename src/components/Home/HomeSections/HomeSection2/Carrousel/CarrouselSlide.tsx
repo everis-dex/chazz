@@ -16,9 +16,7 @@ export const CarrouselSlide = (props: Project) => {
       <p className="title">
         <strong>{props.title}</strong> — {props.description}
       </p>
-      <p className="properties">{props.subtitle.substring(0, maxTextLength)}
-        {props.subtitle.substring(maxTextLength).length > 0 ? "..." : ""}
-      </p>
+      <p className="properties">{props.subtitle}</p>
     </>
   );
 };
