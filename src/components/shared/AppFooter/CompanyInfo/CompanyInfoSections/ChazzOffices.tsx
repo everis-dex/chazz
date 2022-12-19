@@ -2,8 +2,8 @@ import React from "react";
 
 import offices from "../../../../../content/offices.json";
 
-import "../Section4.scss";
-import { LinkedEmail, LinkedMap, LinkedPhone } from "../../../../shared/footerLinks/index";
+import "../CompanyInfo.scss";
+import { LinkedEmail, LinkedMap, LinkedPhone } from "../../../footerLinks/index";
 
 export const ChazzOffices = () => {
   return (

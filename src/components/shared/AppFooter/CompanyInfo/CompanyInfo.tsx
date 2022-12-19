@@ -2,11 +2,11 @@ import React from "react";
 
 import { Container } from "react-bootstrap";
 
-import "./Section4.scss";
+import "./CompanyInfo.scss";
 
-import { ChazzOffices, TangityStudios, GetInTouch } from "./footerSections/index";
+import { ChazzOffices, TangityStudios, GetInTouch } from "./index";
 
-export const HomeSection4 = () => {
+export const CompanyInfo = () => {
   return (
     <div className="we-are-section">
       <Container>

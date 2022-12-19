@@ -2,7 +2,7 @@ import React from "react";
 import { LinkedEmail } from "../../../../shared/footerLinks";
 import { LinkedRRSS } from "../../../../shared/footerLinks/LinkedRRSS";
 
-import "../Section4.scss";
+import "../CompanyInfo.scss";
 
 export const GetInTouch = () => {
   return (
