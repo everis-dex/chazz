@@ -54,8 +54,6 @@ const blankMetadata: Metadata = {
   subtitle: "",
   image: "",
   branding: "",
-  service: "",
-  value: "",
   content: "",
   name: "",
   logo: "",

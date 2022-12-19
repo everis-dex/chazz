@@ -11,8 +11,6 @@ export interface Project {
   subtitle: string;
   image: string;
   branding: string;
-  service: string;
-  value: string;
   body: string;
 }
 

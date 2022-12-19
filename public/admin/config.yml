@@ -22,8 +22,6 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Subtitle, name: subtitle, widget: string }
       - { label: Branding, name: branding, widget: string }
-      - { label: Service, name: service, widget: string }
-      - { label: Value, name: value, widget: string }
       - { label: Body, name: body, widget: markdown }
     # filter:
     #   field: rating
