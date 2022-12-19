@@ -5,7 +5,7 @@ import { Media } from "../../../../shared/Media/Media";
 
 export const CarrouselSlide = (props: Project) => {
   const style = { width: "300px", height: "500px" };
-  const maxTextLength: number = 10;
+  // const maxTextLength: number = 10;
 
   return (
     <>
