@@ -10,7 +10,7 @@ export interface Project {
   title: string;
   subtitle: string;
   image: string;
-  branding: string;
+  description: string;
   body: string;
 }
 

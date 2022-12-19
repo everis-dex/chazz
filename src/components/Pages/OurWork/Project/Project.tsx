@@ -26,10 +26,8 @@ export const ProjectCard = ({ data, columns, height = "auto", full = false }: Pr
       </div>
       <div className="project-details">
         <p className="title">{data.title} —</p>
-        <p className="subtitle">{data.subtitle}</p>
-        <p className="properties">
-          {data.branding}, {data.service}, {data.value}
-        </p>
+        <p className="description">{data.description}</p>
+        <p className="properties">{data.subtitle}</p>
       </div>
       <div className="project-dropdown">
         <div className="dropdown" onClick={handleDropdown}>

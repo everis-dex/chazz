@@ -14,7 +14,7 @@ interface Metadata {
   title?: string;
   subtitle?: string;
   image?: string;
-  branding?: string;
+  description?: string;
   service?: string;
   value?: string;
   content?: string;
@@ -34,7 +34,7 @@ interface BuiltElement {
   title?: string;
   subtitle?: string;
   image?: string;
-  branding?: string;
+  description?: string;
   service?: string;
   value?: string;
   name?: string;
@@ -53,7 +53,7 @@ const blankMetadata: Metadata = {
   title: "",
   subtitle: "",
   image: "",
-  branding: "",
+  description: "",
   content: "",
   name: "",
   logo: "",
@@ -162,7 +162,7 @@ const constructElement = (
       element.title = metadata.title ? metadata.title : "No title given";
       element.subtitle = metadata.subtitle ? metadata.subtitle : "No subtitle given";
       element.image = metadata.image;
-      element.branding = metadata.branding;
+      element.description = metadata.description;
       element.service = metadata.service;
       element.value = metadata.value;
       element.body = data.content ? data.content : "No content given";
