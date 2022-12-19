@@ -7,20 +7,19 @@ import { DesktopMenu } from "./DesktopMenu/DesktopMenu";
 import "./Nav.scss";
 
 type Props = { color: string };
-const Nav = ({ color }: Props) => {
-  const [isDesktop, setIsDesktop] = useState<boolean>(false);
+
+export const Nav = ({ color }: Props) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {
-    setIsDesktop(!isDesktop);
+    setIsOpen(!isOpen);
   };
 
   return (
-    <>
+    <div className="header-nav">
       <ChazzLogo color={color} />
       <DesktopMenu color={color} />
-      <BurgerMenu isDesktop={isDesktop} toggleMenu={toggleMenu} />
-    </>
+      <BurgerMenu isOpen={isOpen} toggleMenu={toggleMenu} color={color} />
+    </div>
   );
 };
-
-export default Nav;

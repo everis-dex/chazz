@@ -20,10 +20,8 @@ collections:
       - { label: Publish Date, name: date, widget: datetime } # For widgets, see https://www.netlifycms.org/docs/widgets/
       - { label: Image, name: image, widget: image }
       - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string }
       - { label: Subtitle, name: subtitle, widget: string }
-      - { label: Branding, name: branding, widget: string }
-      - { label: Service, name: service, widget: string }
-      - { label: Value, name: value, widget: string }
       - { label: Body, name: body, widget: markdown }
     # filter:
     #   field: rating

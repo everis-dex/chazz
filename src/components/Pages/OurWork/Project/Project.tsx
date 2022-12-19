@@ -8,7 +8,7 @@ import "./Project.styles.scss";
 type Props = { data: Project; columns?: string; height?: string; full?: boolean };
 
 export const ProjectCard = ({ data, columns, height = "auto", full = false }: Props) => {
-  const style = { width: "100%", height: height };
+  const style = { width: "100%", height: height, "object-fit": "cover" };
   const bodyParagraphs: string[] = data.body.replace("\r", "").split("\n");
 
   // Dropdown
@@ -26,10 +26,8 @@ export const ProjectCard = ({ data, columns, height = "auto", full = false }: Pr
       </div>
       <div className="project-details">
         <p className="title">{data.title} —</p>
-        <p className="subtitle">{data.subtitle}</p>
-        <p className="properties">
-          {data.branding}, {data.service}, {data.value}
-        </p>
+        <p className="description">{data.description}</p>
+        <p className="properties">{data.subtitle}</p>
       </div>
       <div className="project-dropdown">
         <div className="dropdown" onClick={handleDropdown}>

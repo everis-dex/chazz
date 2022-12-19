@@ -2,51 +2,41 @@
   {
     "id": 1671182160,
     "title": "Wabi\r",
-    "subtitle": "Your Car, in a monthly based subscrition\r",
+    "subtitle": "Service, Branding, Digital Products, UX & UI\r",
     "image": "/uploads/wabi_home_web.jpg\r",
-    "branding": "Service, Branding\r",
-    "service": "Digital Products\r",
-    "value": "UX & UI\r",
+    "description": "Your Car, in a monthly based subscrition\r",
     "body": "\r\nLifestyles are changing so fast that brands must offer new products adaptable to the diverse needs. Within this framework, Wabi arises like a car monthly subscription model under the powerful idea to accompany people in their different vital steps. Chazz designed Wabi’s experience and brand. This initiative of Banco Santander, allows any customer choose their car as needed, and forget troubles when they do not need to own a car.\r\n"
   },
   {
     "id": 1671185640,
-    "title": "dōcō",
-    "subtitle": "Making end2end Mobility Easier in Any Territory",
-    "image": "/uploads/doco_home_web.jpg",
-    "branding": "Branding",
-    "service": "Service",
-    "value": "CX & EX Management, Digital Product...",
-    "body": "\nRenfe and Chazz worked together to create a new mobility service adapted to the needs of society under the paradigm of sustainable travel.\nMobility is a complex sector, so we shaped a tangible travel experience, making possible that any kind of trip becomes an enchanting walk. Because dōcō is technology, but also empathy. It adapts to diverse lifestyles by searching, planning and booking easily short, medium and long-distance trips in a multimodal way.\n"
+    "title": "dōcō\r",
+    "subtitle": "Branding, Service, CX & EX Management, Digital Product...\r",
+    "image": "/uploads/doco_home_web.jpg\r",
+    "description": "Making end2end Mobility Easier in Any Territory\r",
+    "body": "\r\nRenfe and Chazz worked together to create a new mobility service adapted to the needs of society under the paradigm of sustainable travel.\r\nMobility is a complex sector, so we shaped a tangible travel experience, making possible that any kind of trip becomes an enchanting walk. Because dōcō is technology, but also empathy. It adapts to diverse lifestyles by searching, planning and booking easily short, medium and long-distance trips in a multimodal way.\r\n"
   },
   {
     "id": 1671191880,
     "title": "SEAT MÓ\r",
-    "subtitle": "Full Funnel Optimization for Active Users\r",
+    "subtitle": "Marketing Funnel, Social Media Marketing, SEO/ASO...\r",
     "image": "/uploads/seatmo_home_web.jpg\r",
-    "branding": "Marketing Funnel\r",
-    "service": "Social Media Marketing\r",
-    "value": "SEO/ASO...\r",
+    "description": "Full Funnel Optimization for Active Users\r",
     "body": "\r\nSEAT MÓ and Chazz joined with the objective of increasing the impact on the active users of the moto-sharing service in Barcelona city, through the optimization of resources invested and the efficiency generated through paid and organic channels. The result was a new measurement methodology model for SEAT MÓ brand, as well as the paid media strategy definition. The goal was to optimize and improve personalization towards the audience. On top, a monthly planning has been developed in order to ensure the effectiveness of the results, allowing to continue optimizing its digital marketing strategy.\r\n"
   },
   {
     "id": 1671195000,
     "title": "Hogami\r",
-    "subtitle": "Better Habitats With A Home Service Platform\r",
+    "subtitle": "Strategic Design, Branding, Digital Products, UX & UI\r",
     "image": "/uploads/hogami_home_web.jpg\r",
-    "branding": "Strategic Design, Branding\r",
-    "service": "Digital Products\r",
-    "value": "UX & UI\r",
+    "description": "Better Habitats With A Home Service Platform\r",
     "body": "\r\nWhen Leroy Merlin faced a slowdown in market growth, as well as threats from new competitors, they looked for new markets. Localizing an opportunity with a new relationship model for a home service, Chazz created a digital platform which connects people who desire to improve their living spaces with specialized professionals. Because a home is a never-ending project, Hogami makes quality spaces come true accompanied by the right experts.\r\n"
   },
   {
     "id": 1671200460,
     "title": "Buff\r",
-    "subtitle": "A Globetrotter Digital Advisory Strategy\r",
+    "subtitle": "Funnel Strategy & Sales, Service, Value Proposition\r",
     "image": "/uploads/buff_home_web.jpg\r",
-    "branding": "Funnel Strategy & Sales\r",
-    "service": "Service\r",
-    "value": "Value Proposition\r",
+    "description": "A Globetrotter Digital Advisory Strategy\r",
     "body": "\r\nBuff needed to create and implement the whole Marketing Automation capability in order to manage consumers offering them the best experience. For this purpose, Chazz created a growth cell of a new marketing automation capability from the foundations to the campaign operation. Defining the operational model and establishing different actions to operate 360º fully integrated campaigns full funnel. Chazz and Buff made it possible with a Customer Management Strategy, Customer Segmentation, Lead Nurturing, Costumer Personalization and Engagement Actions.\r\n"
   }
 ]
