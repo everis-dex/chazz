@@ -13,8 +13,10 @@ export const CarrouselSlide = (props: Project) => {
         <Media src={props.image} style={style} alt={props.title} />
         <br />
       </div>
-      <h2>{props.title}</h2>
-      <h4>{props.subtitle}</h4>
+      <p className="title">
+        <strong>{props.title}</strong> — {props.description}
+      </p>
+      <p className="properties">{props.subtitle}</p>
       <h6>
         {/* {props.keywords.substring(0, maxTextLength)} */}
         {/* {props.keywords.substring(maxTextLength).length > 0 ? "..." : ""} */}

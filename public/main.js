@@ -6,9 +6,7 @@ var blankMetadata = {
     title: "",
     subtitle: "",
     image: "",
-    branding: "",
-    service: "",
-    value: "",
+    description: "",
     content: "",
     name: "",
     logo: "",
@@ -105,7 +103,7 @@ var constructElement = function (folder, metadata, data) {
             element.title = metadata.title ? metadata.title : "No title given";
             element.subtitle = metadata.subtitle ? metadata.subtitle : "No subtitle given";
             element.image = metadata.image;
-            element.branding = metadata.branding;
+            element.description = metadata.description;
             element.service = metadata.service;
             element.value = metadata.value;
             element.body = data.content ? data.content : "No content given";
@@ -172,8 +170,8 @@ var getFilesContent = function (files, dirPath, folder) {
                 // Sort based on published time
                 var sortedList = elementList
                     .sort(function (a, b) {
-                    return a.id > b.id ? 1 : -1;
-                })
+                        return a.id > b.id ? 1 : -1;
+                    })
                     .filter(function (element) { return element.id !== -1; });
                 fs.writeFileSync("src/content/".concat(folder, ".json"), JSON.stringify(sortedList));
             }
