@@ -1,6 +1,5 @@
 import React from "react";
 
-import "../../Home/HomeSections/HomeSection4/HomeSection4";
 import "./footerLinks.scss";
 
 interface RRSSProps {
