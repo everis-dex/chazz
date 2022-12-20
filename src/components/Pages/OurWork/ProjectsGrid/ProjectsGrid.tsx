@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import { ProjectCard } from "../Project/Project";
 import projects from "../../../../content/projects.json";
@@ -51,9 +51,9 @@ export const ProjectsGrid = () => {
           projects.map((project: Project, index: number) => {
             let height = handleProjectFormat(index);
             return (
-              <div key={index}>
+              <Fragment key={index}>
                 <ProjectCard data={project} height={height} />
-              </div>
+              </Fragment>
             );
           })}
       </div>
