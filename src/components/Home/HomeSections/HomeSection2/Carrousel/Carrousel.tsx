@@ -26,8 +26,9 @@ export const Carrousel = () => {
         <div className="slides">
           <Swiper
             modules={[Pagination, Autoplay]}
-            slidesPerView={3}
-            spaceBetween={10}
+            slidesPerView={2.1}
+            spaceBetween={22}
+            navigation
             pagination={{
               el: ".pagination",
               clickable: true
@@ -38,15 +39,9 @@ export const Carrousel = () => {
               disableOnInteraction: false
             }}
             breakpoints={{
-              "@0.00": {
-                slidesPerView: 1
-              },
-              "@1.00": {
-                slidesPerView: 2
-              },
-              "@1.50": {
-                slidesPerView: 3
-              }
+              768: { slidesPerView: 1.1 },
+              1024: { slidesPerView: 3.1 },
+              1440: { slidesPerView: 2.1 }
             }}
           >
             {slides.map((slide: Project, index: number) => {

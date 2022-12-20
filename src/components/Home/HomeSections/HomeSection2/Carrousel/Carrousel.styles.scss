@@ -1,3 +1,7 @@
+.carousel:hover {
+  cursor: pointer;
+}
+
 .carouselPagination {
   display: flex;
   align-items: center;
@@ -31,7 +35,7 @@
   width: 100%;
   white-space: nowrap;
   margin: 50px 0 0 0;
-  padding-right: 40px;
+  padding-right: 10px;
 }
 
 .properties {
