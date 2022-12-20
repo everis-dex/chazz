@@ -11,7 +11,7 @@ export const HomeSection2 = () => {
     <Container id="HomeSection2">
       <Carrousel />
       <Link to={"/work"} className="more-projects">
-        More projects
+        More projects →
       </Link>
     </Container>
   );
