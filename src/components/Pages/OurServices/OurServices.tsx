@@ -9,7 +9,7 @@ export const OurServices = () => {
 
   return (
     <>
-      <Nav color="black" />
+      <Nav color="black" disabledMenuOption="/services" />
       <p>Our services</p>
       <AppFooter />
     </>
