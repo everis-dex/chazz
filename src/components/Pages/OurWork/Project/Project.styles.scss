@@ -54,6 +54,10 @@
 // MEDIA QUERIES
 
 @media (min-width: 1280px) {
+  .project-container {
+    width: auto;
+  }
+
   .project-details {
     p {
       font-size: 24px;
