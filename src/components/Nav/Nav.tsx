@@ -17,7 +17,7 @@ export const Nav = ({ color }: Props) => {
 
   return (
     <div className="header-nav">
-      <ChazzLogo color={color} />
+      <ChazzLogo color={color} isOpen={isOpen} />
       <DesktopMenu color={color} />
       <BurgerMenu isOpen={isOpen} toggleMenu={toggleMenu} color={color} />
     </div>
