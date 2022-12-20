@@ -1,3 +1,7 @@
+.carousel:hover {
+  cursor: pointer;
+}
+
 .carouselPagination {
   display: flex;
   align-items: center;
@@ -5,23 +9,21 @@
 }
 
 .swiper-pagination-bullet {
-  background-color: black;
-  height: 10px;
-  width: 10px;
-  margin-right: 6px;
-  opacity: 0.5;
+  background-color: var(--pinkHover);
+  width: 8px;
+  height: 8px;
+  opacity: 1;
   cursor: pointer;
   border-radius: 100%;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #ff5887;
+  background-color: var(--black);
 }
 
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-  margin-bottom: 25px;
-  margin-top: 15px;
+  margin: 15px 20px 25px 0px;
 }
 
 .title {
@@ -32,10 +34,14 @@
   overflow: hidden;
   width: 100%;
   white-space: nowrap;
-  margin: 30px 0 0 0;
-  padding-right: 40px;
+  margin: 50px 0 0 0;
+  padding-right: 10px;
 }
 
 .properties {
   color: var(--gray);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-right: 40px;
 }

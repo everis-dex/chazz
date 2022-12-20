@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { Nav } from '../../Nav/Nav';
+import { Nav } from "../../Nav/Nav";
 import { AppFooter } from "../../shared/AppFooter/AppFooter";
 import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 

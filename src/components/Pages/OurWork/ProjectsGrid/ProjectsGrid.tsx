@@ -44,8 +44,8 @@ export const ProjectsGrid = () => {
       <h1 className="work-header">Our work</h1>
       <div className="work-container--content">
         <div className="work-detail">
-          We are an specialized team ready to face diverse typology projects, loving to accompany brands to take a
-          step forward and set the pace of times.
+          We are an specialized team ready to face diverse typology projects, loving to accompany brands to take a step
+          forward and set the pace of times.
         </div>
         {projects &&
           projects.map((project: Project, index: number) => {

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 
 // import { Services } from "../../../interfaces/interfaces";
-import { Nav } from '../../Nav/Nav';
-import { AppFooter } from '../../shared/AppFooter/AppFooter';
+import { Nav } from "../../Nav/Nav";
+import { AppFooter } from "../../shared/AppFooter/AppFooter";
 
 export const OurServices = () => {
   useEffect(() => window.scrollTo(0, 0), []);
@@ -13,5 +13,5 @@ export const OurServices = () => {
       <p>Our services</p>
       <AppFooter />
     </>
-  )
+  );
 };
