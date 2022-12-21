@@ -12,13 +12,13 @@ export const BurgerIcon = ({ isOpen, toggleMenu, color }: Props) => {
 
     const [iconColor, setIconColor] = useState<string>("");
     useEffect(() => {
-        if (color == "white") { // En la home
+        if (color == "white") { // Homepage
             setIconColor("white");
         }
-        if (color == "black") {    // En otra página
-            if (!isOpen) {   // Si no se ha abierto el menú
+        if (color == "black") {    // Other page
+            if (!isOpen) {   // Closed menu
                 setIconColor("black");
-            } else {    // Si se ha abierto el menú
+            } else {    // Opened menu
                 setIconColor("white");
             }
         }
