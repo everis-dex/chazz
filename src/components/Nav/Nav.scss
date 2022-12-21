@@ -139,13 +139,11 @@
 
   input#open-close:checked + .toggle-button-pages:before {
     transform: rotate(45deg);
-    border-top: 2px solid var(--white);
     width: 100%;
   }
 
   input#open-close:checked + .toggle-button-pages:after {
     transform: rotate(-45deg);
-    border-top: 2px solid var(--white);
     width: 100%;
   }
   //////////////////////////////////////
@@ -181,6 +179,14 @@
     &:hover {
       color: #ffafc4;
     }
+  }
+
+  .burger-active {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 55.2px;
+    color: #ffafc4;
   }
 }
 

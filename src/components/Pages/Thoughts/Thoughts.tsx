@@ -9,7 +9,7 @@ export const Thoughts = () => {
 
   return (
     <>
-      <Nav color="black" />
+      <Nav color="black" disabledMenuOption="/thoughts" />
       <p>Thoughts</p>
       <AppFooter />
     </>

@@ -11,7 +11,7 @@ export const OurWork = () => {
 
   return (
     <>
-      <Nav color="black" />
+      <Nav color="black" disabledMenuOption="/work" />
       <ProjectsGrid />
       <AppFooter />
     </>

@@ -7,7 +7,6 @@ import { CarrouselSlide } from "./CarrouselSlide";
 import projects from "../../../../../content/projects.json";
 import { Project } from "../../../../../interfaces/interfaces";
 
-// import "swiper/css/bundle";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./Carrousel.styles.scss";
