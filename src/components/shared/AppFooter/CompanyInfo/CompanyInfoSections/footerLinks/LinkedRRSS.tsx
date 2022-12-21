@@ -2,12 +2,12 @@ import React from "react";
 
 import "./footerLinks.scss";
 
-interface RRSSProps {
+type Props = {
   url: string;
   rrss: string;
 }
 
-export const LinkedRRSS = ({ url, rrss }: RRSSProps) => {
+export const LinkedRRSS = ({ url, rrss }: Props) => {
   return (
     <p className="social-media">
       <a className="footerLink" href={url}>

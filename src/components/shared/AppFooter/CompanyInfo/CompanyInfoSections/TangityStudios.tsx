@@ -1,7 +1,7 @@
 import React from "react";
 
 import studios from "../../../../../content/studios.json";
-import { LinkedEmail } from "../../../../shared/footerLinks";
+import { LinkedEmail } from "./footerLinks";
 
 import "../CompanyInfo.scss";
 
@@ -17,7 +17,6 @@ export const TangityStudios = () => {
         ))}
         <LinkedEmail email="tangity@nttdata.com" />
       </div>
-      {/* <p className="email">tangity@nttdata.com</p> */}
     </div>
   );
 };

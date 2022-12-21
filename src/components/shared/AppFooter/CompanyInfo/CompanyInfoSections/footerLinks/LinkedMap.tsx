@@ -2,12 +2,12 @@ import React from "react";
 
 import "./footerLinks.scss";
 
-interface MapProps {
+type Props = {
   address: string;
   city: string;
 }
 
-export const LinkedMap = ({ address, city }: MapProps) => {
+export const LinkedMap = ({ address, city }: Props) => {
   const mapLink: string = `https://maps.google.com?q=+${address},${city}+`;
 
   return (

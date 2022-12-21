@@ -1,8 +1,10 @@
 import React from "react";
 
 import offices from "../../../../../content/offices.json";
+
 import { Office } from "../../../../../interfaces/interfaces";
-import { LinkedEmail, LinkedMap, LinkedPhone } from "../../../footerLinks/index";
+
+import { LinkedEmail, LinkedMap, LinkedPhone } from "./footerLinks/index";
 
 import "../CompanyInfo.scss";
 

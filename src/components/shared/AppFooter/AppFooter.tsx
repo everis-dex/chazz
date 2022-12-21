@@ -1,7 +1,6 @@
 import React from "react";
 
-import { CompanyInfo } from "./CompanyInfo/CompanyInfo";
-import { BottomBar } from "./BottomBar/BottomBar";
+import { BottomBar, CompanyInfo } from "./index";
 
 import "./AppFooter.styles.scss";
 

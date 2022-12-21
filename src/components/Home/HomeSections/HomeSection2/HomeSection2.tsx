@@ -1,6 +1,9 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
+
 import { Carrousel } from "./Carrousel/Carrousel";
+
 import { Container } from "react-bootstrap";
 import "./HomeSection2.scss";
 
