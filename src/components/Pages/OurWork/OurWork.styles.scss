@@ -18,12 +18,14 @@
 }
 
 .work-container--content {
-  margin: 5%;
+  margin: 5vw;
+  width: 95vw;
   margin-top: 0;
   display: grid;
 
   .work-detail {
     margin-bottom: 10vh;
+    width: 90vw;
     font-weight: 500;
     font-size: 24px;
     line-height: 131.3%;

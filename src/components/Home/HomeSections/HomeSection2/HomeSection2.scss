@@ -7,4 +7,28 @@
   text-decoration: none;
   display: block;
   margin: 80px 0;
+  margin-left: 15px;
+}
+
+.more-projects:hover {
+  color: var(--pinkHover);
+}
+
+// MEDIA QUERIES
+@media (min-width: 768px) {
+  .more-projects {
+    margin-left: 5%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .more-projects {
+    margin-left: 6.3%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .more-projects {
+    margin-left: 16%;
+  }
 }

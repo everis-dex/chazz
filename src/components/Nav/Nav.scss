@@ -1,4 +1,4 @@
-@import "./src/styles.scss";
+@import "../../styles.scss";
 
 // MOBILE FIRST
 
@@ -17,6 +17,13 @@
 
   a:hover {
     color: var(--black);
+  }
+}
+
+.pagesDesktopNavItem {
+  color: var(--black) !important;
+  &:hover {
+    color: var(--pinkHover) !important;
   }
 }
 
@@ -139,13 +146,11 @@
 
   input#open-close:checked + .toggle-button-pages:before {
     transform: rotate(45deg);
-    border-top: 2px solid var(--white);
     width: 100%;
   }
 
   input#open-close:checked + .toggle-button-pages:after {
     transform: rotate(-45deg);
-    border-top: 2px solid var(--white);
     width: 100%;
   }
   //////////////////////////////////////
@@ -179,8 +184,16 @@
     line-height: 55.2px;
 
     &:hover {
-      color: #ffafc4;
+      color: var(--pinkHover);
     }
+  }
+
+  .burger-active {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 55.2px;
+    color: var(--pinkHover);
   }
 }
 
@@ -210,7 +223,7 @@
 
   .nav ul li a {
     text-decoration: none;
-    color: var(--white);
+    // color: var(--white);
 
     &:hover {
       text-decoration: none;

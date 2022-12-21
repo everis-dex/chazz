@@ -1,6 +1,7 @@
 .project-container {
   display: block;
   margin-bottom: 10vh;
+  width: 90vw;
 }
 
 .project-media {
@@ -33,26 +34,49 @@
 .project-dropdown {
   font-size: 16px;
   .dropdown {
-    // display: flex;
-    display: none;
+    display: flex;
+    // display: none;
     justify-content: space-between;
     font-weight: 700;
     line-height: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #d3d3d3;
+    // border-bottom: 1px solid #d3d3d3;
     padding-right: 10px;
   }
+}
 
-  .body {
-    margin-top: 30px;
-    font-weight: 450;
-    line-height: 137%;
-  }
+.body {
+  margin-top: 30px;
+  font-weight: 450;
+  line-height: 137%;
+  padding: 0px !important;
+}
+
+.accordion-button {
+  background-color: white !important;
+  padding: 0px !important;
+}
+
+.accordion-button:focus {
+  box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #212529;
+  padding: 0;
+}
+
+.accordion-body {
+  padding: 30px 0px 0px 0px !important;
 }
 
 // MEDIA QUERIES
 
 @media (min-width: 1280px) {
+  .project-container {
+    width: auto;
+  }
+
   .project-details {
     p {
       font-size: 24px;

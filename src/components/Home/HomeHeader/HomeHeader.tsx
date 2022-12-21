@@ -8,7 +8,7 @@ export const HomeHeader = () => {
     <>
       <div className="chazz-header">
         <div className="velo">
-          <Nav color="white" />
+          <Nav color="white" disabledMenuOption="" />
         </div>
       </div>
       <div className="chazz-title">
