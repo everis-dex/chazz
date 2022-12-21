@@ -1,11 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-import { routesInfo } from "../../../constants";
-
-import "../Nav.scss";
 import { BurgerIcon } from "./BurgerIcon/BurgerIcon";
 import { BurgerMenuOptions } from "./BurgerMenuOptions/BurgerMenuOptions";
+
+import "../Nav.scss";
 
 type Props = {
   isOpen: boolean;

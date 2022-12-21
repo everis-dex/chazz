@@ -11,7 +11,7 @@ export const GetInTouch = () => {
     <div className="in-touch-container">
       <span>GET IN TOUCH</span>
       <div className="in-touch-grid">
-        {getInTouch.map((item, index) => (
+        {getInTouch.map((item, index: number) => (
           <div className="in-touch-info" key={index}>
             <p className="in-touch-subtitle">{item.title}</p>
             <LinkedEmail email={item.email} />

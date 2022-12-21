@@ -16,19 +16,17 @@ export const BurgerMenuOptions = ({ isOpen, toggleMenu, color, disabledMenuOptio
   return (
     <nav className={`burger-nav ${isOpen ? "active" : ""}`}>
       <ul className="burger-ul">
-        {routesInfo.map(route => {
-          return (
-            <li className="burger-li" key={route.id}>
-              <Link
-                className={route.route != disabledMenuOption ? "burger-a" : "burger-active"}
-                to={route.route}
-                onClick={toggleMenu}
-              >
-                {route.name}
-              </Link>
-            </li>
-          );
-        })}
+        {routesInfo.map(route => (
+          <li className="burger-li" key={route.id}>
+            <Link
+              className={route.route !== disabledMenuOption ? "burger-a" : "burger-active"}
+              to={route.route}
+              onClick={toggleMenu}
+            >
+              {route.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );
