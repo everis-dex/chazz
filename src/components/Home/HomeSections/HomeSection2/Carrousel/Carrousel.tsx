@@ -22,38 +22,32 @@ export const Carrousel = () => {
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
-    const carouselWidth: number = (carouselRef != null && carouselRef.current)
-      ? carouselRef.current.offsetWidth
-      : 0;
+    const carouselWidth: number = carouselRef != null && carouselRef.current ? carouselRef.current.offsetWidth : 0;
     setCarouselWidth(carouselWidth);
 
     setOffset((windowWidth - carouselWidth) / 2 - 20);
-  }, [carouselWidth]);
+  }, [carouselWidth, windowWidth]);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
     const handleWindowResize = () => {
       setWindowWidth(window.innerWidth);
     };
-    window.addEventListener('resize', handleWindowResize);
+    window.addEventListener("resize", handleWindowResize);
 
     setOffset(windowWidth - carouselWidth - 20);
 
     return () => {
-      window.removeEventListener('resize', handleWindowResize);
+      window.removeEventListener("resize", handleWindowResize);
     };
   }, [windowWidth, carouselWidth]);
 
   useEffect(() => {
-    const carouselWidth: number = (carouselRef != null && carouselRef.current)
-      ? carouselRef.current.offsetWidth
-      : 0;
+    const carouselWidth: number = carouselRef != null && carouselRef.current ? carouselRef.current.offsetWidth : 0;
     setCarouselWidth(carouselWidth);
 
-    setOffset(((windowWidth - carouselWidth) / 2) - 14);
+    setOffset((windowWidth - carouselWidth) / 2 - 14);
   }, [windowWidth]);
-
-
 
   return (
     <>
