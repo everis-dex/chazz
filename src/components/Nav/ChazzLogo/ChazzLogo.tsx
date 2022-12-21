@@ -4,23 +4,16 @@ import "../Nav.scss";
 import { Link } from "react-router-dom";
 
 type Props = {
-  color: string
-  isOpen: boolean
+  color: string;
+  isOpen: boolean;
 };
 export const ChazzLogo = ({ color, isOpen }: Props) => {
-
   return (
     <div className="chazz-logo">
       <Link to="/">
-        {!isOpen && (
-          <Logo fill={color} />
-        )}
-        {(isOpen && color === "black") && (
-          <Logo fill="white" />
-        )}
-        {(isOpen && color === "white") && (
-          <Logo fill="white" />
-        )}
+        {!isOpen && <Logo fill={color} />}
+        {isOpen && color === "black" && <Logo fill="white" />}
+        {isOpen && color === "white" && <Logo fill="white" />}
       </Link>
     </div>
   );

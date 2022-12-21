@@ -7,12 +7,11 @@ import { DesktopMenu } from "./DesktopMenu/DesktopMenu";
 import "./Nav.scss";
 
 type Props = {
-  color: string
-  disabledMenuOption: string
+  color: string;
+  disabledMenuOption: string;
 };
 
 export const Nav = ({ color, disabledMenuOption }: Props) => {
-
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {

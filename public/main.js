@@ -132,6 +132,11 @@ var constructElement = function (folder, metadata, data) {
             element.id = data.timestamp;
             element.city = metadata.city;
             break;
+        case "get-in-touch":
+            element.id = data.timestamp;
+            element.title = metadata.title;
+            element.email = metadata.email;
+            break;
         default:
             console.error("\n ----------------------------------- \n");
             console.error("ERROR: '".concat(folder, "' collection is missing. \n\nGo to public/main.js to add configuration in 'constructElement' method"));

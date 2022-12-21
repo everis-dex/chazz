@@ -196,6 +196,12 @@ const constructElement = (
       element.city = metadata.city;
       break;
 
+    case "get-in-touch":
+      element.id = data.timestamp;
+      element.title = metadata.title;
+      element.email = metadata.email;
+      break;
+
     default:
       console.error("\n ----------------------------------- \n");
       console.error(

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Accordion } from 'react-bootstrap';
+import { Accordion } from "react-bootstrap";
 
 import { Media } from "../../../../components/shared/Media/Media";
 import { Project } from "../../../../interfaces/interfaces";
@@ -7,7 +7,6 @@ import { Project } from "../../../../interfaces/interfaces";
 import "./Project.styles.scss";
 
 type Props = { data: Project; columns?: string; height?: string; full?: boolean };
-
 
 export const ProjectCard = ({ data, columns, height = "auto", full = false }: Props) => {
   const style = { width: "100%", height: height, "object-fit": "cover" }; // Adriana lo tiene puesto como object-fit, pero React da error. Aconseja objectFit
@@ -20,7 +19,6 @@ export const ProjectCard = ({ data, columns, height = "auto", full = false }: Pr
   const handleDropdown = () => {
     setOpenDropdown(!openDropdown);
   };
-
 
   return (
     <div className="project-container">
@@ -39,12 +37,9 @@ export const ProjectCard = ({ data, columns, height = "auto", full = false }: Pr
       <Accordion onSelect={handleDropdown} flush>
         <Accordion.Item eventKey="0">
           <Accordion.Header>{dropdownText} information</Accordion.Header>
-          <Accordion.Body>
-            {bodyParagraphs}
-          </Accordion.Body>
+          <Accordion.Body>{bodyParagraphs}</Accordion.Body>
         </Accordion.Item>
       </Accordion>
     </div>
-
   );
 };
