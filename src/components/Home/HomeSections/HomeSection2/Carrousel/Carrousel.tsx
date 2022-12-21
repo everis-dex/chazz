@@ -28,7 +28,7 @@ export const Carrousel = () => {
     setCarouselWidth(carouselWidth);
 
     setOffset((windowWidth - carouselWidth) / 2 - 20);
-  }, []);
+  }, [carouselWidth]);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -42,7 +42,7 @@ export const Carrousel = () => {
     return () => {
       window.removeEventListener('resize', handleWindowResize);
     };
-  });
+  }, [windowWidth, carouselWidth]);
 
   useEffect(() => {
     const carouselWidth: number = (carouselRef != null && carouselRef.current)
