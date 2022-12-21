@@ -30,3 +30,4 @@ export const BurgerMenuOptions = ({ isOpen, toggleMenu, color, disabledMenuOptio
         </nav>
     );
 };
+

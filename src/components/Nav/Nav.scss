@@ -139,13 +139,11 @@
 
   input#open-close:checked + .toggle-button-pages:before {
     transform: rotate(45deg);
-    border-top: 2px solid var(--white);
     width: 100%;
   }
 
   input#open-close:checked + .toggle-button-pages:after {
     transform: rotate(-45deg);
-    border-top: 2px solid var(--white);
     width: 100%;
   }
   //////////////////////////////////////
