@@ -2,6 +2,8 @@ import React from "react";
 import { LinkedEmail } from "../../../../shared/footerLinks";
 import { LinkedRRSS } from "../../../../shared/footerLinks/LinkedRRSS";
 
+import getInTouch from "../../../../../content/get-in-touch.json";
+
 import "../CompanyInfo.scss";
 
 export const GetInTouch = () => {
@@ -9,14 +11,12 @@ export const GetInTouch = () => {
     <div className="in-touch-container">
       <span>GET IN TOUCH</span>
       <div className="in-touch-grid">
-        <div className="in-touch-info">
-          <p className="in-touch-subtitle">General inquiries</p>
-          <LinkedEmail email="info@chazzdesign.com" />
-        </div>
-        <div className="in-touch-info">
-          <p className="in-touch-subtitle">Be part of the team</p>
-          <LinkedEmail email="info@chazzdesign.com" />
-        </div>
+        {getInTouch.map((item, index) => (
+          <div className="in-touch-info" key={index}>
+            <p className="in-touch-subtitle">{item.title}</p>
+            <LinkedEmail email={item.email} />
+          </div>
+        ))}
         <div className="in-touch-info">
           <p className="in-touch-subtitle">Social</p>
           <LinkedRRSS url="https://www.linkedin.com/company/chazz" rrss="Linkedin" />
