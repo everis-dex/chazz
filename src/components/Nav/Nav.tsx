@@ -13,7 +13,6 @@ type Props = {
 
 export const Nav = ({ color, disabledMenuOption }: Props) => {
 
-  console.log({ disabledMenuOption });
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {

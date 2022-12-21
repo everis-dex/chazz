@@ -10,7 +10,6 @@ type Props = { data: Project; columns?: string; height?: string; full?: boolean 
 
 
 export const ProjectCard = ({ data, columns, height = "auto", full = false }: Props) => {
-  console.log(data);
   const style = { width: "100%", height: height, "object-fit": "cover" }; // Adriana lo tiene puesto como object-fit, pero React da error. Aconseja objectFit
   const bodyParagraphs: string[] = data.body.replace("\r", "").split("\n");
 
@@ -35,7 +34,7 @@ export const ProjectCard = ({ data, columns, height = "auto", full = false }: Pr
         <p className="properties">{data.subtitle}</p>
       </div>
 
-      {/* <div className="non-accordion">{bodyParagraphs}</div> */}
+      <div className="non-accordion">{bodyParagraphs}</div>
 
       <Accordion onSelect={handleDropdown} flush>
         <Accordion.Item eventKey="0">

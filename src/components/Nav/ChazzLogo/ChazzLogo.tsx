@@ -8,7 +8,6 @@ type Props = {
   isOpen: boolean
 };
 export const ChazzLogo = ({ color, isOpen }: Props) => {
-  console.log({ isOpen }, color === "black");
 
   return (
     <div className="chazz-logo">
