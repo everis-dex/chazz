@@ -4,8 +4,6 @@ import { Carrousel } from "./Carrousel/Carrousel";
 import { Container } from "react-bootstrap";
 import "./HomeSection2.scss";
 
-
-
 export const HomeSection2 = () => {
   return (
     <Container id="HomeSection2">
