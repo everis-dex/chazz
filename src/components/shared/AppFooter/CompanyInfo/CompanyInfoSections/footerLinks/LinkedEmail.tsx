@@ -2,11 +2,11 @@ import React from "react";
 
 import "./footerLinks.scss";
 
-interface EmailProps {
+type Props = {
   email: string;
 }
 
-export const LinkedEmail = ({ email }: EmailProps) => {
+export const LinkedEmail = ({ email }: Props) => {
   const mailto: string = `mailto:${email}`;
 
   return (

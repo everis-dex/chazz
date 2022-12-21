@@ -1,9 +1,9 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
 
 import categories from "../../../../content/categories.json";
 import { Category } from "../../../../interfaces/interfaces";
 
+import { Col, Container, Row } from "react-bootstrap";
 import "./Section1.scss";
 
 export const HomeSection1 = () => {

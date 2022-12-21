@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 
-import { Nav } from "../../Nav/Nav";
-import { AppFooter } from "../../shared/AppFooter/AppFooter";
+import { Nav, AppFooter } from "../index";
 
 export const WeAre = () => {
   useEffect(() => window.scrollTo(0, 0), []);

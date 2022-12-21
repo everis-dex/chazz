@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
-import { Nav } from "../../Nav/Nav";
-import { AppFooter } from "../../shared/AppFooter/AppFooter";
+import { Nav, AppFooter } from "../index";
+
 import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 
 import "./OurWork.styles.scss";
