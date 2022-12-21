@@ -6,7 +6,7 @@ import "./HomeSection2.scss";
 
 export const HomeSection2 = () => {
   return (
-    <Container id="HomeSection2">
+    <Container fluid={true} className="p-0" id="HomeSection2">
       <Carrousel />
       <Link to={"/work"} className="more-projects">
         More projects →
