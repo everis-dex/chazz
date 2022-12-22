@@ -11,7 +11,7 @@ import "../CompanyInfo.scss";
 export const ChazzOffices = () => {
   return (
     <div className="offices-container">
-      <span>CHAZZ OFFICES</span>
+      <p className="studios-title">CHAZZ OFFICES</p>
       {offices.map((office: Office, index: number) => (
         <div className="offices-info" key={index}>
           <p className="city">{office.city}</p>

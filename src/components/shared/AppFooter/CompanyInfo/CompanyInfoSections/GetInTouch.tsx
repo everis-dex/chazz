@@ -1,7 +1,7 @@
 import React from "react";
 
-import { LinkedRRSS } from "./footerLinks/LinkedRRSS";
 import { LinkedEmail } from "./footerLinks/LinkedEmail";
+import { LinkedRRSS } from "./footerLinks/LinkedRRSS";
 
 import getInTouch from "../../../../../content/get-in-touch.json";
 
@@ -10,7 +10,7 @@ import "../CompanyInfo.scss";
 export const GetInTouch = () => {
   return (
     <div className="in-touch-container">
-      <span>GET IN TOUCH</span>
+      <p className="studios-title">GET IN TOUCH</p>
       <div className="in-touch-grid">
         {getInTouch.map((item, index: number) => (
           <div className="in-touch-info" key={index}>
