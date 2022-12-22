@@ -15,9 +15,9 @@ export const CompanyInfo = () => {
             <strong>We are part of NTT Data Company & Tangity Design Network</strong>
           </h2>
           <ChazzOffices />
-          <hr />
+          <hr className="divisor-line" />
           <TangityStudios />
-          <hr />
+          <hr className="divisor-line" />
           <GetInTouch />
         </div>
       </Container>
