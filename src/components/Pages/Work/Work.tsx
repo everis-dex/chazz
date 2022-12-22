@@ -4,15 +4,15 @@ import { Nav, AppFooter } from "../index";
 
 import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 
-import { OurWorkIntro } from "../../../interfaces/interfaces";
+import { WorkIntro } from "../../../interfaces/interfaces";
 import ourWorkIntro from "../../../content/ourworkintro.json";
 
-import "./OurWork.styles.scss";
+import "./Work.styles.scss";
 
-export const OurWork = () => {
+export const Work = () => {
   const lineBreakSymbol: string = "+";
-  const typedOurWorkIntro: OurWorkIntro = ourWorkIntro[0];
-  const introLines: string[] = typedOurWorkIntro.intro.split(lineBreakSymbol);
+  const typedWorkIntro: WorkIntro = ourWorkIntro[0];
+  const introLines: string[] = typedWorkIntro.intro.split(lineBreakSymbol);
 
   useEffect(() => window.scrollTo(0, 0), []);
 

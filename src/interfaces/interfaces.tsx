@@ -47,7 +47,7 @@ export interface Slide {
   image: string;
 }
 
-export interface OurWorkIntro {
+export interface WorkIntro {
   id: number;
   intro: string;
 }

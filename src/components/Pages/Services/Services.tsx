@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { Nav, AppFooter } from "../index";
 
-export const OurServices = () => {
+export const Services = () => {
   useEffect(() => window.scrollTo(0, 0), []);
 
   return (

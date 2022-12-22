@@ -1,5 +1,5 @@
-export * from "./OurServices/OurServices";
-export * from "./OurWork/OurWork";
+export * from "./Services/Services";
+export * from "./Work/Work";
 export * from "./Thoughts/Thoughts";
 export * from "./WeAre/WeAre";
 
