@@ -1,6 +1,6 @@
 ---
 name: Gobierno de España
-logo: uploads/logo_gobierno_de_espana.svg
+logo: uploads/logo_ministerio.svg
 website: https://administracion.gob.es/
 sort: 6
 ---

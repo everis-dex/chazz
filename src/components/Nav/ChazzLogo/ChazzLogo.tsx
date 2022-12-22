@@ -1,7 +1,10 @@
 import React from "react";
-import { ReactComponent as Logo } from "../../../assets/Chazz_Logo.svg";
-import "../Nav.scss";
+
 import { Link } from "react-router-dom";
+
+import { ReactComponent as Logo } from "../../../assets/Chazz_Logo.svg";
+
+import "../Nav.scss";
 
 type Props = {
   color: string;

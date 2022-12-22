@@ -1,8 +1,10 @@
 import React from "react";
 
 import offices from "../../../../../content/offices.json";
+
 import { Office } from "../../../../../interfaces/interfaces";
-import { LinkedEmail, LinkedMap, LinkedPhone } from "../../../footerLinks/index";
+
+import { LinkedEmail, LinkedMap, LinkedPhone } from "./footerLinks/index";
 
 import "../CompanyInfo.scss";
 
@@ -13,9 +15,12 @@ export const ChazzOffices = () => {
       {offices.map((office: Office, index: number) => (
         <div className="offices-info" key={index}>
           <p className="city">{office.city}</p>
-          <LinkedPhone phone={office.phone} />
-          <LinkedEmail email={office.email} />
-          <LinkedMap address={office.address} city={office.address} />
+          {office.phone && <LinkedPhone phone={office.phone} />}
+          {office.email && <LinkedEmail email={office.email} />}
+          {office.address && (
+            /* TODO: por qué le pasas el mismo dato(?)*/
+            <LinkedMap address={office.address} city={office.address} />
+          )}
         </div>
       ))}
     </div>

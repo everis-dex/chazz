@@ -2,11 +2,11 @@ import React from "react";
 
 import "./footerLinks.scss";
 
-interface PhoneProps {
+type Props = {
   phone: string;
-}
+};
 
-export const LinkedPhone = ({ phone }: PhoneProps) => {
+export const LinkedPhone = ({ phone }: Props) => {
   const phonecall: string = `tel:${phone}`;
 
   return (
