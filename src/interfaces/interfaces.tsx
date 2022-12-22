@@ -46,3 +46,8 @@ export interface Slide {
   subtitle: string;
   image: string;
 }
+
+export interface OurWorkIntro {
+  id: number;
+  intro: string;
+}
