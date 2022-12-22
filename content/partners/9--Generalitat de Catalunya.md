@@ -1,6 +1,6 @@
 ---
 name: Generalitat de Catalunya
-logo: uploads/logo_generalitat_de_catalunya.svg
+logo: uploads/logo_generalitat.svg
 website: http://www.gencat.es/
 sort: 9
 ---
