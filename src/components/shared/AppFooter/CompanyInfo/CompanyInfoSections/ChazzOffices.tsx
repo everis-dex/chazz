@@ -19,7 +19,7 @@ export const ChazzOffices = () => {
           {office.email && <LinkedEmail email={office.email} />}
           {office.address && (
             /* TODO: por qué le pasas el mismo dato(?)*/
-            <LinkedMap address={office.address} city={office.address} />
+            <LinkedMap address={office.address} city={office.city} />
           )}
         </div>
       ))}
