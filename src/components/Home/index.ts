@@ -5,4 +5,4 @@ export * from "./HomeSections/3-partners/Partners";
 
 export * from "../shared/Nav/Nav";
 export * from "../shared/AppFooter/AppFooter";
-export * from "../shared/AllowCookies/AllowCookies";
+export * from "./AllowCookies/AllowCookies";
