@@ -4,12 +4,12 @@ import categories from "../../../../content/categories.json";
 import { Category } from "../../../../interfaces/interfaces";
 
 import { Col, Container, Row } from "react-bootstrap";
-import "./Section1.scss";
+import "./Categories.scss";
 
-export const HomeSection1 = () => {
+export const Categories = () => {
   return (
     <>
-      <Container id="HomeSection1">
+      <Container id="Categories">
         <Row className="section1">
           <Col className="section1-title" xs={12} sm={6}>
             <h2>

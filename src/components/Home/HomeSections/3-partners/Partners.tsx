@@ -5,13 +5,13 @@ import { Partner } from "../../../../interfaces/interfaces";
 
 import { Container } from "react-bootstrap";
 
-import "./HomeSection3.scss";
+import "./Partners.scss";
 
-export const HomeSection3 = () => {
+export const Partners = () => {
   return (
     <>
       <div className="partner-section">
-        <Container id="HomeSection3">
+        <Container id="Partners">
           <h3>Partners in crime</h3>
           <div className="partner-container">
             {partners.map((partner: Partner, index) => (
