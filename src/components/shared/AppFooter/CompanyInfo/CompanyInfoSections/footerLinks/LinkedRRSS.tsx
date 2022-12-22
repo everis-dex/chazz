@@ -5,7 +5,7 @@ import "./footerLinks.scss";
 type Props = {
   url: string;
   rrss: string;
-}
+};
 
 export const LinkedRRSS = ({ url, rrss }: Props) => {
   return (

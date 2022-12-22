@@ -4,7 +4,7 @@ import "./footerLinks.scss";
 
 type Props = {
   email: string;
-}
+};
 
 export const LinkedEmail = ({ email }: Props) => {
   const mailto: string = `mailto:${email}`;

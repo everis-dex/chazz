@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Nav } from "../../Nav/Nav";
-import { AllowCookies } from '../../shared/AllowCookies/AllowCookies';
+import { AllowCookies } from "../../shared/AllowCookies/AllowCookies";
 
 import "./HomeHeader.scss";
 
@@ -15,7 +15,7 @@ export const HomeHeader = () => {
       </div>
 
       <div className="chazz-title">
-        <h1>Making the intangible, tangible</h1>
+        <h1>Empowering brands for real impact.</h1>
         <h4>Hybrid & Strategic Digital Agency</h4>
       </div>
 

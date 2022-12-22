@@ -1,2 +1,2 @@
-export * from "./BottomBar/BottomBar"
-export * from "./CompanyInfo/CompanyInfo"
+export * from "./BottomBar/BottomBar";
+export * from "./CompanyInfo/CompanyInfo";

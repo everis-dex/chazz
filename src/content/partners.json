@@ -11,7 +11,7 @@
   { "id": 5, "logo": "uploads/logo_unilever.svg\r", "website": "https://www.unilever.com/\r", "name": "UniLever\r" },
   {
     "id": 6,
-    "logo": "uploads/logo_gobierno_de_espana.svg\r",
+    "logo": "uploads/logo_ministerio.svg\r",
     "website": "https://administracion.gob.es/\r",
     "name": "Gobierno de España\r"
   },
@@ -19,7 +19,7 @@
   { "id": 8, "logo": "uploads/logo_loewe.svg\r", "website": "https://www.loewe.com/\r", "name": "Loewe\r" },
   {
     "id": 9,
-    "logo": "uploads/logo_generalitat_de_catalunya.svg\r",
+    "logo": "uploads/logo_generalitat.svg\r",
     "website": "http://www.gencat.es/\r",
     "name": "Generalitat de Catalunya\r"
   },
