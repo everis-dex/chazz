@@ -8,10 +8,11 @@ import homeheader from "../../../content/homeheader.json";
 
 import "./HomeHeader.scss";
 
-
 export const HomeHeader = () => {
-
+  const lineBreakSymbol: string = "+";
   const typedHomeHeader: HomeHeaderInfo = homeheader[0];
+  const titleLines: string[] = typedHomeHeader.title.split(lineBreakSymbol);
+  console.log(titleLines);
 
   return (
     <>
@@ -22,7 +23,14 @@ export const HomeHeader = () => {
       </div>
 
       <div className="chazz-title">
-        <h1>{typedHomeHeader.title}</h1>
+        <h1>
+          {titleLines.map((titleLine: string, index) => (
+            <>
+              {titleLine}
+              <br />
+            </>
+          ))}
+        </h1>
         <h4>{typedHomeHeader.subtitle}</h4>
       </div>
 
