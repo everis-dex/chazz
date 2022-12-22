@@ -1,3 +1,10 @@
+export interface HomeHeaderInfo {
+  id: number;
+  title: string;
+  subtitle: string;
+  image: string;
+}
+
 export interface Category {
   id: number;
   title: string;

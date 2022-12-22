@@ -13,7 +13,6 @@ type Props = {
 };
 
 export const BurgerMenu = ({ isOpen, toggleMenu, color, disabledMenuOption }: Props) => {
-  console.log({ disabledMenuOption }, { isOpen }, { color });
   return (
     <div className={`burger-menu ${isOpen ? "active" : ""}`}>
       <BurgerIcon isOpen={isOpen} toggleMenu={toggleMenu} color={color} />

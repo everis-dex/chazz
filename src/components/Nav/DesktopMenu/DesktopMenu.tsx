@@ -8,7 +8,6 @@ import "../Nav.scss";
 type Props = { color: string };
 
 export const DesktopMenu = ({ color }: Props) => {
-  console.log({ color });
   return (
     <div className="nav">
       <ul>
