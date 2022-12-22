@@ -1,5 +1,5 @@
 ---
-date: 2022-12-12T10:55:12.915Z
+date: 2022-12-12T10:55:56.915Z
 title: General inquiries
-email: info@chazzdesign.com
+email: hola@chazzdesign.com
 ---

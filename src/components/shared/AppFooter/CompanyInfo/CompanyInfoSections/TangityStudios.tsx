@@ -8,7 +8,7 @@ import "../CompanyInfo.scss";
 export const TangityStudios = () => {
   return (
     <div className="studios-container">
-      <span>TANGITY STUDIOS</span>
+      <p className="studios-title">NDDN NETWORK</p>
       <div className="studios-grid">
         {studios.map((studio, index) => (
           <div className="studios-info" key={index}>
