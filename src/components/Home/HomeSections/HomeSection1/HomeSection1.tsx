@@ -1,21 +1,24 @@
 import React from "react";
 
+import homeIntro from "../../../../content/homeintro.json";
+
 import categories from "../../../../content/categories.json";
-import { Category } from "../../../../interfaces/interfaces";
+import { Category, HomeIntro } from '../../../../interfaces/interfaces';
 
 import { Col, Container, Row } from "react-bootstrap";
 import "./Section1.scss";
 
 export const HomeSection1 = () => {
+  const typedHomeIntro: HomeIntro = homeIntro[0];
+
   return (
     <>
       <Container id="HomeSection1">
         <Row className="section1">
           <Col className="section1-title" xs={12} sm={6}>
             <h2>
-              <strong>We humanize complexity. </strong> <br></br>
-              Strategy, technology and creativity are our core. Building bridges to link with brands in a society
-              centric focused way.
+              <strong>{typedHomeIntro.title}</strong> <br></br>
+              {typedHomeIntro.subtitle}
             </h2>
           </Col>
 

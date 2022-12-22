@@ -5,6 +5,12 @@ export interface HomeHeaderInfo {
   image: string;
 }
 
+export interface HomeIntro {
+  id: number;
+  title: string;
+  subtitle: string;
+}
+
 export interface Category {
   id: number;
   title: string;

@@ -23,6 +23,19 @@ collections:
       - { label: Subtitle, name: subtitle, widget: string }
 
   ##############################
+  #         Home Intro
+  ##############################
+  - name: homeintro # Used in routes
+    label: "Home intro" # Used in the UI
+    folder: content/homeintro # Where the documents are stored, relative to the repo root
+    create: false # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}--{{title}}" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
+    fields: # Fields for each document
+      - { label: Publish Date, name: date, widget: datetime } # For widgets, see https://www.netlifycms.org/docs/widgets/
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string }
+
+  ##############################
   #         Project
   ##############################
   - name: project # Used in routes
