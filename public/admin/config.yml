@@ -103,7 +103,6 @@ collections:
     ##############################
   #         Get in touch
   ##############################
-
   - name: get_in_touch
     label: "Get in touch"
     folder: content/studios
@@ -113,3 +112,16 @@ collections:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
       - { label: Emeal, name: email, widget: string }
+
+    ##############################
+  #         Our Work Intro
+  ##############################
+
+  - name: ourworkintro
+    label: "Our Work Intro"
+    folder: content/ourworkintro
+    slug: "st-{{year}}-{{month}}-{{day}}--{{title}}"
+    create: false
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Intro, name: intro, widget: string }

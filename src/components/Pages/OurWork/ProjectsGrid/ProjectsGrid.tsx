@@ -14,7 +14,11 @@ const formats = {
 // la configuración se escoge por cada row, por cada par de columnas
 let config = [formats.right, formats.left, formats.big, formats.right, formats.equal];
 
-export const ProjectsGrid = () => {
+type Props = {
+  introLines: string[];
+};
+
+export const ProjectsGrid = ({ introLines }: Props) => {
   const columnCount: number = 2;
   let currentColumn: number = 0;
   let currentRow: number = 0;
@@ -44,8 +48,12 @@ export const ProjectsGrid = () => {
       <h1 className="work-header">Our work</h1>
       <div className="work-container--content">
         <div className="work-detail">
-          We are an specialized team ready to face diverse typology projects, loving to accompany brands to take a step
-          forward and set the pace of times.
+          {introLines.map((introLine: string, index) => (
+            <>
+              {introLine}
+              <br />
+            </>
+          ))}
         </div>
         {projects &&
           projects.map((project: Project, index: number) => {
