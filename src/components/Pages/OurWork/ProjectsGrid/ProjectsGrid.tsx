@@ -19,6 +19,7 @@ type Props = {
 };
 
 export const ProjectsGrid = ({ introLines }: Props) => {
+  console.log(introLines);
   const columnCount: number = 2;
   let currentColumn: number = 0;
   let currentRow: number = 0;
@@ -48,11 +49,11 @@ export const ProjectsGrid = ({ introLines }: Props) => {
       <h1 className="work-header">Our work</h1>
       <div className="work-container--content">
         <div className="work-detail">
-          {introLines.map((introLine: string, index) => (
-            <>
+          {introLines.map((introLine: string, index: number) => (
+            <Fragment key={index}>
               {introLine}
               <br />
-            </>
+            </Fragment>
           ))}
         </div>
         {projects &&

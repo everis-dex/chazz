@@ -9,7 +9,7 @@ import "./Project.styles.scss";
 type Props = { data: Project; columns?: string; height?: string; full?: boolean };
 
 export const ProjectCard = ({ data, columns, height = "auto", full = false }: Props) => {
-  const style = { width: "100%", height: height, "object-fit": "cover" }; // Adriana lo tiene puesto como object-fit, pero React da error. Aconseja objectFit
+  const style = { width: "100%", height: height, objectFit: "cover" };
   const bodyParagraphs: string[] = data.body.replace("\r", "").split("\n");
 
   // Dropdown

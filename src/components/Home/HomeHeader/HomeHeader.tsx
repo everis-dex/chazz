@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import { Nav } from "../../Nav/Nav";
 import { AllowCookies } from "../../shared/AllowCookies/AllowCookies";
@@ -23,11 +23,11 @@ export const HomeHeader = () => {
 
       <div className="chazz-title">
         <h1>
-          {titleLines.map((titleLine: string, index) => (
-            <>
+          {titleLines.map((titleLine: string, index: number) => (
+            <Fragment key={index}>
               {titleLine}
               <br />
-            </>
+            </Fragment>
           ))}
         </h1>
         <h4>{typedHomeHeader.subtitle}</h4>
