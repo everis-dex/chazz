@@ -34,12 +34,14 @@ export const ProjectCard = ({ data, columns, height = "auto", full = false }: Pr
 
       <div className="non-accordion">{bodyParagraphs}</div>
 
-      <Accordion onSelect={handleDropdown} flush>
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>{dropdownText} information</Accordion.Header>
-          <Accordion.Body>{bodyParagraphs}</Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
+      <div className="project-dropdown">
+        <Accordion onSelect={handleDropdown} flush>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>{dropdownText} information</Accordion.Header>
+            <Accordion.Body>{bodyParagraphs}</Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      </div>
     </div>
   );
 };
