@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { routesInfo } from "../../../../constants";
+import { routesInfo } from "../../../../../constants";
 
 import "../../Nav.styles.scss";
 

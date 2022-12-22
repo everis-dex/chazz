@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 
-import { Nav } from "../../Nav/Nav";
-import { AllowCookies } from "../../shared/AllowCookies/AllowCookies";
+import { Nav, AllowCookies } from "../index";
 
 import { HomeHeaderInfo } from "../../../interfaces/interfaces";
 import homeheader from "../../../content/homeheader.json";
