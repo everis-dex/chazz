@@ -6,7 +6,7 @@ import { AllowCookies } from "../../shared/AllowCookies/AllowCookies";
 import { HomeHeaderInfo } from "../../../interfaces/interfaces";
 import homeheader from "../../../content/homeheader.json";
 
-import "./HomeHeader.scss";
+import "./HomeHeader.styles.scss";
 
 export const HomeHeader = () => {
   const lineBreakSymbol: string = "+";

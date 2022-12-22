@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { routesInfo } from "../../../constants";
 
-import "../Nav.scss";
+import "../Nav.styles.scss";
 
 type Props = { color: string };
 

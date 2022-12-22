@@ -6,7 +6,7 @@ import { Office } from "../../../../../interfaces/interfaces";
 
 import { LinkedEmail, LinkedMap, LinkedPhone } from "./footerLinks/index";
 
-import "../CompanyInfo.scss";
+import "../CompanyInfo.styles.scss";
 
 export const ChazzOffices = () => {
   return (

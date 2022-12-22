@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import "../../Nav.scss";
+import "../../Nav.styles.scss";
 
 type Props = {
   isOpen: boolean;

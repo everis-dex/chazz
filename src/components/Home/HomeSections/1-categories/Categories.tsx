@@ -4,7 +4,7 @@ import categories from "../../../../content/categories.json";
 import { Category } from "../../../../interfaces/interfaces";
 
 import { Col, Container, Row } from "react-bootstrap";
-import "./Categories.scss";
+import "./Categories.styles.scss";
 
 export const Categories = () => {
   return (

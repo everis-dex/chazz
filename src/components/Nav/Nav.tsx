@@ -4,7 +4,7 @@ import { ChazzLogo } from "./ChazzLogo/ChazzLogo";
 import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
 import { DesktopMenu } from "./DesktopMenu/DesktopMenu";
 
-import "./Nav.scss";
+import "./Nav.styles.scss";
 
 type Props = {
   color: string;

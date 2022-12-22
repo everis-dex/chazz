@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./footerLinks.scss";
+import "./footerLinks.styles.scss";
 
 type Props = {
   phone: string;

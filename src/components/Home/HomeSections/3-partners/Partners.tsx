@@ -5,7 +5,7 @@ import { Partner } from "../../../../interfaces/interfaces";
 
 import { Container } from "react-bootstrap";
 
-import "./Partners.scss";
+import "./Partners.styles.scss";
 
 export const Partners = () => {
   return (

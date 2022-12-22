@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container } from "react-bootstrap";
 
-import "./CompanyInfo.scss";
+import "./CompanyInfo.styles.scss";
 
 import { ChazzOffices, TangityStudios, GetInTouch } from "./index";
 

@@ -5,7 +5,7 @@ import { LinkedRRSS } from "./footerLinks/LinkedRRSS";
 
 import getInTouch from "../../../../../content/get-in-touch.json";
 
-import "../CompanyInfo.scss";
+import "../CompanyInfo.styles.scss";
 
 export const GetInTouch = () => {
   return (

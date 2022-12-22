@@ -3,7 +3,7 @@ import React from "react";
 import studios from "../../../../../content/studios.json";
 import { LinkedEmail } from "./footerLinks";
 
-import "../CompanyInfo.scss";
+import "../CompanyInfo.styles.scss";
 
 export const TangityStudios = () => {
   return (
