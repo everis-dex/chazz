@@ -8,16 +8,16 @@
   },
   {
     "id": 1670572440,
-    "city": "Lisboa\r",
-    "phone": "+55 11 3245 4787\r",
-    "email": "ola.lisboa@chazzdesign.com\r",
-    "address": "Praça Duque de Saldanha, 1. Fl 10 E/F, 1050-094\r"
-  },
-  {
-    "id": 1670572440,
     "city": "São Paulo\r",
     "phone": "+55 11 3245 4787\r",
     "email": "ola@chazzdesign.com\r",
     "address": "Av. das Nações Unidas, 14171\r"
+  },
+  {
+    "id": 1670572440,
+    "city": "Lisboa\r",
+    "phone": "",
+    "email": "ola.lisboa@chazzdesign.com\r",
+    "address": "Praça Duque de Saldanha, 1. Fl 10 E/F, 1050-094\r"
   }
 ]
