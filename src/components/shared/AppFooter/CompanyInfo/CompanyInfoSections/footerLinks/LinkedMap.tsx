@@ -5,7 +5,7 @@ import "./footerLinks.scss";
 type Props = {
   address: string;
   city: string;
-}
+};
 
 export const LinkedMap = ({ address, city }: Props) => {
   const mapLink: string = `https://maps.google.com?q=+${address},${city}+`;

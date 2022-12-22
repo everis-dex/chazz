@@ -9,6 +9,20 @@ public_folder: "/uploads" # where media files will be stored in the published si
 # List of available collections, their fields and metadata information
 collections:
   ##############################
+  #         Home Header
+  ##############################
+  - name: homeheader # Used in routes
+    label: "Home header" # Used in the UI
+    folder: content/homeheader # Where the documents are stored, relative to the repo root
+    create: false # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}--{{title}}" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
+    fields: # Fields for each document
+      - { label: Publish Date, name: date, widget: datetime } # For widgets, see https://www.netlifycms.org/docs/widgets/
+      - { label: Image, name: image, widget: image }
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string }
+
+  ##############################
   #         Project
   ##############################
   - name: project # Used in routes
@@ -70,7 +84,7 @@ collections:
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: City, name: city, widget: string }
-      - { label: Phone, name: phone, widget: string }
+      - { label: Phone, name: phone, widget: string, required: false }
       - { label: Email, name: email, widget: string }
       - { label: Address, name: address, widget: string }
 

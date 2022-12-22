@@ -15,9 +15,12 @@ export const ChazzOffices = () => {
       {offices.map((office: Office, index: number) => (
         <div className="offices-info" key={index}>
           <p className="city">{office.city}</p>
-          <LinkedPhone phone={office.phone} />
-          <LinkedEmail email={office.email} />
-          <LinkedMap address={office.address} city={office.address} />
+          {office.phone && <LinkedPhone phone={office.phone} />}
+          {office.email && <LinkedEmail email={office.email} />}
+          {office.address && (
+            /* TODO: por qué le pasas el mismo dato(?)*/
+            <LinkedMap address={office.address} city={office.address} />
+          )}
         </div>
       ))}
     </div>
