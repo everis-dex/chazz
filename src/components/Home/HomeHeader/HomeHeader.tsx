@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Nav } from "../../Nav/Nav";
-import { AllowCookies } from '../../shared/AllowCookies/AllowCookies';
+import { AllowCookies } from "../../shared/AllowCookies/AllowCookies";
 
 import "./HomeHeader.scss";
 

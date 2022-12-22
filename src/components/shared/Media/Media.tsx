@@ -7,7 +7,7 @@ const supportedImageTags: Array<string> = ["jpg", "jpeg", "gif", "png", "apng", 
 type Props = {
   src: string;
   style: { width: string; height: string };
-  alt: string
+  alt: string;
 };
 
 export const Media = ({ src, style, alt }: Props) => {

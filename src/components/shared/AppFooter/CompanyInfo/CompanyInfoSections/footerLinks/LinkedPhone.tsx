@@ -4,7 +4,7 @@ import "./footerLinks.scss";
 
 type Props = {
   phone: string;
-}
+};
 
 export const LinkedPhone = ({ phone }: Props) => {
   const phonecall: string = `tel:${phone}`;
