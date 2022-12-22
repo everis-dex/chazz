@@ -25,22 +25,18 @@ collections:
   ##############################
   #         Project
   ##############################
-  - name: project # Used in routes
-    label: Project # Used in the UI
-    folder: content/projects # Where the documents are stored, relative to the repo root
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}--{{title}}" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
-    fields: # Fields for each document
-      - { label: Publish Date, name: date, widget: datetime } # For widgets, see https://www.netlifycms.org/docs/widgets/
+  - name: project
+    label: Project
+    folder: content/projects
+    slug: "{{year}}-{{month}}-{{day}}--{{title}}"
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
       - { label: Image, name: image, widget: image }
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: string }
       - { label: Subtitle, name: subtitle, widget: string }
       - { label: Body, name: body, widget: markdown }
     sortable_fields: ["date"]
-    # filter:
-    #   field: rating
-    #   value: 5
 
   ##############################
   #         Partner
@@ -113,7 +109,7 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Emeal, name: email, widget: string }
 
-    ##############################
+  ##############################
   #         Our Work Intro
   ##############################
 
