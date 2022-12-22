@@ -41,13 +41,12 @@
     font-size: 72px;
   }
   .work-container--content {
-    margin: 3%;
-    margin-top: 0;
+    margin: 0 3% 10% 3%;
     grid-template-columns: 48% auto;
     grid-gap: 2%;
 
     .work-detail {
-      width: 70%;
+      width: 73%;
       font-size: 40px;
     }
   }
