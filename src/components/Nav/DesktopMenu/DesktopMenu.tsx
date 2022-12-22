@@ -15,7 +15,6 @@ export const DesktopMenu = ({ color }: Props) => {
         {routesInfo.map(route => (
           <li key={route.id}>
             {route.name && (
-              // <Link className="aaa" style={{ color: color }} to={route.route}>
               <Link className={color !== "black" ? "" : "pagesDesktopNavItem"} to={route.route}>
                 {route.name}
               </Link>

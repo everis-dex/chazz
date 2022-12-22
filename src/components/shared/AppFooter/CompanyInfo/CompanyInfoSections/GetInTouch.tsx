@@ -1,6 +1,7 @@
 import React from "react";
-import { LinkedEmail } from "../../../../shared/footerLinks";
-import { LinkedRRSS } from "../../../../shared/footerLinks/LinkedRRSS";
+
+import { LinkedRRSS } from './footerLinks/LinkedRRSS';
+import { LinkedEmail } from './footerLinks/LinkedEmail';
 
 import getInTouch from "../../../../../content/get-in-touch.json";
 
