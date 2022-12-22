@@ -83,7 +83,6 @@ export const Carrousel = () => {
             {slides.map((slide: Project, index: number) => {
               return (
                 <SwiperSlide key={index}>
-                  {/* {windowWidth} {carouselWidth} {offset} */}
                   <CarrouselSlide {...slide} />
                 </SwiperSlide>
               );

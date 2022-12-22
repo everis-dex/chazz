@@ -11,19 +11,13 @@ type Props = {
 export const BurgerIcon = ({ isOpen, toggleMenu, color }: Props) => {
   const [iconColor, setIconColor] = useState<string>("");
   useEffect(() => {
+    // Homepage
     if (color === "white") {
-      // Homepage
       setIconColor("white");
     }
+    // Other page
     if (color === "black") {
-      // Other page
-      if (!isOpen) {
-        // Closed menu
-        setIconColor("black");
-      } else {
-        // Opened menu
-        setIconColor("white");
-      }
+      !isOpen ? setIconColor("black") : setIconColor("white");
     }
   }, [isOpen, color]);
 

@@ -45,7 +45,6 @@ export const ProjectsGrid = ({ introLines }: Props) => {
 
   return (
     <>
-      {/* <div className="work-container"> */}
       <h1 className="work-header">Our work</h1>
       <div className="work-container--content">
         <div className="work-detail">
@@ -66,7 +65,6 @@ export const ProjectsGrid = ({ introLines }: Props) => {
             );
           })}
       </div>
-      {/* </div> */}
     </>
   );
 };
