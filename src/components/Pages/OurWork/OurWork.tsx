@@ -5,7 +5,7 @@ import { Nav, AppFooter } from "../index";
 import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 
 import { OurWorkIntro } from "../../../interfaces/interfaces";
-import ourWorkIntro from "../../../content/our-work-intro.json";
+import ourWorkIntro from "../../../content/ourworkintro.json";
 
 import "./OurWork.styles.scss";
 

@@ -213,7 +213,7 @@ const constructElement = (
       element.email = metadata.email;
       break;
 
-    case "our-work-intro":
+    case "ourworkintro":
       element.id = data.timestamp;
       element.intro = metadata.intro;
       break;
