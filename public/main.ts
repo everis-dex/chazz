@@ -26,6 +26,7 @@ interface Metadata {
   email?: string;
   address?: string;
   sort?: string;
+  intro?: string;
 }
 
 interface BuiltElement {
@@ -45,6 +46,7 @@ interface BuiltElement {
   email?: string;
   address?: string;
   body?: string;
+  intro?: string;
 }
 
 const blankMetadata: Metadata = {
@@ -62,7 +64,8 @@ const blankMetadata: Metadata = {
   phone: "",
   email: "",
   address: "",
-  sort: ""
+  sort: "",
+  intro: "",
 };
 
 /**
@@ -209,6 +212,12 @@ const constructElement = (
       element.title = metadata.title;
       element.email = metadata.email;
       break;
+
+    case "our-work-intro":
+      element.id = data.timestamp;
+      element.intro = metadata.intro;
+      break;
+
 
     default:
       console.error("\n ----------------------------------- \n");

@@ -12,7 +12,6 @@ export const HomeHeader = () => {
   const lineBreakSymbol: string = "+";
   const typedHomeHeader: HomeHeaderInfo = homeheader[0];
   const titleLines: string[] = typedHomeHeader.title.split(lineBreakSymbol);
-  console.log(titleLines);
 
   return (
     <>
