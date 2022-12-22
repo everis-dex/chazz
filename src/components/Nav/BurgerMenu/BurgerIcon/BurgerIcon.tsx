@@ -27,8 +27,6 @@ export const BurgerIcon = ({ isOpen, toggleMenu, color }: Props) => {
     }
   }, [isOpen, color]);
 
-  console.log({ iconColor });
-
   return (
     <>
       <input id="open-close" name="open-close" type="checkbox" value="" />

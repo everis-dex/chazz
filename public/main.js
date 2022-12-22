@@ -98,6 +98,12 @@ var constructElement = function (folder, metadata, data) {
         return { id: -1 };
     var element = { id: -1 };
     switch (folder) {
+        case "homeheader":
+            element.id = data.timestamp;
+            element.title = metadata.title ? metadata.title : "No title given";
+            element.subtitle = metadata.subtitle ? metadata.subtitle : "No subtitle given";
+            element.image = metadata.image;
+            break;
         case "projects":
             element.id = data.timestamp;
             element.title = metadata.title ? metadata.title : "No title given";
