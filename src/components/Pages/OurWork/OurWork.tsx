@@ -7,7 +7,6 @@ import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 import "./OurWork.styles.scss";
 
 export const OurWork = () => {
-
   useEffect(() => window.scrollTo(0, 0), []);
 
   return (

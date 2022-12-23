@@ -7,7 +7,7 @@ import { HomeHeaderInfo } from "../../../interfaces/interfaces";
 import homeheader from "../../../content/homeheader.json";
 
 import "./HomeHeader.scss";
-import { LineBreakerSelector } from '../../shared/LineBreaker/LineBreakerSelector';
+import { LineBreakerSelector } from "../../shared/LineBreaker/LineBreakerSelector";
 
 export const HomeHeader = () => {
   const homeHeaderInfo: HomeHeaderInfo = homeheader[0];
@@ -24,8 +24,6 @@ export const HomeHeader = () => {
         <LineBreakerSelector typedLines={homeHeaderInfo.title} />
         <h4>{homeHeaderInfo.subtitle}</h4>
       </div>
-
-
 
       <AllowCookies />
     </>

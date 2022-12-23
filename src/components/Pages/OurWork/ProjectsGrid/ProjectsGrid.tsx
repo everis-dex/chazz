@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 
 import { ProjectCard } from "../Project/Project";
-import { LineBreakerSelector } from '../../../shared/LineBreaker/LineBreakerSelector';
-import { Project, OurWorkInfo } from '../../../../interfaces/interfaces';
+import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
+import { Project, OurWorkInfo } from "../../../../interfaces/interfaces";
 
 import projects from "../../../../content/projects.json";
 import ourWorkIntro from "../../../../content/ourworkintro.json";
@@ -16,7 +16,6 @@ const formats = {
 
 // la configuración se escoge por cada row, por cada par de columnas
 let config = [formats.right, formats.left, formats.big, formats.right, formats.equal];
-
 
 export const ProjectsGrid = () => {
   const columnCount: number = 2;

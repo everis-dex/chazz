@@ -27,6 +27,5 @@ export const routesInfo: RoutesInfo[] = [
   }
 ];
 
-
 export const desktopLineBreakSymbol: string = "+";
 export const mobileLineBreakSymbol: string = "*";

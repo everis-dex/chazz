@@ -7,7 +7,7 @@ import { Category, HomeIntro } from "../../../../interfaces/interfaces";
 
 import { Col, Container, Row } from "react-bootstrap";
 import "./Section1.scss";
-import { LineBreakerSelector } from '../../../shared/LineBreaker/LineBreakerSelector';
+import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
 
 export const HomeSection1 = () => {
   const style = { fontSize: "40px" };
