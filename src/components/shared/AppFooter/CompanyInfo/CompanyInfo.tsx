@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 
 import "./CompanyInfo.styles.scss";
 
-import { ChazzOffices, TangityStudios, GetInTouch } from "./index";
+import { Offices, Studios, GetInTouch } from "./index";
 
 export const CompanyInfo = () => {
   return (
@@ -14,9 +14,9 @@ export const CompanyInfo = () => {
           <h2>
             <strong>We are part of NTT Data Company & its design network, NDDN.</strong>
           </h2>
-          <ChazzOffices />
+          <Offices />
           <hr className="divisor-line" />
-          <TangityStudios />
+          <Studios />
           <hr className="divisor-line" />
           <GetInTouch />
         </div>

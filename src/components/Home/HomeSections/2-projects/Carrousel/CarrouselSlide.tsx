@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Project } from "../../../../../interfaces/interfaces";
+import { IProject } from "../../../../../interfaces/interfaces";
 import { Media } from "../../../../shared/Media/Media";
 
-export const CarrouselSlide = (props: Project) => {
+export const CarrouselSlide = (props: IProject) => {
   const style = { width: "100%", height: "auto", maxHeight: "744px" };
 
   return (

@@ -5,14 +5,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { CarrouselSlide } from "./CarrouselSlide";
 
 import projects from "../../../../../content/projects.json";
-import { Project } from "../../../../../interfaces/interfaces";
+import { IProject } from "../../../../../interfaces/interfaces";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "./Carrousel.styles.scss";
 
 export const Carrousel = () => {
-  const slides: Project[] = [...projects];
+  const slides: IProject[] = [...projects];
 
   const [carouselWidth, setCarouselWidth] = useState<number>(0);
   const [windowWidth, setWindowWidth] = useState<number>(0);
@@ -80,7 +80,7 @@ export const Carrousel = () => {
             initialSlide={0}
             slidesOffsetBefore={offset}
           >
-            {slides.map((slide: Project, index: number) => {
+            {slides.map((slide: IProject, index: number) => {
               return (
                 <SwiperSlide key={index}>
                   <CarrouselSlide {...slide} />

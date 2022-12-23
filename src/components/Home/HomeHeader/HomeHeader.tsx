@@ -2,14 +2,14 @@ import React, { Fragment } from "react";
 
 import { Nav, AllowCookies } from "../index";
 
-import { HomeHeaderInfo } from "../../../interfaces/interfaces";
+import { IHome } from "../../../interfaces/interfaces";
 import home from "../../../content/home.json";
 
 import "./HomeHeader.styles.scss";
 
 export const HomeHeader = () => {
   const lineBreakSymbol: string = "+";
-  const typedHomeHeader: HomeHeaderInfo = home[0];
+  const typedHomeHeader: IHome = home[0];
   const titleLines: string[] = typedHomeHeader.title.split(lineBreakSymbol);
 
   return (

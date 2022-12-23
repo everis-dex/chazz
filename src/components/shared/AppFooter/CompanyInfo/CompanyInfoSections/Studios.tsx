@@ -5,7 +5,7 @@ import { LinkedEmail } from "./footerLinks";
 
 import "../CompanyInfo.styles.scss";
 
-export const TangityStudios = () => {
+export const Studios = () => {
   return (
     <div className="studios-container">
       <p className="studios-title">NDDN NETWORK</p>

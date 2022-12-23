@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 import { ProjectCard } from "../Project/Project";
 import projects from "../../../../content/projects.json";
-import { Project } from "../../../../interfaces/interfaces";
+import { IProject } from "../../../../interfaces/interfaces";
 
 const formats = {
   big: 0, // When the Project occupies two columns
@@ -56,7 +56,7 @@ export const ProjectsGrid = ({ introLines }: Props) => {
           ))}
         </div>
         {projects &&
-          projects.map((project: Project, index: number) => {
+          projects.map((project: IProject, index: number) => {
             let height = handleProjectFormat(index);
             return (
               <Fragment key={index}>
