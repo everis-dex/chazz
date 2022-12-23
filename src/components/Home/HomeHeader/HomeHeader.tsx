@@ -8,11 +8,14 @@ import homeheader from "../../../content/homeheader.json";
 
 import "./HomeHeader.scss";
 import { Fragment } from "react";
+import { HomeHeaderTitle } from "./HomeHeaderTitle/HomeHeaderTitle";
 
 export const HomeHeader = () => {
-  const lineBreakSymbol: string = "+";
+  const desktopLineBreakSymbol: string = "+";
+  const mobileLineBreakSymbol: string = "*";
   const typedHomeHeader: HomeHeaderInfo = homeheader[0];
-  const titleLines: string[] = typedHomeHeader.title.split(lineBreakSymbol);
+  const desktopTitleLines: string[] = typedHomeHeader.title.split(desktopLineBreakSymbol);
+  const mobileTitleLines: string[] = typedHomeHeader.title.split(mobileLineBreakSymbol);
 
   return (
     <>
@@ -23,16 +26,18 @@ export const HomeHeader = () => {
       </div>
 
       <div className="chazz-title">
-        <h1>
-          {titleLines.map((titleLine: string, index) => (
-            <Fragment key={index}>
-              {titleLine}
-              <br />
-            </Fragment>
-          ))}
-        </h1>
+        <div className="desktop-title">
+          <HomeHeaderTitle titleLines={desktopTitleLines} uselessLineBreakSymbol={mobileLineBreakSymbol} />
+        </div>
+
+        <div className="mobile-title">
+          <HomeHeaderTitle titleLines={mobileTitleLines} uselessLineBreakSymbol={desktopLineBreakSymbol} />
+        </div>
+
         <h4>{typedHomeHeader.subtitle}</h4>
       </div>
+
+
 
       <AllowCookies />
     </>
