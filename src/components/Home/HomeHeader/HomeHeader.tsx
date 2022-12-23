@@ -7,12 +7,10 @@ import { HomeHeaderInfo } from "../../../interfaces/interfaces";
 import homeheader from "../../../content/homeheader.json";
 
 import "./HomeHeader.scss";
-import { Fragment } from "react";
+import { LineBreakerSelector } from "../../shared/LineBreaker/LineBreakerSelector";
 
 export const HomeHeader = () => {
-  const lineBreakSymbol: string = "+";
-  const typedHomeHeader: HomeHeaderInfo = homeheader[0];
-  const titleLines: string[] = typedHomeHeader.title.split(lineBreakSymbol);
+  const homeHeaderInfo: HomeHeaderInfo = homeheader[0];
 
   return (
     <>
@@ -23,15 +21,8 @@ export const HomeHeader = () => {
       </div>
 
       <div className="chazz-title">
-        <h1>
-          {titleLines.map((titleLine: string, index) => (
-            <Fragment key={index}>
-              {titleLine}
-              <br />
-            </Fragment>
-          ))}
-        </h1>
-        <h4>{typedHomeHeader.subtitle}</h4>
+        <LineBreakerSelector typedLines={homeHeaderInfo.title} />
+        <h4>{homeHeaderInfo.subtitle}</h4>
       </div>
 
       <AllowCookies />

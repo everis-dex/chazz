@@ -1,8 +1,11 @@
 import React, { Fragment } from "react";
 
 import { ProjectCard } from "../Project/Project";
+import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
+import { Project, OurWorkInfo } from "../../../../interfaces/interfaces";
+
 import projects from "../../../../content/projects.json";
-import { Project } from "../../../../interfaces/interfaces";
+import ourWorkIntro from "../../../../content/ourworkintro.json";
 
 const formats = {
   big: 0, // When the Project occupies two columns
@@ -14,11 +17,7 @@ const formats = {
 // la configuración se escoge por cada row, por cada par de columnas
 let config = [formats.right, formats.left, formats.big, formats.right, formats.equal];
 
-type Props = {
-  introLines: string[];
-};
-
-export const ProjectsGrid = ({ introLines }: Props) => {
+export const ProjectsGrid = () => {
   const columnCount: number = 2;
   let currentColumn: number = 0;
   let currentRow: number = 0;
@@ -42,19 +41,17 @@ export const ProjectsGrid = ({ introLines }: Props) => {
     return imgHeight;
   }
 
+  const typedLines: OurWorkInfo = ourWorkIntro[0];
+
   return (
     <>
       {/* <div className="work-container"> */}
       <h1 className="work-header">Our work</h1>
       <div className="work-container--content">
         <div className="work-detail">
-          {introLines.map((introLine: string, index) => (
-            <>
-              {introLine}
-              <br />
-            </>
-          ))}
+          <LineBreakerSelector typedLines={typedLines.title} />
         </div>
+
         {projects &&
           projects.map((project: Project, index: number) => {
             let height = handleProjectFormat(index);
