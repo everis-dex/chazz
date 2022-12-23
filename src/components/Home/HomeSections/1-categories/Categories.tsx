@@ -4,6 +4,7 @@ import home from "../../../../content/home.json";
 
 import categories from "../../../../content/categories.json";
 import { ICategory, IHome } from "../../../../interfaces/interfaces";
+import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
 
 import { Col, Container, Row } from "react-bootstrap";
 import "./Categories.styles.scss";
@@ -19,7 +20,7 @@ export const Categories = () => {
           <Col className="section1-title" xs={12} sm={6}>
             <h2>
               <strong>{typedHomeIntro.title}</strong> <br></br>
-              {typedHomeIntro.subtitle}
+              <LineBreakerSelector typedLines={typedHomeIntro.subtitle} />
             </h2>
           </Col>
 

@@ -218,7 +218,7 @@ const constructElement = (
 
     case "work":
       element.id = data.timestamp;
-      element.intro = metadata.intro;
+      element.title = metadata.title;
       break;
 
     default:

@@ -51,5 +51,11 @@ export interface ISlide {
 
 export interface IWork {
   id: number;
-  intro: string;
+  title: string;
+}
+
+export interface BrokenLines {
+  id: number;
+  title: string;
+  subtitle?: string;
 }
