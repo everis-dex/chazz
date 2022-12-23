@@ -7,6 +7,7 @@ import { Category, HomeIntro } from "../../../../interfaces/interfaces";
 
 import { Col, Container, Row } from "react-bootstrap";
 import "./Section1.scss";
+import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
 
 export const HomeSection1 = () => {
   const style = { fontSize: "40px" };
@@ -19,7 +20,7 @@ export const HomeSection1 = () => {
           <Col className="section1-title" xs={12} sm={6}>
             <h2>
               <strong>{typedHomeIntro.title}</strong> <br></br>
-              {typedHomeIntro.subtitle}
+              <LineBreakerSelector typedLines={typedHomeIntro.subtitle} />
             </h2>
           </Col>
 
