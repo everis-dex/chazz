@@ -20,8 +20,8 @@ export const HomeHeader = () => {
       </div>
 
       <div className="chazz-title">
-        <LineBreakerSelector typedLines={typedHomeHeader.title} />
-        <h4>{typedHomeHeader.subtitle}</h4>
+        <LineBreakerSelector typedLines={typedHomeHeader.intro} />
+        <h4>{typedHomeHeader.subintro}</h4>
       </div>
 
       <AllowCookies />

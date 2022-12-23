@@ -148,7 +148,7 @@ var constructElement = function (folder, metadata, data) {
             break;
         case "work":
             element.id = data.timestamp;
-            element.intro = metadata.intro;
+            element.title = metadata.title;
             break;
         default:
             console.error("\n ----------------------------------- \n");
