@@ -26,3 +26,7 @@ export const routesInfo: RoutesInfo[] = [
     route: "/thoughts"
   }
 ];
+
+
+export const desktopLineBreakSymbol: string = "+";
+export const mobileLineBreakSymbol: string = "*";

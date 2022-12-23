@@ -53,7 +53,13 @@ export interface Slide {
   image: string;
 }
 
-export interface OurWorkIntro {
+export interface OurWorkInfo {
   id: number;
-  intro: string;
+  title: string;
+}
+
+export interface BrokenLines {
+  id: number;
+  title: string;
+  subtitle?: string;
 }

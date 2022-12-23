@@ -2,16 +2,18 @@ import React from "react";
 
 import { Fragment } from "react";
 
+import "./LineBreaker.scss";
+
 type Props = {
-    titleLines: string[];
+    brokenLines: string[];
     uselessLineBreakSymbol: string;
 }
 
-export const HomeHeaderTitle = ({ titleLines, uselessLineBreakSymbol }: Props) => {
+export const BrokenLines = ({ brokenLines, uselessLineBreakSymbol }: Props) => {
 
     return (
         <h1>
-            {titleLines.map((titleLine: string, index) => (
+            {brokenLines.map((titleLine: string, index) => (
                 <Fragment key={index}>
                     {titleLine.replace(uselessLineBreakSymbol, "")}
                     <br />
