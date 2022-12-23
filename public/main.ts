@@ -65,7 +65,7 @@ const blankMetadata: Metadata = {
   email: "",
   address: "",
   sort: "",
-  intro: "",
+  intro: ""
 };
 
 /**
@@ -160,34 +160,28 @@ const constructElement = (
   const element: BuiltElement = { id: -1 };
 
   switch (folder) {
-
-    case "homeheader":
+    case "home":
       element.id = data.timestamp;
-      element.title = metadata.title ? metadata.title : "No title given";
-      element.subtitle = metadata.subtitle ? metadata.subtitle : "No subtitle given";
+      element.intro = metadata.title;
+      element.subtitle = metadata.title;
       element.image = metadata.image;
-      break;
-
-    case "homeintro":
-      element.id = data.timestamp;
-      element.title = metadata.title ? metadata.title : "No title given";
-      element.subtitle = metadata.subtitle ? metadata.subtitle : "No subtitle given";
+      element.title = metadata.title;
+      element.subtitle = metadata.subtitle;
       break;
 
     case "projects":
       element.id = data.timestamp;
-      element.title = metadata.title ? metadata.title : "No title given";
-      element.subtitle = metadata.subtitle ? metadata.subtitle : "No subtitle given";
+      element.title = metadata.title;
+      element.subtitle = metadata.subtitle;
       element.image = metadata.image;
       element.description = metadata.description;
       element.service = metadata.service;
       element.value = metadata.value;
-      element.body = data.content ? data.content : "No content given";
+      element.body = data.content;
       break;
 
     case "partners":
       element.id = metadata.sort ? parseInt(metadata.sort) : -1;
-      // element.id = data.timestamp;
       element.logo = metadata.logo;
       element.website = metadata.website;
       element.name = metadata.name;
@@ -195,9 +189,9 @@ const constructElement = (
 
     case "categories":
       element.id = data.timestamp;
-      element.title = metadata.title ? metadata.title : "No title given";
+      element.title = metadata.title;
       element.section = metadata.section;
-      element.body = data.content ? data.content : "No content given";
+      element.body = data.content;
       break;
 
     case "offices":
@@ -219,11 +213,10 @@ const constructElement = (
       element.email = metadata.email;
       break;
 
-    case "ourworkintro":
+    case "work":
       element.id = data.timestamp;
       element.intro = metadata.intro;
       break;
-
 
     default:
       console.error("\n ----------------------------------- \n");

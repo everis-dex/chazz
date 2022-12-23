@@ -3,13 +3,13 @@ import React, { Fragment } from "react";
 import { Nav, AllowCookies } from "../index";
 
 import { HomeHeaderInfo } from "../../../interfaces/interfaces";
-import homeheader from "../../../content/homeheader.json";
+import home from "../../../content/home.json";
 
 import "./HomeHeader.styles.scss";
 
 export const HomeHeader = () => {
   const lineBreakSymbol: string = "+";
-  const typedHomeHeader: HomeHeaderInfo = homeheader[0];
+  const typedHomeHeader: HomeHeaderInfo = home[0];
   const titleLines: string[] = typedHomeHeader.title.split(lineBreakSymbol);
 
   return (

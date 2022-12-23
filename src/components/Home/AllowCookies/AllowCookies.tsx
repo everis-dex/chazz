@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../Home/HomeHeader/HomeHeader.styles.scss";
+import "../HomeHeader/HomeHeader.styles.scss";
 
 export const AllowCookies = () => {
   return (
