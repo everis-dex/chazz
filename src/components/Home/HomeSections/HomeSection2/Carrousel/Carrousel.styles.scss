@@ -13,6 +13,7 @@
 }
 .carousel .pagination {
   margin-left: 15px;
+  width: auto;
 }
 
 .swiper-pagination-bullet {
@@ -36,7 +37,7 @@
 .title {
   font-weight: 700;
   font-size: 24px;
-  line-height: 130%;
+  line-height: 31.2px;
   text-overflow: ellipsis;
   overflow: hidden;
   width: 100%;
@@ -51,6 +52,7 @@
   overflow: hidden;
   white-space: nowrap;
   padding-right: 40px;
+  font-weight: 100;
 }
 
 // MEDIA QUERIES
