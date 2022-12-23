@@ -168,6 +168,12 @@ const constructElement = (
       element.image = metadata.image;
       break;
 
+    case "homeintro":
+      element.id = data.timestamp;
+      element.title = metadata.title ? metadata.title : "No title given";
+      element.subtitle = metadata.subtitle ? metadata.subtitle : "No subtitle given";
+      break;
+
     case "projects":
       element.id = data.timestamp;
       element.title = metadata.title ? metadata.title : "No title given";
