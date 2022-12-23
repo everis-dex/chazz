@@ -11,7 +11,7 @@ import "./Section1.scss";
 export const HomeSection1 = () => {
   const style = { fontSize: "40px" };
   const typedHomeIntro: HomeIntro = homeIntro[0];
-
+  const style = { fontSize: "40px" };
   return (
     <>
       <Container id="HomeSection1">
@@ -22,8 +22,8 @@ export const HomeSection1 = () => {
               <strong>We humanize complexity. </strong>
             </h2>
             <h2>
-              <strong>{typedHomeIntro.title}</strong> <br></br>
-              {typedHomeIntro.subtitle}
+              Strategy, technology and creativity are our core. Building bridges to link with brands in a society
+              centric focused way.
             </h2>
           </Col>
 
