@@ -14,12 +14,20 @@
   }
 }
 
+.mobile-title {
+  display: block;
+}
+
+.desktop-title {
+  display: none;
+}
+
 .chazz-title {
   color: var(--white);
-  width: 250px;
+  width: 265px;
   position: absolute;
   z-index: 9;
-  top: 208px;
+  top: 47%;
   left: 14px;
   font-size: 23px;
   line-height: 1.2;
@@ -89,11 +97,26 @@
       margin-top: 23px;
     }
   }
+
+  .mobile-title {
+    display: block;
+  }
+
+  .desktop-title {
+    display: none;
+  }
 }
 
 //////////////////////
 
 @media (min-width: 480px) {
+  .mobile-title {
+    display: block;
+  }
+
+  .desktop-title {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) {
@@ -138,6 +161,14 @@
       font-size: 16px;
       margin-top: 0;
     }
+
+    .mobile-title {
+      display: block;
+    }
+
+    .desktop-title {
+      display: none;
+    }
   }
 
   @media (min-width: 1280px) {
@@ -148,19 +179,19 @@
     }
 
     .chazz-title {
-      width: 45%;
+      width: 55%;
       top: 60%;
-      left: 43px;
+      left: 5%;
 
       h1 {
-        font-size: 4.4rem;
+        font-size: 76px;
         position: relative;
         top: -2rem;
       }
 
       h4 {
         margin-top: -22px;
-        font-size: 23px;
+        font-size: 29px;
       }
     }
 
@@ -173,6 +204,14 @@
         padding: 5px 20px 5px 20px;
       }
     }
+
+    .mobile-title {
+      display: none;
+    }
+
+    .desktop-title {
+      display: block;
+    }
   }
 
   @media (min-width: 1440px) {
@@ -183,6 +222,21 @@
 
     .chazz-title {
       top: 60%;
+      h1 {
+        font-size: 80px;
+      }
+
+      h4 {
+        font-size: 29px;
+      }
+    }
+
+    .mobile-title {
+      display: none;
+    }
+
+    .desktop-title {
+      display: block;
     }
   }
 

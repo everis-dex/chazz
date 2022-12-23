@@ -1,16 +1,18 @@
-import React, { Fragment } from "react";
+import React from "react";
 
-import { Nav, AllowCookies } from "../index";
+import { AllowCookies, Nav, HomeHeaderTitle } from "../index";
 
-import { IHome } from "../../../interfaces/interfaces";
 import home from "../../../content/home.json";
+import { IHome } from "../../../interfaces/interfaces";
 
 import "./HomeHeader.styles.scss";
 
 export const HomeHeader = () => {
-  const lineBreakSymbol: string = "+";
+  const desktopLineBreakSymbol: string = "+";
+  const mobileLineBreakSymbol: string = "*";
   const typedHomeHeader: IHome = home[0];
-  const titleLines: string[] = typedHomeHeader.title.split(lineBreakSymbol);
+  const desktopTitleLines: string[] = typedHomeHeader.title.split(desktopLineBreakSymbol);
+  const mobileTitleLines: string[] = typedHomeHeader.title.split(mobileLineBreakSymbol);
 
   return (
     <>
@@ -21,14 +23,14 @@ export const HomeHeader = () => {
       </div>
 
       <div className="chazz-title">
-        <h1>
-          {titleLines.map((titleLine: string, index: number) => (
-            <Fragment key={index}>
-              {titleLine}
-              <br />
-            </Fragment>
-          ))}
-        </h1>
+        <div className="desktop-title">
+          <HomeHeaderTitle titleLines={desktopTitleLines} uselessLineBreakSymbol={mobileLineBreakSymbol} />
+        </div>
+
+        <div className="mobile-title">
+          <HomeHeaderTitle titleLines={mobileTitleLines} uselessLineBreakSymbol={desktopLineBreakSymbol} />
+        </div>
+
         <h4>{typedHomeHeader.subtitle}</h4>
       </div>
 
