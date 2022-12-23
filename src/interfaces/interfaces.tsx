@@ -1,24 +1,20 @@
-export interface HomeHeaderInfo {
+export interface IHome {
   id: number;
-  title: string;
-  subtitle: string;
+  intro: string;
+  subintro: string;
   image: string;
-}
-
-export interface HomeIntro {
-  id: number;
   title: string;
   subtitle: string;
 }
 
-export interface Category {
+export interface ICategory {
   id: number;
   title: string;
   section: string;
   body: string;
 }
 
-export interface Project {
+export interface IProject {
   id: number;
   title: string;
   subtitle: string;
@@ -27,14 +23,14 @@ export interface Project {
   body: string;
 }
 
-export interface Partner {
+export interface IPartner {
   id: number;
   name: string;
   logo: string;
   website: string;
 }
 
-export interface Office {
+export interface IOffice {
   id: number;
   city: string;
   phone: string;
@@ -42,18 +38,18 @@ export interface Office {
   address: string;
 }
 
-export interface Studio {
+export interface IStudio {
   id: number;
   city: string;
 }
 
-export interface Slide {
+export interface ISlide {
   title: string;
   subtitle: string;
   image: string;
 }
 
-export interface OurWorkInfo {
+export interface IWork {
   id: number;
   title: string;
 }
