@@ -15,7 +15,8 @@ var blankMetadata = {
     phone: "",
     email: "",
     address: "",
-    sort: ""
+    sort: "",
+    intro: ""
 };
 /**
  * Reads .md files of each collection in /content/ subfolders and creates JSON file with all the information.
@@ -98,6 +99,17 @@ var constructElement = function (folder, metadata, data) {
         return { id: -1 };
     var element = { id: -1 };
     switch (folder) {
+        case "homeheader":
+            element.id = data.timestamp;
+            element.title = metadata.title ? metadata.title : "No title given";
+            element.subtitle = metadata.subtitle ? metadata.subtitle : "No subtitle given";
+            element.image = metadata.image;
+            break;
+        case "homeintro":
+            element.id = data.timestamp;
+            element.title = metadata.title ? metadata.title : "No title given";
+            element.subtitle = metadata.subtitle ? metadata.subtitle : "No subtitle given";
+            break;
         case "projects":
             element.id = data.timestamp;
             element.title = metadata.title ? metadata.title : "No title given";
@@ -136,6 +148,10 @@ var constructElement = function (folder, metadata, data) {
             element.id = data.timestamp;
             element.title = metadata.title;
             element.email = metadata.email;
+            break;
+        case "ourworkintro":
+            element.id = data.timestamp;
+            element.intro = metadata.intro;
             break;
         default:
             console.error("\n ----------------------------------- \n");

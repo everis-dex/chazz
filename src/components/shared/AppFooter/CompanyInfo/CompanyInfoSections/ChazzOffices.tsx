@@ -11,7 +11,7 @@ import "../CompanyInfo.scss";
 export const ChazzOffices = () => {
   return (
     <div className="offices-container">
-      <span>CHAZZ OFFICES</span>
+      <p className="studios-title">CHAZZ OFFICES</p>
       {offices.map((office: Office, index: number) => (
         <div className="offices-info" key={index}>
           <p className="city">{office.city}</p>
@@ -19,7 +19,7 @@ export const ChazzOffices = () => {
           {office.email && <LinkedEmail email={office.email} />}
           {office.address && (
             /* TODO: por qué le pasas el mismo dato(?)*/
-            <LinkedMap address={office.address} city={office.address} />
+            <LinkedMap address={office.address} city={office.city} />
           )}
         </div>
       ))}

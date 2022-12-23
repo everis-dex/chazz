@@ -12,12 +12,12 @@ export const CompanyInfo = () => {
       <Container>
         <div className="we-are-grid">
           <h2>
-            <strong>We are part of NTT Data Company & Tangity Design Network</strong>
+            <strong>We are part of NTT Data Company & its design network, NDDN.</strong>
           </h2>
           <ChazzOffices />
-          <hr />
+          <hr className="divisor-line" />
           <TangityStudios />
-          <hr />
+          <hr className="divisor-line" />
           <GetInTouch />
         </div>
       </Container>

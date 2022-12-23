@@ -9,6 +9,33 @@ public_folder: "/uploads" # where media files will be stored in the published si
 # List of available collections, their fields and metadata information
 collections:
   ##############################
+  #         Home Header
+  ##############################
+  - name: homeheader # Used in routes
+    label: "Home header" # Used in the UI
+    folder: content/homeheader # Where the documents are stored, relative to the repo root
+    create: false # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}--{{title}}" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
+    fields: # Fields for each document
+      - { label: Publish Date, name: date, widget: datetime } # For widgets, see https://www.netlifycms.org/docs/widgets/
+      - { label: Image, name: image, widget: image }
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string }
+
+  ##############################
+  #         Home Intro
+  ##############################
+  - name: homeintro # Used in routes
+    label: "Home intro" # Used in the UI
+    folder: content/homeintro # Where the documents are stored, relative to the repo root
+    create: false # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}--{{title}}" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
+    fields: # Fields for each document
+      - { label: Publish Date, name: date, widget: datetime } # For widgets, see https://www.netlifycms.org/docs/widgets/
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string }
+
+  ##############################
   #         Project
   ##############################
   - name: project # Used in routes
@@ -89,7 +116,6 @@ collections:
     ##############################
   #         Get in touch
   ##############################
-
   - name: get_in_touch
     label: "Get in touch"
     folder: content/studios
@@ -99,3 +125,16 @@ collections:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
       - { label: Emeal, name: email, widget: string }
+
+    ##############################
+  #         Our Work Intro
+  ##############################
+
+  - name: ourworkintro
+    label: "Our Work Intro"
+    folder: content/ourworkintro
+    slug: "st-{{year}}-{{month}}-{{day}}--{{title}}"
+    create: false
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Intro, name: intro, widget: string }

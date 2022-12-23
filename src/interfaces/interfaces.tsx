@@ -1,3 +1,16 @@
+export interface HomeHeaderInfo {
+  id: number;
+  title: string;
+  subtitle: string;
+  image: string;
+}
+
+export interface HomeIntro {
+  id: number;
+  title: string;
+  subtitle: string;
+}
+
 export interface Category {
   id: number;
   title: string;
@@ -38,4 +51,9 @@ export interface Slide {
   title: string;
   subtitle: string;
   image: string;
+}
+
+export interface OurWorkIntro {
+  id: number;
+  intro: string;
 }
