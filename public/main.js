@@ -102,7 +102,7 @@ var constructElement = function (folder, metadata, data) {
     switch (folder) {
         case "home":
             element.id = data.timestamp;
-            element.intro = metadata.title;
+            element.intro = metadata.intro;
             element.subintro = metadata.subintro;
             element.image = metadata.image;
             element.title = metadata.title;

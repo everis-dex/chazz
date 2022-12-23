@@ -11,8 +11,8 @@ export const HomeHeader = () => {
   const desktopLineBreakSymbol: string = "+";
   const mobileLineBreakSymbol: string = "*";
   const typedHomeHeader: IHome = home[0];
-  const desktopTitleLines: string[] = typedHomeHeader.title.split(desktopLineBreakSymbol);
-  const mobileTitleLines: string[] = typedHomeHeader.title.split(mobileLineBreakSymbol);
+  const desktopTitleLines: string[] = typedHomeHeader.intro.split(desktopLineBreakSymbol);
+  const mobileTitleLines: string[] = typedHomeHeader.intro.split(mobileLineBreakSymbol);
 
   return (
     <>
@@ -31,7 +31,7 @@ export const HomeHeader = () => {
           <HomeHeaderTitle titleLines={mobileTitleLines} uselessLineBreakSymbol={desktopLineBreakSymbol} />
         </div>
 
-        <h4>{typedHomeHeader.subtitle}</h4>
+        <h4>{typedHomeHeader.subintro}</h4>
       </div>
 
       <AllowCookies />
