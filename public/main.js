@@ -16,7 +16,8 @@ var blankMetadata = {
     email: "",
     address: "",
     sort: "",
-    intro: ""
+    intro: "",
+    subintro: ""
 };
 /**
  * Reads .md files of each collection in /content/ subfolders and creates JSON file with all the information.
@@ -102,7 +103,7 @@ var constructElement = function (folder, metadata, data) {
         case "home":
             element.id = data.timestamp;
             element.intro = metadata.title;
-            element.subtitle = metadata.title;
+            element.subintro = metadata.subintro;
             element.image = metadata.image;
             element.title = metadata.title;
             element.subtitle = metadata.subtitle;

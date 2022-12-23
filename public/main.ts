@@ -27,6 +27,7 @@ interface Metadata {
   address?: string;
   sort?: string;
   intro?: string;
+  subintro?: string;
 }
 
 interface BuiltElement {
@@ -47,6 +48,7 @@ interface BuiltElement {
   address?: string;
   body?: string;
   intro?: string;
+  subintro?: string;
 }
 
 const blankMetadata: Metadata = {
@@ -65,7 +67,8 @@ const blankMetadata: Metadata = {
   email: "",
   address: "",
   sort: "",
-  intro: ""
+  intro: "",
+  subintro: ""
 };
 
 /**
@@ -163,7 +166,7 @@ const constructElement = (
     case "home":
       element.id = data.timestamp;
       element.intro = metadata.title;
-      element.subtitle = metadata.title;
+      element.subintro = metadata.subintro;
       element.image = metadata.image;
       element.title = metadata.title;
       element.subtitle = metadata.subtitle;
