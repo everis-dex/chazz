@@ -1,3 +1,3 @@
-export * from "./CompanyInfoSections/ChazzOffices";
+export * from "./CompanyInfoSections/Offices";
 export * from "./CompanyInfoSections/GetInTouch";
-export * from "./CompanyInfoSections/TangityStudios";
+export * from "./CompanyInfoSections/Studios";

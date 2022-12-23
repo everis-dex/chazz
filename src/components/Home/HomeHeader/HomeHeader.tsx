@@ -1,16 +1,15 @@
 import React from "react";
 
-import { Nav } from "../../Nav/Nav";
-import { AllowCookies } from "../../shared/AllowCookies/AllowCookies";
+import { AllowCookies, Nav } from "../index";
 
-import { HomeHeaderInfo } from "../../../interfaces/interfaces";
-import homeheader from "../../../content/homeheader.json";
-
-import "./HomeHeader.scss";
+import home from "../../../content/home.json";
+import { IHome } from "../../../interfaces/interfaces";
 import { LineBreakerSelector } from "../../shared/LineBreaker/LineBreakerSelector";
 
+import "./HomeHeader.styles.scss";
+
 export const HomeHeader = () => {
-  const homeHeaderInfo: HomeHeaderInfo = homeheader[0];
+  const typedHomeHeader: IHome = home[0];
 
   return (
     <>
@@ -21,8 +20,8 @@ export const HomeHeader = () => {
       </div>
 
       <div className="chazz-title">
-        <LineBreakerSelector typedLines={homeHeaderInfo.title} />
-        <h4>{homeHeaderInfo.subtitle}</h4>
+        <LineBreakerSelector typedLines={typedHomeHeader.intro} />
+        <h4>{typedHomeHeader.subintro}</h4>
       </div>
 
       <AllowCookies />
