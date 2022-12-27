@@ -49,11 +49,11 @@
   }
   .work-container--content {
     margin: 0 3% 10% 3%;
-    grid-template-columns: 48% auto;
+    grid-template-columns: 49% 49%;
     grid-gap: 2%;
 
     .work-detail {
-      width: 73%;
+      width: 93%;
       font-size: 40px;
     }
   }
@@ -65,4 +65,13 @@
   .mobile-brokenlines {
     display: block;
   }
+}
+
+@media (min-width: 1440px) {
+  .work-container--content {
+    .work-detail {
+      width: 83%;
+    }
+  }
+
 }

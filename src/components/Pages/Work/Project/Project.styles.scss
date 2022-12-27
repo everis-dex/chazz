@@ -13,15 +13,18 @@
 .project-details {
   margin: 40px 0;
   color: var(--black);
+  display: flex;
+  flex-direction: column;
 
-  p {
+  span {
     margin-bottom: 0.2rem;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 16px;
   }
 
   .title {
     font-weight: 900;
+    margin-top: 0;
   }
   .description {
     font-weight: 500;
@@ -68,13 +71,19 @@
 }
 
 // MEDIA QUERIES
+@media (min-width: 768px){
+  .project-details{
+    display: block;
+  }
+}
 @media (min-width: 1280px) {
   .project-container {
     width: auto;
   }
 
   .project-details {
-    p {
+    margin: 34px 0 23px 0;
+    span {
       font-size: 24px;
     }
     .body {
