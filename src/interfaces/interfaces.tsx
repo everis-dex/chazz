@@ -1,43 +1,61 @@
-export interface Category {
+export interface IHome {
+  id: number;
+  intro: string;
+  subintro: string;
+  image: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface ICategory {
   id: number;
   title: string;
   section: string;
   body: string;
 }
 
-export interface Project {
+export interface IProject {
   id: number;
   title: string;
   subtitle: string;
   image: string;
-  branding: string;
-  service: string;
-  value: string;
+  description: string;
   body: string;
 }
 
-export interface Partner {
+export interface IPartner {
   id: number;
-  partner: string;
+  name: string;
   logo: string;
   website: string;
 }
 
-export interface Office {
+export interface IOffice {
   id: number;
   city: string;
   phone: string;
   email: string;
-  addres: string;
+  address: string;
 }
 
-export interface Studio {
+export interface IStudio {
   id: number;
   city: string;
 }
 
-export interface Slide {
+export interface ISlide {
   title: string;
   subtitle: string;
   image: string;
+}
+
+export interface IWork {
+  id: number;
+  title: string;
+}
+
+export interface BrokenLines {
+  id: number;
+  title: string;
+  subtitle?: string;
 }

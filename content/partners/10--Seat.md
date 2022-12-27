@@ -1,6 +1,6 @@
 ---
-partner: Seat
-logo: uploads/web_doco_mock_1-1.png
-website: #
+name: Seat
+logo: uploads/logo_seat.svg
+website: https://www.seat.es/
 sort: 10
 ---

@@ -1,6 +1,6 @@
 ---
-partner: Loewe
-logo: uploads/web_doco_mock_1-1.png
-website: #
+name: Loewe
+logo: uploads/logo_loewe.svg
+website: https://www.loewe.com/
 sort: 8
 ---

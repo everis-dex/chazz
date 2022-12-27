@@ -1,6 +1,6 @@
 ---
-partner: Vidacaixa
+name: Vidacaixa
 logo: uploads/logo_vidaCaixa.svg
-website: #
+website: https://www.vidacaixa.es/
 sort: 14
 ---

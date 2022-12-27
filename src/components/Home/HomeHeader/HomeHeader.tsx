@@ -1,29 +1,30 @@
 import React from "react";
 
-import Nav from "../../Nav/Nav";
-import "./HomeHeader.scss";
+import { AllowCookies, Nav } from "../index";
+
+import home from "../../../content/home.json";
+import { IHome } from "../../../interfaces/interfaces";
+import { LineBreakerSelector } from "../../shared/LineBreaker/LineBreakerSelector";
+
+import "./HomeHeader.styles.scss";
 
 export const HomeHeader = () => {
+  const typedHomeHeader: IHome = home[0];
+
   return (
     <>
       <div className="chazz-header">
         <div className="velo">
-          <Nav color="white" />
+          <Nav color="white" disabledMenuOption="" />
         </div>
       </div>
+
       <div className="chazz-title">
-        <h1>Making the intangible, tangible</h1>
-        <h4>Hybrid & Strategic Digital Agency</h4>
+        <LineBreakerSelector typedLines={typedHomeHeader.intro} />
+        <h4>{typedHomeHeader.subintro}</h4>
       </div>
 
-      <div className="chazz-cookies">
-        <p>
-          <strong>We use cookies to improve your browsing experience. </strong>
-          If you want to know more, read more in our
-          <a href="/#">Privacy Policy</a> and <a href="/#">Cookie Policy</a>.
-        </p>
-        <button>Allow cookies</button>
-      </div>
+      <AllowCookies />
     </>
   );
 };

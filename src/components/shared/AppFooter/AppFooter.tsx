@@ -1,9 +1,14 @@
 import React from "react";
 
+import { BottomBar, CompanyInfo } from "./index";
+
+import "./AppFooter.styles.scss";
+
 export const AppFooter = () => {
   return (
-    <>
-      <h3>AppFooter</h3>
-    </>
+    <footer>
+      <CompanyInfo />
+      <BottomBar />
+    </footer>
   );
 };

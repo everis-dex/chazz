@@ -1,6 +1,6 @@
 ---
-partner: Gobierno de España
-logo: uploads/web_doco_mock_1-1.png
-website: #
+name: Gobierno de España
+logo: uploads/logo_ministerio.svg
+website: https://administracion.gob.es/
 sort: 6
 ---

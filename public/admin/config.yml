@@ -9,25 +9,51 @@ public_folder: "/uploads" # where media files will be stored in the published si
 # List of available collections, their fields and metadata information
 collections:
   ##############################
-  #         Project
+  #         Home
   ##############################
-  - name: project # Used in routes
-    label: Project # Used in the UI
-    folder: content/projects # Where the documents are stored, relative to the repo root
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}--{{title}}" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
+  - name: home # Used in routes
+    label: "Home" # Used in the UI
+    folder: content/home # Where the documents are stored, relative to the repo root
+    create: false # Allow users to create new documents in this collection
+    delete: false # Allow users to delete existing documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}--home" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
     fields: # Fields for each document
       - { label: Publish Date, name: date, widget: datetime } # For widgets, see https://www.netlifycms.org/docs/widgets/
+      - { label: Intro, name: intro, widget: string }
+      - { label: Subintro, name: subintro, widget: string }
       - { label: Image, name: image, widget: image }
       - { label: Title, name: title, widget: string }
       - { label: Subtitle, name: subtitle, widget: string }
-      - { label: Branding, name: branding, widget: string }
-      - { label: Service, name: service, widget: string }
-      - { label: Value, name: value, widget: string }
+
+  ##############################
+  #         Work
+  ##############################
+
+  - name: work
+    label: "Work"
+    folder: content/work
+    slug: "{{year}}-{{month}}-{{day}}--work"
+    create: false
+    delete: false
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Intro, name: intro, widget: string }
+
+  ##############################
+  #         Project
+  ##############################
+  - name: project
+    label: Project
+    folder: content/projects
+    slug: "proj-{{year}}-{{month}}-{{day}}--{{title}}"
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Image, name: image, widget: image }
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string }
       - { label: Body, name: body, widget: markdown }
-    # filter:
-    #   field: rating
-    #   value: 5
+    sortable_fields: ["date"]
 
   ##############################
   #         Partner
@@ -39,7 +65,7 @@ collections:
     slug: "{{sort}}--{{partner}}"
     create: true
     fields:
-      - { label: Partner, name: partner, widget: string }
+      - { label: Name, name: name, widget: string }
       - { label: Logo, name: logo, widget: image }
       - { label: Website, name: website, widget: string }
       - { label: Order, name: sort, widget: number, value_type: int, min: 1, step: 1, max: 100 }
@@ -51,7 +77,7 @@ collections:
   - name: category
     label: Category
     folder: content/categories
-    slug: "{{year}}-{{month}}-{{day}}--{{title}}"
+    slug: "cat-{{year}}-{{month}}-{{day}}--{{title}}"
     create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
@@ -71,14 +97,13 @@ collections:
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: City, name: city, widget: string }
-      - { label: Phone, name: phone, widget: string }
+      - { label: Phone, name: phone, widget: string, required: false }
       - { label: Email, name: email, widget: string }
       - { label: Address, name: address, widget: string }
 
   ##############################
   #         Studio
   ##############################
-
   - name: studio
     label: Studio
     folder: content/studios
@@ -88,17 +113,15 @@ collections:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: City, name: city, widget: string }
 
-    ##############################
+  ##############################
   #         Get in touch
   ##############################
-
   - name: get_in_touch
     label: "Get in touch"
-    folder: content/studios
-    slug: "st-{{year}}-{{month}}-{{day}}--{{title}}"
+    folder: content/get-in-touch
+    slug: "{{year}}-{{month}}-{{day}}--{{title}}"
     create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
       - { label: Emeal, name: email, widget: string }
-    

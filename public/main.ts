@@ -14,11 +14,11 @@ interface Metadata {
   title?: string;
   subtitle?: string;
   image?: string;
-  branding?: string;
+  description?: string;
   service?: string;
   value?: string;
   content?: string;
-  partner?: string;
+  name?: string;
   logo?: string;
   website?: string;
   city?: string;
@@ -26,6 +26,8 @@ interface Metadata {
   email?: string;
   address?: string;
   sort?: string;
+  intro?: string;
+  subintro?: string;
 }
 
 interface BuiltElement {
@@ -34,10 +36,10 @@ interface BuiltElement {
   title?: string;
   subtitle?: string;
   image?: string;
-  branding?: string;
+  description?: string;
   service?: string;
   value?: string;
-  partner?: string;
+  name?: string;
   logo?: string;
   website?: string;
   city?: string;
@@ -45,6 +47,8 @@ interface BuiltElement {
   email?: string;
   address?: string;
   body?: string;
+  intro?: string;
+  subintro?: string;
 }
 
 const blankMetadata: Metadata = {
@@ -53,18 +57,18 @@ const blankMetadata: Metadata = {
   title: "",
   subtitle: "",
   image: "",
-  branding: "",
-  service: "",
-  value: "",
+  description: "",
   content: "",
-  partner: "",
+  name: "",
   logo: "",
   website: "",
   city: "",
   phone: "",
   email: "",
   address: "",
-  sort: ""
+  sort: "",
+  intro: "",
+  subintro: ""
 };
 
 /**
@@ -159,30 +163,38 @@ const constructElement = (
   const element: BuiltElement = { id: -1 };
 
   switch (folder) {
+    case "home":
+      element.id = data.timestamp;
+      element.intro = metadata.intro;
+      element.subintro = metadata.subintro;
+      element.image = metadata.image;
+      element.title = metadata.title;
+      element.subtitle = metadata.subtitle;
+      break;
+
     case "projects":
       element.id = data.timestamp;
-      element.title = metadata.title ? metadata.title : "No title given";
-      element.subtitle = metadata.subtitle ? metadata.subtitle : "No subtitle given";
+      element.title = metadata.title;
+      element.subtitle = metadata.subtitle;
       element.image = metadata.image;
-      element.branding = metadata.branding;
+      element.description = metadata.description;
       element.service = metadata.service;
       element.value = metadata.value;
-      element.body = data.content ? data.content : "No content given";
+      element.body = data.content;
       break;
 
     case "partners":
       element.id = metadata.sort ? parseInt(metadata.sort) : -1;
-      // element.id = data.timestamp;
       element.logo = metadata.logo;
       element.website = metadata.website;
-      element.partner = metadata.partner;
+      element.name = metadata.name;
       break;
 
     case "categories":
       element.id = data.timestamp;
-      element.title = metadata.title ? metadata.title : "No title given";
+      element.title = metadata.title;
       element.section = metadata.section;
-      element.body = data.content ? data.content : "No content given";
+      element.body = data.content;
       break;
 
     case "offices":
@@ -196,6 +208,17 @@ const constructElement = (
     case "studios":
       element.id = data.timestamp;
       element.city = metadata.city;
+      break;
+
+    case "get-in-touch":
+      element.id = data.timestamp;
+      element.title = metadata.title;
+      element.email = metadata.email;
+      break;
+
+    case "work":
+      element.id = data.timestamp;
+      element.title = metadata.title;
       break;
 
     default:
@@ -245,7 +268,7 @@ const getFilesContent = (files: string[], dirPath: string, folder: string) => {
           .sort((a, b) => {
             return a.id > b.id ? 1 : -1;
           })
-          .filter(element => element.id != -1);
+          .filter(element => element.id !== -1);
 
         fs.writeFileSync(`src/content/${folder}.json`, JSON.stringify(sortedList));
       }

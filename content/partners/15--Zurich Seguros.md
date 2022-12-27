@@ -1,6 +1,6 @@
 ---
-partner: Zurich Seguros
+name: Zurich Seguros
 logo: uploads/logo_zurich.svg
-website: #
+website: https://www.zurich.es/
 sort: 15
 ---

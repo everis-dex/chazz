@@ -1,23 +1,23 @@
 var path = require("path");
 var fs = require("fs");
 var blankMetadata = {
-    date: '',
-    section: '',
-    title: '',
-    subtitle: '',
-    image: '',
-    branding: '',
-    service: '',
-    value: '',
-    content: '',
-    partner: '',
-    logo: '',
-    website: '',
-    city: '',
-    phone: '',
-    email: '',
-    address: '',
-    sort: ''
+    date: "",
+    section: "",
+    title: "",
+    subtitle: "",
+    image: "",
+    description: "",
+    content: "",
+    name: "",
+    logo: "",
+    website: "",
+    city: "",
+    phone: "",
+    email: "",
+    address: "",
+    sort: "",
+    intro: "",
+    subintro: ""
 };
 /**
  * Reads .md files of each collection in /content/ subfolders and creates JSON file with all the information.
@@ -100,26 +100,35 @@ var constructElement = function (folder, metadata, data) {
         return { id: -1 };
     var element = { id: -1 };
     switch (folder) {
+        case "home":
+            element.id = data.timestamp;
+            element.intro = metadata.intro;
+            element.subintro = metadata.subintro;
+            element.image = metadata.image;
+            element.title = metadata.title;
+            element.subtitle = metadata.subtitle;
+            break;
         case "projects":
             element.id = data.timestamp;
-            element.title = metadata.title ? metadata.title : "No title given";
-            element.subtitle = metadata.subtitle ? metadata.subtitle : "No subtitle given";
+            element.title = metadata.title;
+            element.subtitle = metadata.subtitle;
             element.image = metadata.image;
-            element.branding = metadata.branding;
+            element.description = metadata.description;
             element.service = metadata.service;
             element.value = metadata.value;
-            element.body = data.content ? data.content : "No content given";
+            element.body = data.content;
             break;
         case "partners":
             element.id = metadata.sort ? parseInt(metadata.sort) : -1;
-            // element.id = data.timestamp;
-            element.partner = metadata.partner;
+            element.logo = metadata.logo;
+            element.website = metadata.website;
+            element.name = metadata.name;
             break;
         case "categories":
             element.id = data.timestamp;
-            element.title = metadata.title ? metadata.title : "No title given";
+            element.title = metadata.title;
             element.section = metadata.section;
-            element.body = data.content ? data.content : "No content given";
+            element.body = data.content;
             break;
         case "offices":
             element.id = data.timestamp;
@@ -131,6 +140,15 @@ var constructElement = function (folder, metadata, data) {
         case "studios":
             element.id = data.timestamp;
             element.city = metadata.city;
+            break;
+        case "get-in-touch":
+            element.id = data.timestamp;
+            element.title = metadata.title;
+            element.email = metadata.email;
+            break;
+        case "work":
+            element.id = data.timestamp;
+            element.title = metadata.title;
             break;
         default:
             console.error("\n ----------------------------------- \n");
@@ -172,11 +190,10 @@ var getFilesContent = function (files, dirPath, folder) {
                     .sort(function (a, b) {
                     return a.id > b.id ? 1 : -1;
                 })
-                    .filter(function (element) { return element.id != -1; });
+                    .filter(function (element) { return element.id !== -1; });
                 fs.writeFileSync("src/content/".concat(folder, ".json"), JSON.stringify(sortedList));
             }
         });
     });
 };
-
 getCollections();

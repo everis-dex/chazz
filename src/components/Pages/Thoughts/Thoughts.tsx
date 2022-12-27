@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-// import { Thoughts } from "../../../interfaces/interfaces";
+import { Nav, AppFooter } from "../index";
 
 export const Thoughts = () => {
-  return <>Thoughts</>;
+  useEffect(() => window.scrollTo(0, 0), []);
+
+  return (
+    <>
+      <Nav color="black" disabledMenuOption="/thoughts" />
+      <p>Thoughts</p>
+      <AppFooter />
+    </>
+  );
 };

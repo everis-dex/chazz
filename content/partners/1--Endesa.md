@@ -1,6 +1,6 @@
 ---
-partner: Endesa
-logo: uploads/web_doco_mock_1-1.png
-website: #
+name: Endesa
+logo: uploads/logo_endesa.svg
+website: https://www.endesa.com
 sort: 1
 ---

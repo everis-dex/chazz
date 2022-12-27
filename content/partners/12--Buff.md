@@ -1,6 +1,6 @@
 ---
-partner: Buff
-logo: uploads/web_doco_mock_1-1.png
-website: #
+name: Buff
+logo: uploads/logo_buff.svg
+website: https://www.buff.com/es_es/
 sort: 12
 ---
