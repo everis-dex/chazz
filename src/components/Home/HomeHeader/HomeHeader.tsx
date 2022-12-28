@@ -16,6 +16,13 @@ export const HomeHeader = () => {
       <div className="chazz-header">
         <div className="velo">
           <Nav color="white" disabledMenuOption="" />
+          <video className="video-header">
+            <source src=""/>
+          </video>
+          <div className="play-video">
+            <img src="../../../assets/Chazz_Logo.svg" alt="play" />
+            <span>Play reel</span>
+          </div>
         </div>
       </div>
 
