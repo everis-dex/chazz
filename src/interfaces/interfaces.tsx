@@ -75,7 +75,6 @@ export interface ISlide {
 }
 
 export interface IWork {
-  page: string;
   title: string;
   subtitle: string;
 }
