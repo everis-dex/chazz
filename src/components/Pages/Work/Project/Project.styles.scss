@@ -17,7 +17,7 @@
   color: var(--black);
   font-size: 15px;
 
-  .project-title-container{
+  .project-title-container {
     display: flex;
     flex-direction: column;
 
@@ -27,7 +27,6 @@
       font-size: 16px;
     }
   }
-
 
   .title {
     font-weight: 900;
@@ -78,9 +77,9 @@
 }
 
 // MEDIA QUERIES
-@media (min-width: 768px){
-  .project-details{
-    .project-title-container{
+@media (min-width: 768px) {
+  .project-details {
+    .project-title-container {
       display: block;
     }
   }
@@ -103,5 +102,4 @@
       font-size: 16px;
     }
   }
-
 }
