@@ -27,8 +27,10 @@ export const ProjectCard = ({ data, height = "auto", columns, full = false }: Pr
       </div>
 
       <div className="project-details">
-        <span className="title">{data.title} —</span>
-        <span className="description">{data.description}</span>
+        <div className="project-title-container">
+          <span className="title">{data.title} —</span>
+          <span className="description">{data.description}</span>
+        </div>
         <span className="properties">{data.subtitle}</span>
       </div>
 
