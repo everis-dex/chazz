@@ -11,13 +11,18 @@ type Props = {
 
 export const BrokenLines = ({ brokenLines, uselessLineBreakSymbol }: Props) => {
   return (
-    <h1>
-      {brokenLines.map((titleLine: string, index) => (
-        <Fragment key={index}>
-          {titleLine.replace(uselessLineBreakSymbol, "")}
-          <br />
-        </Fragment>
-      ))}
-    </h1>
+    <>
+      {brokenLines && (
+        <h1>
+          {brokenLines &&
+            brokenLines.map((titleLine: string, index) => (
+              <Fragment key={index}>
+                {titleLine.replace(uselessLineBreakSymbol, "")}
+                <br />
+              </Fragment>
+            ))}
+        </h1>
+      )}
+    </>
   );
 };
