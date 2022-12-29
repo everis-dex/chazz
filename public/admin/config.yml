@@ -9,38 +9,67 @@ public_folder: "/uploads" # where media files will be stored in the published si
 # List of available collections, their fields and metadata information
 collections:
   ##############################
-  #         Home
+  #         PAGES
   ##############################
   - name: home # Used in routes
     label: "Home" # Used in the UI
     folder: content/home # Where the documents are stored, relative to the repo root
     create: false # Allow users to create new documents in this collection
     delete: false # Allow users to delete existing documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}--home" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
+    slug: "home" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
     fields: # Fields for each document
-      - { label: Publish Date, name: date, widget: datetime } # For widgets, see https://www.netlifycms.org/docs/widgets/
-      - { label: Intro, name: intro, widget: string }
-      - { label: Subintro, name: subintro, widget: string }
-      - { label: Image, name: image, widget: image }
-      - { label: Title, name: title, widget: string }
-      - { label: Subtitle, name: subtitle, widget: string }
-
-  ##############################
-  #         Work
-  ##############################
+      - label: Header # For widgets, see https://www.netlifycms.org/docs/widgets/
+        name: header
+        widget: object
+        summary: "{{slag}}"
+        fields:
+          - { label: Intro, name: intro, widget: string }
+          - { label: Subintro, name: subintro, widget: string }
+          - { label: Media, name: media, widget: image }
+      - label: Categories
+        name: categories
+        widget: object
+        summary: "{{slag}}"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string, required: false }
+      - label: Partners
+        name: partners
+        widget: object
+        summary: "{{slag}}"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string, required: false }
+      - label: Footer
+        name: footer
+        widget: object
+        summary: "{{slag}}"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string, required: false }
+          - { label: Offices, name: offices, widget: string }
+          - { label: Studios, name: studios, widget: string }
+          - { label: Get in touch, name: get in touch, widget: string }
+          - label: Social
+            name: social
+            widget: list
+            summary: "{{slag}}"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Link, name: link, widget: string }
 
   - name: work
     label: "Work"
     folder: content/work
-    slug: "{{year}}-{{month}}-{{day}}--work"
+    slug: "work"
     create: false
     delete: false
     fields:
-      - { label: Publish Date, name: date, widget: datetime }
-      - { label: Intro, name: intro, widget: string }
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string, required: false }
 
   ##############################
-  #         Project
+  #         COMPONENTS
   ##############################
   - name: project
     label: Project
@@ -55,10 +84,6 @@ collections:
       - { label: Body, name: body, widget: markdown }
     sortable_fields: ["date"]
 
-  ##############################
-  #         Partner
-  ##############################
-
   - name: partner
     label: Partner
     folder: content/partners
@@ -70,10 +95,6 @@ collections:
       - { label: Website, name: website, widget: string }
       - { label: Order, name: sort, widget: number, value_type: int, min: 1, step: 1, max: 100 }
 
-  ##############################
-  #         Category
-  ##############################
-
   - name: category
     label: Category
     folder: content/categories
@@ -84,10 +105,6 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Section, name: section, widget: string }
       - { label: Body, name: body, widget: markdown }
-
-  ##############################
-  #         Office
-  ##############################
 
   - name: office
     label: Office
@@ -101,9 +118,6 @@ collections:
       - { label: Email, name: email, widget: string }
       - { label: Address, name: address, widget: string }
 
-  ##############################
-  #         Studio
-  ##############################
   - name: studio
     label: Studio
     folder: content/studios
@@ -113,9 +127,6 @@ collections:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: City, name: city, widget: string }
 
-  ##############################
-  #         Get in touch
-  ##############################
   - name: get_in_touch
     label: "Get in touch"
     folder: content/get-in-touch
