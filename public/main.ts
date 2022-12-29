@@ -219,7 +219,7 @@ const getFilesContent = (files: string[], dirPath: string, folder: string) => {
   const elementList: BuiltElement[] = [];
   const indexList: number[] = [];
 
-  files.forEach((file, index) => {
+  files.forEach((file, index: number) => {
     fs.readFile(`${dirPath}/${file}`, "utf8", (err: Error, contents: string) => {
       if (err) {
         return console.error("Failed to read file of directory: " + err.message);

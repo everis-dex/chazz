@@ -11,7 +11,7 @@ export const Studios = ({ title }: Props) => {
     <div className="studios-container">
       <p className="studios-title">{title}</p>
       <div className="studios-grid">
-        {studios.map((studio, index) => (
+        {studios.map((studio, index: number) => (
           <div className="studios-info" key={index}>
             <p className="city">{studio.city}</p>
           </div>

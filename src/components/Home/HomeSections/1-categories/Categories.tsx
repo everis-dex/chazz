@@ -22,7 +22,7 @@ export const Categories = (categoriesData: IHomeSection) => {
           </Col>
 
           <Col className="section1-sections" xs={12} sm={6}>
-            {categories.map((category: ICategory, index) => (
+            {categories.map((category: ICategory, index: number) => (
               <div key={index}>
                 {category.title && <h2 style={style}>{category.title}</h2>}
                 {category.section && <p>{category.section}</p>}

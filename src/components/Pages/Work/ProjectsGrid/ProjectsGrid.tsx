@@ -18,12 +18,14 @@ const formats = {
 let config = [formats.right, formats.left, formats.big, formats.right, formats.equal, formats.left];
 
 export const ProjectsGrid = () => {
+  const typedLines: IWork = work;
+
   const columnCount: number = 2;
   let currentColumn: number = 0;
   let currentRow: number = 0;
   let configuration = config[0];
 
-  function handleProjectFormat(/*index: number*/) {
+  function handleProjectFormat() {
     currentColumn++;
     let imgHeight: string = "300px";
     let columnFullWidth: string = ""; //full width values "" or "full-width"
@@ -50,8 +52,6 @@ export const ProjectsGrid = () => {
     }
     return [imgHeight, columnFullWidth];
   }
-
-  const typedLines: IWork = work;
 
   return (
     <>
