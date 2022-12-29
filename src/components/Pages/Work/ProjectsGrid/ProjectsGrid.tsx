@@ -15,7 +15,7 @@ const formats = {
 };
 
 // la configuración se escoge por cada row, por cada par de columnas
-let config = [formats.right, formats.left, formats.big, formats.right, formats.equal];
+let config = [formats.right, formats.left, formats.big, formats.right, formats.equal, formats.left];
 
 export const ProjectsGrid = () => {
   const columnCount: number = 2;
@@ -23,22 +23,33 @@ export const ProjectsGrid = () => {
   let currentRow: number = 0;
   let configuration = config[0];
 
-  function handleProjectFormat(index: number) {
+  function handleProjectFormat(/*index: number*/) {
     currentColumn++;
     let imgHeight: string = "300px";
+    let columnFullWidth: string =""; //full width values "" or "full-width"
     let columnPosition: number = currentColumn % columnCount;
     // left column
     if (columnPosition === 0) {
+
       // Reset configuration, head to next row
       currentRow = currentColumn / columnCount;
       configuration = config[currentRow];
+
       if (configuration === formats.left) imgHeight = "600px";
+      // big column
+      if(configuration === formats.big){
+        imgHeight = "600px"
+        columnFullWidth = "full-width"
+        //Reset configuration, head to next row
+        currentRow++;
+        currentColumn++;
+      }
     }
     // right column
     else if (columnPosition === 1) {
       if (configuration === formats.right) imgHeight = "600px";
     }
-    return imgHeight;
+    return [imgHeight,columnFullWidth];
   }
 
   const typedLines: IWork = work[0];
@@ -53,10 +64,10 @@ export const ProjectsGrid = () => {
 
         {projects &&
           projects.map((project: IProject, index: number) => {
-            let height = handleProjectFormat(index);
+            let valuesProjectFormat = handleProjectFormat();
             return (
               <Fragment key={index}>
-                <ProjectCard data={project} height={height} />
+                <ProjectCard data={project} height={valuesProjectFormat[0]} columns={valuesProjectFormat[1]} />
               </Fragment>
             );
           })}
