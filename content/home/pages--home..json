@@ -1,0 +1,20 @@
+{
+  "header": {
+    "intro": "ad",
+    "subintro": "sdf",
+    "media": "/uploads/Buff_home_web.jpg"
+  },
+  "categories": {
+    "title": "asdf",
+    "subtitle": "sdf"
+  },
+  "partners": {
+    "title": "asdf"
+  },
+  "footer": {
+    "title": "asdf",
+    "offices": "sadf",
+    "studios": "sadf",
+    "get in touch": "sdf"
+  }
+}
