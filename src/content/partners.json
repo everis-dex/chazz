@@ -15,7 +15,7 @@
     "website": "https://administracion.gob.es/\r",
     "name": "Gobierno de España\r"
   },
-  { "id": 7, "logo": "uploads/logo_edp.svg\r", "website": "https://www.edpenergia.es/es/\r", "name": "Edp\r" },
+  { "id": 7, "logo": "uploads/logo_vidaCaixa.svg\r", "website": "https://www.vidacaixa.es/\r", "name": "Vidacaixa\r" },
   { "id": 8, "logo": "uploads/logo_loewe.svg\r", "website": "https://www.loewe.com/\r", "name": "Loewe\r" },
   {
     "id": 9,
@@ -27,6 +27,6 @@
   { "id": 11, "logo": "uploads/logo_correos.svg\r", "website": "https://www.correos.es/\r", "name": "Correos\r" },
   { "id": 12, "logo": "uploads/logo_buff.svg\r", "website": "https://www.buff.com/es_es/\r", "name": "Buff\r" },
   { "id": 13, "logo": "uploads/logo_caixaBank.svg\r", "website": "https://www.caixabank.es/\r", "name": "Caixabank\r" },
-  { "id": 14, "logo": "uploads/logo_vidaCaixa.svg\r", "website": "https://www.vidacaixa.es/\r", "name": "Vidacaixa\r" },
+  { "id": 14, "logo": "uploads/logo_edp.svg\r", "website": "https://www.edpenergia.es/es/\r", "name": "Edp\r" },
   { "id": 15, "logo": "uploads/logo_zurich.svg\r", "website": "https://www.zurich.es/\r", "name": "Zurich Seguros\r" }
 ]
