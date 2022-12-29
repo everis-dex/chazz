@@ -25,8 +25,8 @@ collections:
         name: header
         widget: object # For widgets, see https://www.netlifycms.org/docs/widgets/
         fields:
-          - { label: Intro, name: intro, widget: string }
-          - { label: Subintro, name: subintro, widget: string }
+          - { label: Intro, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string }
           - { label: Media, name: media, widget: image }
       - label: Categories
         name: categories

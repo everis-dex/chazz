@@ -2,21 +2,13 @@ import React from "react";
 import { Container } from "react-bootstrap";
 
 import home from "../../../../content/pages/pages--home.json";
-import { IHome } from "../../../../interfaces/interfaces";
-
+import { IHomeFooter } from "../../../../interfaces/interfaces";
 import "./CompanyInfo.styles.scss";
 
 import { Offices, Studios, GetInTouch } from "./index";
 
-type Footer = {
-  title: string;
-  offices: string;
-  touch: string;
-  studios: string;
-  social: object;
-};
 export const CompanyInfo = () => {
-  const typedFooter: Footer = home.footer;
+  const typedFooter: IHomeFooter = home.footer;
 
   return (
     <div className="we-are-section">

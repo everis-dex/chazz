@@ -3,13 +3,13 @@ import React from "react";
 import { AllowCookies, Nav } from "../index";
 
 import home from "../../../content/pages/pages--home.json";
-import { IHome } from "../../../interfaces/interfaces";
+import { IHomeHeader } from "../../../interfaces/interfaces";
 import { LineBreakerSelector } from "../../shared/LineBreaker/LineBreakerSelector";
 
 import "./HomeHeader.styles.scss";
 
 export const HomeHeader = () => {
-  const typedHomeHeader: IHome = home.header;
+  const typedHomeHEader: IHomeHeader = home.header;
 
   return (
     <>
@@ -20,8 +20,8 @@ export const HomeHeader = () => {
       </div>
 
       <div className="chazz-title">
-        <LineBreakerSelector typedLines={typedHomeHeader.intro} />
-        <h4>{typedHomeHeader.subintro}</h4>
+        <LineBreakerSelector typedLines={typedHomeHEader.title} />
+        <h4>{typedHomeHEader.subtitle}</h4>
       </div>
 
       <AllowCookies />

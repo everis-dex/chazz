@@ -1,7 +1,7 @@
 ---
 header:
-  - intro: Empowering brands +for real impact.
-  - subintro: Hybrid & Strategic Digital Agency
+  - title: Empowering brands +for real impact.
+  - subtitle: Hybrid & Strategic Digital Agency
   - media: /uploads/video.png
 categories:
   - title: We humanize complexity.

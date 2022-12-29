@@ -1,7 +1,7 @@
 {
   "header": {
-    "intro": "Empowering brands for real impact.",
-    "subintro": "Hybrid & Strategic Digital Agency",
+    "title": "Empowering brands for real impact.",
+    "subtitle": "Hybrid & Strategic Digital Agency",
     "media": "/uploads/video.png"
   },
   "categories": {
@@ -9,10 +9,12 @@
     "title": "We humanize complexity."
   },
   "partners": {
-    "title": "Partners in crime"
+    "title": "Partners in crime",
+    "subtitle": ""
   },
   "footer": {
     "title": "We are part of NTT Data Company & its design network, NDDN.",
+    "subtitle": "",
     "offices": "CHAZZ OFFICES",
     "touch": "GET IN TOUCH",
     "studios": "NDDN NETWORK",
