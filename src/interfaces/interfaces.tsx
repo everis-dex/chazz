@@ -68,6 +68,12 @@ export interface IStudio {
   city: string;
 }
 
+export interface ITouch {
+  id: number;
+  title: string;
+  email: string;
+}
+
 export interface ISlide {
   title: string;
   subtitle: string;

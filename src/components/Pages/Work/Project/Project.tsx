@@ -15,7 +15,6 @@ export const ProjectCard = ({ data, height = "auto", columns }: Props) => {
   // Dropdown
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
   const dropdownText: string = openDropdown ? "Less" : "More";
-
   const handleDropdown = () => setOpenDropdown(!openDropdown);
 
   return (
