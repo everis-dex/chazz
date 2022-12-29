@@ -1,6 +1,6 @@
 import React from "react";
 
-import home from "../../../../content/home.json";
+import home from "../../../../content/pages/pages--home.json";
 
 import categories from "../../../../content/categories.json";
 import { ICategory, IHome } from "../../../../interfaces/interfaces";
@@ -11,7 +11,7 @@ import "./Categories.styles.scss";
 
 export const Categories = () => {
   const style = { fontSize: "40px" };
-  const typedHomeIntro: IHome = home[0];
+  const typedHomeIntro: IHome = home.categories;
 
   return (
     <>

@@ -2,14 +2,14 @@ import React from "react";
 
 import { AllowCookies, Nav } from "../index";
 
-import home from "../../../content/home.json";
+import home from "../../../content/pages/pages--home.json";
 import { IHome } from "../../../interfaces/interfaces";
 import { LineBreakerSelector } from "../../shared/LineBreaker/LineBreakerSelector";
 
 import "./HomeHeader.styles.scss";
 
 export const HomeHeader = () => {
-  const typedHomeHeader: IHome = home[0];
+  const typedHomeHeader: IHome = home.header;
 
   return (
     <>
