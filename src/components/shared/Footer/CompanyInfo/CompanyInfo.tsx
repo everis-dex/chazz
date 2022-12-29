@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
-import home from "../../../../content/pages/pages--home.json";
+import home from "../../../../content/pages/home.json";
 import { IHomeFooter } from "../../../../interfaces/interfaces";
 import "./CompanyInfo.styles.scss";
 

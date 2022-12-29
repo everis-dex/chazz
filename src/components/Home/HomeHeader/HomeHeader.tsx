@@ -2,7 +2,7 @@ import React from "react";
 
 import { AllowCookies, Nav } from "../index";
 
-import home from "../../../content/pages/pages--home.json";
+import home from "../../../content/pages/home.json";
 import { IHomeHeader } from "../../../interfaces/interfaces";
 import { LineBreakerSelector } from "../../shared/LineBreaker/LineBreakerSelector";
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Carrousel } from "./Carrousel/Carrousel";
 
-import home from "../../../../content/pages/pages--home.json";
+import home from "../../../../content/pages/home.json";
 import { IHomeProjects } from "../../../../interfaces/interfaces";
 
 import { Container } from "react-bootstrap";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import home from "../../../../content/pages/pages--home.json";
+import home from "../../../../content/pages/home.json";
 import { IHomeSection } from "../../../../interfaces/interfaces";
 import partners from "../../../../content/partners.json";
 import { IPartner } from "../../../../interfaces/interfaces";

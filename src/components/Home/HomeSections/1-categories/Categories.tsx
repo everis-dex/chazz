@@ -1,6 +1,6 @@
 import React from "react";
 
-import home from "../../../../content/pages/pages--home.json";
+import home from "../../../../content/pages/home.json";
 
 import categories from "../../../../content/categories.json";
 import { ICategory, IHomeSection } from "../../../../interfaces/interfaces";

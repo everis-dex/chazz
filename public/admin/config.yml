@@ -19,7 +19,7 @@ collections:
     delete: false # Allow users to delete existing documents in this collection
     extension: json
     format: json
-    slug: "pages--home" # Filename template. Default is {{slug}}, a url-safe version of the post's title.
+    slug: "home" # Filename template. Default is {{slug}}, a url-safe version of the post's title.
     fields: # Fields for each document
       - label: Header
         name: header
@@ -70,7 +70,7 @@ collections:
     delete: false
     extension: json
     format: json
-    slug: "pages--work"
+    slug: "work"
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Subtitle, name: subtitle, widget: string, required: false }
