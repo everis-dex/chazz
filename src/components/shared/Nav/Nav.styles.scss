@@ -7,7 +7,7 @@
   display: block;
   float: left;
   position: relative;
-  left: 14px;
+  left: 5%;
   top: 40px;
   z-index: 99;
 }
@@ -202,7 +202,6 @@
   .chazz-logo {
     width: 162px;
     top: 30px;
-    left: 49px;
   }
 
   .nav {
@@ -262,6 +261,9 @@
 }
 
 @media (min-width: 1024px) {
+  .chazz-logo{
+    left: 5%;
+  }
   .nav {
     margin-top: 2.2%;
     font-size: 19px;
@@ -271,6 +273,7 @@
 @media (min-width: 1280px) {
   .chazz-logo {
     width: 185px;
+    left: 3%;
   }
   .nav ul li {
     margin-right: 36px;
