@@ -7,12 +7,17 @@ import { desktopLineBreakSymbol, mobileLineBreakSymbol } from "../../../constant
 import "./LineBreaker.scss";
 
 type Props = {
-  typedLines: string;
+  typedLines?: string;
 };
 
 export const LineBreakerSelector = ({ typedLines }: Props) => {
-  const desktopBrokenLines: string[] = typedLines.split(desktopLineBreakSymbol);
-  const mobileBrokenLines: string[] = typedLines.split(mobileLineBreakSymbol);
+  var desktopBrokenLines: string[] = [];
+  var mobileBrokenLines: string[] = [];
+
+  if (typedLines) {
+    desktopBrokenLines = typedLines.split(desktopLineBreakSymbol);
+    mobileBrokenLines = typedLines.split(mobileLineBreakSymbol);
+  }
 
   return (
     <>
