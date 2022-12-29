@@ -26,20 +26,19 @@ export const ProjectsGrid = () => {
   function handleProjectFormat(/*index: number*/) {
     currentColumn++;
     let imgHeight: string = "300px";
-    let columnFullWidth: string =""; //full width values "" or "full-width"
+    let columnFullWidth: string = ""; //full width values "" or "full-width"
     let columnPosition: number = currentColumn % columnCount;
     // left column
     if (columnPosition === 0) {
-
       // Reset configuration, head to next row
       currentRow = currentColumn / columnCount;
       configuration = config[currentRow];
 
       if (configuration === formats.left) imgHeight = "600px";
       // big column
-      if(configuration === formats.big){
-        imgHeight = "600px"
-        columnFullWidth = "full-width"
+      if (configuration === formats.big) {
+        imgHeight = "600px";
+        columnFullWidth = "full-width";
         //Reset configuration, head to next row
         currentRow++;
         currentColumn++;
@@ -49,7 +48,7 @@ export const ProjectsGrid = () => {
     else if (columnPosition === 1) {
       if (configuration === formats.right) imgHeight = "600px";
     }
-    return [imgHeight,columnFullWidth];
+    return [imgHeight, columnFullWidth];
   }
 
   const typedLines: IWork = work[0];
