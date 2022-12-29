@@ -8,7 +8,7 @@ import "./Project.styles.scss";
 
 type Props = { data: IProject; columns?: string; height?: string; full?: boolean };
 
-export const ProjectCard = ({ data, columns, height = "auto", full = false }: Props) => {
+export const ProjectCard = ({ data, height = "auto", columns, full = false }: Props) => {
   const style = { width: "100%", height: height, objectFit: "cover" };
   const bodyParagraphs: string[] = data.body.replace("\r", "").split("\n");
 
@@ -21,7 +21,7 @@ export const ProjectCard = ({ data, columns, height = "auto", full = false }: Pr
   };
 
   return (
-    <div className="project-container">
+    <div className={`project-container ${columns}`}>
       <div className="project-media">
         <Media src={data.image} style={style} alt={data.title} />
       </div>
