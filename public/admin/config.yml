@@ -21,6 +21,7 @@ collections:
     format: json
     slug: "home" # Filename template. Default is {{slug}}, a url-safe version of the post's title.
     fields: # Fields for each document
+      - { label: Page, name: page, widget: string }
       - label: Header
         name: header
         widget: object # For widgets, see https://www.netlifycms.org/docs/widgets/
@@ -72,6 +73,7 @@ collections:
     format: json
     slug: "work"
     fields:
+      - { label: Page, name: page, widget: string }
       - { label: Title, name: title, widget: string }
       - { label: Subtitle, name: subtitle, widget: string, required: false }
 
