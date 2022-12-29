@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HomeHeader, Categories, Projects, Partners, AppFooter } from "./index";
+import { HomeHeader, Categories, Projects, Partners, Footer } from "./index";
 
 export const Home = () => {
   return (
@@ -9,7 +9,7 @@ export const Home = () => {
       <Categories />
       <Projects />
       <Partners />
-      <AppFooter />
+      <Footer />
     </>
   );
 };
