@@ -5,7 +5,7 @@ import home from "../../../../content/pages/home.json";
 import { IHomeFooter } from "../../../../interfaces/interfaces";
 import "./CompanyInfo.styles.scss";
 
-import { Offices, Studios, GetInTouch } from "./index";
+import { GetInTouch, Offices, Studios } from "./index";
 
 export const CompanyInfo = () => {
   const typedFooter: IHomeFooter = home.footer;
