@@ -4,7 +4,7 @@ import { ProjectCard } from "../Project/Project";
 import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
 import { IProject, IWork } from "../../../../interfaces/interfaces";
 
-import work from "../../../../content/work.json";
+import work from "../../../../content/pages/work.json";
 import projects from "../../../../content/projects.json";
 
 const formats = {
@@ -51,14 +51,14 @@ export const ProjectsGrid = () => {
     return [imgHeight, columnFullWidth];
   }
 
-  const typedLines: IWork = work[0];
+  const typedLines: IWork = work;
 
   return (
     <>
-      <h1 className="work-header">Our work</h1>
+      <h1 className="work-header">{typedLines.title}</h1>
       <div className="work-container--content">
         <div className="work-detail">
-          <LineBreakerSelector typedLines={typedLines.title} />
+          <LineBreakerSelector typedLines={typedLines.subtitle} />
         </div>
 
         {projects &&
