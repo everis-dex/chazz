@@ -1,9 +1,9 @@
 import React from "react";
 
-import home from "../../../../content/home.json";
+import home from "../../../../content/pages/home.json";
 
 import categories from "../../../../content/categories.json";
-import { ICategory, IHome } from "../../../../interfaces/interfaces";
+import { ICategory, IHomeSection } from "../../../../interfaces/interfaces";
 import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
 
 import { Col, Container, Row } from "react-bootstrap";
@@ -11,7 +11,7 @@ import "./Categories.styles.scss";
 
 export const Categories = () => {
   const style = { fontSize: "40px" };
-  const typedHomeIntro: IHome = home[0];
+  const typedSection: IHomeSection = home.categories;
 
   return (
     <>
@@ -19,8 +19,8 @@ export const Categories = () => {
         <Row className="section1">
           <Col className="section1-title" xs={12} sm={6}>
             <h2>
-              <strong>{typedHomeIntro.title}</strong> <br></br>
-              <LineBreakerSelector typedLines={typedHomeIntro.subtitle} />
+              <strong>{typedSection.title}</strong> <br></br>
+              <LineBreakerSelector typedLines={typedSection.subtitle} />
             </h2>
           </Col>
 

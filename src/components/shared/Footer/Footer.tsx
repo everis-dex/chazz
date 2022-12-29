@@ -2,9 +2,9 @@ import React from "react";
 
 import { BottomBar, CompanyInfo } from "./index";
 
-import "./AppFooter.styles.scss";
+import "./Footer.styles.scss";
 
-export const AppFooter = () => {
+export const Footer = () => {
   return (
     <footer>
       <CompanyInfo />

@@ -26,8 +26,6 @@ interface Metadata {
   email?: string;
   address?: string;
   sort?: string;
-  intro?: string;
-  subintro?: string;
 }
 
 interface BuiltElement {
@@ -47,8 +45,6 @@ interface BuiltElement {
   email?: string;
   address?: string;
   body?: string;
-  intro?: string;
-  subintro?: string;
 }
 
 const blankMetadata: Metadata = {
@@ -66,9 +62,7 @@ const blankMetadata: Metadata = {
   phone: "",
   email: "",
   address: "",
-  sort: "",
-  intro: "",
-  subintro: ""
+  sort: ""
 };
 
 /**
@@ -163,15 +157,6 @@ const constructElement = (
   const element: BuiltElement = { id: -1 };
 
   switch (folder) {
-    case "home":
-      element.id = data.timestamp;
-      element.intro = metadata.intro;
-      element.subintro = metadata.subintro;
-      element.image = metadata.image;
-      element.title = metadata.title;
-      element.subtitle = metadata.subtitle;
-      break;
-
     case "projects":
       element.id = data.timestamp;
       element.title = metadata.title;
@@ -214,11 +199,6 @@ const constructElement = (
       element.id = data.timestamp;
       element.title = metadata.title;
       element.email = metadata.email;
-      break;
-
-    case "work":
-      element.id = data.timestamp;
-      element.title = metadata.title;
       break;
 
     default:

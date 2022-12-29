@@ -4,4 +4,4 @@ export * from "./Thoughts/Thoughts";
 export * from "./WeAre/WeAre";
 
 export * from "../shared/Nav/Nav";
-export * from "../shared/AppFooter/AppFooter";
+export * from "../shared/Footer/Footer";

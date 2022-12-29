@@ -11,7 +11,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./Carrousel.styles.scss";
 
-export const Carrousel = () => {
+type Props = { title: string };
+export const Carrousel = ({ title }: Props) => {
   const slides: IProject[] = [...projects];
 
   const [carouselWidth, setCarouselWidth] = useState<number>(0);
@@ -52,7 +53,7 @@ export const Carrousel = () => {
   return (
     <>
       <div ref={carouselRef} className="carouselTitle">
-        <h3>Featured projects</h3>
+        <h3>{title}</h3>
       </div>
 
       <div id="carousel" className="carousel">

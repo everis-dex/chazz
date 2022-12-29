@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { Nav, AppFooter } from "../index";
+import { Nav, Footer } from "../index";
 
 export const Thoughts = () => {
   useEffect(() => window.scrollTo(0, 0), []);
@@ -9,7 +9,7 @@ export const Thoughts = () => {
     <>
       <Nav color="black" disabledMenuOption="/thoughts" />
       <p>Thoughts</p>
-      <AppFooter />
+      <Footer />
     </>
   );
 };

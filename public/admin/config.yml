@@ -13,20 +13,20 @@ collections:
   ##############################
 
   - name: home # Used in routes
+    label: "Home" # Used in the UI
+    folder: src/content/pages # Where the documents are stored, relative to the repo root
+    create: false # Allow users to create new documents in this collection
+    delete: false # Allow users to delete existing documents in this collection
     extension: json
     format: json
-    label: "Home" # Used in the UI
-    folder: content/home # Where the documents are stored, relative to the repo root
-    create: true # Allow users to create new documents in this collection
-    delete: true # Allow users to delete existing documents in this collection
-    slug: "pages--home.{{extension}}" # Filename template. Default is {{slug}}, a url-safe version of the post's title.
+    slug: "home" # Filename template. Default is {{slug}}, a url-safe version of the post's title.
     fields: # Fields for each document
       - label: Header
         name: header
         widget: object # For widgets, see https://www.netlifycms.org/docs/widgets/
         fields:
-          - { label: Intro, name: intro, widget: string }
-          - { label: Subintro, name: subintro, widget: string }
+          - { label: Intro, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string }
           - { label: Media, name: media, widget: image }
       - label: Categories
         name: categories
@@ -34,6 +34,13 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Subtitle, name: subtitle, widget: string, required: false }
+      - label: Projects
+        name: projects
+        widget: object
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string, required: false }
+          - { label: More, name: more, widget: string }
       - label: Partners
         name: partners
         widget: object
@@ -48,7 +55,7 @@ collections:
           - { label: Subtitle, name: subtitle, widget: string, required: false }
           - { label: Offices, name: offices, widget: string }
           - { label: Studios, name: studios, widget: string }
-          - { label: Get in touch, name: get in touch, widget: string }
+          - { label: Get in touch, name: touch, widget: string }
           - label: Social
             name: social
             widget: list
@@ -58,10 +65,12 @@ collections:
 
   - name: work
     label: "Work"
-    folder: content/work
-    slug: "pages--work"
+    folder: src/content/pages
     create: false
     delete: false
+    extension: json
+    format: json
+    slug: "work"
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Subtitle, name: subtitle, widget: string, required: false }

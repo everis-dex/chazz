@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../AppFooter.styles.scss";
+import "../Footer.styles.scss";
 
 export const BottomBar = () => {
   return (

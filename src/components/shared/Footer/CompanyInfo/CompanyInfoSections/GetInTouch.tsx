@@ -7,10 +7,11 @@ import getInTouch from "../../../../../content/get-in-touch.json";
 
 import "../CompanyInfo.styles.scss";
 
-export const GetInTouch = () => {
+type Props = { title: string };
+export const GetInTouch = ({ title }: Props) => {
   return (
     <div className="in-touch-container">
-      <p className="studios-title">GET IN TOUCH</p>
+      <p className="studios-title">{title}</p>
       <div className="in-touch-grid">
         {getInTouch.map((item, index: number) => (
           <div className="in-touch-info" key={index}>
