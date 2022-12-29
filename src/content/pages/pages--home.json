@@ -4,9 +4,14 @@
     "subtitle": "Hybrid & Strategic Digital Agency",
     "media": "/uploads/video.png"
   },
+  "projects": {
+    "title": "Featured projects",
+    "subtitle": "",
+    "more": "More projects"
+  },
   "categories": {
-    "subtitle": "Strategy, technology and creativity are our core. Building bridges to link brands with the society needs.",
-    "title": "We humanize complexity."
+    "title": "We humanize complexity.",
+    "subtitle": "Strategy, technology and creativity are our core. Building bridges to link brands with the society needs."
   },
   "partners": {
     "title": "Partners in crime",

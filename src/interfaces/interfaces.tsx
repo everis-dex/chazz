@@ -15,6 +15,10 @@ export interface IHomeHeader extends IHomeSection {
   media: string;
 }
 
+export interface IHomeProjects extends IHomeSection {
+  more: string;
+}
+
 export interface IHomeFooter extends IHomeSection {
   offices: string;
   touch: string;

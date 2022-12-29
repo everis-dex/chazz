@@ -34,6 +34,13 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Subtitle, name: subtitle, widget: string, required: false }
+      - label: Projects
+        name: projects
+        widget: object
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string, required: false }
+          - { label: More, name: more, widget: string }
       - label: Partners
         name: partners
         widget: object
