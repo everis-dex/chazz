@@ -5,6 +5,10 @@ export interface IHome {
   image?: string;
   title?: string;
   subtitle?: string;
+  header: object;
+  categories: object;
+  partners: object;
+  footer: object;
 }
 
 export interface ICategory {
