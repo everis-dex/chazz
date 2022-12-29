@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { Nav, AppFooter } from "../index";
+import { Nav, Footer } from "../index";
 
 import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 
@@ -13,7 +13,7 @@ export const Work = () => {
     <>
       <Nav color="black" disabledMenuOption="/work" />
       <ProjectsGrid />
-      <AppFooter />
+      <Footer />
     </>
   );
 };

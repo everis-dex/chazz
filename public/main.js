@@ -15,9 +15,7 @@ var blankMetadata = {
     phone: "",
     email: "",
     address: "",
-    sort: "",
-    intro: "",
-    subintro: ""
+    sort: ""
 };
 /**
  * Reads .md files of each collection in /content/ subfolders and creates JSON file with all the information.
@@ -96,22 +94,10 @@ var formatDate = function (date) {
  * Construct the element object based on the collection they belong to.
  */
 var constructElement = function (folder, metadata, data) {
-    if (folder === "home") console.log("🚀 ~ file: main.js:99 ~ constructElement ~ metadata", metadata)
     if (!folder || !metadata)
         return { id: -1 };
     var element = { id: -1 };
     switch (folder) {
-        case "home":
-            element.intro = metadata["header:\r"];
-            // element.subintro = metadata.header.subintro;
-            // element.image = metadata.header.media;
-            // element.title = metadata.categories.title;
-            element.subtitle = metadata.categories;
-            break;
-        case "work":
-            element.title = metadata.title;
-            element.subtitle = metadata.subtitle;
-            break;
         case "projects":
             element.id = data.timestamp;
             element.title = metadata.title;
@@ -186,14 +172,11 @@ var getFilesContent = function (files, dirPath, folder) {
             // Check if files and indexes match
             if (indexList.length === files.length) {
                 // Sort based on published time
-                var sortedList = elementList;
-                if (files.length > 1) {
-                    sortedList = elementList
-                        .sort(function (a, b) {
-                            return a.id > b.id ? 1 : -1;
-                        })
-                        .filter(function (element) { return element.id !== -1; });
-                }
+                var sortedList = elementList
+                    .sort(function (a, b) {
+                    return a.id > b.id ? 1 : -1;
+                })
+                    .filter(function (element) { return element.id !== -1; });
                 fs.writeFileSync("src/content/".concat(folder, ".json"), JSON.stringify(sortedList));
             }
         });

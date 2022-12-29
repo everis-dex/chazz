@@ -1,10 +1,34 @@
 export interface IHome {
-  id?: number;
-  intro?: string;
-  subintro?: string;
-  image?: string;
-  title?: string;
-  subtitle?: string;
+  header?: object;
+  categories?: object;
+  projects?: object;
+  partners?: object;
+  footer?: object;
+}
+
+export interface IHomeSection {
+  title: string;
+  subtitle: string;
+}
+
+export interface IHomeHeader extends IHomeSection {
+  media: string;
+}
+
+export interface IHomeProjects extends IHomeSection {
+  more: string;
+}
+
+export interface IHomeFooter extends IHomeSection {
+  offices: string;
+  touch: string;
+  studios: string;
+  social: ISocial[];
+}
+
+export interface ISocial {
+  name: string;
+  link: string;
 }
 
 export interface ICategory {

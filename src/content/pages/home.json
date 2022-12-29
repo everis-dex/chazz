@@ -1,20 +1,27 @@
 {
   "header": {
-    "intro": "Empowering brands for real impact.",
-    "subintro": "Hybrid & Strategic Digital Agency",
+    "title": "Empowering brands for real impact.",
+    "subtitle": "Hybrid & Strategic Digital Agency",
     "media": "/uploads/video.png"
   },
+  "projects": {
+    "title": "Featured projects",
+    "subtitle": "",
+    "more": "More projects"
+  },
   "categories": {
-    "subtitle": "Strategy, technology and creativity are our core. Building bridges to link brands with the society needs.",
-    "title": "We humanize complexity."
+    "title": "We humanize complexity.",
+    "subtitle": "Strategy, technology and creativity are our core. Building bridges to link brands with the society needs."
   },
   "partners": {
-    "title": "Partners in crime"
+    "title": "Partners in crime",
+    "subtitle": ""
   },
   "footer": {
     "title": "We are part of NTT Data Company & its design network, NDDN.",
+    "subtitle": "",
     "offices": "CHAZZ OFFICES",
-    "get in touch": "GET IN TOUCH",
+    "touch": "GET IN TOUCH",
     "studios": "NDDN NETWORK",
     "social": [
       {
