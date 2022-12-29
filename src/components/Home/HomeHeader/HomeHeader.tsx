@@ -2,15 +2,12 @@ import React from "react";
 
 import { AllowCookies, Nav } from "../index";
 
-import home from "../../../content/pages/home.json";
 import { IHomeHeader } from "../../../interfaces/interfaces";
 import { LineBreakerSelector } from "../../shared/LineBreaker/LineBreakerSelector";
 
 import "./HomeHeader.styles.scss";
 
-export const HomeHeader = () => {
-  const typedHomeHEader: IHomeHeader = home.header;
-
+export const HomeHeader = (headerData: IHomeHeader) => {
   return (
     <>
       <div className="chazz-header">
@@ -20,8 +17,8 @@ export const HomeHeader = () => {
       </div>
 
       <div className="chazz-title">
-        <LineBreakerSelector typedLines={typedHomeHEader.title} />
-        <h4>{typedHomeHEader.subtitle}</h4>
+        <LineBreakerSelector typedLines={headerData.title} />
+        <h4>{headerData.subtitle}</h4>
       </div>
 
       <AllowCookies />

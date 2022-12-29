@@ -1,21 +1,17 @@
 import React from "react";
 
-import home from "../../../../content/pages/home.json";
-import { IHomeSection } from "../../../../interfaces/interfaces";
 import partners from "../../../../content/partners.json";
-import { IPartner } from "../../../../interfaces/interfaces";
+import { IHomeSection, IPartner } from "../../../../interfaces/interfaces";
 
 import { Container } from "react-bootstrap";
 import "./Partners.styles.scss";
 
-export const Partners = () => {
-  const typedSection: IHomeSection = home.partners;
-
+export const Partners = (partnersData: IHomeSection) => {
   return (
     <>
       <div className="partner-section">
         <Container id="Partners">
-          <h3>{typedSection.title}</h3>
+          <h3>{partnersData.title}</h3>
           <div className="partner-container">
             {partners.map((partner: IPartner, index) => (
               <div className="partner" key={index}>

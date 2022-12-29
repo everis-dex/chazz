@@ -1,14 +1,20 @@
 import React from "react";
 
-import { HomeHeader, Categories, Projects, Partners, Footer } from "./index";
+import home from "../../content/pages/home.json";
+import { Categories, Footer, HomeHeader, Partners, Projects } from "./index";
 
 export const Home = () => {
+  const headerData = home.header;
+  const categoriesData = home.categories;
+  const projectsData = home.projects;
+  const partnersData = home.partners;
+
   return (
     <>
-      <HomeHeader />
-      <Categories />
-      <Projects />
-      <Partners />
+      <HomeHeader {...headerData} />
+      <Categories {...categoriesData} />
+      <Projects {...projectsData} />
+      <Partners {...partnersData} />
       <Footer />
     </>
   );
