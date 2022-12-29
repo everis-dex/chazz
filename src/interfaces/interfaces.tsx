@@ -1,9 +1,10 @@
 export interface IHome {
-  header?: object;
-  categories?: object;
-  projects?: object;
-  partners?: object;
-  footer?: object;
+  page: string;
+  header: object;
+  categories: object;
+  projects: object;
+  partners: object;
+  footer: object;
 }
 
 export interface IHomeSection {
@@ -74,8 +75,9 @@ export interface ISlide {
 }
 
 export interface IWork {
-  id: number;
+  page: string;
   title: string;
+  subtitle: string;
 }
 
 export interface BrokenLines {
