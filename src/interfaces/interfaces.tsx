@@ -1,10 +1,10 @@
 export interface IHome {
-  id: number;
-  intro: string;
-  subintro: string;
-  image: string;
-  title: string;
-  subtitle: string;
+  id?: number;
+  intro?: string;
+  subintro?: string;
+  image?: string;
+  title?: string;
+  subtitle?: string;
 }
 
 export interface ICategory {

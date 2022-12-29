@@ -11,17 +11,19 @@ collections:
   ##############################
   #         PAGES
   ##############################
+
   - name: home # Used in routes
+    extension: json
+    format: json
     label: "Home" # Used in the UI
     folder: content/home # Where the documents are stored, relative to the repo root
-    create: false # Allow users to create new documents in this collection
+    create: true # Allow users to create new documents in this collection
     delete: false # Allow users to delete existing documents in this collection
-    slug: "home" # Filename template. Default is {{slug}}. {{slug}} is a url-safe version of the post's title.
+    slug: "pages--home.{{extension}}" # Filename template. Default is {{slug}}, a url-safe version of the post's title.
     fields: # Fields for each document
-      - label: Header # For widgets, see https://www.netlifycms.org/docs/widgets/
+      - label: Header
         name: header
-        widget: object
-        summary: "{{slag}}"
+        widget: object # For widgets, see https://www.netlifycms.org/docs/widgets/
         fields:
           - { label: Intro, name: intro, widget: string }
           - { label: Subintro, name: subintro, widget: string }
@@ -29,21 +31,18 @@ collections:
       - label: Categories
         name: categories
         widget: object
-        summary: "{{slag}}"
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Subtitle, name: subtitle, widget: string, required: false }
       - label: Partners
         name: partners
         widget: object
-        summary: "{{slag}}"
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Subtitle, name: subtitle, widget: string, required: false }
       - label: Footer
         name: footer
         widget: object
-        summary: "{{slag}}"
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Subtitle, name: subtitle, widget: string, required: false }
@@ -53,7 +52,6 @@ collections:
           - label: Social
             name: social
             widget: list
-            summary: "{{slag}}"
             fields:
               - { label: Name, name: name, widget: string }
               - { label: Link, name: link, widget: string }
@@ -61,7 +59,7 @@ collections:
   - name: work
     label: "Work"
     folder: content/work
-    slug: "work"
+    slug: "pages--work"
     create: false
     delete: false
     fields:
