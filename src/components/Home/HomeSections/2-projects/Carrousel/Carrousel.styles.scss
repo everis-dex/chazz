@@ -12,7 +12,7 @@
   justify-content: center;
 }
 .carousel .pagination {
-  margin-left: 15px;
+  padding: 0 1rem;
   width: auto;
 }
 
@@ -62,18 +62,9 @@
   }
 
   .carousel .pagination {
+    padding-left: 2px;
     margin-left: 5%;
     width: auto;
-  }
-}
-
-@media (min-width: 1280px) {
-  .carouselTitle {
-    margin-left: 7%;
-  }
-
-  .carousel .pagination {
-    margin-left: 7%;
   }
 }
 
