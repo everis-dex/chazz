@@ -2,8 +2,7 @@ import React from "react";
 
 import getInTouch from "../../../../../content/get-in-touch.json";
 import { ISocial } from "../../../../../interfaces/interfaces";
-import { LinkedEmail } from "./footerLinks/LinkedEmail";
-import { LinkedRRSS } from "./footerLinks/LinkedRRSS";
+import { LinkedEmail, LinkedRRSS } from "./footerLinks";
 
 import "../CompanyInfo.styles.scss";
 
@@ -11,7 +10,7 @@ type Props = { title: string; socials: ISocial[] };
 export const GetInTouch = ({ title, socials }: Props) => {
   return (
     <div className="in-touch-container">
-      <p className="studios-title">{title}</p>
+      <p className="section-title">{title}</p>
       <div className="in-touch-grid">
         {getInTouch.map((item, index: number) => (
           <div className="in-touch-info" key={index}>
