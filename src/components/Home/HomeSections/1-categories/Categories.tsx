@@ -4,7 +4,7 @@ import categories from "../../../../content/categories.json";
 import { ICategory, IHomeSection } from "../../../../interfaces/interfaces";
 import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
 
-import { Col, Container, Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import "./Categories.styles.scss";
 
 export const Categories = (categoriesData: IHomeSection) => {
@@ -12,7 +12,7 @@ export const Categories = (categoriesData: IHomeSection) => {
 
   return (
     <>
-      <Container id="Categories">
+      <div id="Categories">
         <div className="section1">
           <Col className="section1-title" xs={12} sm={6}>
             <h2>
@@ -32,7 +32,7 @@ export const Categories = (categoriesData: IHomeSection) => {
             ))}
           </Col>
         </div>
-      </Container>
+      </div>
     </>
   );
 };

@@ -1,17 +1,17 @@
 .desktop-brokenlines {
-  display: none !important;
+  display: none;
 }
 
 .mobile-brokenlines {
-  display: block !important;
+  display: block;
 }
 
 @media (min-width: 1280px) {
   .desktop-brokenlines {
-    display: block !important;
+    display: block;
   }
 
   .mobile-brokenlines {
-    display: none !important;
+    display: none;
   }
 }
