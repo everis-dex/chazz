@@ -3,7 +3,7 @@ import React from "react";
 import { Footer, Nav } from "../index";
 import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 
-import work from "../../../content/pages/work.json";
+import work from "../../../content/pages/work/work.json";
 
 import "./Work.styles.scss";
 

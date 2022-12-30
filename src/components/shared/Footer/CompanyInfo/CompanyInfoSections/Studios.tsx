@@ -9,7 +9,7 @@ type Props = { title: string };
 export const Studios = ({ title }: Props) => {
   return (
     <div className="studios-container">
-      <p className="studios-title">{title}</p>
+      <p className="section-title">{title}</p>
       <div className="studios-grid">
         {studios.map((studio, index: number) => (
           <div className="studios-info" key={index}>

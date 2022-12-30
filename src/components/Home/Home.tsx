@@ -1,6 +1,6 @@
 import React from "react";
 
-import home from "../../content/pages/home.json";
+import home from "../../content/pages/home/home.json";
 import { Categories, Footer, HomeHeader, Partners, Projects } from "./index";
 
 export const Home = () => {

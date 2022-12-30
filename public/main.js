@@ -101,9 +101,9 @@ var constructElement = function (folder, metadata, data) {
         case "projects":
             element.id = data.timestamp;
             element.title = metadata.title;
+            element.description = metadata.description;
             element.subtitle = metadata.subtitle;
             element.image = metadata.image;
-            element.description = metadata.description;
             element.service = metadata.service;
             element.value = metadata.value;
             element.body = data.content;

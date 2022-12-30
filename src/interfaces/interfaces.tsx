@@ -1,3 +1,8 @@
+// ##############################
+// #         PAGES
+// ##############################
+
+// Home page
 export interface IHome {
   page: string;
   header: object;
@@ -7,6 +12,7 @@ export interface IHome {
   footer: object;
 }
 
+// Home sections
 export interface IHomeSection {
   title: string;
   subtitle: string;
@@ -26,6 +32,16 @@ export interface IHomeFooter extends IHomeSection {
   studios: string;
   social: ISocial[];
 }
+
+// Work page
+export interface IWork {
+  title: string;
+  subtitle: string;
+}
+
+// ##############################
+// #         COMPONENTS
+// ##############################
 
 export interface ISocial {
   name: string;
@@ -78,15 +94,4 @@ export interface ISlide {
   title: string;
   subtitle: string;
   image: string;
-}
-
-export interface IWork {
-  title: string;
-  subtitle: string;
-}
-
-export interface BrokenLines {
-  id: number;
-  title: string;
-  subtitle?: string;
 }

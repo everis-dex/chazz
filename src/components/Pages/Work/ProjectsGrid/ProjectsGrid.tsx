@@ -14,7 +14,7 @@ const formats = {
 };
 
 // la configuración se escoge por cada row, por cada par de columnas
-let config = [formats.right, formats.left, formats.big, formats.right, formats.equal, formats.left];
+let config = [formats.right, formats.big, formats.left, formats.right, formats.equal, formats.big];
 
 export const ProjectsGrid = (workData: IWork) => {
   const columnCount: number = 2;
