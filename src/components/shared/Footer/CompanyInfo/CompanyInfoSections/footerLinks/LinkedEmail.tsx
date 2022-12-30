@@ -2,9 +2,7 @@ import React from "react";
 
 import "./footerLinks.styles.scss";
 
-type Props = {
-  email: string;
-};
+type Props = { email: string };
 
 export const LinkedEmail = ({ email }: Props) => {
   const mailto: string = `mailto:${email}`;

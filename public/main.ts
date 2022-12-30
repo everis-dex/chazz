@@ -160,9 +160,9 @@ const constructElement = (
     case "projects":
       element.id = data.timestamp;
       element.title = metadata.title;
+      element.description = metadata.description;
       element.subtitle = metadata.subtitle;
       element.image = metadata.image;
-      element.description = metadata.description;
       element.service = metadata.service;
       element.value = metadata.value;
       element.body = data.content;
@@ -219,7 +219,7 @@ const getFilesContent = (files: string[], dirPath: string, folder: string) => {
   const elementList: BuiltElement[] = [];
   const indexList: number[] = [];
 
-  files.forEach((file, index) => {
+  files.forEach((file, index: number) => {
     fs.readFile(`${dirPath}/${file}`, "utf8", (err: Error, contents: string) => {
       if (err) {
         return console.error("Failed to read file of directory: " + err.message);

@@ -16,12 +16,7 @@ export const BurgerMenu = ({ isOpen, toggleMenu, color, disabledMenuOption }: Pr
   return (
     <div className={`burger-menu ${isOpen ? "active" : ""}`}>
       <BurgerIcon isOpen={isOpen} toggleMenu={toggleMenu} color={color} />
-      <BurgerMenuOptions
-        isOpen={isOpen}
-        toggleMenu={toggleMenu}
-        color={color}
-        disabledMenuOption={disabledMenuOption}
-      />
+      <BurgerMenuOptions isOpen={isOpen} toggleMenu={toggleMenu} disabledMenuOption={disabledMenuOption} />
     </div>
   );
 };

@@ -38,7 +38,7 @@
   }
 }
 
-.studios-title {
+.section-title {
   font-weight: 450;
   font-size: 14px;
   line-height: 18px;
@@ -135,13 +135,15 @@
   .offices-container,
   .studios-grid {
     display: grid;
+    grid-gap: 15px;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 74px;
 
     .offices-info {
       grid-row: 2 / 2;
       margin-bottom: 0px;
-      padding-right: 20px;
+      width: 90%;
+      margin-right: 10%;
 
       .city {
         font-size: 32px;

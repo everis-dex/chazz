@@ -1,10 +1,9 @@
 import React, { Fragment } from "react";
 
-import { ProjectCard } from "../Project/Project";
-import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
 import { IProject, IWork } from "../../../../interfaces/interfaces";
+import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
+import { ProjectCard } from "../Project/Project";
 
-import work from "../../../../content/pages/work.json";
 import projects from "../../../../content/projects.json";
 
 const formats = {
@@ -15,50 +14,49 @@ const formats = {
 };
 
 // la configuración se escoge por cada row, por cada par de columnas
-let config = [formats.right, formats.left, formats.big, formats.right, formats.equal, formats.left];
+let config = [formats.right, formats.big, formats.left, formats.right, formats.equal, formats.big];
 
-export const ProjectsGrid = () => {
+export const ProjectsGrid = (workData: IWork) => {
   const columnCount: number = 2;
   let currentColumn: number = 0;
   let currentRow: number = 0;
   let configuration = config[0];
 
-  function handleProjectFormat(/*index: number*/) {
+  function handleProjectFormat() {
     currentColumn++;
     let imgHeight: string = "300px";
-    let columnFullWidth: string = ""; //full width values "" or "full-width"
+    let columnFullWidth: string = ""; // full-width can be "" or "full-width"
     let columnPosition: number = currentColumn % columnCount;
-    // left column
-    if (columnPosition === 0) {
-      // Reset configuration, head to next row
-      currentRow = currentColumn / columnCount;
-      configuration = config[currentRow];
 
-      if (configuration === formats.left) imgHeight = "600px";
-      // big column
-      if (configuration === formats.big) {
-        imgHeight = "600px";
-        columnFullWidth = "full-width";
-        //Reset configuration, head to next row
-        currentRow++;
-        currentColumn++;
-      }
-    }
-    // right column
-    else if (columnPosition === 1) {
-      if (configuration === formats.right) imgHeight = "600px";
+    switch (columnPosition) {
+      case 0: // left column
+        // Reset configuration, head to next row
+        currentRow = currentColumn / columnCount;
+        configuration = config[currentRow];
+
+        if (configuration === formats.left) imgHeight = "600px";
+        if (configuration === formats.big) {
+          imgHeight = "600px";
+          columnFullWidth = "full-width";
+          // Occupies entire row, so head to next row
+          currentRow++;
+          currentColumn++;
+        }
+        break;
+
+      case 1: // right column
+        if (configuration === formats.right) imgHeight = "600px";
+        break;
     }
     return [imgHeight, columnFullWidth];
   }
 
-  const typedLines: IWork = work;
-
   return (
     <>
-      <h1 className="work-header">{typedLines.title}</h1>
+      <h1 className="work-header">{workData.title}</h1>
       <div className="work-container--content">
         <div className="work-detail">
-          <LineBreakerSelector typedLines={typedLines.subtitle} />
+          <LineBreakerSelector typedLines={workData.subtitle} />
         </div>
 
         {projects &&
