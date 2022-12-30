@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import getInTouch from "../../../../../content/get-in-touch.json";
 import { ISocial } from "../../../../../interfaces/interfaces";
@@ -21,7 +21,9 @@ export const GetInTouch = ({ title, socials }: Props) => {
         <div className="in-touch-info">
           <p className="in-touch-subtitle">Social</p>
           {socials.map((social: ISocial, index: number) => (
-            <LinkedRRSS url={social.link} rrss={social.name} key={index} />
+            <Fragment key={index}>
+              <LinkedRRSS url={social.link} rrss={social.name} />
+            </Fragment>
           ))}
         </div>
       </div>
