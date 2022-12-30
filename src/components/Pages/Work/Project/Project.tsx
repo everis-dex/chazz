@@ -8,17 +8,14 @@ import "./Project.styles.scss";
 
 type Props = { data: IProject; columns?: string; height?: string; full?: boolean };
 
-export const ProjectCard = ({ data, height = "auto", columns, full = false }: Props) => {
+export const ProjectCard = ({ data, height = "auto", columns }: Props) => {
   const style = { width: "100%", height: height, objectFit: "cover" };
   const bodyParagraphs: string[] = data.body.replace("\r", "").split("\n");
 
   // Dropdown
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
   const dropdownText: string = openDropdown ? "Less" : "More";
-
-  const handleDropdown = () => {
-    setOpenDropdown(!openDropdown);
-  };
+  const handleDropdown = () => setOpenDropdown(!openDropdown);
 
   return (
     <div className={`project-container ${columns}`}>

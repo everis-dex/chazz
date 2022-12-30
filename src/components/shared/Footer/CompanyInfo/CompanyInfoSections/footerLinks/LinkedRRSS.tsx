@@ -2,10 +2,7 @@ import React from "react";
 
 import "./footerLinks.styles.scss";
 
-type Props = {
-  url: string;
-  rrss: string;
-};
+type Props = { url: string; rrss: string };
 
 export const LinkedRRSS = ({ url, rrss }: Props) => {
   return (

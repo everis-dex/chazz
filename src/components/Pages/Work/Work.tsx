@@ -1,18 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import { Nav, Footer } from "../index";
-
+import { Footer, Nav } from "../index";
 import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
+
+import work from "../../../content/pages/work/work.json";
 
 import "./Work.styles.scss";
 
 export const Work = () => {
-  useEffect(() => window.scrollTo(0, 0), []);
+  const workData = work;
 
   return (
     <>
       <Nav color="black" disabledMenuOption="/work" />
-      <ProjectsGrid />
+      <ProjectsGrid {...workData} />
       <Footer />
     </>
   );

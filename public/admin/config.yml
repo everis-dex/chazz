@@ -14,7 +14,7 @@ collections:
 
   - name: home # Used in routes
     label: "Home" # Used in the UI
-    folder: src/content/pages # Where the documents are stored, relative to the repo root
+    folder: src/content/pages/home # Where the documents are stored, relative to the repo root
     create: false # Allow users to create new documents in this collection
     delete: false # Allow users to delete existing documents in this collection
     extension: json
@@ -66,7 +66,7 @@ collections:
 
   - name: work
     label: "Work"
-    folder: src/content/pages
+    folder: src/content/pages/work
     create: false
     delete: false
     extension: json

@@ -1,27 +1,26 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
-import home from "../../../../content/pages/home.json";
 import { IHomeFooter } from "../../../../interfaces/interfaces";
+import { GetInTouch, Offices, Studios } from "./index";
+
 import "./CompanyInfo.styles.scss";
 
-import { Offices, Studios, GetInTouch } from "./index";
-
-export const CompanyInfo = () => {
-  const typedFooter: IHomeFooter = home.footer;
+export const CompanyInfo = (footerData: IHomeFooter) => {
+  const socials = footerData.social;
 
   return (
     <div className="we-are-section">
       <Container>
         <div className="we-are-grid">
           <h2>
-            <strong>{typedFooter.title}</strong>
+            <strong>{footerData.title}</strong>
           </h2>
-          <Offices title={typedFooter.offices} />
+          <Offices title={footerData.offices} />
           <hr className="divisor-line" />
-          <Studios title={typedFooter.studios} />
+          <Studios title={footerData.studios} />
           <hr className="divisor-line" />
-          <GetInTouch title={typedFooter.touch} />
+          <GetInTouch title={footerData.touch} socials={socials} />
         </div>
       </Container>
     </div>
