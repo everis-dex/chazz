@@ -32,14 +32,6 @@
   }
 }
 
-.desktop-brokenlines {
-  display: none;
-}
-
-.mobile-brokenlines {
-  display: block;
-}
-
 // MEDIA QUERIES
 @media (min-width: 1280px) {
   .work-header {
@@ -56,14 +48,6 @@
       width: 93%;
       font-size: 40px;
     }
-  }
-
-  .desktop-brokenlines {
-    display: block;
-  }
-
-  .mobile-brokenlines {
-    display: block;
   }
 }
 
