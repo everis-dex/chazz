@@ -7,6 +7,8 @@ import { GetInTouch, Offices, Studios } from "./index";
 import "./CompanyInfo.styles.scss";
 
 export const CompanyInfo = (footerData: IHomeFooter) => {
+  const socials = footerData.social;
+
   return (
     <div className="we-are-section">
       <Container>
@@ -18,7 +20,7 @@ export const CompanyInfo = (footerData: IHomeFooter) => {
           <hr className="divisor-line" />
           <Studios title={footerData.studios} />
           <hr className="divisor-line" />
-          <GetInTouch title={footerData.touch} />
+          <GetInTouch title={footerData.touch} socials={socials} />
         </div>
       </Container>
     </div>

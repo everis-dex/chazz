@@ -1,14 +1,14 @@
 import React from "react";
 
+import getInTouch from "../../../../../content/get-in-touch.json";
+import { ISocial } from "../../../../../interfaces/interfaces";
 import { LinkedEmail } from "./footerLinks/LinkedEmail";
 import { LinkedRRSS } from "./footerLinks/LinkedRRSS";
 
-import getInTouch from "../../../../../content/get-in-touch.json";
-
 import "../CompanyInfo.styles.scss";
 
-type Props = { title: string };
-export const GetInTouch = ({ title }: Props) => {
+type Props = { title: string; socials: ISocial[] };
+export const GetInTouch = ({ title, socials }: Props) => {
   return (
     <div className="in-touch-container">
       <p className="studios-title">{title}</p>
@@ -21,10 +21,9 @@ export const GetInTouch = ({ title }: Props) => {
         ))}
         <div className="in-touch-info">
           <p className="in-touch-subtitle">Social</p>
-          <LinkedRRSS url="https://www.linkedin.com/company/chazz" rrss="Linkedin" />
-          <LinkedRRSS url="https://instagram.com/chazzmadrid" rrss="Instagram" />
-          {/* <LinkedRRSS url="" rrss="Medium" /> */}
-          {/* <LinkedRRSS url="" rrss="Newsletter" /> */}
+          {socials.map((social: ISocial, index: number) => (
+            <LinkedRRSS url={social.link} rrss={social.name} key={index} />
+          ))}
         </div>
       </div>
     </div>
