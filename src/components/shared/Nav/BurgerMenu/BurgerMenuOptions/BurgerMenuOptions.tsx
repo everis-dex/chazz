@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { routesInfo } from "../../../../../constants";
 
-import "../../Nav.styles.scss";
+import "./BurgerMenuOptions.styles.scss";
 
 type Props = {
   isOpen: boolean;
