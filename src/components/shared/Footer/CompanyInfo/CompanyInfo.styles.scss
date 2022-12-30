@@ -135,6 +135,7 @@
   .offices-container,
   .studios-grid {
     display: grid;
+    grid-gap: 15px;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 74px;
 
