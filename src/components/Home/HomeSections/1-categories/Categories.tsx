@@ -13,7 +13,7 @@ export const Categories = (categoriesData: IHomeSection) => {
   return (
     <>
       <Container id="Categories">
-        <Row className="section1">
+        <div className="section1">
           <Col className="section1-title" xs={12} sm={6}>
             <h2>
               <strong>{categoriesData.title}</strong> <br></br>
@@ -31,7 +31,7 @@ export const Categories = (categoriesData: IHomeSection) => {
               </div>
             ))}
           </Col>
-        </Row>
+        </div>
       </Container>
     </>
   );
