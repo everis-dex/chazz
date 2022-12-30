@@ -11,7 +11,7 @@ export const ChazzLogo = ({ color, isOpen }: Props) => {
   return (
     <div className="chazz-logo">
       <Link to="/">
-        <Logo fill={isOpen ? "white" : color} />
+        <Logo fill={isOpen ? "white" : color} style={{ position: isOpen ? "fixed" : "inherit" }} />
       </Link>
     </div>
   );
