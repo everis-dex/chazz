@@ -13,9 +13,17 @@ type Props = {
 
 export const Nav = ({ color, disabledMenuOption }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [root] = useState(document.getElementById("root"));
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    handleRootBehavior();
+  };
+
+  const handleRootBehavior = () => {
+    if (!root) return;
+    root.style.height = isOpen ? "auto" : "100vh";
+    root.style.overflow = isOpen ? "auto" : "hidden";
   };
 
   return (
