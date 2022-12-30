@@ -1,6 +1,8 @@
 .footerLink {
   color: var(--footerLink);
   text-decoration: none;
+  display: flex;
+  overflow: hidden;
 }
 
 .footerLink:hover {

@@ -47,11 +47,11 @@
 }
 
 .properties {
+  display: flex;
   color: var(--gray);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  padding-right: 40px;
   font-weight: 100;
 }
 
@@ -65,6 +65,9 @@
     padding-left: 2px;
     margin-left: 5%;
     width: auto;
+  }
+  .properties {
+    padding-right: 40px;
   }
 }
 
