@@ -6,6 +6,7 @@ import { LinkedEmail } from "./footerLinks";
 import "../CompanyInfo.styles.scss";
 
 type Props = { title: string };
+
 export const Studios = ({ title }: Props) => {
   return (
     <div className="studios-container">

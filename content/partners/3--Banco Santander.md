@@ -1,6 +1,6 @@
 ---
 name: Banco Santander
-logo:
+logo: uploads/.jpg
 website: https://www.bancosantander.es/
 sort: 3
 ---

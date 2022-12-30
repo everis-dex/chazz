@@ -1,12 +1,7 @@
 [
   { "id": 1, "logo": "uploads/logo_endesa.svg\r", "website": "https://www.endesa.com\r", "name": "Endesa\r" },
   { "id": 2, "logo": "uploads/logo_renfe.svg\r", "website": "http://renfe.es/\r", "name": "Renfe\r" },
-  {
-    "id": 3,
-    "logo": "uploads/logo_caixaBank.svg\r",
-    "website": "https://www.bancosantander.es/\r",
-    "name": "Banco Santander\r"
-  },
+  { "id": 3, "logo": "uploads/.jpg\r", "website": "https://www.bancosantander.es/\r", "name": "Banco Santander\r" },
   { "id": 4, "logo": "uploads/logo_leroy.svg\r", "website": "https://www.leroymerlin.es/\r", "name": "Leroy Merlin\r" },
   { "id": 5, "logo": "uploads/logo_unilever.svg\r", "website": "https://www.unilever.com/\r", "name": "UniLever\r" },
   {
