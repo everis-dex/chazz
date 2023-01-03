@@ -1,4 +1,4 @@
-<a name="readme-top"></a>
+<a id="readme-top"></a>
 
 <!-- PROJECT LOGO -->
 <br />
@@ -37,6 +37,13 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#how-it-works">How does it work</a>
+      <ul>
+        <li><a href="#NetlifyCMS-config">Netlify CMS configuration</a></li>
+        <li><a href="#data-management">Data management (main.ts file)</a></li>
+      </ul>
+    </li>
   </ol>
 </details>
 
@@ -45,6 +52,8 @@
 <!-- ABOUT THE PROJECT -->
 
 ## 📌 About The Project
+
+<div id="about-the-project"></div>
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
@@ -97,6 +106,8 @@ Scripts that can be ran using `npm run _command_`.
 
 ## 🌱 Getting Started
 
+<div id="getting-started"></div>
+
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
@@ -127,9 +138,15 @@ Some utils need to be installed in order to use the software. This is how to ins
 
 ## 🔬 How does it work
 
+<div id="how-it-works"></div>
+
 All useful information for developers is explained here.
 
+<br>
+
 ### Netlify CMS configuration
+
+<div id="NetlifyCMS-config"></div>
 
 Netlify CMS stores all the content inside the repository, so no database is required. The configuration for it is located in `public/admin/` with:
 
@@ -152,7 +169,9 @@ With that, the content generated in the CMS is saved into two separated folders.
 
 <br>
 
-### Data management
+### Data management (main.ts file)
+
+<div id="data-management"></div>
 
 Pages are automatically read as they are generated because they are created as [JSON](https://www.json.org/json-es.html) inside `content/pages/` folder. So they are imported and used in the required React components as the default.
 
