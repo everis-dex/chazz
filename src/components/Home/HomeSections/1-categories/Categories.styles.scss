@@ -1,8 +1,17 @@
 // MOBILE FIRST
+#Categories {
+  width: 90%;
+  margin: auto;
+}
 
 .container {
   padding-left: 15px !important;
   padding-right: 15px !important;
+}
+.section1-title,
+.section1-sections {
+  flex: 0 0 auto;
+  width: 50%;
 }
 
 .section1 {

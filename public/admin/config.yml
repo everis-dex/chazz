@@ -73,6 +73,7 @@ collections:
     format: json
     slug: "work"
     fields:
+      - { label: Page, name: page, widget: string }
       - { label: Title, name: title, widget: string }
       - { label: Subtitle, name: subtitle, widget: string, required: false }
 

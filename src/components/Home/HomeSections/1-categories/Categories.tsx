@@ -4,7 +4,7 @@ import categories from "../../../../content/categories.json";
 import { ICategory, IHomeSection } from "../../../../interfaces/interfaces";
 import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
 
-import { Col, Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "./Categories.styles.scss";
 
 export const Categories = (categoriesData: IHomeSection) => {
