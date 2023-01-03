@@ -1,10 +1,52 @@
+// ##############################
+// #         PAGES
+// ##############################
+
+// Home page
 export interface IHome {
-  id: number;
-  intro: string;
-  subintro: string;
-  image: string;
+  page: string;
+  header: object;
+  categories: object;
+  projects: object;
+  partners: object;
+  footer: object;
+}
+
+// Home sections
+export interface IHomeSection {
   title: string;
   subtitle: string;
+}
+
+export interface IHomeHeader extends IHomeSection {
+  media: string;
+}
+
+export interface IHomeProjects extends IHomeSection {
+  more: string;
+}
+
+export interface IHomeFooter extends IHomeSection {
+  offices: string;
+  touch: string;
+  studios: string;
+  social: ISocial[];
+}
+
+// Work page
+export interface IWork {
+  page: string;
+  title: string;
+  subtitle: string;
+}
+
+// ##############################
+// #         COMPONENTS
+// ##############################
+
+export interface ISocial {
+  name: string;
+  link: string;
 }
 
 export interface ICategory {
@@ -43,19 +85,14 @@ export interface IStudio {
   city: string;
 }
 
+export interface ITouch {
+  id: number;
+  title: string;
+  email: string;
+}
+
 export interface ISlide {
   title: string;
   subtitle: string;
   image: string;
-}
-
-export interface IWork {
-  id: number;
-  title: string;
-}
-
-export interface BrokenLines {
-  id: number;
-  title: string;
-  subtitle?: string;
 }

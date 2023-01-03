@@ -3,18 +3,14 @@ import {useState} from 'react';
 
 import { AllowCookies, Nav } from "../index";
 
-import home from "../../../content/home.json";
-import { IHome } from "../../../interfaces/interfaces";
+import { IHomeHeader } from "../../../interfaces/interfaces";
 import { LineBreakerSelector } from "../../shared/LineBreaker/LineBreakerSelector";
 
 import "./HomeHeader.styles.scss";
 import { VideoHeader } from '../VideoHeader/VideoHeader';
 
-export const HomeHeader = () => {
-  const typedHomeHeader: IHome = home[0];
-
+export const HomeHeader = (headerData: IHomeHeader) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-
   return (
     <>
       <div className="chazz-header">
@@ -23,8 +19,8 @@ export const HomeHeader = () => {
         </div>
           <VideoHeader isPlaying={isPlaying} setIsPlaying={setIsPlaying}></VideoHeader>
         <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
-          <LineBreakerSelector typedLines={typedHomeHeader.intro} />
-          <h4>{typedHomeHeader.subintro}</h4>
+        <LineBreakerSelector typedLines={headerData.title} />
+        <h4>{headerData.subtitle}</h4>
         </div>
       </div>
 

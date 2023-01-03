@@ -34,14 +34,6 @@
   }
 }
 
-.desktop-brokenlines {
-  display: none;
-}
-
-.mobile-brokenlines {
-  display: block;
-}
-
 // MEDIA QUERIES
 @media (min-width: 1280px) {
   .work-header {
@@ -52,20 +44,12 @@
   .work-container--content {
     margin: 0 3% 10% 3%;
     grid-template-columns: 49% 49%;
-    grid-gap: 2%;
+    grid-gap: 0% 2%;
 
     .work-detail {
       width: 93%;
       font-size: 40px;
     }
-  }
-
-  .desktop-brokenlines {
-    display: block;
-  }
-
-  .mobile-brokenlines {
-    display: block;
   }
 }
 
@@ -75,5 +59,4 @@
       width: 83%;
     }
   }
-
 }

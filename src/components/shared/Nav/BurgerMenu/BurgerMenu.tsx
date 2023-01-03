@@ -3,7 +3,7 @@ import React from "react";
 import { BurgerIcon } from "./BurgerIcon/BurgerIcon";
 import { BurgerMenuOptions } from "./BurgerMenuOptions/BurgerMenuOptions";
 
-import "../Nav.styles.scss";
+import "./BurgerMenu.styles.scss";
 
 type Props = {
   isOpen: boolean;
@@ -16,12 +16,7 @@ export const BurgerMenu = ({ isOpen, toggleMenu, color, disabledMenuOption }: Pr
   return (
     <div className={`burger-menu ${isOpen ? "active" : ""}`}>
       <BurgerIcon isOpen={isOpen} toggleMenu={toggleMenu} color={color} />
-      <BurgerMenuOptions
-        isOpen={isOpen}
-        toggleMenu={toggleMenu}
-        color={color}
-        disabledMenuOption={disabledMenuOption}
-      />
+      <BurgerMenuOptions isOpen={isOpen} toggleMenu={toggleMenu} disabledMenuOption={disabledMenuOption} />
     </div>
   );
 };

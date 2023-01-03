@@ -27,175 +27,6 @@
   }
 }
 
-.burger-menu {
-  width: 100%;
-  padding: 36px 16px 16px 16px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: transparent;
-  transition: all 0.5s ease;
-  position: absolute;
-  z-index: 10;
-  &.active {
-    background-color: var(--black);
-  }
-
-  input#open-close {
-    visibility: hidden;
-    position: absolute;
-    top: -9999px;
-  }
-
-  // Homepage Burger Icon
-  .toggle-button {
-    display: block;
-    width: 26px;
-    height: 26px;
-    position: relative;
-    cursor: pointer;
-    box-sizing: border-box;
-  }
-
-  .toggle-button:before,
-  .toggle-button:after {
-    position: absolute;
-    display: block;
-    content: " ";
-    width: 100%;
-    box-sizing: border-box;
-    transition: all 0.2s ease-out;
-  }
-
-  .toggle-button:before {
-    top: calc(100% / 3);
-    border-radius: 100px;
-    border-top: 2px solid var(--white);
-    background-color: transparent;
-  }
-
-  .toggle-button:after {
-    border-radius: 100px;
-    background-color: var(--white);
-    border-top: 2px solid var(--white);
-    bottom: calc(100% / 4);
-    width: 80%;
-    right: 0;
-  }
-
-  input#open-close:checked + .toggle-button:before,
-  input#open-close:checked + .toggle-button:after {
-    top: calc(100% / 2);
-    height: 1px;
-    border-bottom: 0;
-  }
-
-  input#open-close:checked + .toggle-button:before {
-    transform: rotate(45deg);
-    width: 100%;
-  }
-
-  input#open-close:checked + .toggle-button:after {
-    transform: rotate(-45deg);
-    width: 100%;
-  }
-
-  // Rest of pages Burger Icon
-  .toggle-button-pages {
-    display: block;
-    width: 26px;
-    height: 26px;
-    position: relative;
-    cursor: pointer;
-    box-sizing: border-box;
-  }
-
-  .toggle-button-pages:before,
-  .toggle-button-pages:after {
-    position: absolute;
-    display: block;
-    content: " ";
-    width: 100%;
-    box-sizing: border-box;
-    transition: all 0.2s ease-out;
-  }
-
-  .toggle-button-pages:before {
-    top: calc(100% / 3);
-    border-radius: 100px;
-    border-top: 2px solid var(--black);
-    background-color: transparent;
-  }
-
-  .toggle-button-pages:after {
-    border-radius: 100px;
-    border-top: 2px solid var(--black);
-    bottom: calc(100% / 4);
-    width: 80%;
-    right: 0;
-  }
-
-  input#open-close:checked + .toggle-button-pages:before,
-  input#open-close:checked + .toggle-button-pages:after {
-    top: calc(100% / 2);
-    height: 1px;
-    border-bottom: 0;
-  }
-
-  input#open-close:checked + .toggle-button-pages:before {
-    transform: rotate(45deg);
-    width: 100%;
-  }
-
-  input#open-close:checked + .toggle-button-pages:after {
-    transform: rotate(-45deg);
-    width: 100%;
-  }
-  //////////////////////////////////////
-
-  .burger-nav {
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: flex-start;
-    height: 0vh;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.5s ease;
-    &.active {
-      height: 100vh;
-      opacity: 1;
-    }
-  }
-  .burger-ul {
-    list-style: none;
-    flex-direction: column;
-    padding-left: 0;
-  }
-
-  .burger-a {
-    text-decoration: none;
-    color: var(--white);
-    font-weight: 500;
-    font-size: 48px;
-    line-height: 55.2px;
-
-    &:hover {
-      color: var(--pinkHover);
-    }
-  }
-
-  .burger-active {
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 48px;
-    line-height: 55.2px;
-    color: var(--pinkHover);
-  }
-}
-
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
@@ -225,10 +56,6 @@
     &:hover {
       text-decoration: none;
     }
-  }
-
-  .burger-menu {
-    display: none;
   }
 
   .nav {
@@ -261,7 +88,7 @@
 }
 
 @media (min-width: 1024px) {
-  .chazz-logo{
+  .chazz-logo {
     left: 5%;
   }
   .nav {

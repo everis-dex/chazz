@@ -3,16 +3,15 @@ import { Link } from "react-router-dom";
 
 import { routesInfo } from "../../../../../constants";
 
-import "../../Nav.styles.scss";
+import "./BurgerMenuOptions.styles.scss";
 
 type Props = {
   isOpen: boolean;
   toggleMenu: (event: React.MouseEvent) => void;
-  color: string;
   disabledMenuOption: string;
 };
 
-export const BurgerMenuOptions = ({ isOpen, toggleMenu, color, disabledMenuOption }: Props) => {
+export const BurgerMenuOptions = ({ isOpen, toggleMenu, disabledMenuOption }: Props) => {
   return (
     <nav className={`burger-nav ${isOpen ? "active" : ""}`}>
       <ul className="burger-ul">

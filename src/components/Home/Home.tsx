@@ -1,15 +1,24 @@
 import React from "react";
 
-import { HomeHeader, Categories, Projects, Partners, AppFooter } from "./index";
+import home from "../../content/pages/home/home.json";
+import { Categories, Footer, HomeHeader, Partners, Projects } from "./index";
+import { useEffect } from 'react';
 
 export const Home = () => {
+  const headerData = home.header;
+  const categoriesData = home.categories;
+  const projectsData = home.projects;
+  const partnersData = home.partners;
+
+  useEffect(() => window.scrollTo(0, 0), []);
+
   return (
     <>
-      <HomeHeader />
-      <Categories />
-      <Projects />
-      <Partners />
-      <AppFooter />
+      <HomeHeader {...headerData} />
+      <Categories {...categoriesData} />
+      <Projects {...projectsData} />
+      <Partners {...partnersData} />
+      <Footer />
     </>
   );
 };

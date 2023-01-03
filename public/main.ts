@@ -26,8 +26,6 @@ interface Metadata {
   email?: string;
   address?: string;
   sort?: string;
-  intro?: string;
-  subintro?: string;
 }
 
 interface BuiltElement {
@@ -47,8 +45,6 @@ interface BuiltElement {
   email?: string;
   address?: string;
   body?: string;
-  intro?: string;
-  subintro?: string;
 }
 
 const blankMetadata: Metadata = {
@@ -66,9 +62,7 @@ const blankMetadata: Metadata = {
   phone: "",
   email: "",
   address: "",
-  sort: "",
-  intro: "",
-  subintro: ""
+  sort: ""
 };
 
 /**
@@ -163,21 +157,12 @@ const constructElement = (
   const element: BuiltElement = { id: -1 };
 
   switch (folder) {
-    case "home":
-      element.id = data.timestamp;
-      element.intro = metadata.intro;
-      element.subintro = metadata.subintro;
-      element.image = metadata.image;
-      element.title = metadata.title;
-      element.subtitle = metadata.subtitle;
-      break;
-
     case "projects":
       element.id = data.timestamp;
       element.title = metadata.title;
+      element.description = metadata.description;
       element.subtitle = metadata.subtitle;
       element.image = metadata.image;
-      element.description = metadata.description;
       element.service = metadata.service;
       element.value = metadata.value;
       element.body = data.content;
@@ -216,11 +201,6 @@ const constructElement = (
       element.email = metadata.email;
       break;
 
-    case "work":
-      element.id = data.timestamp;
-      element.title = metadata.title;
-      break;
-
     default:
       console.error("\n ----------------------------------- \n");
       console.error(
@@ -239,7 +219,7 @@ const getFilesContent = (files: string[], dirPath: string, folder: string) => {
   const elementList: BuiltElement[] = [];
   const indexList: number[] = [];
 
-  files.forEach((file, index) => {
+  files.forEach((file, index: number) => {
     fs.readFile(`${dirPath}/${file}`, "utf8", (err: Error, contents: string) => {
       if (err) {
         return console.error("Failed to read file of directory: " + err.message);

@@ -11,7 +11,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./Carrousel.styles.scss";
 
-export const Carrousel = () => {
+type Props = { title: string };
+export const Carrousel = ({ title }: Props) => {
   const slides: IProject[] = [...projects];
 
   const [carouselWidth, setCarouselWidth] = useState<number>(0);
@@ -30,16 +31,12 @@ export const Carrousel = () => {
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
-    const handleWindowResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+    const handleWindowResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleWindowResize);
 
     setOffset(windowWidth - carouselWidth - 20);
 
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
+    return () => window.removeEventListener("resize", handleWindowResize);
   }, [windowWidth, carouselWidth]);
 
   useEffect(() => {
@@ -52,7 +49,7 @@ export const Carrousel = () => {
   return (
     <>
       <div ref={carouselRef} className="carouselTitle">
-        <h3>Featured projects</h3>
+        <h3>{title}</h3>
       </div>
 
       <div id="carousel" className="carousel">
@@ -67,7 +64,7 @@ export const Carrousel = () => {
               el: ".pagination",
               clickable: true
             }}
-            loop={true}
+            loop
             autoplay={{
               delay: 3000,
               disableOnInteraction: false
