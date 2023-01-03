@@ -28,7 +28,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
-        <li><a href="#project-scripts">Project scripts</a></li>
+        <li><a href="#package-scripts">Package scripts</a></li>
       </ul>
     </li>
     <li>
@@ -75,7 +75,7 @@ This is a project made for the improvement of the `Chazz` website, an NTT Data C
 
 <br>
 
-<div id="project-scripts"></div>
+<div id="package-scripts"></div>
 
 ### Package scripts
 
