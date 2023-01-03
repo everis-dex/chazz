@@ -12,7 +12,7 @@
   justify-content: center;
 }
 .carousel .pagination {
-  margin-left: 15px;
+  padding: 0 1rem;
   width: auto;
 }
 
@@ -47,11 +47,11 @@
 }
 
 .properties {
+  display: flex;
   color: var(--gray);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  padding-right: 40px;
   font-weight: 100;
 }
 
@@ -62,18 +62,12 @@
   }
 
   .carousel .pagination {
+    padding-left: 2px;
     margin-left: 5%;
     width: auto;
   }
-}
-
-@media (min-width: 1280px) {
-  .carouselTitle {
-    margin-left: 7%;
-  }
-
-  .carousel .pagination {
-    margin-left: 7%;
+  .properties {
+    padding-right: 40px;
   }
 }
 

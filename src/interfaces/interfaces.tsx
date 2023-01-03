@@ -35,6 +35,7 @@ export interface IHomeFooter extends IHomeSection {
 
 // Work page
 export interface IWork {
+  page: string;
   title: string;
   subtitle: string;
 }

@@ -3,7 +3,7 @@ import React from "react";
 import { BurgerIcon } from "./BurgerIcon/BurgerIcon";
 import { BurgerMenuOptions } from "./BurgerMenuOptions/BurgerMenuOptions";
 
-import "../Nav.styles.scss";
+import "./BurgerMenu.styles.scss";
 
 type Props = {
   isOpen: boolean;

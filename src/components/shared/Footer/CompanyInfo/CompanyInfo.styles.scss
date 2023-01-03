@@ -45,6 +45,15 @@
   margin-bottom: 20px;
 }
 
+.offices-container {
+  .section-title {
+    display: none;
+  }
+  .offices-info {
+    width: 60%;
+  }
+}
+
 .offices-info,
 .studios-grid,
 .in-touch-info {
@@ -73,23 +82,33 @@
 }
 
 .studios-container {
-  display: block;
+  display: flex;
+  flex-direction: column;
 
   .studios-grid {
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 17%);
+    align-content: space-evenly;
     height: 100%;
-    margin-bottom: 0;
+    margin: 0;
+    .desktop-email {
+      display: none;
+    }
 
     .studios-info {
       .city {
         font-size: 24px;
         font-weight: 700;
-        margin-bottom: 8px;
+        margin-bottom: 0;
       }
     }
+  }
+
+  .mobile-email {
+    display: block;
+    margin-top: 20px;
   }
 
   .email {
@@ -161,6 +180,12 @@
     }
   }
 
+  .offices-container {
+    .section-title {
+      display: block;
+    }
+  }
+
   .offices-container,
   .studios-container,
   .in-touch-container {
@@ -179,6 +204,10 @@
       margin-top: 15px;
       margin-bottom: 0;
 
+      .desktop-email {
+        display: block;
+      }
+
       .studios-info {
         margin-bottom: 0;
 
@@ -190,10 +219,13 @@
 
       .email {
         display: block;
-        margin-top: 36px;
+        margin-top: 15px;
       }
     }
     .email {
+      display: none;
+    }
+    .mobile-email {
       display: none;
     }
   }
@@ -201,6 +233,7 @@
   .in-touch-container {
     .in-touch-grid {
       display: grid;
+      grid-gap: 20px;
       grid-auto-flow: column;
     }
   }
