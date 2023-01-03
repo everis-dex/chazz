@@ -40,7 +40,7 @@ export const ProjectCard = ({ data, height = "auto", columns }: Props) => {
             <Accordion.Body>{bodyParagraphs}</Accordion.Body>
           </Accordion.Item>
         </Accordion>
-        <hr style={{ color: 'red', }} />
+        <hr style={{ color: "red" }} />
       </div>
     </div>
   );

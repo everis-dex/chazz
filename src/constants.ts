@@ -10,21 +10,21 @@ export const routesInfoOK: RoutesInfo[] = [
     name: "We are",
     route: "/weare"
   },
-  {
-    id: 1,
-    name: "Services",
-    route: "/services"
-  },
+  // {
+  //   id: 1,
+  //   name: "Services",
+  //   route: "/services"
+  // },
   {
     id: 2,
     name: "Work",
     route: "/work"
-  },
-  {
-    id: 3,
-    name: "Thoughts",
-    route: "/thoughts"
   }
+  // {
+  //   id: 3,
+  //   name: "Thoughts",
+  //   route: "/thoughts"
+  // }
 ];
 
 export const routesInfo: RoutesInfo[] = [
@@ -37,7 +37,7 @@ export const routesInfo: RoutesInfo[] = [
     id: 2,
     name: "Work",
     route: "/work"
-  },
+  }
 ];
 
 export const desktopLineBreakSymbol: string = "+";
