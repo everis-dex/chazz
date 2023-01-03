@@ -37,7 +37,7 @@ export const routesInfo: RoutesInfo[] = [
     id: 2,
     name: "Work",
     route: "/work"
-  },
+  }
 ];
 
 export const desktopLineBreakSymbol: string = "+";
