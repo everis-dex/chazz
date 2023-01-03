@@ -28,6 +28,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#project-scripts">Project scripts</a></li>
       </ul>
     </li>
     <li>
@@ -50,10 +51,9 @@
 <br>
 
 <!-- ABOUT THE PROJECT -->
+<div id="about-the-project"></div>
 
 ## 📌 About The Project
-
-<div id="about-the-project"></div>
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
@@ -74,6 +74,8 @@ This is a project made for the improvement of the `Chazz` website, an NTT Data C
 - **Netlify** is used as CMS and to deploy the web application
 
 <br>
+
+<div id="project-scripts"></div>
 
 ### Package scripts
 
@@ -103,10 +105,9 @@ Scripts that can be ran using `npm run _command_`.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+<div id="getting-started"></div>
 
 ## 🌱 Getting Started
-
-<div id="getting-started"></div>
 
 To get a local copy up and running follow these simple example steps.
 
@@ -136,17 +137,16 @@ Some utils need to be installed in order to use the software. This is how to ins
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🔬 How does it work
-
+<!-- How does it work -->
 <div id="how-it-works"></div>
+
+## 🔬 How does it work
 
 All useful information for developers is explained here.
 
-<br>
+<div id="NetlifyCMS-config"></div>
 
 ### Netlify CMS configuration
-
-<div id="NetlifyCMS-config"></div>
 
 Netlify CMS stores all the content inside the repository, so no database is required. The configuration for it is located in `public/admin/` with:
 
@@ -169,9 +169,9 @@ With that, the content generated in the CMS is saved into two separated folders.
 
 <br>
 
-### Data management (main.ts file)
-
 <div id="data-management"></div>
+
+### Data management (main.ts file)
 
 Pages are automatically read as they are generated because they are created as [JSON](https://www.json.org/json-es.html) inside `content/pages/` folder. So they are imported and used in the required React components as the default.
 
