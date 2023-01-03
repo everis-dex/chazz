@@ -4,7 +4,7 @@ interface RoutesInfo {
   route: string;
 }
 
-export const routesInfo: RoutesInfo[] = [
+export const routesInfoOK: RoutesInfo[] = [
   {
     id: 0,
     name: "We are",
@@ -25,6 +25,19 @@ export const routesInfo: RoutesInfo[] = [
   //   name: "Thoughts",
   //   route: "/thoughts"
   // }
+];
+
+export const routesInfo: RoutesInfo[] = [
+  {
+    id: 0,
+    name: "We are",
+    route: "/weare"
+  },
+  {
+    id: 2,
+    name: "Work",
+    route: "/work"
+  },
 ];
 
 export const desktopLineBreakSymbol: string = "+";
