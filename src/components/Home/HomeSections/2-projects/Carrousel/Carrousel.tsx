@@ -31,16 +31,12 @@ export const Carrousel = ({ title }: Props) => {
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
-    const handleWindowResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+    const handleWindowResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleWindowResize);
 
     setOffset(windowWidth - carouselWidth - 20);
 
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
+    return () => window.removeEventListener("resize", handleWindowResize);
   }, [windowWidth, carouselWidth]);
 
   useEffect(() => {
@@ -68,7 +64,7 @@ export const Carrousel = ({ title }: Props) => {
               el: ".pagination",
               clickable: true
             }}
-            loop={true}
+            loop
             autoplay={{
               delay: 3000,
               disableOnInteraction: false
