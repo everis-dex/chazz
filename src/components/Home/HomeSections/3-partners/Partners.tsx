@@ -5,6 +5,7 @@ import { IHomeSection, IPartner } from "../../../../interfaces/interfaces";
 
 import { Container } from "react-bootstrap";
 import "./Partners.styles.scss";
+import { Partner } from "./Partner";
 
 export const Partners = (partnersData: IHomeSection) => {
   return (
@@ -18,9 +19,7 @@ export const Partners = (partnersData: IHomeSection) => {
           <div className="partner-container">
             {partners.map((partner: IPartner, index: number) => (
               <div className="partner" key={index}>
-                <a href={partner.website}>
-                  <img className="partner-logo" src={partner.logo} alt={partner.name} width="100%" />
-                </a>
+                <Partner {...partner} />
               </div>
             ))}
           </div>
