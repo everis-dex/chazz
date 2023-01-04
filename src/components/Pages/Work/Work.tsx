@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 import { Footer, Nav } from "../index";
 import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";

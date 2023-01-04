@@ -2,7 +2,7 @@ import React from "react";
 
 import home from "../../content/pages/home/home.json";
 import { Categories, Footer, HomeHeader, Partners, Projects } from "./index";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 export const Home = () => {
   const headerData = home.header;
