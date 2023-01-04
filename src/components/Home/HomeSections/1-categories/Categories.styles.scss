@@ -1,13 +1,19 @@
 // MOBILE FIRST
+
+.fondo {
+  background-color: var(--lightGray);
+}
+
 #Categories {
   width: 90%;
   margin: auto;
 }
 
 .container {
-  padding-left: 15px !important;
-  padding-right: 15px !important;
+  padding-left: 15px;
+  padding-right: 15px;
 }
+
 .section1-title,
 .section1-sections {
   flex: 0 0 auto;
@@ -15,7 +21,8 @@
 }
 
 .section1 {
-  margin-bottom: 70px;
+  // margin-bottom: 70px;
+  padding-bottom: 70px;
 
   .section1-title {
     margin-top: 60px;
@@ -28,6 +35,11 @@
 
   .section1-sections {
     margin-top: 20%;
+
+    h2 {
+      margin-bottom: 2px;
+    }
+
     h2 + p {
       color: var(--gray);
       margin-bottom: 20px;
@@ -56,23 +68,27 @@
 }
 
 @media (min-width: 480px) {
+  .container {
+    padding: 0;
+  }
+
   .section1 {
     .section1-title {
-      margin-top: 10%;
+      margin-top: 8%;
       h2 {
         width: 90%;
         font-size: 40px;
       }
     }
     .section1-sections {
-      margin-top: 10%;
+      margin-top: 8%;
     }
   }
 }
 @media (min-width: 769px) {
   .section1 {
     .section1-title {
-      margin-top: 10%;
+      margin-top: 8%;
       h2 {
         width: 65%;
         font-size: 40px;
@@ -80,7 +96,7 @@
     }
 
     .section1-sections {
-      margin-top: 10%;
+      margin-top: 8%;
       hr {
         margin-top: 30px;
         margin-bottom: 30px;

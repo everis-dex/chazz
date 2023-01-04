@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 
 import { Footer, Nav } from "../index";
 import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
@@ -9,6 +10,8 @@ import "./Work.styles.scss";
 
 export const Work = () => {
   const workData = work;
+
+  useEffect(() => window.scrollTo(0, 0), []);
 
   return (
     <>

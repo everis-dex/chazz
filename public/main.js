@@ -6,6 +6,7 @@ var blankMetadata = {
     title: "",
     subtitle: "",
     image: "",
+    scale: "",
     description: "",
     content: "",
     name: "",
@@ -111,6 +112,7 @@ var constructElement = function (folder, metadata, data) {
         case "partners":
             element.id = metadata.sort ? parseInt(metadata.sort) : -1;
             element.logo = metadata.logo;
+            element.scale = metadata.scale;
             element.website = metadata.website;
             element.name = metadata.name;
             break;
