@@ -41,7 +41,7 @@ export const Carrousel = ({ title }: Props) => {
               disableOnInteraction: false
             }}
             breakpoints={{
-              768: { slidesPerView: 2.1 },
+              768: { slidesPerView: 2.1 }
             }}
             initialSlide={0}
           >

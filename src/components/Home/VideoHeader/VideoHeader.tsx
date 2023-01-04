@@ -14,23 +14,26 @@ export const VideoHeader = ({ isPlaying, setIsPlaying }: Props) => {
     setIsPlaying(!isPlaying);
 
     if (videoRef.current && isPlaying) {
-      videoRef.current.pause()
+      videoRef.current.pause();
       setControlText("Play");
-    };
+    }
     if (videoRef.current && !isPlaying) {
       videoRef.current.play();
       setControlText("Stop");
-    };
+    }
   };
 
   return (
     <>
-      <div className="player-video">{isPlaying}
+      <div className="player-video">
+        {isPlaying}
 
         <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
         <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
 
-        <span style={{ marginLeft: 20 }} onClick={switchPlayPause}>{controlText} reel</span>
+        <span style={{ marginLeft: 20 }} onClick={switchPlayPause}>
+          {controlText} reel
+        </span>
       </div>
 
       <video
@@ -41,4 +44,3 @@ export const VideoHeader = ({ isPlaying, setIsPlaying }: Props) => {
     </>
   );
 };
-
