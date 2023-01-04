@@ -1,5 +1,3 @@
-
-
 export const routesInfo: RoutesInfo[] = [
   {
     id: 0,
