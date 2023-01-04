@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
-import { IHomeFooter } from "../../../../interfaces/interfaces";
+import { IHomeFooter } from "../../../../interfaces/cms";
 import { GetInTouch, Offices, Studios } from "./index";
 
 import "./CompanyInfo.styles.scss";

@@ -1,7 +1,7 @@
 import React from "react";
 
 import categories from "../../../../content/categories.json";
-import { ICategory, IHomeSection } from "../../../../interfaces/interfaces";
+import { ICategory, IHomeSection } from "../../../../interfaces/cms";
 import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
 
 import { Container, Row, Col } from "react-bootstrap";
