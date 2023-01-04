@@ -94,7 +94,6 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 17%);
     align-content: space-evenly;
     height: 100%;
     margin: 0;
@@ -197,6 +196,7 @@
   .studios-container,
   .in-touch-container {
     padding-left: 0;
+    grid-column: 2;
 
     span {
       margin-bottom: 15px;
@@ -206,7 +206,6 @@
   .studios-container {
     .studios-grid {
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 20%);
       height: 100%;
       margin-top: 15px;
       margin-bottom: 0;
