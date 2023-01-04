@@ -11,7 +11,10 @@ export const Partners = (partnersData: IHomeSection) => {
     <>
       <div className="partner-section">
         <Container id="Partners">
-          <h3>{partnersData.title}</h3>
+          <div className="titles">
+            <h3>{partnersData.title}</h3>
+            {partnersData.subtitle && <p>{partnersData.subtitle}</p>}
+          </div>
           <div className="partner-container">
             {partners.map((partner: IPartner, index: number) => (
               <div className="partner" key={index}>
