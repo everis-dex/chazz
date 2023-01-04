@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { routesInfo, baseUrl } from '../../../../constants';
+import { routesInfo } from '../../../../constants';
 
 import "../Nav.styles.scss";
 
@@ -9,8 +9,7 @@ type Props = { color: string };
 
 export const DesktopMenu = ({ color }: Props) => {
 
-  const currentUrl: string = window.location.href;
-  const currentPage: string = currentUrl.replace(baseUrl, '/');
+  var currentPage = "/".concat(window.location.pathname.split('/')[1]);
 
   return (
     <div className="nav">
