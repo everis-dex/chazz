@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 import getInTouch from "../../../../../content/get-in-touch.json";
-import { ISocial } from "../../../../../interfaces/interfaces";
+import { ISocial } from "../../../../../interfaces/cms";
 import { LinkedEmail, LinkedRRSS } from "./footerLinks";
 
 import "../CompanyInfo.styles.scss";

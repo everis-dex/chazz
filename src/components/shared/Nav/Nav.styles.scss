@@ -27,6 +27,10 @@
   }
 }
 
+.active {
+  color: var(--pinkHover);
+}
+
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
