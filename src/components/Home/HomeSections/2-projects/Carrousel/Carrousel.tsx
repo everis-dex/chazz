@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -15,36 +15,7 @@ type Props = { title: string };
 export const Carrousel = ({ title }: Props) => {
   const slides: IProject[] = [...projects];
 
-  const [carouselWidth, setCarouselWidth] = useState<number>(0);
-  const [windowWidth, setWindowWidth] = useState<number>(0);
-  const [offset, setOffset] = useState<number>(0);
-
   const carouselRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-    const carouselWidth: number = carouselRef != null && carouselRef.current ? carouselRef.current.offsetWidth : 0;
-    setCarouselWidth(carouselWidth);
-
-    setOffset((windowWidth - carouselWidth) / 2 - 20);
-  }, [carouselWidth, windowWidth]);
-
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-    const handleWindowResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleWindowResize);
-
-    setOffset(windowWidth - carouselWidth - 20);
-
-    return () => window.removeEventListener("resize", handleWindowResize);
-  }, [windowWidth, carouselWidth]);
-
-  useEffect(() => {
-    const carouselWidth: number = carouselRef != null && carouselRef.current ? carouselRef.current.offsetWidth : 0;
-    setCarouselWidth(carouselWidth);
-
-    setOffset((windowWidth - carouselWidth) / 2 - 14);
-  }, [windowWidth]);
 
   return (
     <>
@@ -57,7 +28,7 @@ export const Carrousel = ({ title }: Props) => {
         <div className="slides">
           <Swiper
             modules={[Pagination, Autoplay]}
-            slidesPerView={2.1}
+            slidesPerView={2.2}
             spaceBetween={18}
             navigation
             pagination={{
@@ -65,17 +36,14 @@ export const Carrousel = ({ title }: Props) => {
               clickable: true
             }}
             loop
-            // autoplay={{
-            //   delay: 3000,
-            //   disableOnInteraction: false
-            // }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false
+            }}
             breakpoints={{
-              768: { slidesPerView: 1.1 },
-              1024: { slidesPerView: 3.1 },
-              1440: { slidesPerView: 2.1 }
+              768: { slidesPerView: 2.1 },
             }}
             initialSlide={0}
-            slidesOffsetBefore={offset}
           >
             {slides.map((slide: IProject, index: number) => {
               return (
