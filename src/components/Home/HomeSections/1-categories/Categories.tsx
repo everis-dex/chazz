@@ -11,7 +11,6 @@ export const Categories = (categoriesData: IHomeSection) => {
   const style = { fontSize: "40px" };
 
   return (
-
     <div className="fondo">
       <Container id="Categories">
         <Row className="section1">

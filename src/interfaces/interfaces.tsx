@@ -68,6 +68,7 @@ export interface IProject {
 export interface IPartner {
   id: number;
   name: string;
+  scale: string;
   logo: string;
   website: string;
 }
