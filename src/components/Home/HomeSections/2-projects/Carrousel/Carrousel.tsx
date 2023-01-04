@@ -65,10 +65,10 @@ export const Carrousel = ({ title }: Props) => {
               clickable: true
             }}
             loop
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false
-            }}
+            // autoplay={{
+            //   delay: 3000,
+            //   disableOnInteraction: false
+            // }}
             breakpoints={{
               768: { slidesPerView: 1.1 },
               1024: { slidesPerView: 3.1 },
