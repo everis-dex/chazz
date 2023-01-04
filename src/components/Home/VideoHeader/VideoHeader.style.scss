@@ -1,10 +1,15 @@
 .video-header{
-    height: 100vh;
     // width: 100vw;
+    height: 100vh;
     position: absolute;
     top: 0;
     z-index: -1;
+    left: -50vw;
 }
+
+::-webkit-scrollbar {
+  display: none;
+ }
 .player-video{
   position: absolute;
   top: 40vh;
@@ -43,4 +48,27 @@
     font-size: 19px;
     font-weight: 450;
   }
+}
+
+// MEDIA QUERIES
+
+@media (min-width: 768px) {
+  .video-header{
+    left: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-header{
+    width: 100vw;
+    height: auto;
+
+  }
+}
+
+@media (min-width: 1280px) {
+
+}
+
+@media (min-width: 1440px) {
 }
