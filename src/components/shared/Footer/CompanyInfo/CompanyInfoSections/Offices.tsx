@@ -9,7 +9,7 @@ import "../CompanyInfo.styles.scss";
 type Props = { title: string };
 
 export const Offices = ({ title }: Props) => {
-  const emptyField = '""\r';
+  const emptyField = "\"\"\r";
 
   return (
     <>
