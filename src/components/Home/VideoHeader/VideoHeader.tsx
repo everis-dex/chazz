@@ -1,3 +1,4 @@
+import { relative } from "path";
 import React, { useRef } from "react";
 import "../VideoHeader/VideoHeader.style.scss";
 type Props = {
@@ -19,14 +20,13 @@ export const VideoHeader = ({ isPlaying, setIsPlaying }: Props) => {
 
   return (
     <>
-      <div className="player-video">
-        {!isPlaying ? (
-          <div className="play-icon" onClick={handlePlay}></div>
-        ) : (
-          <div className="stop-icon" onClick={handlePause}></div>
-        )}
+      <div className="player-video">{isPlaying}
 
-        {!isPlaying ? <span onClick={handlePlay}>Play reel</span> : <span onClick={handlePause}>Stop reel</span>}
+        <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={handlePlay}></div>
+        <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={handlePause}></div>
+        <div style={{ marginLeft: 20 }}>
+          {!isPlaying ? <span onClick={handlePlay}>Play reel</span> : <span onClick={handlePause}>Stop reel</span>}
+        </div>
       </div>
 
       <video
@@ -37,3 +37,4 @@ export const VideoHeader = ({ isPlaying, setIsPlaying }: Props) => {
     </>
   );
 };
+
