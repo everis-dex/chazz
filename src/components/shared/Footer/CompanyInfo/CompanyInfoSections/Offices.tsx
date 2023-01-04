@@ -9,7 +9,6 @@ import "../CompanyInfo.styles.scss";
 type Props = { title: string };
 
 export const Offices = ({ title }: Props) => {
-  const emptyField = "\"\"\r";
 
   return (
     <>
@@ -20,9 +19,9 @@ export const Offices = ({ title }: Props) => {
         {offices.map((office: IOffice, index: number) => (
           <div className="offices-info" key={index}>
             <p className="city">{office.city}</p>
-            {office.phone !== emptyField && <LinkedPhone phone={office.phone} />}
-            {office.email !== emptyField && <LinkedEmail email={office.email} />}
-            {office.address !== emptyField && <LinkedMap address={office.address} city={office.city} />}
+            {!office.phone.includes("\"") && <LinkedPhone phone={office.phone} />}
+            {!office.email.includes("\"") && <LinkedEmail email={office.email} />}
+            {!office.address.includes("\"") && <LinkedMap address={office.address} city={office.city} />}
           </div>
         ))}
       </div>
