@@ -123,6 +123,9 @@
 }
 
 .in-touch-container {
+  width: 100%;
+  overflow: hidden;
+
   .in-touch-info {
     .in-touch-subtitle {
       font-size: 16px;
