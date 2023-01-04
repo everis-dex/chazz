@@ -38,6 +38,11 @@
   }
 }
 
+#section-title-offices {
+  display: none;
+  margin-top: 74px;
+}
+
 .section-title {
   font-weight: 450;
   font-size: 14px;
@@ -151,15 +156,17 @@
     }
   }
 
+  #section-title-offices {
+    display: flex;
+  }
+
   .offices-container,
   .studios-grid {
     display: grid;
     grid-gap: 15px;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 74px;
 
     .offices-info {
-      grid-row: 2 / 2;
       margin-bottom: 0px;
       width: 90%;
       margin-right: 10%;
