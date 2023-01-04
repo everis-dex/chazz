@@ -11,7 +11,8 @@ export const Categories = (categoriesData: IHomeSection) => {
   const style = { fontSize: "40px" };
 
   return (
-    <>
+
+    <div className="fondo">
       <Container id="Categories">
         <Row className="section1">
           <Col className="section1-title" xs={12} sm={6}>
@@ -33,6 +34,6 @@ export const Categories = (categoriesData: IHomeSection) => {
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
 };

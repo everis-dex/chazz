@@ -2,15 +2,36 @@
 
 // MOBILE FIRST
 .chazz-header {
-  background-image: url("/assets/video.png");
+  // background-image: url("/assets/video.png");
   background-repeat: no-repeat;
   background-position: -330px -100px;
   height: 100vh;
 
-  .velo {
+  .velo-in {
     background: #ca8b9b94;
     z-index: 2;
     height: 100vh;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+  }
+
+  .velo-out{
+    opacity: 0;
+    background: #ca8b9b94;
+    transition: opacity 1s ease-in-out;
+    z-index: 2;
+    height: 100vh;
+
+  }
+
+  .nav-in{
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    
+  }
+  .nav-out{
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
   }
 }
 
@@ -23,6 +44,8 @@
   left: 5%;
   font-size: 23px;
   line-height: 1.2;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
 
   h1 {
     margin-bottom: 0;
@@ -35,6 +58,50 @@
   }
 }
 
+.chazz-title-out{
+  color: var(--white);
+  width: 265px;
+  position: absolute;
+  z-index: 9;
+  top: 47%;
+  left: 14px;
+  font-size: 23px;
+  line-height: 1.2;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.chazz-cookies {
+  // TODO: display
+  display: none;
+  background-color: var(--white);
+  height: 33%;
+  z-index: 10;
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  bottom: 3%;
+  padding: 16px;
+
+  p {
+    margin: 0;
+  }
+
+  button {
+    padding: 3% 29% 3% 29%;
+    margin-top: 13px;
+    color: #ffafc4;
+    font-weight: 700;
+    font-size: 19px;
+    background-color: var(--black);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+}
+
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
@@ -42,7 +109,7 @@
     background-position: 30% -100px;
   }
 
-  .chazz-title {
+  .chazz-title, .chazz-title-out {
     width: 60%;
     left: 3%;
     top: 55%;
@@ -64,7 +131,7 @@
       background-position: 0 0%;
     }
 
-    .chazz-title {
+    .chazz-title, .chazz-title-out {
       width: 55%;
       top: 60%;
       left: 5%;
@@ -88,7 +155,7 @@
       background-position: 0 0;
     }
 
-    .chazz-title {
+    .chazz-title, .chazz-title-out {
       top: 60%;
       h1 {
         font-size: 80px;
@@ -106,7 +173,7 @@
       background-position: 0 -95px;
     }
 
-    .chazz-title {
+    .chazz-title, .chazz-title-out {
       top: 50%;
       left: 3%;
     }
