@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IProject } from "../../../../../interfaces/interfaces";
+import { IProject } from "../../../../../interfaces/cms";
 import { Media } from "../../../../shared/Media/Media";
 
 export const CarrouselSlide = (props: IProject) => {

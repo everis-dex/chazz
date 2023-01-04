@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { AllowCookies, Nav } from "../index";
 
-import { IHomeHeader } from "../../../interfaces/interfaces";
+import { IHomeHeader } from "../../../interfaces/cms";
 import { LineBreakerSelector } from "../../shared/LineBreaker/LineBreakerSelector";
 
 import "./HomeHeader.styles.scss";

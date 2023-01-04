@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { CarrouselSlide } from "./CarrouselSlide";
 
 import projects from "../../../../../content/projects.json";
-import { IProject } from "../../../../../interfaces/interfaces";
+import { IProject } from "../../../../../interfaces/cms";
 
 import "swiper/css";
 import "swiper/css/pagination";

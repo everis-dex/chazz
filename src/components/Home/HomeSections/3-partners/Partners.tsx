@@ -1,7 +1,7 @@
 import React from "react";
 
 import partners from "../../../../content/partners.json";
-import { IHomeSection, IPartner } from "../../../../interfaces/interfaces";
+import { IHomeSection, IPartner } from "../../../../interfaces/cms";
 
 import { Container } from "react-bootstrap";
 import "./Partners.styles.scss";

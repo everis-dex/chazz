@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { IHomeProjects } from "../../../../interfaces/interfaces";
+import { IHomeProjects } from "../../../../interfaces/cms";
 import { Carrousel } from "./Carrousel/Carrousel";
 
 import "./Projects.styles.scss";
