@@ -8,11 +8,13 @@ import "./Projects.styles.scss";
 
 export const Projects = (projectData: IHomeProjects) => {
   return (
-    <div id="Projects">
-      <Carrousel title={projectData.title} />
-      <Link to={"/work"} className="more-projects">
-        {projectData.more} →
-      </Link>
+    <div className="background">
+      <div id="Projects">
+        <Carrousel title={projectData.title} />
+        <Link to={"/work"} className="more-projects">
+          {projectData.more} →
+        </Link>
+      </div>
     </div>
   );
 };

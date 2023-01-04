@@ -2,18 +2,10 @@
   cursor: pointer;
 }
 
-.carouselTitle {
-  margin-left: 15px;
-}
-
 .carouselPagination {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.carousel .pagination {
-  padding: 0 1rem;
-  width: auto;
 }
 
 .swiper-pagination-bullet {
@@ -53,30 +45,4 @@
   overflow: hidden;
   white-space: nowrap;
   font-weight: 100;
-}
-
-// MEDIA QUERIES
-@media (min-width: 768px) {
-  .carouselTitle {
-    margin-left: 5%;
-  }
-
-  .carousel .pagination {
-    padding-left: 2px;
-    margin-left: 5%;
-    width: auto;
-  }
-  .properties {
-    padding-right: 40px;
-  }
-}
-
-@media (min-width: 1920px) {
-  .carouselTitle {
-    margin-left: 16%;
-  }
-
-  .carousel .pagination {
-    margin-left: 16%;
-  }
 }
