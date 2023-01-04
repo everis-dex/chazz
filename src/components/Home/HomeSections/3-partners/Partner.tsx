@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IPartner } from "../../../../interfaces/interfaces";
+import { IPartner } from "../../../../interfaces/cms";
 
 import "./Partners.styles.scss";
 

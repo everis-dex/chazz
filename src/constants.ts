@@ -1,8 +1,4 @@
-interface RoutesInfo {
-  id: number;
-  name: string;
-  route: string;
-}
+export const baseUrl: string = "http://localhost:3000/";
 
 export const routesInfo: RoutesInfo[] = [
   {

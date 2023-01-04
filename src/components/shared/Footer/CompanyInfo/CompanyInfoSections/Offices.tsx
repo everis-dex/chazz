@@ -1,7 +1,7 @@
 import React from "react";
 
 import offices from "../../../../../content/offices.json";
-import { IOffice } from "../../../../../interfaces/interfaces";
+import { IOffice } from "../../../../../interfaces/cms";
 import { LinkedEmail, LinkedMap, LinkedPhone } from "./footerLinks";
 
 import "../CompanyInfo.styles.scss";
