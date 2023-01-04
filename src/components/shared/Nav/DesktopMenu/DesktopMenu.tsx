@@ -18,7 +18,7 @@ export const DesktopMenu = ({ color }: Props) => {
           <li key={route.id}>
             {route.name && (
               <>
-                {(route.route != currentPage)
+                {(route.route !== currentPage)
                   ? (
                     <Link className={color !== "black" ? "" : "pagesDesktopNavItem"} to={route.route}>
                       {route.name}
