@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -36,17 +36,14 @@ export const Carrousel = ({ title }: Props) => {
               clickable: true
             }}
             loop
-            // autoplay={{
-            //   delay: 3000,
-            //   disableOnInteraction: false
-            // }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false
+            }}
             breakpoints={{
               768: { slidesPerView: 2.1 },
-              //   1024: { slidesPerView: 3.1 },
-              //   1440: { slidesPerView: 2.1 }
             }}
             initialSlide={0}
-          // slidesOffsetBefore={offset}
           >
             {slides.map((slide: IProject, index: number) => {
               return (
