@@ -15,19 +15,7 @@
   align-items: center;
   cursor: pointer;
 
-  .play-icon-in {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-left: 12px solid var(--white);
-    margin-right: 13px;
-    transform: rotate(-60deg);
-    transition: all 1s;
-    opacity: 0;
-  }
-
+  .play-icon-in,
   .play-icon-out {
     position: absolute;
     width: 0;
@@ -36,8 +24,16 @@
     border-bottom: 8px solid transparent;
     border-left: 12px solid var(--white);
     margin-right: 13px;
-    transform: rotate(0deg);
     transition: all 1s;
+  }
+
+  .play-icon-in {
+    transform: rotate(-60deg);
+    opacity: 0;
+  }
+
+  .play-icon-out {
+    transform: rotate(0deg);
     opacity: 1;
   }
 

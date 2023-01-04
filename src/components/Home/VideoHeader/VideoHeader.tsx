@@ -1,6 +1,6 @@
-import { relative } from "path";
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import "../VideoHeader/VideoHeader.style.scss";
+
 type Props = {
   isPlaying: boolean;
   setIsPlaying: (a: boolean) => void;
@@ -8,25 +8,29 @@ type Props = {
 
 export const VideoHeader = ({ isPlaying, setIsPlaying }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [controlText, setControlText] = useState<string>("Play");
 
-  const handlePlay = () => {
-    setIsPlaying(true);
-    videoRef.current && videoRef.current.play();
-  };
-  const handlePause = () => {
-    setIsPlaying(false);
-    videoRef.current && videoRef.current.pause();
+  const switchPlayPause = () => {
+    setIsPlaying(!isPlaying);
+
+    if (videoRef.current && isPlaying) {
+      videoRef.current.pause()
+      setControlText("Play");
+    };
+    if (videoRef.current && !isPlaying) {
+      videoRef.current.play();
+      setControlText("Stop");
+    };
   };
 
   return (
     <>
       <div className="player-video">{isPlaying}
 
-        <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={handlePlay}></div>
-        <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={handlePause}></div>
-        <div style={{ marginLeft: 20 }}>
-          {!isPlaying ? <span onClick={handlePlay}>Play reel</span> : <span onClick={handlePause}>Stop reel</span>}
-        </div>
+        <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
+        <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
+
+        <span style={{ marginLeft: 20 }} onClick={switchPlayPause}>{controlText} reel</span>
       </div>
 
       <video
