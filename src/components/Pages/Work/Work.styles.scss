@@ -5,6 +5,8 @@
 .header-nav {
   display: block;
   height: 10vh;
+  position: relative;
+  z-index: 1;
 }
 
 .work-header {
