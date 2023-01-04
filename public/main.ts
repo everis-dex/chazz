@@ -14,6 +14,7 @@ interface Metadata {
   title?: string;
   subtitle?: string;
   image?: string;
+  scale?: string;
   description?: string;
   service?: string;
   value?: string;
@@ -34,6 +35,7 @@ interface BuiltElement {
   title?: string;
   subtitle?: string;
   image?: string;
+  scale?: string;
   description?: string;
   service?: string;
   value?: string;
@@ -53,6 +55,7 @@ const blankMetadata: Metadata = {
   title: "",
   subtitle: "",
   image: "",
+  scale: "",
   description: "",
   content: "",
   name: "",
@@ -171,6 +174,7 @@ const constructElement = (
     case "partners":
       element.id = metadata.sort ? parseInt(metadata.sort) : -1;
       element.logo = metadata.logo;
+      element.scale = metadata.scale;
       element.website = metadata.website;
       element.name = metadata.name;
       break;
