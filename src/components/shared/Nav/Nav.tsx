@@ -9,15 +9,19 @@ import "./Nav.styles.scss";
 type Props = {
   color: string;
   disabledMenuOption: string;
+  isNavVisible: boolean;
+  isPlaying: boolean;
 };
 
-export const Nav = ({ color, disabledMenuOption }: Props) => {
+export const Nav = ({ color, disabledMenuOption, isNavVisible, isPlaying }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [root] = useState(document.getElementById("root"));
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-    handleRootBehavior();
+    if (!isPlaying) {
+      setIsOpen(!isOpen);
+      handleRootBehavior();
+    }
   };
 
   const handleRootBehavior = () => {
@@ -26,11 +30,16 @@ export const Nav = ({ color, disabledMenuOption }: Props) => {
     root.style.overflow = isOpen ? "auto" : "hidden";
   };
 
-  return (
-    <div className="header-nav">
-      <ChazzLogo color={color} isOpen={isOpen} />
-      <DesktopMenu color={color} />
-      <BurgerMenu isOpen={isOpen} toggleMenu={toggleMenu} color={color} disabledMenuOption={disabledMenuOption} />
-    </div>
-  );
-};
+  if (isNavVisible) {
+    return (
+      <div className="header-nav" >
+        <ChazzLogo color={color} isOpen={isOpen} />
+        <DesktopMenu color={color} />
+        <BurgerMenu isOpen={isOpen} toggleMenu={toggleMenu} color={color} disabledMenuOption={disabledMenuOption} />
+      </div >
+    )
+  }
+
+  return (<></>);
+
+}

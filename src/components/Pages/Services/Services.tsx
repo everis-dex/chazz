@@ -8,7 +8,7 @@ export const Services = () => {
 
   return (
     <>
-      <Nav color="black" disabledMenuOption="/services" />
+      <Nav color="black" disabledMenuOption="/services" isNavVisible={true} isPlaying={false} />
       <p>Our services</p>
       <Footer />
     </>

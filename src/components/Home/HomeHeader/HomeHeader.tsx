@@ -11,15 +11,17 @@ import { VideoHeader } from "../VideoHeader/VideoHeader";
 
 export const HomeHeader = (headerData: IHomeHeader) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isNavVisible, setisNavVisible] = useState<boolean>(true);
+
   return (
     <>
       <div className="chazz-header">
         <div className={isPlaying ? "velo-out" : "velo-in"}>
           <span className={isPlaying ? "nav-out" : "nav-in"}>
-            <Nav color="white" disabledMenuOption="" />
+            <Nav color="white" disabledMenuOption="" isNavVisible={isNavVisible} isPlaying={isPlaying} />
           </span>
         </div>
-        <VideoHeader isPlaying={isPlaying} setIsPlaying={setIsPlaying}></VideoHeader>
+        <VideoHeader isPlaying={isPlaying} setIsPlaying={setIsPlaying} isNavVisible={isNavVisible} setIsNavVisible={setisNavVisible}></VideoHeader>
         <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
           <LineBreakerSelector typedLines={headerData.title} />
           <h4>{headerData.subtitle}</h4>
