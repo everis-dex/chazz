@@ -12,6 +12,10 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
   const videoRef = useRef<HTMLVideoElement>(null);
   const [controlText, setControlText] = useState<string>("Play");
 
+  if (!isPlaying && !isNavVisible) {
+    setIsNavVisible(true);
+  }
+
   const switchPlayPause = () => {
     setIsPlaying(!isPlaying);
 

@@ -13,6 +13,8 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isNavVisible, setisNavVisible] = useState<boolean>(true);
 
+
+
   return (
     <>
       <div className="chazz-header">
