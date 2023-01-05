@@ -3,8 +3,6 @@
 }
 
 .carouselTitle {
-  margin-left: 15px;
-
   h3 {
     font-size: 24px;
   }
@@ -58,13 +56,8 @@
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
-  .carouselTitle {
-    margin-left: 5%;
-  }
-
   .carousel .pagination {
     padding-left: 2px;
-    margin-left: 5%;
     width: auto;
   }
   .properties {
@@ -85,15 +78,5 @@
 
   .properties {
     font-size: 24px;
-  }
-}
-
-@media (min-width: 1920px) {
-  .carouselTitle {
-    margin-left: 16%;
-  }
-
-  .carousel .pagination {
-    margin-left: 16%;
   }
 }

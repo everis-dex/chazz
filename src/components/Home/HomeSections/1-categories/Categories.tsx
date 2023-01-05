@@ -12,14 +12,14 @@ export const Categories = (categoriesData: IHomeSection) => {
     <div className="background">
       <div id="Categories">
         <div className="section1">
-          <Col className="section1-title" xs={12} sm={6}>
+          <div className="section1-title">
             <h2>
               <strong>{categoriesData.title}</strong> <br></br>
               <LineBreakerSelector typedLines={categoriesData.subtitle} />
             </h2>
-          </Col>
+          </div>
 
-          <Col className="section1-sections" xs={12} sm={6}>
+          <div className="section1-sections">
             {categories.map((category: ICategory, index: number) => (
               <div key={index}>
                 {category.title && <h2>{category.title}</h2>}
@@ -28,7 +28,7 @@ export const Categories = (categoriesData: IHomeSection) => {
                 {index < categories.length - 1 && <hr></hr>}
               </div>
             ))}
-          </Col>
+          </div>
         </div>
       </div>
     </div>

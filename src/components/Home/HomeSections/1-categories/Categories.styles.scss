@@ -17,19 +17,18 @@
 .section1-title,
 .section1-sections {
   flex: 0 0 auto;
-  width: 50%;
+  width: 88%;
 }
 
 .section1 {
   padding-bottom: 100px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 100%;
 
   .section1-title {
     margin-top: 60px;
     h2 {
       font-weight: 500;
-      width: 341px;
       font-size: 32px;
     }
 
@@ -119,6 +118,7 @@
 
 @media (min-width: 1280px) {
   .section1 {
+    grid-template-columns: 50% 60%;
     .section1-title {
       h2.strong {
         width: 90%;
@@ -141,6 +141,16 @@
 
       p {
         font-size: 24px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .section1 {
+    .section1-title {
+      h2 {
+        width: 100%;
       }
     }
   }

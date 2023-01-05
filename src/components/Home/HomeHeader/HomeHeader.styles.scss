@@ -37,7 +37,7 @@
 
 .chazz-title {
   color: var(--white);
-  width: 265px;
+  width: 65%;
   position: absolute;
   top: 47%;
   left: 5%;
@@ -120,7 +120,7 @@
 
   .chazz-title,
   .chazz-title-out {
-    width: 60%;
+    width: 50%;
     left: 3%;
     top: 55%;
 
@@ -134,6 +134,12 @@
     }
   }
 
+  @media (min-width: 768px) {
+    .chazz-title{
+      width: 55%;
+    }
+  }
+
   @media (min-width: 1280px) {
     .chazz-header {
       background-size: 1280px;
@@ -143,7 +149,6 @@
 
     .chazz-title,
     .chazz-title-out {
-      width: 55%;
       top: 60%;
       left: 5%;
 
@@ -168,9 +173,10 @@
 
     .chazz-title,
     .chazz-title-out {
+      width: 100%;
       top: 60%;
       h1 {
-        font-size: 80px;
+        font-size: 90px;
       }
 
       h4 {
