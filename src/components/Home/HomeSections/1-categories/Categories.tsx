@@ -8,7 +8,6 @@ import { Col } from "react-bootstrap";
 import "./Categories.styles.scss";
 
 export const Categories = (categoriesData: IHomeSection) => {
-
   return (
     <div className="background">
       <div id="Categories">
