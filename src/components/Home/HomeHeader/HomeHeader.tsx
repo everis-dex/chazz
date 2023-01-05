@@ -23,7 +23,12 @@ export const HomeHeader = (headerData: IHomeHeader) => {
             <Nav color="white" disabledMenuOption="" isNavVisible={isNavVisible} isPlaying={isPlaying} />
           </span>
         </div>
-        <VideoHeader isPlaying={isPlaying} setIsPlaying={setIsPlaying} isNavVisible={isNavVisible} setIsNavVisible={setisNavVisible}></VideoHeader>
+        <VideoHeader
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
+          isNavVisible={isNavVisible}
+          setIsNavVisible={setisNavVisible}
+        ></VideoHeader>
         <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
           <LineBreakerSelector typedLines={headerData.title} />
           <h4>{headerData.subtitle}</h4>
