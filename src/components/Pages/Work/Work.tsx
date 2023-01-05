@@ -15,7 +15,7 @@ export const Work = () => {
 
   return (
     <>
-      <Nav color="black" disabledMenuOption="/work" isNavVisible={true} />
+      <Nav color="black" disabledMenuOption="/work" isNavVisible={true} isPlaying={false} />
       <ProjectsGrid {...workData} />
       <Footer />
     </>

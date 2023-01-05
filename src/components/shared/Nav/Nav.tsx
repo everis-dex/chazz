@@ -10,14 +10,15 @@ type Props = {
   color: string;
   disabledMenuOption: string;
   isNavVisible: boolean;
+  isPlaying: boolean;
 };
 
-export const Nav = ({ color, disabledMenuOption, isNavVisible }: Props) => {
+export const Nav = ({ color, disabledMenuOption, isNavVisible, isPlaying }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [root] = useState(document.getElementById("root"));
 
   const toggleMenu = () => {
-    if (isNavVisible) {
+    if (!isPlaying) {
       setIsOpen(!isOpen);
       handleRootBehavior();
     }

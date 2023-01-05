@@ -8,7 +8,7 @@ export const WeAre = () => {
 
   return (
     <>
-      <Nav color="black" disabledMenuOption="/weare" isNavVisible={true} />
+      <Nav color="black" disabledMenuOption="/weare" isNavVisible={true} isPlaying={false} />
       <p>We are</p>
       <Footer />
     </>
