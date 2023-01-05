@@ -4,9 +4,11 @@ import "../VideoHeader/VideoHeader.style.scss";
 type Props = {
   isPlaying: boolean;
   setIsPlaying: (a: boolean) => void;
+  isNavVisible: boolean;
+  setIsNavVisible: (a: boolean) => void;
 };
 
-export const VideoHeader = ({ isPlaying, setIsPlaying }: Props) => {
+export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVisible }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [controlText, setControlText] = useState<string>("Play");
 
@@ -15,11 +17,15 @@ export const VideoHeader = ({ isPlaying, setIsPlaying }: Props) => {
 
     if (videoRef.current && isPlaying) {
       videoRef.current.pause();
+      setIsNavVisible(!isNavVisible);
       setControlText("Play");
     }
     if (videoRef.current && !isPlaying) {
       videoRef.current.play();
       setControlText("Stop");
+      setTimeout(() => {
+        setIsNavVisible(!isNavVisible);
+      }, 1000)
     }
   };
 
