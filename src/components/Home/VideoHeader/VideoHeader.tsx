@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "../VideoHeader/VideoHeader.style.scss";
+import { useEffect } from 'react';
 
 type Props = {
   isPlaying: boolean;
@@ -12,6 +13,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
   const videoRef = useRef<HTMLVideoElement>(null);
   const [controlText, setControlText] = useState<string>("Play");
 
+  console.log({ isPlaying, isNavVisible })
   const switchPlayPause = () => {
     setIsPlaying(!isPlaying);
 
@@ -28,6 +30,12 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
       }, 1000)
     }
   };
+
+  useEffect(() => {
+    if (!isPlaying && !isNavVisible) {
+      setIsNavVisible(true);
+    }
+  }, [isPlaying, isNavVisible])
 
   return (
     <>
