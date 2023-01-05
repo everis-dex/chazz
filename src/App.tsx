@@ -4,10 +4,27 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home } from "./components/Home/Home";
 import { Services, Thoughts, WeAre, Work } from "./components/Pages";
 
-import { categoriesInfo, getInTouchInfo, officesInfo, partnersInfo, projectsInfo, studiosInfo, homeInfo, workInfo } from "./content/index";
+import {
+  categoriesInfo,
+  getInTouchInfo,
+  officesInfo,
+  partnersInfo,
+  projectsInfo,
+  studiosInfo,
+  homeInfo,
+  workInfo
+} from "./content/index";
 
-console.log({ categoriesInfo, getInTouchInfo, officesInfo, partnersInfo, projectsInfo, studiosInfo, homeInfo, workInfo });
-
+console.log({
+  categoriesInfo,
+  getInTouchInfo,
+  officesInfo,
+  partnersInfo,
+  projectsInfo,
+  studiosInfo,
+  homeInfo,
+  workInfo
+});
 
 export const App = () => {
   return (
