@@ -32,14 +32,13 @@ export const Nav = ({ color, disabledMenuOption, isNavVisible, isPlaying }: Prop
 
   if (isNavVisible) {
     return (
-      <div className="header-nav" >
+      <div className="header-nav">
         <ChazzLogo color={color} isOpen={isOpen} />
         <DesktopMenu color={color} />
         <BurgerMenu isOpen={isOpen} toggleMenu={toggleMenu} color={color} disabledMenuOption={disabledMenuOption} />
-      </div >
-    )
+      </div>
+    );
   }
 
-  return (<></>);
-
-}
+  return <></>;
+};

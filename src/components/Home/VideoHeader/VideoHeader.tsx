@@ -25,7 +25,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
       setControlText("Stop");
       setTimeout(() => {
         setIsNavVisible(!isNavVisible);
-      }, 1000)
+      }, 1000);
     }
   };
 
