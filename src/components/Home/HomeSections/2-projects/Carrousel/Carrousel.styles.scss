@@ -4,6 +4,10 @@
 
 .carouselTitle {
   margin-left: 15px;
+
+  h3{
+    font-size: 24px;
+  }
 }
 
 .carouselPagination {
@@ -36,7 +40,7 @@
 
 .title {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 31.2px;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -53,6 +57,7 @@
   overflow: hidden;
   white-space: nowrap;
   font-weight: 100;
+  font-size: 16px;
 }
 
 // MEDIA QUERIES
@@ -68,6 +73,23 @@
   }
   .properties {
     padding-right: 40px;
+  }
+}
+
+@media (min-width: 1240px) {
+  .carouselTitle {
+
+    h3{
+      font-size: 32px;
+    }
+  }
+
+  .title{
+    font-size: 24px;
+  }
+
+  .properties{
+    font-size: 24px;
   }
 }
 
