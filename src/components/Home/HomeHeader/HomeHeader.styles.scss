@@ -39,6 +39,7 @@
   color: var(--white);
   width: 265px;
   position: absolute;
+  z-index: 9;
   top: 47%;
   left: 5%;
   font-size: 23px;
@@ -54,6 +55,7 @@
   h4 {
     margin-top: 12px;
     width: 245px;
+    font-size: 24px;
   }
 }
 
@@ -61,6 +63,7 @@
   color: var(--white);
   width: 265px;
   position: absolute;
+  z-index: 9;
   top: 47%;
   left: 5%;
   font-size: 23px;
