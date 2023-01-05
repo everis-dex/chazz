@@ -4,9 +4,11 @@ import "../VideoHeader/VideoHeader.style.scss";
 type Props = {
   isPlaying: boolean;
   setIsPlaying: (a: boolean) => void;
+  isNavVisible: boolean;
+  setIsNavVisible: (a: boolean) => void;
 };
 
-export const VideoHeader = ({ isPlaying, setIsPlaying }: Props) => {
+export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVisible }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [controlText, setControlText] = useState<string>("Play");
 
@@ -14,23 +16,30 @@ export const VideoHeader = ({ isPlaying, setIsPlaying }: Props) => {
     setIsPlaying(!isPlaying);
 
     if (videoRef.current && isPlaying) {
-      videoRef.current.pause()
+      videoRef.current.pause();
+      setIsNavVisible(!isNavVisible);
       setControlText("Play");
-    };
+    }
     if (videoRef.current && !isPlaying) {
       videoRef.current.play();
       setControlText("Stop");
-    };
+      setTimeout(() => {
+        setIsNavVisible(!isNavVisible);
+      }, 1000)
+    }
   };
 
   return (
     <>
-      <div className="player-video">{isPlaying}
+      <div className="player-video">
+        {isPlaying}
 
         <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
         <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
 
-        <span style={{ marginLeft: 20 }} onClick={switchPlayPause}>{controlText} reel</span>
+        <span style={{ marginLeft: 20 }} onClick={switchPlayPause}>
+          {controlText} reel
+        </span>
       </div>
 
       <video
@@ -41,4 +50,3 @@ export const VideoHeader = ({ isPlaying, setIsPlaying }: Props) => {
     </>
   );
 };
-

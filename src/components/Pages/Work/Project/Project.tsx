@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Accordion } from "react-bootstrap";
 
 import { Media } from "../../../../components/shared/Media/Media";
-import { IProject } from "../../../../interfaces/interfaces";
+import { IProject } from "../../../../interfaces/cms";
 
 import "./Project.styles.scss";
 

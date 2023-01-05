@@ -1,6 +1,6 @@
 // MOBILE FIRST
 
-.fondo {
+.background {
   background-color: var(--lightGray);
 }
 
@@ -21,8 +21,9 @@
 }
 
 .section1 {
-  // margin-bottom: 70px;
-  padding-bottom: 70px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
 
   .section1-title {
     margin-top: 60px;
@@ -68,12 +69,8 @@
 // MEDIA QUERIES
 // xxs
 @media (width: 320px) {
-  .section1 {
-    .section1-title {
-      h2 {
-        width: 300px;
-      }
-    }
+  .section1-title h2 {
+    width: 300px;
   }
 }
 
@@ -81,22 +78,10 @@
   .container {
     padding: 0;
   }
-
-  .section1 {
-    .section1-title {
-      margin-top: 8%;
-      h2 {
-        width: 90%;
-        font-size: 40px;
-      }
-    }
-    .section1-sections {
-      margin-top: 8%;
-    }
-  }
 }
 @media (min-width: 769px) {
   .section1 {
+    flex-direction: row;
     .section1-title {
       margin-top: 8%;
       h2 {

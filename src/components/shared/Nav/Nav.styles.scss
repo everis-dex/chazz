@@ -1,5 +1,15 @@
 @import "../../../styles.scss";
 
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
 // MOBILE FIRST
 
 .chazz-logo {
@@ -25,6 +35,10 @@
   &:hover {
     color: var(--pinkHover) !important;
   }
+}
+
+.active {
+  color: var(--pinkHover);
 }
 
 // MEDIA QUERIES

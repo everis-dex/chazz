@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import { IProject, IWork } from "../../../../interfaces/interfaces";
+import { IProject, IWork } from "../../../../interfaces/cms";
 import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
 import { ProjectCard } from "../Project/Project";
 

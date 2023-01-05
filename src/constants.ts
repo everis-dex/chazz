@@ -1,9 +1,3 @@
-interface RoutesInfo {
-  id: number;
-  name: string;
-  route: string;
-}
-
 export const routesInfo: RoutesInfo[] = [
   {
     id: 0,

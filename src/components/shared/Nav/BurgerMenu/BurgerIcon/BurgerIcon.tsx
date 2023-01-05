@@ -12,8 +12,11 @@ export const BurgerIcon = ({ isOpen, toggleMenu, color }: Props) => {
   const [iconColor, setIconColor] = useState<string>("");
 
   useEffect(() => {
-    if (isOpen) setIconColor("white");
-    else setIconColor(color);
+    if (isOpen) {
+      setIconColor("white");
+    } else {
+      setIconColor(color);
+    }
   }, [isOpen, color]);
 
   return (

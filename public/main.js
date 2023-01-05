@@ -125,7 +125,7 @@ var constructElement = function (folder, metadata, data) {
         case "offices":
             element.id = data.timestamp;
             element.city = metadata.city;
-            element.phone = metadata.phone;
+            element.phone = metadata.phone === "" ? "" : metadata.phone;
             element.email = metadata.email;
             element.address = metadata.address;
             break;

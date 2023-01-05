@@ -38,6 +38,11 @@
   }
 }
 
+#section-title-offices {
+  display: none;
+  margin-top: 74px;
+}
+
 .section-title {
   font-weight: 450;
   font-size: 14px;
@@ -89,7 +94,6 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 17%);
     align-content: space-evenly;
     height: 100%;
     margin: 0;
@@ -119,6 +123,9 @@
 }
 
 .in-touch-container {
+  width: 100%;
+  overflow: hidden;
+
   .in-touch-info {
     .in-touch-subtitle {
       font-size: 16px;
@@ -151,15 +158,17 @@
     }
   }
 
+  #section-title-offices {
+    display: flex;
+  }
+
   .offices-container,
   .studios-grid {
     display: grid;
     grid-gap: 15px;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 74px;
 
     .offices-info {
-      grid-row: 2 / 2;
       margin-bottom: 0px;
       width: 90%;
       margin-right: 10%;
@@ -190,6 +199,7 @@
   .studios-container,
   .in-touch-container {
     padding-left: 0;
+    grid-column: 2;
 
     span {
       margin-bottom: 15px;
@@ -199,7 +209,6 @@
   .studios-container {
     .studios-grid {
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 20%);
       height: 100%;
       margin-top: 15px;
       margin-bottom: 0;
@@ -234,7 +243,9 @@
     .in-touch-grid {
       display: grid;
       grid-gap: 20px;
-      grid-auto-flow: column;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+      justify-items: start;
     }
   }
 }

@@ -1,18 +1,18 @@
 import React from "react";
 
 import categories from "../../../../content/categories.json";
-import { ICategory, IHomeSection } from "../../../../interfaces/interfaces";
+import { ICategory, IHomeSection } from "../../../../interfaces/cms";
 import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
 
-import { Container, Row, Col } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import "./Categories.styles.scss";
 
 export const Categories = (categoriesData: IHomeSection) => {
 
   return (
-    <div className="fondo">
-      <Container id="Categories">
-        <Row className="section1">
+    <div className="background">
+      <div id="Categories">
+        <div className="section1">
           <Col className="section1-title" xs={12} sm={6}>
             <h2>
               <strong>{categoriesData.title}</strong> <br></br>
@@ -26,12 +26,12 @@ export const Categories = (categoriesData: IHomeSection) => {
                 {category.title && <h2>{category.title}</h2>}
                 {category.section && <p>{category.section}</p>}
                 {category.body && <p>{category.body}</p>}
-                <hr></hr>
+                {index < categories.length - 1 && <hr></hr>}
               </div>
             ))}
           </Col>
-        </Row>
-      </Container>
+        </div>
+      </div>
     </div>
   );
 };
