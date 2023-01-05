@@ -8,7 +8,7 @@ export const Thoughts = () => {
 
   return (
     <>
-      <Nav color="black" disabledMenuOption="/thoughts" />
+      <Nav color="black" disabledMenuOption="/thoughts" isNavVisible={true} />
       <p>Thoughts</p>
       <Footer />
     </>
