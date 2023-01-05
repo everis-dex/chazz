@@ -33,6 +33,11 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
     }
   };
 
+  const resetVideo = () => {
+    setIsPlaying(false);
+    setControlText("Play");
+  }
+
   return (
     <>
       <div className="player-video">
@@ -50,6 +55,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
         className="video-header"
         ref={videoRef}
         src="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4"
+        onEnded={() => resetVideo()}
       ></video>
     </>
   );
