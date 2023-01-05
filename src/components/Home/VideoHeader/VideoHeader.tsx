@@ -45,7 +45,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
       <video
         className="video-header"
         ref={videoRef}
-        src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+        src="https://file-examples.com/storage/feee4cd0b563b359f963e88/2017/04/file_example_MP4_480_1_5MG.mp4"
       ></video>
     </>
   );
