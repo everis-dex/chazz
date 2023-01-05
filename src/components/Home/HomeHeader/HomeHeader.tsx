@@ -18,7 +18,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       <div className="chazz-header">
         <div className={isPlaying ? "velo-out" : "velo-in"}>
           <span className={isPlaying ? "nav-out" : "nav-in"}>
-            <Nav color="white" disabledMenuOption="" isNavVisible={isNavVisible} />
+            <Nav color="white" disabledMenuOption="" isNavVisible={isNavVisible} isPlaying={isPlaying} />
           </span>
         </div>
         <VideoHeader isPlaying={isPlaying} setIsPlaying={setIsPlaying} isNavVisible={isNavVisible} setIsNavVisible={setisNavVisible}></VideoHeader>
