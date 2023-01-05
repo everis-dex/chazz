@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../VideoHeader/VideoHeader.style.scss";
 
 type Props = {
@@ -11,6 +11,13 @@ type Props = {
 export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVisible }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [controlText, setControlText] = useState<string>("Play");
+
+  useEffect(() => {
+    if (!isPlaying && !isNavVisible) {
+      setIsNavVisible(true);
+    }
+  }, [isNavVisible, isPlaying, setIsNavVisible])
+
 
   const switchPlayPause = () => {
     setIsPlaying(!isPlaying);
@@ -25,9 +32,14 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
       setControlText("Stop");
       setTimeout(() => {
         setIsNavVisible(!isNavVisible);
-      }, 1000)
+      }, 1000);
     }
   };
+
+  const resetVideo = () => {
+    setIsPlaying(false);
+    setControlText("Play");
+  }
 
   return (
     <>
@@ -45,7 +57,8 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
       <video
         className="video-header"
         ref={videoRef}
-        src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+        src="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4"
+        onEnded={() => resetVideo()}
       ></video>
     </>
   );
