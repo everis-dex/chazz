@@ -10,7 +10,7 @@ type Props = { data: IProject; columns?: string; height?: string; full?: boolean
 
 export const ProjectCard = ({ data, height = "auto", columns }: Props) => {
   const style = { width: "100%", height: height, objectFit: "cover" };
-  const bodyParagraphs: string[] = data.body.replace("\r", "").split("\n");
+  const bodyParagraphs: string = data.body.substring(2);
 
   // Dropdown
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
