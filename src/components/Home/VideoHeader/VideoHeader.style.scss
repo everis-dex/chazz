@@ -26,6 +26,7 @@
     border-left: 12px solid var(--white);
     margin-right: 13px;
     transition: all 1s;
+    filter: drop-shadow(1px 1px 5px #000);
   }
 
   .play-icon-in {
@@ -47,6 +48,7 @@
     transform: rotate(0deg);
     transition: all 1s;
     opacity: 1;
+    filter: drop-shadow(1px 1px 5px #000);
   }
 
   .stop-icon-out {
@@ -56,12 +58,15 @@
     transform: rotate(-60deg);
     transition: all 1s;
     opacity: 0;
+    filter: drop-shadow(1px 1px 5px #000);
   }
 
-  span {
+  .player-text {
     color: var(--white);
     font-size: 19px;
     font-weight: 450;
+    margin-left: 20px;
+    text-shadow: var(--black) 1px 2px 5px;
   }
 }
 

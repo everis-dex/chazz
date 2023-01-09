@@ -16,8 +16,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
     if (!isPlaying && !isNavVisible) {
       setIsNavVisible(true);
     }
-  }, [isNavVisible, isPlaying, setIsNavVisible])
-
+  }, [isNavVisible, isPlaying, setIsNavVisible]);
 
   const switchPlayPause = () => {
     setIsPlaying(!isPlaying);
@@ -39,7 +38,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
   const resetVideo = () => {
     setIsPlaying(false);
     setControlText("Play");
-  }
+  };
 
   return (
     <>
@@ -49,7 +48,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
         <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
         <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
 
-        <span style={{ marginLeft: 20 }} onClick={switchPlayPause}>
+        <span className="player-text" onClick={switchPlayPause}>
           {controlText} reel
         </span>
       </div>
