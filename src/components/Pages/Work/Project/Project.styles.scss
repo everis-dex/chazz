@@ -1,3 +1,48 @@
+// ACCORDION
+
+.accordion {
+  background-color: var(--white);
+  color: var(--black);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  border: none;
+  transition: 0.4s;
+  border-bottom: var(--hrColor) 1px solid;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 137%;
+}
+
+.accordion-arrow {
+  transform: rotate(90deg);
+  transition: all 0.35s;
+  width: 1em;
+  margin-bottom: 1rem;
+
+  &::after {
+    content: "\276F";
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    transition: all 0.35s;
+  }
+}
+
+// THE REST
+
 .project-container {
   display: block;
   margin-bottom: 10vh;
@@ -46,41 +91,11 @@
   white-space: pre-wrap;
 }
 
-.project-dropdown {
-  font-size: 16px;
-  display: flex;
-  justify-content: space-between;
-  font-weight: 700;
-  line-height: 20px;
-  padding-bottom: 10px;
-  padding-right: 10px;
-  border-bottom: #d3d3d3 1px solid;
-  white-space: pre-wrap;
-}
-
 .body {
   margin-top: 30px;
   font-weight: 450;
   line-height: 137%;
   padding: 0px !important;
-}
-
-.accordion-button {
-  background-color: white !important;
-  padding: 0px !important;
-}
-
-.accordion-button:focus {
-  box-shadow: none !important;
-}
-
-.accordion-button:not(.collapsed) {
-  color: #212529;
-  padding: 0;
-}
-
-.accordion-body {
-  padding: 30px 0px 0px 0px !important;
 }
 
 // MEDIA QUERIES
@@ -95,7 +110,7 @@
     display: block;
   }
 
-  .project-dropdown {
+  .project-accordion {
     display: none;
   }
 }
