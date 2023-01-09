@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Media } from "../../../../components/shared/Media/Media";
 import { IProject } from "../../../../interfaces/cms";
 import { Accordion } from "../Accordion/Accordion";
+
 import "./Project.styles.scss";
 
 type Props = { data: IProject; columns?: string; height?: string; full?: boolean };
