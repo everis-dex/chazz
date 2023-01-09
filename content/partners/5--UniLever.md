@@ -1,7 +1,7 @@
 ---
 name: UniLever
 logo: uploads/logo_unilever.svg
-scale: 100
+scale: 92
 website: https://www.unilever.com/
 sort: 5
 ---

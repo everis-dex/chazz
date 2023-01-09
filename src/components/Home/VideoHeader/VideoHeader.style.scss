@@ -5,6 +5,7 @@
   top: 0;
   z-index: -1;
   left: -50vw;
+  cursor: url("https://cdn-icons-png.flaticon.com/512/16/16363.png?w=740&t=st=1673262195~exp=1673262795~hmac=e6666ee86f2db9b4e532f29698f1f1cf6f7be07c9d2a8cb70b4a7dfd9510b27a");
 }
 
 .player-video {
@@ -13,7 +14,8 @@
   left: 55vw;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  // cursor: pointer;
+  cursor: url("../../../assets/play32.png"), pointer;
   text-shadow: 1px 1px 2px var(--black);
 
   .play-icon-in,
