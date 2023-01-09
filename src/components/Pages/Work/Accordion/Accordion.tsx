@@ -27,6 +27,7 @@ export const Accordion = ({ content }: Props) => {
 
     setOpenDropdown(!openDropdown);
   }
+
   return (
     <div className="project-accordion">
       <button className="accordion" onClick={e => handleDropdown(e.target)}>
