@@ -1,7 +1,7 @@
 ---
 name: Leroy Merlin
 logo: uploads/logo_leroy.svg
-scale: 90
+scale: 82
 website: https://www.leroymerlin.es/
 sort: 4
 ---
