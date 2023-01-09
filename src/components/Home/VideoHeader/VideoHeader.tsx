@@ -16,8 +16,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
     if (!isPlaying && !isNavVisible) {
       setIsNavVisible(true);
     }
-  }, [isNavVisible, isPlaying, setIsNavVisible])
-
+  }, [isNavVisible, isPlaying, setIsNavVisible]);
 
   const switchPlayPause = () => {
     setIsPlaying(!isPlaying);
@@ -39,7 +38,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
   const resetVideo = () => {
     setIsPlaying(false);
     setControlText("Play");
-  }
+  };
 
   return (
     <>
