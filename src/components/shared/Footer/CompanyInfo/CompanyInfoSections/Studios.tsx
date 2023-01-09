@@ -17,8 +17,8 @@ export const Studios = ({ title }: Props) => {
       <p className="section-title">{title}</p>
       <div className="studios-grid" style={{ gridTemplateRows: `repeat(${gridRows}, 1fr)` }}>
         {studios.map((studio, index: number) => (
-          <div className="studios-info" key={index}>
-            <p className="city">{studio.city}</p>
+          <div className="studios-info city" key={index}>
+            {studio.city}
           </div>
         ))}
         <div className="desktop-email">

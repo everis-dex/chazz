@@ -15,7 +15,6 @@ export const HomeHeader = (headerData: IHomeHeader) => {
 
   return (
     <>
-    {/* <div className={isPlaying ? "bg-color-out" : "bg-color"}> */}
       <div className="chazz-header">
         <div className={isPlaying ? "velo-out" : "velo-in"}>
           <span className={isPlaying ? "nav-out" : "nav-in"}>
@@ -36,7 +35,6 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       </div>
 
       <AllowCookies />
-      {/* </div> */}
     </>
   );
 };
