@@ -13,7 +13,7 @@
   margin: 5%;
   margin-bottom: 0;
   border-top: 1px solid var(--black);
-  padding: 20px 0;
+  padding: 32px 0 15px 0;
   font-size: 40px;
   line-height: 107%;
   color: var(--black);
@@ -31,6 +31,10 @@
     font-weight: 500;
     font-size: 24px;
     line-height: 131.3%;
+
+    h1{
+      font-size: 24px;
+    }
   }
 }
 
@@ -48,7 +52,10 @@
 
     .work-detail {
       width: 93%;
-      font-size: 40px;
+
+      h1{
+        font-size: 40px;
+      }
     }
   }
 }
