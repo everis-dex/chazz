@@ -2,38 +2,19 @@ import React, { useState } from "react";
 
 import { Media } from "../../../../components/shared/Media/Media";
 import { IProject } from "../../../../interfaces/cms";
-
+import { Accordion } from "../Accordion/Accordion";
 import "./Project.styles.scss";
 
 type Props = { data: IProject; columns?: string; height?: string; full?: boolean };
 
 export const ProjectCard = ({ data, height = "auto", columns }: Props) => {
-  const style = { width: "100%", height: height, objectFit: "cover" };
+  const style = { width: "100%", height, objectFit: "cover" };
 
   const bodyParagraphs = data.body.substring(1);
 
   const bodyParagraphs1: string = bodyParagraphs.charCodeAt(0) === 10 ? bodyParagraphs.substring(1) : bodyParagraphs;
   const bodyParagraphs2: string = bodyParagraphs1.charCodeAt(0) === 13 ? bodyParagraphs1.substring(1) : bodyParagraphs1;
   const bodyParagraphs3: string = bodyParagraphs2.charCodeAt(0) === 8 ? bodyParagraphs2.substring(1) : bodyParagraphs2;
-
-  // Dropdown
-  const [openDropdown, setOpenDropdown] = useState<boolean>(false);
-  const dropdownText: string = openDropdown ? "Less" : "More";
-
-  function handleDropdown(target: EventTarget) {
-    const accordion = target as Element;
-    // Rotate arrow
-    const arrow = accordion.children[1] as HTMLElement;
-    if (arrow) arrow.style.transform = openDropdown ? "rotate(90deg)" : "rotate(-90deg)";
-    // Show pannel
-    const panel = accordion.nextElementSibling as HTMLElement;
-    if (panel) {
-      const height = openDropdown ? 0 : panel.scrollHeight;
-      panel.style.maxHeight = height + "px";
-    }
-
-    setOpenDropdown(!openDropdown);
-  }
 
   return (
     <div className={`project-container ${columns}`}>
@@ -48,16 +29,9 @@ export const ProjectCard = ({ data, height = "auto", columns }: Props) => {
         </div>
         <span className="properties">{data.subtitle}</span>
       </div>
-
+      {/* Accordion */}
+      <Accordion content={bodyParagraphs} />
       <div className="non-accordion">{bodyParagraphs3}</div>
-
-      <div className="project-accordion">
-        <button className="accordion" onClick={e => handleDropdown(e.target)}>
-          <p>{dropdownText} information</p>
-          <div className="accordion-arrow" />
-        </button>
-        <div className="panel">{bodyParagraphs}</div>
-      </div>
     </div>
   );
 };

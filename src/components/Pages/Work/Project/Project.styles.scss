@@ -1,48 +1,3 @@
-// ACCORDION
-
-.accordion {
-  background-color: var(--white);
-  color: var(--black);
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0;
-  border: none;
-  transition: 0.4s;
-  border-bottom: var(--hrColor) 1px solid;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
-  margin-bottom: 20px;
-  align-items: center;
-}
-
-.panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  font-weight: 450;
-  font-size: 16px;
-  line-height: 137%;
-}
-
-.accordion-arrow {
-  transform: rotate(90deg);
-  transition: all 0.35s;
-  width: 1em;
-  margin-bottom: 1rem;
-
-  &::after {
-    content: "\276F";
-    width: 1em;
-    height: 1em;
-    text-align: center;
-    transition: all 0.35s;
-  }
-}
-
-// THE REST
-
 .project-container {
   display: block;
   margin-bottom: 10vh;
@@ -108,10 +63,6 @@
 
   .non-accordion {
     display: block;
-  }
-
-  .project-accordion {
-    display: none;
   }
 }
 @media (min-width: 1280px) {
