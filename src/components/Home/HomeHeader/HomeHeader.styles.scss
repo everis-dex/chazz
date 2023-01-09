@@ -121,8 +121,7 @@
 
   .chazz-title,
   .chazz-title-out {
-    width: 50%;
-    left: 3%;
+    width: 60%;
     top: 55%;
 
     h1 {
@@ -132,12 +131,6 @@
     h4 {
       width: max-content;
       font-size: 22px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .chazz-title {
-      width: 55%;
     }
   }
 
@@ -151,7 +144,7 @@
     .chazz-title,
     .chazz-title-out {
       top: 60%;
-      left: 5%;
+      left: 3%;
 
       h1 {
         font-size: 76px;
@@ -171,10 +164,11 @@
       background-size: cover;
       background-position: 0 0;
     }
+    
 
     .chazz-title,
     .chazz-title-out {
-      width: 100%;
+      width: 55;
       top: 60%;
       h1 {
         font-size: 90px;
