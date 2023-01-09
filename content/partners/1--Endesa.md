@@ -1,7 +1,7 @@
 ---
 name: Endesa
 logo: uploads/logo_endesa.svg
-scale: 100
+scale: 90
 website: https://www.endesa.com
 sort: 1
 ---
