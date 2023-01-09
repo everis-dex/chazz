@@ -9,12 +9,15 @@
   overflow: hidden;
   position: relative;
 
+
   .velo-in {
     background: #ca8b9b94;
     z-index: 2;
     height: 100vh;
     transition: opacity 1s ease-in-out;
     opacity: 1;
+    margin: auto;
+    padding: 0 5%;
   }
 
   .velo-out {
@@ -23,6 +26,8 @@
     transition: opacity 1s ease-in-out;
     z-index: 2;
     height: 100vh;
+    margin: auto;
+    padding: 0 5%;
   }
 
   .nav-in {
@@ -40,7 +45,6 @@
   width: 65%;
   position: absolute;
   top: 47%;
-  left: 5%;
   font-size: 23px;
   line-height: 1.2;
   transition: opacity 1s ease-in-out;
@@ -64,7 +68,6 @@
   position: absolute;
   z-index: 9;
   top: 47%;
-  left: 5%;
   font-size: 23px;
   line-height: 1.2;
   opacity: 0;
@@ -90,7 +93,6 @@
   z-index: 10;
   position: absolute;
   width: 90%;
-  left: 5%;
   bottom: 3%;
   padding: 16px;
 
