@@ -2,7 +2,7 @@ export const routesInfo: RoutesInfo[] = [
   {
     id: 0,
     name: "We are",
-    route: "/weare"
+    route: "/"
   },
   // {
   //   id: 1,
