@@ -1,7 +1,7 @@
 ---
 name: Renfe
 logo: uploads/logo_renfe.svg
-scale: 100
+scale: 75
 website: http://renfe.es/
 sort: 2
 ---
