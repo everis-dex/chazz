@@ -26,7 +26,8 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           setIsPlaying={setIsPlaying}
           isNavVisible={isNavVisible}
           setIsNavVisible={setisNavVisible}
-        ></VideoHeader>
+        />
+
         <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
           <LineBreakerSelector typedLines={headerData.title} />
           <h4>{headerData.subtitle}</h4>
