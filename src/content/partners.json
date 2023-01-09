@@ -2,36 +2,36 @@
   {
     "id": 1,
     "logo": "uploads/logo_endesa.svg\r",
-    "scale": "90\r",
+    "scale": "85\r",
     "website": "https://www.endesa.com\r",
     "name": "Endesa\r"
   },
-  { "id": 2, "logo": "uploads/logo_renfe.svg\r", "scale": "80\r", "website": "http://renfe.es/\r", "name": "Renfe\r" },
+  { "id": 2, "logo": "uploads/logo_renfe.svg\r", "scale": "75\r", "website": "http://renfe.es/\r", "name": "Renfe\r" },
   {
     "id": 3,
     "logo": "uploads/.jpg\r",
-    "scale": "80\r",
+    "scale": "75\r",
     "website": "https://www.bancosantander.es/\r",
     "name": "Banco Santander\r"
   },
   {
     "id": 4,
     "logo": "uploads/logo_leroy.svg\r",
-    "scale": "90\r",
+    "scale": "82\r",
     "website": "https://www.leroymerlin.es/\r",
     "name": "Leroy Merlin\r"
   },
   {
     "id": 5,
     "logo": "uploads/logo_unilever.svg\r",
-    "scale": "90\r",
+    "scale": "80\r",
     "website": "https://www.unilever.com/\r",
     "name": "UniLever\r"
   },
   {
     "id": 6,
     "logo": "uploads/logo_ministerio.svg\r",
-    "scale": "90\r",
+    "scale": "80\r",
     "website": "https://administracion.gob.es/\r",
     "name": "Gobierno de España\r"
   },
@@ -45,56 +45,56 @@
   {
     "id": 8,
     "logo": "uploads/logo_loewe.svg\r",
-    "scale": "100\r",
+    "scale": "80\r",
     "website": "https://www.loewe.com/\r",
     "name": "Loewe\r"
   },
   {
     "id": 9,
     "logo": "uploads/logo_generalitat.svg\r",
-    "scale": "95\r",
+    "scale": "80\r",
     "website": "http://www.gencat.es/\r",
     "name": "Generalitat de Catalunya\r"
   },
   {
     "id": 10,
     "logo": "uploads/logo_seat.svg\r",
-    "scale": "90\r",
+    "scale": "75\r",
     "website": "https://www.seat.es/\r",
     "name": "Seat\r"
   },
   {
     "id": 11,
     "logo": "uploads/logo_correos.svg\r",
-    "scale": "95\r",
+    "scale": "80\r",
     "website": "https://www.correos.es/\r",
     "name": "Correos\r"
   },
   {
     "id": 12,
     "logo": "uploads/logo_buff.svg\r",
-    "scale": "85\r",
+    "scale": "75\r",
     "website": "https://www.buff.com/es_es/\r",
     "name": "Buff\r"
   },
   {
     "id": 13,
     "logo": "uploads/logo_caixaBank.svg\r",
-    "scale": "80\r",
+    "scale": "75\r",
     "website": "https://www.caixabank.es/\r",
     "name": "Caixabank\r"
   },
   {
     "id": 14,
     "logo": "uploads/logo_edp.svg\r",
-    "scale": "100\r",
+    "scale": "85\r",
     "website": "https://www.edpenergia.es/es/\r",
     "name": "Edp\r"
   },
   {
     "id": 15,
     "logo": "uploads/logo_zurich.svg\r",
-    "scale": "95\r",
+    "scale": "75\r",
     "website": "https://www.zurich.es/\r",
     "name": "Zurich Seguros\r"
   }
