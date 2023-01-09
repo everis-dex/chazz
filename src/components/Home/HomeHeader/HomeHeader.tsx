@@ -15,11 +15,16 @@ export const HomeHeader = (headerData: IHomeHeader) => {
 
   return (
     <>
+    {/* <div className={isPlaying ? "bg-color-out" : "bg-color"}> */}
       <div className="chazz-header">
         <div className={isPlaying ? "velo-out" : "velo-in"}>
           <span className={isPlaying ? "nav-out" : "nav-in"}>
             <Nav color="white" disabledMenuOption="" isNavVisible={isNavVisible} isPlaying={isPlaying} />
           </span>
+          <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
+          <LineBreakerSelector typedLines={headerData.title} />
+          <h4>{headerData.subtitle}</h4>
+        </div>
         </div>
         <VideoHeader
           isPlaying={isPlaying}
@@ -27,13 +32,11 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           isNavVisible={isNavVisible}
           setIsNavVisible={setisNavVisible}
         ></VideoHeader>
-        <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
-          <LineBreakerSelector typedLines={headerData.title} />
-          <h4>{headerData.subtitle}</h4>
-        </div>
+        
       </div>
 
       <AllowCookies />
+      {/* </div> */}
     </>
   );
 };

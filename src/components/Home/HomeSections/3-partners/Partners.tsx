@@ -11,7 +11,7 @@ export const Partners = (partnersData: IHomeSection) => {
   return (
     <>
       <div className="partner-section">
-        <Container id="Partners">
+        <div id="Partners">
           <div className="titles">
             <h3>{partnersData.title}</h3>
             {partnersData.subtitle && <p>{partnersData.subtitle}</p>}
@@ -23,7 +23,7 @@ export const Partners = (partnersData: IHomeSection) => {
               </div>
             ))}
           </div>
-        </Container>
+        </div>
       </div>
     </>
   );
