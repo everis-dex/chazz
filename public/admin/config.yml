@@ -150,6 +150,7 @@ collections:
       #   widget: list
       #   fields:
       #     - { label: Title, name: title, widget: string }
+      #     - { label: Subtitle, name: subtitle, widget: string }
       #     - { label: Content, name: content, widget: string }
 
   - name: office
