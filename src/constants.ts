@@ -4,11 +4,11 @@ export const routesInfo: RoutesInfo[] = [
     name: "We are",
     route: "/"
   },
-  // {
-  //   id: 1,
-  //   name: "Services",
-  //   route: "/services"
-  // },
+  {
+    id: 1,
+    name: "Services",
+    route: "/services"
+  },
   {
     id: 2,
     name: "Work",
