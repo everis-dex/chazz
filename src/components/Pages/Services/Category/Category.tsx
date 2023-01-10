@@ -1,14 +1,20 @@
 import React from "react";
 import { useEffect } from "react";
+import { ICategory } from "../../../../interfaces/cms";
 
-export const Category = () => {
+import "./Category.styles.scss";
+
+export const Category = (category: ICategory) => {
   useEffect(() => window.scrollTo(0, 0), []);
 
   return (
     <>
-      <div className="services-container">
-        <h1 className="services-header">Services</h1>
-        <div className="services-container--content"></div>
+      <div className="cateogry-container">
+        <div className="category-header">
+          <h1 className="title">{category.title}</h1>
+          <h3 className="section">{category.section}</h3>
+        </div>
+        <div className="cateogry-container--content"></div>
       </div>
     </>
   );
