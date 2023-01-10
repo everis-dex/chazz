@@ -4,6 +4,7 @@ image: /uploads/vidacaixa_grid_web.jpg
 title: VidaCaixa
 description: Rethink Life Insurance ans Savings CX.
 subtitle: Research and Behavioural, Strategic Design, CX
+incarousel: 0
 ---
 
 The banking and insurance sector faced changes: new taxation and less attractive returns on long-term savings, as well as the appearance of emerging new digital players, and challenging traditional players. On top of everything, consumers expect companies to offer them what they need immediately.

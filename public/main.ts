@@ -27,6 +27,7 @@ interface Metadata {
   email?: string;
   address?: string;
   sort?: string;
+  incarousel?: string;
 }
 
 interface BuiltElement {
@@ -47,6 +48,7 @@ interface BuiltElement {
   email?: string;
   address?: string;
   body?: string;
+  incarousel?: string;
 }
 
 const blankMetadata: Metadata = {
@@ -65,7 +67,8 @@ const blankMetadata: Metadata = {
   phone: "",
   email: "",
   address: "",
-  sort: ""
+  sort: "",
+  incarousel: ""
 };
 
 /**
@@ -169,6 +172,7 @@ const constructElement = (
       element.service = metadata.service;
       element.value = metadata.value;
       element.body = data.content;
+      element.incarousel = metadata.incarousel;
       break;
 
     case "partners":
