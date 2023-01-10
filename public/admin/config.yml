@@ -115,6 +115,12 @@ collections:
       - { label: Description, name: description, widget: string }
       - { label: Subtitle, name: subtitle, widget: string }
       - { label: Body, name: body, widget: markdown }
+      - {
+          label: In carousel,
+          name: incarousel,
+          widget: string,
+          hint: "1 to show this project in the homepage carousel. (Max. 5 projects)"
+        }
     sortable_fields: ["date"]
 
   - name: partner
