@@ -9,7 +9,6 @@
   overflow: hidden;
   position: relative;
 
-
   .velo-in {
     background: #ca8b9b94;
     z-index: 2;
@@ -17,7 +16,6 @@
     transition: opacity 1s ease-in-out;
     opacity: 1;
     margin: auto;
-    padding: 0 5%;
   }
 
   .velo-out {
@@ -31,6 +29,7 @@
   }
 
   .nav-in {
+    padding: 0 5%;
     opacity: 1;
     transition: opacity 1s ease-in-out;
   }
@@ -44,6 +43,7 @@
   color: var(--white);
   width: 65%;
   position: absolute;
+  padding-left: 5%;
   top: 47%;
   font-size: 23px;
   line-height: 1.2;
