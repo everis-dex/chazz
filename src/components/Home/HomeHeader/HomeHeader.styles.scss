@@ -40,10 +40,10 @@
 
 .chazz-title {
   color: var(--white);
-  width: 65%;
+  width: 70%;
   position: absolute;
   padding-left: 5%;
-  top: 47%;
+  top: 40%;
   font-size: 23px;
   line-height: 1.2;
   transition: opacity 1s ease-in-out;
@@ -63,10 +63,10 @@
 
 .chazz-title-out {
   color: var(--white);
-  width: 265px;
+  width: 70%;
   position: absolute;
   z-index: 9;
-  top: 47%;
+  top: 40%;
   font-size: 23px;
   line-height: 1.2;
   opacity: 0;
@@ -121,11 +121,11 @@
   }
   .chazz-title,
   .chazz-title-out {
-    width: 60%;
+    width: 65%;
     top: 55%;
 
     h1 {
-      font-size: 4rem;
+      font-size: 48px;
     }
 
     h4 {
@@ -134,6 +134,13 @@
     }
   }
 
+  @media (min-width: 1024px) {
+
+    .chazz-title,
+    .chazz-title-out {
+      width: 60%;
+    }  
+  }
   @media (min-width: 1280px) {
     .chazz-header {
       background-size: 1280px;
@@ -143,8 +150,6 @@
 
     .chazz-title,
     .chazz-title-out {
-      top: 60%;
-
       h1 {
         font-size: 76px;
         position: relative;
@@ -166,8 +171,7 @@
 
     .chazz-title,
     .chazz-title-out {
-      width: 55;
-      top: 60%;
+      width: 65%;
       h1 {
         font-size: 90px;
       }
@@ -182,11 +186,6 @@
     .chazz-header {
       background-size: cover;
       background-position: 0 -95px;
-    }
-
-    .chazz-title,
-    .chazz-title-out {
-      top: 50%;
     }
   }
 }
