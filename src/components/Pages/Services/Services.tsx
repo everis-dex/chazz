@@ -29,12 +29,19 @@ export const Services = () => {
       </div>
       <div className="services-projects">
         <h1 className="header">Featured Projects</h1>
-        {projects.map((project: IProject, index: number) => (
-          <div className="project" key={index}>
-            <img src={project.image} alt="Project" />
-            <p className="title">{project.title}</p>
-          </div>
-        ))}
+        <div className="project-list">
+          {projects.map(
+            (project: IProject, index: number) =>
+              index > 4 && (
+                <div className="project" key={index}>
+                  <img src={project.image} alt="Project" />
+                  <p className="title">
+                    {project.title} <span> —</span>
+                  </p>
+                </div>
+              )
+          )}
+        </div>
         <Link to={"/work"} className="more-projects">
           More projects →
         </Link>

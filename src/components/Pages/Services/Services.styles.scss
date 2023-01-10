@@ -23,7 +23,7 @@
 .services-projects {
   background-color: #fafafa;
   padding: 5%;
-  padding-top: 20%;
+  padding-top: 70px;
 
   .header {
     font-weight: 700;
@@ -41,6 +41,10 @@
       font-weight: 700;
       font-size: 16px;
       line-height: 23px;
+
+      span {
+        display: none;
+      }
     }
 
     img {
@@ -50,7 +54,7 @@
     }
   }
   .more-projects {
-    margin: 25% 0;
+    margin: 70px 0;
     padding: 0;
   }
 }
@@ -67,6 +71,29 @@
     img {
       height: auto;
       object-fit: none;
+    }
+  }
+
+  .services-projects {
+    .project-list {
+      margin-top: 10px;
+      display: grid;
+      grid-gap: 30px;
+      overflow: hidden;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 100%;
+
+      .project {
+        img {
+          height: 230px;
+        }
+        .title span {
+          display: contents;
+        }
+      }
+    }
+    .more-projects {
+      margin: 50px 0;
     }
   }
 }
