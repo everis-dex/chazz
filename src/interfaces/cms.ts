@@ -40,6 +40,24 @@ export interface IWork {
   subtitle: string;
 }
 
+// Services page
+export interface IServices {
+  page: string;
+  header: object;
+  projects: object;
+}
+
+export interface IServicesHeader {
+  title: string;
+  subtitle: string;
+  image: string;
+}
+
+export interface IServicesProjects {
+  title: string;
+  more: string;
+}
+
 // ##############################
 // #         COMPONENTS
 // ##############################

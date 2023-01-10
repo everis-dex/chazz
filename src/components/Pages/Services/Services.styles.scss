@@ -7,7 +7,7 @@
   margin-top: 20%;
   border-top: 1px solid var(--black);
 
-  .title {
+  .header-title {
     margin: 20px 0;
     font-weight: 500;
     font-size: 40px;
@@ -23,7 +23,7 @@
 .services-projects {
   background-color: #fafafa;
   padding: 5%;
-  padding-top: 70px;
+  padding-top: 90px;
 
   .header {
     font-weight: 700;
@@ -33,6 +33,7 @@
     padding: 30px 0;
     border-top: 1px solid var(--black);
   }
+
   .project {
     margin-bottom: 40px;
 
@@ -62,8 +63,9 @@
 // MEDIA QUERIES
 @media (min-width: 768px) {
   .services-header {
-    margin-top: 0;
-    .title {
+    margin-top: 70px;
+
+    .header-title {
       font-size: 72px;
       line-height: 77px;
     }
@@ -72,6 +74,9 @@
       height: auto;
       object-fit: none;
     }
+  }
+  .services-categories {
+    margin-bottom: 20%;
   }
 
   .services-projects {

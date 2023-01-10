@@ -1,28 +1,33 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import categories from "../../../content/categories.json";
-import projects from "../../../content/projects.json";
-import { ICategory, IProject } from "../../../interfaces/cms";
 import { Footer, Nav } from "../index";
 import { Category } from "./Category/Category";
+
+import categories from "../../../content/categories.json";
 import service from "../../../content/pages/services/services.json";
+import projects from "../../../content/projects.json";
+import { ICategory, IProject, IServicesHeader, IServicesProjects } from "../../../interfaces/cms";
 
 import "./Services.styles.scss";
 
 export const Services = () => {
   useEffect(() => window.scrollTo(0, 0), []);
 
+  const headerData: IServicesHeader = service.header;
+  const projectsData: IServicesProjects = service.projects;
+
   return (
     <>
       <Nav color="black" disabledMenuOption="/services" isNavVisible={true} isPlaying={false} />
       <div className="services-container">
         <div className="services-header">
-          <h1 className="title">{service.header.title}</h1>
-          {service.header.subtitle && <h3 className="subtitle">{service.header.subtitle}</h3>}
-          <img src={service.header.image} alt="Header" />
+          <h1 className="header-title">{headerData.title}</h1>
+          {headerData.subtitle && <h3 className="subtitle">{headerData.subtitle}</h3>}
+          <img src={headerData.image} alt="Header" />
         </div>
-        <div className="services-content">
+        {/* Categories section */}
+        <div className="services-categories">
           {categories.map((category: ICategory, index: number) => (
             <div className="category" key={index}>
               <Category {...category} />
@@ -30,8 +35,9 @@ export const Services = () => {
           ))}
         </div>
       </div>
+      {/* Projects section */}
       <div className="services-projects">
-        <h1 className="header">{service.projects.title}</h1>
+        <h1 className="header">{projectsData.title}</h1>
         <div className="project-list">
           {projects.map(
             (project: IProject, index: number) =>
@@ -46,7 +52,7 @@ export const Services = () => {
           )}
         </div>
         <Link to={"/work"} className="more-projects">
-          More projects →
+          {projectsData.more} →
         </Link>
       </div>
       <Footer />
