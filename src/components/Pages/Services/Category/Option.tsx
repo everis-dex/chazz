@@ -8,9 +8,11 @@ export const Option = ({ title, content }: Props) => {
 
   function handleDropdown(target: EventTarget) {
     const accordion = target as HTMLElement;
+
     // Add space after the accordion in parent
     const parent = accordion.parentElement;
     if (parent) parent.style.marginBottom = openAccordion ? "0px" : "20px";
+
     // Show pannel
     const panel = accordion.nextElementSibling as HTMLElement;
     if (panel) {
