@@ -16,7 +16,8 @@ var blankMetadata = {
     phone: "",
     email: "",
     address: "",
-    sort: ""
+    sort: "",
+    incarousel: ""
 };
 /**
  * Reads .md files of each collection in /content/ subfolders and creates JSON file with all the information.
@@ -108,6 +109,7 @@ var constructElement = function (folder, metadata, data) {
             element.service = metadata.service;
             element.value = metadata.value;
             element.body = data.content;
+            element.incarousel = metadata.incarousel;
             break;
         case "partners":
             element.id = metadata.sort ? parseInt(metadata.sort) : -1;
