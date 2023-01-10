@@ -4,15 +4,16 @@
 
 .category-header {
   border-bottom: 1px solid var(--black);
-  padding-bottom: 30px;
-  margin-bottom: 50px;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
 
   .title {
     font-weight: 500;
-    font-size: 56px;
-    line-height: 71px;
+    font-size: 32px;
+    line-height: 40px;
 
     span {
+      display: none;
       font-size: 30px;
       margin-bottom: 10px;
     }
@@ -20,8 +21,8 @@
 
   .section {
     font-weight: 450;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 20px;
     color: var(--gray);
   }
 }
@@ -61,6 +62,24 @@
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
+  .category-header {
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+
+    .title {
+      font-size: 56px;
+      line-height: 71px;
+
+      span {
+        display: contents;
+      }
+    }
+
+    .section {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
   .category-content {
     display: grid;
     grid-template-columns: 30% auto;
