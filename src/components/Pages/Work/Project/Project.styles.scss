@@ -6,6 +6,7 @@
     grid-column: auto;
   }
 }
+
 .project-media {
   display: flex;
   margin: auto;
@@ -50,6 +51,14 @@
   font-weight: 450;
   line-height: 137%;
   padding: 0px !important;
+}
+
+@media (max-width: 425px) {
+  .project-media {
+    img {
+      height: 400px !important;
+    }
+  }
 }
 
 // MEDIA QUERIES
