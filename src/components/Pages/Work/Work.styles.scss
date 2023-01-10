@@ -21,7 +21,7 @@
 }
 
 .work-container--content {
-  margin: 5vw;
+  margin: 5%;
   width: auto;
   margin-top: 0;
   display: grid;
@@ -42,12 +42,11 @@
 // MEDIA QUERIES
 @media (min-width: 1280px) {
   .work-header {
-    margin: 3%;
     margin-bottom: 0;
     font-size: 72px;
   }
   .work-container--content {
-    margin: 0 3% 10% 3%;
+    margin: 0 5% 10% 5%;
     grid-template-columns: 49% 49%;
     grid-gap: 0% 2%;
 
