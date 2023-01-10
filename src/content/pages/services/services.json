@@ -3,9 +3,10 @@
   "header": {
     "title": "Services",
     "subtitle": "",
-    "image": "/uploads/video.png"
+    "image": "/uploads/Services-header.png"
   },
   "projects": {
-    "title": "Featured Projects"
+    "title": "Featured Projects",
+    "more": "More projects"
   }
 }

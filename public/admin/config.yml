@@ -99,6 +99,7 @@ collections:
         widget: object
         fields:
           - { label: Title, name: title, widget: string }
+          - { label: More, name: more, widget: string }
 
   ##############################
   #         COMPONENTS

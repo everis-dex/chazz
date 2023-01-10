@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import categories from "../../../content/categories.json";
 import projects from "../../../content/projects.json";
+import { ICategory, IProject } from "../../../interfaces/cms";
 import { Footer, Nav } from "../index";
 import { Category } from "./Category/Category";
+import service from "../../../content/pages/services/services.json";
+
 import "./Services.styles.scss";
-import { ICategory, IProject } from "../../../interfaces/cms";
-import { Link } from "react-router-dom";
 
 export const Services = () => {
   useEffect(() => window.scrollTo(0, 0), []);
@@ -15,9 +18,9 @@ export const Services = () => {
       <Nav color="black" disabledMenuOption="/services" isNavVisible={true} isPlaying={false} />
       <div className="services-container">
         <div className="services-header">
-          <h1 className="title">Services</h1>
-          {false && <h3 className="subtitle">Subtitle</h3>}
-          <img src="assets/Services-header.png" alt="Header" />
+          <h1 className="title">{service.header.title}</h1>
+          {service.header.subtitle && <h3 className="subtitle">{service.header.subtitle}</h3>}
+          <img src={service.header.image} alt="Header" />
         </div>
         <div className="services-content">
           {categories.map((category: ICategory, index: number) => (
@@ -28,7 +31,7 @@ export const Services = () => {
         </div>
       </div>
       <div className="services-projects">
-        <h1 className="header">Featured Projects</h1>
+        <h1 className="header">{service.projects.title}</h1>
         <div className="project-list">
           {projects.map(
             (project: IProject, index: number) =>
