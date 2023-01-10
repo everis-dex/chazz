@@ -63,6 +63,7 @@ export interface IProject {
   image: string;
   description: string;
   body: string;
+  incarousel: string;
 }
 
 export interface IPartner {
