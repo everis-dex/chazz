@@ -1,7 +1,7 @@
 ---
-name: Banco Santander
-logo: uploads/.jpg
-scale: 75
-website: https://www.bancosantander.es/
+name: Wabi
+logo: uploads/logo_wabi.svg
+scale: 50
+website:
 sort: 3
 ---

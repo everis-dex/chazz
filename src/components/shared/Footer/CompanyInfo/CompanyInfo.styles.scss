@@ -2,7 +2,12 @@
 
 // MOBILE FIRST
 
+#Footer {
+  margin: 0 5%;
+}
+
 .we-are-section {
+  overflow: hidden;
   background-color: var(--black);
   color: var(--white);
 
@@ -102,11 +107,9 @@
     }
 
     .studios-info {
-      .city {
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 0;
-      }
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 0;
     }
   }
 
@@ -165,7 +168,7 @@
   .offices-container,
   .studios-grid {
     display: grid;
-    grid-gap: 15px;
+    column-gap: 15px;
     grid-template-columns: repeat(3, 1fr);
 
     .offices-info {
@@ -219,11 +222,7 @@
 
       .studios-info {
         margin-bottom: 0;
-
-        .city {
-          margin-bottom: 0;
-          font-size: 32px;
-        }
+        font-size: 32px;
       }
 
       .email {

@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 
 import { IHomeFooter } from "../../../../interfaces/cms";
 import { GetInTouch, Offices, Studios } from "./index";
@@ -11,7 +10,7 @@ export const CompanyInfo = (footerData: IHomeFooter) => {
 
   return (
     <div className="we-are-section">
-      <Container>
+      <div id="Footer">
         <div className="we-are-grid">
           <h2>
             <strong>{footerData.title}</strong>
@@ -22,7 +21,7 @@ export const CompanyInfo = (footerData: IHomeFooter) => {
           <hr className="divisor-line" />
           <GetInTouch title={footerData.touch} socials={socials} />
         </div>
-      </Container>
+      </div>
     </div>
   );
 };

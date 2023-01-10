@@ -2,7 +2,7 @@
   display: grid;
   background-color: black;
   grid-gap: 20px;
-  padding: 50px 25px;
+  padding: 50px 5%;
 }
 
 .footer-item {
@@ -24,8 +24,8 @@
 // MEDIA QUERIES
 @media (min-width: 768px) {
   .footer {
-    grid-template-columns: 34% auto;
-    padding: 20px 30px;
+    grid-template-columns: 31% auto;
+    padding: 20px 5%;
   }
 
   .footer-item {

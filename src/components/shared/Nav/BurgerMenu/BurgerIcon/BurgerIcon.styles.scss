@@ -42,6 +42,7 @@ input#open-close:checked + .toggle-button-pages:after {
 .toggle-button {
   display: block;
   width: 26px;
+  margin-right: 5%;
   height: 26px;
   position: relative;
   cursor: pointer;
@@ -77,6 +78,7 @@ input#open-close:checked + .toggle-button-pages:after {
 .toggle-button-pages {
   display: block;
   width: 26px;
+  margin-right: 5%;
   height: 26px;
   position: relative;
   cursor: pointer;

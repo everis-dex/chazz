@@ -14,10 +14,10 @@
 
 .chazz-logo {
   width: 137px;
+  padding-left: 5%;
   display: block;
   float: left;
   position: relative;
-  left: 5%;
   top: 40px;
   z-index: 99;
 }
@@ -103,7 +103,6 @@
 
 @media (min-width: 1024px) {
   .chazz-logo {
-    left: 5%;
   }
   .nav {
     margin-top: 2.2%;
@@ -114,7 +113,6 @@
 @media (min-width: 1280px) {
   .chazz-logo {
     width: 185px;
-    left: 3%;
   }
   .nav ul li {
     margin-right: 36px;

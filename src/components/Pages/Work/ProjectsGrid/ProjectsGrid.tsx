@@ -22,9 +22,13 @@ export const ProjectsGrid = (workData: IWork) => {
   let currentRow: number = 0;
   let configuration = config[0];
 
-  function handleProjectFormat() {
+  function handleProjectFormat(project: IProject) {
+    // Create image to obtain height
+    const img = new Image();
+    img.src = project.image;
+
     currentColumn++;
-    let imgHeight: string = "300px";
+    let imgHeight: string = img.height / 2 + "px";
     let columnFullWidth: string = ""; // full-width can be "" or "full-width"
     let columnPosition: number = currentColumn % columnCount;
 
@@ -34,9 +38,9 @@ export const ProjectsGrid = (workData: IWork) => {
         currentRow = currentColumn / columnCount;
         configuration = config[currentRow];
 
-        if (configuration === formats.left) imgHeight = "600px";
+        if (configuration === formats.left) imgHeight = img.height + "px";
         if (configuration === formats.big) {
-          imgHeight = "600px";
+          imgHeight = img.height + "px";
           columnFullWidth = "full-width";
           // Occupies entire row, so head to next row
           currentRow++;
@@ -45,7 +49,7 @@ export const ProjectsGrid = (workData: IWork) => {
         break;
 
       case 1: // right column
-        if (configuration === formats.right) imgHeight = "600px";
+        if (configuration === formats.right) imgHeight = img.height + "px";
         break;
     }
     return [imgHeight, columnFullWidth];
@@ -61,7 +65,7 @@ export const ProjectsGrid = (workData: IWork) => {
 
         {projects &&
           projects.map((project: IProject, index: number) => {
-            let valuesProjectFormat = handleProjectFormat();
+            let valuesProjectFormat = handleProjectFormat(project);
             return (
               <Fragment key={index}>
                 <ProjectCard data={project} height={valuesProjectFormat[0]} columns={valuesProjectFormat[1]} />

@@ -9,10 +9,10 @@
   { "id": 2, "logo": "uploads/logo_renfe.svg\r", "scale": "75\r", "website": "http://renfe.es/\r", "name": "Renfe\r" },
   {
     "id": 3,
-    "logo": "uploads/.jpg\r",
-    "scale": "75\r",
-    "website": "https://www.bancosantander.es/\r",
-    "name": "Banco Santander\r"
+    "logo": "uploads/logo_wabi.svg\r",
+    "scale": "50\r",
+    "website": "http://www.gencat.es/\r",
+    "name": "Wabi\r"
   },
   {
     "id": 4,

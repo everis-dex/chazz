@@ -13,23 +13,23 @@
   margin: 5%;
   margin-bottom: 0;
   border-top: 1px solid var(--black);
-  padding: 32px 0 15px 0;
+  padding: 32px 0 5px 0;
   font-size: 40px;
   line-height: 107%;
   color: var(--black);
 }
 
 .work-container--content {
-  margin: 5vw;
+  margin: 5%;
   width: auto;
   margin-top: 0;
   display: grid;
 
   .work-detail {
-    margin-bottom: 10vh;
+    margin-bottom: 7vh;
     width: 90vw;
     font-weight: 500;
-    font-size: 24px;
+    // font-size: 24px;
     line-height: 131.3%;
 
     h1 {
@@ -41,12 +41,11 @@
 // MEDIA QUERIES
 @media (min-width: 1280px) {
   .work-header {
-    margin: 3%;
     margin-bottom: 0;
     font-size: 72px;
   }
   .work-container--content {
-    margin: 0 3% 10% 3%;
+    margin: 0 5% 10% 5%;
     grid-template-columns: 49% 49%;
     grid-gap: 0% 2%;
 
@@ -58,12 +57,15 @@
       }
     }
   }
+  .header-nav {
+    padding-right: 5%;
+  }
 }
 
 @media (min-width: 1440px) {
   .work-container--content {
     .work-detail {
-      width: 83%;
+      width: 85%;
     }
   }
 }
