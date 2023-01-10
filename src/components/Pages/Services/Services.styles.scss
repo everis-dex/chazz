@@ -14,5 +14,17 @@
   }
   img {
     width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+}
+
+// MEDIA QUERIES
+@media (min-width: 768px) {
+  .services-header {
+    img {
+      height: auto;
+      object-fit: none;
+    }
   }
 }

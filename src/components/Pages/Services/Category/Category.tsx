@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 import { ICategory } from "../../../../interfaces/cms";
+import { Option } from "./Option";
 
 import "./Category.styles.scss";
 
@@ -10,42 +10,15 @@ const options = [
     content:
       "Exploring human behavior to understand needs and motivations converted into insights to feed the Ideation and Conceptualization phases. Qualitative, and Quantitative, Human and Business. We combine methodologies and perspectives to provide the right direction."
   },
-  {
-    title: "Strategic Design",
-    content:
-      "Exploring human behavior to understand needs and motivations converted into insights to feed the Ideation and Conceptualization phases. Qualitative, and Quantitative, Human and Business. We combine methodologies and perspectives to provide the right direction."
-  },
-  {
-    title: "Branding",
-    content:
-      "Exploring human behavior to understand needs and motivations converted into insights to feed the Ideation and Conceptualization phases. Qualitative, and Quantitative, Human and Business. We combine methodologies and perspectives to provide the right direction."
-  },
-  {
-    title: "Digital Products, UX & UI",
-    content:
-      "Exploring human behavior to understand needs and motivations converted into insights to feed the Ideation and Conceptualization phases. Qualitative, and Quantitative, Human and Business. We combine methodologies and perspectives to provide the right direction."
-  },
-  {
-    title: "Start-up as a service",
-    content:
-      "Exploring human behavior to understand needs and motivations converted into insights to feed the Ideation and Conceptualization phases. Qualitative, and Quantitative, Human and Business. We combine methodologies and perspectives to provide the right direction."
-  },
-  {
-    title: "Trends & Foresight",
-    content:
-      "Exploring human behavior to understand needs and motivations converted into insights to feed the Ideation and Conceptualization phases. Qualitative, and Quantitative, Human and Business. We combine methodologies and perspectives to provide the right direction."
-  }
+  { title: "Strategic Design", content: "" },
+  { title: "Branding", content: "" },
+  { title: "Digital Products, UX & UI", content: "" },
+  { title: "Start-up as a service", content: "" },
+  { title: "Trends & Foresight", content: "" }
 ];
 
 export const Category = (category: ICategory) => {
   useEffect(() => window.scrollTo(0, 0), []);
-
-  const [openAccordion, setOpenAccordion] = useState<boolean>(false);
-  const accordionSymbol: string = openAccordion ? "-" : "+";
-
-  function handleDropdown() {
-    setOpenAccordion(!openAccordion);
-  }
 
   return (
     <>
@@ -62,13 +35,9 @@ export const Category = (category: ICategory) => {
           <div className="body">{category.body}</div>
           <div className="category-options">
             {options.map((option, index: number) => (
-              <div className="option" key={index} onClick={() => handleDropdown()}>
-                <div className="accordion">
-                  {option.title}
-                  <span>{accordionSymbol}</span>
-                </div>
-                <div className="panel">{option.content}</div>
-              </div>
+              <Fragment key={index}>
+                <Option title={option.title} content={options[0].content} />
+              </Fragment>
             ))}
           </div>
         </div>
