@@ -40,9 +40,44 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
     setControlText("Play");
   };
 
+
+  useEffect(() => {
+    const handleMouseMove = (event: any) => {
+      console.log(window.innerWidth);
+
+      if (controlRef.current){
+          if(event.clientY > 70 && event.clientX < window.innerWidth - 120){
+          const scrollY = window.scrollY;
+          const postY = event.clientY;
+          const scrollFinalY = scrollY + postY - 10;
+          const scrollX = window.scrollX;
+          const postX = event.clientX;
+          const scrollFinalX = scrollX + postX - 50;
+  
+          controlRef.current.style.top = scrollFinalY.toString().concat('px');
+          controlRef.current.style.left = scrollFinalX.toString().concat('px');
+          controlRef.current.style.opacity = '1'; 
+          // controlRef.current.style.left = event.clientX.toString().concat('px'); 
+        }else{
+          controlRef.current.style.opacity = '0'; 
+        };
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  const controlRef = useRef<HTMLDivElement>(null); 
+
+
+
   return (
     <>
-      <div className="player-video">
+      <div className="player-video" ref={controlRef}>
         {isPlaying}
 
         <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
