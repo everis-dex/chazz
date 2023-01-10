@@ -1,0 +1,11 @@
+{
+  "page": "Services",
+  "header": {
+    "title": "Services",
+    "subtitle": "",
+    "image": "/uploads/video.png"
+  },
+  "projects": {
+    "title": "Featured Projects"
+  }
+}
