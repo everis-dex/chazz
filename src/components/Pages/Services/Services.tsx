@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import categories from "../../../content/categories.json";
+import projects from "../../../content/projects.json";
 import { Footer, Nav } from "../index";
 import { Category } from "./Category/Category";
 import "./Services.styles.scss";
-import { ICategory } from "../../../interfaces/cms";
+import { ICategory, IProject } from "../../../interfaces/cms";
+import { Link } from "react-router-dom";
 
 export const Services = () => {
   useEffect(() => window.scrollTo(0, 0), []);
@@ -24,6 +26,18 @@ export const Services = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className="services-projects">
+        <h1 className="header">Featured Projects</h1>
+        {projects.map((project: IProject, index: number) => (
+          <div className="project" key={index}>
+            <img src={project.image} alt="Project" />
+            <p className="title">{project.title}</p>
+          </div>
+        ))}
+        <Link to={"/work"} className="more-projects">
+          More projects →
+        </Link>
       </div>
       <Footer />
     </>
