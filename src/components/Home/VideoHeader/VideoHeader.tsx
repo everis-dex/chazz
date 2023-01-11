@@ -40,7 +40,6 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
     setControlText("Play");
   };
 
-
   useEffect(() => {
     const handleMouseMove = (event: any) => {
       if (controlRef.current) {
@@ -52,18 +51,18 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
           const postX = event.clientX;
           const scrollFinalX = scrollX + postX - 50;
 
-          controlRef.current.style.top = scrollFinalY.toString().concat('px');
-          controlRef.current.style.left = scrollFinalX.toString().concat('px');
-          controlRef.current.style.opacity = '1';
-          // controlRef.current.style.left = event.clientX.toString().concat('px'); 
+          controlRef.current.style.top = scrollFinalY.toString().concat("px");
+          controlRef.current.style.left = scrollFinalX.toString().concat("px");
+          controlRef.current.style.opacity = "1";
+          // controlRef.current.style.left = event.clientX.toString().concat('px');
         } else {
-          controlRef.current.style.opacity = '0';
-        };
+          controlRef.current.style.opacity = "0";
+        }
       }
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
   const controlRef = useRef<HTMLDivElement>(null);

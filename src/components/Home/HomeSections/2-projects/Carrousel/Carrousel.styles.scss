@@ -1,14 +1,14 @@
-.carousel:hover {
+.carrousel:hover {
   cursor: pointer;
 }
 
-.carouselTitle {
+.carrouselTitle {
   h3 {
     font-size: 24px;
   }
 }
 
-.carouselPagination {
+.carrouselPagination {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +56,7 @@
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
-  .carousel .pagination {
+  .carrousel .pagination {
     padding-left: 2px;
     width: auto;
   }
@@ -66,7 +66,7 @@
 }
 
 @media (min-width: 1240px) {
-  .carouselTitle {
+  .carrouselTitle {
     h3 {
       font-size: 32px;
     }

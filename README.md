@@ -185,10 +185,7 @@ For components, because they come in `.md` files and it is necessary to group th
 6. Creates a `.json` file with all the sorted objects (component data) and stores it in `src/content/` so that it can be imported in the app.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
----
-
-<!-- MARKDOWN LINKS & IMAGES -->
+"body": "<!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [product-screenshot]: images/screenshot.png

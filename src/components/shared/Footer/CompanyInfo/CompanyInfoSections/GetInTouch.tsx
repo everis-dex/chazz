@@ -23,7 +23,6 @@ export const GetInTouch = ({ title, socials }: Props) => {
           <RRSS showTitle={true} />
         </div>
       </div>
-
     </>
   );
 };
