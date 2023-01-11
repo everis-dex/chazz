@@ -17,9 +17,9 @@ collections:
     folder: src/content/pages/home # Where the documents are stored, relative to the repo root
     create: false # Allow users to create new documents in this collection
     delete: false # Allow users to delete existing documents in this collection
+    slug: "home" # Filename template. Default is {{slug}}, a url-safe version of the post's title.
     extension: json
     format: json
-    slug: "home" # Filename template. Default is {{slug}}, a url-safe version of the post's title.
     fields: # Fields for each document
       - { label: Page, name: page, widget: string }
       - label: Header
@@ -69,9 +69,9 @@ collections:
     folder: src/content/pages/work
     create: false
     delete: false
+    slug: "work"
     extension: json
     format: json
-    slug: "work"
     fields:
       - { label: Page, name: page, widget: string }
       - { label: Title, name: title, widget: string }
@@ -84,6 +84,8 @@ collections:
     label: Project
     folder: content/projects
     slug: "proj-{{year}}-{{month}}-{{day}}--{{title}}"
+    extension: json
+    format: json
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Image, name: image, widget: image }
@@ -103,7 +105,8 @@ collections:
     label: Partner
     folder: content/partners
     slug: "{{sort}}--{{partner}}"
-    create: true
+    extension: json
+    format: json
     fields:
       - { label: Name, name: name, widget: string }
       - { label: Logo, name: logo, widget: image }
@@ -115,7 +118,8 @@ collections:
     label: Category
     folder: content/categories
     slug: "cat-{{year}}-{{month}}-{{day}}--{{title}}"
-    create: true
+    extension: json
+    format: json
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
@@ -126,7 +130,8 @@ collections:
     label: Office
     folder: content/offices
     slug: "of-{{year}}-{{month}}-{{day}}--{{city}}"
-    create: true
+    extension: json
+    format: json
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: City, name: city, widget: string }
@@ -138,7 +143,8 @@ collections:
     label: Studio
     folder: content/studios
     slug: "st-{{year}}-{{month}}-{{day}}--{{city}}"
-    create: true
+    extension: json
+    format: json
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: City, name: city, widget: string }
@@ -147,7 +153,8 @@ collections:
     label: "Get in touch"
     folder: content/get-in-touch
     slug: "{{year}}-{{month}}-{{day}}--{{title}}"
-    create: true
+    extension: json
+    format: json
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
