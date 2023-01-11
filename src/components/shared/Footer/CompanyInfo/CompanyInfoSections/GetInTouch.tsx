@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 import { getInTouchInfo as getInTouch } from "../../../../../content/index";
 import { ISocial } from "../../../../../interfaces/cms";
-import { LinkedEmail, LinkedRRSS } from "./footerLinks";
+import { LinkedEmail } from "./footerLinks";
 
 import "../CompanyInfo.styles.scss";
 import { RRSS } from "./RRSS";
