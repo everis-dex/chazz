@@ -14,7 +14,9 @@ export const CarrouselSlide = (props: IProject) => {
   const [mediaStyle, setMediaStyle] = useState<MediaStyle>({ width: "0%", height: "0px", objectFit: "cover" });
   const screenWidth: number = window.innerWidth;
 
-  const chooseAndSetMediaStyle = () => {
+
+
+  useEffect(() => {
     setMediaStyle(
       screenWidth >= 1080
         // ? { width: "100%", height: "744px", objectFit: "cover" }
@@ -22,13 +24,15 @@ export const CarrouselSlide = (props: IProject) => {
         :
         { width: "100%", height: "544px", objectFit: "cover" }
     )
-  }
-
-  useEffect(() => {
-    chooseAndSetMediaStyle();
 
     const resizeSlides = () => {
-      chooseAndSetMediaStyle();
+      setMediaStyle(
+        screenWidth >= 1080
+          // ? { width: "100%", height: "744px", objectFit: "cover" }
+          ? { width: "100%", height: "90vh", objectFit: "cover" }
+          :
+          { width: "100%", height: "544px", objectFit: "cover" }
+      )
     };
 
     window.addEventListener('resize', resizeSlides);
