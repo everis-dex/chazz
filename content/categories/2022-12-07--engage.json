@@ -2,5 +2,31 @@
   "date": "2022-12-07T13:12:43.387Z",
   "title": "Engage",
   "section": "Customer Experience & Engagement",
-  "body": "Meaningful experiences are the ones that connect with people, making them to embrace brands for a long-life journey."
+  "body": "Meaningful experiences are the ones that connect with people, making them to embrace brands for a long-life journey.",
+  "accordions": [
+    {
+      "title": "CX & EX Management",
+      "content": "Customer Experience is beyond crafted Customer Journeys, and beyond the service. CX is about your brand. We combine qualitative and quantitative data sources, to create and improve meaningful experiences for consumers and employees. \nWe help companies to create a Customer Experience culture inside their organizations, that inspire them to offer relevant experiences to both, B2C and B2B customers."
+    },
+    {
+      "title": "Voice of Customer / Employee",
+      "content": "If brands don’t know how their customer perceive their service, the gap relationship appears. It is key to obtain the consumer feedback from a transactional and a relationship perspective to improve our brand or employee experience. We define VoC programs strategy and implement the technology that fits with brand’s needs."
+    },
+    {
+      "title": "Customer Care",
+      "content": "If the relationship between brands and customers is human, honest and direct the route is free to engage today and future friends."
+    },
+    {
+      "title": "CRM Strategy",
+      "content": "Having a single customer view is key. We need to collect and organize customer data to build this customer centric approach and to take the right commercial and experience decisions. We build relationship strategies that helps companies to implement CRM with a previous customer relationship purpose and journeys."
+    },
+    {
+      "title": "Loyalty",
+      "content": "This is a trophy that only gets brands that understand how the world is changing and why people need and desire a positive change. We play and enjoy with creativity strategies to reach the sweet point of loyalty."
+    },
+    {
+      "title": "Phygital Experiences / Spaces",
+      "content": "We believe there is a space between physical and digital. And that space could be known or unknown buy always out of the ordinary. Because is phygital the hall of metaverse."
+    }
+  ]
 }

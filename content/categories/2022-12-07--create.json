@@ -2,5 +2,31 @@
   "date": "2022-12-07T13:09:17.387Z",
   "title": "Create",
   "section": "Strategy & Design",
-  "body": "Deep exploring to design and rethink brands, services and business models, inspired by people and environment needs."
+  "body": "Deep exploring to design and rethink brands, services and business models, inspired by people and environment needs.",
+  "accordions": [
+    {
+      "title": "Research and Behavioural",
+      "content": "Exploring human behavior to understand needs and motivations converted into insights to feed the Ideation and Conceptualization phases. Qualitative, and Quantitative, Human and Business. We combine methodologies and perspectives to provide the right direction."
+    },
+    {
+      "title": "Strategic Design",
+      "content": "Creating opportunity territories based on facts and designing value propositions that meets human needs and companies’ expectations. Merging business, human and technology perspectives, we co-create with our customers new products, services and business models that we validate with real users to reduce the uncertainty in the implementation phases."
+    },
+    {
+      "title": "Branding",
+      "content": "Creating and transforming companies and institutions to anticipate society and environmental needs are the focus of our understanding of branding. A key discipline in this changing context where audiences must connect emotionally. \nWe know the traditional approach to branding is no longer enough, so we empower brands in every possible touchpoint. Because brands are experiences."
+    },
+    {
+      "title": "Digital Products, UX & UI",
+      "content": "In a hyper connecting world not every digital product is valid. We deeply believe that the impact of technology should be always positive, so we go ahead designing and building accessible and useful human and environment centered ones."
+    },
+    {
+      "title": "Start-up as a service",
+      "content": "End2End approach to launch into the market a new value proposition in a short time to market. We combine new methodologies like Lean start-up, Service Design and Growth Hacking with our implementation capabilities to deliver a fast-track MVP creation, implementation and beta launch into the market."
+    },
+    {
+      "title": "Trends & Foresight",
+      "content": "Anticipating the future is basic for those companies with a real purpose. We study future trends and recap insights with foresight’s strategies.\nTo be ready for what will come is a step ahead, but also it prepares business to be ready for the unknow, and now."
+    }
+  ]
 }

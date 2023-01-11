@@ -2,5 +2,31 @@
   "date": "2022-12-07T13:11:52.387Z",
   "title": "Growth",
   "section": "Digital Marketing & MarTech",
-  "body": "Connecting with audiences at the right moment, with the key message, combining strategy and technology to drive sales organically."
+  "body": "Connecting with audiences at the right moment, with the key message, combining strategy and technology to drive sales organically.",
+  "accordions": [
+    {
+      "title": "Funnel Strategy & Sales",
+      "content": "Data is everywhere and needs to be converted into information and smart decisions.\nYour success is our success. We deliver full funnel MadTech agnostic strategy and operations. From awareness and consideration to lead acquisition and conversion, with omnichannel perspective to maximize sales."
+    },
+    {
+      "title": "Campaigns Strategy & Ops",
+      "content": "Creativity is differential when it meets customers’ needs and tastes.\n We create owned and earned media strategies with great experiences for consumers, and a better ROI for brands. We are a group of adaptable experts who can help your business perform while layering on additional tests, channels, and experiments to drive growth and revenue"
+    },
+    {
+      "title": "Marketing Automation",
+      "content": "Marketing Automation platforms provide a powerful tool to communicate with consumers.\nNot just only automate, but also define the phases in which Marketing Automation makes sense to facilitate and improve the experiences of all people, with an end2end approach. Designing the journeys, implementing the platform, and operating the service."
+    },
+    {
+      "title": "MarTech Companion",
+      "content": "Marketing and Technology sits in the same table. Marketing areas needs to operate MarTech platforms, and Technical areas needs to build ecosystems that fits the business needs. To manage different vendors and operational skills is not easy. We create hybrid strategies connecting both areas, implementing the right platforms and operating them in an efficient way."
+    },
+    {
+      "title": "E-commerce",
+      "content": "Even digitalization is one of the main ways of relation between retailers and customers, we believe it must be a life-centered and natural experience when customers approach to brands by online platforms. For new retailers, or those that needs to improve their experience and performance, we create e-commerce and marketplaces strategy and implementation with the state-of-the-art technology."
+    },
+    {
+      "title": "SEO, CRO, CXO, Performance",
+      "content": "We take advantage of the experience helping digital services from different sectors, to have a better and organic digital relevance on top of paid media. \nCombined with our full digital funnel strategy, we implement experience and transactional improvements to increase the digital performance of the service."
+    }
+  ]
 }

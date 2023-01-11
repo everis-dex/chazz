@@ -147,13 +147,12 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Section, name: section, widget: string }
       - { label: Body, name: body, widget: markdown }
-      # - label: Accordions
-      #   name: accordions
-      #   widget: list
-      #   fields:
-      #     - { label: Title, name: title, widget: string }
-      #     - { label: Subtitle, name: subtitle, widget: string }
-      #     - { label: Content, name: content, widget: string }
+      - label: Accordions
+        name: accordions
+        widget: list
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Content, name: content, widget: string }
 
   - name: office
     label: Office
