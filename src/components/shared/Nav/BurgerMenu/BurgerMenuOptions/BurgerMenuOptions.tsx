@@ -5,7 +5,7 @@ import { routesInfo } from "../../../../../constants";
 import { RRSS } from "../../../Footer/CompanyInfo/CompanyInfoSections/RRSS";
 
 import "./BurgerMenuOptions.styles.scss";
-import { DividingLine } from '../../../DividingLine/DividingLine';
+import { DividingLine } from "../../../DividingLine/DividingLine";
 
 type Props = {
   isOpen: boolean;
