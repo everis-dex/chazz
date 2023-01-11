@@ -1,24 +1,6 @@
 var path = require("path");
 var fs = require("fs");
-var blankMetadata = {
-    date: "",
-    section: "",
-    title: "",
-    subtitle: "",
-    image: "",
-    scale: "",
-    description: "",
-    content: "",
-    name: "",
-    logo: "",
-    website: "",
-    city: "",
-    phone: "",
-    email: "",
-    address: "",
-    sort: "",
-    incarousel: ""
-};
+
 /**
  * Reads .md files of each collection in /content/ subfolders and creates JSON file with all the information.
  */
@@ -50,39 +32,6 @@ var getSubfolderContent = function (subfolders) {
     });
 };
 /**
- * Callback used when reducing metadataIndexes.
- */
-var getMetadataIndexes = function (acc, elem, index) {
-    if (/^---/.test(elem)) {
-        acc.push(index);
-    }
-    return acc;
-};
-/**
- * Remove all content info and format properties in an object.
- */
-/** */
-var parseMetadata = function (lines, metadataIndexes) {
-    if (metadataIndexes.length > 0) {
-        var metadata_1 = blankMetadata;
-        var metadataLines = lines.slice(metadataIndexes[0] + 1, metadataIndexes[1]);
-        metadataLines.forEach(function (line) {
-            metadata_1[line.split(": ")[0]] = line.split(": ")[1];
-        });
-        return metadata_1;
-    }
-    return blankMetadata;
-};
-/**
- * Remove all metadata info and extract only the content after --- separator.
- */
-var parseContent = function (lines, metadataIndexes) {
-    if (metadataIndexes.length > 0) {
-        lines = lines.slice(metadataIndexes[1] + 1, lines.length);
-    }
-    return lines.join("\n");
-};
-/**
  * Return recieved date into an object with different properties.
  */
 var formatDate = function (date) {
@@ -91,62 +40,6 @@ var formatDate = function (date) {
     var timeArray = datetimeArray[1].split(":");
     var time = "".concat(timeArray[0], ":").concat(timeArray[1]);
     return { month: dateArray[1], day: dateArray[2], year: dateArray[0], time: time };
-};
-/**
- * Construct the element object based on the collection they belong to.
- */
-var constructElement = function (folder, metadata, data) {
-    if (!folder || !metadata)
-        return { id: -1 };
-    var element = { id: -1 };
-    switch (folder) {
-        case "projects":
-            element.id = data.timestamp;
-            element.title = metadata.title;
-            element.description = metadata.description;
-            element.subtitle = metadata.subtitle;
-            element.image = metadata.image;
-            element.service = metadata.service;
-            element.value = metadata.value;
-            element.body = data.content;
-            element.incarousel = metadata.incarousel;
-            break;
-        case "partners":
-            element.id = metadata.sort ? parseInt(metadata.sort) : -1;
-            element.logo = metadata.logo;
-            element.scale = metadata.scale;
-            element.website = metadata.website;
-            element.name = metadata.name;
-            break;
-        case "categories":
-            element.id = data.timestamp;
-            element.title = metadata.title;
-            element.section = metadata.section;
-            element.body = data.content;
-            break;
-        case "offices":
-            element.id = data.timestamp;
-            element.city = metadata.city;
-            element.phone = metadata.phone === "" ? "" : metadata.phone;
-            element.email = metadata.email;
-            element.address = metadata.address;
-            break;
-        case "studios":
-            element.id = data.timestamp;
-            element.city = metadata.city;
-            break;
-        case "get-in-touch":
-            element.id = data.timestamp;
-            element.title = metadata.title;
-            element.email = metadata.email;
-            break;
-        default:
-            console.error("\n ----------------------------------- \n");
-            console.error("ERROR: '".concat(folder, "' collection is missing. \n\nGo to public/main.js to add configuration in 'constructElement' method"));
-            console.error("\n ----------------------------------- \n");
-            break;
-    }
-    return element;
 };
 /**
  * Reads the content of every file inside the folder and writes a JSON file with all the content condensed.
@@ -160,33 +53,25 @@ var getFilesContent = function (files, dirPath, folder) {
                 return console.error("Failed to read file of directory: " + err.message);
             }
 
-            // var lines = contents.split("\n");
-            // var metadataIndexes = lines.reduce(getMetadataIndexes, []);
-            // var metadata = lines ? parseMetadata(lines, metadataIndexes) : blankMetadata;
-            // var content = parseContent(lines, metadataIndexes);
-            var content = JSON.parse(contents);
-
+            contents = JSON.parse(contents);
             var timestamp = [];
             if (contents) {
-                if (content.date) {
-                    var parsedDate = content.date ? formatDate(content.date) : new Date();
+                if (contents.date) {
+                    var parsedDate = contents.date ? formatDate(contents.date) : new Date();
                     var datestring = "".concat(parsedDate["year"], "-").concat(parsedDate["month"], "-").concat(parsedDate["day"], "T").concat(parsedDate["time"], ":00");
                     var date = new Date(datestring);
                     timestamp[0] = date.getTime() / 1000;
-                    content.id = timestamp[0];
-                    delete (content.date);
+                    contents.id = timestamp[0];
+                    delete (contents.date);
                 }
-                else if (content.sort) {
-                    content.id = parseInt(content.sort);
-                    delete (content.sort);
+                else if (contents.sort) {
+                    contents.id = parseInt(contents.sort);
+                    delete (contents.sort);
                 }
-                else {
-                    content.id = -1;
-                }
+                else contents.id = -1;
             }
 
-            // var element = constructElement(folder, metadata, { timestamp: timestamp[0], content: content });
-            elementList.push(content);
+            elementList.push(contents);
             indexList.push(index);
             // Check if files and indexes match
             if (indexList.length === files.length) {
