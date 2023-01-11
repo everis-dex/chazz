@@ -9,24 +9,22 @@
   overflow: hidden;
   position: relative;
 
-  .velo-in {
+  .velo-in, .velo-out {
     background: #ca8b9b94;
-    z-index: 2;
+    z-index: 0;
     height: 100vh;
     transition: opacity 1s ease-in-out;
     opacity: 1;
     margin: auto;
-    padding: 0 5%;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .velo-out {
     opacity: 0;
-    background: #ca8b9b94;
     transition: opacity 1s ease-in-out;
-    z-index: 2;
-    height: 100vh;
-    margin: auto;
-    padding: 0 5%;
   }
 
   .nav-in {
@@ -42,8 +40,8 @@
 .chazz-title {
   color: var(--white);
   width: 70%;
-  position: absolute;
   padding-left: 5%;
+  position: absolute;
   top: 40%;
   font-size: 23px;
   line-height: 1.2;
