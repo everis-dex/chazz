@@ -4,6 +4,7 @@ import { IHomeFooter } from "../../../../interfaces/cms";
 import { GetInTouch, Offices, Studios } from "./index";
 
 import "./CompanyInfo.styles.scss";
+import { DividingLine } from '../../DividingLine/DividingLine';
 
 export const CompanyInfo = (footerData: IHomeFooter) => {
   const socials = footerData.social;
@@ -16,9 +17,9 @@ export const CompanyInfo = (footerData: IHomeFooter) => {
             <strong>{footerData.title}</strong>
           </h2>
           <Offices title={footerData.offices} />
-          <hr className="divisor-line" />
+          <DividingLine />
           <Studios title={footerData.studios} />
-          <hr className="divisor-line" />
+          <DividingLine />
           <GetInTouch title={footerData.touch} socials={socials} />
         </div>
       </div>
