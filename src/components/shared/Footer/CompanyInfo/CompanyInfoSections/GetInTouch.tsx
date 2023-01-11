@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import { getInTouchInfo as getInTouch } from "../../../../../content/index";
 import { ISocial } from "../../../../../interfaces/cms";
