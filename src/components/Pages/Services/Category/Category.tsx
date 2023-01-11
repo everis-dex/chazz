@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from "react";
+import React, { useEffect } from "react";
 import { ICategory, ICategoryAccordion } from "../../../../interfaces/cms";
 import { Option } from "./Option";
 
@@ -21,12 +21,12 @@ export const Category = (category: ICategory) => {
         </div>
         {/* Content */}
         <div className="category-content">
-          <div className="body">{category.body}</div>
+          <div className="summary">{category.summary}</div>
           <div className="category-options">
             {category.accordions.map((accordion: ICategoryAccordion, index: number) => (
-              <Fragment key={index}>
+              <div key={index}>
                 <Option title={accordion.title} content={accordion.content} />
-              </Fragment>
+              </div>
             ))}
           </div>
         </div>

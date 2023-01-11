@@ -72,6 +72,7 @@ export interface ICategory {
   title: string;
   section: string;
   body: string;
+  summary: string;
   accordions: ICategoryAccordion[];
 }
 
