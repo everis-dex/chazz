@@ -11,6 +11,10 @@
   display: flex;
   margin: auto;
   width: 100%;
+
+  img {
+    object-fit: cover;
+  }
 }
 
 .project-details {

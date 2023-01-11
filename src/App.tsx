@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home } from "./components/Home/Home";
 import { Services, Thoughts, Work } from "./components/Pages";
 
-export const App = () => {
+const App = () => {
   return (
     <Router>
       <Routes>
@@ -17,3 +17,5 @@ export const App = () => {
     </Router>
   );
 };
+
+export default App;

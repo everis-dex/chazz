@@ -48,7 +48,7 @@ export const Media = ({ src, style, alt }: Props) => {
               Video not supported.
             </video>
           )}
-          {supportedImageTags.includes(extension) && <img style={style} src={src} alt={alt} />}
+          {supportedImageTags.includes(extension) && <img loading="lazy" style={style} src={src} alt={alt} />}
           {extension === "json" && (
             <>{lottie ? <Lottie animationData={lottie} loop={true} autoplay={true} /> : <>Loading</>}</>
           )}

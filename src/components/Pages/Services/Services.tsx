@@ -24,7 +24,7 @@ export const Services = () => {
         <div className="services-header">
           <h1 className="header-title">{headerData.title}</h1>
           {headerData.subtitle && <h3 className="subtitle">{headerData.subtitle}</h3>}
-          <img src={headerData.image} alt="Header" />
+          <img loading="lazy" src={headerData.image} alt="Header" />
         </div>
         {/* Categories section */}
         <div className="services-categories">
@@ -43,7 +43,7 @@ export const Services = () => {
             (project: IProject, index: number) =>
               index > 4 && (
                 <div className="project" key={index}>
-                  <img src={project.image} alt="Project" />
+                  <img loading="lazy" src={project.image} alt="Project" />
                   <p className="title">
                     {project.title} <span> —</span>
                   </p>
