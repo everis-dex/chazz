@@ -42,7 +42,6 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
 
   useEffect(() => {
     const handleMouseMove = (event: any) => {
-      console.log(window.innerWidth);
       if (controlRef.current) {
         if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
           const scrollY = window.scrollY;

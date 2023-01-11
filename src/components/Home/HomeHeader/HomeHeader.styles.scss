@@ -16,6 +16,7 @@
     transition: opacity 1s ease-in-out;
     opacity: 1;
     margin: auto;
+    padding: 0 5%;
   }
 
   .velo-out {
@@ -61,10 +62,12 @@
   }
 }
 
+
 .chazz-title-out {
   color: var(--white);
   width: 70%;
   position: absolute;
+  padding-left: 5%;
   z-index: 9;
   top: 40%;
   font-size: 23px;
@@ -185,6 +188,11 @@
     .chazz-header {
       background-size: cover;
       background-position: 0 -95px;
+    }
+
+    .chazz-title,
+    .chazz-title-out{
+      width: 50%;
     }
   }
 }
