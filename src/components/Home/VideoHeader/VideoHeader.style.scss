@@ -24,9 +24,11 @@
 
 .player-video {
   position: absolute;
+  top: 40vh;
+  left: 55vw;
   display: flex;
   align-items: center;
-  cursor: none;
+  cursor: pointer;
   // cursor: url("../../../assets/play32.png"), pointer;
   text-shadow: 1px 1px 2px var(--black);
 
