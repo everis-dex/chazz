@@ -8,68 +8,9 @@ type FormatedDate = {
   time: string;
 };
 
-interface Metadata {
-  date?: string;
-  section?: string;
-  title?: string;
-  subtitle?: string;
-  image?: string;
-  scale?: string;
-  description?: string;
-  service?: string;
-  value?: string;
-  content?: string;
-  name?: string;
-  logo?: string;
-  website?: string;
-  city?: string;
-  phone?: string;
-  email?: string;
-  address?: string;
-  sort?: string;
-  incarousel?: string;
-}
-
 interface BuiltElement {
   id: number;
-  section?: string;
-  title?: string;
-  subtitle?: string;
-  image?: string;
-  scale?: string;
-  description?: string;
-  service?: string;
-  value?: string;
-  name?: string;
-  logo?: string;
-  website?: string;
-  city?: string;
-  phone?: string;
-  email?: string;
-  address?: string;
-  body?: string;
-  incarousel?: string;
 }
-
-const blankMetadata: Metadata = {
-  date: "",
-  section: "",
-  title: "",
-  subtitle: "",
-  image: "",
-  scale: "",
-  description: "",
-  content: "",
-  name: "",
-  logo: "",
-  website: "",
-  city: "",
-  phone: "",
-  email: "",
-  address: "",
-  sort: "",
-  incarousel: ""
-};
 
 /**
  * Reads .md files of each collection in /content/ subfolders and creates JSON file with all the information.
@@ -104,42 +45,6 @@ const getSubfolderContent = (subfolders: string[]) => {
 };
 
 /**
- * Callback used when reducing metadataIndexes.
- */
-const getMetadataIndexes = (acc: number[], elem: string, index: number): number[] => {
-  if (/^---/.test(elem)) {
-    acc.push(index);
-  }
-  return acc;
-};
-
-/**
- * Remove all content info and format properties in an object.
- */
-/** */
-const parseMetadata = (lines: string[], metadataIndexes: number[]): Metadata => {
-  if (metadataIndexes.length > 0) {
-    const metadata: Metadata = blankMetadata;
-    const metadataLines: string[] = lines.slice(metadataIndexes[0] + 1, metadataIndexes[1]);
-    metadataLines.forEach(line => {
-      metadata[line.split(": ")[0]] = line.split(": ")[1];
-    });
-    return metadata;
-  }
-  return blankMetadata;
-};
-
-/**
- * Remove all metadata info and extract only the content after --- separator.
- */
-const parseContent = (lines: string[], metadataIndexes: number[]): string => {
-  if (metadataIndexes.length > 0) {
-    lines = lines.slice(metadataIndexes[1] + 1, lines.length);
-  }
-  return lines.join("\n");
-};
-
-/**
  * Return recieved date into an object with different properties.
  */
 const formatDate = (date: string): FormatedDate => {
@@ -149,75 +54,6 @@ const formatDate = (date: string): FormatedDate => {
   const time: string = `${timeArray[0]}:${timeArray[1]}`;
 
   return { month: dateArray[1], day: dateArray[2], year: dateArray[0], time };
-};
-
-/**
- * Construct the element object based on the collection they belong to.
- */
-const constructElement = (
-  folder: string,
-  metadata: Metadata,
-  data: { timestamp: number; content: string }
-): BuiltElement => {
-  if (!folder || !metadata) return { id: -1 };
-  const element: BuiltElement = { id: -1 };
-
-  switch (folder) {
-    case "projects":
-      element.id = data.timestamp;
-      element.title = metadata.title;
-      element.description = metadata.description;
-      element.subtitle = metadata.subtitle;
-      element.image = metadata.image;
-      element.service = metadata.service;
-      element.value = metadata.value;
-      element.body = data.content;
-      element.incarousel = metadata.incarousel;
-      break;
-
-    case "partners":
-      element.id = metadata.sort ? parseInt(metadata.sort) : -1;
-      element.logo = metadata.logo;
-      element.scale = metadata.scale;
-      element.website = metadata.website;
-      element.name = metadata.name;
-      break;
-
-    case "categories":
-      element.id = data.timestamp;
-      element.title = metadata.title;
-      element.section = metadata.section;
-      element.body = data.content;
-      break;
-
-    case "offices":
-      element.id = data.timestamp;
-      element.city = metadata.city;
-      element.phone = metadata.phone === "" ? "" : metadata.phone;
-      element.email = metadata.email;
-      element.address = metadata.address;
-      break;
-
-    case "studios":
-      element.id = data.timestamp;
-      element.city = metadata.city;
-      break;
-
-    case "get-in-touch":
-      element.id = data.timestamp;
-      element.title = metadata.title;
-      element.email = metadata.email;
-      break;
-
-    default:
-      console.error("\n ----------------------------------- \n");
-      console.error(
-        `ERROR: '${folder}' collection is missing. \n\nGo to public/main.js to add configuration in 'constructElement' method`
-      );
-      console.error("\n ----------------------------------- \n");
-      break;
-  }
-  return element;
 };
 
 /**
@@ -232,21 +68,23 @@ const getFilesContent = (files: string[], dirPath: string, folder: string) => {
       if (err) {
         return console.error("Failed to read file of directory: " + err.message);
       }
-      const lines: string[] = contents.split("\n");
-      const metadataIndexes: number[] = lines.reduce(getMetadataIndexes, []);
-      const metadata: Metadata = lines ? parseMetadata(lines, metadataIndexes) : blankMetadata;
-      const content: string = parseContent(lines, metadataIndexes);
-      const timestamp: number[] = [];
-
-      if (metadata && metadata.date) {
-        const parsedDate = metadata.date ? formatDate(metadata.date) : new Date();
-        const datestring = `${parsedDate["year"]}-${parsedDate["month"]}-${parsedDate["day"]}T${parsedDate["time"]}:00`;
-        const date = new Date(datestring);
-        timestamp[0] = date.getTime() / 1000;
+      var contentJSON = JSON.parse(contents);
+      var timestamp: number = -1;
+      if (contentJSON) {
+        if (contentJSON.date) {
+          const parsedDate = contentJSON.date ? formatDate(contentJSON.date) : new Date();
+          const datestring = `${parsedDate["year"]}-${parsedDate["month"]}-${parsedDate["day"]}T${parsedDate["time"]}:00`;
+          const date = new Date(datestring);
+          timestamp = date.getTime() / 1000;
+          contentJSON.id = timestamp;
+          delete contentJSON.date;
+        } else if (contentJSON.sort) {
+          contentJSON.id = parseInt(contentJSON.sort);
+          delete contentJSON.sort;
+        } else contentJSON.id = -1;
       }
 
-      const element = constructElement(folder, metadata, { timestamp: timestamp[0], content });
-      elementList.push(element);
+      elementList.push(contentJSON);
       indexList.push(index);
 
       // Check if files and indexes match

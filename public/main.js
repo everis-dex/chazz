@@ -1,6 +1,5 @@
 var path = require("path");
 var fs = require("fs");
-
 /**
  * Reads .md files of each collection in /content/ subfolders and creates JSON file with all the information.
  */
@@ -52,35 +51,33 @@ var getFilesContent = function (files, dirPath, folder) {
             if (err) {
                 return console.error("Failed to read file of directory: " + err.message);
             }
-
-            contents = JSON.parse(contents);
-            var timestamp = [];
-            if (contents) {
-                if (contents.date) {
-                    var parsedDate = contents.date ? formatDate(contents.date) : new Date();
+            var contentJSON = JSON.parse(contents);
+            var timestamp = -1;
+            if (contentJSON) {
+                if (contentJSON.date) {
+                    var parsedDate = contentJSON.date ? formatDate(contentJSON.date) : new Date();
                     var datestring = "".concat(parsedDate["year"], "-").concat(parsedDate["month"], "-").concat(parsedDate["day"], "T").concat(parsedDate["time"], ":00");
                     var date = new Date(datestring);
-                    timestamp[0] = date.getTime() / 1000;
-                    contents.id = timestamp[0];
-                    delete (contents.date);
+                    timestamp = date.getTime() / 1000;
+                    contentJSON.id = timestamp;
+                    delete contentJSON.date;
                 }
-                else if (contents.sort) {
-                    contents.id = parseInt(contents.sort);
-                    delete (contents.sort);
+                else if (contentJSON.sort) {
+                    contentJSON.id = parseInt(contentJSON.sort);
+                    delete contentJSON.sort;
                 }
-                else contents.id = -1;
+                else
+                    contentJSON.id = -1;
             }
-
-            elementList.push(contents);
+            elementList.push(contentJSON);
             indexList.push(index);
             // Check if files and indexes match
             if (indexList.length === files.length) {
                 // Sort based on published time
-
                 var sortedList = elementList
                     .sort(function (a, b) {
-                        return a.id > b.id ? 1 : -1;
-                    })
+                    return a.id > b.id ? 1 : -1;
+                })
                     .filter(function (element) { return element.id !== -1; });
                 fs.writeFileSync("src/content/".concat(folder, ".json"), JSON.stringify(sortedList));
             }
