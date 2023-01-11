@@ -159,27 +159,43 @@ var getFilesContent = function (files, dirPath, folder) {
             if (err) {
                 return console.error("Failed to read file of directory: " + err.message);
             }
-            var lines = contents.split("\n");
-            var metadataIndexes = lines.reduce(getMetadataIndexes, []);
-            var metadata = lines ? parseMetadata(lines, metadataIndexes) : blankMetadata;
-            var content = parseContent(lines, metadataIndexes);
+
+            // var lines = contents.split("\n");
+            // var metadataIndexes = lines.reduce(getMetadataIndexes, []);
+            // var metadata = lines ? parseMetadata(lines, metadataIndexes) : blankMetadata;
+            // var content = parseContent(lines, metadataIndexes);
+            var content = JSON.parse(contents);
+
             var timestamp = [];
-            if (metadata && metadata.date) {
-                var parsedDate = metadata.date ? formatDate(metadata.date) : new Date();
-                var datestring = "".concat(parsedDate["year"], "-").concat(parsedDate["month"], "-").concat(parsedDate["day"], "T").concat(parsedDate["time"], ":00");
-                var date = new Date(datestring);
-                timestamp[0] = date.getTime() / 1000;
+            if (contents) {
+                if (content.date) {
+                    var parsedDate = content.date ? formatDate(content.date) : new Date();
+                    var datestring = "".concat(parsedDate["year"], "-").concat(parsedDate["month"], "-").concat(parsedDate["day"], "T").concat(parsedDate["time"], ":00");
+                    var date = new Date(datestring);
+                    timestamp[0] = date.getTime() / 1000;
+                    content.id = timestamp[0];
+                    delete (content.date);
+                }
+                else if (content.sort) {
+                    content.id = parseInt(content.sort);
+                    delete (content.sort);
+                }
+                else {
+                    content.id = -1;
+                }
             }
-            var element = constructElement(folder, metadata, { timestamp: timestamp[0], content: content });
-            elementList.push(element);
+
+            // var element = constructElement(folder, metadata, { timestamp: timestamp[0], content: content });
+            elementList.push(content);
             indexList.push(index);
             // Check if files and indexes match
             if (indexList.length === files.length) {
                 // Sort based on published time
+
                 var sortedList = elementList
                     .sort(function (a, b) {
-                    return a.id > b.id ? 1 : -1;
-                })
+                        return a.id > b.id ? 1 : -1;
+                    })
                     .filter(function (element) { return element.id !== -1; });
                 fs.writeFileSync("src/content/".concat(folder, ".json"), JSON.stringify(sortedList));
             }

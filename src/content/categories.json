@@ -1,20 +1,20 @@
 [
   {
-    "id": 1670414940,
-    "title": "Create\r",
-    "section": "Strategy & Design\r",
-    "body": "\r\nDeep exploring to design and rethink brands, services and business models, inspired by people and environment needs.\r\n"
+    "title": "Create",
+    "section": "Strategy & Design",
+    "body": "Deep exploring to design and rethink brands, services and business models, inspired by people and environment needs.",
+    "id": 1670414940
   },
   {
-    "id": 1670415060,
-    "title": "Growth\r",
-    "section": "Digital Marketing & MarTech\r",
-    "body": "\r\nConnecting with audiences at the right moment, with the key message, combining strategy and technology to drive sales organically.\r\n"
+    "title": "Growth",
+    "section": "Digital Marketing & MarTech",
+    "body": "Connecting with audiences at the right moment, with the key message, combining strategy and technology to drive sales organically.",
+    "id": 1670415060
   },
   {
-    "id": 1670415120,
-    "title": "Engage\r",
-    "section": "Customer Experience & Engagement\r",
-    "body": "\r\nMeaningful experiences are the ones that connect with people, making them to embrace brands for a long-life journey.\r\n"
+    "title": "Engage",
+    "section": "Customer Experience & Engagement",
+    "body": "Meaningful experiences are the ones that connect with people, making them to embrace brands for a long-life journey.",
+    "id": 1670415120
   }
 ]
