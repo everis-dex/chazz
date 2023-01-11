@@ -36,7 +36,7 @@ export const CarrouselSlide = (props: IProject) => {
     return () => {
       window.removeEventListener('resize', resizeSlides);
     };
-  }, [mediaStyle, setMediaStyle]);
+  }, [setMediaStyle]);
 
 
 
