@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import { Media } from "../../../../components/shared/Media/Media";
 import { IProject } from "../../../../interfaces/cms";
 import { Accordion } from "../Accordion/Accordion";
 
 import "./Project.styles.scss";
 
-type Props = { data: IProject; columns?: string; height?: string; full?: boolean };
+type Props = { data: IProject; format: string; columns?: string; full?: boolean };
 
-export const ProjectCard = ({ data, height = "auto", columns }: Props) => {
-  const style = { width: "100%", height, objectFit: "cover" };
+export const ProjectCard = ({ data, format, columns }: Props) => {
+  let [height, setHeight] = useState<string>("auto");
 
-  const bodyParagraphs = data.body.substring(1);
+  useEffect(() => {
+    // Create image to obtain height
+    const img = new Image();
+    img.src = data.image;
+
+    const getImageHeight = (img.onload = () => {
+      const res = format === "half" ? img.height / 2 + "px" : img.height + "px";
+      return res;
+    });
+
+    setHeight(getImageHeight());
+  }, [data.image, format, height]);
+
+  const bodyParagraphs = data.body;
 
   const bodyParagraphs1: string = bodyParagraphs.charCodeAt(0) === 10 ? bodyParagraphs.substring(1) : bodyParagraphs;
   const bodyParagraphs2: string = bodyParagraphs1.charCodeAt(0) === 13 ? bodyParagraphs1.substring(1) : bodyParagraphs1;
@@ -20,7 +32,7 @@ export const ProjectCard = ({ data, height = "auto", columns }: Props) => {
   return (
     <div className={`project-container ${columns}`}>
       <div className="project-media">
-        <Media src={data.image} style={style} alt={data.title} />
+        <img src={data.image} style={{ height }} alt={data.title} />
       </div>
 
       <div className="project-details">
