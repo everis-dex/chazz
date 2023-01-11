@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { routesInfo } from "../../../../../constants";
+import { RRSS } from "../../../Footer/CompanyInfo/CompanyInfoSections/RRSS";
 
 import "./BurgerMenuOptions.styles.scss";
 
@@ -27,6 +28,8 @@ export const BurgerMenuOptions = ({ isOpen, toggleMenu, disabledMenuOption }: Pr
           </li>
         ))}
       </ul>
+      <div className="div-as-hr" />
+      <RRSS showTitle={false} />
     </nav>
   );
 };

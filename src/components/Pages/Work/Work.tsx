@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { Footer, Nav } from "../index";
 import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 
-import work from "../../../content/pages/work/work.json";
+import { workInfo as work } from "../../../content/index";
 
 import "./Work.styles.scss";
 

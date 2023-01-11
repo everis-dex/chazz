@@ -1,6 +1,6 @@
 import React from "react";
 
-import partners from "../../../../content/partners.json";
+import { partnersInfo as partners } from "../../../../content/index";
 import { IHomeSection, IPartner } from "../../../../interfaces/cms";
 
 import { Partner } from "./Partner";
