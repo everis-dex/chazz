@@ -81,7 +81,7 @@ export interface IProject {
   image: string;
   description: string;
   body: string;
-  incarousel: string;
+  incarrousel: boolean;
 }
 
 export interface IPartner {

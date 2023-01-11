@@ -14,19 +14,19 @@ import "./Carrousel.styles.scss";
 type Props = { title: string };
 export const Carrousel = ({ title }: Props) => {
   const slides: IProject[] = [...projects];
-  const featuredSlides: IProject[] = slides.filter(slide => slide.incarousel.includes("1")).slice(0, 5);
+  const featuredSlides: IProject[] = slides.filter(slide => slide.incarrousel).slice(0, 5);
   console.log(slides);
   console.log(featuredSlides);
 
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const carrouselRef = useRef<HTMLDivElement>(null);
 
   return (
     <>
-      <div ref={carouselRef} className="carouselTitle">
+      <div ref={carrouselRef} className="carrouselTitle">
         <h3>{title}</h3>
       </div>
 
-      <div id="carousel" className="carousel">
+      <div id="carrousel" className="carrousel">
         <div className="pagination" />
         <div className="slides">
           <Swiper
