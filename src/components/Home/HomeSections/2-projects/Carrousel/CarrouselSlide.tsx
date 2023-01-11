@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { IProject } from "../../../../../interfaces/cms";
 import { Media } from "../../../../shared/Media/Media";
@@ -16,7 +16,7 @@ export const CarrouselSlide = (props: IProject) => {
 
   const chooseAndSetMediaStyle = () => {
     setMediaStyle(
-      screenWidth >= 1280
+      screenWidth >= 1080
         // ? { width: "100%", height: "744px", objectFit: "cover" }
         ? { width: "100%", height: "90vh", objectFit: "cover" }
         :
@@ -36,7 +36,7 @@ export const CarrouselSlide = (props: IProject) => {
     return () => {
       window.removeEventListener('resize', resizeSlides);
     };
-  },);
+  }, [mediaStyle, setMediaStyle]);
 
 
 
