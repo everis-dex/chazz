@@ -1,6 +1,6 @@
 import React from "react";
 
-import home from "../../../content/pages/home/home.json";
+import { homeInfo as home } from "../../../content/index";
 import { BottomBar, CompanyInfo } from "./index";
 
 import "./Footer.styles.scss";

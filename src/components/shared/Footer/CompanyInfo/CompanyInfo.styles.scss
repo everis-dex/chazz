@@ -34,6 +34,8 @@
 .offices-container,
 .studios-container,
 .in-touch-container {
+  margin-top: 10px !important;
+
   span {
     font-size: 14px;
     font-weight: 450;
@@ -61,6 +63,9 @@
   }
   .offices-info {
     width: 60%;
+    &:last-child {
+      margin-bottom: 0px;
+    }
   }
 }
 

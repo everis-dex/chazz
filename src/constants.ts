@@ -13,7 +13,7 @@ export const routesInfo: RoutesInfo[] = [
     id: 2,
     name: "Work",
     route: "/work"
-  }
+  },
   // {
   //   id: 3,
   //   name: "Thoughts",
