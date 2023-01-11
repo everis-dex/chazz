@@ -1,6 +1,6 @@
 import React from "react";
 
-import categories from "../../../../content/categories.json";
+import { categoriesInfo as categories } from "../../../../content/index";
 import { ICategory, IHomeSection } from "../../../../interfaces/cms";
 import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
 
