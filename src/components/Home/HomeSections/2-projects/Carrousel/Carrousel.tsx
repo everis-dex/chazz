@@ -15,9 +15,6 @@ type Props = { title: string };
 export const Carrousel = ({ title }: Props) => {
   const slides: IProject[] = [...projects];
   const featuredSlides: IProject[] = slides.filter(slide => slide.incarousel.includes("1")).slice(0, 5);
-  console.log(slides);
-  console.log(featuredSlides);
-
   const carouselRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -31,7 +28,7 @@ export const Carrousel = ({ title }: Props) => {
         <div className="slides">
           <Swiper
             modules={[Pagination, Autoplay]}
-            slidesPerView={2.2}
+            slidesPerView={1.1}
             spaceBetween={18}
             navigation
             pagination={{
@@ -44,7 +41,7 @@ export const Carrousel = ({ title }: Props) => {
               disableOnInteraction: false
             }}
             breakpoints={{
-              768: { slidesPerView: 2.1 }
+              1280: { slidesPerView: 2.1 }
             }}
             initialSlide={0}
           >
