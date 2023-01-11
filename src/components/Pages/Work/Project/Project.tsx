@@ -11,7 +11,7 @@ type Props = { data: IProject; columns?: string; height?: string; full?: boolean
 export const ProjectCard = ({ data, height = "auto", columns }: Props) => {
   const style = { width: "100%", height, objectFit: "cover" };
 
-  const bodyParagraphs = data.body.substring(1);
+  const bodyParagraphs = data.body;
 
   const bodyParagraphs1: string = bodyParagraphs.charCodeAt(0) === 10 ? bodyParagraphs.substring(1) : bodyParagraphs;
   const bodyParagraphs2: string = bodyParagraphs1.charCodeAt(0) === 13 ? bodyParagraphs1.substring(1) : bodyParagraphs1;
