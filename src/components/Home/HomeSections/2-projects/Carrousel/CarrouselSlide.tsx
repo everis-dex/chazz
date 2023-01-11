@@ -40,7 +40,7 @@ export const CarrouselSlide = (props: IProject) => {
     return () => {
       window.removeEventListener('resize', resizeSlides);
     };
-  }, [setMediaStyle]);
+  }, [setMediaStyle, screenWidth]);
 
 
 
