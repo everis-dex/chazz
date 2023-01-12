@@ -8,6 +8,7 @@ import categories from "../../../content/categories.json";
 import service from "../../../content/pages/services/services.json";
 import projects from "../../../content/projects.json";
 import { ICategory, IProject, IServicesHeader, IServicesProjects } from "../../../interfaces/cms";
+import { routesInfo } from "../../../constants";
 
 import "./Services.styles.scss";
 
@@ -22,7 +23,7 @@ export const Services = () => {
 
   return (
     <>
-      <Nav color="black" disabledMenuOption="/services" isNavVisible={true} isPlaying={false} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
+      <Nav color="black" disabledMenuOption={routesInfo[1].route} isNavVisible={true} isPlaying={false} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
       <div className="services-container">
         <div className="services-header">
           <h1 className="header-title">{headerData.title}</h1>

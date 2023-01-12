@@ -6,6 +6,8 @@ import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 
 import { workInfo as work } from "../../../content/index";
 
+import { routesInfo } from "../../../constants";
+
 import "./Work.styles.scss";
 
 export const Work = () => {
@@ -17,7 +19,7 @@ export const Work = () => {
 
   return (
     <>
-      <Nav color="black" disabledMenuOption="/work" isNavVisible={true} isPlaying={false} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
+      <Nav color="black" disabledMenuOption={routesInfo[2].route} isNavVisible={true} isPlaying={false} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
       <ProjectsGrid {...workData} />
       <Footer />
     </>

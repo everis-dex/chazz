@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { routesInfo } from "../../../../constants";
+import { availableRoutes, routesInfo } from "../../../../constants";
 
 import "../Nav.styles.scss";
 
@@ -13,21 +13,23 @@ export const DesktopMenu = ({ color }: Props) => {
   return (
     <div className="nav">
       <ul>
-        {routesInfo.map(route => (
-          <li key={route.id}>
-            {route.name && (
-              <>
-                {route.route !== currentPage ? (
-                  <Link className={color !== "black" ? "" : "pagesDesktopNavItem"} to={route.route}>
-                    {route.name}
-                  </Link>
-                ) : (
-                  <span className="active">{route.name}</span>
-                )}
-              </>
-            )}
-          </li>
-        ))}
+        {routesInfo
+          .filter(route => availableRoutes.includes(route.id))
+          .map(route => (
+            <li key={route.id}>
+              {route.name && (
+                <>
+                  {route.route !== currentPage ? (
+                    <Link className={color !== "black" ? "" : "pagesDesktopNavItem"} to={route.route}>
+                      {route.name}
+                    </Link>
+                  ) : (
+                    <span className="active">{route.name}</span>
+                  )}
+                </>
+              )}
+            </li>
+          ))}
       </ul>
     </div>
   );

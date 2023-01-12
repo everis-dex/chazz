@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 import { Footer, Nav } from "../index";
 
+import { routesInfo } from "../../../constants";
+
 export const Thoughts = () => {
   useEffect(() => window.scrollTo(0, 0), []);
 
@@ -10,7 +12,7 @@ export const Thoughts = () => {
 
   return (
     <>
-      <Nav color="black" disabledMenuOption="/thoughts" isNavVisible={true} isPlaying={false} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
+      <Nav color="black" disabledMenuOption={routesInfo[4].route} isNavVisible={true} isPlaying={false} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
       <p>Thoughts</p>
       <Footer />
     </>
