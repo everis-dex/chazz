@@ -1,7 +1,7 @@
 [
   { "name": "Endesa", "logo": "uploads/logo_endesa.svg", "scale": "85", "website": "https://www.endesa.com", "id": 1 },
   { "name": "Renfe", "logo": "uploads/logo_renfe.svg", "scale": "75", "website": "http://renfe.es/", "id": 2 },
-  { "name": "Wabi", "logo": "uploads/logo_wabi.svg", "scale": "50", "website": "https://www.wabicar.com/en/", "id": 3 },
+  { "name": "Wabi", "logo": "uploads/logo_wabi.svg", "scale": "40", "website": "https://www.wabicar.com/en/", "id": 3 },
   {
     "name": "Leroy Merlin",
     "logo": "uploads/logo_leroy.svg",
