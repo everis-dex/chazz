@@ -134,6 +134,7 @@
     }
 
     .section1-sections {
+      width: 86%;
       h2 {
         font-size: 40px;
       }
@@ -154,6 +155,30 @@
       h2 {
         width: 100%;
       }
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .section1 {
+    .section1-title h1{
+      width: 69%;
+      font-size: 52px;
+    }
+    .section1-title h2 {
+      font-size: 52px;
+    }
+    .section1-sections {
+      width: 75%;
+    }
+    .section1-sections p {
+      line-height: 1.5;
+    }
+    .section1-sections h2 {
+      font-size: 52px;
+    }
+    .section1-sections h2 + p {
+      font-size: 28px;
     }
   }
 }
