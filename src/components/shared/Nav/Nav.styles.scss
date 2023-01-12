@@ -13,13 +13,17 @@
 // MOBILE FIRST
 
 .chazz-logo {
-  width: 137px;
+  width: 118px;
   padding-left: 5%;
   display: block;
   float: left;
   position: relative;
   top: 40px;
   z-index: 99;
+
+  svg{
+    width: 118px;
+  }
 }
 
 .nav {
@@ -47,6 +51,10 @@
   .chazz-logo {
     width: 162px;
     top: 30px;
+
+    svg{
+      width: 162px;
+    }
   }
 
   .nav {
@@ -115,9 +123,22 @@
 
 @media (min-width: 1280px) {
   .chazz-logo {
-    width: 185px;
+    width: 153px;
+
+    svg{
+      width: 153px;
+    }
   }
   .nav ul li {
     margin-right: 36px;
+  }
+}
+
+@media (min-width: 1920px){
+  .chazz-logo{
+    width: 185px;
+    svg{
+      width: 185px;
+    }
   }
 }

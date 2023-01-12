@@ -24,7 +24,9 @@
 
 .player-video {
   position: absolute;
-  display: none;
+  display: block;
+  bottom: 40px;
+  left: 5%;
   align-items: center;
   cursor: none;
   // cursor: url("../../../assets/play32.png"), pointer;
