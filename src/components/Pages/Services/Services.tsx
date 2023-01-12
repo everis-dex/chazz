@@ -20,7 +20,6 @@ export const Services = () => {
 
   useEffect(() => window.scrollTo(0, 0), []);
 
-
   return (
     <>
       <Nav color="black" disabledMenuOption={routesInfo[1].route} isNavVisible={true} isPlaying={false} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
