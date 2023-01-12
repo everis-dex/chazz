@@ -70,7 +70,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
 
   return (
     <>
-      {!isBurgerMenuOpen &&
+      {!isBurgerMenuOpen && (
         <div className="player-video" ref={controlRef}>
           {isPlaying}
 
@@ -81,7 +81,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
             {controlText} reel
           </span>
         </div>
-      }
+      )}
       <video
         className={isPlaying ? "video-header-color" : "video-header"}
         ref={videoRef}

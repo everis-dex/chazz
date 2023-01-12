@@ -15,29 +15,23 @@ type Props = {
 
 export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu, disabledMenuOption }: Props) => {
   console.log({ routesInfo });
-  console.log({ disabledMenuOption })
+  console.log({ disabledMenuOption });
   return (
     <nav className={`burger-nav ${isBurgerMenuOpen ? "active" : ""}`}>
       <ul className="burger-ul">
         {routesInfo.map(route => (
           <li className="burger-li" key={route.id}>
-            {(route.route !== disabledMenuOption) &&
-              <Link
-                className="burger-a"
-                to={route.route}
-                onClick={toggleMenu}
-              >
+            {route.route !== disabledMenuOption && (
+              <Link className="burger-a" to={route.route} onClick={toggleMenu}>
                 {route.name}
               </Link>
-            }
+            )}
 
-            {(route.route == disabledMenuOption) &&
-              <span
-                className="burger-active"
-                onClick={toggleMenu}>
+            {route.route === disabledMenuOption && (
+              <span className="burger-active" onClick={toggleMenu}>
                 {route.name}
               </span>
-            }
+            )}
           </li>
         ))}
       </ul>

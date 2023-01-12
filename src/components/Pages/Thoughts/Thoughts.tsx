@@ -10,7 +10,14 @@ export const Thoughts = () => {
 
   return (
     <>
-      <Nav color="black" disabledMenuOption="/thoughts" isNavVisible={true} isPlaying={false} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
+      <Nav
+        color="black"
+        disabledMenuOption="/thoughts"
+        isNavVisible={true}
+        isPlaying={false}
+        isBurgerMenuOpen={isBurgerMenuOpen}
+        setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+      />
       <p>Thoughts</p>
       <Footer />
     </>

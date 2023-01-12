@@ -15,8 +15,14 @@ type Props = {
   setIsBurgerMenuOpen: (a: boolean) => void;
 };
 
-export const Nav = ({ color, disabledMenuOption, isNavVisible, isPlaying, isBurgerMenuOpen, setIsBurgerMenuOpen }: Props) => {
-
+export const Nav = ({
+  color,
+  disabledMenuOption,
+  isNavVisible,
+  isPlaying,
+  isBurgerMenuOpen,
+  setIsBurgerMenuOpen
+}: Props) => {
   const [root] = useState(document.getElementById("root"));
 
   const toggleMenu = () => {
@@ -37,7 +43,12 @@ export const Nav = ({ color, disabledMenuOption, isNavVisible, isPlaying, isBurg
       <div className="header-nav">
         <ChazzLogo color={color} isBurgerMenuOpen={isBurgerMenuOpen} />
         <DesktopMenu color={color} />
-        <BurgerMenu isBurgerMenuOpen={isBurgerMenuOpen} toggleMenu={toggleMenu} color={color} disabledMenuOption={disabledMenuOption} />
+        <BurgerMenu
+          isBurgerMenuOpen={isBurgerMenuOpen}
+          toggleMenu={toggleMenu}
+          color={color}
+          disabledMenuOption={disabledMenuOption}
+        />
       </div>
     );
   }

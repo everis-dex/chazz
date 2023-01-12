@@ -19,10 +19,16 @@ export const Services = () => {
 
   useEffect(() => window.scrollTo(0, 0), []);
 
-
   return (
     <>
-      <Nav color="black" disabledMenuOption="/services" isNavVisible={true} isPlaying={false} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
+      <Nav
+        color="black"
+        disabledMenuOption="/services"
+        isNavVisible={true}
+        isPlaying={false}
+        isBurgerMenuOpen={isBurgerMenuOpen}
+        setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+      />
       <div className="services-container">
         <div className="services-header">
           <h1 className="header-title">{headerData.title}</h1>
