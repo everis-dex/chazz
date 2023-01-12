@@ -32,7 +32,7 @@ export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu, disabledMenuOp
                 </Link>
               }
 
-              {(route.route == disabledMenuOption) &&
+              {(route.route === disabledMenuOption) &&
                 <span
                   className="burger-active"
                   // onClick={toggleMenu}
