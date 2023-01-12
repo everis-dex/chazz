@@ -8,14 +8,14 @@ import "./BurgerMenuOptions.styles.scss";
 import { DividingLine } from "../../../DividingLine/DividingLine";
 
 type Props = {
-  isOpen: boolean;
+  isBurgerMenuOpen: boolean;
   toggleMenu: (event: React.MouseEvent) => void;
   disabledMenuOption: string;
 };
 
-export const BurgerMenuOptions = ({ isOpen, toggleMenu, disabledMenuOption }: Props) => {
+export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu, disabledMenuOption }: Props) => {
   return (
-    <nav className={`burger-nav ${isOpen ? "active" : ""}`}>
+    <nav className={`burger-nav ${isBurgerMenuOpen ? "active" : ""}`}>
       <ul className="burger-ul">
         {routesInfo.map(route => (
           <li className="burger-li" key={route.id}>
