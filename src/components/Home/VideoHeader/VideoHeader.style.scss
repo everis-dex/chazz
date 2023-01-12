@@ -24,7 +24,7 @@
 
 .player-video {
   position: absolute;
-  display: flex;
+  display: none;
   align-items: center;
   cursor: none;
   // cursor: url("../../../assets/play32.png"), pointer;
@@ -96,6 +96,9 @@
 }
 
 @media (min-width: 1024px) {
+  .player-video{
+    display: flex;
+  }
 }
 
 @media (min-width: 1280px) {
