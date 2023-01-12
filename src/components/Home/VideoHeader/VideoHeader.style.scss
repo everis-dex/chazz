@@ -22,18 +22,29 @@
   transition: all 1s;
 }
 
+.player-video-desktop-switcher {
+  display: none;
+}
+
+.player-video-mobile-switcher {
+  display: inline-flex !important;
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  width: 50%;
+}
+
 .player-video {
   position: absolute;
   display: block;
   align-items: center;
-  cursor: none;
-  // cursor: url("../../../assets/play32.png"), pointer;
   text-shadow: 1px 1px 2px var(--black);
-  opacity: 0;
+  cursor: none;
 
   .play-icon-in,
   .play-icon-out {
     position: absolute;
+    top: 2px;
     width: 0;
     height: 0;
     border-top: 8px solid transparent;
@@ -51,23 +62,25 @@
 
   .play-icon-out {
     transform: rotate(0deg);
-    opacity: 0;
+    opacity: 1;
   }
 
   .stop-icon-in {
     position: absolute;
+    top: 4px;
     width: 12px;
     height: 12px;
     background-color: var(--white);
     margin-right: 13px;
     transform: rotate(0deg);
     transition: all 1s;
-    opacity: 0;
+    opacity: 1;
     filter: drop-shadow(1px 1px 5px #000);
   }
 
   .stop-icon-out {
     position: absolute;
+    top: 4px;
     width: 6px;
     height: 6px;
     transform: rotate(-60deg);
@@ -82,7 +95,7 @@
     font-weight: 300;
     margin-left: 20px;
     text-shadow: var(--black) 1px 2px 5px;
-    opacity: 0;
+    opacity: 1;
   }
 }
 
@@ -98,6 +111,14 @@
 }
 
 @media (min-width: 1024px) {
+  .player-video-desktop-switcher {
+    display: flex;
+  }
+
+  .player-video-mobile-switcher {
+    display: none !important;
+  }
+
   .player-video,
   .play-icon-out,
   .stop-icon-in,
