@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { Footer, Nav } from "../index";
@@ -12,14 +12,17 @@ import { ICategory, IProject, IServicesHeader, IServicesProjects } from "../../.
 import "./Services.styles.scss";
 
 export const Services = () => {
+  const projectsData: IServicesProjects = service.projects;
+  const headerData: IServicesHeader = service.header;
+
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
+
   useEffect(() => window.scrollTo(0, 0), []);
 
-  const headerData: IServicesHeader = service.header;
-  const projectsData: IServicesProjects = service.projects;
 
   return (
     <>
-      <Nav color="black" disabledMenuOption="/services" isNavVisible={true} isPlaying={false} />
+      <Nav color="black" disabledMenuOption="/services" isNavVisible={true} isPlaying={false} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
       <div className="services-container">
         <div className="services-header">
           <h1 className="header-title">{headerData.title}</h1>

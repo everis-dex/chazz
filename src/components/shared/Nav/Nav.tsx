@@ -11,31 +11,33 @@ type Props = {
   disabledMenuOption: string;
   isNavVisible: boolean;
   isPlaying: boolean;
+  isBurgerMenuOpen: boolean;
+  setIsBurgerMenuOpen: (a: boolean) => void;
 };
 
-export const Nav = ({ color, disabledMenuOption, isNavVisible, isPlaying }: Props) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+export const Nav = ({ color, disabledMenuOption, isNavVisible, isPlaying, isBurgerMenuOpen, setIsBurgerMenuOpen }: Props) => {
+
   const [root] = useState(document.getElementById("root"));
 
   const toggleMenu = () => {
     if (!isPlaying) {
-      setIsOpen(!isOpen);
+      setIsBurgerMenuOpen(!isBurgerMenuOpen);
       handleRootBehavior();
     }
   };
 
   const handleRootBehavior = () => {
     if (!root) return;
-    root.style.height = isOpen ? "auto" : "100vh";
-    root.style.overflow = isOpen ? "auto" : "hidden";
+    root.style.height = isBurgerMenuOpen ? "auto" : "100vh";
+    root.style.overflow = isBurgerMenuOpen ? "auto" : "hidden";
   };
 
   if (isNavVisible) {
     return (
       <div className="header-nav">
-        <ChazzLogo color={color} isOpen={isOpen} />
+        <ChazzLogo color={color} isBurgerMenuOpen={isBurgerMenuOpen} />
         <DesktopMenu color={color} />
-        <BurgerMenu isOpen={isOpen} toggleMenu={toggleMenu} color={color} disabledMenuOption={disabledMenuOption} />
+        <BurgerMenu isBurgerMenuOpen={isBurgerMenuOpen} toggleMenu={toggleMenu} color={color} disabledMenuOption={disabledMenuOption} />
       </div>
     );
   }
