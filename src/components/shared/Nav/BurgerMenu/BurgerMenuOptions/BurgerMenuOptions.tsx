@@ -19,13 +19,23 @@ export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu, disabledMenuOp
       <ul className="burger-ul">
         {routesInfo.map(route => (
           <li className="burger-li" key={route.id}>
-            <Link
-              className={route.route !== disabledMenuOption ? "burger-a" : "burger-active"}
-              to={route.route}
-              onClick={toggleMenu}
-            >
-              {route.name}
-            </Link>
+            {(route.route !== disabledMenuOption) &&
+              <Link
+                className="burger-a"
+                to={route.route}
+                onClick={toggleMenu}
+              >
+                {route.name}
+              </Link>
+            }
+
+            {(route.route == disabledMenuOption) &&
+              <span
+                className="burger-active"
+                onClick={toggleMenu}>
+                {route.name}
+              </span>
+            }
           </li>
         ))}
       </ul>
