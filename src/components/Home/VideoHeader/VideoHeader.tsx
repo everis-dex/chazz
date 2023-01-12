@@ -52,9 +52,14 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
           const postX = event.clientX;
           const scrollFinalX = scrollX + postX - 50;
 
-          controlRef.current.style.top = scrollFinalY.toString().concat("px");
-          controlRef.current.style.left = scrollFinalX.toString().concat("px");
-          controlRef.current.style.opacity = "1";
+          if(window.innerWidth >= 1040 ){
+            controlRef.current.style.top = scrollFinalY.toString().concat("px");
+            controlRef.current.style.left = scrollFinalX.toString().concat("px");
+            controlRef.current.style.opacity = "1";
+          }else{
+            controlRef.current.style.top = (window.innerHeight - 40).toString().concat("px");
+            controlRef.current.style.left = "5%";
+          }
           // controlRef.current.style.left = event.clientX.toString().concat('px');
         } else {
           controlRef.current.style.opacity = "0";
