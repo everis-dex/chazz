@@ -9,16 +9,19 @@ import { LineBreakerSelector } from "../../shared/LineBreaker/LineBreakerSelecto
 import "./HomeHeader.styles.scss";
 import { VideoHeader } from "../VideoHeader/VideoHeader";
 
+import { routesInfo } from "../../../constants";
+
 export const HomeHeader = (headerData: IHomeHeader) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isNavVisible, setisNavVisible] = useState<boolean>(true);
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
 
   return (
     <>
       <div className="chazz-header">
         <div className={isPlaying ? "velo-out" : "velo-in"}>
           <span className={isPlaying ? "nav-out" : "nav-in"}>
-            <Nav color="white" disabledMenuOption="" isNavVisible={isNavVisible} isPlaying={isPlaying} />
+            <Nav color="white" disabledMenuOption={routesInfo[0].route} isNavVisible={isNavVisible} isPlaying={isPlaying} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
           </span>
           <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
             <LineBreakerSelector typedLines={headerData.title} />
@@ -30,6 +33,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           setIsPlaying={setIsPlaying}
           isNavVisible={isNavVisible}
           setIsNavVisible={setisNavVisible}
+          isBurgerMenuOpen={isBurgerMenuOpen}
         ></VideoHeader>
       </div>
 

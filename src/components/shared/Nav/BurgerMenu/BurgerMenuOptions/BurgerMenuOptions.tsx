@@ -1,33 +1,46 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { routesInfo } from "../../../../../constants";
+import { availableRoutes, routesInfo } from "../../../../../constants";
 import { RRSS } from "../../../Footer/CompanyInfo/CompanyInfoSections/RRSS";
 
 import "./BurgerMenuOptions.styles.scss";
 import { DividingLine } from "../../../DividingLine/DividingLine";
 
 type Props = {
-  isOpen: boolean;
+  isBurgerMenuOpen: boolean;
   toggleMenu: (event: React.MouseEvent) => void;
   disabledMenuOption: string;
 };
 
-export const BurgerMenuOptions = ({ isOpen, toggleMenu, disabledMenuOption }: Props) => {
+export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu, disabledMenuOption }: Props) => {
+
   return (
-    <nav className={`burger-nav ${isOpen ? "active" : ""}`}>
+    <nav className={`burger-nav ${isBurgerMenuOpen ? "active" : ""}`}>
       <ul className="burger-ul">
-        {routesInfo.map(route => (
-          <li className="burger-li" key={route.id}>
-            <Link
-              className={route.route !== disabledMenuOption ? "burger-a" : "burger-active"}
-              to={route.route}
-              onClick={toggleMenu}
-            >
-              {route.name}
-            </Link>
-          </li>
-        ))}
+        {routesInfo
+          .filter(route => availableRoutes.includes(route.id))
+          .map(route => (
+            <li className="burger-li" key={route.id}>
+              {(route.route !== disabledMenuOption) &&
+                <Link
+                  className="burger-a"
+                  to={route.route}
+                  onClick={toggleMenu}
+                >
+                  {route.name}
+                </Link>
+              }
+
+              {(route.route == disabledMenuOption) &&
+                <span
+                  className="burger-active"
+                  onClick={toggleMenu}>
+                  {route.name}
+                </span>
+              }
+            </li>
+          ))}
       </ul>
       <DividingLine />
       <RRSS showTitle={false} />

@@ -6,17 +6,21 @@ import { BurgerMenuOptions } from "./BurgerMenuOptions/BurgerMenuOptions";
 import "./BurgerMenu.styles.scss";
 
 type Props = {
-  isOpen: boolean;
+  isBurgerMenuOpen: boolean;
   toggleMenu: (event: React.MouseEvent) => void;
   color: string;
   disabledMenuOption: string;
 };
 
-export const BurgerMenu = ({ isOpen, toggleMenu, color, disabledMenuOption }: Props) => {
+export const BurgerMenu = ({ isBurgerMenuOpen, toggleMenu, color, disabledMenuOption }: Props) => {
   return (
-    <div className={`burger-menu ${isOpen ? "active" : ""}`}>
-      <BurgerIcon isOpen={isOpen} toggleMenu={toggleMenu} color={color} />
-      <BurgerMenuOptions isOpen={isOpen} toggleMenu={toggleMenu} disabledMenuOption={disabledMenuOption} />
+    <div className={`burger-menu ${isBurgerMenuOpen ? "active" : ""}`}>
+      <BurgerIcon isBurgerMenuOpen={isBurgerMenuOpen} toggleMenu={toggleMenu} color={color} />
+      <BurgerMenuOptions
+        isBurgerMenuOpen={isBurgerMenuOpen}
+        toggleMenu={toggleMenu}
+        disabledMenuOption={disabledMenuOption}
+      />
     </div>
   );
 };

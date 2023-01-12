@@ -6,9 +6,10 @@ type Props = {
   setIsPlaying: (a: boolean) => void;
   isNavVisible: boolean;
   setIsNavVisible: (a: boolean) => void;
+  isBurgerMenuOpen: boolean;
 };
 
-export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVisible }: Props) => {
+export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVisible, isBurgerMenuOpen }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [controlText, setControlText] = useState<string>("Play");
 
@@ -69,17 +70,18 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
 
   return (
     <>
-      <div className="player-video" ref={controlRef}>
-        {isPlaying}
+      {!isBurgerMenuOpen && (
+        <div className="player-video" ref={controlRef}>
+          {isPlaying}
 
-        <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
-        <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
+          <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
+          <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
 
-        <span className="player-text" onClick={switchPlayPause}>
-          {controlText} reel
-        </span>
-      </div>
-
+          <span className="player-text" onClick={switchPlayPause}>
+            {controlText} reel
+          </span>
+        </div>
+      )}
       <video
         className={isPlaying ? "video-header-color" : "video-header"}
         ref={videoRef}
