@@ -3,21 +3,21 @@ import React, { useEffect, useState } from "react";
 import "./BurgerIcon.styles.scss";
 
 type Props = {
-  isOpen: boolean;
+  isBurgerMenuOpen: boolean;
   toggleMenu: (event: React.MouseEvent) => void;
   color: string;
 };
 
-export const BurgerIcon = ({ isOpen, toggleMenu, color }: Props) => {
+export const BurgerIcon = ({ isBurgerMenuOpen, toggleMenu, color }: Props) => {
   const [iconColor, setIconColor] = useState<string>("");
 
   useEffect(() => {
-    if (isOpen) {
+    if (isBurgerMenuOpen) {
       setIconColor("white");
     } else {
       setIconColor(color);
     }
-  }, [isOpen, color]);
+  }, [isBurgerMenuOpen, color]);
 
   return (
     <>
