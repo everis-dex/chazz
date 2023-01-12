@@ -4,7 +4,7 @@ import { IHomeFooter } from "../../../../interfaces/cms";
 import { GetInTouch, Offices, Studios } from "./index";
 
 import "./CompanyInfo.styles.scss";
-import { DividingLine } from '../../DividingLine/DividingLine';
+import { DividingLine } from "../../DividingLine/DividingLine";
 
 export const CompanyInfo = (footerData: IHomeFooter) => {
   const socials = footerData.social;

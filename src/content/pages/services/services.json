@@ -1,0 +1,12 @@
+{
+  "page": "Services",
+  "header": {
+    "title": "Services",
+    "subtitle": "",
+    "image": "/uploads/Services-header.png"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "more": "More projects"
+  }
+}

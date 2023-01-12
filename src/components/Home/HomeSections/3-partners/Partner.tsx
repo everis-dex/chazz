@@ -9,7 +9,7 @@ export const Partner = ({ website, logo, name, scale = "100" }: IPartner) => {
 
   return (
     <a href={website}>
-      <img className="partner-logo" src={logo} alt={name} width={percentage} />
+      <img loading="lazy" className="partner-logo" src={logo} alt={name} width={percentage} />
     </a>
   );
 };

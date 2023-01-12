@@ -1,10 +1,10 @@
 [
-  { "id": 1670838900, "city": "London\r" },
-  { "id": 1670842500, "city": "Milan\r" },
-  { "id": 1670846100, "city": "Munich\r" },
-  { "id": 1670849700, "city": "Rome\r" },
-  { "id": 1670853300, "city": "Venice\r" },
-  { "id": 1670856960, "city": "Shangai\r" },
-  { "id": 1670859900, "city": "Dallas\r" },
-  { "id": 1670860500, "city": "Tokyo\r" }
+  { "city": "London", "id": 1670838900 },
+  { "city": "Milan", "id": 1670842500 },
+  { "city": "Munich", "id": 1670846100 },
+  { "city": "Rome", "id": 1670849700 },
+  { "city": "Venice", "id": 1670853300 },
+  { "city": "Shangai", "id": 1670856960 },
+  { "city": "Dallas", "id": 1670859900 },
+  { "city": "Tokyo", "id": 1670860500 }
 ]

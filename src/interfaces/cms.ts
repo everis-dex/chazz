@@ -40,6 +40,24 @@ export interface IWork {
   subtitle: string;
 }
 
+// Services page
+export interface IServices {
+  page: string;
+  header: object;
+  projects: object;
+}
+
+export interface IServicesHeader {
+  title: string;
+  subtitle: string;
+  image: string;
+}
+
+export interface IServicesProjects {
+  title: string;
+  more: string;
+}
+
 // ##############################
 // #         COMPONENTS
 // ##############################
@@ -54,6 +72,13 @@ export interface ICategory {
   title: string;
   section: string;
   body: string;
+  summary: string;
+  accordions: ICategoryAccordion[];
+}
+
+export interface ICategoryAccordion {
+  title: string;
+  content: string;
 }
 
 export interface IProject {
@@ -63,7 +88,7 @@ export interface IProject {
   image: string;
   description: string;
   body: string;
-  incarousel: string;
+  incarrousel: boolean;
 }
 
 export interface IPartner {

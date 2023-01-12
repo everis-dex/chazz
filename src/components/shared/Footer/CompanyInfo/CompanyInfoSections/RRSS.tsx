@@ -7,22 +7,21 @@ import { LinkedRRSS } from "./footerLinks";
 import "../CompanyInfo.styles.scss";
 
 type Props = {
-    showTitle: boolean
-}
+  showTitle: boolean;
+};
 
 export const RRSS = ({ showTitle }: Props) => {
+  const socials: ISocial[] = home.footer.social;
 
-    const socials: ISocial[] = home.footer.social;
+  return (
+    <div className="in-touch-info">
+      {showTitle && <p className="in-touch-subtitle">Social</p>}
 
-    return (
-        <div className="in-touch-info">
-            {showTitle && <p className="in-touch-subtitle">Social</p>}
-
-            {socials.map((social: ISocial, index: number) => (
-                <Fragment key={index}>
-                    <LinkedRRSS url={social.link} rrss={social.name} />
-                </Fragment>
-            ))}
-        </div>
-    );
+      {socials.map((social: ISocial, index: number) => (
+        <Fragment key={index}>
+          <LinkedRRSS url={social.link} rrss={social.name} />
+        </Fragment>
+      ))}
+    </div>
+  );
 };
