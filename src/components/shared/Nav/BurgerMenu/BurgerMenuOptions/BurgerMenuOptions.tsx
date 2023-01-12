@@ -14,6 +14,8 @@ type Props = {
 };
 
 export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu, disabledMenuOption }: Props) => {
+  console.log({ routesInfo });
+  console.log({ disabledMenuOption })
   return (
     <nav className={`burger-nav ${isBurgerMenuOpen ? "active" : ""}`}>
       <ul className="burger-ul">

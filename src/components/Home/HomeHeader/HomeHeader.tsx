@@ -19,7 +19,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       <div className="chazz-header">
         <div className={isPlaying ? "velo-out" : "velo-in"}>
           <span className={isPlaying ? "nav-out" : "nav-in"}>
-            <Nav color="white" disabledMenuOption="" isNavVisible={isNavVisible} isPlaying={isPlaying} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
+            <Nav color="white" disabledMenuOption="/" isNavVisible={isNavVisible} isPlaying={isPlaying} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
           </span>
           <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
             <LineBreakerSelector typedLines={headerData.title} />
