@@ -82,12 +82,10 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
           </span>
         </div>
       )}
-      <video
-        className={isPlaying ? "video-header-color" : "video-header"}
-        ref={videoRef}
-        src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4"
-        onEnded={resetVideo}
-      ></video>
+      <video className={isPlaying ? "video-header-color" : "video-header"} ref={videoRef} onEnded={resetVideo}>
+        <source src="uploads/reel_chazz_1080.mp4" media="(min-width: 850px)" />
+        <source src="uploads/reel_chazz_720.mp4" />
+      </video>
     </>
   );
 };
