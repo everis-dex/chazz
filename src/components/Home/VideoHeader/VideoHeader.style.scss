@@ -29,14 +29,15 @@
 .player-video-mobile-switcher {
   display: inline-flex !important;
   position: absolute;
-  bottom: 50px;
-  left: 20px;
+  bottom: 40px;
+  left: 5%;
   width: 50%;
+  cursor: pointer;
 }
 
 .player-video {
   position: absolute;
-  display: block;
+  display: none;
   align-items: center;
   text-shadow: 1px 1px 2px var(--black);
   cursor: none;
@@ -53,8 +54,8 @@
     margin-right: 13px;
     transition: all 1s;
     filter: drop-shadow(1px 1px 5px #000);
-  }
-
+}
+    
   .play-icon-in {
     transform: rotate(-60deg);
     opacity: 0;
@@ -92,7 +93,7 @@
   .player-text {
     color: var(--white);
     font-size: 19px;
-    font-weight: 300;
+    font-weight: 450;
     margin-left: 20px;
     text-shadow: var(--black) 1px 2px 5px;
     opacity: 1;

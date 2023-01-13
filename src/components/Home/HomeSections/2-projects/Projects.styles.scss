@@ -6,11 +6,11 @@
   margin: 0 5%;
 }
 
-.more-projects {
-  color: var(--black);
+.more-projects,
+.more-projects:hover {
   text-decoration: none;
   display: block;
-  padding: 70px 0 45px 0;
+  padding: 40px 0 75px 0;
   font-size: 16px;
   font-weight: 400;
   .img {
@@ -18,21 +18,38 @@
   }
 }
 
+.more-projects {
+  color: var(--black);
+}
+
 .more-projects:hover {
   color: var(--pinkHover);
 }
 
+.icon-size {
+  width: 26px;
+}
+
 // MEDIA QUERIES
 @media (min-width: 768px) {
-  .more-projects .img {
+  .icon-size {
     width: 30px;
   }
 }
 
 @media (min-width: 1280px) {
-  .more-projects {
+  .more-projects,
+  .more-projects:hover {
     font-size: 24px;
     padding: 80px 0;
+  }
+
+  .more-projects {
+    color: var(--black);
+  }
+
+  .more-projects:hover {
+    color: var(--pinkHover);
   }
 }
 
