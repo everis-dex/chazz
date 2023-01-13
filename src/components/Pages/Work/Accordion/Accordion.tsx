@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import "./Accordion.styles.scss";
 
-import moreInfoIcon from "../../../../assets/icn_moreinformation.svg"
-import lessInfoIcon from "../../../../assets/icn_lessinformation.svg"
+import moreInfoIcon from "../../../../assets/icn_moreinformation.svg";
+import lessInfoIcon from "../../../../assets/icn_lessinformation.svg";
 
 type Props = { content: string };
 export const Accordion = ({ content }: Props) => {
@@ -33,9 +33,9 @@ export const Accordion = ({ content }: Props) => {
     <div className="project-accordion">
       <button className="accordion" onClick={e => handleDropdown(e.target)}>
         <p onClick={e => handleFromChild(e.target)}>{dropdownText} information</p>
-        <div className="accordion-arrow" onClick={e => handleFromChild(e.target)} >
-          < img className={openDropdown ? "fadeIn" : "fadeOut"} src={moreInfoIcon} alt="moreInformation" />
-          < img className={!openDropdown ? "fadeIn" : "fadeOut"} src={lessInfoIcon} alt="lessInformation" />
+        <div className="accordion-arrow" onClick={e => handleFromChild(e.target)}>
+          <img className={openDropdown ? "fadeIn" : "fadeOut"} src={moreInfoIcon} alt="moreInformation" />
+          <img className={!openDropdown ? "fadeIn" : "fadeOut"} src={lessInfoIcon} alt="lessInformation" />
         </div>
       </button>
       <div className="panel">{content}</div>

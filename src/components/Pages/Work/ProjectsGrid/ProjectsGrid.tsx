@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 
 import { IProject, IWork } from "../../../../interfaces/cms";
 import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";

@@ -16,26 +16,17 @@ export const CarrouselSlide = (props: IProject) => {
   const screenWidth: number = window.innerWidth;
 
   useEffect(() => {
-      if (screenWidth < 768) {
-        setMediaStyle( 
-          { width: "290px", height: "288px", objectFit: "cover" }
-        );
-      } else {
-        setMediaStyle( 
-          { width: "100%", height: "666px", objectFit: "cover" }
-        );
-      }
-
+    if (screenWidth < 768) {
+      setMediaStyle({ width: "290px", height: "288px", objectFit: "cover" });
+    } else {
+      setMediaStyle({ width: "100%", height: "666px", objectFit: "cover" });
+    }
 
     const resizeSlides = () => {
       if (screenWidth < 768) {
-        setMediaStyle( 
-          { width: "290px", height: "288px", objectFit: "cover" }
-        );
+        setMediaStyle({ width: "290px", height: "288px", objectFit: "cover" });
       } else {
-        setMediaStyle( 
-          { width: "100%", height: "666px", objectFit: "cover" }
-        );
+        setMediaStyle({ width: "100%", height: "666px", objectFit: "cover" });
       }
     };
 
@@ -49,7 +40,7 @@ export const CarrouselSlide = (props: IProject) => {
   return (
     <>
       <div>
-        <Link to = "/work">
+        <Link to="/work">
           <Media src={props.image} style={mediaStyle} alt={props.title} />
         </Link>
         <br />
