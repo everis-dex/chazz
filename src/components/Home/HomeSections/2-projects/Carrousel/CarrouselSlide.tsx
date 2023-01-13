@@ -15,18 +15,18 @@ export const CarrouselSlide = (props: IProject) => {
 
   useEffect(() => {
     setMediaStyle(
-      screenWidth >= 1080
+      screenWidth >= 768
         ? // ? { width: "100%", height: "744px", objectFit: "cover" }
-          { width: "100%", height: "90vh", objectFit: "cover" }
-        : { width: "100%", height: "544px", objectFit: "cover" }
+          { width: "90%", height: "80vh", objectFit: "cover" }
+        : { width: "290px", height: "288px", objectFit: "cover" }
     );
 
     const resizeSlides = () => {
       setMediaStyle(
-        screenWidth >= 1080
+        screenWidth >= 768
           ? // ? { width: "100%", height: "744px", objectFit: "cover" }
-            { width: "100%", height: "90vh", objectFit: "cover" }
-          : { width: "100%", height: "544px", objectFit: "cover" }
+            { width: "90%", height: "80vh", objectFit: "cover" }
+          : { width: "290px", height: "288px", objectFit: "cover" }
       );
     };
 
