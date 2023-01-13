@@ -20,7 +20,7 @@ export const Projects = (projectData: IHomeProjects) => {
       <div id="Projects">
         <Carrousel title={projectData.title} />
         <Link to={"/work"} className="more-projects" onMouseOver={handleHover}>
-          {projectData.more} <img src={!isHover ? rightArrow : rightArrowHover} />
+          {projectData.more} <img src={!isHover ? rightArrow : rightArrowHover} alt="icon"/>
         </Link>
 
       </div>
