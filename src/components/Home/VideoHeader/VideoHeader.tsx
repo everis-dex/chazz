@@ -61,7 +61,6 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
             controlRef.current.style.top = (window.innerHeight - 40).toString().concat("px");
             controlRef.current.style.left = "5%";
           }
-          // controlRef.current.style.left = event.clientX.toString().concat('px');
         } else {
           controlRef.current.style.opacity = "0";
         }
