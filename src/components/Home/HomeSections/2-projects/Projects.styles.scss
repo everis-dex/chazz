@@ -23,8 +23,15 @@
   color: var(--pinkHover);
 }
 
+.icon-size {
+  width: 26px;
+}
+
 // MEDIA QUERIES
 @media (min-width: 768px) {
+  .icon-size {
+    width: 30px;
+  }
 }
 
 @media (min-width: 1280px) {

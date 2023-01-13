@@ -26,7 +26,7 @@ export const Projects = (projectData: IHomeProjects) => {
       <div id="Projects">
         <Carrousel title={projectData.title} />
         <Link to={"/work"} className="more-projects" onMouseEnter={handleHover} onMouseLeave={handleNoHover}>
-          {projectData.more} <img src={!isHover ? rightArrow : rightArrowHover} />
+          {projectData.more} <img src={!isHover ? rightArrow : rightArrowHover} className="icon-size" />
         </Link>
       </div>
 
