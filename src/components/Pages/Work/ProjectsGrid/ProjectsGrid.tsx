@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import { IProject, IWork } from "../../../../interfaces/cms";
 import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
@@ -66,9 +66,9 @@ export const ProjectsGrid = (workData: IWork) => {
           projects.map((project: IProject, index: number) => {
             const [format, columns] = handleProjectFormat();
             return (
-              <div key={index}>
+              <Fragment key={index}>
                 <ProjectCard data={project} format={format} columns={columns} />
-              </div>
+              </Fragment>
             );
           })}
       </div>

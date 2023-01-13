@@ -22,7 +22,14 @@ export const Services = () => {
 
   return (
     <>
-      <Nav color="black" disabledMenuOption={routesInfo[1].route} isNavVisible={true} isPlaying={false} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
+      <Nav
+        color="black"
+        disabledMenuOption={routesInfo[1].route}
+        isNavVisible={true}
+        isPlaying={false}
+        isBurgerMenuOpen={isBurgerMenuOpen}
+        setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+      />
       <div className="services-container">
         <div className="services-header">
           <h1 className="header-title">{headerData.title}</h1>

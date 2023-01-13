@@ -1,7 +1,13 @@
 [
   { "name": "Endesa", "logo": "uploads/logo_endesa.svg", "scale": "85", "website": "https://www.endesa.com", "id": 1 },
-  { "name": "Renfe", "logo": "uploads/logo_renfe.svg", "scale": "75", "website": "http://renfe.es/", "id": 2 },
-  { "name": "Wabi", "logo": "uploads/logo_wabi.svg", "scale": "50", "website": "https://www.wabicar.com/en/", "id": 3 },
+  { "name": "dōcō by Renfe", "logo": "uploads/logo_renfe.svg", "scale": "75", "website": "http://renfe.es/", "id": 2 },
+  {
+    "name": "European Commision",
+    "logo": "uploads/logo_comision europea.svg",
+    "scale": "100",
+    "website": "https://commission.europa.eu/",
+    "id": 3
+  },
   {
     "name": "Leroy Merlin",
     "logo": "uploads/logo_leroy.svg",
@@ -31,13 +37,7 @@
     "id": 7
   },
   { "name": "Loewe", "logo": "uploads/logo_loewe.svg", "scale": "80", "website": "https://www.loewe.com/", "id": 8 },
-  {
-    "name": "Generalitat de Catalunya",
-    "logo": "uploads/logo_generalitat.svg",
-    "scale": "80",
-    "website": "http://www.gencat.es/",
-    "id": 9
-  },
+  { "name": "Wabi", "logo": "uploads/logo_wabi.svg", "scale": "70", "website": "https://www.wabicar.com/en/", "id": 9 },
   { "name": "Seat", "logo": "uploads/logo_seat.svg", "scale": "75", "website": "https://www.seat.es/", "id": 10 },
   {
     "name": "Correos",

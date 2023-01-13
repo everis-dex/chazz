@@ -10,7 +10,8 @@ type Props = { title: string };
 export const Studios = ({ title }: Props) => {
   const gridColumns = window.innerWidth > 480 ? 3 : 2;
   // Define the number of rows so that there's always the required amount of columns (gridColumns)
-  const gridRows: number = Math.floor(studios.length / gridColumns) + 1;
+  const division = studios.length / gridColumns;
+  const gridRows: number = division % 1 === 0 ? division : Math.floor(division) + 1;
 
   return (
     <div className="studios-container">

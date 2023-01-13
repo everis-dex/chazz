@@ -19,7 +19,14 @@ export const Work = () => {
 
   return (
     <>
-      <Nav color="black" disabledMenuOption={routesInfo[2].route} isNavVisible={true} isPlaying={false} isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
+      <Nav
+        color="black"
+        disabledMenuOption={routesInfo[2].route}
+        isNavVisible={true}
+        isPlaying={false}
+        isBurgerMenuOpen={isBurgerMenuOpen}
+        setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+      />
       <ProjectsGrid {...workData} />
       <Footer />
     </>

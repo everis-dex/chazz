@@ -39,6 +39,9 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
   const resetVideo = () => {
     setIsPlaying(false);
     setControlText("Play");
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+    }
   };
 
   useEffect(() => {
@@ -52,10 +55,14 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
           const postX = event.clientX;
           const scrollFinalX = scrollX + postX - 50;
 
-          controlRef.current.style.top = scrollFinalY.toString().concat("px");
-          controlRef.current.style.left = scrollFinalX.toString().concat("px");
-          controlRef.current.style.opacity = "1";
-          // controlRef.current.style.left = event.clientX.toString().concat('px');
+          if (window.innerWidth >= 1040) {
+            controlRef.current.style.top = scrollFinalY.toString().concat("px");
+            controlRef.current.style.left = scrollFinalX.toString().concat("px");
+            controlRef.current.style.opacity = "1";
+          } else {
+            controlRef.current.style.top = (window.innerHeight - 40).toString().concat("px");
+            controlRef.current.style.left = "5%";
+          }
         } else {
           controlRef.current.style.opacity = "0";
         }
@@ -71,23 +78,32 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
   return (
     <>
       {!isBurgerMenuOpen && (
-        <div className="player-video" ref={controlRef}>
-          {isPlaying}
+        <>
+          <div className="player-video-mobile-switcher">
+            <div className="player-video">
+              <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
+              <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
+              <span className="player-text" onClick={switchPlayPause}>
+                {controlText} reel
+              </span>
+            </div>
+          </div>
 
-          <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
-          <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
-
-          <span className="player-text" onClick={switchPlayPause}>
-            {controlText} reel
-          </span>
-        </div>
+          <div className="player-video-desktop-switcher">
+            <div className="player-video" ref={controlRef}>
+              <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
+              <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
+              <span className="player-text" onClick={switchPlayPause}>
+                {controlText} reel
+              </span>
+            </div>
+          </div>
+        </>
       )}
-      <video
-        className={isPlaying ? "video-header-color" : "video-header"}
-        ref={videoRef}
-        src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4"
-        onEnded={resetVideo}
-      ></video>
+      <video className={isPlaying ? "video-header-color" : "video-header"} ref={videoRef} onEnded={resetVideo}>
+        <source src="uploads/reel_chazz_1080.mp4" media="(min-width: 850px)" />
+        <source src="uploads/reel_chazz_540.mp4" />
+      </video>
     </>
   );
 };
