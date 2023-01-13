@@ -259,7 +259,7 @@
   }
 }
 
-@media (min-width:1920px) {
+@media (min-width: 1920px) {
   .section-title {
     font-size: 17px;
     margin-bottom: 8px;
@@ -269,7 +269,8 @@
     width: 67%;
   }
 
-  .in-touch-info .email, .in-touch-info .social-media {
+  .in-touch-info .email,
+  .in-touch-info .social-media {
     font-weight: 300;
   }
 
@@ -290,5 +291,4 @@
     font-size: 42px;
     margin-bottom: 20px;
   }
-  
 }
