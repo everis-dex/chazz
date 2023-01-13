@@ -100,7 +100,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
       )}
       <video className={isPlaying ? "video-header-color" : "video-header"} ref={videoRef} onEnded={resetVideo}>
         <source src="uploads/reel_chazz_1080.mp4" media="(min-width: 850px)" />
-        <source src="uploads/reel_chazz_720.mp4" />
+        <source src="uploads/reel_chazz_540.mp4" />
       </video>
     </>
   );
