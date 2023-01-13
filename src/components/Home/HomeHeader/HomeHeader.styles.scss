@@ -127,11 +127,13 @@
 
     h1 {
       font-size: 48px;
+      margin-top: -70px;
     }
 
     h4 {
       width: max-content;
       font-size: 22px;
+      margin-top: 0;
     }
   }
 
@@ -157,7 +159,7 @@
       }
 
       h4 {
-        margin-top: -22px;
+        margin-top: -40px;
         font-size: 29px;
       }
     }
@@ -186,6 +188,13 @@
     .chazz-header {
       background-size: cover;
       background-position: 0 -95px;
+    }
+
+    .chazz-title h1 {
+      font-size: 105px;
+    }
+    .chazz-title h4{
+      font-size: 38px;
     }
 
     .chazz-title,

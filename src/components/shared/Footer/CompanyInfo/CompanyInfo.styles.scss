@@ -86,7 +86,7 @@
   .social-media {
     color: var(--footerLink);
     font-size: 16px;
-    font-weight: 450;
+    font-weight: 300;
     line-height: 24.4px;
     margin-bottom: 5px;
   }
@@ -188,7 +188,7 @@
       .phone,
       .social-media {
         margin-bottom: 5px;
-        font-weight: 450;
+        font-weight: 300;
       }
 
       .email {
@@ -196,7 +196,7 @@
       }
 
       .map {
-        font-weight: 450;
+        font-weight: 300;
       }
     }
   }
@@ -256,4 +256,33 @@
       justify-items: start;
     }
   }
+}
+
+@media (min-width:1920px) {
+  .section-title {
+    font-size: 17px;
+  }
+  .we-are-section .we-are-grid h2 {
+    padding-top: 117px;
+    width: 53%;
+  }
+
+  .in-touch-info .email, .in-touch-info .social-media {
+    font-weight: 300;
+  }
+
+  .studios-container .studios-grid .studios-info {
+    font-size: 42px;
+    line-height: 1.5;
+  }
+
+  .studios-container .studios-grid .email {
+    font-weight: 300;
+  }
+
+  .offices-container .offices-info .city {
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+  
 }

@@ -52,9 +52,14 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
           const postX = event.clientX;
           const scrollFinalX = scrollX + postX - 50;
 
-          controlRef.current.style.top = scrollFinalY.toString().concat("px");
-          controlRef.current.style.left = scrollFinalX.toString().concat("px");
-          controlRef.current.style.opacity = "1";
+          if (window.innerWidth >= 1040) {
+            controlRef.current.style.top = scrollFinalY.toString().concat("px");
+            controlRef.current.style.left = scrollFinalX.toString().concat("px");
+            controlRef.current.style.opacity = "1";
+          } else {
+            controlRef.current.style.top = (window.innerHeight - 40).toString().concat("px");
+            controlRef.current.style.left = "5%";
+          }
           // controlRef.current.style.left = event.clientX.toString().concat('px');
         } else {
           controlRef.current.style.opacity = "0";
@@ -72,33 +77,30 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
     <>
       {!isBurgerMenuOpen && (
         <>
-        <div className="player-video" ref={controlRef}>
-          {isPlaying}
+          <div className="player-video-mobile-switcher">
+            <div className="player-video">
+              <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
+              <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
+              <span className="player-text" onClick={switchPlayPause}>
+                {controlText} reel
+              </span>
+            </div>
+          </div>
 
-          <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
-          <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
-
-          <span className="player-text" onClick={switchPlayPause}>
-            {controlText} reel
-          </span>
-        </div>
-
-
-        <div className="player-video-mobile">
-        {isPlaying}
-
-        <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
-        <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
-
-        <span className="player-text" onClick={switchPlayPause}>
-          {controlText} reel
-        </span>
-      </div>
-      </>
+          <div className="player-video-desktop-switcher">
+            <div className="player-video" ref={controlRef}>
+              <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
+              <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
+              <span className="player-text" onClick={switchPlayPause}>
+                {controlText} reel
+              </span>
+            </div>
+          </div>
+        </>
       )}
       <video className={isPlaying ? "video-header-color" : "video-header"} ref={videoRef} onEnded={resetVideo}>
         <source src="uploads/reel_chazz_1080.mp4" media="(min-width: 850px)" />
-        <source src="uploads/reel_chazz_720.mp4" />
+        <source src="uploads/reel_chazz_540.mp4" />
       </video>
     </>
   );
