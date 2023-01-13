@@ -32,10 +32,10 @@
   },
   { "name": "Loewe", "logo": "uploads/logo_loewe.svg", "scale": "80", "website": "https://www.loewe.com/", "id": 8 },
   {
-    "name": "Generalitat de Catalunya",
-    "logo": "uploads/logo_generalitat.svg",
-    "scale": "80",
-    "website": "http://www.gencat.es/",
+    "name": "European Commision",
+    "logo": "uploads/logo_european_commission.svg",
+    "scale": "60",
+    "website": "https://commission.europa.eu/",
     "id": 9
   },
   { "name": "Seat", "logo": "uploads/logo_seat.svg", "scale": "75", "website": "https://www.seat.es/", "id": 10 },
