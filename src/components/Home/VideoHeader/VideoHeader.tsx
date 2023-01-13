@@ -39,6 +39,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
   const resetVideo = () => {
     setIsPlaying(false);
     setControlText("Play");
+    if (videoRef.current) { videoRef.current.currentTime = 0 }
   };
 
   useEffect(() => {
