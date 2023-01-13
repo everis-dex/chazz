@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { IProject } from "../../../../../interfaces/cms";
 import { Media } from "../../../../shared/Media/Media";
 
+import { Link } from "react-router-dom";
+
 interface MediaStyle {
   width: string;
   height: string;
@@ -14,20 +16,27 @@ export const CarrouselSlide = (props: IProject) => {
   const screenWidth: number = window.innerWidth;
 
   useEffect(() => {
-    setMediaStyle(
-      screenWidth >= 768
-        ? // ? { width: "100%", height: "744px", objectFit: "cover" }
-          { width: "90%", height: "80vh", objectFit: "cover" }
-        : { width: "290px", height: "288px", objectFit: "cover" }
-    );
+      if (screenWidth < 768) {
+        setMediaStyle( 
+          { width: "290px", height: "288px", objectFit: "cover" }
+        );
+      } else {
+        setMediaStyle( 
+          { width: "100%", height: "666px", objectFit: "cover" }
+        );
+      }
+
 
     const resizeSlides = () => {
-      setMediaStyle(
-        screenWidth >= 768
-          ? // ? { width: "100%", height: "744px", objectFit: "cover" }
-            { width: "90%", height: "80vh", objectFit: "cover" }
-          : { width: "290px", height: "288px", objectFit: "cover" }
-      );
+      if (screenWidth < 768) {
+        setMediaStyle( 
+          { width: "290px", height: "288px", objectFit: "cover" }
+        );
+      } else {
+        setMediaStyle( 
+          { width: "100%", height: "666px", objectFit: "cover" }
+        );
+      }
     };
 
     window.addEventListener("resize", resizeSlides);
@@ -40,7 +49,9 @@ export const CarrouselSlide = (props: IProject) => {
   return (
     <>
       <div>
-        <Media src={props.image} style={mediaStyle} alt={props.title} />
+        <Link to = "/work">
+          <Media src={props.image} style={mediaStyle} alt={props.title} />
+        </Link>
         <br />
       </div>
       <p className="title">

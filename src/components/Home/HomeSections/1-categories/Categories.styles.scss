@@ -163,10 +163,11 @@
   .section1 {
     .section1-title h1{
       width: 69%;
-      font-size: 52px;
+      font-size: 45px;
     }
     .section1-title h2 {
-      font-size: 52px;
+      font-size: 45px;
+      margin-top: 8px;
     }
     .section1-sections {
       width: 75%;
@@ -175,10 +176,11 @@
       line-height: 1.5;
     }
     .section1-sections h2 {
-      font-size: 52px;
+      font-size: 45px;
     }
     .section1-sections h2 + p {
-      font-size: 28px;
+      font-size: 25px;
+      margin-top: -14px;
     }
   }
 }
