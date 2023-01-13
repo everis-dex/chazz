@@ -155,6 +155,7 @@
         line-height: 114.5%;
         padding: 105px 70px 0 0px;
         grid-row: 1 / 6;
+        width: 89%;
       }
 
       .divisor-line {
@@ -261,10 +262,11 @@
 @media (min-width:1920px) {
   .section-title {
     font-size: 17px;
+    margin-bottom: 8px;
   }
   .we-are-section .we-are-grid h2 {
     padding-top: 117px;
-    width: 53%;
+    width: 67%;
   }
 
   .in-touch-info .email, .in-touch-info .social-media {
@@ -278,6 +280,10 @@
 
   .studios-container .studios-grid .email {
     font-weight: 300;
+  }
+
+  .studios-container .studios-grid {
+    margin-top: 0;
   }
 
   .offices-container .offices-info .city {

@@ -18,9 +18,7 @@ export const Accordion = ({ content }: Props) => {
 
   function handleDropdown(target: EventTarget) {
     const accordion = target as Element;
-    // Rotate arrow
-    // const arrow = accordion.children[1] as HTMLElement;
-    // if (arrow) arrow.style.transform = openDropdown ? "rotate(90deg)" : "rotate(-90deg)";
+
     // Show pannel
     const panel = accordion.nextElementSibling as HTMLElement;
     if (panel) {
@@ -36,8 +34,8 @@ export const Accordion = ({ content }: Props) => {
       <button className="accordion" onClick={e => handleDropdown(e.target)}>
         <p onClick={e => handleFromChild(e.target)}>{dropdownText} information</p>
         <div className="accordion-arrow" onClick={e => handleFromChild(e.target)} >
-          < img className={!openDropdown ? "fadeIn" : "fadeOut"} src={moreInfoIcon} alt="moreInformation" />
-          < img className={openDropdown ? "fadeIn" : "fadeOut"} src={lessInfoIcon} alt="lessInformation" />
+          < img className={openDropdown ? "fadeIn" : "fadeOut"} src={moreInfoIcon} alt="moreInformation" />
+          < img className={!openDropdown ? "fadeIn" : "fadeOut"} src={lessInfoIcon} alt="lessInformation" />
         </div>
       </button>
       <div className="panel">{content}</div>
