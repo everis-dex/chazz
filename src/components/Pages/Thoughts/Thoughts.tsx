@@ -19,6 +19,7 @@ export const Thoughts = () => {
         isPlaying={false}
         isBurgerMenuOpen={isBurgerMenuOpen}
         setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+        activeStyle="active-pink"
       />
       <p>Thoughts</p>
       <Footer />
