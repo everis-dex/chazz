@@ -17,7 +17,8 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
     img.src = data.image;
 
     const getImageHeight = (img.onload = () => {
-      const res = format === "half" ? img.height / 2 + "px" : img.height + "px";
+      const height: number = img.height ? img.height : 600;
+      const res = format === "half" ? height / 2 + "px" : height + "px";
       return res;
     });
 
