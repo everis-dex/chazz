@@ -16,6 +16,14 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const [isNavVisible, setisNavVisible] = useState<boolean>(true);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
 
+  // TODO: plantear si se queda aquí
+  const appHeight = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+  };
+  window.addEventListener("resize", appHeight);
+  appHeight();
+
   return (
     <>
       <div className="chazz-header">

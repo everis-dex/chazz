@@ -7,10 +7,7 @@
   background-position: -330px -100px;
   overflow: hidden;
   position: relative;
-  height: 100vh;
-  min-height: -moz-available;
-  min-height: -webkit-fill-available;
-  min-height: fill-available;
+  height: var(--app-height);
 
   .velo-in,
   .velo-out {
