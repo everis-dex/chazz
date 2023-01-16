@@ -1,6 +1,9 @@
 {
   "date": "2022-12-30T09:17:31.387Z",
-  "image": "/uploads/loewe_grid_web.jpg",
+  "media": {
+    "carrousel": "/uploads/loewe_grid_web.jpg",
+    "project": "/uploads/loewe_grid_web.jpg"
+  },
   "title": "Loewe",
   "description": "Understand e-tailer Evolving Momentum.",
   "subtitle": "Funnel Strategy & Sales, Campaigns Strategy & Ops, SEO...",

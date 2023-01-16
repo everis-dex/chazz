@@ -1,6 +1,9 @@
 {
   "date": "2022-12-30T10:17:31.387Z",
-  "image": "/uploads/vidacaixa_grid_web.jpg",
+  "media": {
+    "carrousel": "/uploads/vidacaixa_grid_web.jpg",
+    "project": "/uploads/vidacaixa_grid_web.jpg"
+  },
   "title": "VidaCaixa",
   "description": "Rethink Life Insurance ans Savings CX.",
   "subtitle": "Research and Behavioural, Strategic Design, CX",

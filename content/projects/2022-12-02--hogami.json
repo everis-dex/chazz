@@ -1,6 +1,9 @@
 {
   "date": "2022-12-16T13:50:31.387Z",
-  "image": "/uploads/hogami_home_web.jpg",
+  "media": {
+    "carrousel": "/uploads/hogami_home_web.jpg",
+    "project": "/uploads/hogami_home_web.jpg"
+  },
   "title": "Hogami",
   "description": "Better Habitats With A Home Service Platform.",
   "subtitle": "Strategic Design, Branding, Digital Products, UX & UI",

@@ -85,10 +85,15 @@ export interface IProject {
   id: number;
   title: string;
   subtitle: string;
-  image: string;
+  media: IProjectMedia;
   description: string;
   body: string;
   incarrousel: boolean;
+}
+
+export interface IProjectMedia {
+  carrousel: string;
+  project: string;
 }
 
 export interface IPartner {

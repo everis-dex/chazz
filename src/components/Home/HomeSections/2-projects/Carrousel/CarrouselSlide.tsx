@@ -41,7 +41,7 @@ export const CarrouselSlide = (props: IProject) => {
     <>
       <div>
         <Link to="/work">
-          <Media src={props.image} style={mediaStyle} alt={props.title} />
+          <Media src={props.media.carrousel} style={mediaStyle} alt={props.title} />
         </Link>
         <br />
       </div>
