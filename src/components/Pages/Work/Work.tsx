@@ -26,6 +26,7 @@ export const Work = () => {
         isPlaying={false}
         isBurgerMenuOpen={isBurgerMenuOpen}
         setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+        activeStyle="active-pink"
       />
       <ProjectsGrid {...workData} />
       <Footer />

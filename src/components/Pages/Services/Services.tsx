@@ -29,6 +29,7 @@ export const Services = () => {
         isPlaying={false}
         isBurgerMenuOpen={isBurgerMenuOpen}
         setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+        activeStyle="active-pink"
       />
       <div className="services-container">
         <div className="services-header">

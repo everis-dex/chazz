@@ -5,9 +5,9 @@ import { availableRoutes, routesInfo } from "../../../../constants";
 
 import "../Nav.styles.scss";
 
-type Props = { color: string };
+type Props = { color: string, activeStyle: string };
 
-export const DesktopMenu = ({ color }: Props) => {
+export const DesktopMenu = ({ color, activeStyle }: Props) => {
   var currentPage = "/".concat(window.location.pathname.split("/")[1]);
 
   return (
@@ -24,7 +24,7 @@ export const DesktopMenu = ({ color }: Props) => {
                       {route.name}
                     </Link>
                   ) : (
-                    <span className="active">{route.name}</span>
+                    <span className={activeStyle}>{route.name}</span>
                   )}
                 </>
               )}
