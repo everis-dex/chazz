@@ -45,6 +45,8 @@ export const Media = ({ src, style, alt, format }: Props) => {
               muted={true}
               loop
               autoPlay
+              preload="auto"
+              playsInline
               src={src}
             >
               Video not supported.
