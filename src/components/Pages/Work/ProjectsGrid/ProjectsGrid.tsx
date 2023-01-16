@@ -25,7 +25,7 @@ export const ProjectsGrid = (workData: IWork) => {
   let configuration = config[0];
 
   function handleProjectFormat(): string[] {
-    let format: string = imageConfig.half;
+    let format: string = imageConfig.auto;
 
     currentColumn++;
     let columnFullWidth: string = ""; // full-width can be "" or "full-width"
@@ -37,9 +37,8 @@ export const ProjectsGrid = (workData: IWork) => {
         currentRow = currentColumn / columnCount;
         configuration = config[currentRow];
 
-        if (configuration === formats.left) format = imageConfig.auto;
+        if (configuration === formats.right) format = imageConfig.half;
         if (configuration === formats.big) {
-          format = imageConfig.auto;
           columnFullWidth = "full-width";
           // Occupies entire row, so head to next row
           currentRow++;
@@ -48,7 +47,7 @@ export const ProjectsGrid = (workData: IWork) => {
         break;
 
       case 1: // right column
-        if (configuration === formats.right) format = imageConfig.auto;
+        if (configuration === formats.left) format = imageConfig.half;
         break;
     }
     return [format, columnFullWidth];

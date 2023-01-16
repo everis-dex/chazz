@@ -12,7 +12,6 @@ type Props = {
 
 export const Media = ({ src, style, alt }: Props) => {
   const [lottie, setLottie] = useState<Object | null>(null);
-  const { width, height } = style;
 
   const extension: string = src
     .substring(src.lastIndexOf(".") + 1)
@@ -36,7 +35,7 @@ export const Media = ({ src, style, alt }: Props) => {
         <>
           {supportedVideoTags.includes(extension) && (
             <video
-              width={width}
+              width={style.width}
               height="auto"
               controls
               onError={error => console.error(error)}
