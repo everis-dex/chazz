@@ -54,7 +54,7 @@ export const Services = () => {
             (project: IProject, index: number) =>
               index > 4 && (
                 <div className="project" key={index}>
-                  <img loading="lazy" src={project.image} alt="Project" />
+                  <img loading="lazy" src={project.media.project} alt="Project" />
                   <p className="title">
                     {project.title} <span> —</span>
                   </p>

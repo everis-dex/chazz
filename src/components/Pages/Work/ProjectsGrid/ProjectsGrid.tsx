@@ -16,7 +16,7 @@ const formats = {
 const imageConfig = { auto: "auto", half: "half" };
 
 // la configuración se escoge por cada row, por cada par de columnas
-let config = [formats.right, formats.big, formats.left, formats.right, formats.equal, formats.big];
+let config = [formats.left, formats.big, formats.left, formats.right, formats.equal];
 
 export const ProjectsGrid = (workData: IWork) => {
   const columnCount: number = 2;
@@ -62,7 +62,9 @@ export const ProjectsGrid = (workData: IWork) => {
         </div>
 
         {projects &&
-          projects.map((project: IProject, index: number) => {
+          projects.map((proj, index: number) => {
+            const project = proj as IProject;
+            console.log("🚀 ~ file: ProjectsGrid.tsx:74 ~ ProjectsGrid ~ project", project);
             const [format, columns] = handleProjectFormat();
             return (
               <Fragment key={index}>

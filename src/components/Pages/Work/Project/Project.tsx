@@ -10,11 +10,12 @@ type Props = { data: IProject; format: string; columns?: string; full?: boolean 
 
 export const ProjectCard = ({ data, format, columns }: Props) => {
   let [height, setHeight] = useState<string>("auto");
+  const image = data.media.project;
 
   useEffect(() => {
     // Create image to obtain height
     const img = new Image();
-    img.src = data.image;
+    img.src = image;
 
     const getImageHeight = (img.onload = () => {
       const height: number = img.height ? img.height : 600;
@@ -23,7 +24,7 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
     });
 
     setHeight(getImageHeight());
-  }, [data.image, format, height]);
+  }, [image, format, height]);
 
   const bodyParagraphs = data.body;
 
@@ -34,7 +35,7 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
   return (
     <div className={`project-container ${columns}`}>
       <div className="project-media">
-        <Media src={data.image} style={{ height, width: "100%" }} alt={data.title} format={format} />
+        <Media src={image} style={{ height, width: "100%" }} alt={data.title} format={format} />
       </div>
 
       <div className="project-details">

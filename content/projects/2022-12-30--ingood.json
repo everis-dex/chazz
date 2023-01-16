@@ -1,6 +1,9 @@
 {
   "date": "2022-12-30T11:19:29.387Z",
-  "image": "/uploads/ingood_grid_web.jpg",
+  "media": {
+    "carrousel": "/uploads/ingood_grid_web.jpg",
+    "project": "/uploads/ingood_grid_web.jpg"
+  },
   "title": "ingood",
   "description": "Redefine Personal Belongings Digital Insurance.",
   "subtitle": "Branding, Digital Products, UX & UI",
