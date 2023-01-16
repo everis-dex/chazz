@@ -16,7 +16,7 @@ const formats = {
 const imageConfig = { auto: "auto", half: "half" };
 
 // la configuración se escoge por cada row, por cada par de columnas
-let config = [formats.right, formats.big, formats.left, formats.right, formats.equal, formats.big];
+let config = [formats.left, formats.big, formats.left, formats.right, formats.equal];
 
 export const ProjectsGrid = (workData: IWork) => {
   const columnCount: number = 2;
