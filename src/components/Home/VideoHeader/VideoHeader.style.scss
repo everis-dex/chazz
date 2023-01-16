@@ -1,6 +1,8 @@
 .video-header {
   // width: 100vw;
   height: 100vh;
+  width: -webkit-fill-available;
+  object-fit: cover;
   position: absolute;
   top: 0;
   z-index: -1;
@@ -107,11 +109,14 @@
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
-  .video-header {
-    left: 0;
-  }
   .video-header-color {
     left: 0;
+  }
+  .video-header {
+    left: 0;
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
   }
 }
 
@@ -133,10 +138,11 @@
 }
 
 @media (min-width: 1280px) {
-  .video-header {
-    width: 100vw;
-    height: auto;
-  }
+  // .video-header {
+  //   width: 100vw;
+  //   height: auto;
+  //   object-fit: cover;
+  // }
 
   .video-header-color {
     width: 100vw;
