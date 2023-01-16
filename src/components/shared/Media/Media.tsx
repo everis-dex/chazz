@@ -8,10 +8,13 @@ type Props = {
   src: string;
   style: { width: string; height: string };
   alt: string;
+  format?: string;
 };
 
-export const Media = ({ src, style, alt }: Props) => {
+export const Media = ({ src, style, alt, format }: Props) => {
   const [lottie, setLottie] = useState<Object | null>(null);
+
+  if (window.innerWidth > 1900 && format === "auto") style.height = "auto";
 
   const extension: string = src
     .substring(src.lastIndexOf(".") + 1)
@@ -46,7 +49,7 @@ export const Media = ({ src, style, alt }: Props) => {
               Video not supported.
             </video>
           )}
-          {supportedImageTags.includes(extension) && <img loading="lazy" style={style} src={src} alt={alt} />}
+          {supportedImageTags.includes(extension) && <img style={style} src={src} alt={alt} />}
           {extension === "json" && (
             <>{lottie ? <Lottie animationData={lottie} loop={true} autoplay={true} /> : <>Loading</>}</>
           )}

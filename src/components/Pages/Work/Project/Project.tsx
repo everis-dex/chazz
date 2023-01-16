@@ -34,7 +34,7 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
   return (
     <div className={`project-container ${columns}`}>
       <div className="project-media">
-        <Media src={data.image} style={{ height, width: "100%" }} alt={data.title} />
+        <Media src={data.image} style={{ height, width: "100%" }} alt={data.title} format={format} />
       </div>
 
       <div className="project-details">
