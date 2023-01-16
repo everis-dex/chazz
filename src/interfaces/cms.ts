@@ -5,11 +5,11 @@
 // Home page
 export interface IHome {
   page: string;
-  header: object;
-  categories: object;
-  projects: object;
-  partners: object;
-  footer: object;
+  header: IHomeHeader;
+  categories: IHomeSection;
+  projects: IHomeProjects;
+  partners: IHomeSection;
+  footer: IHomeFooter;
 }
 
 // Home sections
@@ -43,8 +43,8 @@ export interface IWork {
 // Services page
 export interface IServices {
   page: string;
-  header: object;
-  projects: object;
+  header: IServicesHeader;
+  projects: IServicesProjects;
 }
 
 export interface IServicesHeader {

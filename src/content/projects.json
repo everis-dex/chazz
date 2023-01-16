@@ -1,6 +1,6 @@
 [
   {
-    "media": { "carrousel": "/uploads/buff_home_web.jpg", "project": "/uploads/buff_home_web.jpg" },
+    "media": { "carrousel": "/uploads/buff_home_web.jpg", "project": "/uploads/buff_grid_web.jpg" },
     "title": "Buff",
     "description": "A Globetrotter Digital Advisory Strategy.",
     "subtitle": "Funnel Strategy & Sales, Service, Value Proposition",
@@ -9,7 +9,7 @@
     "id": 1671171660
   },
   {
-    "media": { "carrousel": "/uploads/doco_grid_web.mp4", "project": "/uploads/doco_grid_web.mp4" },
+    "media": { "carrousel": "/uploads/doco_home_web.jpg", "project": "/uploads/doco_grid_web.mp4" },
     "title": "dōcō by Renfe",
     "description": "Making end2end Mobility Easier in Any Territory.",
     "subtitle": "Branding, Service, CX & EX Management, Digital Product...",
@@ -18,7 +18,7 @@
     "id": 1671185640
   },
   {
-    "media": { "carrousel": "/uploads/seatmo_home_web.jpg", "project": "/uploads/seatmo_home_web.jpg" },
+    "media": { "carrousel": "/uploads/seatmo_home_web.jpg", "project": "/uploads/seatmo_grid_web.jpg" },
     "title": "SEAT MÓ",
     "description": "Full Funnel Optimization for Active Users.",
     "subtitle": "Marketing Funnel, Social Media Marketing, SEO/ASO...",
@@ -27,7 +27,7 @@
     "id": 1671191880
   },
   {
-    "media": { "carrousel": "/uploads/hogami_home_web.jpg", "project": "/uploads/hogami_home_web.jpg" },
+    "media": { "carrousel": "/uploads/hogami_home_web.jpg", "project": "/uploads/hogami_grid_web.jpg" },
     "title": "Hogami",
     "description": "Better Habitats With A Home Service Platform.",
     "subtitle": "Strategic Design, Branding, Digital Products, UX & UI",
@@ -36,7 +36,7 @@
     "id": 1671195000
   },
   {
-    "media": { "carrousel": "/uploads/wabi-gif-grid.mp4", "project": "/uploads/wabi-gif-grid.mp4" },
+    "media": { "carrousel": "/uploads/wabi_home_web.png", "project": "/uploads/wabi-gif-grid.mp4" },
     "title": "Wabi",
     "description": "Your Car, in a monthly Based Subscription.",
     "subtitle": "Service, Branding, Digital Products, UX & UI",
