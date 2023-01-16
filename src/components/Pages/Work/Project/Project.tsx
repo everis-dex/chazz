@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { IProject } from "../../../../interfaces/cms";
 import { Accordion } from "../Accordion/Accordion";
+import { Media } from "../../../shared/Media/Media";
 
 import "./Project.styles.scss";
 
@@ -32,7 +33,7 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
   return (
     <div className={`project-container ${columns}`}>
       <div className="project-media">
-        <img src={data.image} style={{ height }} alt={data.title} />
+        <Media src={data.image} style={{ height, width: "100%" }} alt={data.title} />
       </div>
 
       <div className="project-details">

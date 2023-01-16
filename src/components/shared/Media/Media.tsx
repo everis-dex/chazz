@@ -36,9 +36,8 @@ export const Media = ({ src, style, alt }: Props) => {
         <>
           {supportedVideoTags.includes(extension) && (
             <video
-              style={style}
               width={width}
-              height={height}
+              height="auto"
               controls
               onError={error => console.error(error)}
               muted={true}
