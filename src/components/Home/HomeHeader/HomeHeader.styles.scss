@@ -129,7 +129,6 @@
     h1 {
       font-size: 48px;
       margin-top: -70px;
-      line-height: 96.3px;
     }
 
     h4 {
@@ -143,6 +142,10 @@
     .chazz-title,
     .chazz-title-out {
       width: 60%;
+    }
+
+    h1 {
+      line-height: 96.3px;
     }
   }
   @media (min-width: 1280px) {
