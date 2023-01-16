@@ -143,10 +143,6 @@
     .chazz-title-out {
       width: 60%;
     }
-
-    h1 {
-      line-height: 96.3px;
-    }
   }
   @media (min-width: 1280px) {
     .chazz-header {
@@ -158,6 +154,7 @@
     .chazz-title,
     .chazz-title-out {
       h1 {
+        line-height: 96.3px;
         font-size: 76px;
         position: relative;
         top: -2rem;
