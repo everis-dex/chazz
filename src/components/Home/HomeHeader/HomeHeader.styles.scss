@@ -139,6 +139,10 @@
   }
 
   @media (min-width: 1024px) {
+    .chazz-header{
+      max-height: 575px;
+      width: 100%;
+    }
     .chazz-title,
     .chazz-title-out {
       width: 60%;
