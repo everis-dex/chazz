@@ -5,12 +5,12 @@
   // background-image: url("/assets/video.png");
   background-repeat: no-repeat;
   background-position: -330px -100px;
+  overflow: hidden;
+  position: relative;
   height: 100vh;
   min-height: -moz-available;
   min-height: -webkit-fill-available;
   min-height: fill-available;
-  overflow: hidden;
-  position: relative;
 
   .velo-in,
   .velo-out {
