@@ -9,8 +9,8 @@
     "id": 1671171660
   },
   {
-    "image": "/uploads/doco_home_web.jpg",
-    "title": "Renfe",
+    "image": "/uploads/doco_grid_web.mp4",
+    "title": "dōcō by Renfe",
     "description": "Making end2end Mobility Easier in Any Territory.",
     "subtitle": "Branding, Service, CX & EX Management, Digital Product...",
     "incarrousel": false,
@@ -70,14 +70,5 @@
     "incarrousel": false,
     "body": "Reale Seguros and Chazz came together to develop a new digital experience for personal belongings insurance. Reale embraced disruption going ahead with a complete digital product with other insurers. \n\nThe focus of the project was to promote the joy towards what really matters for the consumer, and meanwhile the new product would take care of their valuable belongings. The result was the creation of ingood, a new brand endorsed by the Reale Group but with its own and rich personality differentiating from the main brand.",
     "id": 1672395540
-  },
-  {
-    "image": "/uploads/web_doco_mock_1-1.png",
-    "title": "dōcō",
-    "description": "Making mobility easier in any territory.",
-    "subtitle": "Branding, Service, Value Proposition",
-    "incarrousel": true,
-    "body": "Renfe and Chazz worked together to create a new mobility service adapted to the needs of society under the paradigm of sustainable travel.\nMobility is a complex sector, so we shaped a tangible travel experience, making possible that any kind of trip becomes an enchanting walk. Because dōcō is technology, but also empathy. It adapts to diverse lifestyles by searching, planning and booking easily short, medium and long-distance trips in a multimodal way.",
-    "id": 1672420440
   }
 ]

@@ -5,9 +5,9 @@
   // background-image: url("/assets/video.png");
   background-repeat: no-repeat;
   background-position: -330px -100px;
-  height: 100vh;
   overflow: hidden;
   position: relative;
+  height: var(--app-height);
 
   .velo-in,
   .velo-out {
@@ -17,7 +17,7 @@
     transition: opacity 1s ease-in-out;
     opacity: 1;
     margin: auto;
-    width: 100vw;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -50,12 +50,12 @@
   opacity: 1;
 
   h1 {
-    margin-bottom: 0;
+    margin-bottom: 28px;
     font-size: 48px;
   }
 
   h4 {
-    margin-top: 12px;
+    margin-top: 16px;
     width: 245px;
     font-size: 24px;
   }
@@ -76,6 +76,7 @@
   h1 {
     margin-bottom: 0;
     font-size: 48px;
+    line-height: 51.36px;
   }
 
   h4 {
@@ -153,6 +154,7 @@
     .chazz-title,
     .chazz-title-out {
       h1 {
+        line-height: 96.3px;
         font-size: 76px;
         position: relative;
         top: -2rem;
