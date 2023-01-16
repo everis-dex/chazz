@@ -139,6 +139,10 @@
   }
 
   @media (min-width: 1024px) {
+    .chazz-header{
+      max-height: 575px;
+      width: 100%;
+    }
     .chazz-title,
     .chazz-title-out {
       width: 60%;
@@ -147,7 +151,7 @@
   @media (min-width: 1280px) {
     .chazz-header {
       background-size: 1280px;
-      height: 100vh;
+      max-height: 720px;
       background-position: 0 0%;
     }
 
@@ -171,6 +175,7 @@
     .chazz-header {
       background-size: cover;
       background-position: 0 0;
+      max-height: 810px;
     }
 
     .chazz-title,
@@ -190,6 +195,7 @@
     .chazz-header {
       background-size: cover;
       background-position: 0 -95px;
+      max-height: 1115px;
     }
 
     .chazz-title h1 {
@@ -204,5 +210,11 @@
     .chazz-title-out {
       width: 55%;
     }
+  }
+}
+
+@media (min-width: 2560px) {
+  .chazz-header {
+    max-height: 1430px;
   }
 }

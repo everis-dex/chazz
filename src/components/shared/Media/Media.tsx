@@ -43,7 +43,8 @@ export const Media = ({ src, style, alt, format }: Props) => {
               controls
               onError={error => console.error(error)}
               muted={true}
-              loop={false}
+              loop
+              autoPlay
               src={src}
             >
               Video not supported.

@@ -1,9 +1,12 @@
 {
   "date": "2022-12-16T11:14:37.387Z",
-  "image": "/uploads/doco_grid_web.mp4",
+  "media": {
+    "carrousel": "/uploads/doco_home_web.jpg",
+    "project": "/uploads/doco_grid_web.mp4"
+  },
   "title": "dōcō by Renfe",
   "description": "Making end2end Mobility Easier in Any Territory.",
   "subtitle": "Branding, Service, CX & EX Management, Digital Product...",
-  "incarrousel": false,
+  "incarrousel": true,
   "body": "Renfe and Chazz worked together with the objective of creating a new mobility as a service value proposition adapted to society needs under the paradigm of sustainable travel. The mobility sector is a fragmented and complex, so we shaped a tangible travel experience, making possible that any kind of trip becomes an enchanting and seamless experience walk. \nThat is why dōcō is not only technology, but also empathy, since it adapts to diverse lifestyles allowing the user to search, plan and book their expected trip in a short and user-friendly way combining multimodal options of transport included in one single ticket."
 }

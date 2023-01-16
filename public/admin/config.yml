@@ -112,7 +112,6 @@ collections:
     format: json
     fields:
       - { label: Publish Date, name: date, widget: datetime }
-      - { label: Image, name: image, widget: image }
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: string }
       - { label: Subtitle, name: subtitle, widget: string }
@@ -121,6 +120,12 @@ collections:
         name: incarrousel,
         widget: boolean,
         hint: "Determines whether this project is shown in the homepage carrousel. (Max. 5 projects)"
+      - label: Media,
+        name: media,
+        widget: object
+        fields:
+          - { label: Carrousel, name: carrousel, widget: string }
+          - { label: Project, name: project, widget: string }
     sortable_fields: ["date"]
 
   - name: partner

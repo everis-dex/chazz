@@ -36,6 +36,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
               isPlaying={isPlaying}
               isBurgerMenuOpen={isBurgerMenuOpen}
               setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+              activeStyle="active-black"
             />
           </span>
           <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>

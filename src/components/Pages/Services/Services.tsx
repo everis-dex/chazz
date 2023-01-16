@@ -29,6 +29,7 @@ export const Services = () => {
         isPlaying={false}
         isBurgerMenuOpen={isBurgerMenuOpen}
         setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+        activeStyle="active-pink"
       />
       <div className="services-container">
         <div className="services-header">
@@ -53,7 +54,7 @@ export const Services = () => {
             (project: IProject, index: number) =>
               index > 4 && (
                 <div className="project" key={index}>
-                  <img loading="lazy" src={project.image} alt="Project" />
+                  <img loading="lazy" src={project.media.project} alt="Project" />
                   <p className="title">
                     {project.title} <span> —</span>
                   </p>

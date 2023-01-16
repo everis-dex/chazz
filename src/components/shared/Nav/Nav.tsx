@@ -13,6 +13,7 @@ type Props = {
   isPlaying: boolean;
   isBurgerMenuOpen: boolean;
   setIsBurgerMenuOpen: (a: boolean) => void;
+  activeStyle: string;
 };
 
 export const Nav = ({
@@ -21,7 +22,8 @@ export const Nav = ({
   isNavVisible,
   isPlaying,
   isBurgerMenuOpen,
-  setIsBurgerMenuOpen
+  setIsBurgerMenuOpen,
+  activeStyle
 }: Props) => {
   const [root] = useState(document.getElementById("root"));
 
@@ -42,7 +44,7 @@ export const Nav = ({
     return (
       <div className="header-nav">
         <ChazzLogo color={color} isBurgerMenuOpen={isBurgerMenuOpen} />
-        <DesktopMenu color={color} />
+        <DesktopMenu color={color} activeStyle={activeStyle} />
         <BurgerMenu
           isBurgerMenuOpen={isBurgerMenuOpen}
           toggleMenu={toggleMenu}
