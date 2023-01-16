@@ -17,7 +17,7 @@
     transition: opacity 1s ease-in-out;
     opacity: 1;
     margin: auto;
-    width: 100vw;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -50,12 +50,13 @@
   opacity: 1;
 
   h1 {
-    margin-bottom: 0;
+    margin-bottom: 28px;
     font-size: 48px;
+    line-height: 96.3px;
   }
 
   h4 {
-    margin-top: 12px;
+    margin-top: 16px;
     width: 245px;
     font-size: 24px;
   }
