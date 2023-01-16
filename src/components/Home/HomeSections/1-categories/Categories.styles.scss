@@ -122,6 +122,9 @@
   .section1 {
     grid-template-columns: 50% 60%;
     .section1-title {
+      h1 {
+        font-size: 34px;
+      }
       h2.strong {
         width: 90%;
       }
