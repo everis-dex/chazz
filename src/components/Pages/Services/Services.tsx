@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { Footer, Nav } from "../../shared/index";
 import { Category } from "./Category/Category";
-import { FeaturedProjects } from "./Projects/FeaturedProjects";
+import { FeaturedProjects } from "./FeaturedProjects/FeaturedProjects";
 
 import { routesInfo } from "../../../constants";
 import { categories, services } from "../../../content/index";
