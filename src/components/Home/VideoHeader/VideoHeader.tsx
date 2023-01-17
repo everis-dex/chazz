@@ -30,9 +30,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
     if (videoRef.current && !isPlaying) {
       videoRef.current.play();
       setControlText("Stop");
-      setTimeout(() => {
-        setIsNavVisible(!isNavVisible);
-      }, 1000);
+      setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
     }
   };
 
@@ -81,8 +79,8 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
         <>
           <div className="player-video-mobile-switcher">
             <div className="player-video">
-              <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
-              <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
+              <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause}></div>
+              <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause}></div>
               <span className="player-text" onClick={switchPlayPause}>
                 {controlText} reel
               </span>
@@ -91,8 +89,8 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
 
           <div className="player-video-desktop-switcher">
             <div className="player-video" ref={controlRef}>
-              <div className={!isPlaying ? "play-icon-out" : "play-icon-in"} onClick={switchPlayPause}></div>
-              <div className={!isPlaying ? "stop-icon-out" : "stop-icon-in"} onClick={switchPlayPause}></div>
+              <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause}></div>
+              <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause}></div>
               <span className="player-text" onClick={switchPlayPause}>
                 {controlText} reel
               </span>
@@ -101,7 +99,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
         </>
       )}
       <video
-        className={isPlaying ? "video-header-color" : "video-header"}
+        className={`video-header video-header-${isPlaying ? "color" : "no-color"}`}
         ref={videoRef}
         onEnded={resetVideo}
         preload="auto"
