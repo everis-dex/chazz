@@ -33,7 +33,7 @@
 .player-video-mobile-switcher {
   display: inline-flex !important;
   position: absolute;
-  bottom: 15%;
+  top: 600px;
   left: 5%;
   width: 50%;
   cursor: pointer;
@@ -115,10 +115,6 @@
     width: 100vw;
     height: auto;
     object-fit: cover;
-  }
-
-  .player-video-mobile-switcher {
-    bottom: 10%;
   }
 }
 
