@@ -1,17 +1,19 @@
 .chazz-cookies {
-  // TODO: display
-  display: none;
+  display: flex;
+  flex-direction: column;
   background-color: var(--white);
-  height: 33%;
+  height: auto;
   z-index: 10;
   position: absolute;
   width: 90%;
+  bottom: 5%;
   left: 5%;
-  bottom: 3%;
   padding: 16px;
+  position: fixed;
 
   p {
     margin: 0;
+    font-size: 16px;
   }
 
   button {
@@ -31,76 +33,71 @@
 // MEDIA QUERIES
 
 // xxs
-@media (width: 320px) {
-  .chazz-cookies {
-    display: none;
-    left: 4%;
+// @media (width: 320px) {
+//   .chazz-cookies {
+//     left: 4%;
 
-    button {
-      padding: 1% 25% 1% 25%;
-      margin-top: 22px;
-    }
-  }
-}
+//     button {
+//       padding: 1% 25% 1% 25%;
+//       margin-top: 22px;
+//     }
+//   }
+// }
 
-@media (min-width: 425px) {
-  .chazz-cookies {
-    display: none;
+// @media (min-width: 425px) {
+//   .chazz-cookies {
 
-    button {
-      padding: 3% 31% 3% 31%;
-      margin-top: 23px;
-    }
-  }
-}
+//     button {
+//       padding: 3% 31% 3% 31%;
+//       margin-top: 23px;
+//     }
+//   }
+// }
 
 //////////////////////
 
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .chazz-cookies {
-    display: none;
-    // TODO: display: flex;
+    flex-direction: row;
     align-items: center;
     height: 64px;
     padding: 5px;
-    width: 95%;
-    bottom: 2%;
-    left: 15px;
 
     p {
-      width: 80%;
+      width: 84%;
       padding: 15px;
     }
 
     button {
-      padding: 1% 2% 1% 2%;
-      font-size: 16px;
+      padding: 5px 20px 5px 20px;
       margin-top: 0;
+      justify-content: end;
     }
   }
 }
 
-@media (min-width: 1280px) {
-  .chazz-cookies {
-    width: 97%;
-    p {
-      width: 86%;
-    }
-    button {
-      padding: 5px 20px 5px 20px;
-    }
-  }
-}
+// @media (min-width: 1280px) {
+//   .chazz-cookies {
+//     width: 97%;
+//     p {
+//       width: 86%;
+//     }
+//     button {
+//       padding: 5px 20px 5px 20px;
+//     }
+//   }
+// }
 
 @media (min-width: 1920px) {
   .chazz-cookies {
     width: 98%;
     bottom: 2%;
     p {
-      width: 92%;
+      width: 90%;
     }
     button {
       padding: 0.5% 1% 0.5% 1%;
+
     }
   }
 }
