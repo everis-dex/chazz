@@ -61,7 +61,16 @@
 }
 
 // MEDIA QUERIES
-@media (min-width: 768px) {
+
+@media (min-width: 768px){
+  .services-header {
+    img {
+      height: auto;
+    }
+  }
+
+}
+@media (min-width: 1280px) {
   .services-header {
     margin-top: 70px;
 
@@ -69,14 +78,9 @@
       font-size: 72px;
       line-height: 77px;
     }
-
-    img {
-      height: auto;
-      object-fit: none;
-    }
   }
   .services-categories {
-    margin-bottom: 20%;
+    margin-bottom: 200px;
   }
 
   .services-projects {
