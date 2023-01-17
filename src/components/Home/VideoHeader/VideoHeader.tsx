@@ -105,7 +105,8 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
         ref={videoRef}
         onEnded={resetVideo}
         preload="auto"
-        playsInline>
+        playsInline
+      >
         <source src="uploads/reel_chazz_1080.mp4" media="(min-width: 850px)" />
         <source src="uploads/reel_chazz_540.mp4" />
       </video>
