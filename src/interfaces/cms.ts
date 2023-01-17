@@ -89,6 +89,59 @@ export interface IProject {
   description: string;
   body: string;
   incarrousel: boolean;
+  caseInfo?: IProjectCaseInfo;
+  sections?: IProjectSection[];
+}
+
+export interface IProjectCaseInfo {
+  title: string;
+  services: string;
+}
+
+export interface IProjectSection {
+  oneColumn?: IProjectSectionOneColumn;
+  twoColumns?: IProjectSectionTwoColumns;
+};
+
+export interface IProjectSectionOneColumn {
+  image?: IProjectSectionImage;
+  claim?: { text: string };
+  paragraphTitle?: { text: string };
+  paragraph?: { text: string };
+  separator?: { height: number };
+}
+
+export interface IProjectSectionTwoColumns {
+  leftColumn: ILeftColumn;
+  rightColumn: IRightColumn;
+}
+
+export interface ILeftColumn {
+  image?: IProjectSectionImage;
+  intro?: { text: string };
+  paragraphTitle?: { text: string };
+  paragraph?: { text: string };
+}
+export interface IRightColumn {
+  image?: IProjectSectionImage;
+  intro?: { text: string };
+  paragraphTitle?: { text: string };
+  paragraph?: { text: string };
+}
+
+export interface IProjectSectionImage {
+  imageUrl: { text: string };
+  overlappedText?: { text: string };
+}
+
+export interface ISlide {
+  id: number;
+  title: string;
+  subtitle: string;
+  media: IProjectMedia;
+  description: string;
+  body: string;
+  incarrousel: boolean;
 }
 
 export interface IProjectMedia {

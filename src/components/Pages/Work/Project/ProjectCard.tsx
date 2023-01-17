@@ -4,11 +4,17 @@ import { IProject } from "../../../../interfaces/cms";
 import { Accordion } from "../Accordion/Accordion";
 import { Media } from "../../../shared/index";
 
-import "./Project.styles.scss";
+import "./ProjectCard.styles.scss";
 
-type Props = { data: IProject; format: string; columns?: string; full?: boolean };
+type Props = {
+  data: IProject;
+  format: string;
+  columns?: string;
+  full?: boolean;
+  setCaseStudyId: (a: number) => void
+};
 
-export const ProjectCard = ({ data, format, columns }: Props) => {
+export const ProjectCard = ({ data, format, columns, setCaseStudyId }: Props) => {
   let [height, setHeight] = useState<string>("auto");
   const image = data.media.project;
 
@@ -41,6 +47,7 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
 
       <div className="project-details">
         <div className="project-title-container">
+          <span onClick={() => setCaseStudyId(data.id)}>CLICK</span>
           <span className="title">{data.title} —</span>
           <span className="description">{data.description}</span>
         </div>

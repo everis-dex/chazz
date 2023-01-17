@@ -1,8 +1,14 @@
-backend:
-  name: git-gateway
-  repo: everis-dex/chazz
-  branch: main # Branch to update (optional; defaults to master)
+# backend:
+# name: git-gateway
+# repo: everis-dex/chazz
+#   branch: main # Branch to update (optional; defaults to master)
 
+backend:
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1/
+  branch: main # optional, defaults to master
+
+local_backend: true
 media_folder: "public/uploads" # where uploaded files are saved in the repo
 public_folder: "/uploads" # where media files will be stored in the published site
 
@@ -117,11 +123,11 @@ collections:
         name: homepageInfo
         widget: object
         fields:
-      - { label: Publish Date, name: date, widget: datetime }
-      - { label: Title, name: title, widget: string }
-      - { label: Description, name: description, widget: string }
-      - { label: Subtitle, name: subtitle, widget: string }
-      - { label: Body, name: body, widget: markdown }
+          - { label: Publish Date, name: date, widget: datetime }
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string }
+          - { label: Body, name: body, widget: markdown }
       - label: In carrousel,
         name: incarrousel,
         widget: boolean,
@@ -152,69 +158,81 @@ collections:
                     fields:
                       - { label: "image Url", name: imageUrl, widget: image }
                       - { label: "Overlapped Text", name: overlappedText, widget: string, required: false }
-                  - { label: "Claim", name: claim, widget: string }
-                  - { label: "Paragraph Title", name: paragraphTitle, widget: string }
-                  - { label: "Paragraph", name: paragraph, widget: string }
-                  - {
-                      label: "Separator",
-                      nombre: separator,
-                      widget: number,
-                      hint: "Add some blank space between sections (in pixels)"
-                    }
-              - label: "Two Column"
-                name: twoColumns
-                widget: object
-                types:
-                  - label: Image
-                    name: image
-                    widget: object
-                    fields:
-                      - { label: "image Url", name: imageUrl, widget: image }
-                      - { label: "Overlapped Text", name: overlappedText, widget: string, required: false }
-                  - label: "Section Intro"
-                    name: sectionIntro
+                  - label: "Claim"
+                    name: claim
                     widget: string
                     fields:
-                  - { label: "Text", name: text, widget: string }
-                  - { label: "Paragraph Title", name: paragraphTitle, widget: string }
-                  - { label: Paragraph, name: paragraph, widget: string }
-                  - {
-                      label: Separator,
-                      nombre: separator,
-                      widget: number,
-                      hint: "Add some blank space between sections (in pixels)"
-                    }
+                      - { label: "text", name: text, widget: string }
+                  - label: "Paragraph Title"
+                    name: paragraphTitle
+                    widget: string
+                    fields:
+                      - { label: "text", name: text, widget: string }
+                  - label: "Paragraph"
+                    name: paragraph
+                    widget: string
+                    fields:
+                      - { label: "text", name: text, widget: string }
+                  - label: "Separator"
+                    name: separator
+                    widget: number
+                    hint: "Add some blank space between sections (in pixels)"
+                    fields:
+                      - { label: "height", name: height, widget: number }
               - label: "Two Columns"
                 name: twoColumns
                 widget: object
-                  - fields:
-                    - label: "Left Column"
-                      name: leftColumn
-                      widget: object
-                      - types :
-                        - label: Image
-                          name: image
-                          widget: object
-                          fields:
-                            - { label: "image Url", name: imageUrl, widget: image }
-                            - { label: "Overlapped Text", name: overlappedText, widget: string, required: false }
-                        - { label: Intro, name: intro, widget: string }
-                        - { label: "Paragraph Title", name: paragraphTitle, widget: string }
-                        - { label: Paragraph, name: paragraph, widget: string }
-                  - label: "Right Column"
-                    name: rightColumn
+                fields:
+                  - label: "Left Column"
+                    name: leftColumn
                     widget: object
-                    - types :
+                    types:
                       - label: Image
                         name: image
                         widget: object
                         fields:
                           - { label: "image Url", name: imageUrl, widget: image }
                           - { label: "Overlapped Text", name: overlappedText, widget: string, required: false }
-                      - { label: Intro, name: intro, widget: string }
-                      - { label: "Paragraph Title", name: paragraphTitle, widget: string }
-                      - { label: Paragraph, name: paragraph, widget: string }
-
+                      - label: "Intro"
+                        name: intro
+                        widget: string
+                        fields:
+                          - { label: "text", name: text, widget: string }
+                      - label: "Paragraph Title"
+                        name: paragraphTitle
+                        widget: string
+                        fields:
+                          - { label: "text", name: text, widget: string }
+                      - label: "Paragraph"
+                        name: paragraph
+                        widget: string
+                        fields:
+                          - { label: "text", name: text, widget: string }
+                  - label: "Right Column"
+                    name: rightColumn
+                    widget: object
+                    types:
+                      - label: Image
+                        name: image
+                        widget: object
+                        fields:
+                          - { label: "image Url", name: imageUrl, widget: image }
+                          - { label: "Overlapped Text", name: overlappedText, widget: string, required: false }
+                      - label: "Intro"
+                        name: intro
+                        widget: string
+                        fields:
+                          - { label: "text", name: text, widget: string }
+                      - label: "Paragraph Title"
+                        name: paragraphTitle
+                        widget: string
+                        fields:
+                          - { label: "text", name: text, widget: string }
+                      - label: "Paragraph"
+                        name: paragraph
+                        widget: string
+                        fields:
+                          - { label: "text", name: text, widget: string }
   - name: partner
     label: Partner
     folder: content/partners

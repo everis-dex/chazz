@@ -6,6 +6,7 @@ import { CarrouselSlide } from "./CarrouselSlide";
 
 import { projects } from "../../../../../content/index";
 import { IProject } from "../../../../../interfaces/cms";
+import { ISlide } from "../../../../../interfaces/cms";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -13,17 +14,19 @@ import "./Carrousel.styles.scss";
 
 type Props = { title: string };
 export const Carrousel = ({ title }: Props) => {
-  const slides: IProject[] = [...projects];
-  const featuredSlides: IProject[] = slides.filter(slide => slide.incarrousel).slice(0, 5);
+  // const slides: IProject[] = [...projects];
+  // const featuredSlides: IProject[] = slides.filter(slide => slide.incarrousel).slice(0, 5);
   const carrouselRef = useRef<HTMLDivElement>(null);
 
+
+  ////////////////////////////////DESCOMENTARR!!!!!!!!!
   return (
     <>
       <div ref={carrouselRef} className="carrouselTitle">
         <h3>{title}</h3>
       </div>
 
-      <div id="carrousel" className="carrousel">
+      {/* <div id="carrousel" className="carrousel">
         <div className="pagination" />
         <div className="slides">
           <Swiper
@@ -55,7 +58,7 @@ export const Carrousel = ({ title }: Props) => {
             })}
           </Swiper>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

@@ -21,14 +21,16 @@ export const Projects = (projectData: IHomeProjects) => {
   };
 
   return (
-    <div className="background">
-      <div id="Projects">
-        <Carrousel title={projectData.title} />
-        <Link to={"/work"} className="more-projects" onMouseEnter={handleHover} onMouseLeave={handleNoHover}>
-          {projectData.more}{" "}
-          <img src={!isHover ? rightArrow : rightArrowHover} className="icon-size" alt="right-arrow" />
-        </Link>
+    <>
+      <div className="background">
+        <div id="Projects">
+          {/* <Carrousel title={projectData.title} /> */}
+          <Link to={"/work"} className="more-projects" onMouseEnter={handleHover} onMouseLeave={handleNoHover}>
+            {projectData.more}{" "}
+            <img src={!isHover ? rightArrow : rightArrowHover} className="icon-size" alt="right-arrow" />
+          </Link>
+        </div>
       </div>
-    </div>
+    </>
   );
 };

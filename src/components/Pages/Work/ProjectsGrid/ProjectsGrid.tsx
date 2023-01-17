@@ -1,9 +1,10 @@
 import React, { Fragment } from "react";
 
-import { IProject, IWork } from "../../../../interfaces/cms";
+import { IProject } from "../../../../interfaces/cms";
 import { LineBreakerSelector } from "../../../shared/index";
-import { ProjectCard } from "../Project/Project";
+import { ProjectCard } from "../Project/ProjectCard";
 
+import { work } from "../../../../content/index";
 import { projects } from "../../../../content/index";
 
 const formats = {
@@ -18,7 +19,11 @@ const imageConfig = { auto: "auto", half: "half" };
 // la configuración se escoge por cada row, por cada par de columnas
 let config = [formats.left, formats.big, formats.left, formats.right, formats.equal];
 
-export const ProjectsGrid = (workData: IWork) => {
+type Props = {
+  setCaseStudyId: (a: number) => void
+}
+
+export const ProjectsGrid = ({ setCaseStudyId }: Props) => {
   const columnCount: number = 2;
   let currentColumn: number = 0;
   let currentRow: number = 0;
@@ -55,10 +60,10 @@ export const ProjectsGrid = (workData: IWork) => {
 
   return (
     <>
-      <h1 className="work-header">{workData.title}</h1>
+      <h1 className="work-header">{work.title}</h1>
       <div className="work-container--content">
         <div className="work-detail">
-          <LineBreakerSelector typedLines={workData.subtitle} />
+          <LineBreakerSelector typedLines={work.subtitle} />
         </div>
 
         {projects &&
@@ -68,7 +73,7 @@ export const ProjectsGrid = (workData: IWork) => {
             const [format, columns] = handleProjectFormat();
             return (
               <Fragment key={index}>
-                <ProjectCard data={project} format={format} columns={columns} />
+                <ProjectCard data={project} format={format} columns={columns} setCaseStudyId={setCaseStudyId} />
               </Fragment>
             );
           })}

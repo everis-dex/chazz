@@ -9,10 +9,11 @@ import "./FeaturedProjects.styles.scss";
 export const FeaturedProjects = () => {
   const projectsData: IServicesProjects = services.projects;
 
+  ////////////////////////////////DESCOMENTARR!!!!!!!!!
   return (
     <div className="featured-projects">
       <h1 className="header">{projectsData.title}</h1>
-      <div className="project-list">
+      {/* <div className="project-list">
         {projects.map(
           (project: IProject, index: number) =>
             index > 4 && (
@@ -24,7 +25,7 @@ export const FeaturedProjects = () => {
               </div>
             )
         )}
-      </div>
+      </div> */}
       <Link to={"/work"} className="more-projects">
         {projectsData.more} →
       </Link>
