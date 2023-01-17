@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import "../VideoHeader/VideoHeader.style.scss";
+import "./VideoHeader.style.scss";
 
 type Props = {
   isPlaying: boolean;

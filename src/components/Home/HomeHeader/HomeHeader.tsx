@@ -7,7 +7,7 @@ import { IHomeHeader } from "../../../interfaces/cms";
 import { LineBreakerSelector } from "../../shared/index";
 
 import "./HomeHeader.styles.scss";
-import { VideoHeader } from "../VideoHeader/VideoHeader";
+import { VideoHeader } from "./VideoHeader/VideoHeader";
 
 import { routesInfo } from "../../../constants";
 
