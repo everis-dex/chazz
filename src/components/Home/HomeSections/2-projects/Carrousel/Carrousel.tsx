@@ -19,10 +19,18 @@ export const Carrousel = ({ title }: Props) => {
 
   const circleRef = useRef<HTMLDivElement>(null);
 
-  document.addEventListener("mousemove", function (e) {
+  document.addEventListener("mousemove", function handleMouseMove(e) {
     if (circleRef && circleRef.current) {
-      circleRef.current.style.left = e.pageX.toString().concat("px");
-      circleRef.current.style.top = e.pageY.toString().concat("px");
+      const scrollLeft =
+        window.pageXOffset !== undefined
+          ? window.pageXOffset
+          : (document.documentElement || document.body.parentNode || document.body).scrollLeft;
+      const scrollTop =
+        window.pageYOffset !== undefined
+          ? window.pageYOffset
+          : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+      circleRef.current.style.left = e.pageX - scrollLeft + "px";
+      circleRef.current.style.top = e.pageY - scrollTop + "px";
     }
   });
 
