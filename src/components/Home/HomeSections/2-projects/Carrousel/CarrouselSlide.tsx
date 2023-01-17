@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { IProject } from "../../../../../interfaces/cms";
-import { Media } from "../../../../shared/Media/Media";
+import { Media } from "../../../../shared/index";
 
 import { Link } from "react-router-dom";
 

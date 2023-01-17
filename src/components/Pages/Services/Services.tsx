@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 
-import { Footer, Nav } from "../index";
-import { Category } from "./Category/Category";
-
-import categories from "../../../content/categories.json";
-import service from "../../../content/pages/services/services.json";
-import projects from "../../../content/projects.json";
-import { ICategory, IProject, IServicesHeader, IServicesProjects } from "../../../interfaces/cms";
 import { routesInfo } from "../../../constants";
+import { categories, services } from "../../../content/index";
+import { ICategory, IServicesHeader } from "../../../interfaces/cms";
+import { FeaturedProjects, Footer, Nav } from "../../shared/index";
+import { Category } from "./Category/Category";
 
 import "./Services.styles.scss";
 
 export const Services = () => {
-  const projectsData: IServicesProjects = service.projects;
-  const headerData: IServicesHeader = service.header;
+  const headerData: IServicesHeader = services.header;
 
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
 
@@ -47,25 +42,7 @@ export const Services = () => {
         </div>
       </div>
       {/* Projects section */}
-      <div className="services-projects">
-        <h1 className="header">{projectsData.title}</h1>
-        <div className="project-list">
-          {projects.map(
-            (project: IProject, index: number) =>
-              index > 4 && (
-                <div className="project" key={index}>
-                  <img loading="lazy" src={project.media.project} alt="Project" />
-                  <p className="title">
-                    {project.title} <span> —</span>
-                  </p>
-                </div>
-              )
-          )}
-        </div>
-        <Link to={"/work"} className="more-projects">
-          {projectsData.more} →
-        </Link>
-      </div>
+      <FeaturedProjects />
       <Footer />
     </>
   );

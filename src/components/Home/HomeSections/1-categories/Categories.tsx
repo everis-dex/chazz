@@ -1,8 +1,8 @@
 import React from "react";
 
-import { categoriesInfo as categories } from "../../../../content/index";
+import { categories } from "../../../../content/index";
 import { ICategory, IHomeSection } from "../../../../interfaces/cms";
-import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
+import { LineBreakerSelector } from "../../../shared/index";
 
 import "./Categories.styles.scss";
 
