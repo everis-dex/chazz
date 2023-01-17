@@ -2,9 +2,9 @@
 
 // MOBILE FIRST
 .chazz-header {
-  // background-image: url("/assets/video.png");
+  // background: url("./public/assets/first_frame.jpg");
   background-repeat: no-repeat;
-  background-position: -330px -100px;
+  // background-position: -330px -100px;
   overflow: hidden;
   position: relative;
   height: var(--app-height);
@@ -115,6 +115,17 @@
   }
 }
 
+.grayscale {
+  height: 100vh;
+  width: -webkit-fill-available;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  filter: grayscale(100%);
+  min-width: 100%;
+  min-height: 100%;
+}
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
@@ -139,7 +150,7 @@
   }
 
   @media (min-width: 1024px) {
-    .chazz-header{
+    .chazz-header {
       max-height: 575px;
       width: 100%;
     }

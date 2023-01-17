@@ -11,6 +11,8 @@ import { VideoHeader } from "../VideoHeader/VideoHeader";
 
 import { routesInfo } from "../../../constants";
 
+
+
 export const HomeHeader = (headerData: IHomeHeader) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isNavVisible, setisNavVisible] = useState<boolean>(true);
@@ -44,6 +46,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
             <h4>{headerData.subtitle}</h4>
           </div>
         </div>
+        {!isPlaying && <img src="uploads/first_frame.jpg" className="grayscale" />}
         <VideoHeader
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
