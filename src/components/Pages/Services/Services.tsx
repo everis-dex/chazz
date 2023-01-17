@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Footer, Nav } from "../index";
+import { Footer, Nav } from "../../shared/index";
 import { Category } from "./Category/Category";
 import { FeaturedProjects } from "./Projects/FeaturedProjects";
 

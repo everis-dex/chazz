@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 import { IProject, IWork } from "../../../../interfaces/cms";
-import { LineBreakerSelector } from "../../../shared/LineBreaker/LineBreakerSelector";
+import { LineBreakerSelector } from "../../../shared/index";
 import { ProjectCard } from "../Project/Project";
 
 import { projectsInfo as projects } from "../../../../content/index";

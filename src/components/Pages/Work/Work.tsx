@@ -1,12 +1,9 @@
-import React from "react";
-import { useState, useEffect } from "react";
-
-import { Footer, Nav } from "../index";
-import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
-
-import { workInfo as work } from "../../../content/index";
+import React, { useEffect, useState } from "react";
 
 import { routesInfo } from "../../../constants";
+import { workInfo as work } from "../../../content/index";
+import { Footer, Nav } from "../../shared/index";
+import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 
 import "./Work.styles.scss";
 
