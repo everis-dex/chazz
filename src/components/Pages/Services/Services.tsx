@@ -5,14 +5,13 @@ import { Category } from "./Category/Category";
 import { FeaturedProjects } from "./Projects/FeaturedProjects";
 
 import { routesInfo } from "../../../constants";
-import categories from "../../../content/categories.json";
-import service from "../../../content/pages/services/services.json";
+import { categories, services } from "../../../content/index";
 import { ICategory, IServicesHeader } from "../../../interfaces/cms";
 
 import "./Services.styles.scss";
 
 export const Services = () => {
-  const headerData: IServicesHeader = service.header;
+  const headerData: IServicesHeader = services.header;
 
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
 
@@ -44,6 +43,7 @@ export const Services = () => {
           ))}
         </div>
       </div>
+      {/* Projects section */}
       <FeaturedProjects />
       <Footer />
     </>

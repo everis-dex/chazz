@@ -4,7 +4,7 @@ import { IProject, IWork } from "../../../../interfaces/cms";
 import { LineBreakerSelector } from "../../../shared/index";
 import { ProjectCard } from "../Project/Project";
 
-import { projectsInfo as projects } from "../../../../content/index";
+import { projects } from "../../../../content/index";
 
 const formats = {
   big: 0, // When the Project occupies two columns

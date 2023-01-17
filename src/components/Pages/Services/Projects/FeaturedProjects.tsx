@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import service from "../../../../content/pages/services/services.json";
-import projects from "../../../../content/projects.json";
+import { services, projects } from "../../../../content/index";
 import { IProject, IServicesProjects } from "../../../../interfaces/cms";
 
 import "./FeaturedProjects.styles.scss";
 
 export const FeaturedProjects = () => {
-  const projectsData: IServicesProjects = service.projects;
+  const projectsData: IServicesProjects = services.projects;
 
   return (
     <div className="featured-projects">

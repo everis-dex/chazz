@@ -1,6 +1,6 @@
 import React from "react";
 
-import { studiosInfo as studios } from "../../../../../content/index";
+import { studios } from "../../../../../content/index";
 import { LinkedEmail } from "./footerLinks";
 
 import "../CompanyInfo.styles.scss";
