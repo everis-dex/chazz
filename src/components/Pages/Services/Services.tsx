@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import { Footer, Nav } from "../../shared/index";
-import { Category } from "./Category/Category";
-import { FeaturedProjects } from "./FeaturedProjects/FeaturedProjects";
-
 import { routesInfo } from "../../../constants";
 import { categories, services } from "../../../content/index";
 import { ICategory, IServicesHeader } from "../../../interfaces/cms";
+import { FeaturedProjects, Footer, Nav } from "../../shared/index";
+import { Category } from "./Category/Category";
 
 import "./Services.styles.scss";
 

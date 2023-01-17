@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { services, projects } from "../../../../content/index";
-import { IProject, IServicesProjects } from "../../../../interfaces/cms";
+import { services, projects } from "../../../content/index";
+import { IProject, IServicesProjects } from "../../../interfaces/cms";
 
 import "./FeaturedProjects.styles.scss";
 
