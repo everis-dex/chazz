@@ -101,18 +101,6 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: More, name: more, widget: string }
 
-  - name: cases
-    label: Cases
-    folder: src/content/pages/cases
-    create: false
-    delete: false
-    slug: "cases"
-    extension: json
-    format: json
-    fields:
-      - { label: Client, name: client, widget: string }
-      - { label: Services, name: services, widget: string }
-
   ##############################
   #         COMPONENTS
   ##############################
