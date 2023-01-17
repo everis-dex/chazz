@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,38 +11,52 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./Carrousel.styles.scss";
 
+type Limits = {
+  top: number;
+  bottom: number;
+  left: number;
+  right: number;
+};
+
 type Props = { title: string };
 export const Carrousel = ({ title }: Props) => {
   const slides: IProject[] = [...projects];
   const featuredSlides: IProject[] = slides.filter(slide => slide.incarrousel).slice(0, 5);
   const carrouselRef = useRef<HTMLDivElement>(null);
-
   const circleRef = useRef<HTMLDivElement>(null);
+  const [limits, setLimits] = useState<Limits>();
+
+  useEffect(() => {
+    if (carrouselRef && carrouselRef.current) {
+      var rect = carrouselRef.current.getBoundingClientRect();
+      let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      console.log("🚀 ~ file: Carrousel.tsx:26 ~ useEffect ~ rect", rect);
+      setLimits({
+        top: rect.top + scrollTop,
+        bottom: rect.top + scrollTop + rect.height,
+        left: rect.left + scrollLeft,
+        right: rect.left + scrollLeft + rect.width
+      });
+    }
+  }, [carrouselRef]);
 
   document.addEventListener("mousemove", function handleMouseMove(e) {
-    if (circleRef && circleRef.current) {
-      const scrollLeft =
-        window.pageXOffset !== undefined
-          ? window.pageXOffset
-          : (document.documentElement || document.body.parentNode || document.body).scrollLeft;
-      const scrollTop =
-        window.pageYOffset !== undefined
-          ? window.pageYOffset
-          : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-      circleRef.current.style.left = e.pageX - scrollLeft + "px";
-      circleRef.current.style.top = e.pageY - scrollTop + "px";
+    if (limits && circleRef && circleRef.current) {
+      circleRef.current.style.left = Math.max(e.pageX, 0) + 53 + "px";
+      circleRef.current.style.top = Math.max(e.pageY - limits.top, 0) + 53 + "px";
     }
   });
 
   return (
     <>
-      <div ref={carrouselRef} className="carrouselTitle">
+      <div className="carrouselTitle">
         <h3>{title}</h3>
       </div>
 
       <div id="carrousel" className="carrousel">
         <div className="pagination" />
-        <div className="slides">
+        <div className="slides" ref={carrouselRef}>
           <div id="circle" ref={circleRef}>
             <span className="hover-text">Drag</span>
           </div>
