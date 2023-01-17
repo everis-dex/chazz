@@ -17,6 +17,15 @@ export const Carrousel = ({ title }: Props) => {
   const featuredSlides: IProject[] = slides.filter(slide => slide.incarrousel).slice(0, 5);
   const carrouselRef = useRef<HTMLDivElement>(null);
 
+  const circleRef = useRef<HTMLDivElement>(null);
+
+  document.addEventListener("mousemove", function (e) {
+    if (circleRef && circleRef.current) {
+      circleRef.current.style.left = e.pageX.toString().concat("px");
+      circleRef.current.style.top = e.pageY.toString().concat("px");
+    }
+  });
+
   return (
     <>
       <div ref={carrouselRef} className="carrouselTitle">
@@ -26,6 +35,9 @@ export const Carrousel = ({ title }: Props) => {
       <div id="carrousel" className="carrousel">
         <div className="pagination" />
         <div className="slides">
+          <div id="circle" ref={circleRef}>
+            <span className="hover-text">Drag</span>
+          </div>
           <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={1.1}
