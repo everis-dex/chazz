@@ -5,7 +5,7 @@ import { availableRoutes, routesInfo } from "../../../../constants";
 
 import "../Nav.styles.scss";
 
-type Props = { color: string, activeStyle: string };
+type Props = { color: string; activeStyle: string };
 
 export const DesktopMenu = ({ color, activeStyle }: Props) => {
   var currentPage = "/".concat(window.location.pathname.split("/")[1]);

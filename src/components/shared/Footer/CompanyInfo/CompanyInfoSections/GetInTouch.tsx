@@ -1,6 +1,6 @@
 import React from "react";
 
-import { getInTouchInfo as getInTouch } from "../../../../../content/index";
+import { getInTouch } from "../../../../../content/index";
 import { ISocial } from "../../../../../interfaces/cms";
 import { LinkedEmail } from "./footerLinks";
 

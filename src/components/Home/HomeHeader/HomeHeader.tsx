@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AllowCookies, Nav } from "../index";
 
 import { IHomeHeader } from "../../../interfaces/cms";
-import { LineBreakerSelector } from "../../shared/LineBreaker/LineBreakerSelector";
+import { LineBreakerSelector } from "../../shared/index";
 
 import "./HomeHeader.styles.scss";
 import { VideoHeader } from "../VideoHeader/VideoHeader";
