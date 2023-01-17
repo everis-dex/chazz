@@ -1,6 +1,6 @@
 import React from "react";
 
-import { officesInfo as offices } from "../../../../../content/index";
+import { offices } from "../../../../../content/index";
 import { IOffice } from "../../../../../interfaces/cms";
 import { LinkedEmail, LinkedMap, LinkedPhone } from "./footerLinks";
 

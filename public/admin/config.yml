@@ -13,7 +13,7 @@ collections:
   ##############################
 
   - name: home # Used in routes
-    label: "Home" # Used in the UI
+    label: Home # Used in the U
     folder: src/content/pages/home # Where the documents are stored, relative to the repo root
     create: false # Allow users to create new documents in this collection
     delete: false # Allow users to delete existing documents in this collection
@@ -65,7 +65,7 @@ collections:
               - { label: Link, name: link, widget: string }
 
   - name: work
-    label: "Work"
+    label: Work
     folder: src/content/pages/work
     create: false
     delete: false
@@ -78,7 +78,7 @@ collections:
       - { label: Subtitle, name: subtitle, widget: string, required: false }
 
   - name: services
-    label: "Services"
+    label: Services
     folder: src/content/pages/services
     create: false
     delete: false
@@ -183,7 +183,7 @@ collections:
       - { label: City, name: city, widget: string }
 
   - name: get_in_touch
-    label: "Get in touch"
+    label: Get in touch
     folder: content/get-in-touch
     slug: "{{year}}-{{month}}-{{day}}--{{title}}"
     extension: json

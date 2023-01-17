@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AllowCookies, Nav } from "../index";
 
 import { IHomeHeader } from "../../../interfaces/cms";
-import { LineBreakerSelector } from "../../shared/LineBreaker/LineBreakerSelector";
+import { LineBreakerSelector } from "../../shared/index";
 
 import "./HomeHeader.styles.scss";
 import { VideoHeader } from "../VideoHeader/VideoHeader";
@@ -44,6 +44,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
             <h4>{headerData.subtitle}</h4>
           </div>
         </div>
+        {!isPlaying && <img src="uploads/first_frame.jpg" alt="" className="grayscale" />}
         <VideoHeader
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}

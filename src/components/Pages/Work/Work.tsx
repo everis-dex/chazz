@@ -1,18 +1,13 @@
-import React from "react";
-import { useState, useEffect } from "react";
-
-import { Footer, Nav } from "../index";
-import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
-
-import { workInfo as work } from "../../../content/index";
+import React, { useEffect, useState } from "react";
 
 import { routesInfo } from "../../../constants";
+import { work } from "../../../content/index";
+import { Footer, Nav } from "../../shared/index";
+import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 
 import "./Work.styles.scss";
 
 export const Work = () => {
-  const workData = work;
-
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
 
   useEffect(() => window.scrollTo(0, 0), []);
@@ -28,7 +23,7 @@ export const Work = () => {
         setIsBurgerMenuOpen={setIsBurgerMenuOpen}
         activeStyle="active-pink"
       />
-      <ProjectsGrid {...workData} />
+      <ProjectsGrid {...work} />
       <Footer />
     </>
   );

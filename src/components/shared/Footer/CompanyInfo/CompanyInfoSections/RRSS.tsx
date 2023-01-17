@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import { homeInfo as home } from "../../../../../content/index";
+import { home } from "../../../../../content/index";
 import { ISocial } from "../../../../../interfaces/cms";
 import { LinkedRRSS } from "./footerLinks";
 

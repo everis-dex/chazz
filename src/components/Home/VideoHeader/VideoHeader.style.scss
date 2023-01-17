@@ -8,7 +8,7 @@
   z-index: -1;
   cursor: url("https://cdn-icons-png.flaticon.com/512/16/16363.png?w=740&t=st=1673262195~exp=1673262795~hmac=e6666ee86f2db9b4e532f29698f1f1cf6f7be07c9d2a8cb70b4a7dfd9510b27a");
   filter: grayscale(100%);
-  transition: all 1s;
+  transition: all 2s;
   min-width: 100%;
   min-height: 100%;
 }
@@ -21,7 +21,7 @@
   z-index: -1;
   cursor: url("https://cdn-icons-png.flaticon.com/512/16/16363.png?w=740&t=st=1673262195~exp=1673262795~hmac=e6666ee86f2db9b4e532f29698f1f1cf6f7be07c9d2a8cb70b4a7dfd9510b27a");
   filter: none;
-  transition: all 1s;
+  transition: all 2s;
   min-width: 100%;
   min-height: 100%;
 }
@@ -33,7 +33,7 @@
 .player-video-mobile-switcher {
   display: inline-flex !important;
   position: absolute;
-  bottom: 15%;
+  top: 600px;
   left: 5%;
   width: 50%;
   cursor: pointer;
@@ -115,11 +115,6 @@
     width: 100vw;
     height: auto;
     object-fit: cover;
-  }
-
-  .player-video-mobile-switcher {
-    bottom: 10%;
-
   }
 }
 

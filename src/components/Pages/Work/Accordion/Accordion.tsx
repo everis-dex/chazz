@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import "./Accordion.styles.scss";
-
-import moreInfoIcon from "../../../../assets/icn_moreinformation.svg";
 import lessInfoIcon from "../../../../assets/icn_lessinformation.svg";
+import moreInfoIcon from "../../../../assets/icn_moreinformation.svg";
+
+import "./Accordion.styles.scss";
 
 type Props = { content: string };
 export const Accordion = ({ content }: Props) => {

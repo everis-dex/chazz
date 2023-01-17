@@ -1,6 +1,6 @@
 import React from "react";
 
-import { homeInfo as home } from "../../content/index";
+import { home } from "../../content/index";
 import { Categories, Footer, HomeHeader, Partners, Projects } from "./index";
 import { useEffect } from "react";
 
