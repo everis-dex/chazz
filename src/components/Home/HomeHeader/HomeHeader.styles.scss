@@ -52,6 +52,7 @@
   h1 {
     margin-bottom: 28px;
     font-size: 48px;
+    line-height: 51.36px;
   }
 
   h4 {
@@ -64,17 +65,16 @@
 .chazz-title-out {
   color: var(--white);
   width: 70%;
-  position: absolute;
   padding-left: 5%;
-  z-index: 9;
-  top: 20%;
+  position: absolute;
+  top: 30%;
   font-size: 23px;
   line-height: 1.2;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 
   h1 {
-    margin-bottom: 0;
+    margin-bottom: 28px;
     font-size: 48px;
     line-height: 51.36px;
   }
