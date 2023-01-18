@@ -1,14 +1,8 @@
-# backend:
-# name: git-gateway
-# repo: everis-dex/chazz
-#   branch: main # Branch to update (optional; defaults to master)
-
 backend:
-  name: proxy
-  proxy_url: http://localhost:8081/api/v1/
-  branch: main # optional, defaults to master
+  name: git-gateway
+  repo: everis-dex/chazz
+  branch: main # Branch to update (optional; defaults to master)
 
-local_backend: true
 media_folder: "public/uploads" # where uploaded files are saved in the repo
 public_folder: "/uploads" # where media files will be stored in the published site
 
@@ -116,7 +110,6 @@ collections:
     slug: "proj-{{year}}-{{month}}-{{day}}--{{title}}"
     extension: json
     format: json
-    sortable_fields: ["date"]
     fields:
       - { label: Project name, name: projectName, widget: string }
       - label: "Homepage Info"
@@ -128,12 +121,13 @@ collections:
           - { label: Description, name: description, widget: string }
           - { label: Subtitle, name: subtitle, widget: string }
           - { label: Body, name: body, widget: markdown }
-      - label: In carrousel,
-        name: incarrousel,
-        widget: boolean,
+      - label: In carrousel
+        name: incarrousel
+        widget: boolean
+        default: true
         hint: Determines whether this project is shown in the homepage carrousel. (Max. 5 projects)
-      - label: Media,
-        name: media,
+      - label: Media
+        name: media
         widget: object
         fields:
           - { label: Carrousel, name: carrousel, widget: string }
