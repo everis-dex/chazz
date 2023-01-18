@@ -20,8 +20,8 @@ const imageConfig = { auto: "auto", half: "half" };
 let config = [formats.left, formats.big, formats.left, formats.right, formats.equal];
 
 type Props = {
-  setCaseStudyId: (a: number) => void
-}
+  setCaseStudyId: (a: number) => void;
+};
 
 export const ProjectsGrid = ({ setCaseStudyId }: Props) => {
   const columnCount: number = 2;

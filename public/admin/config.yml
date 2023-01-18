@@ -138,7 +138,7 @@ collections:
         fields:
           - { label: Carrousel, name: carrousel, widget: string }
           - { label: Project, name: project, widget: string }
-      - label: "Case Info"
+      - label: Case Info
         name: caseInfo
         widget: object
         fields:
@@ -148,7 +148,7 @@ collections:
             name: sections
             widget: list
             types:
-              - label: "One Column"
+              - label: One Column
                 name: oneColumn
                 widget: object
                 types:
@@ -156,34 +156,34 @@ collections:
                     name: image
                     widget: object
                     fields:
-                      - { label: "image Url", name: imageUrl, widget: image }
-                      - { label: "Overlapped Text", name: overlappedText, widget: string, required: false }
-                  - label: "Claim"
+                      - { label: image Url, name: imageUrl, widget: image }
+                      - { label: Overlapped Text, name: overlappedText, widget: string, required: false }
+                  - label: Claim
                     name: claim
                     widget: string
                     fields:
-                      - { label: "text", name: text, widget: string }
-                  - label: "Paragraph Title"
+                      - { label: text, name: text, widget: string }
+                  - label: Paragraph Title
                     name: paragraphTitle
                     widget: string
                     fields:
-                      - { label: "text", name: text, widget: string }
-                  - label: "Paragraph"
+                      - { label: text, name: text, widget: string }
+                  - label: Paragraph
                     name: paragraph
                     widget: string
                     fields:
-                      - { label: "text", name: text, widget: string }
-                  - label: "Separator"
+                      - { label: text, name: text, widget: string }
+                  - label: Separator
                     name: separator
                     widget: number
-                    hint: "Add some blank space between sections (in pixels)"
+                    hint: Add some blank space between sections (in pixels)
                     fields:
-                      - { label: "height", name: height, widget: number }
-              - label: "Two Columns"
+                      - { label: height, name: height, widget: number }
+              - label: Two Columns
                 name: twoColumns
                 widget: object
                 fields:
-                  - label: "Left Column"
+                  - label: Left Column
                     name: leftColumn
                     widget: object
                     types:
@@ -191,24 +191,24 @@ collections:
                         name: image
                         widget: object
                         fields:
-                          - { label: "image Url", name: imageUrl, widget: image }
-                          - { label: "Overlapped Text", name: overlappedText, widget: string, required: false }
-                      - label: "Intro"
+                          - { label: image Url, name: imageUrl, widget: image }
+                          - { label: Overlapped Text, name: overlappedText, widget: string, required: false }
+                      - label: Intro
                         name: intro
                         widget: string
                         fields:
-                          - { label: "text", name: text, widget: string }
-                      - label: "Paragraph Title"
+                          - { label: text, name: text, widget: string }
+                      - label: Paragraph Title
                         name: paragraphTitle
                         widget: string
                         fields:
-                          - { label: "text", name: text, widget: string }
-                      - label: "Paragraph"
+                          - { label: text, name: text, widget: string }
+                      - label: Paragraph
                         name: paragraph
                         widget: string
                         fields:
-                          - { label: "text", name: text, widget: string }
-                  - label: "Right Column"
+                          - { label: text, name: text, widget: string }
+                  - label: Right Column
                     name: rightColumn
                     widget: object
                     types:
@@ -216,23 +216,23 @@ collections:
                         name: image
                         widget: object
                         fields:
-                          - { label: "image Url", name: imageUrl, widget: image }
-                          - { label: "Overlapped Text", name: overlappedText, widget: string, required: false }
-                      - label: "Intro"
+                          - { label: image Url, name: imageUrl, widget: image }
+                          - { label: Overlapped Text, name: overlappedText, widget: string, required: false }
+                      - label: Intro
                         name: intro
                         widget: string
                         fields:
-                          - { label: "text", name: text, widget: string }
-                      - label: "Paragraph Title"
+                          - { label: text, name: text, widget: string }
+                      - label: Paragraph Title
                         name: paragraphTitle
                         widget: string
                         fields:
-                          - { label: "text", name: text, widget: string }
-                      - label: "Paragraph"
+                          - { label: text, name: text, widget: string }
+                      - label: Paragraph
                         name: paragraph
                         widget: string
                         fields:
-                          - { label: "text", name: text, widget: string }
+                          - { label: text, name: text, widget: string }
   - name: partner
     label: Partner
     folder: content/partners

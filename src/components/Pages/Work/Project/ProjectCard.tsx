@@ -11,7 +11,7 @@ type Props = {
   format: string;
   columns?: string;
   full?: boolean;
-  setCaseStudyId: (a: number) => void
+  setCaseStudyId: (a: number) => void;
 };
 
 export const ProjectCard = ({ data, format, columns, setCaseStudyId }: Props) => {

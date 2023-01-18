@@ -63,13 +63,7 @@
           }
         }
       },
-      {
-        "oneColumn": {
-          "separator": {
-            "height": 100
-          }
-        }
-      },
+      { "oneColumn": { "separator": { "height": 50 } } },
       { "oneColumn": { "image": { "imageUrl": "/uploads/buff_home_web.jpg", "overlappedText": "" } } },
       {
         "twoColumns": {

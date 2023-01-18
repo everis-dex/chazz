@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
-import { Autoplay, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay, Pagination } from "swiper";
+// import { Swiper, SwiperSlide } from "swiper/react";
 
-import { CarrouselSlide } from "./CarrouselSlide";
+// import { CarrouselSlide } from "./CarrouselSlide";
 
-import { projects } from "../../../../../content/index";
-import { IProject } from "../../../../../interfaces/cms";
-import { ISlide } from "../../../../../interfaces/cms";
+// import { projects } from "../../../../../content/index";
+// import { IProject } from "../../../../../interfaces/cms";
+// import { ISlide } from "../../../../../interfaces/cms";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -17,7 +17,6 @@ export const Carrousel = ({ title }: Props) => {
   // const slides: IProject[] = [...projects];
   // const featuredSlides: IProject[] = slides.filter(slide => slide.incarrousel).slice(0, 5);
   const carrouselRef = useRef<HTMLDivElement>(null);
-
 
   ////////////////////////////////DESCOMENTARR!!!!!!!!!
   return (

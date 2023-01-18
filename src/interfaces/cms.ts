@@ -90,7 +90,7 @@ export interface IProject {
   body: string;
   incarrousel: boolean;
   caseInfo?: IProjectCaseInfo;
-  sections?: IProjectSection[];
+  sections: IProjectSection[];
 }
 
 export interface IProjectCaseInfo {
@@ -99,30 +99,16 @@ export interface IProjectCaseInfo {
 }
 
 export interface IProjectSection {
-  oneColumn?: IProjectSectionOneColumn;
-  twoColumns?: IProjectSectionTwoColumns;
-};
+  oneColumn?: IColumn;
+  twoColumns?: {
+    leftColumn: IColumn;
+    rightColumn: IColumn;
+  };
+}
 
-export interface IProjectSectionOneColumn {
-  image?: IProjectSectionImage;
+export interface IColumn {
   claim?: { text: string };
-  paragraphTitle?: { text: string };
-  paragraph?: { text: string };
   separator?: { height: number };
-}
-
-export interface IProjectSectionTwoColumns {
-  leftColumn: ILeftColumn;
-  rightColumn: IRightColumn;
-}
-
-export interface ILeftColumn {
-  image?: IProjectSectionImage;
-  intro?: { text: string };
-  paragraphTitle?: { text: string };
-  paragraph?: { text: string };
-}
-export interface IRightColumn {
   image?: IProjectSectionImage;
   intro?: { text: string };
   paragraphTitle?: { text: string };

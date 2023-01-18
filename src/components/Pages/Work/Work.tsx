@@ -26,9 +26,7 @@ export const Work = () => {
         activeStyle="active-pink"
       />
 
-      {caseStudyId === 0
-        ? <ProjectsGrid setCaseStudyId={setCaseStudyId} />
-        : <CaseStudy caseStudyId={caseStudyId} />}
+      {caseStudyId === 0 ? <ProjectsGrid setCaseStudyId={setCaseStudyId} /> : <CaseStudy caseStudyId={caseStudyId} />}
 
       <Footer />
     </>
