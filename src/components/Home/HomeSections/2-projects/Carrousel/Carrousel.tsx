@@ -31,20 +31,19 @@ export const Carrousel = ({ title }: Props) => {
       var rect = carrouselRef.current.getBoundingClientRect();
       let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      console.log("🚀 ~ file: Carrousel.tsx:26 ~ useEffect ~ rect", rect);
-      setLimits({
+
+      let limits = {
         top: rect.top + scrollTop,
-        bottom: rect.top + scrollTop + rect.height,
+        bottom: rect.top + scrollTop + rect.height * 4,
         left: rect.left + scrollLeft,
         right: rect.left + scrollLeft + rect.width
-      });
     }
   }, [carrouselRef]);
 
   document.addEventListener("mousemove", function handleMouseMove(e) {
     if (limits && circleRef && circleRef.current) {
-      circleRef.current.style.left = Math.max(e.pageX, 0) + 53 + "px";
-      circleRef.current.style.top = Math.max(e.pageY - limits.top, 0) + 53 + "px";
+      circleRef.current.style.left = Math.max(Math.min(e.pageX, limits.right - 106), 53) + "px";
+      circleRef.current.style.top = Math.max(Math.min(e.pageY, limits.bottom - 106), 53) + "px";
     }
   });
 
