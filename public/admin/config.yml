@@ -13,7 +13,7 @@ collections:
   ##############################
 
   - name: home # Used in routes
-    label: Home # Used in the U
+    label: Home # Used in the UI
     folder: src/content/pages/home # Where the documents are stored, relative to the repo root
     create: false # Allow users to create new documents in this collection
     delete: false # Allow users to delete existing documents in this collection
@@ -180,7 +180,7 @@ collections:
                   - label: Left Column
                     name: leftColumn
                     widget: object
-                    types:
+                    fields:
                       - label: Image
                         name: image
                         widget: object
@@ -205,7 +205,7 @@ collections:
                   - label: Right Column
                     name: rightColumn
                     widget: object
-                    types:
+                    fields:
                       - label: Image
                         name: image
                         widget: object
