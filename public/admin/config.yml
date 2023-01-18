@@ -180,7 +180,7 @@ collections:
                   - label: Left Column
                     name: leftColumn
                     widget: object
-                    fields:
+                    types:
                       - label: Image
                         name: image
                         widget: object
@@ -189,17 +189,17 @@ collections:
                           - { label: Overlapped Text, name: overlappedText, widget: string, required: false }
                       - label: Intro
                         name: intro
-                        widget: string
+                        widget: object
                         fields:
                           - { label: text, name: text, widget: string }
                       - label: Paragraph Title
                         name: paragraphTitle
-                        widget: string
+                        widget: object
                         fields:
                           - { label: text, name: text, widget: string }
                       - label: Paragraph
                         name: paragraph
-                        widget: string
+                        widget: object
                         fields:
                           - { label: text, name: text, widget: string }
                   - label: Right Column
