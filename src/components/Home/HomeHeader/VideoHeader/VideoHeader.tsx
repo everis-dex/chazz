@@ -34,6 +34,11 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
     }
   };
 
+  const forcePause = () => {
+    setIsPlaying(false);
+    setControlText("Play");
+  }
+
   const resetVideo = () => {
     setIsPlaying(false);
     setControlText("Play");
@@ -102,6 +107,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
         className={`video-header video-header-${isPlaying ? "color" : "no-color"}`}
         ref={videoRef}
         onEnded={resetVideo}
+        onPause={forcePause}
         preload="auto"
       >
         <source src="uploads/reel_chazz_1080.mp4" media="(min-width: 850px)" />
