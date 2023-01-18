@@ -9,6 +9,7 @@
 }
 
 #circle {
+  display: none;
   position: relative;
   transform: translate(-50%, -50%);
   height: 106px;
@@ -20,7 +21,6 @@
   border: 2px solid black;
   z-index: 100;
   align-items: center;
-  display: flex;
   justify-content: center;
 
   .hover-text {
@@ -87,13 +87,12 @@
       padding-left: 2px;
       width: auto;
     }
-
-    .slides {
-      overflow: hidden;
-    }
   }
   .properties {
     padding-right: 40px;
+  }
+  #circle {
+    display: flex;
   }
 }
 
