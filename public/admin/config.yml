@@ -131,7 +131,7 @@ collections:
       - label: In carrousel,
         name: incarrousel,
         widget: boolean,
-        hint: "Determines whether this project is shown in the homepage carrousel. (Max. 5 projects)"
+        hint: Determines whether this project is shown in the homepage carrousel. (Max. 5 projects)
       - label: Media,
         name: media,
         widget: object
