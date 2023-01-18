@@ -49,15 +49,15 @@ export const CaseStudy = ({ caseStudyId }: Props) => {
                   alt={column.image.overlappedText ? column.image.overlappedText.text : ""}
                 />
               );
-            } else if (section.twoColumns.leftColumn.intro) {
+            } else if (column.intro) {
               // "INTRO"
-              returnedContent = <h3>{section.twoColumns.leftColumn.intro.text}</h3>;
-            } else if (section.twoColumns.leftColumn["paragraphTitle"]) {
+              returnedContent = <h3>{column.intro.text}</h3>;
+            } else if (column.paragraphTitle) {
               // "PARAGRAPH TITLE"
-              returnedContent = <h3>{section.twoColumns.leftColumn["paragraphTitle"]["text"]}</h3>;
-            } else if (section.twoColumns.leftColumn["paragraph"]) {
+              returnedContent = <h3>{column.paragraphTitle.text}</h3>;
+            } else if (column.paragraph) {
               // "PARAGRAPH"
-              returnedContent = <p>{section.twoColumns.leftColumn["paragraph"]["text"]}</p>;
+              returnedContent = <p>{column.paragraph.text}</p>;
             }
           } else if (section.twoColumns.rightColumn) {
             const column = section.twoColumns.rightColumn;
