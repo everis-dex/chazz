@@ -27,18 +27,18 @@ export const Nav = ({
 }: Props) => {
   const [root] = useState(document.getElementById("root"));
 
-  const toggleMenu = () => {
+  function toggleMenu(): void {
     if (!isPlaying) {
       setIsBurgerMenuOpen(!isBurgerMenuOpen);
       handleRootBehavior();
     }
-  };
+  }
 
-  const handleRootBehavior = () => {
+  function handleRootBehavior(): void {
     if (!root) return;
     root.style.height = isBurgerMenuOpen ? "auto" : "100vh";
     root.style.overflow = isBurgerMenuOpen ? "auto" : "hidden";
-  };
+  }
 
   if (isNavVisible) {
     return (

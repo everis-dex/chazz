@@ -6,7 +6,7 @@ export const Option = ({ title, content }: Props) => {
   const [openAccordion, setOpenAccordion] = useState<boolean>(false);
   const accordionSymbol: string = openAccordion ? "-" : "+";
 
-  function handleDropdown(target: EventTarget) {
+  function handleDropdown(target: EventTarget): void {
     const accordion = target as HTMLElement;
 
     // Add space after the accordion in parent

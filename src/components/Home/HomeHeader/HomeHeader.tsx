@@ -15,13 +15,12 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isNavVisible, setisNavVisible] = useState<boolean>(true);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
-  const [isAllowedMessageVisible, setIsAllowedMessageVisible] = useState<boolean>(true);
 
   // TODO: plantear si se queda aquí
-  const appHeight = () => {
+  function appHeight(): void {
     const doc = document.documentElement;
     doc.style.setProperty("--app-height", `${window.innerHeight}px`);
-  };
+  }
   window.addEventListener("resize", appHeight);
   appHeight();
 
@@ -54,8 +53,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           isBurgerMenuOpen={isBurgerMenuOpen}
         ></VideoHeader>
       </div>
-
-      {isAllowedMessageVisible && <AllowCookies setIsAllowedMessageVisible={setIsAllowedMessageVisible}/>}
+      <AllowCookies />
     </>
   );
 };

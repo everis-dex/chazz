@@ -16,19 +16,19 @@ export const CarrouselSlide = (props: IProject) => {
   const screenWidth: number = window.innerWidth;
 
   useEffect(() => {
-    const pointerURL = window.location.origin + "/static/media/drag-pointer.88edae6d2885384cf418.svg";
+    const pointerURL = window.location.origin + "/uploads/drag-pointer.svg";
     const commonProps = {
       objectFit: "cover",
       cursor: `url(${pointerURL}), auto`
     };
 
-    const resizeSlides = () => {
+    function resizeSlides(): void {
       const smallScreen = { width: "290px", height: "288px" };
       const largeScreen = { width: "100%", height: "666px" };
 
       const selectedStyles = screenWidth < 768 ? smallScreen : largeScreen;
       setMediaStyle({ ...commonProps, ...selectedStyles });
-    };
+    }
     resizeSlides();
     window.addEventListener("resize", resizeSlides);
 
