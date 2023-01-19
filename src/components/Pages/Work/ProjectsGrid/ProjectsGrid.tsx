@@ -64,7 +64,6 @@ export const ProjectsGrid = (workData: IWork) => {
         {projects &&
           projects.map((proj, index: number) => {
             const project = proj as IProject;
-            console.log("🚀 ~ file: ProjectsGrid.tsx:74 ~ ProjectsGrid ~ project", project);
             const [format, columns] = handleProjectFormat();
             return (
               <Fragment key={index}>

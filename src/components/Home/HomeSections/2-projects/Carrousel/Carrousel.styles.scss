@@ -59,9 +59,14 @@
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
-  .carrousel .pagination {
-    padding-left: 2px;
-    width: auto;
+  .carrousel {
+    .pagination {
+      padding-left: 2px;
+      width: auto;
+    }
+    .slides {
+      cursor: url("/assets/drag-pointer.svg"), auto;
+    }
   }
   .properties {
     padding-right: 40px;

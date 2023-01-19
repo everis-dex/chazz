@@ -1,10 +1,10 @@
 import React from "react";
 
 import { IHomeFooter } from "../../../../interfaces/cms";
+import { DividingLine } from "../../DividingLine/DividingLine";
 import { GetInTouch, Offices, Studios } from "./index";
 
 import "./CompanyInfo.styles.scss";
-import { DividingLine } from "../../DividingLine/DividingLine";
 
 export const CompanyInfo = (footerData: IHomeFooter) => {
   const socials = footerData.social;

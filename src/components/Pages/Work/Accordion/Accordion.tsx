@@ -32,7 +32,9 @@ export const Accordion = ({ content }: Props) => {
   return (
     <div className="project-accordion">
       <button className="accordion" onClick={e => handleDropdown(e.target)}>
-        <p style={{ zIndex: "-10" }}>{dropdownText} information</p>
+        <p style={{ zIndex: "-10" }} onClick={e => handleFromChild(e.target)}>
+          {dropdownText} information
+        </p>
         <div className="accordion-arrow" style={{ zIndex: "-10" }}>
           <img className={openDropdown ? "fadeIn" : "fadeOut"} src={moreInfoIcon} alt="moreInformation" />
           <img className={!openDropdown ? "fadeIn" : "fadeOut"} src={lessInfoIcon} alt="lessInformation" />
