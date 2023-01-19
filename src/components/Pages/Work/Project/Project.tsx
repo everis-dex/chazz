@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import { IProject } from "../../../../interfaces/cms";
-import { Accordion } from "../Accordion/Accordion";
 import { Media } from "../../../shared/index";
+import { Accordion } from "../Accordion/Accordion";
 
 import "./Project.styles.scss";
 

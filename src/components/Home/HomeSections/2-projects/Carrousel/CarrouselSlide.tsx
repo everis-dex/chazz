@@ -9,33 +9,32 @@ interface MediaStyle {
   width: string;
   height: string;
   objectFit: string;
+  cursor: string;
 }
 
 export const CarrouselSlide = (props: IProject) => {
-  const [mediaStyle, setMediaStyle] = useState<MediaStyle>({ width: "0%", height: "0px", objectFit: "cover" });
+  const [mediaStyle, setMediaStyle] = useState<MediaStyle>({
+    width: "0%",
+    height: "0px",
+    objectFit: "cover",
+    cursor: "url(http://localhost:3000/static/media/drag-pointer.d634b53df533d800a44b.svg), auto"
+  });
   const screenWidth: number = window.innerWidth;
 
   useEffect(() => {
-    if (screenWidth < 768) {
-      setMediaStyle({ width: "290px", height: "288px", objectFit: "cover" });
-    } else {
-      setMediaStyle({ width: "100%", height: "666px", objectFit: "cover" });
-    }
-
     const resizeSlides = () => {
       if (screenWidth < 768) {
-        setMediaStyle({ width: "290px", height: "288px", objectFit: "cover" });
+        setMediaStyle({ ...mediaStyle, ...{ width: "290px", height: "288px" } });
       } else {
-        setMediaStyle({ width: "100%", height: "666px", objectFit: "cover" });
+        setMediaStyle({ ...mediaStyle, ...{ width: "100%", height: "666px" } });
       }
     };
+    resizeSlides();
 
     window.addEventListener("resize", resizeSlides);
 
-    return () => {
-      window.removeEventListener("resize", resizeSlides);
-    };
-  }, [setMediaStyle, screenWidth]);
+    return () => window.removeEventListener("resize", resizeSlides);
+  }, [setMediaStyle, screenWidth, mediaStyle]);
 
   return (
     <>

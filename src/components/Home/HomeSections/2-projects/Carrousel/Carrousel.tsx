@@ -29,23 +29,28 @@ export const Carrousel = ({ title }: Props) => {
   useEffect(() => {
     if (carrouselRef && carrouselRef.current) {
       var rect = carrouselRef.current.getBoundingClientRect();
-      let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
+      // let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       let limits = {
-        top: rect.top + scrollTop,
-        bottom: rect.top + scrollTop + rect.height * 4,
-        left: rect.left + scrollLeft,
-        right: rect.left + scrollLeft + rect.width
+        top: rect.top,
+        bottom: rect.top + rect.height,
+        left: rect.left,
+        right: rect.left + rect.width
+      };
+      console.log("🚀 ~ limits", limits);
+
+      setLimits(limits);
     }
   }, [carrouselRef]);
 
-  document.addEventListener("mousemove", function handleMouseMove(e) {
+  function handleMouseMove(e: DragEvent | MouseEvent) {
     if (limits && circleRef && circleRef.current) {
       circleRef.current.style.left = Math.max(Math.min(e.pageX, limits.right - 106), 53) + "px";
-      circleRef.current.style.top = Math.max(Math.min(e.pageY, limits.bottom - 106), 53) + "px";
+      circleRef.current.style.top = Math.max(Math.min(e.offsetY, limits.bottom - 106), 53) + "px";
     }
-  });
+  }
+
+  document.addEventListener("mousemove", handleMouseMove);
+  document.addEventListener("drag", handleMouseMove);
 
   return (
     <>
@@ -56,9 +61,9 @@ export const Carrousel = ({ title }: Props) => {
       <div id="carrousel" className="carrousel">
         <div className="pagination" />
         <div className="slides" ref={carrouselRef}>
-          <div id="circle" ref={circleRef}>
+          {/* <div id="circle" ref={circleRef}>
             <span className="hover-text">Drag</span>
-          </div>
+          </div> */}
           <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={1.1}
@@ -81,9 +86,11 @@ export const Carrousel = ({ title }: Props) => {
           >
             {featuredSlides.map((slide: IProject, index: number) => {
               return (
-                <SwiperSlide key={index}>
-                  <CarrouselSlide {...slide} />
-                </SwiperSlide>
+                <div style={{ cursor: "url('drag-pointer.svg'), auto;" }}>
+                  <SwiperSlide key={index}>
+                    <CarrouselSlide {...slide} />
+                  </SwiperSlide>
+                </div>
               );
             })}
           </Swiper>
