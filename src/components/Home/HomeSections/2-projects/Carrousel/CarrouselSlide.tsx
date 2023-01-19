@@ -22,13 +22,13 @@ export const CarrouselSlide = (props: IProject) => {
       cursor: `url(${pointerURL}), auto`
     };
 
-    const resizeSlides = () => {
+    function resizeSlides(): void {
       const smallScreen = { width: "290px", height: "288px" };
       const largeScreen = { width: "100%", height: "666px" };
 
       const selectedStyles = screenWidth < 768 ? smallScreen : largeScreen;
       setMediaStyle({ ...commonProps, ...selectedStyles });
-    };
+    }
     resizeSlides();
     window.addEventListener("resize", resizeSlides);
 
