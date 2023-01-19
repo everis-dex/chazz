@@ -15,6 +15,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isNavVisible, setisNavVisible] = useState<boolean>(true);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
+  const [isAllowedMessageVisible, setIsAllowedMessageVisible] = useState<boolean>(true);
 
   // TODO: plantear si se queda aquí
   const appHeight = () => {
@@ -54,7 +55,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
         ></VideoHeader>
       </div>
 
-      <AllowCookies />
+      {isAllowedMessageVisible && <AllowCookies setIsAllowedMessageVisible={setIsAllowedMessageVisible}/>}
     </>
   );
 };
