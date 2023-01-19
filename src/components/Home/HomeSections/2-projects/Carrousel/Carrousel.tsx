@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -15,11 +15,10 @@ type Props = { title: string };
 export const Carrousel = ({ title }: Props) => {
   const slides: IProject[] = [...projects];
   const featuredSlides: IProject[] = slides.filter(slide => slide.incarrousel).slice(0, 5);
-  const carrouselRef = useRef<HTMLDivElement>(null);
 
   return (
     <>
-      <div ref={carrouselRef} className="carrouselTitle">
+      <div className="carrouselTitle">
         <h3>{title}</h3>
       </div>
 
