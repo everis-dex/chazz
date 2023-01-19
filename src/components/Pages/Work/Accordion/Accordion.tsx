@@ -13,11 +13,13 @@ export const Accordion = ({ content }: Props) => {
   function handleFromChild(target: EventTarget) {
     const child = target as Element;
     const parent = child.parentElement as HTMLElement;
+    console.log("handleFromChild");
     handleDropdown(parent);
   }
 
   function handleDropdown(target: EventTarget) {
     const accordion = target as Element;
+    console.log("handleDropdown");
 
     // Show pannel
     const panel = accordion.nextElementSibling as HTMLElement;
@@ -32,8 +34,9 @@ export const Accordion = ({ content }: Props) => {
   return (
     <div className="project-accordion">
       <button className="accordion" onClick={e => handleDropdown(e.target)}>
-        <p onClick={e => handleFromChild(e.target)}>{dropdownText} information</p>
-        <div className="accordion-arrow" onClick={e => handleFromChild(e.target)}>
+        <p style={{ zIndex: "-10" }}>{dropdownText} information</p>
+        {/* <p onClick={e => handleFromChild(e.target)}>{dropdownText} information</p> */}
+        <div className="accordion-arrow" style={{ zIndex: "-10" }}>
           <img className={openDropdown ? "fadeIn" : "fadeOut"} src={moreInfoIcon} alt="moreInformation" />
           <img className={!openDropdown ? "fadeIn" : "fadeOut"} src={lessInfoIcon} alt="lessInformation" />
         </div>
