@@ -13,13 +13,11 @@ export const Accordion = ({ content }: Props) => {
   function handleFromChild(target: EventTarget) {
     const child = target as Element;
     const parent = child.parentElement as HTMLElement;
-    console.log("handleFromChild");
     handleDropdown(parent);
   }
 
   function handleDropdown(target: EventTarget) {
     const accordion = target as Element;
-    console.log("handleDropdown");
 
     // Show pannel
     const panel = accordion.nextElementSibling as HTMLElement;

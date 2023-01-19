@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { IProject } from "../../../../../interfaces/cms";
 import { Media } from "../../../../shared/index";
-
-import { Link } from "react-router-dom";
 
 interface MediaStyle {
   width: string;
@@ -17,9 +16,10 @@ export const CarrouselSlide = (props: IProject) => {
   const screenWidth: number = window.innerWidth;
 
   useEffect(() => {
+    const pointerURL = window.location.origin + "/static/media/drag-pointer.88edae6d2885384cf418.svg";
     const commonProps = {
       objectFit: "cover",
-      cursor: "url(http://localhost:3000/static/media/drag-pointer.d634b53df533d800a44b.svg), auto"
+      cursor: `url(${pointerURL}), auto`
     };
 
     const resizeSlides = () => {
