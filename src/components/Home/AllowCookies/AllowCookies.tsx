@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./AllowCookies.styles.scss";
 
 export const AllowCookies = () => {
   const cookiesAllowed = localStorage.getItem("cookiesAllowed");
+  const [displayCookies, setDisplayCookies] = useState<boolean>(cookiesAllowed ? false : true);
 
   // TODO: To clean up cookies
   // localStorage.removeItem("cookiesAllowed");
 
   function handleAllowCookies(): void {
     localStorage.setItem("cookiesAllowed", "true");
+    setDisplayCookies(false);
   }
 
-  return cookiesAllowed ? (
+  return cookiesAllowed && !displayCookies ? (
     <></>
   ) : (
     <div className="chazz-cookies">
