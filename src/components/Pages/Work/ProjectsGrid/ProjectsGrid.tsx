@@ -55,23 +55,27 @@ export const ProjectsGrid = (workData: IWork) => {
 
   return (
     <>
-      <h1 className="work-header">{workData.title}</h1>
-      <div className="work-container--content">
-        <div className="work-detail">
-          <LineBreakerSelector typedLines={workData.subtitle} />
+      <div className="work-container"> 
+        <div className="work-header">
+          <h1 >{workData.title}</h1>
         </div>
+        <div className="work-container--content">
+          <div className="work-detail">
+            <LineBreakerSelector typedLines={workData.subtitle} />
+          </div>
 
-        {projects &&
-          projects.map((proj, index: number) => {
-            const project = proj as IProject;
-            console.log("🚀 ~ file: ProjectsGrid.tsx:74 ~ ProjectsGrid ~ project", project);
-            const [format, columns] = handleProjectFormat();
-            return (
-              <Fragment key={index}>
-                <ProjectCard data={project} format={format} columns={columns} />
-              </Fragment>
-            );
-          })}
+          {projects &&
+            projects.map((proj, index: number) => {
+              const project = proj as IProject;
+              console.log("🚀 ~ file: ProjectsGrid.tsx:74 ~ ProjectsGrid ~ project", project);
+              const [format, columns] = handleProjectFormat();
+              return (
+                <Fragment key={index}>
+                  <ProjectCard data={project} format={format} columns={columns} />
+                </Fragment>
+              );
+            })}
+        </div>
       </div>
     </>
   );
