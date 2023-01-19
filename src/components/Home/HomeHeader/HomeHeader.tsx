@@ -45,7 +45,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
             <h4>{headerData.subtitle}</h4>
           </div>
         </div>
-        {!isPlaying && <img src="uploads/first_frame.jpg" alt="" className="grayscale" />}
+        {/* {!isPlaying && <img src="uploads/first_frame.jpg" alt="" className="grayscale" />} */}
         <VideoHeader
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
@@ -55,7 +55,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
         ></VideoHeader>
       </div>
 
-      {isAllowedMessageVisible && <AllowCookies setIsAllowedMessageVisible={setIsAllowedMessageVisible}/>}
+      {isAllowedMessageVisible && <AllowCookies setIsAllowedMessageVisible={setIsAllowedMessageVisible} />}
     </>
   );
 };

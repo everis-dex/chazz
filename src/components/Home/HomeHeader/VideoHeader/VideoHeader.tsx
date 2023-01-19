@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+
 import "./VideoHeader.style.scss";
 
 type Props = {
@@ -12,6 +13,8 @@ type Props = {
 export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVisible, isBurgerMenuOpen }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [controlText, setControlText] = useState<string>("Play");
+  const pixelatedCanvasRef = useRef<HTMLCanvasElement | null>(null)
+  const videoCanvasRef = useRef<HTMLCanvasElement | null>(null)
 
   useEffect(() => {
     if (!isPlaying && !isNavVisible) {
@@ -78,6 +81,48 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
   }, []);
   const controlRef = useRef<HTMLDivElement>(null);
 
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+  const videoWidth: number = window.innerWidth;
+  const videoHeight: number = window.innerHeight;
+  useEffect(() => {
+
+    const videoCanvas = videoCanvasRef.current;
+    const pixelatedCanvas = pixelatedCanvasRef.current;
+
+    if (!videoCanvas) { return };
+    const videoCanvasContext = videoCanvas.getContext('2d');
+    if (!videoCanvasContext) { return };
+    const myVideo = new Image();
+    myVideo.src = "video.mp4";
+    myVideo.src = "image.jpg";
+    videoCanvasContext.drawImage(myVideo, 0, 0, videoWidth, videoHeight);
+
+    if (!pixelatedCanvas) { return };
+    const pixelatedCanvasContext = pixelatedCanvas.getContext('2d');
+    if (!pixelatedCanvasContext) { return };
+    pixelatedCanvasContext.beginPath();
+    pixelatedCanvasContext.fillStyle = "red";
+    console.log({ videoWidth, videoHeight });
+    videoCanvasContext.globalAlpha = 0.1;
+
+    const tiling: number = 18;
+    for (let x = 1; x < videoWidth; x += tiling) {
+      for (let y = 1; y < videoHeight; y += tiling) {
+        // Detectar el color del pixel
+        // const pixelData = videoCanvasContext.getImageData(0, 0, 1, 1).data;
+        // console.log(pixelData);
+        pixelatedCanvasContext.beginPath();
+        pixelatedCanvasContext.fillStyle = "rgb(225,225,225)";
+        pixelatedCanvasContext.strokeStyle = 'white';
+        pixelatedCanvasContext.fillRect(x, y, x + tiling - 1, y + tiling - 1);
+        pixelatedCanvasContext.globalAlpha = 0.1;
+      }
+    }
+
+  }, [])
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+
   return (
     <>
       {!isBurgerMenuOpen && (
@@ -104,6 +149,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
         </>
       )}
       <video
+        id="videoId"
         className={`video-header video-header-${isPlaying ? "color" : "no-color"}`}
         ref={videoRef}
         onEnded={resetVideo}
@@ -113,6 +159,8 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
         <source src="uploads/reel_chazz_1080.mp4" media="(min-width: 850px)" />
         <source src="uploads/reel_chazz_540.mp4" />
       </video>
+      {/* <canvas id="pixelatedCanvas" className="canvas" ref={pixelatedCanvasRef} width={videoWidth} height={videoHeight}></canvas> */}
+      {/* <canvas id="videoCanvas" className="canvas" ref={videoCanvasRef} width={videoWidth} height={videoHeight}></canvas> */}
     </>
   );
 };
