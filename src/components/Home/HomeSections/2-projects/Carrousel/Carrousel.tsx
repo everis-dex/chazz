@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,46 +11,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./Carrousel.styles.scss";
 
-type Limits = {
-  top: number;
-  bottom: number;
-  left: number;
-  right: number;
-};
-
 type Props = { title: string };
 export const Carrousel = ({ title }: Props) => {
   const slides: IProject[] = [...projects];
   const featuredSlides: IProject[] = slides.filter(slide => slide.incarrousel).slice(0, 5);
-  const carrouselRef = useRef<HTMLDivElement>(null);
-  const circleRef = useRef<HTMLDivElement>(null);
-  const [limits, setLimits] = useState<Limits>();
-
-  useEffect(() => {
-    if (carrouselRef && carrouselRef.current) {
-      var rect = carrouselRef.current.getBoundingClientRect();
-      // let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      let limits = {
-        top: rect.top,
-        bottom: rect.top + rect.height,
-        left: rect.left,
-        right: rect.left + rect.width
-      };
-      console.log("🚀 ~ limits", limits);
-
-      setLimits(limits);
-    }
-  }, [carrouselRef]);
-
-  function handleMouseMove(e: DragEvent | MouseEvent) {
-    if (limits && circleRef && circleRef.current) {
-      circleRef.current.style.left = Math.max(Math.min(e.pageX, limits.right - 106), 53) + "px";
-      circleRef.current.style.top = Math.max(Math.min(e.offsetY, limits.bottom - 106), 53) + "px";
-    }
-  }
-
-  document.addEventListener("mousemove", handleMouseMove);
-  document.addEventListener("drag", handleMouseMove);
 
   return (
     <>
@@ -60,10 +24,7 @@ export const Carrousel = ({ title }: Props) => {
 
       <div id="carrousel" className="carrousel">
         <div className="pagination" />
-        <div className="slides" ref={carrouselRef}>
-          {/* <div id="circle" ref={circleRef}>
-            <span className="hover-text">Drag</span>
-          </div> */}
+        <div className="slides">
           <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={1.1}
@@ -86,11 +47,9 @@ export const Carrousel = ({ title }: Props) => {
           >
             {featuredSlides.map((slide: IProject, index: number) => {
               return (
-                <div style={{ cursor: "url('drag-pointer.svg'), auto;" }}>
-                  <SwiperSlide key={index}>
-                    <CarrouselSlide {...slide} />
-                  </SwiperSlide>
-                </div>
+                <SwiperSlide key={index}>
+                  <CarrouselSlide {...slide} />
+                </SwiperSlide>
               );
             })}
           </Swiper>
