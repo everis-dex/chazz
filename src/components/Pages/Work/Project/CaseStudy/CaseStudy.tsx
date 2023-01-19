@@ -1,7 +1,11 @@
+import { resolveObjectURL } from "buffer";
 import React from "react";
 
 import { projects } from "../../../../../content/index";
 import { IProject, IProjectSection } from "../../../../../interfaces/cms";
+import { CaseInfoServices } from "./CaseInfo/CaseInfoServices";
+import { CaseInfoTitle } from "./CaseInfo/CaseInfoTitle";
+import { CaseInfoOneColumn } from "./Sections/CaseInfoOneColumn";
 
 // import "./CaseStudies.styles.scss";
 
@@ -10,9 +14,12 @@ type Props = { caseStudyId: number };
 
 export const CaseStudy = ({ caseStudyId }: Props) => {
   const project: IProject = projects.filter(project => project.id === caseStudyId)[0] as IProject;
-  console.log("PROJECT", project);
+
   return (
     <>
+      {project.caseInfo && <CaseInfoTitle text={project.caseInfo.title} />}
+      {project.caseInfo && <CaseInfoServices text={project.caseInfo.services} />}
+
       {project.sections.map((section: IProjectSection) => {
         let returnedContent = <></>;
         if (section.oneColumn) {
@@ -21,9 +28,13 @@ export const CaseStudy = ({ caseStudyId }: Props) => {
           if (column && column.image) {
             // "IMAGEN";
             returnedContent = (
-              <img
-                src={column.image.imageUrl.text}
-                alt={column.image.overlappedText ? column.image.overlappedText.text : ""}
+              <CaseInfoOneColumn
+                type="image"
+                content={{
+                  imageUrl: column.image.imageUrl.text,
+                  alt: { overlappedText: column.image.overlappedText ? column.image.overlappedText.text : "" }
+                }
+                }
               />
             );
           } else if (section.oneColumn.claim) {
