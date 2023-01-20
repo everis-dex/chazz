@@ -1,7 +1,6 @@
 import React from "react";
 
 import { IPartner } from "../../../../interfaces/cms";
-
 import "./Partners.styles.scss";
 
 export const Partner = ({ website, logo, name, scale = "100" }: IPartner) => {
