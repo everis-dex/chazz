@@ -51,7 +51,7 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid var(--hrColor);
-    padding: 25px 0;
+    // padding: 25px 0;
     margin: 0;
 
     span {
@@ -92,7 +92,7 @@
   }
 
   .category-options {
-    margin-top: -30px;
+    margin-top: -15px;
 
     .accordion {
       font-weight: 500;

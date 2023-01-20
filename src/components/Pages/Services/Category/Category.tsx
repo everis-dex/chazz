@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { ICategory, ICategoryAccordion } from "../../../../interfaces/cms";
-import { Option } from "./Option/Option";
+import { Accordion } from "../../../shared/Accordion/Accordion";
 
 import "./Category.styles.scss";
 
@@ -25,7 +25,7 @@ export const Category = (category: ICategory) => {
           <div className="category-options">
             {category.accordions.map((accordion: ICategoryAccordion, index: number) => (
               <div key={index}>
-                <Option title={accordion.title} content={accordion.content} />
+                <Accordion title={accordion.title} content={accordion.content} ourWork={false} />
               </div>
             ))}
           </div>
