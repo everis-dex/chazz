@@ -9,9 +9,12 @@ type Props = {
   isBurgerMenuOpen: boolean;
 };
 
+const ControlTextOptions = { play: "Play", stop: "Stop" };
+
 export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVisible, isBurgerMenuOpen }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [controlText, setControlText] = useState<string>("Play");
+  const controlRef = useRef<HTMLDivElement>(null);
+  const [controlText, setControlText] = useState<string>(ControlTextOptions.play);
 
   useEffect(() => {
     if (!isPlaying && !isNavVisible) {
@@ -21,54 +24,49 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
 
   function switchPlayPause(): void {
     setIsPlaying(!isPlaying);
+    if (!videoRef.current) return;
 
-    if (videoRef.current && isPlaying) {
+    if (isPlaying) {
       videoRef.current.pause();
       setIsNavVisible(!isNavVisible);
-      setControlText("Play");
-    }
-    if (videoRef.current && !isPlaying) {
+      setControlText(ControlTextOptions.play);
+    } else {
       videoRef.current.play();
-      setControlText("Stop");
+      setControlText(ControlTextOptions.stop);
       setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
     }
   }
 
   function forcePause(): void {
     setIsPlaying(false);
-    setControlText("Play");
+    setControlText(ControlTextOptions.play);
   }
 
   function resetVideo(): void {
     setIsPlaying(false);
-    setControlText("Play");
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-    }
+    setControlText(ControlTextOptions.play);
+    if (videoRef.current) videoRef.current.currentTime = 0;
   }
 
   useEffect(() => {
     function handleMouseMove(event: any): void {
-      if (controlRef.current) {
-        if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
-          const scrollY = window.scrollY;
-          const postY = event.clientY;
-          const scrollFinalY = scrollY + postY - 10;
-          const scrollX = window.scrollX;
-          const postX = event.clientX;
-          const scrollFinalX = scrollX + postX - 50;
+      if (!controlRef.current) return;
 
-          if (window.innerWidth >= 1040) {
-            controlRef.current.style.top = scrollFinalY.toString().concat("px");
-            controlRef.current.style.left = scrollFinalX.toString().concat("px");
-            controlRef.current.style.opacity = "1";
-          } else {
-            controlRef.current.style.top = (window.innerHeight - 40).toString().concat("px");
-            controlRef.current.style.left = "5%";
-          }
+      if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
+        const scrollFinalY = event.pageY - 10;
+        const scrollFinalX = event.pageX - 50;
+
+        if (window.innerWidth >= 1040) {
+          controlRef.current.style.top = scrollFinalY.toString().concat("px");
+          controlRef.current.style.left = scrollFinalX.toString().concat("px");
+          controlRef.current.style.opacity = "1";
         } else {
+          controlRef.current.style.top = (window.innerHeight - 40).toString().concat("px");
+          controlRef.current.style.left = "5%";
           controlRef.current.style.opacity = "0";
         }
+      } else {
+        controlRef.current.style.opacity = "0";
       }
     }
     window.addEventListener("mousemove", handleMouseMove);
@@ -76,7 +74,6 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
-  const controlRef = useRef<HTMLDivElement>(null);
 
   return (
     <>
@@ -84,8 +81,8 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
         <>
           <div className="player-video-mobile-switcher">
             <div className="player-video">
-              <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause}></div>
-              <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause}></div>
+              <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
+              <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
               <span className="player-text" onClick={switchPlayPause}>
                 {controlText} reel
               </span>
@@ -94,8 +91,8 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
 
           <div className="player-video-desktop-switcher">
             <div className="player-video" ref={controlRef}>
-              <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause}></div>
-              <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause}></div>
+              <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
+              <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
               <span className="player-text" onClick={switchPlayPause}>
                 {controlText} reel
               </span>
@@ -104,7 +101,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
         </>
       )}
       <video
-        className={`video-header video-header-${isPlaying ? "color" : "no-color"}`}
+        className={`video-header ${isPlaying ? "color" : "no-color"}`}
         ref={videoRef}
         onEnded={resetVideo}
         onPause={forcePause}

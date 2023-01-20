@@ -1,24 +1,25 @@
+// Video header
 .video-header {
   height: 100vh;
-  width: -webkit-fill-available;
   position: absolute;
   top: 0;
   z-index: -1;
-  cursor: url("https://cdn-icons-png.flaticon.com/512/16/16363.png?w=740&t=st=1673262195~exp=1673262795~hmac=e6666ee86f2db9b4e532f29698f1f1cf6f7be07c9d2a8cb70b4a7dfd9510b27a");
   transition: all 1s;
   min-height: 100%;
 }
 
-.video-header-no-color {
+.video-header.color {
+  filter: none;
+  transition: all 1s;
+}
+
+.video-header.no-color {
   object-fit: cover;
   filter: grayscale(100%);
   min-width: 100%;
 }
 
-.video-header-color {
-  filter: none;
-  transition: all 1s;
-}
+// Player video switchers
 
 .player-video-desktop-switcher {
   display: none;
@@ -33,13 +34,15 @@
   cursor: pointer;
 }
 
+// Player video
+
 .player-video {
   position: absolute;
-  // display: none;
   align-items: center;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   cursor: none;
 
+  // Play
   .play-icon-in,
   .play-icon-out {
     position: absolute;
@@ -64,6 +67,7 @@
     opacity: 1;
   }
 
+  // Stop
   .stop-icon-in {
     position: absolute;
     top: 4px;
@@ -88,6 +92,7 @@
     filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.2));
   }
 
+  // Text
   .player-text {
     color: var(--white);
     font-size: 19px;
@@ -101,9 +106,6 @@
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
-  .video-header-color {
-    left: 0;
-  }
   .video-header {
     left: 0;
     width: 100vw;
@@ -127,20 +129,4 @@
   .player-text {
     opacity: 1 !important;
   }
-}
-
-@media (min-width: 1280px) {
-  // .video-header {
-  //   width: 100vw;
-  //   height: auto;
-  //   object-fit: cover;
-  // }
-
-  .video-header-color {
-    width: 100vw;
-    height: auto;
-  }
-}
-
-@media (min-width: 1440px) {
 }
