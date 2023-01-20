@@ -1,15 +1,13 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-import { AllowCookies, Nav } from "../index";
-
-import { IHomeHeader } from "../../../interfaces/cms";
 import { LineBreakerSelector } from "../../shared/index";
-
-import "./HomeHeader.styles.scss";
+import { AllowCookies, Nav } from "../index";
 import { VideoHeader } from "./VideoHeader/VideoHeader";
 
 import { routesInfo } from "../../../constants";
+import { IHomeHeader } from "../../../interfaces/cms";
+
+import "./HomeHeader.styles.scss";
 
 export const HomeHeader = (headerData: IHomeHeader) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
