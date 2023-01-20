@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
+import lessInfoIcon from "../../../../../assets/icn_lessinformation.svg";
+import moreInfoIcon from "../../../../../assets/icn_moreinformation.svg";
+
 type Props = { title: string; content: string };
 
 export const Option = ({ title, content }: Props) => {
   const [openAccordion, setOpenAccordion] = useState<boolean>(false);
-  const accordionSymbol: string = openAccordion ? "-" : "+";
 
   function handleDropdown(target: EventTarget): void {
     const accordion = target as HTMLElement;
@@ -26,7 +28,10 @@ export const Option = ({ title, content }: Props) => {
     <div className="option">
       <div className="accordion" onClick={e => handleDropdown(e.target)}>
         {title}
-        <span>{accordionSymbol}</span>
+        <div className="accordion-arrow" style={{ zIndex: "-10" }}>
+          <img className={openAccordion ? "fadeIn" : "fadeOut"} src={moreInfoIcon} alt="moreInformation" />
+          <img className={!openAccordion ? "fadeIn" : "fadeOut"} src={lessInfoIcon} alt="lessInformation" />
+        </div>
       </div>
       <div className="panel">{content}</div>
     </div>

@@ -1,0 +1,27 @@
+.accordion-arrow {
+  // transform: rotate(90deg);
+  rotate: 0deg;
+  transition: all 0.35s;
+  min-width: 1em;
+  margin-bottom: 1rem;
+}
+
+.fadeIn {
+  position: absolute;
+  top: -12px;
+  right: 0px;
+  opacity: 0;
+  // transition: opacity 0.35s ease-in-out;
+  min-height: 20px;
+  min-width: 20px;
+}
+
+.fadeOut {
+  position: absolute;
+  top: -12px;
+  right: 0px;
+  opacity: 1;
+  // transition: opacity 0.35s ease-in-out;
+  min-height: 20px;
+  min-width: 20px;
+}
