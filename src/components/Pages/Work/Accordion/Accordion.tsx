@@ -10,13 +10,13 @@ export const Accordion = ({ content }: Props) => {
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
   const dropdownText: string = openDropdown ? "Less" : "More";
 
-  function handleFromChild(target: EventTarget) {
+  function handleFromChild(target: EventTarget): void {
     const child = target as Element;
     const parent = child.parentElement as HTMLElement;
     handleDropdown(parent);
   }
 
-  function handleDropdown(target: EventTarget) {
+  function handleDropdown(target: EventTarget): void {
     const accordion = target as Element;
 
     // Show pannel

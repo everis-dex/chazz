@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { ICategory, ICategoryAccordion } from "../../../../interfaces/cms";
-import { Option } from "./Option";
+import { Option } from "./Option/Option";
 
 import "./Category.styles.scss";
 

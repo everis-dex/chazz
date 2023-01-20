@@ -19,7 +19,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
     }
   }, [isNavVisible, isPlaying, setIsNavVisible]);
 
-  const switchPlayPause = () => {
+  function switchPlayPause(): void {
     setIsPlaying(!isPlaying);
 
     if (videoRef.current && isPlaying) {
@@ -32,23 +32,23 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
       setControlText("Stop");
       setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
     }
-  };
+  }
 
-  const forcePause = () => {
+  function forcePause(): void {
     setIsPlaying(false);
     setControlText("Play");
   }
 
-  const resetVideo = () => {
+  function resetVideo(): void {
     setIsPlaying(false);
     setControlText("Play");
     if (videoRef.current) {
       videoRef.current.currentTime = 0;
     }
-  };
+  }
 
   useEffect(() => {
-    const handleMouseMove = (event: any) => {
+    function handleMouseMove(event: any): void {
       if (controlRef.current) {
         if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
           const scrollY = window.scrollY;
@@ -70,7 +70,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
           controlRef.current.style.opacity = "0";
         }
       }
-    };
+    }
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);

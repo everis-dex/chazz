@@ -12,13 +12,13 @@ import rightArrowHover from "../../../../assets/icn_arrow_hover.svg";
 export const Projects = (projectData: IHomeProjects) => {
   const [isHover, setIsHover] = useState<boolean>(false);
 
-  const handleHover = () => {
+  function handleHover(): void {
     setIsHover(true);
-  };
+  }
 
-  const handleNoHover = () => {
+  function handleNoHover(): void {
     setIsHover(false);
-  };
+  }
 
   return (
     <div className="background">
