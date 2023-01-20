@@ -49,7 +49,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           isNavVisible={isNavVisible}
           setIsNavVisible={setisNavVisible}
           isBurgerMenuOpen={isBurgerMenuOpen}
-        ></VideoHeader>
+        />
       </div>
       <AllowCookies />
     </>
