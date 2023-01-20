@@ -79,34 +79,6 @@
   }
 }
 
-.chazz-cookies {
-  display: none;
-  background-color: var(--white);
-  height: 33%;
-  z-index: 10;
-  position: absolute;
-  width: 90%;
-  bottom: 3%;
-  padding: 16px;
-
-  p {
-    margin: 0;
-  }
-
-  button {
-    padding: 3% 29% 3% 29%;
-    margin-top: 13px;
-    color: var(--pink);
-    font-weight: 400;
-    font-size: 19px;
-    background-color: var(--black);
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-}
-
 .grayscale {
   height: 100vh;
   width: -webkit-fill-available;

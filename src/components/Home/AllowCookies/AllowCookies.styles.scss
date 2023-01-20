@@ -1,6 +1,8 @@
 .chazz-cookies {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  justify-content: space-around;
   background-color: var(--white);
   height: auto;
   z-index: 10;
@@ -8,77 +10,42 @@
   width: 90%;
   bottom: 5%;
   left: 5%;
-  padding: 16px;
+  padding: 20px;
   position: fixed;
 
   p {
-    margin: 0;
+    margin: 0 10px;
     font-size: 16px;
 
-    a{
-      color: var(--black)
+    a {
+      color: var(--black);
     }
   }
 
   button {
-    padding: 3% 29% 3% 29%;
-    margin-top: 13px;
+    margin: 0;
+    padding: 5px 10px;
     color: var(--pink);
     font-weight: 700;
     font-size: 19px;
     background-color: var(--black);
-
-    &:hover {
-      cursor: pointer;
-    }
+    cursor: pointer;
   }
 }
 
 // MEDIA QUERIES
 
-@media (min-width: 768px){
-  .chazz-cookies{
+@media (min-width: 768px) {
+  .chazz-cookies {
     flex-direction: row;
     align-items: center;
     height: 82px;
     padding: 10px;
-
-    p {
-      width: 75%;
-      padding: 10px;
-    }
-    button {
-      padding: 5px 10px 5px 10px;
-      margin-top: 0;
-      justify-content: end;
-    }
   }
 }
 
 @media (min-width: 1280px) {
   .chazz-cookies {
     height: 64px;
-    padding: 5px;
-
-    p {
-      width: 84%;
-      padding: 15px;
-    }
-
-    button {
-      padding: 5px 20px 5px 20px;
-    }
-  }
-}
-
-@media (min-width: 1920px) {
-  .chazz-cookies {
-    p {
-      width: 89%;
-    }
-    button {
-      padding: 0.5% 1% 0.5% 1%;
-
-    }
   }
 }

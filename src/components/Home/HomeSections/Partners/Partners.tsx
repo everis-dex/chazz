@@ -11,7 +11,7 @@ export const Partners = (partnersData: IHomeSection) => {
   return (
     <div className="partners-section">
       <div className="titles">
-        {partnersData.subtitle && <h3>{partnersData.title}</h3>}
+        {partnersData.title && <h3>{partnersData.title}</h3>}
         {partnersData.subtitle && <p>{partnersData.subtitle}</p>}
       </div>
       <div className="partners-container">
