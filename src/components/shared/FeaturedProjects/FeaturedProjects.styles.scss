@@ -34,9 +34,28 @@
       object-fit: cover;
     }
   }
+
+  .more-projects,
+  .more-projects:hover {
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    .img {
+      width: 26px;
+    }
+  }
+
   .more-projects {
-    margin: 70px 0;
-    padding: 0;
+    color: var(--black);
+  }
+
+  .more-projects:hover {
+    color: var(--pinkHover);
+  }
+
+  .icon-size {
+    width: 26px;
   }
 }
 

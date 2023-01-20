@@ -15,9 +15,9 @@ export const FeaturedProjects = () => {
       <div className="project-list">
         {projects.map(
           (project: IProject, index: number) =>
-            index > 4 && (
+            index >= 4 && (
               <div className="project" key={index}>
-                <img loading="lazy" src={project.media.project} alt="Project" />
+                <img loading="lazy" src={project.media.carrousel} alt="Project" />
                 <p className="title">
                   {project.title} <span> —</span>
                 </p>
