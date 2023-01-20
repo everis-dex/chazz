@@ -10,7 +10,7 @@ type Props = { title: string; content: string, ourWork: boolean };
 export const Accordion = ({ title, content, ourWork }: Props) => {
   const [openAccordion, setOpenAccordion] = useState<boolean>(false);
 
-  const defaultDropdownText: string[] = ["Less information", "More information"];
+  const defaultDropdownText: string[] = ["More information", "Less information"];
   const accordionTitle: string[] = title === "" ? defaultDropdownText : [title, title];
 
   function handleDropdown(target: EventTarget): void {
