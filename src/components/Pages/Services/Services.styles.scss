@@ -4,7 +4,7 @@
 }
 
 .services-header {
-  margin-top: 70px;
+  margin-top: 6%;
   border-top: 1px solid var(--black);
 
   .header-title {
@@ -32,8 +32,6 @@
 }
 @media (min-width: 1280px) {
   .services-header {
-    margin-top: 70px;
-
     .header-title {
       font-size: 72px;
       line-height: 77px;
