@@ -2,7 +2,7 @@
   background-color: var(--lightGray);
 }
 
-#Projects {
+.projects {
   margin: 0 5%;
 }
 
@@ -28,6 +28,8 @@
 
 .icon-size {
   width: 26px;
+  display: inline-flex;
+  margin-left: 10px;
 }
 
 // MEDIA QUERIES
