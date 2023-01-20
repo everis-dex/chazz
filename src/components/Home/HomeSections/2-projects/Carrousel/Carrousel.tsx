@@ -28,7 +28,7 @@ export const Carrousel = ({ title }: Props) => {
           <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={1.1}
-            spaceBetween={18}
+            spaceBetween={14}
             navigation
             pagination={{
               el: ".pagination",
