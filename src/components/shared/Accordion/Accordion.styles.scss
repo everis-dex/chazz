@@ -101,7 +101,15 @@
   }
 
   .panel-services {
+    width: 85%;
     border-top: 1px solid white;
     padding-top: 0px !important;
+  }
+}
+
+
+@media (min-width: 1920px) {
+  .panel-services {
+    width: 87%;
   }
 }
