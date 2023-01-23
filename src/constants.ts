@@ -20,7 +20,17 @@ export const routesInfo: RoutesInfo[] = [
     id: 3,
     name: "Thoughts",
     route: "/thoughts"
-  }
+  },
+  {
+    id: 4,
+    name: "Privacy Policy",
+    route: "/privacy_policy"
+  },
+  {
+    id: 5,
+    name: "Cookie Policy",
+    route: "/cookie_policy"
+  },
 ];
 
 // select here which nav options are available
