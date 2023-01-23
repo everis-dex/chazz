@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as RightArrow } from "../../../../assets/icon-right_arrow.svg";
 
 import { IHomeProjects } from "../../../../interfaces/cms";
-import { Carrousel } from "./Carrousel/Carrousel";
+// import { Carrousel } from "./Carrousel/Carrousel";
 
 import "./Projects.styles.scss";
 
@@ -14,7 +14,7 @@ export const Projects = (projectData: IHomeProjects) => {
   return (
     <div className="background">
       <div className="projects">
-        <Carrousel title={projectData.title} />
+        {/* <Carrousel title={projectData.title} /> */}
         <Link
           to={"/work"}
           className="more-projects"

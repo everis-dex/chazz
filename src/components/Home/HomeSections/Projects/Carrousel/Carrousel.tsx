@@ -1,24 +1,27 @@
 import React from "react";
+import { Autoplay, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { projects } from "../../../../../content";
+import { IProject } from "../../../../../interfaces/cms";
+import { CarrouselSlide } from "./CarrouselSlide";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "./Carrousel.styles.scss";
-import { IProject } from "../../../../../interfaces/cms";
-import { projects } from "../../../../../content";
 
 type Props = { title: string };
 export const Carrousel = ({ title }: Props) => {
-  // const slides: IProject[] = [...projects];
-  // const featuredSlides: IProject[] = slides.filter(slide => slide.incarrousel).slice(0, 5);
+  const slides: IProject[] = [...projects] as IProject[];
+  const featuredSlides: IProject[] = slides.filter(slide => slide.incarrousel).slice(0, 5);
 
-  ////////////////////////////////DESCOMENTARR!!!!!!!!!
   return (
     <>
       <div className="carrouselTitle">
         <h3>{title}</h3>
       </div>
 
-      {/* <div id="carrousel" className="carrousel">
+      <div id="carrousel" className="carrousel">
         <div className="pagination" />
         <div className="slides">
           <Swiper
@@ -50,7 +53,7 @@ export const Carrousel = ({ title }: Props) => {
             })}
           </Swiper>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
