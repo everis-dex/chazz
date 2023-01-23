@@ -17,7 +17,6 @@ export const Work = () => {
       <Nav
         color="black"
         disabledMenuOption={routesInfo[2].route}
-        isNavVisible={true}
         isPlaying={false}
         isBurgerMenuOpen={isBurgerMenuOpen}
         setIsBurgerMenuOpen={setIsBurgerMenuOpen}

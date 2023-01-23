@@ -20,7 +20,6 @@ export const Services = () => {
       <Nav
         color="black"
         disabledMenuOption={routesInfo[1].route}
-        isNavVisible={true}
         isPlaying={false}
         isBurgerMenuOpen={isBurgerMenuOpen}
         setIsBurgerMenuOpen={setIsBurgerMenuOpen}

@@ -4,23 +4,21 @@ import "./VideoHeader.style.scss";
 type Props = {
   isPlaying: boolean;
   setIsPlaying: (a: boolean) => void;
-  isNavVisible: boolean;
-  setIsNavVisible: (a: boolean) => void;
+  toggleNavVisible: (value?: boolean) => void;
   isBurgerMenuOpen: boolean;
 };
 
 const ControlTextOptions = { play: "Play", stop: "Stop" };
 
-export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVisible, isBurgerMenuOpen }: Props) => {
+export const VideoHeader = ({ isPlaying, setIsPlaying, toggleNavVisible, isBurgerMenuOpen }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const controlRef = useRef<HTMLDivElement>(null);
   const [controlText, setControlText] = useState<string>(ControlTextOptions.play);
 
   useEffect(() => {
-    if (!isPlaying && !isNavVisible) {
-      setIsNavVisible(true);
-    }
-  }, [isNavVisible, isPlaying, setIsNavVisible]);
+    if (isPlaying) return;
+    toggleNavVisible(true);
+  }, [isPlaying, toggleNavVisible]);
 
   function switchPlayPause(): void {
     setIsPlaying(!isPlaying);
@@ -28,12 +26,12 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
 
     if (isPlaying) {
       videoRef.current.pause();
-      setIsNavVisible(!isNavVisible);
+      toggleNavVisible();
       setControlText(ControlTextOptions.play);
     } else {
       videoRef.current.play();
       setControlText(ControlTextOptions.stop);
-      setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
+      setTimeout(() => toggleNavVisible(), 1000);
     }
   }
 
