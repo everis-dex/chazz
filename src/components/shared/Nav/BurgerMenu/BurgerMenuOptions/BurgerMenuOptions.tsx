@@ -9,11 +9,12 @@ import "./BurgerMenuOptions.styles.scss";
 
 type Props = {
   isBurgerMenuOpen: boolean;
-  toggleMenu: (event: React.MouseEvent) => void;
-  disabledMenuOption: string;
+  toggleMenu: (e: React.MouseEvent) => void;
 };
 
-export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu, disabledMenuOption }: Props) => {
+export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu }: Props) => {
+  const currentMenuOption = window.location.pathname.split("/")[1];
+
   return (
     <nav className={`burger-nav ${isBurgerMenuOpen ? "active" : ""}`}>
       <ul className="burger-ul">
@@ -21,13 +22,13 @@ export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu, disabledMenuOp
           .filter(route => availableRouteIDs.includes(route.id))
           .map(route => (
             <li className="burger-li" key={route.id}>
-              {route.route !== disabledMenuOption && (
+              {route.route !== currentMenuOption ? (
                 <Link className="burger-a" to={route.route} onClick={toggleMenu}>
                   {route.name}
                 </Link>
+              ) : (
+                <span className="burger-active">{route.name}</span>
               )}
-
-              {route.route === disabledMenuOption && <span className="burger-active">{route.name}</span>}
             </li>
           ))}
       </ul>

@@ -4,7 +4,6 @@ import { LineBreakerSelector } from "../../shared/index";
 import { AllowCookies, Nav } from "../index";
 import { VideoHeader } from "./VideoHeader/VideoHeader";
 
-import { routesInfo } from "../../../constants";
 import { IHomeHeader } from "../../../interfaces/cms";
 
 import "./HomeHeader.styles.scss";
@@ -34,7 +33,6 @@ export const HomeHeader = (headerData: IHomeHeader) => {
         <span className={isPlaying ? "nav-out" : "nav-in"}>
           {isNavVisible && (
             <Nav
-              disabledMenuOption={routesInfo[0].route}
               isPlaying={isPlaying}
               isBurgerMenuOpen={isBurgerMenuOpen}
               setIsBurgerMenuOpen={setIsBurgerMenuOpen}

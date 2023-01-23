@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import { routesInfo } from "../../../constants";
 import { categories, services } from "../../../content/index";
 import { ICategory, IServicesHeader } from "../../../interfaces/cms";
 import { FeaturedProjects, Footer, Nav } from "../../shared/index";
@@ -17,11 +16,7 @@ export const Services = () => {
 
   return (
     <>
-      <Nav
-        disabledMenuOption={routesInfo[1].route}
-        isBurgerMenuOpen={isBurgerMenuOpen}
-        setIsBurgerMenuOpen={setIsBurgerMenuOpen}
-      />
+      <Nav isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
       <div className="services-container">
         <div className="services-header">
           <h1 className="header-title">{headerData.title}</h1>

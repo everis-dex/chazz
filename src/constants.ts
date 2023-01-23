@@ -28,3 +28,15 @@ export const availableRouteIDs: number[] = [0, 1, 2];
 
 export const desktopLineBreakSymbol: string = "+";
 export const mobileLineBreakSymbol: string = "*";
+
+// Navigation bar Display Modes
+export const DisplayModes = {
+  dark: {
+    color: "white",
+    activeStyle: "active-black"
+  },
+  light: {
+    color: "black",
+    activeStyle: "active-pink"
+  }
+};

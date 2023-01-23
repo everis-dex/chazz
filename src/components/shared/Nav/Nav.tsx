@@ -1,36 +1,19 @@
 import React, { useState } from "react";
 
+import { DisplayModes } from "../../../constants";
 import { BurgerMenu, ChazzLogo, DesktopMenu } from "./index";
 
 import "./Nav.styles.scss";
 
-const Modes = {
-  dark: {
-    color: "white",
-    activeStyle: "active-black"
-  },
-  light: {
-    color: "black",
-    activeStyle: "active-pink"
-  }
-};
-
 type Props = {
-  disabledMenuOption: string;
   isPlaying?: boolean;
   isBurgerMenuOpen: boolean;
   setIsBurgerMenuOpen: (a: boolean) => void;
   darkMode?: boolean;
 };
 
-export const Nav = ({
-  disabledMenuOption,
-  isPlaying = false,
-  isBurgerMenuOpen,
-  setIsBurgerMenuOpen,
-  darkMode = false
-}: Props) => {
-  const { color, activeStyle } = darkMode ? Modes.dark : Modes.light;
+export const Nav = ({ isPlaying = false, isBurgerMenuOpen, setIsBurgerMenuOpen, darkMode = false }: Props) => {
+  const { color, activeStyle } = darkMode ? DisplayModes.dark : DisplayModes.light;
   const [root] = useState(document.getElementById("root"));
 
   function toggleMenu(): void {
@@ -50,12 +33,7 @@ export const Nav = ({
     <div className="header-nav">
       <ChazzLogo color={color} isBurgerMenuOpen={isBurgerMenuOpen} />
       <DesktopMenu color={color} activeStyle={activeStyle} />
-      <BurgerMenu
-        isBurgerMenuOpen={isBurgerMenuOpen}
-        toggleMenu={toggleMenu}
-        color={color}
-        disabledMenuOption={disabledMenuOption}
-      />
+      <BurgerMenu isBurgerMenuOpen={isBurgerMenuOpen} toggleMenu={toggleMenu} color={color} />
     </div>
   );
 };

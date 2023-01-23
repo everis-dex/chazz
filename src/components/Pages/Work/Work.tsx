@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import { routesInfo } from "../../../constants";
 import { work } from "../../../content/index";
 import { Footer, Nav } from "../../shared/index";
 import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
@@ -14,11 +13,7 @@ export const Work = () => {
 
   return (
     <>
-      <Nav
-        disabledMenuOption={routesInfo[2].route}
-        isBurgerMenuOpen={isBurgerMenuOpen}
-        setIsBurgerMenuOpen={setIsBurgerMenuOpen}
-      />
+      <Nav isBurgerMenuOpen={isBurgerMenuOpen} setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
       <ProjectsGrid {...work} />
       <Footer />
     </>
