@@ -41,8 +41,8 @@
 @media (min-width: 1280px) {
   .more-projects,
   .more-projects:hover {
-    font-size: 24px;
-    padding: 80px 0;
+    font-size: 24px !important;
+    padding: 80px 0 !important;
   }
 
   .more-projects {
