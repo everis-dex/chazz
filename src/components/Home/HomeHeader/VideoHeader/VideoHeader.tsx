@@ -2,14 +2,14 @@ import React, { useState, useRef, useEffect } from "react";
 import "./VideoHeader.style.scss";
 
 type Props = {
-  AlertHeaderVideo?: (v: boolean) => void;
+  AlertVideoParent?: (v: boolean) => void;
   toggleNavVisible: (value?: boolean) => void;
   burgerMenuOpen: boolean;
 };
 
 const ControlTextOptions = { play: "Play", stop: "Stop" };
 
-export const VideoHeader = ({ toggleNavVisible, burgerMenuOpen, AlertHeaderVideo }: Props) => {
+export const VideoHeader = ({ toggleNavVisible, burgerMenuOpen, AlertVideoParent }: Props) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const controlRef = useRef<HTMLDivElement>(null);
@@ -20,7 +20,7 @@ export const VideoHeader = ({ toggleNavVisible, burgerMenuOpen, AlertHeaderVideo
   }, [isPlaying, toggleNavVisible]);
 
   function switchPlayPause(): void {
-    if (AlertHeaderVideo) AlertHeaderVideo(!isPlaying);
+    if (AlertVideoParent) AlertVideoParent(!isPlaying);
     setIsPlaying(!isPlaying);
     if (!videoRef.current) return;
 

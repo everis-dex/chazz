@@ -18,13 +18,8 @@ export const HomeHeader = (headerData: IHomeHeader) => {
     setNavVisible(value);
   }
 
-  function AlertHeaderNav(value: boolean): void {
-    setBurgerMenuOpen(value);
-  }
-
-  function AlertHeaderVideo(value: boolean): void {
-    setVideoPlaying(value);
-  }
+  const AlertNavParent = (value: boolean): void => setBurgerMenuOpen(value);
+  const AlertVideoParent = (value: boolean): void => setVideoPlaying(value);
 
   // TODO: plantear si se queda aquí
   function appHeight(): void {
@@ -39,7 +34,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       <AllowCookies />
       <div className={videoPlaying ? "velo-out" : "velo-in"}>
         <span className={videoPlaying ? "nav-out" : "nav-in"}>
-          {navVisible && <Nav isPlaying={videoPlaying} darkMode AlertHeaderNav={AlertHeaderNav} />}
+          {navVisible && <Nav isPlaying={videoPlaying} darkMode AlertNavParent={AlertNavParent} />}
         </span>
         <div className={videoPlaying ? "chazz-title-out" : "chazz-title"}>
           <LineBreakerSelector typedLines={headerData.title} />
@@ -48,7 +43,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       </div>
       {!videoPlaying && <img src="uploads/first_frame.jpg" alt="" className="grayscale" />}
       <VideoHeader
-        AlertHeaderVideo={AlertHeaderVideo}
+        AlertVideoParent={AlertVideoParent}
         toggleNavVisible={toggleNavVisible}
         burgerMenuOpen={burgerMenuOpen}
       />
