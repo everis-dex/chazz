@@ -1,106 +1,51 @@
 .chazz-cookies {
-  // TODO: display
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-around;
   background-color: var(--white);
-  height: 33%;
+  height: auto;
   z-index: 10;
   position: absolute;
   width: 90%;
+  bottom: 5%;
   left: 5%;
-  bottom: 3%;
-  padding: 16px;
+  padding: 20px;
+  position: fixed;
 
   p {
-    margin: 0;
+    margin: 0 10px;
+    font-size: 16px;
+
+    a {
+      color: var(--black);
+    }
   }
 
   button {
-    padding: 3% 29% 3% 29%;
-    margin-top: 13px;
-    color: #ffafc4;
+    margin: 0;
+    padding: 5px 10px;
+    color: var(--pink);
     font-weight: 700;
     font-size: 19px;
     background-color: var(--black);
-
-    &:hover {
-      cursor: pointer;
-    }
+    cursor: pointer;
   }
 }
 
 // MEDIA QUERIES
 
-// xxs
-@media (width: 320px) {
-  .chazz-cookies {
-    display: none;
-    left: 4%;
-
-    button {
-      padding: 1% 25% 1% 25%;
-      margin-top: 22px;
-    }
-  }
-}
-
-@media (min-width: 425px) {
-  .chazz-cookies {
-    display: none;
-
-    button {
-      padding: 3% 31% 3% 31%;
-      margin-top: 23px;
-    }
-  }
-}
-
-//////////////////////
-
 @media (min-width: 768px) {
   .chazz-cookies {
-    display: none;
-    // TODO: display: flex;
+    flex-direction: row;
     align-items: center;
-    height: 64px;
-    padding: 5px;
-    width: 95%;
-    bottom: 2%;
-    left: 15px;
-
-    p {
-      width: 80%;
-      padding: 15px;
-    }
-
-    button {
-      padding: 1% 2% 1% 2%;
-      font-size: 16px;
-      margin-top: 0;
-    }
+    height: 82px;
+    padding: 10px;
   }
 }
 
 @media (min-width: 1280px) {
   .chazz-cookies {
-    width: 97%;
-    p {
-      width: 86%;
-    }
-    button {
-      padding: 5px 20px 5px 20px;
-    }
-  }
-}
-
-@media (min-width: 1920px) {
-  .chazz-cookies {
-    width: 98%;
-    bottom: 2%;
-    p {
-      width: 92%;
-    }
-    button {
-      padding: 0.5% 1% 0.5% 1%;
-    }
+    height: 64px;
   }
 }

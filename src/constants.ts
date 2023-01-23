@@ -1,3 +1,5 @@
+import { RoutesInfo } from "./interfaces/routes";
+
 export const routesInfo: RoutesInfo[] = [
   {
     id: 0,
@@ -22,7 +24,19 @@ export const routesInfo: RoutesInfo[] = [
 ];
 
 // select here which nav options are available
-export const availableRoutes: number[] = [0, 2];
+export const availableRouteIDs: number[] = [0, 1, 2];
 
 export const desktopLineBreakSymbol: string = "+";
 export const mobileLineBreakSymbol: string = "*";
+
+// Navigation bar Display Modes
+export const DisplayModes = {
+  dark: {
+    color: "white",
+    activeStyle: "active-black"
+  },
+  light: {
+    color: "black",
+    activeStyle: "active-pink"
+  }
+};

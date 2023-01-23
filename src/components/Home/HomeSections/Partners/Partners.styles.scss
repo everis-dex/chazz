@@ -1,9 +1,7 @@
 // MOBILE FIRST
-#Partners {
-  margin: 0 5%;
-}
 
-.partner-section {
+.partners-section {
+  margin: 0 5%;
   background-color: var(--white);
   padding: 64px 0px 50px 0px;
 
@@ -12,7 +10,8 @@
     font-size: 24px;
   }
 }
-.partner-container {
+
+.partners-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -27,9 +26,6 @@
   text-align: center;
   color: var(--black);
   padding: 1rem;
-  // height: 100px;
-  // max-width: 200px;
-  // max-height: 68px;
   margin: 1rem;
 
   a {
@@ -42,8 +38,6 @@
   }
 
   .partner-logo {
-    // max-height: 100%;
-    // max-width: 100%;
     height: 100%;
     padding: 0px;
     margin: 0px;
@@ -52,14 +46,14 @@
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
-  .partner-section {
+  .partners-section {
     padding: 98px 0px 82px 0px;
 
     .titles {
       margin-bottom: 45px;
     }
   }
-  .partner-container {
+  .partners-container {
     grid-template-columns: repeat(5, 1fr);
   }
   .partner {
@@ -69,7 +63,7 @@
 }
 
 @media (min-width: 1280px) {
-  .partner-section {
+  .partners-section {
     h3 {
       font-size: 32px;
     }
@@ -77,7 +71,7 @@
 }
 
 @media (min-width: 1920px) {
-  .partner-section h3 {
+  .partners-section h3 {
     font-size: 35px;
   }
 }

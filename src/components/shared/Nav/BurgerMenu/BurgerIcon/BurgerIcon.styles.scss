@@ -1,7 +1,5 @@
 input#open-close {
   visibility: hidden;
-  position: absolute;
-  top: -9999px;
 }
 
 input#open-close:checked + .toggle-button:before,
@@ -46,7 +44,6 @@ input#open-close:checked + .toggle-button-pages:after {
   height: 26px;
   position: relative;
   cursor: pointer;
-  box-sizing: border-box;
 }
 
 .toggle-button:before,
@@ -83,29 +80,27 @@ input#open-close:checked + .toggle-button-pages:after {
   position: relative;
   cursor: pointer;
   box-sizing: border-box;
-}
 
-.toggle-button-pages:before,
-.toggle-button-pages:after {
-  position: absolute;
-  display: block;
-  content: " ";
-  width: 100%;
-  box-sizing: border-box;
-  transition: all 0.2s ease-out;
-}
+  &:before,
+  &:after {
+    position: absolute;
+    display: block;
+    content: " ";
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease-out;
+    border-radius: 100px;
+    border-top: 2px solid var(--black);
+  }
 
-.toggle-button-pages:before {
-  top: calc(100% / 3);
-  border-radius: 100px;
-  border-top: 2px solid var(--black);
-  background-color: transparent;
-}
+  &:before {
+    top: calc(100% / 3);
+    background-color: transparent;
+  }
 
-.toggle-button-pages:after {
-  border-radius: 100px;
-  border-top: 2px solid var(--black);
-  bottom: calc(100% / 4);
-  width: 80%;
-  right: 0;
+  &:after {
+    bottom: calc(100% / 4);
+    width: 80%;
+    right: 0;
+  }
 }

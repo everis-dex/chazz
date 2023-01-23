@@ -4,7 +4,7 @@ import { IProject } from "../../../../interfaces/cms";
 import { LineBreakerSelector } from "../../../shared/index";
 import { ProjectCard } from "../Project/ProjectCard";
 
-import { work } from "../../../../content/index";
+import { work } from '../../../../content/index';
 import { projects } from "../../../../content/index";
 
 const formats = {
@@ -60,23 +60,26 @@ export const ProjectsGrid = ({ setCaseStudyId }: Props) => {
 
   return (
     <>
-      <h1 className="work-header">{work.title}</h1>
-      <div className="work-container--content">
-        <div className="work-detail">
-          <LineBreakerSelector typedLines={work.subtitle} />
+      <div className="work-container">
+        <div className="work-header">
+          <h1>{work.title}</h1>
         </div>
+        <div className="work-container--content">
+          <div className="work-detail">
+            <LineBreakerSelector typedLines={work.subtitle} />
+          </div>
 
-        {projects &&
-          projects.map((proj, index: number) => {
-            const project = proj as IProject;
-            console.log("🚀 ~ file: ProjectsGrid.tsx:74 ~ ProjectsGrid ~ project", project);
-            const [format, columns] = handleProjectFormat();
-            return (
-              <Fragment key={index}>
-                <ProjectCard data={project} format={format} columns={columns} setCaseStudyId={setCaseStudyId} />
-              </Fragment>
-            );
-          })}
+          {projects &&
+            projects.map((proj, index: number) => {
+              const project = proj as IProject;
+              const [format, columns] = handleProjectFormat();
+              return (
+                <Fragment key={index}>
+                  <ProjectCard data={project} format={format} columns={columns} setCaseStudyId={setCaseStudyId} />
+                </Fragment>
+              );
+            })}
+        </div>
       </div>
     </>
   );

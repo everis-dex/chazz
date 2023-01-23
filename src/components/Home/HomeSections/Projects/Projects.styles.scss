@@ -2,32 +2,33 @@
   background-color: var(--lightGray);
 }
 
-#Projects {
+.projects {
   margin: 0 5%;
-}
 
-.more-projects,
-.more-projects:hover {
-  text-decoration: none;
-  display: block;
-  padding: 40px 0 75px 0;
-  font-size: 16px;
-  font-weight: 400;
-  .img {
-    width: 26px;
+  .more-projects {
+    text-decoration: none;
+    display: block;
+    padding: 40px 0 75px 0;
+    font-size: 16px;
+    font-weight: 400;
+    .img {
+      width: 26px;
+    }
   }
-}
 
-.more-projects {
-  color: var(--black);
-}
+  .more-projects {
+    color: var(--black);
 
-.more-projects:hover {
-  color: var(--pinkHover);
-}
+    &:hover {
+      color: var(--pinkHover);
+    }
+  }
 
-.icon-size {
-  width: 26px;
+  .icon-size {
+    width: 26px;
+    display: inline-flex;
+    margin-left: 10px;
+  }
 }
 
 // MEDIA QUERIES

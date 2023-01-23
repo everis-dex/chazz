@@ -1,7 +1,7 @@
 .featured-projects {
   background-color: #fafafa;
   padding: 5%;
-  padding-top: 90px;
+  padding-top: 50px;
 
   .header {
     font-weight: 700;
@@ -9,14 +9,16 @@
     line-height: 30px;
     color: black;
     padding: 30px 0;
+    padding-top: 25px;
+    margin-bottom: 0;
     border-top: 1px solid var(--black);
   }
 
   .project {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 
     .title {
-      margin: 15px 0 20px 0;
+      margin: 15px 0 40px 0;
       font-weight: 700;
       font-size: 16px;
       line-height: 23px;
@@ -32,9 +34,27 @@
       object-fit: cover;
     }
   }
+
   .more-projects {
+    text-decoration: none;
+    display: block;
     margin: 70px 0;
     padding: 0;
+    color: var(--black);
+    font-size: 16px;
+    font-weight: 400;
+    .img {
+      width: 26px;
+    }
+    &:hover {
+      color: var(--pinkHover);
+    }
+  }
+
+  .icon-size {
+    width: 26px;
+    display: inline-flex;
+    margin-left: 10px;
   }
 }
 
@@ -59,7 +79,7 @@
       }
     }
     .more-projects {
-      margin: 50px 0;
+      margin: 40px 0;
     }
   }
 }
