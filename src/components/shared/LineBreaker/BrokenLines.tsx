@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import "./LineBreaker.scss";
 
@@ -12,11 +12,11 @@ export const BrokenLines = ({ brokenLines, lineBreakSymbol }: Props) => {
     <>
       {brokenLines.length > 0 && (
         <h1>
-          {brokenLines.map((titleLine: string, index) => (
-            <Fragment key={index}>
+          {brokenLines.map((titleLine: string, index: number) => (
+            <div key={index}>
               {titleLine.replace(lineBreakSymbol, "")}
               <br />
-            </Fragment>
+            </div>
           ))}
         </h1>
       )}

@@ -1,3 +1,5 @@
+import { RoutesInfo } from "./interfaces/routes";
+
 export const routesInfo: RoutesInfo[] = [
   {
     id: 0,
