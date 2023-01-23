@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
-import { ChazzLogo } from "./ChazzLogo/ChazzLogo";
-import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
-import { DesktopMenu } from "./DesktopMenu/DesktopMenu";
+import { BurgerMenu, ChazzLogo, DesktopMenu } from "./index";
 
 import "./Nav.styles.scss";
 
@@ -28,10 +26,10 @@ export const Nav = ({
   const [root] = useState(document.getElementById("root"));
 
   function toggleMenu(): void {
-    if (!isPlaying) {
-      setIsBurgerMenuOpen(!isBurgerMenuOpen);
-      handleRootBehavior();
-    }
+    if (isPlaying) return;
+
+    setIsBurgerMenuOpen(!isBurgerMenuOpen);
+    handleRootBehavior();
   }
 
   function handleRootBehavior(): void {
@@ -40,20 +38,20 @@ export const Nav = ({
     root.style.overflow = isBurgerMenuOpen ? "auto" : "hidden";
   }
 
-  if (isNavVisible) {
-    return (
-      <div className="header-nav">
-        <ChazzLogo color={color} isBurgerMenuOpen={isBurgerMenuOpen} />
-        <DesktopMenu color={color} activeStyle={activeStyle} />
-        <BurgerMenu
-          isBurgerMenuOpen={isBurgerMenuOpen}
-          toggleMenu={toggleMenu}
-          color={color}
-          disabledMenuOption={disabledMenuOption}
-        />
-      </div>
-    );
-  }
-
-  return <></>;
+  return (
+    <>
+      {isNavVisible && (
+        <div className="header-nav">
+          <ChazzLogo color={color} isBurgerMenuOpen={isBurgerMenuOpen} />
+          <DesktopMenu color={color} activeStyle={activeStyle} />
+          <BurgerMenu
+            isBurgerMenuOpen={isBurgerMenuOpen}
+            toggleMenu={toggleMenu}
+            color={color}
+            disabledMenuOption={disabledMenuOption}
+          />
+        </div>
+      )}
+    </>
+  );
 };
