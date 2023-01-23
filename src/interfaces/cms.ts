@@ -83,7 +83,6 @@ export interface ICategoryAccordion {
 
 export interface IProject {
   id: number;
-  projectName: string;
   title: string;
   description: string;
   subtitle: string;

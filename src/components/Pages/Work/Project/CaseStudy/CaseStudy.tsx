@@ -11,10 +11,9 @@ console.log("PROJECTS", projects);
 type Props = { caseStudyId: number };
 
 export const CaseStudy = ({ caseStudyId }: Props) => {
-  console.log({ projects });
   console.log({ caseStudyId });
-  // const project: IProject = projects.filter(project => project.id === caseStudyId)[0] as IProject;
-  const project: IProject = projects.filter(project => project.id === caseStudyId)];
+  console.log({ projects });
+  const project: IProject = projects.filter(project => project.id === caseStudyId)[0] as IProject;
   console.log({ project });
 
   return (

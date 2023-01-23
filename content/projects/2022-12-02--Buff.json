@@ -1,24 +1,23 @@
 {
-  "projectName": "Buff",
   "date": "2022-12-16T07:21:31.387Z",
-  "title": "Buff",
-  "description": "A Globetrotter Digital Advisory Strategy.",
-  "subtitle": "Funnel Strategy & Sales, Service, Value Proposition",
-  "body": "Buff needed to create and implement the whole Marketing Automation capability to manage consumers by offering them the best experience. For this purpose, Chazz created a growth cell of a new marketing automation capability starting with the basic foundations and also creating the whole campaign operation. \n\nWe define the operational model and establish different actions to operate 360º fully integrated campaigns. Chazz and Buff made the project viable by working with an adequate Customer Management Strategy, Customer Segmentation, Lead Nurturing, Customer Personalization and Engagement Actions.",
-  "incarrousel": true,
   "media": {
     "carrousel": "/uploads/buff_home_web.jpg",
     "project": "/uploads/buff_grid_web.jpg"
   },
+  "title": "Buff",
+  "description": "A Globetrotter Digital Advisory Strategy.",
+  "subtitle": "Funnel Strategy & Sales, Service, Value Proposition",
+  "incarrousel": true,
+  "body": "Buff needed to create and implement the whole Marketing Automation capability to manage consumers by offering them the best experience. For this purpose, Chazz created a growth cell of a new marketing automation capability starting with the basic foundations and also creating the whole campaign operation. \n\nWe define the operational model and establish different actions to operate 360º fully integrated campaigns. Chazz and Buff made the project viable by working with an adequate Customer Management Strategy, Customer Segmentation, Lead Nurturing, Customer Personalization and Engagement Actions.",
   "caseInfo": {
     "title": "Making Mobility Easier in Any Territory.",
     "services": "Services Research, Strategy Design, Brand, Product Design"
   },
   "sections": [
     {
-      "firstFWImage": "/uploads/portatil.jpg",
+      "firstFWImagePath": "/uploads/portatil.jpg",
       "firstFWClaim": "Developing the complete Mobility As A Service’s project with Renfe, the Spanish leader in rail transport.",
-      "secondFWImage": "/uploads/roja.jpg",
+      "secondFWImagePath": "/uploads/roja.jpg",
       "firstTCSection": {
         "leftColumn": {
           "leftColumnIntro": "Mobility is a saturated and complex sector, and society needs a friendly proposal to move easily under the paradigm of sustainable travelling."
@@ -32,7 +31,7 @@
           }
         }
       },
-      "thirthFWImage": "/uploads/roja.jpg",
+      "thirthFWImagePath": "/uploads/roja.jpg",
       "rightColumnOnlyInfoSection": {
         "paragraphTitle": "Our Comprehensive Solution",
         "paragraph": "We created the mobility service solution that provides a wide range of co-partners with transport options such bicycles, scooters, motorcycles, taxis, VTCs, buses and trains, in order to empower multimodal mobility, and of course freedom. We knew that an elevated product like this need a clear strategy. dōcō's value proposition is to promote multimodal mobility removing the uncertainty of any type of trip. So the service and the brand are inclusive. That is why no matter who we are or where we go, but dōcō can accompany us in an empathic way. That is the reason why its logotype is friendly and its visual style flowed with a witty mood, and an AAA color palette, a complete icon set, and a unique typography that was designed to make real the visual ecosystem of this new brand by Renfe."
@@ -46,7 +45,7 @@
         "imagePath": "/uploads/blanca.jpg",
         "caption": "So the service and the brand are inclusive.  Because no matter who we are or where we go, but dōcō can accompany us in an empathic way. That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
       },
-      "sixthFWImage": "/uploads/marquesina.jpg",
+      "sixthFWImagePath": "/uploads/marquesina.jpg",
       "secondTCSection": {
         "leftColumn": {
           "imagePath": "/uploads/personaje.jpg",
@@ -57,7 +56,7 @@
           "overlappedText": "So the service and the brand are inclusive.  Because no matter who we are or where we go, but dōcō can accompany us in an empathic way."
         }
       },
-      "seventhFWImage": "/uploads/portatil.jpg",
+      "seventhFWImagePath": "/uploads/portatil.jpg",
       "eigthFWImageWithCaption": {
         "imagePath": "/uploads/gris.jpg",
         "caption": "So the service and the brand are inclusive.  Because no matter who we are or where we go, but dōcō can accompany us in an empathic way. That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."

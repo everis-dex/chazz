@@ -17,6 +17,7 @@ type Props = {
 export const ProjectCard = ({ data, format, columns, setCaseStudyId }: Props) => {
   let [height, setHeight] = useState<string>("auto");
   const image = data.media.project;
+  console.log({ data });
 
   useEffect(() => {
     // Create image to obtain height
