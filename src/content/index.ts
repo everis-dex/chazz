@@ -3,10 +3,12 @@ import getInTouchData from "./get-in-touch.json";
 import officesData from "./offices.json";
 import partnersData from "./partners.json";
 import projectsData from "./projects.json";
+import thoughtsData from "./thoughts.json";
 import studiosData from "./studios.json";
 import homeData from "./pages/home/home.json";
 import servicesData from "./pages/services/services.json";
 import workData from "./pages/work/work.json";
+import thoughtsPageData from "./pages/thoughts/thoughts.json";
 
 export const categories = categoriesData;
 export const getInTouch = getInTouchData;
@@ -17,3 +19,5 @@ export const studios = studiosData;
 export const home = homeData;
 export const services = servicesData;
 export const work = workData;
+export const thoughtsPage = thoughtsPageData;
+export const thoughts = thoughtsData;

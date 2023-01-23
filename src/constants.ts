@@ -24,7 +24,7 @@ export const routesInfo: RoutesInfo[] = [
 ];
 
 // select here which nav options are available
-export const availableRouteIDs: number[] = [0, 1, 2];
+export const availableRouteIDs: number[] = [0, 1, 2, 3];
 
 export const desktopLineBreakSymbol: string = "+";
 export const mobileLineBreakSymbol: string = "*";
