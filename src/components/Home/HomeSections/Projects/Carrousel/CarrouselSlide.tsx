@@ -39,12 +39,9 @@ export const CarrouselSlide = (props: IProject) => {
 
   return (
     <>
-      <div>
-        <Link to="/work">
-          <Media src={props.media.carrousel} style={mediaStyle || { width: "0px", height: "auto" }} alt={props.title} />
-        </Link>
-        <br />
-      </div>
+      <Link to="/work">
+        <Media src={props.media.carrousel} style={mediaStyle || { width: "0px", height: "auto" }} alt={props.title} />
+      </Link>
       <p className="title">
         <strong>{props.title}</strong> — {props.description}
       </p>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { services, projects } from "../../../content/index";
+import { projects, services } from "../../../content/index";
 import { IProject, IServicesProjects } from "../../../interfaces/cms";
 
 import "./FeaturedProjects.styles.scss";
@@ -11,16 +11,18 @@ export const FeaturedProjects = () => {
 
   return (
     <div className="featured-projects">
-      <h1 className="header">{projectsData.title}</h1>
+      {projectsData.title && <h1 className="header">{projectsData.title}</h1>}
       <div className="project-list">
         {projects.map(
           (project: IProject, index: number) =>
             index >= 4 && (
               <div className="project" key={index}>
                 <img loading="lazy" src={project.media.carrousel} alt="Project" />
-                <p className="title">
-                  {project.title} <span> —</span>
-                </p>
+                {project.title && (
+                  <p className="title">
+                    {project.title} <span> —</span>
+                  </p>
+                )}
               </div>
             )
         )}

@@ -124,8 +124,8 @@ collections:
         name: media,
         widget: object
         fields:
-          - { label: Carrousel, name: carrousel, widget: string }
-          - { label: Project, name: project, widget: string }
+          - { label: Carrousel, name: carrousel, widget: image }
+          - { label: Project, name: project, widget: image }
     sortable_fields: ["date"]
 
   - name: partner

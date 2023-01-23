@@ -2,11 +2,10 @@
   background-color: var(--lightGray);
 }
 
-#Projects {
+.projects {
   margin: 0 5%;
 
-  .more-projects,
-  .more-projects:hover {
+  .more-projects {
     text-decoration: none;
     display: block;
     padding: 40px 0 75px 0;
@@ -19,14 +18,16 @@
 
   .more-projects {
     color: var(--black);
-  }
 
-  .more-projects:hover {
-    color: var(--pinkHover);
+    &:hover {
+      color: var(--pinkHover);
+    }
   }
 
   .icon-size {
     width: 26px;
+    display: inline-flex;
+    margin-left: 10px;
   }
 }
 
@@ -38,21 +39,20 @@
 }
 
 @media (min-width: 1280px) {
-  #Projects {
-    .more-projects,
-    .more-projects:hover {
-      padding: 80px 0;
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 30px;
-    }
-
-    .more-projects {
-      color: var(--black);
-    }
-
-    .more-projects:hover {
-      color: var(--pinkHover);
-    }
+  .more-projects,
+  .more-projects:hover {
+    font-size: 24px;
+    padding: 80px 0;
   }
+
+  .more-projects {
+    color: var(--black);
+  }
+
+  .more-projects:hover {
+    color: var(--pinkHover);
+  }
+}
+
+@media (min-width: 1920px) {
 }

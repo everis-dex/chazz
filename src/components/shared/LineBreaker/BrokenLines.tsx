@@ -1,24 +1,23 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import "./LineBreaker.scss";
 
 type Props = {
   brokenLines: string[];
-  uselessLineBreakSymbol: string;
+  lineBreakSymbol: string;
 };
 
-export const BrokenLines = ({ brokenLines, uselessLineBreakSymbol }: Props) => {
+export const BrokenLines = ({ brokenLines, lineBreakSymbol }: Props) => {
   return (
     <>
-      {brokenLines && (
+      {brokenLines.length > 0 && (
         <h1>
-          {brokenLines &&
-            brokenLines.map((titleLine: string, index) => (
-              <Fragment key={index}>
-                {titleLine.replace(uselessLineBreakSymbol, "")}
-                <br />
-              </Fragment>
-            ))}
+          {brokenLines.map((titleLine: string, index: number) => (
+            <div key={index}>
+              {titleLine.replace(lineBreakSymbol, "")}
+              <br />
+            </div>
+          ))}
         </h1>
       )}
     </>
