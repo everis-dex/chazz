@@ -101,6 +101,20 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: More, name: more, widget: string }
 
+  - name: thoughts
+    label: Thoughts
+    folder: src/content/pages/thoughts
+    create: false
+    delete: false
+    slug: "thoughts"
+    extension: json
+    format: json
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string, required: false }
+      - { label: Image, name: image, widget: image }
+      - { label: Categories, name: categories, widget: list }
+
   ##############################
   #         COMPONENTS
   ##############################
@@ -192,3 +206,16 @@ collections:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
       - { label: Emeal, name: email, widget: string }
+
+  - name: thought
+    label: Thought
+    folder: content/thoughts
+    slug: "th-{{year}}-{{month}}-{{day}}--{{title}}"
+    extension: json
+    format: json
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Image, name: image, widget: image }
+      - { label: Title, name: title, widget: string }
+      - { label: Body, name: body, widget: string }
+      - { label: Duration, name: duration, widget: string }
