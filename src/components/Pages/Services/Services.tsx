@@ -18,12 +18,9 @@ export const Services = () => {
   return (
     <>
       <Nav
-        color="black"
         disabledMenuOption={routesInfo[1].route}
-        isPlaying={false}
         isBurgerMenuOpen={isBurgerMenuOpen}
         setIsBurgerMenuOpen={setIsBurgerMenuOpen}
-        activeStyle="active-pink"
       />
       <div className="services-container">
         <div className="services-header">

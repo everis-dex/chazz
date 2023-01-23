@@ -13,12 +13,9 @@ export const Thoughts = () => {
   return (
     <>
       <Nav
-        color="black"
         disabledMenuOption={routesInfo[4].route}
-        isPlaying={false}
         isBurgerMenuOpen={isBurgerMenuOpen}
         setIsBurgerMenuOpen={setIsBurgerMenuOpen}
-        activeStyle="active-pink"
       />
       <p>Thoughts</p>
       <Footer />

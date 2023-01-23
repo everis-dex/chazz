@@ -4,23 +4,33 @@ import { BurgerMenu, ChazzLogo, DesktopMenu } from "./index";
 
 import "./Nav.styles.scss";
 
+const Modes = {
+  dark: {
+    color: "white",
+    activeStyle: "active-black"
+  },
+  light: {
+    color: "black",
+    activeStyle: "active-pink"
+  }
+};
+
 type Props = {
-  color: string;
   disabledMenuOption: string;
-  isPlaying: boolean;
+  isPlaying?: boolean;
   isBurgerMenuOpen: boolean;
   setIsBurgerMenuOpen: (a: boolean) => void;
-  activeStyle: string;
+  darkMode?: boolean;
 };
 
 export const Nav = ({
-  color,
   disabledMenuOption,
-  isPlaying,
+  isPlaying = false,
   isBurgerMenuOpen,
   setIsBurgerMenuOpen,
-  activeStyle
+  darkMode = false
 }: Props) => {
+  const { color, activeStyle } = darkMode ? Modes.dark : Modes.light;
   const [root] = useState(document.getElementById("root"));
 
   function toggleMenu(): void {

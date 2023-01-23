@@ -14,9 +14,9 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
 
-  function toggleNavVisible(value?: boolean): void {
-    const setter: boolean = value ? value : !isNavVisible;
-    setIsNavVisible(setter);
+  function toggleNavVisible(bool?: boolean): void {
+    const value: boolean = bool ? bool : !isNavVisible;
+    setIsNavVisible(value);
   }
 
   // TODO: plantear si se queda aquí
@@ -34,12 +34,11 @@ export const HomeHeader = (headerData: IHomeHeader) => {
         <span className={isPlaying ? "nav-out" : "nav-in"}>
           {isNavVisible && (
             <Nav
-              color="white"
               disabledMenuOption={routesInfo[0].route}
               isPlaying={isPlaying}
               isBurgerMenuOpen={isBurgerMenuOpen}
               setIsBurgerMenuOpen={setIsBurgerMenuOpen}
-              activeStyle="active-black"
+              darkMode
             />
           )}
         </span>

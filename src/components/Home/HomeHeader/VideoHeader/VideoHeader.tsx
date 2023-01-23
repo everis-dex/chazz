@@ -26,8 +26,8 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, toggleNavVisible, isBurge
 
     if (isPlaying) {
       videoRef.current.pause();
-      toggleNavVisible();
       setControlText(ControlTextOptions.play);
+      toggleNavVisible();
     } else {
       videoRef.current.play();
       setControlText(ControlTextOptions.stop);
