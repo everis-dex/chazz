@@ -19,3 +19,28 @@
     object-fit: cover;
   }
 }
+
+.thoughts {
+  margin-top: 60px;
+}
+
+// MEDIA QUERIES
+
+@media (min-width: 768px) {
+  .thoughts-header {
+    img {
+      height: auto;
+    }
+  }
+}
+@media (min-width: 1280px) {
+  .thoughts-header {
+    .header-title {
+      font-size: 72px;
+      line-height: 77px;
+    }
+  }
+  .thoughts {
+    margin-bottom: 200px;
+  }
+}

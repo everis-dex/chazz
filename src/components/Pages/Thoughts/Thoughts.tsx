@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 
-import { thoughtsPage } from "../../../content/index";
+import { thoughts, thoughtsPage } from "../../../content/index";
+import { IThought } from "../../../interfaces/cms";
+
 import { Footer, Nav } from "../../shared/index";
+import { Thought } from "./Thought/Thought";
 
 import "./Thoughts.styles.scss";
 
@@ -15,6 +18,14 @@ export const Thoughts = () => {
         <div className="thoughts-header">
           <h1 className="header-title">{thoughtsPage.title}</h1>
           <img loading="lazy" src={thoughtsPage.image} alt="Header" />
+        </div>
+        {/* Thoughts section */}
+        <div className="thoughts">
+          {thoughts.map((thought: IThought, index: number) => (
+            <div className="thought" key={index}>
+              <Thought {...thought} />
+            </div>
+          ))}
         </div>
       </div>
       <Footer />

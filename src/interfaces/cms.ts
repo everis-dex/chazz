@@ -135,7 +135,7 @@ export interface ISlide {
   image: string;
 }
 
-export interface IThoughts {
+export interface IThought {
   image: string;
   title: string;
   body: string;
