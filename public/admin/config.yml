@@ -185,7 +185,7 @@ collections:
                 fields:
                   - { label: "Right Column Image", name: imagePath, widget: image }
                   - { label: "Right Column Caption", name: caption, widget: string }
-          - { label: "Seventh Full-Width Image", name: SeventhFWImage, widget: image }
+          - { label: "Seventh Full-Width Image", name: seventhFWImage, widget: image }
           - label: "Eigth Full-Width Image"
             name: eigthFWImage
             widget: object

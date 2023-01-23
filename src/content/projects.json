@@ -28,11 +28,11 @@
           }
         },
         "thirthFWImage": "/uploads/roja.jpg",
-        "RightColumnOnlyInfoSection": {
+        "rightColumnOnlyInfoSection": {
           "paragraphTitle": "Our Comprehensive Solution",
           "paragraph": "We created the mobility service solution that provides a wide range of co-partners with transport options such bicycles, scooters, motorcycles, taxis, VTCs, buses and trains, in order to empower multimodal mobility, and of course freedom. We knew that an elevated product like this need a clear strategy. dōcō's value proposition is to promote multimodal mobility removing the uncertainty of any type of trip. So the service and the brand are inclusive. That is why no matter who we are or where we go, but dōcō can accompany us in an empathic way. That is the reason why its logotype is friendly and its visual style flowed with a witty mood, and an AAA color palette, a complete icon set, and a unique typography that was designed to make real the visual ecosystem of this new brand by Renfe."
         },
-        "FouthFWImageWithOverlappedText": {
+        "fouthFWImageWithOverlappedText": {
           "imagePath": "/uploads/calle.jpg",
           "overlappedText": "Cualquier lugar está menos lejos."
         },
