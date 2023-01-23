@@ -2,25 +2,25 @@ import React, { useState, useRef, useEffect } from "react";
 import "./VideoHeader.style.scss";
 
 type Props = {
-  isPlaying: boolean;
-  setIsPlaying: (a: boolean) => void;
+  AlertHeaderVideo?: (v: boolean) => void;
   toggleNavVisible: (value?: boolean) => void;
-  isBurgerMenuOpen: boolean;
+  burgerMenuOpen: boolean;
 };
 
 const ControlTextOptions = { play: "Play", stop: "Stop" };
 
-export const VideoHeader = ({ isPlaying, setIsPlaying, toggleNavVisible, isBurgerMenuOpen }: Props) => {
+export const VideoHeader = ({ toggleNavVisible, burgerMenuOpen, AlertHeaderVideo }: Props) => {
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const controlRef = useRef<HTMLDivElement>(null);
   const [controlText, setControlText] = useState<string>(ControlTextOptions.play);
 
   useEffect(() => {
-    if (isPlaying) return;
-    toggleNavVisible(true);
+    if (!isPlaying) toggleNavVisible(true);
   }, [isPlaying, toggleNavVisible]);
 
   function switchPlayPause(): void {
+    if (AlertHeaderVideo) AlertHeaderVideo(!isPlaying);
     setIsPlaying(!isPlaying);
     if (!videoRef.current) return;
 
@@ -75,7 +75,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, toggleNavVisible, isBurge
 
   return (
     <>
-      {!isBurgerMenuOpen && (
+      {!burgerMenuOpen && (
         <>
           <div className="player-video-mobile-switcher">
             <div className="player-video">

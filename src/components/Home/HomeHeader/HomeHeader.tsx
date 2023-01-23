@@ -9,13 +9,21 @@ import { IHomeHeader } from "../../../interfaces/cms";
 import "./HomeHeader.styles.scss";
 
 export const HomeHeader = (headerData: IHomeHeader) => {
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
-  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
+  const [videoPlaying, setVideoPlaying] = useState<boolean>(false);
+  const [burgerMenuOpen, setBurgerMenuOpen] = useState<boolean>(false);
+  const [navVisible, setNavVisible] = useState<boolean>(true);
 
   function toggleNavVisible(bool?: boolean): void {
-    const value: boolean = bool ? bool : !isNavVisible;
-    setIsNavVisible(value);
+    const value: boolean = bool ? bool : !navVisible;
+    setNavVisible(value);
+  }
+
+  function AlertHeaderNav(value: boolean): void {
+    setBurgerMenuOpen(value);
+  }
+
+  function AlertHeaderVideo(value: boolean): void {
+    setVideoPlaying(value);
   }
 
   // TODO: plantear si se queda aquí
@@ -29,28 +37,20 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   return (
     <div className="chazz-header">
       <AllowCookies />
-      <div className={isPlaying ? "velo-out" : "velo-in"}>
-        <span className={isPlaying ? "nav-out" : "nav-in"}>
-          {isNavVisible && (
-            <Nav
-              isPlaying={isPlaying}
-              isBurgerMenuOpen={isBurgerMenuOpen}
-              setIsBurgerMenuOpen={setIsBurgerMenuOpen}
-              darkMode
-            />
-          )}
+      <div className={videoPlaying ? "velo-out" : "velo-in"}>
+        <span className={videoPlaying ? "nav-out" : "nav-in"}>
+          {navVisible && <Nav isPlaying={videoPlaying} darkMode AlertHeaderNav={AlertHeaderNav} />}
         </span>
-        <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
+        <div className={videoPlaying ? "chazz-title-out" : "chazz-title"}>
           <LineBreakerSelector typedLines={headerData.title} />
           <h4>{headerData.subtitle}</h4>
         </div>
       </div>
-      {!isPlaying && <img src="uploads/first_frame.jpg" alt="" className="grayscale" />}
+      {!videoPlaying && <img src="uploads/first_frame.jpg" alt="" className="grayscale" />}
       <VideoHeader
-        isPlaying={isPlaying}
-        setIsPlaying={setIsPlaying}
+        AlertHeaderVideo={AlertHeaderVideo}
         toggleNavVisible={toggleNavVisible}
-        isBurgerMenuOpen={isBurgerMenuOpen}
+        burgerMenuOpen={burgerMenuOpen}
       />
     </div>
   );
