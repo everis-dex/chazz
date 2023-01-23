@@ -83,41 +83,59 @@ export interface ICategoryAccordion {
 
 export interface IProject {
   id: number;
+  projectName: string;
   title: string;
-  subtitle: string;
-  media: IProjectMedia;
   description: string;
+  subtitle: string;
   body: string;
   incarrousel: boolean;
-  caseInfo?: IProjectCaseInfo;
-  sections: IProjectSection[];
-}
-
-export interface IProjectCaseInfo {
-  title: string;
-  services: string;
-}
-
-export interface IProjectSection {
-  oneColumn?: IColumn;
-  twoColumns?: {
-    leftColumn: IColumn;
-    rightColumn: IColumn;
+  media: IProjectMedia;
+  caseInfo?: {
+    title: string;
+    services: string;
   };
-}
-
-export interface IColumn {
-  claim?: { text: string };
-  separator?: { height: number };
-  image?: IProjectSectionImage;
-  intro?: { text: string };
-  paragraphTitle?: { text: string };
-  paragraph?: { text: string };
-}
-
-export interface IProjectSectionImage {
-  imageUrl: { text: string };
-  overlappedText?: { text: string };
+  sections: {
+    firstFWImagePath?: string;
+    firstFWClaim?: string;
+    secondFWImagePath?: string;
+    firstTCSection?: {
+      leftColumnIntro: string;
+      rightColumn: {
+        paragraphTitle: string;
+        paragraph: string;
+      };
+    };
+    thirthFWImagePath?: string;
+    rightColumnOnlyInfo?: {
+      paragraphTitle: string;
+      paragraph: string;
+    };
+    fourthFWImageWithOverlappedText?: {
+      imagePath: string;
+      overlappedText: string;
+    };
+    secondFWClaim?: string;
+    fifthFWImageWithCaption?: {
+      imagePath: string;
+      overlappedText: string;
+    };
+    sixthFWImagePath?: string;
+    secondTCSection?: {
+      leftColumn: {
+        imagePath: string;
+        caption: string;
+      };
+      rightColumn: {
+        imagePath: string;
+        caption: string;
+      };
+    };
+    seventhFWImagePath?: string;
+    eigthFWImageWithCaption?: {
+      imagePath: string;
+      caption: string;
+    };
+  };
 }
 
 export interface ISlide {

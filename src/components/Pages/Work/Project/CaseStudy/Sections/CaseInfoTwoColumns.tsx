@@ -1,13 +1,9 @@
-import React from 'react'
+import React from "react";
 
 type Props = {
-    text: string;
-}
+  text: string;
+};
 
 export const CaseInfoTwoColumns = ({ text }: Props) => {
-    return (
-        <div>
-            {text}
-        </div>
-    )
-}
+  return <div>{text}</div>;
+};

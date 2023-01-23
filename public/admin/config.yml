@@ -111,122 +111,87 @@ collections:
     extension: json
     format: json
     fields:
+      - { label: Publish Date, name: date, widget: datetime }
       - { label: Project name, name: projectName, widget: string }
-      - label: "Homepage Info"
-        name: homepageInfo
-        widget: object
-        fields:
-          - { label: Publish Date, name: date, widget: datetime }
-          - { label: Title, name: title, widget: string }
-          - { label: Description, name: description, widget: string }
-          - { label: Subtitle, name: subtitle, widget: string }
-          - { label: Body, name: body, widget: markdown }
-      - label: In carrousel
-        name: incarrousel
-        widget: boolean
-        default: true
-        hint: Determines whether this project is shown in the homepage carrousel. (Max. 5 projects)
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string }
+      - { label: Body, name: body, widget: markdown }
+      - { label: "In carrousel", name: incarrousel, widget: boolean, hint: Determines whether this project is shown in the homepage carrousel. (Max. 5 projects)"},
       - label: Media
         name: media
         widget: object
         fields:
           - { label: Carrousel, name: carrousel, widget: string }
           - { label: Project, name: project, widget: string }
-      - label: Case Info
+      - label: "Case Info"
         name: caseInfo
         widget: object
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Services, name: services, widget: string }
-          - label: Sections
-            name: sections
-            widget: list
-            types:
-              - label: One Column
-                name: oneColumn
-                widget: object
-                types:
-                  - label: Image
-                    name: image
-                    widget: object
-                    fields:
-                      - { label: image Url, name: imageUrl, widget: image }
-                      - { label: Overlapped Text, name: overlappedText, widget: string, required: false }
-                  - label: Claim
-                    name: claim
-                    widget: string
-                    fields:
-                      - { label: text, name: text, widget: string }
-                  - label: Paragraph Title
-                    name: paragraphTitle
-                    widget: string
-                    fields:
-                      - { label: text, name: text, widget: string }
-                  - label: Paragraph
-                    name: paragraph
-                    widget: string
-                    fields:
-                      - { label: text, name: text, widget: string }
-                  - label: Separator
-                    name: separator
-                    widget: number
-                    hint: Add some blank space between sections (in pixels)
-                    fields:
-                      - { label: height, name: height, widget: number }
-              - label: Two Columns
-                name: twoColumns
+      - label: "Sections"
+        name: sections
+        widget: object
+        fields:
+          - { label: "First Full-Width Image", name: firstFWImagePath, widget: image }
+          - { label: "First Full-Width Claim", name: firstFWClaim, widget: string, required: false }
+          - { label: "Second Full-Width Image", name: secondFWImagePath, widget: image }
+          - label: "First Two Columns Section"
+            name: firstTCSection
+            widget: object
+            fields:
+              - { label: "Left Column Intro", name: leftColumnIntro, widget: string }
+              - label: "Right Column"
+                name: rightColumn
                 widget: object
                 fields:
-                  - label: Left Column
-                    name: leftColumn
-                    widget: object
-                    types:
-                      - label: Image
-                        name: image
-                        widget: object
-                        fields:
-                          - { label: image Url, name: imageUrl, widget: image }
-                          - { label: Overlapped Text, name: overlappedText, widget: string, required: false }
-                      - label: Intro
-                        name: intro
-                        widget: object
-                        fields:
-                          - { label: text, name: text, widget: string }
-                      - label: Paragraph Title
-                        name: paragraphTitle
-                        widget: object
-                        fields:
-                          - { label: text, name: text, widget: string }
-                      - label: Paragraph
-                        name: paragraph
-                        widget: object
-                        fields:
-                          - { label: text, name: text, widget: string }
-                  - label: Right Column
-                    name: rightColumn
-                    widget: object
-                    fields:
-                      - label: Image
-                        name: image
-                        widget: object
-                        fields:
-                          - { label: image Url, name: imageUrl, widget: image }
-                          - { label: Overlapped Text, name: overlappedText, widget: string, required: false }
-                      - label: Intro
-                        name: intro
-                        widget: string
-                        fields:
-                          - { label: text, name: text, widget: string }
-                      - label: Paragraph Title
-                        name: paragraphTitle
-                        widget: string
-                        fields:
-                          - { label: text, name: text, widget: string }
-                      - label: Paragraph
-                        name: paragraph
-                        widget: string
-                        fields:
-                          - { label: text, name: text, widget: string }
+                  - { label: "Paragraph Title", name: paragraphTitle, widget: string }
+                  - { label: "Paragraph", name: paragraph, widget: string }
+          - { label: "Third Full-Width Image", name: thirdFWImage, widget: image }
+          - label: "Right Column Only Info"
+            name: rightColumnOnlyInfo
+            widget: object
+            fields:
+              - { label: "Paragraph Title", name: paragraphTitle, widget: string }
+              - { label: "Paragraph", name: paragraph, widget: string }
+          - label: "Fouth Full-Width Image With Overlapped Text"
+            name: fouthFWImageWithOverlappedText
+            widget: object
+            fields:
+              - { label: image Url, name: imagePath, widget: image }
+              - { label: Overlapped Text, name: overlappedText, widget: string, required: false }
+          - { label: "Second Full-Width Claim", name: secondFWClaim, widget: string, required: false }
+          - label: "Fifth Full-Width Image With Caption"
+            name: fifthFWImageWithCaption
+            widget: object
+            fields:
+              - { label: image Url, name: imagePath, widget: image }
+              - { label: Caption, name: caption, widget: string }
+          - { label: "Sixth Full-Width Image", name: sixthFWImagePath, widget: image }
+          - label: "Second Two Columns Section"
+            name: secondTCSection
+            widget: object
+            fields:
+              - label: "Left Column"
+                name: leftColumn
+                widget: object
+                fields:
+                  - { label: "Left Column Image", name: imagePath, widget: image }
+                  - { label: "Left Column Caption", name: caption, widget: string }
+              - label: "Right Column"
+                name: rightColumn
+                widget: object
+                fields:
+                  - { label: "Right Column Image", name: imagePath, widget: image }
+                  - { label: "Right Column Caption", name: caption, widget: string }
+          - { label: "Seventh Full-Width Image", name: SeventhFWImage, widget: image }
+          - label: "Eigth Full-Width Image"
+            name: eigthFWImage
+            widget: object
+            fields:
+              - { label: "Image", name: imagePath, widget: image }
+              - { label: Caption, name: Caption, widget: string }
   - name: partner
     label: Partner
     folder: content/partners
