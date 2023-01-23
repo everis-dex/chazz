@@ -58,6 +58,12 @@ export interface IServicesProjects {
   more: string;
 }
 
+export interface IThoughtsPage {
+  title: string;
+  image: string;
+  categories: string[];
+}
+
 // ##############################
 // #         COMPONENTS
 // ##############################
@@ -127,4 +133,12 @@ export interface ISlide {
   title: string;
   subtitle: string;
   image: string;
+}
+
+export interface IThoughts {
+  image: string;
+  title: string;
+  body: string;
+  duration: string;
+  id: number;
 }
