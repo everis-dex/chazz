@@ -2,10 +2,10 @@ import React from "react";
 
 import { projects } from "../../../../../content/index";
 import { IProject } from "../../../../../interfaces/cms";
-import { CaseInfoServices } from "./CaseInfo/CaseInfoServices";
+import { CaseInfo } from "./CaseInfo/CaseInfoServices";
 import { CaseInfoTitle } from "./CaseInfo/CaseInfoTitle";
 
-// import "./CaseStudies.styles.scss";
+import "./CaseStudy.styles.scss";
 
 console.log("PROJECTS", projects);
 type Props = { caseStudyId: number };
@@ -17,9 +17,10 @@ export const CaseStudy = ({ caseStudyId }: Props) => {
   console.log({ project });
 
   return (
-    <>
+    <div className="case-container">
       {project.caseInfo && <CaseInfoTitle text={project.caseInfo.title} />}
-      {project.caseInfo && <CaseInfoServices text={project.caseInfo.services} />}
-    </>
+      {project.title && <CaseInfo section="Client" text={project.title} />}
+      {project.caseInfo && <CaseInfo section="Services" text={project.caseInfo.services} />}
+    </div>
   );
 };
