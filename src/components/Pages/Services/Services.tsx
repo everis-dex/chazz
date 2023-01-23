@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 import { categories, services } from "../../../content/index";
 import { ICategory, IServicesHeader } from "../../../interfaces/cms";
+import { AllowCookies } from "../../Home";
 import { FeaturedProjects, Footer, Nav } from "../../shared/index";
 import { Category } from "./Category/Category";
 
@@ -15,6 +16,7 @@ export const Services = () => {
   return (
     <>
       <Nav />
+      <AllowCookies />
       <div className="services-container">
         <div className="services-header">
           <h1 className="header-title">{headerData.title}</h1>

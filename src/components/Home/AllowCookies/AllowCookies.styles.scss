@@ -1,4 +1,5 @@
-.chazz-cookies {
+.chazz-cookies,
+.fade-out-cookies {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -20,6 +21,10 @@
     a {
       color: var(--black);
     }
+
+    a:hover {
+      color: var(--pink);
+    }
   }
 
   button {
@@ -30,6 +35,34 @@
     font-size: 19px;
     background-color: var(--black);
     cursor: pointer;
+  }
+
+  button:hover {
+    color: var(--black);
+    background-color: var(--pink);
+    border: 2px solid var(--pink);
+  }
+}
+
+.fade-out-cookies {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-around;
+  background-color: var(--white);
+  height: auto;
+  z-index: 10;
+  position: absolute;
+  width: 90%;
+  bottom: -10%;
+  left: 5%;
+  // padding: 20px;
+  position: fixed;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+
+  .p {
+    color: white;
   }
 }
 

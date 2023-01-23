@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 import { work } from "../../../content/index";
+import { AllowCookies } from "../../Home";
 import { Footer, Nav } from "../../shared/index";
 import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 
@@ -12,6 +13,7 @@ export const Work = () => {
   return (
     <>
       <Nav />
+      <AllowCookies />
       <ProjectsGrid {...work} />
       <Footer />
     </>

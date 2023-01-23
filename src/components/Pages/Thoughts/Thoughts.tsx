@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { AllowCookies } from "../../Home";
 
 import { Footer, Nav } from "../../shared/index";
 
@@ -8,7 +9,7 @@ export const Thoughts = () => {
   return (
     <>
       <Nav />
-      <p>Thoughts</p>
+      <AllowCookies />
       <Footer />
     </>
   );
