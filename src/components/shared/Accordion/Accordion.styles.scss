@@ -1,0 +1,114 @@
+.separator {
+  border-bottom: white 1px solid;
+}
+
+.accordion-open,
+.accordion-close {
+  padding: 20px 0;
+}
+
+.accordion-open,
+.accordion-close {
+  background-color: transparent;
+  color: var(--black);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  transition: 0.4s;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.panel-work,
+.panel-services {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 137%;
+  transition: padding-top 0.35s;
+}
+.panel-work {
+  border-top: 1px solid lightgray;
+  padding-top: 20px;
+}
+
+.panel-services {
+  border-top: 1px solid lightgray;
+  padding-top: 0px;
+}
+
+.accordion-arrow {
+  // transform: rotate(90deg);
+  rotate: 0deg;
+  transition: all 0.35s;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.icon-fadeIn {
+  position: absolute;
+  top: -4px;
+  right: 0px;
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+  min-height: 20px;
+  min-width: 20px;
+}
+
+.icon-fadeOut {
+  position: absolute;
+  top: -4px;
+  right: 0px;
+  opacity: 1;
+  transition: opacity 0.35s ease-in-out;
+  min-height: 20px;
+  min-width: 20px;
+}
+
+.text-fadeIn {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+  z-index: -1;
+}
+
+.text-fadeOut {
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.35s ease-in-out;
+  z-index: -1;
+}
+
+// MEDIA QUERIES
+@media (min-width: 768px) {
+  .mobile-accordion {
+    display: none;
+  }
+  .separator {
+    border-bottom: var(--hrColor) 1px solid;
+  }
+  .accordion-open,
+  .accordion-close {
+    padding: 25px 0;
+  }
+
+  .accordion-open {
+    padding-bottom: 20px;
+  }
+
+  .panel-services {
+    width: 85%;
+    border-top: 1px solid white;
+    padding-top: 0px !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .panel-services {
+    width: 87%;
+  }
+}

@@ -4,11 +4,11 @@
 }
 
 .services-header {
-  margin-top: 20%;
+  margin-top: 6%;
   border-top: 1px solid var(--black);
 
   .header-title {
-    margin: 20px 0;
+    margin: 25px 0 20px 0;
     font-weight: 500;
     font-size: 40px;
     line-height: 43px;
@@ -21,21 +21,22 @@
 }
 
 // MEDIA QUERIES
+
 @media (min-width: 768px) {
   .services-header {
-    margin-top: 70px;
-
+    img {
+      height: auto;
+    }
+  }
+}
+@media (min-width: 1280px) {
+  .services-header {
     .header-title {
       font-size: 72px;
       line-height: 77px;
     }
-
-    img {
-      height: auto;
-      object-fit: none;
-    }
   }
   .services-categories {
-    margin-bottom: 20%;
+    margin-bottom: 200px;
   }
 }

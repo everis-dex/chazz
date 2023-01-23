@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./AllowCookies.styles.scss";
 
 export const AllowCookies = () => {
-  return (
+  const cookiesAllowed = localStorage.getItem("cookiesAllowed");
+  const [displayCookies, setDisplayCookies] = useState<boolean>(cookiesAllowed ? false : true);
+
+  // TODO: To clean up cookies
+  // localStorage.removeItem("cookiesAllowed");
+
+  function handleAllowCookies(): void {
+    localStorage.setItem("cookiesAllowed", "true");
+    setDisplayCookies(false);
+  }
+
+  return cookiesAllowed && !displayCookies ? (
+    <></>
+  ) : (
     <div className="chazz-cookies">
       <p>
         <strong>We use cookies to improve your browsing experience. </strong>
-        If you want to know more, read more in our
+        If you want to know more, read more in our &nbsp;
         <a href="/#">Privacy Policy</a> and <a href="/#">Cookie Policy</a>.
       </p>
-      <button>Allow cookies</button>
+      <button onClick={handleAllowCookies}>Allow cookies</button>
     </div>
   );
 };

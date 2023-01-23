@@ -4,27 +4,19 @@
   background-color: var(--lightGray);
 }
 
-#Categories {
-  margin: 0 5%;
-}
-
-.container {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.section1-title,
-.section1-sections {
+.categories-title,
+.categories-sections {
   flex: 0 0 auto;
   width: 100%;
 }
 
-.section1 {
+.categories {
+  margin: 0 5%;
   padding-bottom: 100px;
   display: grid;
   grid-template-columns: 100%;
 
-  .section1-title {
+  .categories-title {
     margin-top: 60px;
     h2 {
       font-weight: 500;
@@ -38,7 +30,7 @@
     }
   }
 
-  .section1-sections {
+  .categories-sections {
     margin-top: 20%;
 
     h2 {
@@ -68,23 +60,16 @@
 }
 
 // MEDIA QUERIES
-// xxs
 @media (width: 320px) {
-  .section1-title h2 {
+  .categories-title h2 {
     width: 300px;
   }
 }
 
-@media (min-width: 480px) {
-  .container {
-    padding: 0;
-  }
-}
 @media (min-width: 769px) {
-  .section1 {
+  .categories {
     flex-direction: row;
-    .section1-title {
-      margin-top: 8%;
+    .categories-title {
       h2 {
         width: 65%;
         font-size: 40px;
@@ -95,7 +80,7 @@
       }
     }
 
-    .section1-sections {
+    .categories-sections {
       margin-top: 8%;
       hr {
         margin-top: 30px;
@@ -106,27 +91,22 @@
 }
 
 @media (min-width: 1024px) {
-  .section1 {
-    .section1-title {
-      h2.strong {
-        width: 90%;
-      }
-      h2 {
-        width: 82%;
-      }
+  .categories-title {
+    h2 strong {
+      width: 90%;
+    }
+    h2 {
+      width: 82%;
     }
   }
 }
 
 @media (min-width: 1280px) {
-  .section1 {
+  .categories {
     grid-template-columns: 50% 60%;
-    .section1-title {
+    .categories-title {
       h1 {
         font-size: 34px;
-      }
-      h2.strong {
-        width: 90%;
       }
       h2 {
         width: 88%;
@@ -136,7 +116,7 @@
       }
     }
 
-    .section1-sections {
+    .categories-sections {
       width: 86%;
       h2 {
         font-size: 40px;
@@ -153,35 +133,33 @@
 }
 
 @media (min-width: 1440px) {
-  .section1 {
-    .section1-title {
-      h2 {
-        width: 100%;
-      }
+  .categories-title {
+    h2 {
+      width: 100%;
     }
   }
 }
 
 @media (min-width: 1920px) {
-  .section1 {
-    .section1-title h1 {
+  .categories-title {
+    h1 {
       width: 69%;
       font-size: 45px;
     }
-    .section1-title h2 {
+    h2 {
       font-size: 45px;
       margin-top: 8px;
     }
-    .section1-sections {
-      width: 75%;
-    }
-    .section1-sections p {
+  }
+  .categories-sections {
+    width: 75%;
+    p {
       line-height: 1.5;
     }
-    .section1-sections h2 {
+    h2 {
       font-size: 45px;
     }
-    .section1-sections h2 + p {
+    h2 + p {
       font-size: 25px;
       margin-top: -14px;
     }

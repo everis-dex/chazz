@@ -1,12 +1,10 @@
-import React, { useRef } from "react";
-// import { Autoplay, Pagination } from "swiper";
-// import { Swiper, SwiperSlide } from "swiper/react";
+import React from "react";
+import { Autoplay, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-// import { CarrouselSlide } from "./CarrouselSlide";
-
-// import { projects } from "../../../../../content/index";
-// import { IProject } from "../../../../../interfaces/cms";
-// import { ISlide } from "../../../../../interfaces/cms";
+import { projects } from "../../../../../content";
+import { IProject } from "../../../../../interfaces/cms";
+import { CarrouselSlide } from "./CarrouselSlide";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -14,24 +12,22 @@ import "./Carrousel.styles.scss";
 
 type Props = { title: string };
 export const Carrousel = ({ title }: Props) => {
-  // const slides: IProject[] = [...projects];
-  // const featuredSlides: IProject[] = slides.filter(slide => slide.incarrousel).slice(0, 5);
-  const carrouselRef = useRef<HTMLDivElement>(null);
+  const slides: IProject[] = [...projects] as IProject[];
+  const featuredSlides: IProject[] = slides.filter(slide => slide.incarrousel).slice(0, 5);
 
-  ////////////////////////////////DESCOMENTARR!!!!!!!!!
   return (
     <>
-      <div ref={carrouselRef} className="carrouselTitle">
+      <div className="carrouselTitle">
         <h3>{title}</h3>
       </div>
 
-      {/* <div id="carrousel" className="carrousel">
+      <div id="carrousel" className="carrousel">
         <div className="pagination" />
         <div className="slides">
           <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={1.1}
-            spaceBetween={18}
+            spaceBetween={14}
             navigation
             pagination={{
               el: ".pagination",
@@ -57,7 +53,7 @@ export const Carrousel = ({ title }: Props) => {
             })}
           </Swiper>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
