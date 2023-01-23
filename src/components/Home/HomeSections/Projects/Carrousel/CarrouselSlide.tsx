@@ -23,7 +23,7 @@ export const CarrouselSlide = (props: IProject) => {
     };
 
     function resizeSlides(): void {
-      const smallScreen = { width: "290px", height: "288px" };
+      const smallScreen = { width: "100%", height: "288px" };
       const largeScreen = { width: "100%", height: "666px" };
 
       const selectedStyles = screenWidth < 768 ? smallScreen : largeScreen;
