@@ -1,14 +1,14 @@
 import React from "react";
 
 import { getInTouch } from "../../../../../content/index";
-import { ISocial } from "../../../../../interfaces/cms";
 import { LinkedEmail } from "./footerLinks";
-
-import "../CompanyInfo.styles.scss";
 import { RRSS } from "./RRSS";
 
-type Props = { title: string; socials: ISocial[] };
-export const GetInTouch = ({ title, socials }: Props) => {
+import "../CompanyInfo.styles.scss";
+
+type Props = { title: string };
+
+export const GetInTouch = ({ title }: Props) => {
   return (
     <div className="in-touch-container">
       <p className="section-title">{title}</p>
