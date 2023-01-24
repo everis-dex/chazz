@@ -1,6 +1,5 @@
 import React from "react";
 import "./LineBreaker.scss";
-import { LineParagraphSymbol } from "../../../constants";
 
 type Props = {
   brokenLines: string[];
