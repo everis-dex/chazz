@@ -35,10 +35,13 @@
     }
   }
 
+  .more-projects-div {
+    margin: 70px 0;
+  }
+
   .more-projects {
     text-decoration: none;
-    display: block;
-    margin: 70px 0;
+    display: inline;
     padding: 0;
     color: var(--black);
     font-size: 16px;
@@ -78,8 +81,11 @@
         }
       }
     }
-    .more-projects {
-      margin: 40px 0;
-    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .featured-projects {
+    padding-top: 70px;
   }
 }
