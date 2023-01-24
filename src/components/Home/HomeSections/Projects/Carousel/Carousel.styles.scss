@@ -1,14 +1,14 @@
-.carrousel:hover {
+.carousel:hover {
   cursor: pointer;
 }
 
-.carrouselTitle {
+.carouselTitle {
   h3 {
     font-size: 24px;
   }
 }
 
-.carrouselPagination {
+.carouselPagination {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,7 +59,7 @@
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
-  .carrousel {
+  .carousel {
     .pagination {
       padding-left: 2px;
       width: auto;
@@ -74,7 +74,7 @@
 }
 
 @media (min-width: 1240px) {
-  .carrouselTitle {
+  .carouselTitle {
     h3 {
       font-size: 32px;
     }
@@ -98,7 +98,7 @@
     font-size: 28px;
     padding-bottom: 10px;
   }
-  .carrouselTitle h3 {
+  .carouselTitle h3 {
     font-size: 35px;
   }
 }
