@@ -35,17 +35,18 @@ export const Thoughts = () => {
             </div>
           ))}
 
-
-          <a
-            className="more-thoughts"
-            onMouseEnter={() => setIsHover(true)}
-            onMouseLeave={() => setIsHover(false)}
-            onClick={() => setIsFiltered(!isFiltered)}
-          >
-            {!isFiltered && <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" style={{ transform: "rotate(180deg)" }} />}&nbsp;
-            {isFiltered ? "More thoughts" : " Less thoughts"}
-            {isFiltered && <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />}
-          </a>
+          <div className="more-thoughts--div">
+            <a
+              className="more-thoughts"
+              onMouseEnter={() => setIsHover(true)}
+              onMouseLeave={() => setIsHover(false)}
+              onClick={() => setIsFiltered(!isFiltered)}
+            >
+              {!isFiltered && <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" style={{ transform: "rotate(180deg)" }} />}&nbsp;
+              {isFiltered ? "More thoughts" : " Less thoughts"}
+              {isFiltered && <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />}
+            </a>
+          </div>
         </div>
       </div>
       <Footer />

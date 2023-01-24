@@ -23,12 +23,20 @@
 .thoughts {
   margin-top: 60px;
 
+  .more-thoughts--div {
+    padding: 40px 0 75px 0;
+  }
+
   .more-thoughts {
     text-decoration: none;
-    display: block;
-    padding: 40px 0 75px 0;
+    display: inline;
     font-size: 16px;
     font-weight: 400;
+    color: var(--black);
+
+    &:hover {
+      color: var(--pinkHover);
+    }
     .img {
       width: 26px;
     }
