@@ -15,7 +15,7 @@
   justify-content: space-between;
   width: 100%;
   transition: 0.4s;
-  font-weight: 700;
+  font-weight: 300;
   font-size: 16px;
   line-height: 20px;
   align-items: center;
@@ -93,7 +93,8 @@
   }
   .accordion-open,
   .accordion-close {
-    padding: 25px 0;
+    padding: 30px 0;
+    font-size: 24px;
   }
 
   .accordion-open {

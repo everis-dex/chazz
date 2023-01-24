@@ -21,7 +21,7 @@
   }
 
   .section {
-    font-weight: 450;
+    font-weight: 300;
     font-size: 16px;
     line-height: 20px;
     color: var(--gray);
@@ -33,7 +33,6 @@
 
   .summary {
     margin: 0;
-    font-weight: 450;
     font-size: 16px;
     line-height: 24px;
   }
@@ -97,15 +96,14 @@
 
   .category-content {
     display: grid;
-    grid-template-columns: 30% auto;
+    grid-template-columns: 36% auto;
     grid-gap: 10%;
     align-items: start;
 
     .summary {
-      font-weight: 500;
-      font-size: 24px;
+      font-size: 31px;
       line-height: 32px;
-      width: 90%;
+      width: 100%;
     }
   }
 
@@ -128,8 +126,9 @@
 
 @media (min-width: 1440px) {
   .category-content {
+    grid-template-columns: 34% auto;
     .summary {
-      width: 85%;
+      font-size: 32px;
     }
   }
 }
@@ -137,7 +136,6 @@
 @media (min-width: 1920px) {
   .category-content {
     .summary {
-      width: 65%;
     }
   }
 }
