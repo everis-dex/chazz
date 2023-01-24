@@ -1,1 +1,4 @@
-[{"title":"General inquiries","email":"hola@chazzdesign.com","id":1670835300},{"title":"Be part of the team","email":"team@chazzdesign.com","id":1670838900}]
+[
+  { "title": "General inquiries", "email": "hola@chazzdesign.com", "id": 1670835300 },
+  { "title": "Be part of the team", "email": "team@chazzdesign.com", "id": 1670838900 }
+]
