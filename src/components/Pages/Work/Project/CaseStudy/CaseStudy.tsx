@@ -14,7 +14,7 @@ export const CaseStudy = ({ caseStudyId }: Props) => {
   console.log({ caseStudyId });
   console.log({ projects });
   const project: IProject = projects.filter(project => project.id === caseStudyId)[0] as IProject;
-  console.log({ project });
+  console.log(project.sections?.firstTCSection?.rightColumn.paragraph);
 
   return (
     <>
@@ -29,7 +29,7 @@ export const CaseStudy = ({ caseStudyId }: Props) => {
         </div>
       </div>
       <div className="fw-image">
-        <img src={project.sections.firstFWImagePath} alt="First"></img>
+        <img src={project.sections?.firstFWImagePath} alt="First"></img>
       </div>
       <div className="fw-claim">
         <LineBreakerSelector typedLines="Developing the* complete Mobility As A* Service’s project with* Renfe, the Spanish* leader in rail transport."></LineBreakerSelector>
@@ -42,19 +42,9 @@ export const CaseStudy = ({ caseStudyId }: Props) => {
           </div>
           <div className="section-rigth-column">
             <h3>The Big Challenge</h3>
-            <p>
-              Our bet was to join together technology and creativity, analyzing what users desire and how mobility
-              context are configurated nowadays. After the research phase, we developed a new product and brand that
-              help people to move easily in a multimodal way across the spanish's territory. Knowing that both product
-              and brand must embrace people with the need to move.
-            </p>
-
-            <p>
-              Around searching, planning and booking easily short, medium and long-distance trips and just with a single
-              ticket, we innovated to create a tangible, easy and relaxing travel experience. Because dōcō essence is an
-              holistic approach to the movement time and, in fact, dōcō is by itself a life style with no worries and no
-              rush.
-            </p>
+            <LineBreakerSelector
+              typedLines={project.sections?.firstTCSection?.rightColumn.paragraph.text}
+            ></LineBreakerSelector>
           </div>
         </div>
       </div>

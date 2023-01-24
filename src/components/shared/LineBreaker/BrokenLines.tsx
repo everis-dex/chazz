@@ -1,14 +1,23 @@
 import React from "react";
 import "./LineBreaker.scss";
+import { LineParagraphSymbol } from "../../../constants";
 
 type Props = {
   brokenLines: string[];
   lineBreakSymbol: string;
+  paragraphs: string[];
 };
 
-export const BrokenLines = ({ brokenLines, lineBreakSymbol }: Props) => {
+export const BrokenLines = ({ brokenLines, lineBreakSymbol, paragraphs }: Props) => {
   return (
     <>
+      {/* {paragraphs.length > 0 && (
+        <>
+          {paragraphs.map((paragraph: string, index: number) => (
+            <p key={index}>{paragraph.replace(LineParagraphSymbol, "")}</p>
+          ))}
+        </>
+      )} */}
       {brokenLines.length > 0 && (
         <h1>
           {brokenLines.map((titleLine: string, index: number) => (

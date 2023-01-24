@@ -28,6 +28,7 @@ export const availableRouteIDs: number[] = [0, 1, 2];
 
 export const desktopLineBreakSymbol: string = "+";
 export const mobileLineBreakSymbol: string = "*";
+export const LineParagraphSymbol: string = "_&";
 
 // Navigation bar Display Modes
 export const DisplayModes = {
