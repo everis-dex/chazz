@@ -7,14 +7,10 @@ import { CaseInfoTitle } from "./CaseInfo/CaseInfoTitle";
 
 // import "./CaseStudies.styles.scss";
 
-console.log("PROJECTS", projects);
 type Props = { caseStudyId: number };
 
 export const CaseStudy = ({ caseStudyId }: Props) => {
-  console.log({ caseStudyId });
-  console.log({ projects });
   const project: IProject = projects.filter(project => project.id === caseStudyId)[0] as IProject;
-  console.log({ project });
 
   return (
     <>

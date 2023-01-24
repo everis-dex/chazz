@@ -6,6 +6,7 @@ import { projects } from "../../../../../content";
 import { IProject } from "../../../../../interfaces/cms";
 import { CarrouselSlide } from "./CarrouselSlide";
 
+console.log(projects);
 import "swiper/css";
 import "swiper/css/pagination";
 import "./Carrousel.styles.scss";
