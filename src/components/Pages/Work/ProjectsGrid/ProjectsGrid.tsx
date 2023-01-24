@@ -4,7 +4,7 @@ import { IProject } from "../../../../interfaces/cms";
 import { LineBreakerSelector } from "../../../shared/index";
 import { ProjectCard } from "../Project/ProjectCard";
 
-import { work } from '../../../../content/index';
+import { work } from "../../../../content/index";
 import { projects } from "../../../../content/index";
 
 const formats = {

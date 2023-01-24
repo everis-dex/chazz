@@ -93,7 +93,7 @@ export interface IProject {
     title: string;
     services: string;
   };
-  sections: {
+  sections?: {
     firstFWImagePath?: string;
     firstFWClaim?: string;
     secondFWImagePath?: string;
