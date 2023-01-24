@@ -36,6 +36,12 @@ export const CaseStudy = ({ caseStudyId }: Props) => {
       </div>
       <div className="work-container">
         <div className="fw-image"></div>
+        <div className="section-flex-container">
+          <div className="section-left-column">
+            <LineBreakerSelector typedLines="Mobility is a saturated and complex sector, and society needs a friendly proposal to move easily under the paradigm of sustainable travelling."></LineBreakerSelector>
+          </div>
+          <div className="section-rigth-column"></div>
+        </div>
       </div>
     </>
   );

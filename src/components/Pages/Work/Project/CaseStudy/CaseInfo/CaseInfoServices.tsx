@@ -12,10 +12,8 @@ export const CaseInfo = ({ section, text }: Props) => {
   return (
     <div className="case-info">
       <span>{section}</span>
-      <p>
-        {" "}
-        <LineBreakerSelector typedLines={text} />
-      </p>
+
+      <LineBreakerSelector typedLines={text} />
     </div>
   );
 };
