@@ -7,13 +7,14 @@ import { LineBreakerSelector } from "../../../../shared/LineBreaker/LineBreakerS
 
 import "./CaseStudy.styles.scss";
 
-type Props = { caseStudyId: number };
+type Props = { caseStudyId: number; handleBack: () => void };
 
-export const CaseStudy = ({ caseStudyId }: Props) => {
+export const CaseStudy = ({ caseStudyId, handleBack }: Props) => {
   const project: IProject = projects.filter(project => project.id === caseStudyId)[0] as IProject;
   console.log(project.sections?.rightColumnOnlyInfoSection);
   return (
     <>
+      <button onClick={handleBack}>BACK</button>
       <div className="case-container">
         <div className="case-container-title">
           {project.caseInfo && <CaseInfoTitle text={project.caseInfo.title} />}
@@ -109,6 +110,7 @@ export const CaseStudy = ({ caseStudyId }: Props) => {
           <LineBreakerSelector typedLines={project.sections?.eigthFWImageWithCaption?.caption}></LineBreakerSelector>
         </div>
       </div>
+      <button onClick={handleBack}>BACK</button>
     </>
   );
 };

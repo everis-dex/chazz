@@ -9,11 +9,17 @@ import "./Work.styles.scss";
 export const Work = () => {
   const [caseStudyId, setCaseStudyId] = useState<number>(0);
   useEffect(() => window.scrollTo(0, 0), []);
-
+  const handleBack = () => {
+    setCaseStudyId(0);
+  };
   return (
     <>
       <Nav />
-      {caseStudyId === 0 ? <ProjectsGrid setCaseStudyId={setCaseStudyId} /> : <CaseStudy caseStudyId={caseStudyId} />}
+      {caseStudyId === 0 ? (
+        <ProjectsGrid setCaseStudyId={setCaseStudyId} />
+      ) : (
+        <CaseStudy caseStudyId={caseStudyId} handleBack={handleBack} />
+      )}
       <Footer />
     </>
   );
