@@ -48,8 +48,7 @@ export const ProjectCard = ({ data, format, columns, setCaseStudyId }: Props) =>
 
       <div className="project-details">
         <div className="project-title-container">
-          <span onClick={() => setCaseStudyId(data.id)}>CLICK</span>
-          <span className="title">{data.title} —</span>
+          <span className="title" onClick={() => setCaseStudyId(data.id)}>{data.title} —</span>
           <span className="description">{data.description}</span>
         </div>
         <span className="properties">{data.subtitle}</span>
