@@ -25,14 +25,14 @@ export const CaseStudy = ({ caseStudyId }: Props) => {
         </div>
       </div>
       <div className="fw-image">
-        <img src={project.sections?.firstFWImagePath} alt="FirstFW-Img"></img>
+        <img src={project.sections?.firstFWImagePath} alt="Portatil"></img>
       </div>
       <div className="fw-claim">
         <LineBreakerSelector typedLines="Developing the* complete Mobility As A* Service’s project with* Renfe, the Spanish* leader in rail transport."></LineBreakerSelector>
       </div>
       <div className="work-container">
         <div className="fw-image">
-          <img src={project.sections?.secondFWImagePath} alt="SecondImg" />
+          <img src={project.sections?.secondFWImagePath} alt="1º Roja Img" />
         </div>
         <div className="section-flex-container">
           <div className="section-left-column">
@@ -46,7 +46,7 @@ export const CaseStudy = ({ caseStudyId }: Props) => {
           </div>
         </div>
         <div className="fw-image">
-          <img src={project.sections?.thirthFWImagePath} alt="ThirthFW-Img"></img>
+          <img src={project.sections?.thirthFWImagePath} alt="2º Roja Img"></img>
         </div>
         <div className="section-flex-container">
           <div className="section-left-column"></div>
