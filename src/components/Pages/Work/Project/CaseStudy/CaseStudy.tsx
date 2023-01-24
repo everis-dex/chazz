@@ -14,7 +14,7 @@ export const CaseStudy = ({ caseStudyId }: Props) => {
   console.log({ caseStudyId });
   console.log({ projects });
   const project: IProject = projects.filter(project => project.id === caseStudyId)[0] as IProject;
-  console.log({ project });
+  console.log(project.sections.firstFWClaim);
 
   return (
     <>
