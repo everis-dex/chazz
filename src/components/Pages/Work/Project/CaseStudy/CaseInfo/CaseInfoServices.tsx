@@ -1,5 +1,7 @@
 import React from "react";
 import "../CaseStudy.styles.scss";
+import { LineBreakerSelector } from "../../../../../shared/LineBreaker/LineBreakerSelector";
+import "../../CaseStudy/CaseStudy.styles.scss";
 
 type Props = {
   section: string;
@@ -8,9 +10,12 @@ type Props = {
 
 export const CaseInfo = ({ section, text }: Props) => {
   return (
-    <div>
-      <span className="caseinfo-section">{section}</span>
-      <p>{text}</p>
+    <div className="case-info">
+      <span>{section}</span>
+      <p>
+        {" "}
+        <LineBreakerSelector typedLines={text} />
+      </p>
     </div>
   );
 };
