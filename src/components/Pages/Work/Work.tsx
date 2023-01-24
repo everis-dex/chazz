@@ -8,7 +8,8 @@ import "./Work.styles.scss";
 
 export const Work = () => {
   const [caseStudyId, setCaseStudyId] = useState<number>(0);
-  useEffect(() => window.scrollTo(0, 0), []);
+  useEffect(() => window.scrollTo(0, 0), [caseStudyId]); //State como dependencia
+  //EVENTO PROVISIONAL
   const handleBack = () => {
     setCaseStudyId(0);
   };
