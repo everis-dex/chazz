@@ -29,12 +29,13 @@
 
   button {
     margin: 0;
-    padding: 5px 10px;
+    padding: 5px 20px;
     color: var(--pink);
     font-weight: 700;
     font-size: 19px;
     background-color: var(--black);
     cursor: pointer;
+    -webkit-appearance: media-slider!important;
   }
 
   button:hover {
@@ -71,14 +72,26 @@
 @media (min-width: 768px) {
   .chazz-cookies {
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
     height: 82px;
-    padding: 10px;
+    padding: 13px 24px;
+    justify-content: space-between;
+    p {
+      margin: 0;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .chazz-cookies {
+    left: 2%;
+    width: 96%;
   }
 }
 
 @media (min-width: 1280px) {
   .chazz-cookies {
     height: 64px;
+    width: 96%;
   }
 }
