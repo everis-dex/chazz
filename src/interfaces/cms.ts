@@ -105,7 +105,7 @@ export interface IProject {
       };
     };
     thirthFWImagePath?: string;
-    rightColumnOnlyInfo?: {
+    rightColumnOnlyInfoSection?: {
       paragraphTitle: string;
       paragraph: string;
     };
@@ -116,17 +116,17 @@ export interface IProject {
     secondFWClaim?: string;
     fifthFWImageWithCaption?: {
       imagePath: string;
-      overlappedText: string;
+      caption: string;
     };
     sixthFWImagePath?: string;
     secondTCSection?: {
       leftColumn: {
         imagePath: string;
-        caption: string;
+        overlappedText: string;
       };
       rightColumn: {
         imagePath: string;
-        caption: string;
+        overlappedText: string;
       };
     };
     seventhFWImagePath?: string;

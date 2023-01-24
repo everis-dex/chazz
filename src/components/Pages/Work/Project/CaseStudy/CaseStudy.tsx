@@ -38,12 +38,12 @@ export const CaseStudy = ({ caseStudyId }: Props) => {
         <div className="fw-image"></div>
         <div className="section-flex-container">
           <div className="section-left-column">
-            <LineBreakerSelector typedLines="Mobility is a saturated and complex sector, and society needs a friendly proposal to move easily under the paradigm of sustainable travelling."></LineBreakerSelector>
+            <LineBreakerSelector typedLines={project.sections?.firstTCSection?.leftColumnIntro}></LineBreakerSelector>
           </div>
           <div className="section-rigth-column">
-            <h3>The Big Challenge</h3>
+            <h3>{project.sections?.firstTCSection?.rightColumn.paragraphTitle}</h3>
             <LineBreakerSelector
-              typedLines={project.sections?.firstTCSection?.rightColumn.paragraph.text}
+              typedLines={project.sections?.firstTCSection?.rightColumn.paragraph}
             ></LineBreakerSelector>
           </div>
         </div>
