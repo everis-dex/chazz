@@ -48,10 +48,11 @@
 }
 
 .properties {
-  display: flex;
+  // display: flex;
   color: var(--gray);
   text-overflow: ellipsis;
   overflow: hidden;
+  width: 100%;
   white-space: nowrap;
   font-weight: 100;
   font-size: 16px;
@@ -87,6 +88,7 @@
 
   .properties {
     font-size: 24px;
+    text-overflow: ellipsis;
   }
 }
 
