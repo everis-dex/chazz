@@ -17,6 +17,8 @@ export const Thoughts = () => {
 
   const displayingThoughts: IThought[] = isFiltered ? thoughts.slice(0, 6) : thoughts;
 
+  // TODO: Lógica de marcar el seleccionado y filtrar en base a eso
+
   return (
     <>
       <Nav />
@@ -27,9 +29,11 @@ export const Thoughts = () => {
           <img loading="lazy" src={thoughtsPage.image} alt="Header" />
         </div>
         <div className="thoughts-filtering">
-          <span>All</span>
+          <span className="filter-category selected">All</span>
           {thoughtsPage.categories.map((category: string, index: number) => (
-            <span key={index}>{category}</span>
+            <span className="filter-category" key={index}>
+              {category}
+            </span>
           ))}
         </div>
         {/* Thoughts section */}

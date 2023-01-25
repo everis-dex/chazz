@@ -68,9 +68,18 @@
     display: flex;
     gap: 30px;
 
-    span:hover {
-      color: var(--pinkHover);
-      cursor: pointer;
+    span {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+      &:hover {
+        color: var(--pinkHover);
+        cursor: pointer;
+      }
+
+      &.selected {
+        color: var(--pinkStrong);
+      }
     }
   }
 }
