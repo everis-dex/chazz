@@ -8,7 +8,9 @@ type Props = {
 export const CaseInfoTitle = ({ text }: Props) => {
   return (
     <div>
-      <LineBreakerSelector typedLines={text} />
+      <h1>
+        <LineBreakerSelector typedLines={text} />
+      </h1>
     </div>
   );
 };

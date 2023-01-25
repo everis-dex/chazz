@@ -10,7 +10,6 @@ type Props = { typedLines?: string };
 export const LineBreakerSelector = ({ typedLines }: Props) => {
   var desktopBrokenLines: string[] = [];
   var mobileBrokenLines: string[] = [];
-  var paragraphBrokenLines: string[] = [];
 
   const jumpParagraphs = (brokenLines: string[]) => {
     brokenLines.map((line, index) => {
