@@ -31,18 +31,10 @@ export const LineBreakerSelector = ({ typedLines }: Props) => {
   return (
     <>
       <div className="mobile-brokenlines">
-        <BrokenLines
-          brokenLines={mobileBrokenLines}
-          lineBreakSymbol={desktopLineBreakSymbol}
-          paragraphs={paragraphBrokenLines}
-        />
+        <BrokenLines brokenLines={mobileBrokenLines} lineBreakSymbol={desktopLineBreakSymbol} />
       </div>
       <div className="desktop-brokenlines">
-        <BrokenLines
-          brokenLines={desktopBrokenLines}
-          lineBreakSymbol={mobileLineBreakSymbol}
-          paragraphs={paragraphBrokenLines}
-        />
+        <BrokenLines brokenLines={desktopBrokenLines} lineBreakSymbol={mobileLineBreakSymbol} />
       </div>
     </>
   );
