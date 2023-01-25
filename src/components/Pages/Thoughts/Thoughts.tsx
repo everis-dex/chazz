@@ -13,11 +13,9 @@ import "./Thoughts.styles.scss";
 
 export const Thoughts = () => {
   const [isHover, setIsHover] = useState<boolean>(false);
-  const [isFiltered, setIsFiltered] = useState<boolean>(true);
-  const [selected, setSelected] = useState<HTMLSpanElement>();
+  const [filtering, setFiltering] = useState<boolean>(true);
+  const [selectedFilter, setSelectedFilter] = useState<string>("All");
   const filters = useRef<HTMLDivElement>(null);
-
-  const displayingThoughts: IThought[] = isFiltered ? thoughts.slice(0, 6) : thoughts;
 
   useEffect(() => {
     if (!filters || !filters.current) return;
@@ -31,13 +29,13 @@ export const Thoughts = () => {
       });
     }
 
-    /* Adding an event listener to each span element in the filters div. */
+    // Add event listener to each span element in filters div
     filters.current.childNodes.forEach((child: ChildNode): void => {
       const span = child as HTMLSpanElement;
-      span.onclick = (e: Event) => {
+      span.onclick = () => {
         deactivateSelectedFilter();
         span.classList.add("selected"); // Mark span as selected
-        setSelected(span);
+        setSelectedFilter(span.innerHTML);
       };
     });
   }, [filters]);
@@ -47,10 +45,12 @@ export const Thoughts = () => {
       <Nav />
       <AllowCookies />
       <div className="thoughts-container">
+        {/* Header section */}
         <div className="thoughts-header">
           <h1 className="header-title">{thoughtsPage.title}</h1>
-          <img loading="lazy" src={thoughtsPage.image} alt="Header" />
+          <img src={thoughtsPage.image} alt="Header" />
         </div>
+        {/* Filtering section */}
         <div className="thoughts-filtering" ref={filters}>
           <span className="filter-category selected">All</span>
           {thoughtsPage.categories.map((category: string, index: number) => (
@@ -61,26 +61,24 @@ export const Thoughts = () => {
         </div>
         {/* Thoughts section */}
         <div className="thoughts">
-          {displayingThoughts
-            .filter(
-              (thought: IThought) =>
-                selected && (selected.innerHTML === "All" || thought.category === selected.innerHTML)
-            )
+          {thoughts
+            // Show only the thoughts with selected category
+            .filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category)
+            .filter((t, index: number) => filtering && index < 6) // If filtering, show only the first 6 thoughts
             .map((thought: IThought, index: number) => (
               <div className="thought" key={index}>
                 <Thought {...thought} />
               </div>
             ))}
-
           <div className="more-thoughts--div">
             <a
               href="#/"
               className="more-thoughts"
               onMouseEnter={() => setIsHover(true)}
               onMouseLeave={() => setIsHover(false)}
-              onClick={() => setIsFiltered(!isFiltered)}
+              onClick={() => setFiltering(!filtering)}
             >
-              {!isFiltered && (
+              {!filtering && (
                 <RightArrow
                   stroke={!isHover ? "#191919" : "#fc82a3"}
                   className="icon-size"
@@ -88,14 +86,14 @@ export const Thoughts = () => {
                 />
               )}
               &nbsp;
-              {isFiltered ? "More thoughts" : " Less thoughts"}
-              {isFiltered && <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />}
+              {filtering ? "More thoughts" : " Less thoughts"}
+              {filtering && <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />}
             </a>
           </div>
         </div>
         {/* More thoughts */}
         <div className="thoughts-arrow">
-          <MoreLink text="More thoughts" link="/thoughts" />
+          <MoreLink text={filtering ? "More thoughts" : " Less thoughts"} link="#/" />
         </div>
       </div>
 
