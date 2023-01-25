@@ -5,7 +5,7 @@ import { IThought } from "../../../../interfaces/cms";
 import "./Thought.styles.scss";
 
 export const Thought = (thought: IThought) => {
-  useEffect(() => window.scrollTo(0, 0), []);
+  // useEffect(() => window.scrollTo(0, 0), []);
 
   return (
     <div className="thought-container">

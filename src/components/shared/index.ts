@@ -1,3 +1,4 @@
+export * from "./AllowCookies/AllowCookies";
 export * from "./DividingLine/DividingLine";
 export * from "./FeaturedProjects/FeaturedProjects";
 export * from "./Footer/Footer";
