@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { AllowCookies } from "../../Home";
+import React, { useEffect, useRef, useState } from "react";
 
 import { thoughts, thoughtsPage } from "../../../content/index";
 import { IThought } from "../../../interfaces/cms";
 
+import { AllowCookies } from "../../Home";
 import { Footer, MoreLink, Nav } from "../../shared/index";
 import { Thought } from "./Thought/Thought";
 
@@ -14,10 +14,30 @@ import "./Thoughts.styles.scss";
 export const Thoughts = () => {
   const [isHover, setIsHover] = useState<boolean>(false);
   const [isFiltered, setIsFiltered] = useState<boolean>(true);
+  const filters = useRef<HTMLDivElement>(null);
 
   const displayingThoughts: IThought[] = isFiltered ? thoughts.slice(0, 6) : thoughts;
 
-  // TODO: Lógica de marcar el seleccionado y filtrar en base a eso
+  useEffect(() => {
+    if (!filters || !filters.current) return;
+
+    function deactivateSelectedFilter(): void {
+      if (!filters || !filters.current) return;
+      // Remove selected class from all filter span
+      filters.current.childNodes.forEach((child: ChildNode) => {
+        const span = child as HTMLSpanElement;
+        span.classList.remove("selected");
+      });
+    }
+
+    filters.current.childNodes.forEach((child: ChildNode): void => {
+      const span = child as HTMLSpanElement;
+      span.onclick = (e: Event) => {
+        deactivateSelectedFilter();
+        span.classList.add("selected"); // Mark span as selected
+      };
+    });
+  }, [filters]);
 
   return (
     <>
@@ -28,7 +48,7 @@ export const Thoughts = () => {
           <h1 className="header-title">{thoughtsPage.title}</h1>
           <img loading="lazy" src={thoughtsPage.image} alt="Header" />
         </div>
-        <div className="thoughts-filtering">
+        <div className="thoughts-filtering" ref={filters}>
           <span className="filter-category selected">All</span>
           {thoughtsPage.categories.map((category: string, index: number) => (
             <span className="filter-category" key={index}>
