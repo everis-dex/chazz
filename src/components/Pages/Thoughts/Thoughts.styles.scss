@@ -21,8 +21,6 @@
 }
 
 .thoughts {
-  margin-top: 60px;
-
   .more-thoughts--div {
     padding: 40px 0 75px 0;
   }
@@ -63,6 +61,16 @@
   .thoughts-header {
     img {
       height: auto;
+    }
+  }
+  .thoughts-filtering {
+    padding: 60px 0;
+    display: flex;
+    gap: 30px;
+
+    span:hover {
+      color: var(--pinkHover);
+      cursor: pointer;
     }
   }
 }

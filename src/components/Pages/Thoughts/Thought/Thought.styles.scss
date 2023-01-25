@@ -48,4 +48,14 @@
       }
     }
   }
+  .thought-left-icon {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    img {
+      width: 10px;
+      height: 13px;
+      margin-top: 16px;
+    }
+  }
 }

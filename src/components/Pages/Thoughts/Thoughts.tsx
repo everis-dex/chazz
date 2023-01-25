@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { AllowCookies } from "../../Home";
 
 import { thoughts, thoughtsPage } from "../../../content/index";
@@ -17,7 +17,6 @@ export const Thoughts = () => {
 
   const displayingThoughts: IThought[] = isFiltered ? thoughts.slice(0, 6) : thoughts;
 
-
   return (
     <>
       <Nav />
@@ -26,6 +25,12 @@ export const Thoughts = () => {
         <div className="thoughts-header">
           <h1 className="header-title">{thoughtsPage.title}</h1>
           <img loading="lazy" src={thoughtsPage.image} alt="Header" />
+        </div>
+        <div className="thoughts-filtering">
+          <span>All</span>
+          {thoughtsPage.categories.map((category: string, index: number) => (
+            <span key={index}>{category}</span>
+          ))}
         </div>
         {/* Thoughts section */}
         <div className="thoughts">
@@ -37,12 +42,20 @@ export const Thoughts = () => {
 
           <div className="more-thoughts--div">
             <a
+              href="/#"
               className="more-thoughts"
               onMouseEnter={() => setIsHover(true)}
               onMouseLeave={() => setIsHover(false)}
               onClick={() => setIsFiltered(!isFiltered)}
             >
-              {!isFiltered && <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" style={{ transform: "rotate(180deg)" }} />}&nbsp;
+              {!isFiltered && (
+                <RightArrow
+                  stroke={!isHover ? "#191919" : "#fc82a3"}
+                  className="icon-size"
+                  style={{ transform: "rotate(180deg)" }}
+                />
+              )}
+              &nbsp;
               {isFiltered ? "More thoughts" : " Less thoughts"}
               {isFiltered && <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />}
             </a>
