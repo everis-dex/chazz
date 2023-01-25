@@ -11,7 +11,7 @@ type Props = { caseStudyId: number; handleBack: () => void };
 
 export const CaseStudy = ({ caseStudyId, handleBack }: Props) => {
   const project: IProject = projects.filter(project => project.id === caseStudyId)[0] as IProject;
-  console.log(project.sections?.rightColumnOnlyInfoSection);
+  console.log(project.sections?.fourthFWImageWithOverlappedText?.imagePath);
   return (
     <>
       {/* <button onClick={handleBack}>BACK</button> */}
@@ -75,7 +75,9 @@ export const CaseStudy = ({ caseStudyId, handleBack }: Props) => {
       </div>
 
       <div className="fw-claim">
-        <LineBreakerSelector typedLines={project.sections?.secondFWClaim}></LineBreakerSelector>
+        <h1>
+          <LineBreakerSelector typedLines={project.sections?.secondFWClaim}></LineBreakerSelector>
+        </h1>
       </div>
       <div className="work-container">
         <div className="fw-image">
