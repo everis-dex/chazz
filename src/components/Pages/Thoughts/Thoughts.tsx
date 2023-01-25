@@ -42,6 +42,7 @@ export const Thoughts = () => {
 
           <div className="more-thoughts--div">
             <a
+              href="#/"
               className="more-thoughts"
               onMouseEnter={() => setIsHover(true)}
               onMouseLeave={() => setIsHover(false)}
