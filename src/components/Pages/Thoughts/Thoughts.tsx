@@ -14,6 +14,7 @@ import "./Thoughts.styles.scss";
 export const Thoughts = () => {
   const [isHover, setIsHover] = useState<boolean>(false);
   const [isFiltered, setIsFiltered] = useState<boolean>(true);
+  const [selected, setSelected] = useState<HTMLSpanElement>();
   const filters = useRef<HTMLDivElement>(null);
 
   const displayingThoughts: IThought[] = isFiltered ? thoughts.slice(0, 6) : thoughts;
@@ -30,11 +31,13 @@ export const Thoughts = () => {
       });
     }
 
+    /* Adding an event listener to each span element in the filters div. */
     filters.current.childNodes.forEach((child: ChildNode): void => {
       const span = child as HTMLSpanElement;
       span.onclick = (e: Event) => {
         deactivateSelectedFilter();
         span.classList.add("selected"); // Mark span as selected
+        setSelected(span);
       };
     });
   }, [filters]);
@@ -58,11 +61,16 @@ export const Thoughts = () => {
         </div>
         {/* Thoughts section */}
         <div className="thoughts">
-          {displayingThoughts.map((thought: IThought, index: number) => (
-            <div className="thought" key={index}>
-              <Thought {...thought} />
-            </div>
-          ))}
+          {displayingThoughts
+            .filter(
+              (thought: IThought) =>
+                selected && (selected.innerHTML === "All" || thought.category === selected.innerHTML)
+            )
+            .map((thought: IThought, index: number) => (
+              <div className="thought" key={index}>
+                <Thought {...thought} />
+              </div>
+            ))}
 
           <div className="more-thoughts--div">
             <a
