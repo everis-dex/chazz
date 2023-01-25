@@ -2,27 +2,27 @@ import React from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { CarrouselSlide } from "./CarrouselSlide";
+import { CarouselSlide } from "./CarouselSlide";
 
 import { projects } from "../../../../../content/index";
 import { IProject } from "../../../../../interfaces/cms";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import "./Carrousel.styles.scss";
+import "./Carousel.styles.scss";
 
 type Props = { title: string };
-export const Carrousel = ({ title }: Props) => {
+export const Carousel = ({ title }: Props) => {
   const slides: IProject[] = [...projects];
-  const featuredSlides: IProject[] = slides.filter(slide => slide.incarrousel).slice(0, 5);
+  const featuredSlides: IProject[] = slides.filter(slide => slide.incarousel).slice(0, 5);
 
   return (
     <>
-      <div className="carrouselTitle">
+      <div className="carouselTitle">
         <h3>{title}</h3>
       </div>
 
-      <div id="carrousel" className="carrousel">
+      <div id="carousel" className="carousel">
         <div className="pagination" />
         <div className="slides">
           <Swiper
@@ -35,10 +35,10 @@ export const Carrousel = ({ title }: Props) => {
               clickable: true
             }}
             loop
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false
-            }}
+            // autoplay={{
+            //   delay: 3000,
+            //   disableOnInteraction: false
+            // }}
             breakpoints={{
               1280: { slidesPerView: 2.1 },
               1920: { slidesPerView: 3.1 }
@@ -48,7 +48,7 @@ export const Carrousel = ({ title }: Props) => {
             {featuredSlides.map((slide: IProject, index: number) => {
               return (
                 <SwiperSlide key={index}>
-                  <CarrouselSlide {...slide} />
+                  <CarouselSlide {...slide} />
                 </SwiperSlide>
               );
             })}

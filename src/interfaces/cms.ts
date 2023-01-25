@@ -94,11 +94,11 @@ export interface IProject {
   media: IProjectMedia;
   description: string;
   body: string;
-  incarrousel: boolean;
+  incarousel: boolean;
 }
 
 export interface IProjectMedia {
-  carrousel: string;
+  carousel: string;
   project: string;
 }
 

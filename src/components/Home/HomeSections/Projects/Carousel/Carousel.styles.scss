@@ -1,14 +1,14 @@
-.carrousel:hover {
+.carousel:hover {
   cursor: pointer;
 }
 
-.carrouselTitle {
+.carouselTitle {
   h3 {
     font-size: 24px;
   }
 }
 
-.carrouselPagination {
+.carouselPagination {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,10 +48,11 @@
 }
 
 .properties {
-  display: flex;
+  // display: flex;
   color: var(--gray);
   text-overflow: ellipsis;
   overflow: hidden;
+  width: 100%;
   white-space: nowrap;
   font-weight: 100;
   font-size: 16px;
@@ -59,7 +60,7 @@
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
-  .carrousel {
+  .carousel {
     .pagination {
       padding-left: 2px;
       width: auto;
@@ -74,7 +75,7 @@
 }
 
 @media (min-width: 1240px) {
-  .carrouselTitle {
+  .carouselTitle {
     h3 {
       font-size: 32px;
     }
@@ -87,6 +88,7 @@
 
   .properties {
     font-size: 24px;
+    text-overflow: ellipsis;
   }
 }
 
@@ -98,7 +100,7 @@
     font-size: 28px;
     padding-bottom: 10px;
   }
-  .carrouselTitle h3 {
+  .carouselTitle h3 {
     font-size: 35px;
   }
 }

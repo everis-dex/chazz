@@ -130,15 +130,15 @@ collections:
       - { label: Description, name: description, widget: string }
       - { label: Subtitle, name: subtitle, widget: string }
       - { label: Body, name: body, widget: markdown }
-      - label: In carrousel,
-        name: incarrousel,
+      - label: In carousel,
+        name: incarousel,
         widget: boolean,
-        hint: "Determines whether this project is shown in the homepage carrousel. (Max. 5 projects)"
+        hint: "Determines whether this project is shown in the homepage carousel. (Max. 5 projects)"
       - label: Media,
         name: media,
         widget: object
         fields:
-          - { label: Carrousel, name: carrousel, widget: image }
+          - { label: Carousel, name: carousel, widget: image }
           - { label: Project, name: project, widget: image }
     sortable_fields: ["date"]
 
