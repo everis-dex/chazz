@@ -29,8 +29,8 @@ export const FeaturedProjects = () => {
       </div>
       <div className="more-projects-div">
         <Link to={"/work"} className="more-projects">
-        {projectsData.more} →
-      </Link>
+          {projectsData.more} →
+        </Link>
       </div>
     </div>
   );

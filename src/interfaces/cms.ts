@@ -139,6 +139,7 @@ export interface IThought {
   image: string;
   title: string;
   body: string;
+  category: string;
   duration: string;
   id: number;
 }

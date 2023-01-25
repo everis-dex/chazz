@@ -215,6 +215,10 @@ collections:
     format: json
     fields:
       - { label: Publish Date, name: date, widget: datetime }
+      - label: Category
+        name: category
+        widget: select
+        options: ["Technology", "Health", "Mobility", "Society", "Sustainibility"]
       - { label: Image, name: image, widget: image }
       - { label: Title, name: title, widget: string }
       - { label: Body, name: body, widget: string }
