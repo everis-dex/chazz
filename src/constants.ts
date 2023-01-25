@@ -30,7 +30,7 @@ export const routesInfo: RoutesInfo[] = [
     id: 5,
     name: "Cookie Policy",
     route: "/cookie_policy"
-  },
+  }
 ];
 
 // select here which nav options are available
