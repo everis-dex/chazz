@@ -21,8 +21,6 @@ export const Thought = (thought: IThought) => {
           <span className="duration">{thought.duration} read</span>
         </div>
       </div>
-
-      <div className="thought-arrow"></div>
     </div>
   );
 };

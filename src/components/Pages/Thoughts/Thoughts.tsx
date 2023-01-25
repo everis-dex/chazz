@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { thoughts, thoughtsPage } from "../../../content/index";
 import { IThought } from "../../../interfaces/cms";
 
-import { Footer, Nav } from "../../shared/index";
+import { Footer, MoreLink, Nav } from "../../shared/index";
 import { Thought } from "./Thought/Thought";
 
 import "./Thoughts.styles.scss";
@@ -27,7 +27,12 @@ export const Thoughts = () => {
             </div>
           ))}
         </div>
+        {/* More thoughts */}
+        <div className="thoughts-arrow">
+          <MoreLink text="More thoughts" link="/thoughts" />
+        </div>
       </div>
+
       <Footer />
     </>
   );
