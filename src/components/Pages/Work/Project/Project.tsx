@@ -44,7 +44,7 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
           <span className="title">{data.title} —</span>
           <span className="description">{data.description}</span>
         </div>
-        <span className="properties">{data.subtitle}</span>
+        <p className="properties">{data.subtitle}</p>
       </div>
       {/* Accordion */}
       <Accordion title="" content={bodyParagraphs} ourWork={true} />
