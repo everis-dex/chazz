@@ -64,7 +64,7 @@ export const Thoughts = () => {
           {thoughts
             // Show only the thoughts with selected category
             .filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category)
-            .filter((t, index: number) => filtering && index < 6) // If filtering, show only the first 6 thoughts
+            .filter((t, index: number) => !filtering || index < 6) // If filtering, show only the first 6 thoughts
             .map((thought: IThought, index: number) => (
               <div className="thought" key={index}>
                 <Thought {...thought} />
