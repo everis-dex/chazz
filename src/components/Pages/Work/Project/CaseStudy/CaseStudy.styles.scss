@@ -46,12 +46,14 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 5%;
 }
 .case-container-title h1 {
   font-weight: 500;
   font-size: 40px;
   line-height: 48px;
-  margin: 17px 5%;
   color: var(--black);
 }
 .case-info span {
@@ -68,9 +70,6 @@
 }
 .subtitle-section {
   padding: 10px;
-}
-.case-container-info {
-  margin: 0 5%;
 }
 .fw-image {
   width: 100%;
@@ -169,6 +168,7 @@
   }
   .work-container--content {
     margin: 0 0 10% 0;
+    margin: 0 0% 10% 0%;
     grid-template-columns: 49% 49%;
     grid-gap: 0% 2%;
 
@@ -179,6 +179,39 @@
         font-size: 40px;
       }
     }
+  }
+}
+@media (min-width: 769px) {
+  .case-container {
+    flex-direction: row;
+    padding: 0 5%;
+  }
+  .case-container-title {
+    width: 70%;
+  }
+  .case-container-title h1 {
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 86px;
+  }
+
+  .case-info span {
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .case-info h1 {
+    width: 100%;
+    font-weight: 450;
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .subtitle-section {
+    padding: 10px;
+  }
+  .case-container-info {
+    width: 30%;
+    margin: 0 5%;
   }
 }
 
