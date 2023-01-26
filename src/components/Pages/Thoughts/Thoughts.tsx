@@ -84,11 +84,12 @@ export const Thoughts = () => {
                     <RightArrow
                       stroke={!isHover ? "#191919" : "#fc82a3"}
                       className="icon-size"
-                      style={{ transform: "rotate(180deg)" }}
+                      style={{ transform: "rotate(180deg)", marginLeft: "-2px" }}
                     />
                   )}
-                  &nbsp;
+                  {!filtering && <>&nbsp;&nbsp;</>}
                   {filtering ? "More thoughts" : " Less thoughts"}
+                  {filtering && <>&nbsp;&nbsp;</>}
                   {filtering && <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />}
                 </a>
               }
