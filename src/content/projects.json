@@ -1,5 +1,6 @@
 [
   {
+    "date": "2022-12-16T07:21:31.387Z",
     "media": { "carousel": "/uploads/buff_home_web.jpg", "project": "/uploads/buff_grid_web.jpg" },
     "title": "Buff",
     "description": "A Globetrotter Digital Advisory Strategy.",
@@ -9,6 +10,7 @@
     "id": 1671171660
   },
   {
+    "date": "2022-12-16T11:14:37.387Z",
     "media": { "carousel": "/uploads/doco_home_web.jpg", "project": "/uploads/doco_grid_web.mp4" },
     "title": "dōcō by Renfe",
     "description": "Making end2end Mobility Easier in Any Territory.",
@@ -18,6 +20,7 @@
     "id": 1671185640
   },
   {
+    "date": "2022-12-16T12:58:31.387Z",
     "media": { "carousel": "/uploads/seatmo_home_web.jpg", "project": "/uploads/seatmo_grid_web.jpg" },
     "title": "SEAT MÓ",
     "description": "Full Funnel Optimization for Active Users.",
@@ -27,6 +30,7 @@
     "id": 1671191880
   },
   {
+    "date": "2022-12-16T13:50:31.387Z",
     "media": { "carousel": "/uploads/hogami_home_web.jpg", "project": "/uploads/hogami_grid_web.jpg" },
     "title": "Hogami",
     "description": "Better Habitats With A Home Service Platform.",
@@ -36,6 +40,7 @@
     "id": 1671195000
   },
   {
+    "date": "2022-12-16T14:16:31.387Z",
     "media": { "carousel": "/uploads/wabi_home_web.png", "project": "/uploads/wabi-gif-grid.mp4" },
     "title": "Wabi",
     "description": "Your Car, in a monthly Based Subscription.",
@@ -45,6 +50,7 @@
     "id": 1671196560
   },
   {
+    "date": "2022-12-30T09:17:31.387Z",
     "media": { "carousel": "/uploads/loewe_grid_web.jpg", "project": "/uploads/loewe_grid_web.jpg" },
     "title": "Loewe",
     "description": "Understand e-tailer Evolving Momentum.",
@@ -54,6 +60,7 @@
     "id": 1672388220
   },
   {
+    "date": "2022-12-30T10:17:31.387Z",
     "media": { "carousel": "/uploads/vidacaixa_grid_web.jpg", "project": "/uploads/vidacaixa_grid_web.jpg" },
     "title": "VidaCaixa",
     "description": "Rethink Life Insurance ans Savings CX.",
@@ -63,6 +70,7 @@
     "id": 1672391820
   },
   {
+    "date": "2022-12-30T11:19:29.387Z",
     "media": { "carousel": "/uploads/ingood_grid_web.jpg", "project": "/uploads/ingood_grid_web.jpg" },
     "title": "ingood",
     "description": "Redefine Personal Belongings Digital Insurance.",
