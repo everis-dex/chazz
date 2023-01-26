@@ -4,7 +4,7 @@ import { thoughts, thoughtsPage } from "../../../content/index";
 import { IThought } from "../../../interfaces/cms";
 
 import { AllowCookies } from "../../Home";
-import { Footer, MoreLink, Nav } from "../../shared/index";
+import { Footer, Nav } from "../../shared/index";
 import { Thought } from "./Thought/Thought";
 
 import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.svg";
