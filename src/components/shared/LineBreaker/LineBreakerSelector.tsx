@@ -1,6 +1,6 @@
 import React from "react";
 
-import { desktopLineBreakSymbol, mobileLineBreakSymbol } from "../../../constants";
+import { desktopLineBreakSymbol, mobileLineBreakSymbol, paragraphSymbol } from '../../../constants';
 import { BrokenLines } from "./BrokenLines";
 
 import "./LineBreaker.scss";
@@ -16,13 +16,40 @@ export const LineBreakerSelector = ({ typedLines }: Props) => {
     mobileBrokenLines = typedLines.split(mobileLineBreakSymbol);
   }
 
+  const finalMobileBrokenLines: string[] = [];
+  const finalDesktopBrokenLines: string[] = [];
+
+  mobileBrokenLines.map((line) => {
+    if (line.includes("#")) {
+      const stringToArray = line.split(paragraphSymbol);
+      stringToArray.map(element => {
+        finalMobileBrokenLines.push(element);
+        finalMobileBrokenLines.push("");
+      })
+    } else {
+      finalMobileBrokenLines.push(line);
+    }
+  });
+  desktopBrokenLines.map((line) => {
+    if (line.includes("#")) {
+      const stringToArray = line.split(paragraphSymbol);
+      stringToArray.map(element => {
+        finalDesktopBrokenLines.push(element);
+        finalDesktopBrokenLines.push("");
+      })
+    } else {
+      finalDesktopBrokenLines.push(line);
+    }
+  });
+
+
   return (
     <>
       <div className="mobile-brokenlines">
-        <BrokenLines brokenLines={mobileBrokenLines} lineBreakSymbol={desktopLineBreakSymbol} />
+        <BrokenLines brokenLines={finalMobileBrokenLines} lineBreakSymbol={desktopLineBreakSymbol} />
       </div>
       <div className="desktop-brokenlines">
-        <BrokenLines brokenLines={desktopBrokenLines} lineBreakSymbol={mobileLineBreakSymbol} />
+        <BrokenLines brokenLines={finalDesktopBrokenLines} lineBreakSymbol={mobileLineBreakSymbol} />
       </div>
     </>
   );

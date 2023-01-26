@@ -32,13 +32,26 @@ export const Accordion = ({ title, content, ourWork }: Props) => {
   return (
     <div className={!ourWork ? "separator" : ""}>
       <div className={ourWork ? "mobile-accordion" : ""}>
-        <div className={openAccordion ? "accordion-open" : "accordion-close"} onClick={e => handleDropdown(e.target)}>
-          <span className={openAccordion ? "text-fadeIn" : "text-fadeOut"} onClick={e => handleDropdown(e.target)}>
-            {accordionTitle[0]}
-          </span>
-          <span className={!openAccordion ? "text-fadeIn" : "text-fadeOut"} onClick={e => handleDropdown(e.target)}>
-            {accordionTitle[1]}
-          </span>
+        <div className={(openAccordion && !ourWork) ? "accordion-open" : "accordion-close"} onClick={e => handleDropdown(e.target)}>
+          {accordionTitle[0] != accordionTitle[1] && (
+            <>
+              <span className={openAccordion ? "text-fadeIn" : "text-fadeOut"} onClick={e => handleDropdown(e.target)}>
+                {accordionTitle[0]}
+              </span>
+              <span className={!openAccordion ? "text-fadeIn" : "text-fadeOut"} onClick={e => handleDropdown(e.target)}>
+                {accordionTitle[1]}
+              </span>
+            </>
+          )
+          }
+          {accordionTitle[0] === accordionTitle[1] && (
+            <>
+              <span className="no-fading-text" onClick={e => handleDropdown(e.target)}>
+                {accordionTitle[0]}
+              </span>
+            </>
+          )
+          }
           <div className="accordion-arrow" style={{ zIndex: "-10" }}>
             <img className={openAccordion ? "icon-fadeIn" : "icon-fadeOut"} src={moreInfoIcon} alt="moreInformation" />
             <img className={!openAccordion ? "icon-fadeIn" : "icon-fadeOut"} src={lessInfoIcon} alt="lessInformation" />
@@ -46,11 +59,11 @@ export const Accordion = ({ title, content, ourWork }: Props) => {
         </div>
         <div
           className={ourWork ? "panel-work" : "panel-services"}
-          style={{ paddingTop: openAccordion ? "20px" : "0px" }}
+        // style={{ paddingTop: openAccordion ? "20px" : "0px" }}
         >
           <p>{content}</p>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
