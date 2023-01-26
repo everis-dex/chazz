@@ -6,6 +6,7 @@ import { CaseInfoTitle } from "./CaseInfo/CaseInfoTitle";
 import { LineBreakerSelector } from "../../../../shared/LineBreaker/LineBreakerSelector";
 
 import "./CaseStudy.styles.scss";
+import { FeaturedProjects } from "../../../../shared";
 
 type Props = { caseStudyId: number; handleBack: () => void };
 
@@ -130,6 +131,7 @@ export const CaseStudy = ({ caseStudyId, handleBack }: Props) => {
         </div>
       </div>
       <button onClick={handleBack}>BACK</button>
+      <FeaturedProjects />
     </>
   );
 };

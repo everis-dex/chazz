@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { /*projects,*/ services } from "../../../content/index";
-import { /*IProject,*/ IServicesProjects } from "../../../interfaces/cms";
+import { projects, services } from "../../../content/index";
+import { IProject, IServicesProjects } from "../../../interfaces/cms";
 
 import "./FeaturedProjects.styles.scss";
 
@@ -13,7 +13,7 @@ export const FeaturedProjects = () => {
     <div className="featured-projects">
       {projectsData.title && <h1 className="header">{projectsData.title}</h1>}
       <div className="project-list">
-        {/* {projects.map(
+        {projects.map(
           (project: IProject, index: number) =>
             index >= 4 && (
               <div className="project" key={index}>
@@ -25,7 +25,7 @@ export const FeaturedProjects = () => {
                 )}
               </div>
             )
-        )} */}
+        )}
       </div>
       <Link to={"/work"} className="more-projects">
         {projectsData.more} →
