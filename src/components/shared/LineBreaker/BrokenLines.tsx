@@ -13,7 +13,7 @@ export const BrokenLines = ({ brokenLines, lineBreakSymbol }: Props) => {
         <>
           {brokenLines.map((titleLine: string, index: number) => (
             <React.Fragment key={index}>
-              {titleLine.replace(lineBreakSymbol, "")}
+              {titleLine.replace(new RegExp(`\\${lineBreakSymbol}`, "g"), "")}
               <br />
             </React.Fragment>
           ))}

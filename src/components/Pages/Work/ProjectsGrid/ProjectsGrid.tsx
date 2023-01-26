@@ -66,7 +66,9 @@ export const ProjectsGrid = ({ setCaseStudyId }: Props) => {
         </div>
         <div className="work-container--content">
           <div className="work-detail">
-            <LineBreakerSelector typedLines={work.subtitle} />
+            <h1>
+              <LineBreakerSelector typedLines={work.subtitle} />
+            </h1>
           </div>
 
           {projects &&

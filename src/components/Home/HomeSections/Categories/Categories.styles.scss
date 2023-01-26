@@ -18,12 +18,12 @@
 
   .categories-title {
     margin-top: 60px;
-    h2 {
+    h1 {
       font-weight: 500;
       font-size: 32px;
     }
 
-    h1 {
+    h2 {
       font-size: 32px;
       font-weight: 300;
       padding-right: 24px;
@@ -61,7 +61,7 @@
 
 // MEDIA QUERIES
 @media (width: 320px) {
-  .categories-title h2 {
+  .categories-title h1 {
     width: 300px;
   }
 }
@@ -70,12 +70,12 @@
   .categories {
     flex-direction: row;
     .categories-title {
-      h2 {
+      h1 {
         width: 65%;
         font-size: 40px;
       }
 
-      h1 {
+      h2 {
         font-size: 40px;
       }
     }
@@ -92,10 +92,10 @@
 
 @media (min-width: 1024px) {
   .categories-title {
-    h2 strong {
+    h1 strong {
       width: 90%;
     }
-    h2 {
+    h1 {
       width: 82%;
     }
   }
@@ -105,13 +105,13 @@
   .categories {
     grid-template-columns: 50% 60%;
     .categories-title {
-      h1 {
+      h2 {
         font-size: 34px;
       }
-      h2 {
+      h1 {
         width: 88%;
       }
-      .h2 {
+      .h1 {
         font-size: 40px !important;
       }
     }
@@ -134,7 +134,7 @@
 
 @media (min-width: 1440px) {
   .categories-title {
-    h2 {
+    h1 {
       width: 100%;
     }
   }
@@ -142,11 +142,11 @@
 
 @media (min-width: 1920px) {
   .categories-title {
-    h1 {
+    h2 {
       width: 69%;
       font-size: 45px;
     }
-    h2 {
+    h1 {
       font-size: 45px;
       margin-top: 8px;
     }

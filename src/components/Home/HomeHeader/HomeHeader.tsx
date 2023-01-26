@@ -37,7 +37,9 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           {navVisible && <Nav isPlaying={videoPlaying} darkMode AlertNavParent={AlertNavParent} />}
         </span>
         <div className={videoPlaying ? "chazz-title-out" : "chazz-title"}>
-          <LineBreakerSelector typedLines={headerData.title} />
+          <h1>
+            <LineBreakerSelector typedLines={headerData.title} />
+          </h1>
           <h4>{headerData.subtitle}</h4>
         </div>
       </div>

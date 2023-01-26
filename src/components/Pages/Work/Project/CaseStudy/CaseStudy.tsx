@@ -31,7 +31,7 @@ export const CaseStudy = ({ caseStudyId, handleBack }: Props) => {
         <img src={project.sections?.firstFWImagePath} alt="Portatil"></img>
       </div>
       <div className="fw-claim">
-        <LineBreakerSelector typedLines="Developing the* complete Mobility As A* Service’s project with* Renfe, the Spanish* leader in rail transport."></LineBreakerSelector>
+        <LineBreakerSelector typedLines={project.sections?.firstFWClaim} />
       </div>
       <div className="work-container">
         <div className="fw-image">
