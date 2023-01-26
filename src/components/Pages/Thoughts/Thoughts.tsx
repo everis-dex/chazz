@@ -4,7 +4,7 @@ import { thoughts, thoughtsPage } from "../../../content/index";
 import { IThought } from "../../../interfaces/cms";
 
 import { AllowCookies } from "../../Home";
-import { Footer, MoreLink, Nav } from "../../shared/index";
+import { Footer, Nav } from "../../shared/index";
 import { Thought } from "./Thought/Thought";
 
 import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.svg";
@@ -90,10 +90,6 @@ export const Thoughts = () => {
               {filtering && <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />}
             </a>
           </div>
-        </div>
-        {/* More thoughts */}
-        <div className="thoughts-arrow">
-          <MoreLink text={filtering ? "More thoughts" : " Less thoughts"} link="#/" />
         </div>
       </div>
 
