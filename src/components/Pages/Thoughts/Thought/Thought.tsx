@@ -1,10 +1,15 @@
 import React from "react";
 
 import { IThought } from "../../../../interfaces/cms";
+import { Months } from "../../../../constants";
 
 import "./Thought.styles.scss";
 
 export const Thought = (thought: IThought) => {
+  const formattedDate = new Date(thought.date);
+  const date: string = Months[formattedDate.getMonth()] + " " + formattedDate.getDay();
+  console.log("🚀 ~ file: Thought.tsx:11 ~ Thought ~ formattedDate.getMonth()", formattedDate.getMonth());
+
   return (
     <div className="thought-container">
       <img src={thought.image} alt="" />
@@ -13,7 +18,7 @@ export const Thought = (thought: IThought) => {
         <p className="thought-body">{thought.body}</p>
 
         <div className="thought-details">
-          <span className="date">{thought.id}</span>
+          <span className="date">{date}</span>
           <span className="dot">·</span>
           <span className="duration">{thought.duration} read</span>
         </div>
