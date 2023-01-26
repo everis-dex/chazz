@@ -91,10 +91,6 @@ export const Thoughts = () => {
             </a>
           </div>
         </div>
-        {/* More thoughts */}
-        <div className="thoughts-arrow">
-          <MoreLink text={filtering ? "More thoughts" : " Less thoughts"} link="#/" />
-        </div>
       </div>
 
       <Footer />
