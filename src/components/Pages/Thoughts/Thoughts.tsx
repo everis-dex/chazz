@@ -71,8 +71,18 @@ export const Thoughts = () => {
               </div>
             ))}
           <div className="more-thoughts--div">
-            <span style={{ display: thoughts.filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category).length > 6 ? "block" : "none" }}>
-              {thoughts.filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category).length > 0 &&
+            <span
+              style={{
+                display:
+                  thoughts.filter(
+                    (thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category
+                  ).length > 6
+                    ? "block"
+                    : "none"
+              }}
+            >
+              {thoughts.filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category)
+                .length > 0 && (
                 <a
                   href="#/"
                   className="more-thoughts"
@@ -91,11 +101,18 @@ export const Thoughts = () => {
                   {filtering ? "More thoughts" : " Less thoughts"}
                   {filtering && <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />}
                 </a>
-              }
+              )}
             </span>
-            {thoughts.filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category).length === 0 &&
-              <h2>No <span style={{ color: "var(--pinkHover)" }}>{selectedFilter != "All" ? selectedFilter.toLocaleLowerCase() : ""}</span> thoughts yet!</h2>
-            }
+            {thoughts.filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category)
+              .length === 0 && (
+              <h2>
+                No
+                <span style={{ color: "var(--pinkHover)" }}>
+                  {selectedFilter !== "All" ? selectedFilter.toLocaleLowerCase() : " "}
+                </span>
+                thoughts yet!
+              </h2>
+            )}
           </div>
         </div>
       </div>
