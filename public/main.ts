@@ -77,7 +77,6 @@ const getFilesContent = (files: string[], dirPath: string, folder: string) => {
           const date = new Date(datestring);
           timestamp = date.getTime() / 1000;
           contentJSON.id = timestamp;
-          delete contentJSON.date;
         } else if (contentJSON.sort) {
           contentJSON.id = parseInt(contentJSON.sort);
           delete contentJSON.sort;

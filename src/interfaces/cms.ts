@@ -136,6 +136,7 @@ export interface ISlide {
 }
 
 export interface IThought {
+  date: string;
   image: string;
   title: string;
   body: string;
