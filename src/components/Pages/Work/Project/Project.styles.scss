@@ -88,6 +88,9 @@
 @media (min-width: 1280px) {
   .project-container {
     width: auto;
+    position: relative;
+    top: -36px;
+    
     &.full-width {
       grid-column: 1/3;
 
