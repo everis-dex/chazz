@@ -71,26 +71,28 @@ export const Thoughts = () => {
               </div>
             ))}
           <div className="more-thoughts--div">
-            {thoughts.filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category).length > 0 &&
-              <a
-                href="#/"
-                className="more-thoughts"
-                onMouseEnter={() => setIsHover(true)}
-                onMouseLeave={() => setIsHover(false)}
-                onClick={() => setFiltering(!filtering)}
-              >
-                {!filtering && (
-                  <RightArrow
-                    stroke={!isHover ? "#191919" : "#fc82a3"}
-                    className="icon-size"
-                    style={{ transform: "rotate(180deg)" }}
-                  />
-                )}
-                &nbsp;
-                {filtering ? "More thoughts" : " Less thoughts"}
-                {filtering && <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />}
-              </a>
-            }
+            <span style={{ display: thoughts.filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category).length > 6 ? "block" : "none" }}>
+              {thoughts.filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category).length > 0 &&
+                <a
+                  href="#/"
+                  className="more-thoughts"
+                  onMouseEnter={() => setIsHover(true)}
+                  onMouseLeave={() => setIsHover(false)}
+                  onClick={() => setFiltering(!filtering)}
+                >
+                  {!filtering && (
+                    <RightArrow
+                      stroke={!isHover ? "#191919" : "#fc82a3"}
+                      className="icon-size"
+                      style={{ transform: "rotate(180deg)" }}
+                    />
+                  )}
+                  &nbsp;
+                  {filtering ? "More thoughts" : " Less thoughts"}
+                  {filtering && <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />}
+                </a>
+              }
+            </span>
             {thoughts.filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category).length === 0 &&
               <h2>No <span style={{ color: "var(--pinkHover)" }}>{selectedFilter != "All" ? selectedFilter.toLocaleLowerCase() : ""}</span> thoughts yet!</h2>
             }
