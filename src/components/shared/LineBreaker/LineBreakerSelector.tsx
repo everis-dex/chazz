@@ -1,6 +1,6 @@
 import React from "react";
 
-import { desktopLineBreakSymbol, mobileLineBreakSymbol, paragraphSymbol } from '../../../constants';
+import { desktopLineBreakSymbol, mobileLineBreakSymbol, paragraphSymbol } from "../../../constants";
 import { BrokenLines } from "./BrokenLines";
 
 import "./LineBreaker.scss";
@@ -19,29 +19,28 @@ export const LineBreakerSelector = ({ typedLines }: Props) => {
   const finalMobileBrokenLines: string[] = [];
   const finalDesktopBrokenLines: string[] = [];
 
-  mobileBrokenLines.map((line) => {
+  mobileBrokenLines.forEach(line => {
     if (line.includes("#")) {
       const stringToArray = line.split(paragraphSymbol);
-      stringToArray.map(element => {
+      stringToArray.forEach(element => {
         finalMobileBrokenLines.push(element);
         finalMobileBrokenLines.push("");
-      })
+      });
     } else {
       finalMobileBrokenLines.push(line);
     }
   });
-  desktopBrokenLines.map((line) => {
+  desktopBrokenLines.forEach(line => {
     if (line.includes("#")) {
       const stringToArray = line.split(paragraphSymbol);
-      stringToArray.map(element => {
+      stringToArray.forEach(element => {
         finalDesktopBrokenLines.push(element);
         finalDesktopBrokenLines.push("");
-      })
+      });
     } else {
       finalDesktopBrokenLines.push(line);
     }
   });
-
 
   return (
     <>

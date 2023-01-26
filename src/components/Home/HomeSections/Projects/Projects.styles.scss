@@ -5,29 +5,6 @@
 .projects {
   margin: 0 5%;
 
-  .more-projects--div {
-    padding: 40px 0 75px 0;
-  }
-
-  .more-projects {
-    text-decoration: none;
-    display: inline;
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--black);
-
-    &:hover {
-      color: var(--pinkHover);
-    }
-    .img {
-      width: 26px;
-    }
-  }
-
-  .more-projects {
-    
-  }
-
   .icon-size {
     width: 26px;
     display: inline-flex;
@@ -40,20 +17,6 @@
   .icon-size {
     width: 30px;
   }
-}
-
-@media (min-width: 1280px) {
-  .more-projects--div {
-    padding: 100px 0 !important;
-  }
-  .more-projects {
-    color: var(--black);
-    font-size: 24px !important;
-    &:hover {
-      color: var(--pinkHover);
-    }
-  }
-
 }
 
 @media (min-width: 1920px) {

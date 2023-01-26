@@ -17,7 +17,6 @@ export const AllowCookies = () => {
   return cookiesAllowed && !displayCookies ? (
     <></>
   ) : (
-
     <div className="chazz-cookies">
       <p>
         <strong>We use cookies to improve your browsing experience. </strong>
