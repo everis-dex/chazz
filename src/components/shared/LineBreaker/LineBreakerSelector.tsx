@@ -1,6 +1,6 @@
 import React from "react";
 
-import { desktopLineBreakSymbol, mobileLineBreakSymbol, paragraphSymbol } from "../../../constants";
+import { desktopLineBreakSymbol, mobileLineBreakSymbol, paragraphSymbol } from '../../../constants';
 import { BrokenLines } from "./BrokenLines";
 
 import "./LineBreaker.scss";
@@ -11,29 +11,45 @@ export const LineBreakerSelector = ({ typedLines }: Props) => {
   var desktopBrokenLines: string[] = [];
   var mobileBrokenLines: string[] = [];
 
-  const jumpParagraphs = (brokenLines: string[]) => {
-    brokenLines.map((line, index) => {
-      if (line.includes(paragraphSymbol)) {
-        const textBefore: string = line.split(paragraphSymbol)[0];
-        const textAfter: string = line.split(paragraphSymbol)[1];
-        brokenLines.splice(index, 2, textBefore, "", textAfter);
-      }
-    });
-    return brokenLines;
-  };
-
   if (typedLines) {
-    desktopBrokenLines = jumpParagraphs(typedLines.split(desktopLineBreakSymbol));
-    mobileBrokenLines = jumpParagraphs(typedLines.split(mobileLineBreakSymbol));
+    desktopBrokenLines = typedLines.split(desktopLineBreakSymbol);
+    mobileBrokenLines = typedLines.split(mobileLineBreakSymbol);
   }
+
+  const finalMobileBrokenLines: string[] = [];
+  const finalDesktopBrokenLines: string[] = [];
+
+  mobileBrokenLines.map((line) => {
+    if (line.includes("#")) {
+      const stringToArray = line.split(paragraphSymbol);
+      stringToArray.map(element => {
+        finalMobileBrokenLines.push(element);
+        finalMobileBrokenLines.push("");
+      })
+    } else {
+      finalMobileBrokenLines.push(line);
+    }
+  });
+  desktopBrokenLines.map((line) => {
+    if (line.includes("#")) {
+      const stringToArray = line.split(paragraphSymbol);
+      stringToArray.map(element => {
+        finalDesktopBrokenLines.push(element);
+        finalDesktopBrokenLines.push("");
+      })
+    } else {
+      finalDesktopBrokenLines.push(line);
+    }
+  });
+
 
   return (
     <>
       <div className="mobile-brokenlines">
-        <BrokenLines brokenLines={mobileBrokenLines} lineBreakSymbol={desktopLineBreakSymbol} />
+        <BrokenLines brokenLines={finalMobileBrokenLines} lineBreakSymbol={desktopLineBreakSymbol} />
       </div>
       <div className="desktop-brokenlines">
-        <BrokenLines brokenLines={desktopBrokenLines} lineBreakSymbol={mobileLineBreakSymbol} />
+        <BrokenLines brokenLines={finalDesktopBrokenLines} lineBreakSymbol={mobileLineBreakSymbol} />
       </div>
     </>
   );
