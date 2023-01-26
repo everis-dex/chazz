@@ -47,9 +47,10 @@ export const ProjectsGrid = (workData: IWork) => {
         break;
 
       case 1: // right column
-        if (configuration === formats.left) format = imageConfig.half;
+        // if (configuration === formats.left) format = imageConfig.half; ::::::::::::::: Al haber comentado esta linea evito que la primera foto sea de menor altura.
         break;
     }
+    console.log({ columnPosition });
     return [format, columnFullWidth];
   }
 
