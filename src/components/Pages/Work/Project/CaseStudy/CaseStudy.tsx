@@ -90,8 +90,10 @@ export const CaseStudy = ({ caseStudyId, handleBack }: Props) => {
             text={project.sections?.eigthFWImageWithCaption?.caption}
           />
         )}
+        <button className="back-button" onClick={handleBack}>
+          ← Back
+        </button>
       </div>
-      <button onClick={handleBack}> ← Back</button>
       <div className="separation2" />
 
       <FeaturedProjects />
