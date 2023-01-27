@@ -110,7 +110,7 @@ export const Thoughts = () => {
               <h2>
                 No
                 <span style={{ color: "var(--pinkHover)" }}>
-                  {selectedFilter !== "All" ? selectedFilter.toLocaleLowerCase() : " "}
+                  {selectedFilter !== "All" ? " " + selectedFilter.toLocaleLowerCase() + " " : " "}
                 </span>
                 thoughts yet!
               </h2>
