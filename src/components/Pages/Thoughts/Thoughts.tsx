@@ -48,6 +48,24 @@ export const Thoughts = () => {
     return selectedFilter === "All" || selectedFilter === category;
   }
 
+  const LessThoughts = () => (
+    <>
+      <RightArrow
+        stroke={!isHover ? "#191919" : "#fc82a3"}
+        className="icon-size"
+        style={{ transform: "rotate(180deg)", marginLeft: "-2px" }}
+      />
+      &nbsp;&nbsp; Less thoughts
+    </>
+  );
+
+  const MoreThoughts = () => (
+    <>
+      More thoughts &nbsp;&nbsp;
+      <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />
+    </>
+  );
+
   return (
     <>
       <Nav />
@@ -78,6 +96,7 @@ export const Thoughts = () => {
                 <Thought {...thought} />
               </div>
             ))}
+          {/* More | Less thoughts extender */}
           <div className="more-thoughts--div">
             <span style={{ display: filterByLength(6) ? "block" : "none" }}>
               {filterByLength(0) && (
@@ -88,28 +107,14 @@ export const Thoughts = () => {
                   onMouseLeave={() => setIsHover(false)}
                   onClick={() => setFiltering(!filtering)}
                 >
-                  {!filtering && (
-                    <RightArrow
-                      stroke={!isHover ? "#191919" : "#fc82a3"}
-                      className="icon-size"
-                      style={{ transform: "rotate(180deg)", marginLeft: "-2px" }}
-                    />
-                  )}
-                  {!filtering && <>&nbsp;&nbsp;</>}
-                  {filtering ? "More thoughts" : " Less thoughts"}
-                  {filtering && (
-                    <>
-                      &nbsp;&nbsp;
-                      <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />
-                    </>
-                  )}
+                  {filtering ? <MoreThoughts /> : <LessThoughts />}
                 </a>
               )}
             </span>
             {thoughts.filter((t: IThought) => filterByCategory(t.category)).length === 0 && (
               <h2>
                 No
-                <span style={{ color: "var(--pinkHover)" }}>
+                <span className="selected-filter">
                   {selectedFilter !== "All" ? ` ${selectedFilter.toLocaleLowerCase()} ` : " "}
                 </span>
                 thoughts yet!
