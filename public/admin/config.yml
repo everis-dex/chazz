@@ -116,7 +116,12 @@ collections:
       - { label: Description, name: description, widget: string }
       - { label: Subtitle, name: subtitle, widget: string }
       - { label: Body, name: body, widget: markdown }
-      - { label: "In carrousel", name: incarrousel, widget: boolean, hint: Determines whether this project is shown in the homepage carrousel. (Max. 5 projects)"},
+      - {
+          label: "In carrousel",
+          name: incarrousel,
+          widget: boolean,
+          hint: Determines whether this project is shown in the homepage carrousel. (Max. 5 projects)"
+        }
       - label: Media
         name: media
         widget: object
@@ -133,9 +138,9 @@ collections:
         name: sections
         widget: object
         fields:
-          - { label: "First Full-Width Image", name: firstFWImagePath, widget: image, required: false  }
+          - { label: "First Full-Width Image", name: firstFWImagePath, widget: image, required: false }
           - { label: "First Full-Width Claim", name: firstFWClaim, widget: string, required: false }
-          - { label: "Second Full-Width Image", name: secondFWImagePath, widget: image, required: false  }
+          - { label: "Second Full-Width Image", name: secondFWImagePath, widget: image, required: false }
           - label: "First Two Columns Section"
             name: firstTCSection
             widget: object
@@ -148,7 +153,7 @@ collections:
                 fields:
                   - { label: "Paragraph Title", name: paragraphTitle, widget: string }
                   - { label: "Paragraph", name: paragraph, widget: string }
-          - { label: "Third Full-Width Image", name: thirdFWImage, widget: image, required: false  }
+          - { label: "Third Full-Width Image", name: thirdFWImage, widget: image, required: false }
           - label: "Right Column Only Info"
             name: rightColumnOnlyInfo
             widget: object
@@ -171,7 +176,7 @@ collections:
             fields:
               - { label: image Url, name: imagePath, widget: image }
               - { label: Caption, name: caption, widget: string }
-          - { label: "Sixth Full-Width Image", name: sixthFWImagePath, widget: image, required: false  }
+          - { label: "Sixth Full-Width Image", name: sixthFWImagePath, widget: image, required: false }
           - label: "Second Two Columns Section"
             name: secondTCSection
             widget: object
@@ -197,6 +202,7 @@ collections:
             fields:
               - { label: "Image", name: imagePath, widget: image }
               - { label: Caption, name: Caption, widget: string }
+
   - name: partner
     label: Partner
     folder: content/partners

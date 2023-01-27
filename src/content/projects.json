@@ -12,7 +12,7 @@
     },
     "sections": {
       "firstFWImagePath": "/uploads/buff-portatil.jpg",
-      "firstFWClaim": "Developing the complete Mobility As A Service’s project with+ Renfe, the Spanish leader in rail transport.",
+      "firstFWClaim": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
       "secondFWImagePath": "/uploads/buff-roja.png",
       "firstTCSection": {
         "leftColumnIntro": "Mobility is a saturated and* complex sector, and society needs a friendly proposal to* move easily under the* paradigm of sustainable travel.* Now, more than ever, move* easily under the paradigm of* sustainable travel.  Now, more* than ever.",
@@ -28,7 +28,7 @@
       },
       "fourthFWImageWithOverlappedText": {
         "imagePath": "/uploads/buff-calle.jpg",
-        "overlappedText": "Cualquier lugar está* menos lejos."
+        "overlappedText": "Cualquier lugar está*+ menos lejos."
       },
       "secondFWClaim": "dōcō is a lifestyle in itself for everyone who wants to feel comfortable and free.Without complications.",
       "fifthFWImageWithCaption": {

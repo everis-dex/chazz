@@ -3,12 +3,11 @@ import { projects } from "../../../../../content/index";
 import { IProject } from "../../../../../interfaces/cms";
 import { CaseInfo } from "./CaseInfo/CaseInfoServices";
 import { CaseInfoTitle } from "./CaseInfo/CaseInfoTitle";
-
-import "./CaseStudy.styles.scss";
 import { FeaturedProjects } from "../../../../shared";
 import { CaseClaim } from "./CaseInfo/CaseClaim";
 import { CaseImg, CaseImgWithOverlappedText } from "./CaseInfo/CaseImg";
 import { CaseSectionColumn } from "./CaseInfo/CaseSectionColumn";
+import "./CaseStudy.styles.scss";
 
 type Props = { caseStudyId: number; handleBack: () => void };
 

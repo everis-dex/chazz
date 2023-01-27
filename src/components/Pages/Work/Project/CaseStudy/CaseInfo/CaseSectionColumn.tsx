@@ -24,7 +24,7 @@ export const CaseSectionColumn = ({ title, text, empty = false, position, image 
         ) : (
           <div className={columnPosition}>
             {title && <h3>{title}</h3>}
-            <LineBreakerSelector typedLines={text}></LineBreakerSelector>
+            <LineBreakerSelector typedLines={text} />
           </div>
         )
       ) : (
