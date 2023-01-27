@@ -93,6 +93,7 @@ export const CaseStudy = ({ caseStudyId, handleBack }: Props) => {
         )}
       </div>
       <button onClick={handleBack}>BACK</button>
+      <div className="separation2" />
       <FeaturedProjects />
     </>
   );
