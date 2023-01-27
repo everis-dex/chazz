@@ -78,6 +78,7 @@
   width: 100%;
 }
 .fw-image span {
+  padding: 0 5%;
   font-weight: 700;
   font-size: 24px;
   line-height: 26px;
@@ -85,13 +86,13 @@
 }
 .fw-image-text {
   width: 100%;
+  position: relative;
 }
 .fw-image-text img {
   z-index: 0;
   width: 100%;
 }
 .fw-image-text span {
-  padding-left: 17px;
   margin-top: 152px;
   z-index: 1;
   font-weight: 700;
@@ -100,8 +101,8 @@
   color: var(--white);
 }
 .img-text-container {
+  width: 100%;
   position: relative;
-  margin-left: 15px;
   margin-top: -94px;
 }
 .fw-claim {
@@ -168,7 +169,6 @@
   }
   .work-container--content {
     margin: 0 0 10% 0;
-    margin: 0 0% 10% 0%;
     grid-template-columns: 49% 49%;
     grid-gap: 0% 2%;
 
@@ -212,6 +212,57 @@
   .case-container-info {
     width: 30%;
     margin: 0 5%;
+  }
+  .fw-claim {
+    font-weight: 450;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  .section-flex-container {
+    flex-direction: row;
+    padding: 5% 0;
+  }
+  .section-left-column {
+    width: 50%;
+    padding-right: 5%;
+    font-weight: 450;
+    font-size: 32px;
+    line-height: 44px;
+  }
+  .section-rigth-column {
+    width: 50%;
+    padding-left: 5%;
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .section-rigth-column h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .section-left-column-empty {
+    width: 50%;
+  }
+  .fw-image-text span {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 60px;
+  }
+  .img-text-container {
+    margin-top: -223px;
+  }
+  .image-footer-text {
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .fw-claim-final {
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 22px;
   }
 }
 
