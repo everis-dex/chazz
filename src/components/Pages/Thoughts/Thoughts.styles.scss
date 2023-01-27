@@ -23,6 +23,10 @@
 .thoughts {
   .more-thoughts--div {
     padding: 40px 0 75px 0;
+
+    .selected-filter {
+      color: var(--pinkHover);
+    }
   }
 
   .more-thoughts {
