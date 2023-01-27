@@ -87,34 +87,31 @@
   width: 100%;
 }
 .fw-image span {
-  padding: 0 5%;
   font-weight: 700;
   font-size: 24px;
   line-height: 26px;
   color: var(--white);
 }
+
 .fw-image-text {
   width: 100%;
-  position: relative;
 }
 .fw-image-text img {
-  z-index: 0;
   width: 100%;
-}
-.fw-image-text span {
-  margin-top: 152px;
-  z-index: 1;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 26px;
-  color: var(--white);
 }
 .img-text-container {
   width: 100%;
   position: relative;
-  margin-top: -94px;
+  height: auto;
+  padding: 0 5%;
+  color: var(--white);
+  margin: -88px 0 44px 0;
 }
-
+.fw-image-text span {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 26px;
+}
 //CSS -> SECTION FLEX CONTAINER:
 .section-flex-container {
   display: flex;
