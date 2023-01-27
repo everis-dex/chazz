@@ -123,7 +123,6 @@ export const Thoughts = () => {
           </div>
         </div>
       </div>
-
       <Footer />
     </>
   );
