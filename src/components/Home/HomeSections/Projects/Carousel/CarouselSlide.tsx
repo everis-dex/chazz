@@ -8,7 +8,7 @@ interface MediaStyle {
   width: string;
   height: string;
   objectFit: string;
-  cursor: string;
+  // cursor: string;
 }
 
 export const CarouselSlide = (props: IProject) => {
@@ -19,7 +19,7 @@ export const CarouselSlide = (props: IProject) => {
     const pointerURL = window.location.origin + "/uploads/drag-pointer.svg";
     const commonProps = {
       objectFit: "cover",
-      cursor: `url(${pointerURL}), auto`
+      // cursor: `url(${pointerURL}), auto`
     };
 
     function resizeSlides(): void {
