@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import "../VideoHeader/VideoHeader.style.scss";
+import "./VideoHeader.style.scss";
 
 type Props = {
   isPlaying: boolean;
@@ -12,6 +12,7 @@ type Props = {
 export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVisible, isBurgerMenuOpen }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [controlText, setControlText] = useState<string>("Play");
+  const [frameNumber, setFrameNumber] = useState<number>(0);
 
   useEffect(() => {
     if (!isPlaying && !isNavVisible) {
@@ -26,6 +27,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
       videoRef.current.pause();
       setIsNavVisible(!isNavVisible);
       setControlText("Play");
+      setFrameNumber(videoRef.current.currentTime);
     }
     if (videoRef.current && !isPlaying) {
       videoRef.current.play();
@@ -45,6 +47,11 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
   };
 
   useEffect(() => {
+
+    let video = document.getElementById('my-video');
+    console.log({ video });
+
+
     const handleMouseMove = (event: any) => {
       if (controlRef.current) {
         if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
@@ -75,6 +82,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
   }, []);
   const controlRef = useRef<HTMLDivElement>(null);
 
+
   return (
     <>
       {!isBurgerMenuOpen && (
@@ -100,6 +108,7 @@ export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVis
           </div>
         </>
       )}
+
       <video
         className={isPlaying ? "video-header-color" : "video-header"}
         ref={videoRef}

@@ -7,9 +7,13 @@ import { IHomeHeader } from "../../../interfaces/cms";
 import { LineBreakerSelector } from "../../shared/index";
 
 import "./HomeHeader.styles.scss";
-import { VideoHeader } from "../VideoHeader/VideoHeader";
+import { VideoHeader } from "./VideoHeader/VideoHeader";
+
+import { Pixelator } from "./VideoHeader/Pixelator/Pixelator"
 
 import { routesInfo } from "../../../constants";
+
+const tileSize: number = 100;
 
 export const HomeHeader = (headerData: IHomeHeader) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -44,7 +48,11 @@ export const HomeHeader = (headerData: IHomeHeader) => {
             <h4>{headerData.subtitle}</h4>
           </div>
         </div>
+
+        {!isPlaying && <Pixelator tileSize={tileSize} />}
+
         {!isPlaying && <img src="uploads/first_frame.jpg" alt="" className="grayscale" />}
+
         <VideoHeader
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
