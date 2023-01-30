@@ -103,7 +103,9 @@
 
 @media (min-width: 1280px) {
   .categories {
-    grid-template-columns: 50% 60%;
+    grid-template-columns: 50% 51%;
+    gap: 6%;
+
     .categories-title {
       h1 {
         font-size: 34px;
@@ -126,7 +128,8 @@
       }
 
       p {
-        font-size: 24px;
+        font-size: 20px;
+        line-height: 1.4;
       }
     }
   }
