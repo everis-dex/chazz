@@ -36,7 +36,8 @@
   width: 80%;
   padding-left: 5%;
   position: absolute;
-  top: 30%;
+  // top: 30%;
+  bottom: 30%;
   font-size: 23px;
   line-height: 1.2;
   transition: opacity 1s ease-in-out;
@@ -93,6 +94,12 @@
 
 // MEDIA QUERIES
 
+@media (width: 320px) {
+  .chazz-title {
+    width: 100%;
+  }
+}
+
 @media (min-width: 768px) {
   .chazz-header {
     background-position: 30% -100px;
@@ -125,13 +132,9 @@
   .chazz-title,
   .chazz-title-out {
     width: 60%;
-    bottom: 360px;
-    top: auto;
+    bottom: 45%;
+    // top: auto;
   }
-
-  // .chazz-title {
-  //   bottom: 170px;
-  // }
 }
 
 @media (min-width: 1280px) {
@@ -197,11 +200,6 @@
     font-size: 33px;
     margin-top: -33px;
   }
-
-  // .chazz-title {
-  //   bottom: 220px;
-  // }
-
   .chazz-title,
   .chazz-title-out {
     bottom: 220px;

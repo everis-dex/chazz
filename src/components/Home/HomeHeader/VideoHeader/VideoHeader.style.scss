@@ -28,7 +28,8 @@
 .player-video-mobile-switcher {
   display: inline-flex !important;
   position: absolute;
-  top: 600px;
+  // top: 600px;
+  bottom: 25%;
   left: 5%;
   width: 50%;
   cursor: pointer;
@@ -106,6 +107,10 @@
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
+  .player-video-mobile-switcher {
+    bottom: 15%;
+  }
+
   .video-header {
     left: 0;
     width: 100vw;
