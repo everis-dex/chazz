@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { IProject } from "../../../../interfaces/cms";
-import { Media } from "../../../shared/index";
 import { Accordion } from "../../../shared/Accordion/Accordion";
+import { Media } from "../../../shared/index";
 
 import "./Project.styles.scss";
 
 type Props = { data: IProject; format: string; columns?: string; full?: boolean };
 
 export const ProjectCard = ({ data, format, columns }: Props) => {
-  // let [height] = useState<string>("auto");
   const image = data.media.project;
 
   const bodyParagraphs = data.body;

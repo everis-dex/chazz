@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
-import { LineBreakerSelector, Nav, AllowCookies } from "../../shared/index";
+import { AllowCookies, LineBreakerSelector, Nav } from "../../shared/index";
 import { VideoHeader } from "./VideoHeader/VideoHeader";
 
-import { IHomeHeader } from "../../../interfaces/cms";
-
 import { routesInfo } from "../../../constants";
+import { IHomeHeader } from "../../../interfaces/cms";
 
 import "./HomeHeader.styles.scss";
 
@@ -24,7 +23,6 @@ export const HomeHeader = (headerData: IHomeHeader) => {
 
   return (
     <div className="chazz-header">
-
       <div className={isPlaying ? "velo-out" : "velo-in"}>
         <span className={isPlaying ? "nav-out" : "nav-in"}>
           <Nav
