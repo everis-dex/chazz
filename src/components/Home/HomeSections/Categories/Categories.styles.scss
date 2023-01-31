@@ -1,0 +1,167 @@
+// MOBILE FIRST
+
+.background {
+  background-color: var(--lightGray);
+}
+
+.categories-title,
+.categories-sections {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.categories {
+  margin: 0 5%;
+  padding-bottom: 100px;
+  display: grid;
+  grid-template-columns: 100%;
+
+  .categories-title {
+    margin-top: 60px;
+    h2 {
+      font-weight: 500;
+      font-size: 32px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 300;
+      padding-right: 24px;
+    }
+  }
+
+  .categories-sections {
+    margin-top: 20%;
+
+    h2 {
+      margin-bottom: 6px;
+      font-size: 32px;
+    }
+
+    h2 + p {
+      color: var(--gray);
+      margin-bottom: 20px;
+      margin-top: -5px;
+      font-weight: 300;
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 16px;
+      padding-right: 24px;
+    }
+
+    hr {
+      margin-top: 40px;
+      margin-bottom: 50px;
+      border: 1px solid var(--hrColor);
+    }
+  }
+}
+
+// MEDIA QUERIES
+@media (width: 320px) {
+  .categories-title h2 {
+    width: 300px;
+  }
+}
+
+@media (min-width: 769px) {
+  .categories {
+    flex-direction: row;
+    .categories-title {
+      h2 {
+        width: 65%;
+        font-size: 40px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+    }
+
+    .categories-sections {
+      margin-top: 8%;
+      hr {
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .categories-title {
+    h2 strong {
+      width: 90%;
+    }
+    h2 {
+      width: 82%;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .categories {
+    grid-template-columns: 50% 60%;
+    .categories-title {
+      h1 {
+        font-size: 34px;
+      }
+      h2 {
+        width: 88%;
+      }
+      .h2 {
+        font-size: 40px !important;
+      }
+    }
+
+    .categories-sections {
+      width: 86%;
+      h2 {
+        font-size: 40px;
+      }
+      h2 + p {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .categories-title {
+    h2 {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .categories-title {
+    h1 {
+      width: 69%;
+      font-size: 45px;
+    }
+    h2 {
+      font-size: 45px;
+      margin-top: 8px;
+    }
+  }
+  .categories-sections {
+    width: 75%;
+    p {
+      line-height: 1.5;
+    }
+    h2 {
+      font-size: 45px;
+    }
+    h2 + p {
+      font-size: 25px;
+      margin-top: -14px;
+    }
+  }
+}

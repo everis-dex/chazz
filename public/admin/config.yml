@@ -101,6 +101,20 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: More, name: more, widget: string }
 
+  - name: thoughts
+    label: Thoughts
+    folder: src/content/pages/thoughts
+    create: false
+    delete: false
+    slug: "thoughts"
+    extension: json
+    format: json
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string, required: false }
+      - { label: Image, name: image, widget: image }
+      - { label: Categories, name: categories, widget: list }
+
   ##############################
   #         COMPONENTS
   ##############################
@@ -116,16 +130,16 @@ collections:
       - { label: Description, name: description, widget: string }
       - { label: Subtitle, name: subtitle, widget: string }
       - { label: Body, name: body, widget: markdown }
-      - label: In carrousel,
-        name: incarrousel,
+      - label: In carousel,
+        name: incarousel,
         widget: boolean,
-        hint: "Determines whether this project is shown in the homepage carrousel. (Max. 5 projects)"
+        hint: "Determines whether this project is shown in the homepage carousel. (Max. 5 projects)"
       - label: Media,
         name: media,
         widget: object
         fields:
-          - { label: Carrousel, name: carrousel, widget: string }
-          - { label: Project, name: project, widget: string }
+          - { label: Carousel, name: carousel, widget: image }
+          - { label: Project, name: project, widget: image }
     sortable_fields: ["date"]
 
   - name: partner
@@ -192,3 +206,20 @@ collections:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
       - { label: Emeal, name: email, widget: string }
+
+  - name: thought
+    label: Thought
+    folder: content/thoughts
+    slug: "th-{{year}}-{{month}}-{{day}}--{{title}}"
+    extension: json
+    format: json
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
+      - label: Category
+        name: category
+        widget: select
+        options: ["Technology", "Health", "Mobility", "Society", "Sustainibility"]
+      - { label: Image, name: image, widget: image }
+      - { label: Title, name: title, widget: string }
+      - { label: Body, name: body, widget: string }
+      - { label: Duration, name: duration, widget: string }

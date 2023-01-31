@@ -50,6 +50,7 @@
   font-size: 16px;
   white-space: pre-wrap;
   font-weight: 300;
+  border-bottom: 1px solid white;
 }
 
 .body {
@@ -87,6 +88,9 @@
 @media (min-width: 1280px) {
   .project-container {
     width: auto;
+    position: relative;
+    top: -36px;
+
     &.full-width {
       grid-column: 1/3;
 

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import { IProject } from "../../../../interfaces/cms";
-import { Accordion } from "../Accordion/Accordion";
 import { Media } from "../../../shared/index";
+import { Accordion } from "../../../shared/Accordion/Accordion";
 
 import "./Project.styles.scss";
 
@@ -44,10 +44,10 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
           <span className="title">{data.title} —</span>
           <span className="description">{data.description}</span>
         </div>
-        <span className="properties">{data.subtitle}</span>
+        <p className="properties">{data.subtitle}</p>
       </div>
       {/* Accordion */}
-      <Accordion content={bodyParagraphs} />
+      <Accordion title="" content={bodyParagraphs} ourWork={true} />
       <div className="non-accordion">{bodyParagraphs3}</div>
     </div>
   );

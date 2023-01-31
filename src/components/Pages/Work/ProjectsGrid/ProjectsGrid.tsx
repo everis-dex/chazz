@@ -47,30 +47,35 @@ export const ProjectsGrid = (workData: IWork) => {
         break;
 
       case 1: // right column
-        if (configuration === formats.left) format = imageConfig.half;
+        // if (configuration === formats.left) format = imageConfig.half; ::::::::::::::: Al haber comentado esta linea evito que la primera foto sea de menor altura.
         break;
     }
+    console.log({ columnPosition });
     return [format, columnFullWidth];
   }
 
   return (
     <>
-      <h1 className="work-header">{workData.title}</h1>
-      <div className="work-container--content">
-        <div className="work-detail">
-          <LineBreakerSelector typedLines={workData.subtitle} />
+      <div className="work-container">
+        <div className="work-header">
+          <h1>{workData.title}</h1>
         </div>
+        <div className="work-container--content">
+          <div className="work-detail">
+            <LineBreakerSelector typedLines={workData.subtitle} />
+          </div>
 
-        {projects &&
-          projects.map((proj, index: number) => {
-            const project = proj as IProject;
-            const [format, columns] = handleProjectFormat();
-            return (
-              <Fragment key={index}>
-                <ProjectCard data={project} format={format} columns={columns} />
-              </Fragment>
-            );
-          })}
+          {projects &&
+            projects.map((proj, index: number) => {
+              const project = proj as IProject;
+              const [format, columns] = handleProjectFormat();
+              return (
+                <Fragment key={index}>
+                  <ProjectCard data={project} format={format} columns={columns} />
+                </Fragment>
+              );
+            })}
+        </div>
       </div>
     </>
   );

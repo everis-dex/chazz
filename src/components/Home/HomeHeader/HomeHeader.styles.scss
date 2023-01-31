@@ -1,10 +1,6 @@
-@import "./src/styles.scss";
-
 // MOBILE FIRST
 .chazz-header {
-  // background: url("./public/assets/first_frame.jpg");
   background-repeat: no-repeat;
-  // background-position: -330px -100px;
   overflow: hidden;
   position: relative;
   height: var(--app-height);
@@ -23,17 +19,14 @@
     left: 0;
   }
 
-  .velo-out {
+  .velo-out,
+  .nav-out {
     opacity: 0;
     transition: opacity 1s ease-in-out;
   }
 
   .nav-in {
     opacity: 1;
-    transition: opacity 1s ease-in-out;
-  }
-  .nav-out {
-    opacity: 0;
     transition: opacity 1s ease-in-out;
   }
 }
@@ -52,6 +45,7 @@
   h1 {
     margin-bottom: 28px;
     font-size: 48px;
+    line-height: 51.36px;
   }
 
   h4 {
@@ -64,17 +58,16 @@
 .chazz-title-out {
   color: var(--white);
   width: 70%;
-  position: absolute;
   padding-left: 5%;
-  z-index: 9;
-  top: 20%;
+  position: absolute;
+  top: 30%;
   font-size: 23px;
   line-height: 1.2;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 
   h1 {
-    margin-bottom: 0;
+    margin-bottom: 28px;
     font-size: 48px;
     line-height: 51.36px;
   }
@@ -83,35 +76,6 @@
     margin-top: 12px;
     width: 245px;
     font-size: 24px;
-  }
-}
-
-.chazz-cookies {
-  // TODO: display
-  display: none;
-  background-color: var(--white);
-  height: 33%;
-  z-index: 10;
-  position: absolute;
-  width: 90%;
-  bottom: 3%;
-  padding: 16px;
-
-  p {
-    margin: 0;
-  }
-
-  button {
-    padding: 3% 29% 3% 29%;
-    margin-top: 13px;
-    color: #ffafc4;
-    font-weight: 400;
-    font-size: 19px;
-    background-color: var(--black);
-
-    &:hover {
-      cursor: pointer;
-    }
   }
 }
 
@@ -126,6 +90,7 @@
   min-width: 100%;
   min-height: 100%;
 }
+
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
@@ -148,79 +113,95 @@
       margin-top: 0;
     }
   }
+}
 
-  @media (min-width: 1024px) {
-    .chazz-header {
-      max-height: 575px;
-      width: 100%;
-    }
-    .chazz-title,
-    .chazz-title-out {
-      width: 60%;
-    }
-  }
-  @media (min-width: 1280px) {
-    .chazz-header {
-      background-size: 1280px;
-      max-height: 720px;
-      background-position: 0 0%;
-    }
-
-    .chazz-title,
-    .chazz-title-out {
-      h1 {
-        line-height: 96.3px;
-        font-size: 76px;
-        position: relative;
-        top: -2rem;
-      }
-
-      h4 {
-        margin-top: -40px;
-        font-size: 29px;
-      }
-    }
+@media (min-width: 1024px) {
+  .chazz-header {
+    max-height: 575px;
+    width: 100%;
   }
 
-  @media (min-width: 1440px) {
-    .chazz-header {
-      background-size: cover;
-      background-position: 0 0;
-      max-height: 810px;
-    }
+  .chazz-title,
+  .chazz-title-out {
+    width: 60%;
+    top: 40%;
+  }
+}
 
-    .chazz-title,
-    .chazz-title-out {
-      width: 65%;
-      h1 {
-        font-size: 90px;
-      }
-
-      h4 {
-        font-size: 29px;
-      }
-    }
+@media (min-width: 1280px) {
+  .chazz-header {
+    background-size: 1280px;
+    max-height: 720px;
+    background-position: 0 0%;
   }
 
-  @media (min-width: 1920px) {
-    .chazz-header {
-      background-size: cover;
-      background-position: 0 -95px;
-      max-height: 1115px;
+  .chazz-title {
+    top: 55%;
+  }
+
+  .chazz-title,
+  .chazz-title-out {
+    h1 {
+      line-height: 96.3px;
+      font-size: 76px;
+      position: relative;
+      top: -2rem;
+      width: 105%;
     }
 
-    .chazz-title h1 {
+    h4 {
+      margin-top: -40px;
+      font-size: 29px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .chazz-header {
+    background-size: cover;
+    background-position: 0 0;
+    max-height: 810px;
+  }
+
+  .chazz-title {
+    top: 50%;
+  }
+
+  .chazz-title,
+  .chazz-title-out {
+    width: 65%;
+    h1 {
       font-size: 90px;
     }
-    .chazz-title h4 {
-      font-size: 33px;
-      margin-top: -33px;
-    }
 
-    .chazz-title,
-    .chazz-title-out {
-      width: 55%;
+    h4 {
+      font-size: 29px;
     }
+  }
+}
+
+@media (min-width: 1920px) {
+  .chazz-header {
+    background-size: cover;
+    background-position: 0 -95px;
+    max-height: 1115px;
+  }
+
+  .chazz-title h1 {
+    font-size: 90px;
+  }
+  .chazz-title h4 {
+    font-size: 33px;
+    margin-top: -33px;
+  }
+
+  .chazz-title {
+    top: 60%;
+  }
+
+  .chazz-title,
+  .chazz-title-out {
+    width: 55%;
   }
 }
 
