@@ -13,7 +13,7 @@ import "./Carousel.styles.scss";
 
 // const urlBase = window.origin + "/uploads/";
 const urlBase = window.origin + "/uploads/animations/";
-const sequence = ['step1.png', 'step2.png', 'step3.png', 'step4.png', 'step1.png', 'step2.png', 'step3.png', 'step4.png', 'step1.png', 'step2.png', 'step3.png', 'step4.png', 'step1.png', 'step2.png', 'step3.png', 'step4.png'];
+const sequence = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13'];
 const velocidad = 50;
 
 type Props = { title: string };
@@ -61,17 +61,12 @@ export const Carousel = ({ title }: Props) => {
 
   }, [cursorState, setCursorState, counter, setCounter]);
 
-  useEffect(() => {
-    if (animatedCursorRef.current) { animatedCursorRef.current.style.backgroundColor = sequence[counter]; }
-  }, [counter])
-
 
 
   return (
     <>
       <div className="carouselTitle">
-        <div style={{ position: "relative", left: counter * 10 }} ref={animatedCursorRef}><img src={urlBase + sequence[counter]}></img></div>
-        {urlBase + sequence[counter]}
+        <div style={{ position: "absolute" }} ref={animatedCursorRef}><img src={urlBase + "icon-drag_pointer-in-" + sequence[counter] + ".png"}></img></div>
         <h3>{counter}</h3>
         <h3>{title}</h3>
       </div>
