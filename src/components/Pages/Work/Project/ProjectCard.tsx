@@ -4,12 +4,18 @@ import { IProject } from "../../../../interfaces/cms";
 import { Media } from "../../../shared/index";
 import { Accordion } from "../../../shared/Accordion/Accordion";
 
-import "./Project.styles.scss";
+import "./ProjectCard.styles.scss";
 
-type Props = { data: IProject; format: string; columns?: string; full?: boolean };
+type Props = {
+  data: IProject;
+  format: string;
+  columns?: string;
+  full?: boolean;
+  setCaseStudyId: (a: number) => void;
+};
 
-export const ProjectCard = ({ data, format, columns }: Props) => {
-  let [height] = useState<string>("auto");
+export const ProjectCard = ({ data, format, columns, setCaseStudyId }: Props) => {
+  let [height, setHeight] = useState<string>("auto");
   const image = data.media.project;
 
   const bodyParagraphs = data.body;
@@ -26,10 +32,12 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
 
       <div className="project-details">
         <div className="project-title-container">
-          <span className="title">{data.title} —</span>
+          <span className="title" onClick={() => setCaseStudyId(data.id)}>
+            {data.title} —
+          </span>
           <span className="description">{data.description}</span>
         </div>
-        <p className="properties">{data.subtitle}</p>
+        <span className="properties">{data.subtitle}</span>
       </div>
       {/* Accordion */}
       <Accordion title="" content={bodyParagraphs} ourWork={true} />
