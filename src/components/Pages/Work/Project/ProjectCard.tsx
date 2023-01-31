@@ -15,7 +15,7 @@ type Props = {
 };
 
 export const ProjectCard = ({ data, format, columns, setCaseStudyId }: Props) => {
-  let [height, setHeight] = useState<string>("auto");
+  let [height] = useState<string>("auto");
   const image = data.media.project;
 
   const bodyParagraphs = data.body;
