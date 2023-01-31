@@ -16,7 +16,7 @@ const formats = {
 const imageConfig = { auto: "auto", half: "half" };
 
 // la configuración se escoge por cada row, por cada par de columnas
-let config = [formats.left, formats.big, formats.left, formats.right, formats.equal];
+let config = [formats.right, formats.big, formats.left, formats.right, formats.equal];
 
 export const ProjectsGrid = (workData: IWork) => {
   const columnCount: number = 2;
@@ -33,12 +33,12 @@ export const ProjectsGrid = (workData: IWork) => {
 
     switch (columnPosition) {
       case 0: // left column
-        // Reset configuration, head to next row
+        // Reset configuration, new row
         currentRow = currentColumn / columnCount;
         configuration = config[currentRow];
 
         if (configuration === formats.right) format = imageConfig.half;
-        if (configuration === formats.big) {
+        else if (configuration === formats.big) {
           columnFullWidth = "full-width";
           // Occupies entire row, so head to next row
           currentRow++;
@@ -47,36 +47,32 @@ export const ProjectsGrid = (workData: IWork) => {
         break;
 
       case 1: // right column
-        // if (configuration === formats.left) format = imageConfig.half; ::::::::::::::: Al haber comentado esta linea evito que la primera foto sea de menor altura.
+        if (configuration === formats.left) format = imageConfig.half;
         break;
     }
-    console.log({ columnPosition });
     return [format, columnFullWidth];
   }
 
   return (
-    <>
-      <div className="work-container">
-        <div className="work-header">
-          <h1>{workData.title}</h1>
-        </div>
-        <div className="work-container--content">
-          <div className="work-detail">
-            <LineBreakerSelector typedLines={workData.subtitle} />
-          </div>
-
-          {projects &&
-            projects.map((proj, index: number) => {
-              const project = proj as IProject;
-              const [format, columns] = handleProjectFormat();
-              return (
-                <Fragment key={index}>
-                  <ProjectCard data={project} format={format} columns={columns} />
-                </Fragment>
-              );
-            })}
-        </div>
+    <div className="work-container">
+      <div className="work-header">
+        <h1>{workData.title}</h1>
       </div>
-    </>
+      <div className="work-container--content">
+        <div className="work-detail">
+          <LineBreakerSelector typedLines={workData.subtitle} />
+        </div>
+
+        {projects &&
+          projects.map((project: IProject, index: number) => {
+            const [format, columns] = handleProjectFormat();
+            return (
+              <Fragment key={index}>
+                <ProjectCard data={project} format={format} columns={columns} />
+              </Fragment>
+            );
+          })}
+      </div>
+    </div>
   );
 };

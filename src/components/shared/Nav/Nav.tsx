@@ -1,36 +1,59 @@
 import React, { useState } from "react";
 
-import { DisplayModes } from "../../../constants";
-import { BurgerMenu, ChazzLogo, DesktopMenu } from "./index";
+import { ChazzLogo } from "./ChazzLogo/ChazzLogo";
+import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
+import { DesktopMenu } from "./DesktopMenu/DesktopMenu";
 
 import "./Nav.styles.scss";
 
-type Props = { isPlaying?: boolean; darkMode?: boolean; AlertNavParent?: (a: boolean) => void };
+type Props = {
+  color: string;
+  disabledMenuOption: string;
+  isNavVisible: boolean;
+  isPlaying: boolean;
+  isBurgerMenuOpen: boolean;
+  setIsBurgerMenuOpen: (a: boolean) => void;
+  activeStyle: string;
+};
 
-export const Nav = ({ isPlaying = false, darkMode = false, AlertNavParent }: Props) => {
-  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
-  const { color, activeStyle } = darkMode ? DisplayModes.dark : DisplayModes.light;
+export const Nav = ({
+  color,
+  disabledMenuOption,
+  isNavVisible,
+  isPlaying,
+  isBurgerMenuOpen,
+  setIsBurgerMenuOpen,
+  activeStyle
+}: Props) => {
   const [root] = useState(document.getElementById("root"));
 
-  function toggleMenu(): void {
-    if (isPlaying) return;
-    if (AlertNavParent) AlertNavParent(!isBurgerMenuOpen);
+  const toggleMenu = () => {
+    if (!isPlaying) {
+      setIsBurgerMenuOpen(!isBurgerMenuOpen);
+      handleRootBehavior();
+    }
+  };
 
-    setIsBurgerMenuOpen(!isBurgerMenuOpen);
-    handleRootBehavior();
-  }
-
-  function handleRootBehavior(): void {
+  const handleRootBehavior = () => {
     if (!root) return;
     root.style.height = isBurgerMenuOpen ? "auto" : "100vh";
     root.style.overflow = isBurgerMenuOpen ? "auto" : "hidden";
+  };
+
+  if (isNavVisible) {
+    return (
+      <div className="header-nav">
+        <ChazzLogo color={color} isBurgerMenuOpen={isBurgerMenuOpen} />
+        <DesktopMenu color={color} activeStyle={activeStyle} />
+        <BurgerMenu
+          isBurgerMenuOpen={isBurgerMenuOpen}
+          toggleMenu={toggleMenu}
+          color={color}
+          disabledMenuOption={disabledMenuOption}
+        />
+      </div>
+    );
   }
 
-  return (
-    <div className="header-nav">
-      <ChazzLogo color={color} isBurgerMenuOpen={isBurgerMenuOpen} />
-      <DesktopMenu color={color} activeStyle={activeStyle} />
-      <BurgerMenu isBurgerMenuOpen={isBurgerMenuOpen} toggleMenu={toggleMenu} color={color} />
-    </div>
-  );
+  return <></>;
 };
