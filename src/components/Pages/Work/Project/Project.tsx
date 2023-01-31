@@ -9,7 +9,7 @@ import "./Project.styles.scss";
 type Props = { data: IProject; format: string; columns?: string; full?: boolean };
 
 export const ProjectCard = ({ data, format, columns }: Props) => {
-  let [height] = useState<string>("auto");
+  // let [height] = useState<string>("auto");
   const image = data.media.project;
 
   const bodyParagraphs = data.body;
@@ -21,7 +21,7 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
   return (
     <div className={`project-container ${columns}`}>
       <div className={`project-media ${format === "half" ? "half" : ""}`}>
-        <Media src={image} style={{ height, width: "100%" }} alt={data.title} format={format} />
+        <Media src={image} style={{ width: "100%" }} alt={data.title} format={format} />
       </div>
 
       <div className="project-details">

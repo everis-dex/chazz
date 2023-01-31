@@ -6,7 +6,7 @@ const supportedImageTags: Array<string> = ["jpg", "jpeg", "gif", "png", "apng", 
 
 type Props = {
   src: string;
-  style: { width: string; height: string };
+  style: { width: string; height?: string };
   alt: string;
   format?: string;
 };
