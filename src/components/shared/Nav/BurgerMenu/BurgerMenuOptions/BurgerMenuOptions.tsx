@@ -1,33 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { availableRouteIDs, routesInfo } from "../../../../../constants";
-import { DividingLine } from "../../../DividingLine/DividingLine";
+import { availableRoutes, routesInfo } from "../../../../../constants";
 import { RRSS } from "../../../Footer/CompanyInfo/CompanyInfoSections/RRSS";
 
 import "./BurgerMenuOptions.styles.scss";
+import { DividingLine } from "../../../DividingLine/DividingLine";
 
 type Props = {
   isBurgerMenuOpen: boolean;
-  toggleMenu: (e: React.MouseEvent) => void;
+  toggleMenu: (event: React.MouseEvent) => void;
+  disabledMenuOption: string;
 };
 
-export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu }: Props) => {
-  const currentMenuOption = window.location.pathname.split("/")[1];
-
+export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu, disabledMenuOption }: Props) => {
   return (
     <nav className={`burger-nav ${isBurgerMenuOpen ? "active" : ""}`}>
       <ul className="burger-ul">
         {routesInfo
-          .filter(route => availableRouteIDs.includes(route.id))
+          .filter(route => availableRoutes.includes(route.id))
           .map(route => (
             <li className="burger-li" key={route.id}>
-              {route.route !== currentMenuOption ? (
+              {route.route !== disabledMenuOption && (
                 <Link className="burger-a" to={route.route} onClick={toggleMenu}>
                   {route.name}
                 </Link>
-              ) : (
-                <span className="burger-active">{route.name}</span>
+              )}
+
+              {route.route === disabledMenuOption && (
+                <span
+                  className="burger-active"
+                // onClick={toggleMenu}
+                >
+                  {route.name}
+                </span>
               )}
             </li>
           ))}
