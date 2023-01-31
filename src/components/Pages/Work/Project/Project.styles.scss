@@ -75,10 +75,11 @@
 @media (min-width: 425px) {
   .project-media {
     img {
+      max-height: 400px;
       height: 400px;
     }
     video {
-      height: 360px;
+      height: 400px;
     }
   }
   .half {
