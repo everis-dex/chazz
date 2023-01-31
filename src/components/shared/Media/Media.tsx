@@ -40,7 +40,6 @@ export const Media = ({ src, style, alt, format }: Props) => {
             <video
               width={style.width}
               height="auto"
-              controls
               onError={error => console.error(error)}
               muted={true}
               loop
