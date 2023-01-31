@@ -8,7 +8,6 @@ import "./Thought.styles.scss";
 export const Thought = (thought: IThought) => {
   const formattedDate = new Date(thought.date);
   const date: string = Months[formattedDate.getMonth()] + " " + formattedDate.getDay();
-  console.log("🚀 ~ file: Thought.tsx:11 ~ Thought ~ formattedDate.getMonth()", formattedDate.getMonth());
 
   return (
     <div className="thought-container">
