@@ -31,7 +31,7 @@
 }
 
 .project-details {
-  margin: 40px 0;
+  margin: 30px 0;
   color: var(--black);
   font-size: 16px;
 
@@ -40,16 +40,18 @@
     flex-direction: column;
 
     span {
-      font-weight: 700;
+      font-weight: 300;
       font-size: 16px;
     }
     .title {
       margin-top: 0;
+      font-weight: 400;
     }
     .description {
       font-weight: 400;
     }
     .properties {
+      font-weight: 300;
       color: var(--gray);
     }
   }
@@ -73,7 +75,7 @@
 @media (min-width: 425px) {
   .project-media {
     img {
-      max-height: 400px;
+      height: 400px;
     }
     video {
       height: 400px;
