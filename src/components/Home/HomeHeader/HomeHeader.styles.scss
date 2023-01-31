@@ -33,10 +33,11 @@
 
 .chazz-title {
   color: var(--white);
-  width: 70%;
+  width: 80%;
   padding-left: 5%;
   position: absolute;
-  top: 30%;
+  // top: 30%;
+  bottom: 30%;
   font-size: 23px;
   line-height: 1.2;
   transition: opacity 1s ease-in-out;
@@ -93,6 +94,12 @@
 
 // MEDIA QUERIES
 
+@media (width: 320px) {
+  .chazz-title {
+    width: 100%;
+  }
+}
+
 @media (min-width: 768px) {
   .chazz-header {
     background-position: 30% -100px;
@@ -100,7 +107,8 @@
   .chazz-title,
   .chazz-title-out {
     width: 65%;
-    top: 55%;
+    top: auto;
+    bottom: 200px;
 
     h1 {
       font-size: 48px;
@@ -124,19 +132,21 @@
   .chazz-title,
   .chazz-title-out {
     width: 60%;
-    top: 40%;
+    bottom: 45%;
+    // top: auto;
   }
 }
 
 @media (min-width: 1280px) {
   .chazz-header {
     background-size: 1280px;
-    max-height: 720px;
+    max-height: 1024px;
     background-position: 0 0%;
   }
 
   .chazz-title {
-    top: 55%;
+    bottom: 170px;
+    top: auto;
   }
 
   .chazz-title,
@@ -160,11 +170,7 @@
   .chazz-header {
     background-size: cover;
     background-position: 0 0;
-    max-height: 810px;
-  }
-
-  .chazz-title {
-    top: 50%;
+    // max-height: 1024px;
   }
 
   .chazz-title,
@@ -194,14 +200,9 @@
     font-size: 33px;
     margin-top: -33px;
   }
-
-  .chazz-title {
-    top: 60%;
-  }
-
   .chazz-title,
   .chazz-title-out {
-    width: 55%;
+    bottom: 220px;
   }
 }
 
