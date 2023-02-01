@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 import { IProject, IWork } from "../../../../interfaces/cms";
 import { LineBreakerSelector } from "../../../shared/index";
-import { ProjectCard } from "../Project/Project";
+import { ProjectCard } from "../Project/ProjectCard";
 
 import { projects } from "../../../../content/index";
 

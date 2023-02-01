@@ -1,19 +1,24 @@
 import React from "react";
+
 import { projects } from "../../../../../content/index";
 import { IProject } from "../../../../../interfaces/cms";
-import { CaseInfo } from "./CaseInfo/CaseInfoServices";
-import { CaseInfoTitle } from "./CaseInfo/CaseInfoTitle";
 import { FeaturedProjects } from "../../../../shared";
-import { CaseClaim } from "./CaseInfo/CaseClaim";
-import { CaseImg, CaseImgWithOverlappedText } from "./CaseInfo/CaseImg";
-import { CaseSectionColumn } from "./CaseInfo/CaseSectionColumn";
+import {
+  CaseClaim,
+  CaseImg,
+  CaseImgWithOverlappedText,
+  CaseInfo,
+  CaseInfoTitle,
+  CaseSectionColumn
+} from "./CaseInfo/index";
+
 import "./CaseStudy.styles.scss";
 
 type Props = { caseStudyId: number; handleBack: () => void };
 
 export const CaseStudy = ({ caseStudyId, handleBack }: Props) => {
   const project: IProject = projects.filter(project => project.id === caseStudyId)[0] as IProject;
-  console.log(project.sections?.fourthFWImageWithOverlappedText?.imagePath);
+
   return (
     <>
       {/* <button onClick={handleBack}>BACK</button> */}

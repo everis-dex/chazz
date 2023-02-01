@@ -93,7 +93,7 @@ export interface IProject {
   description: string;
   subtitle: string;
   body: string;
-  incarrousel: boolean;
+  incarousel: boolean;
   media: IProjectMedia;
   caseInfo?: {
     title: string;
