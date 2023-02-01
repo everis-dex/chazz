@@ -11,7 +11,7 @@ type Props = {
   format: string;
   columns?: string;
   full?: boolean;
-  setCaseStudyId: (a: number) => void;
+  setCaseStudyId?: (a: number) => void;
 };
 
 export const ProjectCard = ({ data, format, columns, setCaseStudyId }: Props) => {
@@ -30,7 +30,7 @@ export const ProjectCard = ({ data, format, columns, setCaseStudyId }: Props) =>
 
       <div className="project-details">
         <div className="project-title-container">
-          <span className="title" onClick={() => setCaseStudyId(data.id)}>
+          <span className="title" onClick={() => (setCaseStudyId ? setCaseStudyId(data.id) : {})}>
             {data.title} —
           </span>
           <span className="description">{data.description}</span>
