@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { availableRoutes, routesInfo } from "../../../../../constants";
+import { availableRouteIDs, routesInfo } from "../../../../../constants";
 import { RRSS } from "../../../Footer/CompanyInfo/CompanyInfoSections/RRSS";
 
 import "./BurgerMenuOptions.styles.scss";
