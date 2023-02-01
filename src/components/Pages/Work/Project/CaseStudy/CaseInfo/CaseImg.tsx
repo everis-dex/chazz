@@ -1,13 +1,10 @@
 import React from "react";
-import "../CaseStudy.styles.scss";
-import "../../CaseStudy/CaseStudy.styles.scss";
+
 import { LineBreakerSelector } from "../../../../../shared";
 
-type Props = {
-  src: string;
-  text?: string;
-  alt?: string;
-};
+import "../CaseStudy.styles.scss";
+
+type Props = { src: string; text?: string; alt?: string };
 
 export const CaseImg = ({ src, alt, text }: Props) => {
   return (

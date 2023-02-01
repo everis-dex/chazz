@@ -1,8 +1,9 @@
 import React from "react";
-import "../CaseStudy.styles.scss";
-import { LineBreakerSelector } from "../../../../../shared/LineBreaker/LineBreakerSelector";
-import "../../CaseStudy/CaseStudy.styles.scss";
+
+import { LineBreakerSelector } from "../../../../../shared/index";
 import { CaseImg } from "./CaseImg";
+
+import "../CaseStudy.styles.scss";
 
 type Props = {
   title?: string;
@@ -14,6 +15,7 @@ type Props = {
 
 export const CaseSectionColumn = ({ title, text, empty = false, position, image }: Props) => {
   const columnPosition = empty ? `section-${position}-column-empty` : `section-${position}-column`;
+
   return (
     <>
       {!empty ? (
