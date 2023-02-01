@@ -258,13 +258,9 @@
     background-position: 0 0%;
   }
 
-  .chazz-title {
-    bottom: 170px;
-    top: auto;
-  }
-
   .chazz-title,
-  .chazz-title-out {
+  .chazz-title-out {    
+    top: auto;
     bottom: 170px;
     h1 {
       line-height: 96.3px;
