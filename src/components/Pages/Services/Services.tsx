@@ -15,7 +15,6 @@ export const Services = () => {
 
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
 
-
   useEffect(() => window.scrollTo(0, 0), []);
 
   return (

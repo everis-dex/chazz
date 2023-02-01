@@ -12,28 +12,53 @@
     font-weight: 500;
     font-size: 40px;
     line-height: 43px;
+    color: var(--black);
   }
   img {
     width: 100%;
-    height: 400px;
     object-fit: cover;
   }
 }
 
-.thoughts {
-  .more-thoughts--div {
-    padding: 40px 0 75px 0;
+// Hide filters scrollbar
 
-    .selected-filter {
-      color: var(--pinkHover);
+::-webkit-scrollbar {
+  display: none;
+  background: transparent;
+}
+
+.thoughts-filtering {
+  padding: 40px 0 30px 0;
+  border-bottom: 1px solid var(--black);
+  display: flex;
+  gap: 20px;
+  overflow-x: overlay;
+
+  span {
+    padding: 10px 0;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+
+    &.selected {
+      color: var(--pinkStrong);
     }
+  }
+}
+
+.more-thoughts--div {
+  padding: 75px 0;
+
+  .selected-filter {
+    color: var(--pinkHover);
   }
 
   .more-thoughts {
     text-decoration: none;
     display: inline;
-    font-size: 24px;
     font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
     color: var(--black);
 
     &:hover {
@@ -44,18 +69,9 @@
     }
   }
 
-  .more-thoughts {
-    color: var(--black);
-
-    &:hover {
-      color: var(--pinkHover);
-    }
-  }
-
   .icon-size {
     width: 26px;
     display: inline-flex;
-    margin-left: 10px;
   }
 }
 
@@ -63,31 +79,39 @@
 
 @media (min-width: 768px) {
   .thoughts-header {
+    .header-title {
+      font-size: 72px;
+      line-height: 77px;
+    }
     img {
       height: auto;
     }
   }
   .thoughts-filtering {
-    padding: 60px 0;
-    display: flex;
+    padding: 100px 0 60px 0;
     gap: 30px;
 
     span {
-      font-weight: 700;
       font-size: 24px;
       line-height: 29px;
-      transition: all 0.2s;
+      transition: color 0.2s;
 
       &:hover {
         cursor: pointer;
       }
+    }
+  }
 
-      &.selected {
-        color: var(--pinkStrong);
-      }
+  .more-thoughts--div {
+    padding: 100px 0 75px 0;
+
+    .more-thoughts {
+      font-size: 24px;
+      line-height: 30px;
     }
   }
 }
+
 @media (min-width: 1280px) {
   .thoughts-header {
     .header-title {
