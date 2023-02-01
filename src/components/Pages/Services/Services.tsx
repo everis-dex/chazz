@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-
-import { routesInfo } from "../../../constants";
+import React, { useEffect } from "react";
 
 import { categories, services } from "../../../content/index";
 import { ICategory, IServicesHeader } from "../../../interfaces/cms";
@@ -12,22 +10,11 @@ import "./Services.styles.scss";
 
 export const Services = () => {
   const headerData: IServicesHeader = services.header;
-
-  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
-
   useEffect(() => window.scrollTo(0, 0), []);
 
   return (
     <>
-      <Nav
-        color="black"
-        disabledMenuOption={routesInfo[1].route}
-        isNavVisible={true}
-        isPlaying={false}
-        isBurgerMenuOpen={isBurgerMenuOpen}
-        setIsBurgerMenuOpen={setIsBurgerMenuOpen}
-        activeStyle="active-pink"
-      />
+      <Nav />
       <AllowCookies />
       <div className="services-container">
         <div className="services-header">

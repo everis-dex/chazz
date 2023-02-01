@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { routesInfo } from "../../../constants";
 import { thoughts, thoughtsPage } from "../../../content/index";
 import { IThought } from "../../../interfaces/cms";
 
@@ -13,7 +12,6 @@ import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.s
 import "./Thoughts.styles.scss";
 
 export const Thoughts = () => {
-  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
   const [isHover, setIsHover] = useState<boolean>(false);
   const [filtering, setFiltering] = useState<boolean>(true);
   const [selectedFilter, setSelectedFilter] = useState<string>("All");
@@ -70,15 +68,7 @@ export const Thoughts = () => {
 
   return (
     <>
-      <Nav
-        color="black"
-        disabledMenuOption={routesInfo[4].route}
-        isNavVisible={true}
-        isPlaying={false}
-        isBurgerMenuOpen={isBurgerMenuOpen}
-        setIsBurgerMenuOpen={setIsBurgerMenuOpen}
-        activeStyle="active-pink"
-      />
+      <Nav />
       <AllowCookies />
       <div className="thoughts-container">
         {/* Header section */}
