@@ -47,21 +47,16 @@ export const Accordion = ({ title, content, ourWork }: Props) => {
             </>
           )}
           {accordionTitle[0] === accordionTitle[1] && (
-            <>
-              <span className="no-fading-text" onClick={e => handleDropdown(e.target)}>
-                {accordionTitle[0]}
-              </span>
-            </>
+            <span className="no-fading-text" onClick={e => handleDropdown(e.target)}>
+              {accordionTitle[0]}
+            </span>
           )}
           <div className="accordion-arrow" style={{ zIndex: "-10" }}>
             <img className={openAccordion ? "icon-fadeIn" : "icon-fadeOut"} src={moreInfoIcon} alt="moreInformation" />
             <img className={!openAccordion ? "icon-fadeIn" : "icon-fadeOut"} src={lessInfoIcon} alt="lessInformation" />
           </div>
         </div>
-        <div
-          className={ourWork ? "panel-work" : "panel-services"}
-          // style={{ paddingTop: openAccordion ? "20px" : "0px" }}
-        >
+        <div className={ourWork ? "panel-work" : "panel-services"}>
           <p>{content}</p>
         </div>
       </div>
