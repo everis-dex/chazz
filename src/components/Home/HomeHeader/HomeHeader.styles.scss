@@ -7,7 +7,7 @@
 
   .velo-in,
   .velo-out {
-    background: #ca8b9b94;
+    background-color: #ca8b9b94;
     z-index: 0;
     height: 100vh;
     transition: opacity 1s ease-in-out;
@@ -17,9 +17,13 @@
     position: absolute;
     top: 0;
     left: 0;
+    transition: background-color 1s ease-in-out;
   }
 
-  .velo-out,
+  .velo-out {
+    background-color: #ca8b9b00;
+  }
+
   .nav-out {
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -55,6 +59,15 @@
   }
 }
 
+.simply-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.simply-in {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
 .chazz-title-out {
   color: var(--white);
   width: 80%;
@@ -63,8 +76,6 @@
   bottom: 30%;
   font-size: 23px;
   line-height: 1.2;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
 
   h1 {
     margin-bottom: 28px;
@@ -73,7 +84,7 @@
   }
 
   h4 {
-    margin-top: 12px;
+    margin-top: 16px;
     width: 245px;
     font-size: 24px;
   }
@@ -116,7 +127,7 @@
   .play-icon-in,
   .play-icon-out {
     position: absolute;
-    top: 2px;
+    top: 6px;
     width: 0;
     height: 0;
     border-top: 8px solid transparent;
@@ -140,7 +151,7 @@
   // Stop
   .stop-icon-in {
     position: absolute;
-    top: 4px;
+    top: 8px;
     width: 12px;
     height: 12px;
     background-color: var(--white);
@@ -210,6 +221,15 @@
 }
 
 @media (min-width: 1024px) {
+  .player-video .play-icon-in,
+  .player-video .play-icon-out {
+    top: 2px;
+  }
+
+  .player-video .stop-icon-in {
+    top: 4px;
+  }
+
   .player-video-desktop-switcher {
     display: flex;
   }
@@ -226,7 +246,7 @@
   .chazz-title,
   .chazz-title-out {
     width: 60%;
-    bottom: 45%;
+    bottom: 170px;
     // top: auto;
   }
 }
@@ -239,7 +259,7 @@
   }
 
   .chazz-title {
-    bottom: 110px;
+    bottom: 170px;
     top: auto;
   }
 
