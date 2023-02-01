@@ -15,23 +15,8 @@ type Props = {
 };
 
 export const ProjectCard = ({ data, format, columns, setCaseStudyId }: Props) => {
-  let [height, setHeight] = useState<string>("auto");
+  let [height] = useState<string>("auto");
   const image = data.media.project;
-
-  useEffect(() => {
-    // Create image to obtain height
-    const img = new Image();
-    img.src = image;
-
-    const getImageHeight = (img.onload = () => {
-      const height: number = img.height ? img.height : 600;
-      // const res = format === "half" ? height / 2 + "px" : height + "px";
-      const res = format === "half" ? "444px" : height + "px";
-      return res;
-    });
-
-    setHeight(getImageHeight());
-  }, [image, format, height]);
 
   const bodyParagraphs = data.body;
 
@@ -41,8 +26,8 @@ export const ProjectCard = ({ data, format, columns, setCaseStudyId }: Props) =>
 
   return (
     <div className={`project-container ${columns}`}>
-      <div className="project-media">
-        <Media src={image} style={{ height, width: "100%" }} alt={data.title} format={format} />
+      <div className={`project-media ${format === "half" ? "half" : ""}`}>
+        <Media src={image} style={{ width: "100%" }} alt={data.title} format={format} />
       </div>
 
       <div className="project-details">

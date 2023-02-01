@@ -1,72 +1,81 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./VideoHeader.style.scss";
 
 type Props = {
-  AlertVideoParent?: (v: boolean) => void;
-  toggleNavVisible: (value?: boolean) => void;
-  burgerMenuOpen: boolean;
+  isPlaying: boolean;
+  setIsPlaying: (a: boolean) => void;
+  isNavVisible: boolean;
+  setIsNavVisible: (a: boolean) => void;
+  isBurgerMenuOpen: boolean;
 };
 
 const ControlTextOptions = { play: "Play", stop: "Stop" };
 
-export const VideoHeader = ({ toggleNavVisible, burgerMenuOpen, AlertVideoParent }: Props) => {
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+export const VideoHeader = ({ isPlaying, setIsPlaying, isNavVisible, setIsNavVisible, isBurgerMenuOpen }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const controlRef = useRef<HTMLDivElement>(null);
   const [controlText, setControlText] = useState<string>(ControlTextOptions.play);
 
   useEffect(() => {
-    if (!isPlaying) toggleNavVisible(true);
-  }, [isPlaying, toggleNavVisible]);
-
-  function switchPlayPause(): void {
-    if (AlertVideoParent) AlertVideoParent(!isPlaying);
-    setIsPlaying(!isPlaying);
-    if (!videoRef.current) return;
-
-    if (isPlaying) {
-      videoRef.current.pause();
-      setControlText(ControlTextOptions.play);
-      toggleNavVisible();
-    } else {
-      videoRef.current.play();
-      setControlText(ControlTextOptions.stop);
-      setTimeout(() => toggleNavVisible(), 1000);
+    if (!isPlaying && !isNavVisible) {
+      setIsNavVisible(true);
     }
-  }
+  }, [isNavVisible, isPlaying, setIsNavVisible]);
+
+  const switchPlayPause = () => {
+    setIsPlaying(!isPlaying);
+
+    if (videoRef.current && isPlaying) {
+      videoRef.current.pause();
+      setIsNavVisible(!isNavVisible);
+      setControlText("Play");
+    }
+    if (videoRef.current && !isPlaying) {
+      videoRef.current.play();
+      setControlText("Stop");
+      setTimeout(() => {
+        setIsNavVisible(!isNavVisible);
+      }, 1000);
+    }
+  };
 
   function forcePause(): void {
     setIsPlaying(false);
     setControlText(ControlTextOptions.play);
   }
 
-  function resetVideo(): void {
+  const resetVideo = () => {
     setIsPlaying(false);
-    setControlText(ControlTextOptions.play);
-    if (videoRef.current) videoRef.current.currentTime = 0;
-  }
+    setControlText("Play");
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+    }
+  };
 
   useEffect(() => {
-    function handleMouseMove(event: any): void {
-      if (!controlRef.current) return;
+    const handleMouseMove = (event: any): void => {
+      if (controlRef.current) {
+        if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
+          const scrollY = window.scrollY;
+          const postY = event.clientY;
+          const scrollFinalY = scrollY + postY - 10;
+          const scrollX = window.scrollX;
+          const postX = event.clientX;
+          const scrollFinalX = scrollX + postX - 50;
 
-      if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
-        const scrollFinalY = event.pageY - 10;
-        const scrollFinalX = event.pageX - 50;
-
-        if (window.innerWidth >= 1040) {
-          controlRef.current.style.top = scrollFinalY.toString().concat("px");
-          controlRef.current.style.left = scrollFinalX.toString().concat("px");
-          controlRef.current.style.opacity = "1";
+          if (window.innerWidth >= 1040) {
+            controlRef.current.style.top = scrollFinalY.toString().concat("px");
+            controlRef.current.style.left = scrollFinalX.toString().concat("px");
+            controlRef.current.style.opacity = "1";
+          } else {
+            controlRef.current.style.top = (window.innerHeight - 40).toString().concat("px");
+            controlRef.current.style.left = "5%";
+          }
         } else {
-          controlRef.current.style.top = (window.innerHeight - 40).toString().concat("px");
-          controlRef.current.style.left = "5%";
           controlRef.current.style.opacity = "0";
         }
-      } else {
-        controlRef.current.style.opacity = "0";
       }
-    }
+    };
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
@@ -75,7 +84,7 @@ export const VideoHeader = ({ toggleNavVisible, burgerMenuOpen, AlertVideoParent
 
   return (
     <>
-      {!burgerMenuOpen && (
+      {!isBurgerMenuOpen && (
         <>
           <div className="player-video-mobile-switcher">
             <div className="player-video">

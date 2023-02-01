@@ -19,10 +19,10 @@ export const LineBreakerSelector = ({ typedLines }: Props) => {
   const finalMobileBrokenLines: string[] = [];
   const finalDesktopBrokenLines: string[] = [];
 
-  mobileBrokenLines.map(line => {
+  mobileBrokenLines.forEach(line => {
     if (line.includes("#")) {
       const stringToArray = line.split(paragraphSymbol);
-      stringToArray.map(element => {
+      stringToArray.forEach(element => {
         finalMobileBrokenLines.push(element);
         finalMobileBrokenLines.push("");
       });
@@ -30,10 +30,10 @@ export const LineBreakerSelector = ({ typedLines }: Props) => {
       finalMobileBrokenLines.push(line);
     }
   });
-  desktopBrokenLines.map(line => {
+  desktopBrokenLines.forEach(line => {
     if (line.includes("#")) {
       const stringToArray = line.split(paragraphSymbol);
-      stringToArray.map(element => {
+      stringToArray.forEach(element => {
         finalDesktopBrokenLines.push(element);
         finalDesktopBrokenLines.push("");
       });
@@ -41,12 +41,6 @@ export const LineBreakerSelector = ({ typedLines }: Props) => {
       finalDesktopBrokenLines.push(line);
     }
   });
-  while (finalMobileBrokenLines[finalMobileBrokenLines.length - 1] === "") {
-    delete finalMobileBrokenLines[finalMobileBrokenLines.length - 1];
-  }
-  while (finalDesktopBrokenLines[finalDesktopBrokenLines.length - 1] === "") {
-    delete finalDesktopBrokenLines[finalDesktopBrokenLines.length - 1];
-  }
 
   return (
     <>

@@ -2,26 +2,27 @@ import React from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { projects } from "../../../../../content";
+import { CarouselSlide } from "./CarouselSlide";
+
+import { projects } from "../../../../../content/index";
 import { IProject } from "../../../../../interfaces/cms";
-import { CarrouselSlide } from "./CarrouselSlide";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import "./Carrousel.styles.scss";
+import "./Carousel.styles.scss";
 
 type Props = { title: string };
-export const Carrousel = ({ title }: Props) => {
-  const slides: IProject[] = [...projects] as IProject[];
-  const featuredSlides: IProject[] = slides.filter(slide => slide.incarrousel).slice(0, 5);
+export const Carousel = ({ title }: Props) => {
+  const slides: IProject[] = [...projects];
+  const featuredSlides: IProject[] = slides.filter(slide => slide.incarousel).slice(0, 5);
 
   return (
     <>
-      <div className="carrouselTitle">
+      <div className="carouselTitle">
         <h3>{title}</h3>
       </div>
 
-      <div id="carrousel" className="carrousel">
+      <div id="carousel" className="carousel">
         <div className="pagination" />
         <div className="slides">
           <Swiper
@@ -47,7 +48,7 @@ export const Carrousel = ({ title }: Props) => {
             {featuredSlides.map((slide: IProject, index: number) => {
               return (
                 <SwiperSlide key={index}>
-                  <CarrouselSlide {...slide} />
+                  <CarouselSlide {...slide} />
                 </SwiperSlide>
               );
             })}

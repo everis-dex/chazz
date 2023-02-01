@@ -1,10 +1,6 @@
 .separator {
-  border-bottom: white 1px solid;
-}
-
-.accordion-open,
-.accordion-close {
-  padding: 20px 0;
+  border-bottom: transparent 1px solid;
+  padding-bottom: 20px;
 }
 
 .accordion-open,
@@ -15,11 +11,11 @@
   justify-content: space-between;
   width: 100%;
   transition: 0.4s;
-  font-weight: 700;
+  font-weight: 300;
   font-size: 16px;
   line-height: 20px;
   align-items: center;
-  padding-bottom: 20px;
+  padding: 20px 0;
 }
 .panel-work,
 .panel-services {
@@ -30,9 +26,17 @@
   font-size: 16px;
   line-height: 137%;
   transition: padding-top 0.35s;
+
+  p {
+    padding-top: 20px;
+    margin-bottom: 0;
+  }
 }
 .panel-work {
   border-top: 1px solid lightgray;
+}
+
+.panel-work p {
   padding-top: 20px;
 }
 
@@ -69,6 +73,12 @@
   min-width: 20px;
 }
 
+.no-fading-text {
+  position: absolute;
+  opacity: 1;
+  z-index: -1;
+}
+
 .text-fadeIn {
   position: absolute;
   opacity: 0;
@@ -93,16 +103,13 @@
   }
   .accordion-open,
   .accordion-close {
-    padding: 25px 0;
-  }
-
-  .accordion-open {
-    padding-bottom: 20px;
+    padding: 35px 0 10px 0;
+    font-size: 24px;
   }
 
   .panel-services {
     width: 85%;
-    border-top: 1px solid white;
+    border-top: 1px solid transparent;
     padding-top: 0px !important;
   }
 }

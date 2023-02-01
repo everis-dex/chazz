@@ -58,6 +58,12 @@ export interface IServicesProjects {
   more: string;
 }
 
+export interface IThoughtsPage {
+  title: string;
+  image: string;
+  categories: string[];
+}
+
 // ##############################
 // #         COMPONENTS
 // ##############################
@@ -144,11 +150,11 @@ export interface ISlide {
   media: IProjectMedia;
   description: string;
   body: string;
-  incarrousel: boolean;
+  incarousel: boolean;
 }
 
 export interface IProjectMedia {
-  carrousel: string;
+  carousel: string;
   project: string;
 }
 
@@ -183,4 +189,14 @@ export interface ISlide {
   title: string;
   subtitle: string;
   image: string;
+}
+
+export interface IThought {
+  date: string;
+  image: string;
+  title: string;
+  body: string;
+  category: string;
+  duration: string;
+  id: number;
 }

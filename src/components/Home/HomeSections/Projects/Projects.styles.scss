@@ -5,25 +5,6 @@
 .projects {
   margin: 0 5%;
 
-  .more-projects {
-    text-decoration: none;
-    display: block;
-    padding: 40px 0 75px 0;
-    font-size: 16px;
-    font-weight: 400;
-    .img {
-      width: 26px;
-    }
-  }
-
-  .more-projects {
-    color: var(--black);
-
-    &:hover {
-      color: var(--pinkHover);
-    }
-  }
-
   .icon-size {
     width: 26px;
     display: inline-flex;
@@ -35,18 +16,6 @@
 @media (min-width: 768px) {
   .icon-size {
     width: 30px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .more-projects,
-  .more-projects:hover {
-    font-size: 24px !important;
-    padding: 80px 0 !important;
-  }
-
-  .more-projects {
-    color: var(--black);
   }
 }
 

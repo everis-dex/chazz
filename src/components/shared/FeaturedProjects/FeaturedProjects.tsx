@@ -17,7 +17,7 @@ export const FeaturedProjects = () => {
           (project: IProject, index: number) =>
             index >= 4 && (
               <div className="project" key={index}>
-                <img loading="lazy" src={project.media.carrousel} alt="Project" />
+                <img loading="lazy" src={project.media.carousel} alt="Project" />
                 {project.title && (
                   <p className="title">
                     {project.title} <span> —</span>
@@ -27,9 +27,11 @@ export const FeaturedProjects = () => {
             )
         )}
       </div>
-      <Link to={"/work"} className="more-projects">
-        {projectsData.more} →
-      </Link>
+      <div className="more-projects-div">
+        <Link to={"/work"} className="more-projects">
+          {projectsData.more} →
+        </Link>
+      </div>
     </div>
   );
 };
