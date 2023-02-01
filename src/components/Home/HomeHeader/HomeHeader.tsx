@@ -103,19 +103,19 @@ export const HomeHeader = (headerData: IHomeHeader) => {
             </div>
           )}
         </div>
-        {!isBurgerMenuOpen && (
-          <div className="player-video-desktop-switcher">
-            <div className="player-video" ref={controlRef}>
-              <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
-              <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
-              <span className="player-text" onClick={switchPlayPause}>
-                {controlText} reel
-              </span>
-            </div>
-          </div>
-        )}
 
       </div>
+      {!isBurgerMenuOpen && (
+        <div className="player-video-desktop-switcher">
+          <div className="player-video" ref={controlRef}>
+            <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
+            <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
+            <span className="player-text" onClick={switchPlayPause}>
+              {controlText} reel
+            </span>
+          </div>
+        </div>
+      )}
 
       {!isPlaying && <img src="uploads/first_frame.jpg" alt="" className="grayscale" />}
 
