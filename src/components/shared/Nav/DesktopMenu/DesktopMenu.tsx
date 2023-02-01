@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { availableRoutes, routesInfo } from "../../../../constants";
+import { availableRouteIDs, routesInfo } from "../../../../constants";
 
 import "../Nav.styles.scss";
 
@@ -14,7 +14,7 @@ export const DesktopMenu = ({ color, activeStyle }: Props) => {
     <div className="nav">
       <ul>
         {routesInfo
-          .filter(route => availableRoutes.includes(route.id))
+          .filter(route => availableRouteIDs.includes(route.id))
           .map(route => (
             <li key={route.id}>
               {route.name && (
