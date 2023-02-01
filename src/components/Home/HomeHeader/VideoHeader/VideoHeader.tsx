@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, forwardRef } from "react";
+import React, { useEffect, forwardRef } from "react";
 import "./VideoHeader.style.scss";
 
 type Props = {
