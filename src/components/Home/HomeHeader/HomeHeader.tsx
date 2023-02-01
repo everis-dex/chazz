@@ -77,20 +77,24 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   return (
     <div className="chazz-header">
       <div className={isPlaying ? "velo-out" : "velo-in"}>
-        <span className={isPlaying ? "nav-out" : "nav-in"}>
-          <Nav
-            color="white"
-            disabledMenuOption={routesInfo[0].route}
-            isNavVisible={isNavVisible}
-            isPlaying={isPlaying}
-            isBurgerMenuOpen={isBurgerMenuOpen}
-            setIsBurgerMenuOpen={setIsBurgerMenuOpen}
-            activeStyle="active-black"
-          />
-        </span>
+        <div className={isPlaying ? "simply-out" : "simply-in"}>
+          <span className={isPlaying ? "nav-out" : "nav-in"}>
+            <Nav
+              color="white"
+              disabledMenuOption={routesInfo[0].route}
+              isNavVisible={isNavVisible}
+              isPlaying={isPlaying}
+              isBurgerMenuOpen={isBurgerMenuOpen}
+              setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+              activeStyle="active-black"
+            />
+          </span>
+        </div>
         <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
-          <LineBreakerSelector typedLines={headerData.title} />
-          <h4>{headerData.subtitle}</h4>
+          <div className={isPlaying ? "simply-out" : ""}>
+            <LineBreakerSelector typedLines={headerData.title} />
+            <h4>{headerData.subtitle}</h4>
+          </div>
           {!isBurgerMenuOpen && (
             <div className="player-video-mobile-switcher">
               <div className="player-video">
