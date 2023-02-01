@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 
 import { categories, services } from "../../../content/index";
 import { ICategory, IServicesHeader } from "../../../interfaces/cms";
-import { AllowCookies } from "../../Home";
-import { FeaturedProjects, Footer, Nav } from "../../shared/index";
+import { AllowCookies, FeaturedProjects, Footer, Nav } from "../../shared/index";
 import { Category } from "./Category/Category";
 
 import "./Services.styles.scss";

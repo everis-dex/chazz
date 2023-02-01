@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-import { LineBreakerSelector } from "../../shared/index";
-import { AllowCookies, Nav } from "../index";
+import { AllowCookies, LineBreakerSelector, Nav } from "../../shared/index";
 import { VideoHeader } from "./VideoHeader/VideoHeader";
 
 import { IHomeHeader } from "../../../interfaces/cms";

@@ -2,9 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { thoughts, thoughtsPage } from "../../../content/index";
 import { IThought } from "../../../interfaces/cms";
-
-import { AllowCookies } from "../../Home";
-import { Footer, Nav } from "../../shared/index";
+import { AllowCookies, Footer, Nav } from "../../shared/index";
 import { Thought } from "./Thought/Thought";
 
 import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.svg";
