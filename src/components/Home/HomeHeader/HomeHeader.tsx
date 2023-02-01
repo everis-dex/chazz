@@ -88,35 +88,33 @@ export const HomeHeader = (headerData: IHomeHeader) => {
             activeStyle="active-black"
           />
         </span>
-        <div className="mobile-adjustment">
-          <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
-            <LineBreakerSelector typedLines={headerData.title} />
-            <h4>{headerData.subtitle}</h4>
-          </div>
+        <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
+          <LineBreakerSelector typedLines={headerData.title} />
+          <h4>{headerData.subtitle}</h4>
           {!isBurgerMenuOpen && (
-            <>
-              <div className="player-video-mobile-switcher">
-                <div className="player-video">
-                  <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
-                  <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
-                  <span className="player-text" onClick={switchPlayPause}>
-                    {controlText} reel
-                  </span>
-                </div>
+            <div className="player-video-mobile-switcher">
+              <div className="player-video">
+                <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
+                <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
+                <span className="player-text" onClick={switchPlayPause}>
+                  {controlText} reel
+                </span>
               </div>
-
-              <div className="player-video-desktop-switcher">
-                <div className="player-video" ref={controlRef}>
-                  <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
-                  <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
-                  <span className="player-text" onClick={switchPlayPause}>
-                    {controlText} reel
-                  </span>
-                </div>
-              </div>
-            </>
+            </div>
           )}
         </div>
+        {!isBurgerMenuOpen && (
+          <div className="player-video-desktop-switcher">
+            <div className="player-video" ref={controlRef}>
+              <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
+              <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
+              <span className="player-text" onClick={switchPlayPause}>
+                {controlText} reel
+              </span>
+            </div>
+          </div>
+        )}
+
       </div>
 
       {!isPlaying && <img src="uploads/first_frame.jpg" alt="" className="grayscale" />}
