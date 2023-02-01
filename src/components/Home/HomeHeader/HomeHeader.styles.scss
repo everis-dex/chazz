@@ -36,7 +36,6 @@
   width: 80%;
   padding-left: 5%;
   position: absolute;
-  // top: 30%;
   bottom: 30%;
   font-size: 23px;
   line-height: 1.2;
@@ -92,6 +91,90 @@
   min-height: 100%;
 }
 
+// Player video switchers
+
+.player-video-desktop-switcher {
+  display: none;
+}
+
+.player-video-mobile-switcher {
+  // display: inline-flex !important;
+  display: block !important;
+  width: 50%;
+  // cursor: pointer;
+  // position: relative;
+  // top: 30px;
+}
+
+// Player video
+
+.player-video {
+  position: absolute;
+  align-items: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  cursor: none;
+
+  // Play
+  .play-icon-in,
+  .play-icon-out {
+    position: absolute;
+    top: 2px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12px solid var(--white);
+    margin-right: 13px;
+    transition: all 1s;
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.2));
+  }
+
+  .play-icon-in {
+    transform: rotate(-60deg);
+    opacity: 0;
+  }
+
+  .play-icon-out {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+
+  // Stop
+  .stop-icon-in {
+    position: absolute;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--white);
+    margin-right: 13px;
+    transform: rotate(0deg);
+    transition: all 1s;
+    opacity: 1;
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.2));
+  }
+
+  .stop-icon-out {
+    position: absolute;
+    top: 4px;
+    width: 6px;
+    height: 6px;
+    transform: rotate(-60deg);
+    transition: all 1s;
+    opacity: 0;
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.2));
+  }
+
+  // Text
+  .player-text {
+    color: var(--white);
+    font-size: 19px;
+    font-weight: 450;
+    margin-left: 20px;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+  }
+}
+
 // MEDIA QUERIES
 
 @media (width: 320px) {
@@ -102,12 +185,12 @@
   .chazz-title-out {
     width: 100%;
   }
-
 }
 
 @media (min-width: 768px) {
   .chazz-header {
     background-position: 30% -100px;
+    width: 100%;
   }
   .chazz-title,
   .chazz-title-out {
@@ -129,6 +212,14 @@
 }
 
 @media (min-width: 1024px) {
+  .player-video-desktop-switcher {
+    display: flex;
+  }
+
+  .player-video-mobile-switcher {
+    display: none !important;
+  }
+
   .chazz-header {
     max-height: 575px;
     width: 100%;
