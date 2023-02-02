@@ -18,17 +18,16 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const controlRef = useRef<HTMLDivElement>(null);
 
   const switchPlayPause = () => {
-    console.log("PLAYPAUSE");
     setIsPlaying(!isPlaying);
 
     if (videoRef.current) {
       if (isPlaying) {
         videoRef.current.pause();
         setIsNavVisible(!isNavVisible);
-        setControlText("Play");
+        setControlText(controlTextOptions.play);
       } else {
         videoRef.current.play();
-        setControlText("Stop");
+        setControlText(controlTextOptions.stop);
         setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
       }
     }
