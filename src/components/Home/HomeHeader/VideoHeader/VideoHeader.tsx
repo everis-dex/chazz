@@ -40,18 +40,16 @@ export const VideoHeader = forwardRef(
     };
 
     return (
-      <>
-        <video
-          className={`video-header ${isPlaying ? "color" : "no-color"}`}
-          ref={ref}
-          onEnded={resetVideo}
-          onPause={forcePause}
-          preload="auto"
-        >
-          <source src="uploads/reel_chazz_1080.mp4" media="(min-width: 850px)" />
-          <source src="uploads/reel_chazz_540.mp4" />
-        </video>
-      </>
+      <video
+        className={`video-header ${isPlaying ? "color" : "no-color"}`}
+        ref={ref}
+        onEnded={resetVideo}
+        onPause={forcePause}
+        preload="auto"
+      >
+        <source src="uploads/reel_chazz_1080.mp4" media="(min-width: 850px)" />
+        <source src="uploads/reel_chazz_540.mp4" />
+      </video>
     );
   }
 );
