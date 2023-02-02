@@ -1,19 +1,13 @@
-@import "../../../../styles.scss";
-
 // MOBILE FIRST
-
-#Footer {
-  margin: 0 5%;
-}
 
 .we-are-section {
   overflow: hidden;
   background-color: var(--black);
   color: var(--white);
-
   padding-bottom: 62px;
 
   .we-are-grid {
+    margin: 0 5%;
     display: grid;
     grid-template-columns: 100%;
 
@@ -21,7 +15,7 @@
       font-weight: 700;
       font-size: 32px;
       line-height: 114.5%;
-      color: #ffafc4;
+      color: var(--pink);
       padding: 74px 36px 114px 0px;
       margin-bottom: 0;
     }

@@ -1,0 +1,107 @@
+.carousel:hover {
+  cursor: pointer;
+}
+
+.carouselTitle {
+  h3 {
+    font-size: 24px;
+  }
+}
+
+.carouselPagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--pinkHover);
+  width: 8px;
+  height: 8px;
+  opacity: 1;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--black);
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 15px 20px 25px 0px;
+}
+
+.title {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 31.2px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  margin: 50px 0 0 0;
+  padding-right: 10px;
+  strong {
+    font-weight: 700;
+  }
+}
+
+.properties {
+  // display: flex;
+  color: var(--gray);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+// MEDIA QUERIES
+@media (min-width: 768px) {
+  .carousel {
+    .pagination {
+      padding-left: 2px;
+      width: auto;
+    }
+    .slides {
+      cursor: url("/assets/icon-drag_pointer.svg"), auto;
+    }
+  }
+  .properties {
+    padding-right: 40px;
+    padding-bottom: 5px;
+  }
+}
+
+@media (min-width: 1240px) {
+  .carouselTitle {
+    h3 {
+      font-size: 32px;
+    }
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .properties {
+    font-size: 24px;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (min-width: 1920px) {
+  .title {
+    font-size: 28px;
+  }
+  .properties {
+    font-size: 28px;
+    padding-bottom: 10px;
+  }
+  .carouselTitle h3 {
+    font-size: 35px;
+  }
+}

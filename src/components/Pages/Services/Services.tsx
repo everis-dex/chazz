@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { routesInfo } from "../../../constants";
+
 import { categories, services } from "../../../content/index";
 import { ICategory, IServicesHeader } from "../../../interfaces/cms";
+import { AllowCookies } from "../../Home";
 import { FeaturedProjects, Footer, Nav } from "../../shared/index";
 import { Category } from "./Category/Category";
 
@@ -26,6 +28,7 @@ export const Services = () => {
         setIsBurgerMenuOpen={setIsBurgerMenuOpen}
         activeStyle="active-pink"
       />
+      <AllowCookies />
       <div className="services-container">
         <div className="services-header">
           <h1 className="header-title">{headerData.title}</h1>

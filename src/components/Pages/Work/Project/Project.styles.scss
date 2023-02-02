@@ -1,6 +1,6 @@
 .project-container {
   display: block;
-  margin-bottom: 10vh;
+  margin-bottom: 3vh;
   width: 90vw;
   &.full-width {
     grid-column: auto;
@@ -14,14 +14,24 @@
 
   img {
     width: 100%;
-    height: 100%;
-    max-height: 366px;
+    height: 360px;
+    max-height: 360px;
     object-fit: cover;
   }
 }
+.project-media video {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+.half {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
 
 .project-details {
-  margin: 40px 0;
+  margin: 30px 0;
   color: var(--black);
   font-size: 16px;
 
@@ -30,16 +40,18 @@
     flex-direction: column;
 
     span {
-      font-weight: 700;
+      font-weight: 300;
       font-size: 16px;
     }
     .title {
       margin-top: 0;
+      font-weight: 400;
     }
     .description {
       font-weight: 400;
     }
     .properties {
+      font-weight: 300;
       color: var(--gray);
     }
   }
@@ -50,6 +62,7 @@
   font-size: 16px;
   white-space: pre-wrap;
   font-weight: 300;
+  border-bottom: 1px solid white;
 }
 
 .body {
@@ -63,12 +76,22 @@
   .project-media {
     img {
       max-height: 400px;
+      height: 400px;
     }
+    video {
+      height: 400px;
+    }
+  }
+  .half {
+    height: 400px;
   }
 }
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
+  .project-container {
+    margin-bottom: 10vh;
+  }
   .project-details {
     .project-title-container {
       display: block;
@@ -76,17 +99,28 @@
   }
   .project-media {
     img {
-      max-height: 676px;
+      height: 696px;
+      max-height: 696px;
     }
+    video {
+      height: 696px;
+    }
+  }
+  .half {
+    height: 696px;
   }
 
   .non-accordion {
     display: block;
+    margin-top: -5px;
   }
 }
 @media (min-width: 1280px) {
   .project-container {
     width: auto;
+    position: relative;
+    top: -36px;
+
     &.full-width {
       grid-column: 1/3;
 
@@ -99,7 +133,20 @@
 
   .project-media {
     img {
+      height: 576px;
       max-height: 576px;
+    }
+    video {
+      height: 576px;
+    }
+  }
+  .half {
+    height: 288px;
+    img {
+      height: 288px;
+    }
+    video {
+      height: 288px;
     }
   }
 
@@ -125,7 +172,20 @@
 @media (min-width: 1440px) {
   .project-media {
     img {
+      height: 662px;
       max-height: 662px;
+    }
+    video {
+      height: 662px;
+    }
+  }
+  .half {
+    height: 331px;
+    img {
+      height: 331px;
+    }
+    video {
+      height: 331px;
     }
   }
 }
@@ -133,7 +193,20 @@
 @media (min-width: 1920px) {
   .project-media {
     img {
+      height: 904px;
       max-height: 904px;
+    }
+    video {
+      height: 904px;
+    }
+  }
+  .half {
+    height: 452px;
+    img {
+      height: 452px;
+    }
+    video {
+      height: 452px;
     }
   }
 }

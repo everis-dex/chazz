@@ -6,7 +6,7 @@ const supportedImageTags: Array<string> = ["jpg", "jpeg", "gif", "png", "apng", 
 
 type Props = {
   src: string;
-  style: { width: string; height: string };
+  style: { width: string; height?: string };
   alt: string;
   format?: string;
 };
@@ -40,7 +40,6 @@ export const Media = ({ src, style, alt, format }: Props) => {
             <video
               width={style.width}
               height="auto"
-              controls
               onError={error => console.error(error)}
               muted={true}
               loop

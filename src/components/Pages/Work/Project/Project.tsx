@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { IProject } from "../../../../interfaces/cms";
-import { Accordion } from "../Accordion/Accordion";
+import { Accordion } from "../../../shared/Accordion/Accordion";
 import { Media } from "../../../shared/index";
 
 import "./Project.styles.scss";
@@ -9,23 +9,7 @@ import "./Project.styles.scss";
 type Props = { data: IProject; format: string; columns?: string; full?: boolean };
 
 export const ProjectCard = ({ data, format, columns }: Props) => {
-  let [height, setHeight] = useState<string>("auto");
   const image = data.media.project;
-
-  useEffect(() => {
-    // Create image to obtain height
-    const img = new Image();
-    img.src = image;
-
-    const getImageHeight = (img.onload = () => {
-      const height: number = img.height ? img.height : 600;
-      // const res = format === "half" ? height / 2 + "px" : height + "px";
-      const res = format === "half" ? "444px" : height + "px";
-      return res;
-    });
-
-    setHeight(getImageHeight());
-  }, [image, format, height]);
 
   const bodyParagraphs = data.body;
 
@@ -35,8 +19,8 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
 
   return (
     <div className={`project-container ${columns}`}>
-      <div className="project-media">
-        <Media src={image} style={{ height, width: "100%" }} alt={data.title} format={format} />
+      <div className={`project-media ${format === "half" ? "half" : ""}`}>
+        <Media src={image} style={{ width: "100%" }} alt={data.title} format={format} />
       </div>
 
       <div className="project-details">
@@ -44,10 +28,10 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
           <span className="title">{data.title} —</span>
           <span className="description">{data.description}</span>
         </div>
-        <span className="properties">{data.subtitle}</span>
+        <p className="properties">{data.subtitle}</p>
       </div>
       {/* Accordion */}
-      <Accordion content={bodyParagraphs} />
+      <Accordion title="" content={bodyParagraphs} ourWork={true} />
       <div className="non-accordion">{bodyParagraphs3}</div>
     </div>
   );
