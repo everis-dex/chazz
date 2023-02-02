@@ -1,43 +1,131 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
+import { IHomeHeader } from "../../../interfaces/cms";
 import { AllowCookies, LineBreakerSelector, Nav } from "../../shared/index";
 import { VideoHeader } from "./VideoHeader/VideoHeader";
 
-import { IHomeHeader } from "../../../interfaces/cms";
-
 import "./HomeHeader.styles.scss";
 
+const controlTextOptions = { play: "Play", stop: "Stop" };
+
 export const HomeHeader = (headerData: IHomeHeader) => {
-  const [videoPlaying, setVideoPlaying] = useState<boolean>(false);
-  const [burgerMenuOpen, setBurgerMenuOpen] = useState<boolean>(false);
-  const [navVisible, setNavVisible] = useState<boolean>(true);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
+  const [controlText, setControlText] = useState<string>(controlTextOptions.play);
 
-  function toggleNavVisible(bool?: boolean): void {
-    const value: boolean = bool ? bool : !navVisible;
-    setNavVisible(value);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const controlRef = useRef<HTMLDivElement>(null);
+
+  const switchPlayPause = () => {
+    console.log("PLAYPAUSE");
+    setIsPlaying(!isPlaying);
+
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+        setIsNavVisible(!isNavVisible);
+        setControlText("Play");
+      } else {
+        videoRef.current.play();
+        setControlText("Stop");
+        setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
+      }
+    }
+  };
+
+  const AlertNavParent = (value: boolean): void => setIsBurgerMenuOpen(value);
+
+  useEffect(() => {
+    const handleMouseMove = (event: any): void => {
+      if (!controlRef.current) return;
+
+      if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
+        const scrollY = window.scrollY;
+        const postY = event.clientY;
+        const scrollFinalY = scrollY + postY - 10;
+        const scrollX = window.scrollX;
+        const postX = event.clientX;
+        const scrollFinalX = scrollX + postX - 50;
+
+        if (window.innerWidth >= 1040) {
+          controlRef.current.style.top = scrollFinalY.toString().concat("px");
+          controlRef.current.style.left = scrollFinalX.toString().concat("px");
+          controlRef.current.style.opacity = "1";
+        } else {
+          controlRef.current.style.top = (window.innerHeight - 40).toString().concat("px");
+          controlRef.current.style.left = "5%";
+        }
+      } else {
+        controlRef.current.style.opacity = "0";
+      }
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  function appHeight(): void {
+    const doc = document.documentElement;
+    doc.style.setProperty("--app-height", `${window.innerHeight}px`);
   }
-
-  const AlertNavParent = (value: boolean): void => setBurgerMenuOpen(value);
-  const AlertVideoParent = (value: boolean): void => setVideoPlaying(value);
+  window.addEventListener("resize", appHeight);
+  appHeight();
 
   return (
     <div className="chazz-header">
-      <AllowCookies />
-      <div className={videoPlaying ? "velo-out" : "velo-in"}>
-        <span className={videoPlaying ? "nav-out" : "nav-in"}>
-          {navVisible && <Nav isPlaying={videoPlaying} darkMode AlertNavParent={AlertNavParent} />}
-        </span>
-        <div className={videoPlaying ? "chazz-title-out" : "chazz-title"}>
-          <LineBreakerSelector typedLines={headerData.title} />
-          <h4>{headerData.subtitle}</h4>
+      <div className={isPlaying ? "velo-out" : "velo-in"}>
+        <div className={isPlaying ? "simply-out" : "simply-in"}>
+          <span className={isPlaying ? "nav-out" : "nav-in"}>
+            <Nav isPlaying={isPlaying} darkMode AlertNavParent={AlertNavParent} />
+          </span>
+        </div>
+        <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
+          <div className={isPlaying ? "simply-out" : ""}>
+            <LineBreakerSelector typedLines={headerData.title} />
+            <h4>{headerData.subtitle}</h4>
+          </div>
+          {!isBurgerMenuOpen && (
+            <div className="player-video-mobile-switcher">
+              <div className="player-video">
+                <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
+                <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
+                <span className="player-text" onClick={switchPlayPause}>
+                  {controlText} reel
+                </span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
-      {!videoPlaying && <img src="uploads/first_frame.jpg" alt="" className="grayscale" />}
+      {!isBurgerMenuOpen && (
+        <div className="player-video-desktop-switcher">
+          <div className="player-video" ref={controlRef}>
+            <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
+            <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
+            <span className="player-text" onClick={switchPlayPause}>
+              {controlText} reel
+            </span>
+          </div>
+        </div>
+      )}
+
+      {!isPlaying && <img src="uploads/first_frame.jpg" alt="" className="grayscale" />}
+
       <VideoHeader
-        AlertVideoParent={AlertVideoParent}
-        toggleNavVisible={toggleNavVisible}
-        burgerMenuOpen={burgerMenuOpen}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+        isNavVisible={isNavVisible}
+        setIsNavVisible={setIsNavVisible}
+        isBurgerMenuOpen={isBurgerMenuOpen}
+        controlTextOptions={controlTextOptions}
+        controlText={controlText}
+        setControlText={setControlText}
+        ref={videoRef}
       />
+
+      <AllowCookies />
     </div>
   );
 };
