@@ -20,19 +20,18 @@
   }
 }
 
-// Hide filters scrollbar
-
-::-webkit-scrollbar {
-  display: none;
-  background: transparent;
-}
-
 .thoughts-filtering {
   padding: 40px 0 30px 0;
   border-bottom: 1px solid var(--black);
   display: flex;
   gap: 20px;
   overflow-x: overlay;
+
+  // Hide filters scrollbar
+  &::-webkit-scrollbar {
+    display: none;
+    background: transparent;
+  }
 
   span {
     padding: 10px 0;
