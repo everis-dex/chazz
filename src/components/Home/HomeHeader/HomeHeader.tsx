@@ -18,17 +18,16 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const controlRef = useRef<HTMLDivElement>(null);
 
   const switchPlayPause = () => {
-    console.log("PLAYPAUSE");
     setIsPlaying(!isPlaying);
 
     if (videoRef.current) {
       if (isPlaying) {
         videoRef.current.pause();
         setIsNavVisible(!isNavVisible);
-        setControlText("Play");
+        setControlText(controlTextOptions.play);
       } else {
         videoRef.current.play();
-        setControlText("Stop");
+        setControlText(controlTextOptions.stop);
         setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
       }
     }
@@ -41,14 +40,10 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       if (!controlRef.current) return;
 
       if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
-        const scrollY = window.scrollY;
-        const postY = event.clientY;
-        const scrollFinalY = scrollY + postY - 10;
-        const scrollX = window.scrollX;
-        const postX = event.clientX;
-        const scrollFinalX = scrollX + postX - 50;
+        const scrollFinalY = event.pageY - 10;
+        const scrollFinalX = event.pageX - 50;
 
-        if (window.innerWidth >= 1040) {
+        if (window.innerWidth >= 1024) {
           controlRef.current.style.top = scrollFinalY.toString().concat("px");
           controlRef.current.style.left = scrollFinalX.toString().concat("px");
           controlRef.current.style.opacity = "1";
