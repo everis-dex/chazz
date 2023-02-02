@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import React, { useState } from "react";
 
-const supportedVideoTags: Array<string> = ["mp4", "webm", "ogg"];
+const supportedVideoTags: Array<string> = ["mp4", "webm", "ogg", "mov"];
 const supportedImageTags: Array<string> = ["jpg", "jpeg", "gif", "png", "apng", "svg", "bmp"];
 
 type Props = {
