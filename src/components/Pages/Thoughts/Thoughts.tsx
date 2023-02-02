@@ -38,14 +38,13 @@ export const Thoughts = () => {
     });
   }, [filters]);
 
-  function filterByLength(length: number): boolean {
-    return thoughts.filter((t: IThought) => filterByCategory(t.category)).length > length;
-  }
+  // Filtering functions
+  const filterByCategory = (category: string) => selectedFilter === "All" || selectedFilter === category;
 
-  function filterByCategory(category: string): boolean {
-    return selectedFilter === "All" || selectedFilter === category;
-  }
+  const filterByLength = (length: number) =>
+    thoughts.filter((t: IThought) => filterByCategory(t.category)).length > length;
 
+  // Components
   const LessThoughts = () => (
     <>
       <RightArrow
@@ -72,7 +71,11 @@ export const Thoughts = () => {
         {/* Header section */}
         <div className="thoughts-header">
           <h1 className="header-title">{thoughtsPage.title}</h1>
-          <img src={thoughtsPage.image} alt="Header" />
+          <picture>
+            <source media="(max-width: 768px)" srcSet="uploads/thoughts_bg-768.svg" />
+            <source media="(min-width: 768px)" srcSet={thoughtsPage.image} />
+            <img src={thoughtsPage.image} alt="Header" />
+          </picture>
         </div>
         {/* Filtering section */}
         <div className="thoughts-filtering" ref={filters}>
