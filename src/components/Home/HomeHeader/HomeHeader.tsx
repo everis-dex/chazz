@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
+import { IHomeHeader } from "../../../interfaces/cms";
 import { AllowCookies, LineBreakerSelector, Nav } from "../../shared/index";
 import { VideoHeader } from "./VideoHeader/VideoHeader";
-
-import { routesInfo } from "../../../constants";
-import { IHomeHeader } from "../../../interfaces/cms";
 
 import "./HomeHeader.styles.scss";
 
@@ -20,45 +18,41 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const controlRef = useRef<HTMLDivElement>(null);
 
   const switchPlayPause = () => {
-    console.log("PLAYPAUSE");
     setIsPlaying(!isPlaying);
 
-    if (videoRef.current && isPlaying) {
-      videoRef.current.pause();
-      setIsNavVisible(!isNavVisible);
-      setControlText("Play");
-    }
-    if (videoRef.current && !isPlaying) {
-      videoRef.current.play();
-      setControlText("Stop");
-      setTimeout(() => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
         setIsNavVisible(!isNavVisible);
-      }, 1000);
+        setControlText(controlTextOptions.play);
+      } else {
+        videoRef.current.play();
+        setControlText(controlTextOptions.stop);
+        setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
+      }
     }
   };
 
+  const AlertNavParent = (value: boolean): void => setIsBurgerMenuOpen(value);
+
   useEffect(() => {
     const handleMouseMove = (event: any): void => {
-      if (controlRef.current) {
-        if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
-          const scrollY = window.scrollY;
-          const postY = event.clientY;
-          const scrollFinalY = scrollY + postY - 10;
-          const scrollX = window.scrollX;
-          const postX = event.clientX;
-          const scrollFinalX = scrollX + postX - 50;
+      if (!controlRef.current) return;
 
-          if (window.innerWidth >= 1040) {
-            controlRef.current.style.top = scrollFinalY.toString().concat("px");
-            controlRef.current.style.left = scrollFinalX.toString().concat("px");
-            controlRef.current.style.opacity = "1";
-          } else {
-            controlRef.current.style.top = (window.innerHeight - 40).toString().concat("px");
-            controlRef.current.style.left = "5%";
-          }
+      if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
+        const scrollFinalY = event.pageY - 10;
+        const scrollFinalX = event.pageX - 50;
+
+        if (window.innerWidth >= 1024) {
+          controlRef.current.style.top = scrollFinalY.toString().concat("px");
+          controlRef.current.style.left = scrollFinalX.toString().concat("px");
+          controlRef.current.style.opacity = "1";
         } else {
-          controlRef.current.style.opacity = "0";
+          controlRef.current.style.top = (window.innerHeight - 40).toString().concat("px");
+          controlRef.current.style.left = "5%";
         }
+      } else {
+        controlRef.current.style.opacity = "0";
       }
     };
     window.addEventListener("mousemove", handleMouseMove);
@@ -79,15 +73,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       <div className={isPlaying ? "velo-out" : "velo-in"}>
         <div className={isPlaying ? "simply-out" : "simply-in"}>
           <span className={isPlaying ? "nav-out" : "nav-in"}>
-            <Nav
-              color="white"
-              disabledMenuOption={routesInfo[0].route}
-              isNavVisible={isNavVisible}
-              isPlaying={isPlaying}
-              isBurgerMenuOpen={isBurgerMenuOpen}
-              setIsBurgerMenuOpen={setIsBurgerMenuOpen}
-              activeStyle="active-black"
-            />
+            <Nav isPlaying={isPlaying} darkMode AlertNavParent={AlertNavParent} />
           </span>
         </div>
         <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
@@ -132,7 +118,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
         controlText={controlText}
         setControlText={setControlText}
         ref={videoRef}
-      ></VideoHeader>
+      />
 
       <AllowCookies />
     </div>

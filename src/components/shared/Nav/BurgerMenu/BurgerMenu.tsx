@@ -9,18 +9,13 @@ type Props = {
   isBurgerMenuOpen: boolean;
   toggleMenu: (event: React.MouseEvent) => void;
   color: string;
-  disabledMenuOption: string;
 };
 
-export const BurgerMenu = ({ isBurgerMenuOpen, toggleMenu, color, disabledMenuOption }: Props) => {
+export const BurgerMenu = ({ isBurgerMenuOpen, toggleMenu, color }: Props) => {
   return (
     <div className={`burger-menu ${isBurgerMenuOpen ? "active" : ""}`}>
       <BurgerIcon isBurgerMenuOpen={isBurgerMenuOpen} toggleMenu={toggleMenu} color={color} />
-      <BurgerMenuOptions
-        isBurgerMenuOpen={isBurgerMenuOpen}
-        toggleMenu={toggleMenu}
-        disabledMenuOption={disabledMenuOption}
-      />
+      <BurgerMenuOptions isBurgerMenuOpen={isBurgerMenuOpen} toggleMenu={toggleMenu} />
     </div>
   );
 };
