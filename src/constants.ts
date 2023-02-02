@@ -1,36 +1,12 @@
 import { RoutesInfo } from "./interfaces/routes";
 
 export const routesInfo: RoutesInfo[] = [
-  {
-    id: 0,
-    name: "We are",
-    route: "/"
-  },
-  {
-    id: 1,
-    name: "Services",
-    route: "/services"
-  },
-  {
-    id: 2,
-    name: "Work",
-    route: "/work"
-  },
-  {
-    id: 3,
-    name: "Thoughts",
-    route: "/thoughts"
-  },
-  {
-    id: 4,
-    name: "Privacy Policy",
-    route: "/privacy_policy"
-  },
-  {
-    id: 5,
-    name: "Cookie Policy",
-    route: "/cookie_policy"
-  }
+  { id: 0, name: "We are", route: "/" },
+  { id: 1, name: "Services", route: "/services" },
+  { id: 2, name: "Work", route: "/work" },
+  { id: 3, name: "Thoughts", route: "/thoughts" },
+  { id: 4, name: "Privacy Policy", route: "/privacy_policy" },
+  { id: 5, name: "Cookie Policy", route: "/cookie_policy" }
 ];
 
 // select here which nav options are available
