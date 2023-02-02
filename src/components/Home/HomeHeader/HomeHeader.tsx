@@ -107,7 +107,6 @@ export const HomeHeader = (headerData: IHomeHeader) => {
             </div>
           )}
         </div>
-
       </div>
       {!isBurgerMenuOpen && (
         <div className="player-video-desktop-switcher">
