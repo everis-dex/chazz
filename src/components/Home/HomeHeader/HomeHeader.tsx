@@ -21,17 +21,16 @@ export const HomeHeader = (headerData: IHomeHeader) => {
     console.log("PLAYPAUSE");
     setIsPlaying(!isPlaying);
 
-    if (videoRef.current && isPlaying) {
-      videoRef.current.pause();
-      setIsNavVisible(!isNavVisible);
-      setControlText("Play");
-    }
-    if (videoRef.current && !isPlaying) {
-      videoRef.current.play();
-      setControlText("Stop");
-      setTimeout(() => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
         setIsNavVisible(!isNavVisible);
-      }, 1000);
+        setControlText("Play");
+      } else {
+        videoRef.current.play();
+        setControlText("Stop");
+        setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
+      }
     }
   };
 
@@ -39,26 +38,26 @@ export const HomeHeader = (headerData: IHomeHeader) => {
 
   useEffect(() => {
     const handleMouseMove = (event: any): void => {
-      if (controlRef.current) {
-        if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
-          const scrollY = window.scrollY;
-          const postY = event.clientY;
-          const scrollFinalY = scrollY + postY - 10;
-          const scrollX = window.scrollX;
-          const postX = event.clientX;
-          const scrollFinalX = scrollX + postX - 50;
+      if (!controlRef.current) return;
 
-          if (window.innerWidth >= 1040) {
-            controlRef.current.style.top = scrollFinalY.toString().concat("px");
-            controlRef.current.style.left = scrollFinalX.toString().concat("px");
-            controlRef.current.style.opacity = "1";
-          } else {
-            controlRef.current.style.top = (window.innerHeight - 40).toString().concat("px");
-            controlRef.current.style.left = "5%";
-          }
+      if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
+        const scrollY = window.scrollY;
+        const postY = event.clientY;
+        const scrollFinalY = scrollY + postY - 10;
+        const scrollX = window.scrollX;
+        const postX = event.clientX;
+        const scrollFinalX = scrollX + postX - 50;
+
+        if (window.innerWidth >= 1040) {
+          controlRef.current.style.top = scrollFinalY.toString().concat("px");
+          controlRef.current.style.left = scrollFinalX.toString().concat("px");
+          controlRef.current.style.opacity = "1";
         } else {
-          controlRef.current.style.opacity = "0";
+          controlRef.current.style.top = (window.innerHeight - 40).toString().concat("px");
+          controlRef.current.style.left = "5%";
         }
+      } else {
+        controlRef.current.style.opacity = "0";
       }
     };
     window.addEventListener("mousemove", handleMouseMove);
@@ -124,7 +123,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
         controlText={controlText}
         setControlText={setControlText}
         ref={videoRef}
-      ></VideoHeader>
+      />
 
       <AllowCookies />
     </div>
