@@ -2,13 +2,21 @@ import React, { useEffect, forwardRef } from "react";
 import "./VideoHeader.style.scss";
 
 type Props = {
-  AlertVideoParent?: (v: boolean) => void;
-  toggleNavVisible: (value?: boolean) => void;
-  burgerMenuOpen: boolean;
+  isPlaying: boolean;
+  setIsPlaying: (a: boolean) => void;
+  isNavVisible: boolean;
+  setIsNavVisible: (a: boolean) => void;
+  isBurgerMenuOpen: boolean;
+  controlTextOptions: { play: string; stop: string };
+  controlText: string;
+  setControlText: (a: string) => void;
 };
 
 export const VideoHeader = forwardRef(
-  ({ AlertVideoParent, toggleNavVisible, burgerMenuOpen }: Props, ref: React.LegacyRef<HTMLVideoElement>) => {
+  (
+    { isPlaying, setIsPlaying, isNavVisible, setIsNavVisible, controlTextOptions, setControlText }: Props,
+    ref: React.LegacyRef<HTMLVideoElement>
+  ) => {
     useEffect(() => {
       if (!isPlaying && !isNavVisible) {
         setIsNavVisible(true);
@@ -28,8 +36,6 @@ export const VideoHeader = forwardRef(
         if (newRef.current) {
           newRef.current.currentTime = 0;
         }
-      } else {
-        controlRef.current.style.opacity = "0";
       }
     };
 
