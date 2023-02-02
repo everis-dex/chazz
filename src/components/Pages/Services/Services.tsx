@@ -8,8 +8,8 @@ import { Category } from "./Category/Category";
 import "./Services.styles.scss";
 
 export const Services = () => {
-  const headerData: IServicesHeader = services.header;
   useEffect(() => window.scrollTo(0, 0), []);
+  const headerData: IServicesHeader = services.header;
 
   return (
     <>

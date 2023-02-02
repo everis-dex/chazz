@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import { AllowCookies, LineBreakerSelector, Nav } from "../../shared/index";
 import { VideoHeader } from "./VideoHeader/VideoHeader";
@@ -6,6 +6,8 @@ import { VideoHeader } from "./VideoHeader/VideoHeader";
 import { IHomeHeader } from "../../../interfaces/cms";
 
 import "./HomeHeader.styles.scss";
+
+const controlTextOptions = { play: "Play", stop: "Stop" };
 
 export const HomeHeader = (headerData: IHomeHeader) => {
   const [videoPlaying, setVideoPlaying] = useState<boolean>(false);
