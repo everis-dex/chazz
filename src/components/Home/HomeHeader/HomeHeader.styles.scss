@@ -258,13 +258,10 @@
     background-position: 0 0%;
   }
 
-  .chazz-title {
-  }
-
   .chazz-title,
   .chazz-title-out {    
-    top: auto;
-    bottom: 170px;
+    top: auto;    
+    bottom: 100px;
     h1 {
       line-height: 96.3px;
       font-size: 76px;
@@ -290,6 +287,8 @@
   .chazz-title,
   .chazz-title-out {
     width: 65%;
+    bottom: 170px;
+    
     h1 {
       font-size: 90px;
     }
@@ -310,13 +309,14 @@
   .chazz-title h1 {
     font-size: 90px;
   }
-  .chazz-title h4 {
+  .chazz-title h4, .chazz-title-out h4 {
     font-size: 33px;
     margin-top: -33px;
   }
   .chazz-title,
   .chazz-title-out {
     bottom: 220px;
+    top: auto;
   }
 }
 

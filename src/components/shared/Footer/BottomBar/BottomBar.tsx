@@ -3,6 +3,7 @@ import React from "react";
 import "../Footer.styles.scss";
 
 export const BottomBar = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <div className="footer">
       <div className="footer-item">
@@ -11,7 +12,7 @@ export const BottomBar = () => {
         </a>
       </div>
       <div className="footer-item">
-        <div className="item">© Chazz 2022</div>
+        <div className="item">© Chazz {currentYear}</div>
         {/* For now, must be hidden*/}
 
         {/* <a className="item" href="/#">
