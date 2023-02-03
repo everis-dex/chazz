@@ -1,8 +1,9 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 import { projects } from "../../../../../content/index";
 import { IProject } from "../../../../../interfaces/cms";
-import { FeaturedProjects } from "../../../../shared";
+import { FeaturedProjects, Nav } from "../../../../shared";
 import {
   CaseClaim,
   CaseImg,
@@ -14,14 +15,15 @@ import {
 
 import "./CaseStudy.styles.scss";
 
-type Props = { caseStudyId: number; handleBack: () => void };
+type Props = { handleBack?: () => void };
 
-export const CaseStudy = ({ caseStudyId, handleBack }: Props) => {
-  const project: IProject = projects.filter(project => project.id === caseStudyId)[0] as IProject;
+export const CaseStudy = ({ handleBack }: Props) => {
+  const { id } = useParams();
+  const project: IProject = projects.filter(project => project.id === (id ? parseInt(id) : 0))[0] as IProject;
 
   return (
     <>
-      {/* <button onClick={handleBack}>BACK</button> */}
+      <Nav />
       <div className="case-container">
         <div className="case-container-title">
           {project.caseInfo && <CaseInfoTitle text={project.caseInfo.title} />}

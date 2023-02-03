@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { IProject } from "../../../../interfaces/cms";
 import { Accordion } from "../../../shared/Accordion/Accordion";
@@ -11,10 +12,9 @@ type Props = {
   format: string;
   columns?: string;
   full?: boolean;
-  setCaseStudyId?: (a: number) => void;
 };
 
-export const ProjectCard = ({ data, format, columns, setCaseStudyId }: Props) => {
+export const ProjectCard = ({ data, format, columns }: Props) => {
   const image = data.media.project;
 
   const bodyParagraphs = data.body;
@@ -30,9 +30,9 @@ export const ProjectCard = ({ data, format, columns, setCaseStudyId }: Props) =>
 
       <div className="project-details">
         <div className="project-title-container">
-          <span className="title" onClick={() => (setCaseStudyId ? setCaseStudyId(data.id) : {})}>
+          <Link className="title" to={`/work/case/${data.id}`}>
             {data.title} —
-          </span>
+          </Link>
           <span className="description">{data.description}</span>
         </div>
         <span className="properties">{data.subtitle}</span>
