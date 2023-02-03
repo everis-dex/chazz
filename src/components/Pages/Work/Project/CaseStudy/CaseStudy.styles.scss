@@ -103,6 +103,13 @@
     }
   }
 }
+.fw-image-text {
+  width: 100%;
+  height: 230px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .fw-image-text img {
   width: 100%;
@@ -118,6 +125,9 @@
 }
 
 .fw-image-text span {
+  padding: 152px 5% 0 5%;
+  display: block;
+  color: var(--white);
   font-weight: 700;
   font-size: 24px;
   line-height: 26px;
@@ -304,7 +314,12 @@
   .section-left-column-empty {
     width: 50%;
   }
+  .fw-image-text {
+    height: 800px;
+  }
+
   .fw-image-text span {
+    padding: 556px 5% 0 5%;
     font-weight: 700;
     font-size: 56px;
     line-height: 60px;

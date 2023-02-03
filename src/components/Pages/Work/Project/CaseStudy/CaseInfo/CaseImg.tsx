@@ -24,14 +24,12 @@ export const CaseImg = ({ src, alt, text, halfColumn = false }: Props) => {
 export const CaseImgWithOverlappedText = ({ src, alt, text }: Props) => {
   return (
     <>
-      <div className="fw-image-text">
-        <img src={src} alt={alt} />
+      <div className="fw-image-text" style={{ backgroundImage: `url(${src})` }}>
+        {/* <img src={src} alt={alt} /> */}
         {text && (
-          <div className="img-text-container">
-            <span>
-              <LineBreakerSelector typedLines={text}></LineBreakerSelector>
-            </span>
-          </div>
+          <span>
+            <LineBreakerSelector typedLines={text}></LineBreakerSelector>
+          </span>
         )}
       </div>
     </>
