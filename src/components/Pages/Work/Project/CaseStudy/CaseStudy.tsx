@@ -1,5 +1,5 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 
 import { projects } from "../../../../../content/index";
 import { IProject } from "../../../../../interfaces/cms";
@@ -15,9 +15,9 @@ import {
 
 import "./CaseStudy.styles.scss";
 
-type Props = { handleBack?: () => void };
+export const CaseStudy = () => {
+  useEffect(() => window.scrollTo(0, 0), []);
 
-export const CaseStudy = ({ handleBack }: Props) => {
   const { id } = useParams();
   const project: IProject = projects.filter(project => project.id === (id ? parseInt(id) : 0))[0] as IProject;
 
@@ -97,9 +97,9 @@ export const CaseStudy = ({ handleBack }: Props) => {
             text={project.sections?.eigthFWImageWithCaption?.caption}
           />
         )}
-        <button className="back-button" onClick={handleBack}>
+        <Link to="/work" className="back-button">
           ← Back
-        </button>
+        </Link>
       </div>
       <div className="separation2" />
 
