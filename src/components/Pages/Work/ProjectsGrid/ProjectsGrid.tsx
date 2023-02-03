@@ -60,7 +60,9 @@ export const ProjectsGrid = (workData: IWork) => {
       </div>
       <div className="work-container--content">
         <div className="work-detail">
-          <LineBreakerSelector typedLines={workData.subtitle} />
+          <h2>
+            <LineBreakerSelector typedLines={workData.subtitle} />
+          </h2>
         </div>
 
         {projects &&
