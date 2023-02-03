@@ -50,23 +50,26 @@
   width: 100%;
   height: 100%;
 }
+
 .case-container-title h1 {
   font-weight: 500;
   font-size: 40px;
   line-height: 48px;
   color: var(--black);
 }
-.case-info h1 {
+
+.case-info {
   font-weight: 450;
-  font-size: 16px;
-  line-height: 23px;
-  color: var(--black);
-}
-.case-info span {
-  font-weight: 450;
-  font-size: 12px;
-  line-height: 17px;
-  color: var(--gray);
+  span {
+    font-size: 12px;
+    line-height: 17px;
+    color: var(--gray);
+  }
+  div {
+    font-size: 16px;
+    line-height: 23px;
+    color: var(--black);
+  }
 }
 
 //CSS -> CLAIM SECTION:
@@ -82,24 +85,25 @@
 //CSS -> FULL WIDTH IMAGE:
 .fw-image {
   width: 100%;
-}
-.fw-image img {
-  width: 100%;
-}
-.fw-image span {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 26px;
-  color: var(--white);
+
+  img {
+    width: 100%;
+  }
+  span {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 26px;
+    color: var(--white);
+  }
+  .fw-image-text {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
 }
 
-.fw-image-text {
-  width: 100%;
-}
-.fw-image-text img {
-  width: 100%;
-}
-.img-text-container {
+.fw-image-text .img-text-container {
   width: 100%;
   position: relative;
   height: auto;
@@ -107,17 +111,20 @@
   color: var(--white);
   margin: -88px 0 44px 0;
 }
+
 .fw-image-text span {
   font-weight: 700;
   font-size: 24px;
   line-height: 26px;
 }
+
 //CSS -> SECTION FLEX CONTAINER:
 .section-flex-container {
   display: flex;
   flex-direction: column;
   padding: 64px 0;
 }
+
 .section-left-column {
   font-weight: 450;
   font-size: 24px;
@@ -125,6 +132,7 @@
   color: var(--black);
   padding-bottom: 80px;
 }
+
 .section-right-column h3 {
   font-weight: 700;
   font-size: 16px;
@@ -138,6 +146,7 @@
   line-height: 22px;
   color: var(--black);
 }
+
 //______________________________________________________
 .image-footer-text {
   font-weight: 450;
@@ -146,12 +155,15 @@
   line-height: 22px;
   color: var(--black);
 }
+
 .separation {
   padding-top: 32px;
 }
+
 .separation2 {
   padding-top: 64px;
 }
+
 .fw-claim-final {
   padding: 38px 0;
   margin: 0 5%;
@@ -161,6 +173,7 @@
   line-height: 22px;
   color: var(--black);
 }
+
 .back-button {
   text-decoration: none;
   background: none;
@@ -201,23 +214,23 @@
     flex-direction: row;
   }
   .case-container-title {
-    width: 70%;
+    width: 65%;
+    h1 {
+      width: 90%;
+      font-size: 72px;
+      line-height: 86px;
+    }
   }
-  .case-container-title h1 {
-    font-weight: 500;
-    font-size: 72px;
-    line-height: 86px;
-  }
-  .case-info span {
-    font-weight: 450;
-    font-size: 16px;
-    line-height: 19px;
-  }
-  .case-info h1 {
-    width: 100%;
-    font-weight: 450;
-    font-size: 12px;
-    line-height: 17px;
+  .case-info {
+    span {
+      font-size: 16px;
+      line-height: 29px;
+    }
+    div {
+      width: 100%;
+      font-size: 24px;
+      line-height: 29px;
+    }
   }
   .subtitle-section {
     padding: 10px;
@@ -225,6 +238,8 @@
   .case-container-info {
     width: 35%;
     padding: 0 5%;
+    display: grid;
+    grid-gap: 10px;
   }
   //CSS -> CLAIM SECTION:
   .fw-claim {
