@@ -11,8 +11,10 @@ export const Categories = (categoriesData: IHomeSection) => {
     <div className="background">
       <div className="categories">
         <div className="categories-title">
-          <h2>
+          <h1>
             <strong>{categoriesData.title}</strong> <br />
+          </h1>
+          <h2>
             <LineBreakerSelector typedLines={categoriesData.subtitle} />
           </h2>
         </div>

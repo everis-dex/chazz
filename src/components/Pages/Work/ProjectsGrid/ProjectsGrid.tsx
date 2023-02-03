@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
 
-import { IProject, IWork } from "../../../../interfaces/cms";
-import { LineBreakerSelector } from "../../../shared/index";
-import { ProjectCard } from "../Project/Project";
-
 import { projects } from "../../../../content/index";
+import { IProject, IWork } from "../../../../interfaces/cms";
+
+import { LineBreakerSelector } from "../../../shared/index";
+import { ProjectCard } from "../Project/ProjectCard";
 
 const formats = {
   big: 0, // When the Project occupies two columns
@@ -60,7 +60,9 @@ export const ProjectsGrid = (workData: IWork) => {
       </div>
       <div className="work-container--content">
         <div className="work-detail">
-          <LineBreakerSelector typedLines={workData.subtitle} />
+          <h2>
+            <LineBreakerSelector typedLines={workData.subtitle} />
+          </h2>
         </div>
 
         {projects &&
