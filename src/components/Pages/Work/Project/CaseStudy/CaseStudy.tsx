@@ -101,7 +101,7 @@ export const CaseStudy = ({ handleBack }: Props) => {
           ← Back
         </button>
       </div>
-      <div className="separation2" />
+      {/* <div className="separation2" /> */}
 
       <FeaturedProjects />
     </>

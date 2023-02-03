@@ -21,7 +21,7 @@ export const CaseSectionColumn = ({ title, text, empty = false, position, image 
       {!empty ? (
         image ? (
           <div className={columnPosition}>
-            <CaseImg src={image} alt="img-column" text={text} />
+            <CaseImg src={image} alt="img-column" text={text} halfColumn />
           </div>
         ) : (
           <div className={columnPosition}>
