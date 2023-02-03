@@ -76,7 +76,7 @@ export const CaseStudy = ({ handleBack }: Props) => {
       </div>
       {project.sections?.sixthFWImagePath && <CaseImg src={project.sections?.sixthFWImagePath} alt="Marquesina" />}
       <div className="work-container">
-        <div className="section-flex-container">
+        <div className="section-flex-container2">
           <CaseSectionColumn
             position="left"
             image={project.sections?.secondTCSection?.leftColumn.imagePath}
