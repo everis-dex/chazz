@@ -64,7 +64,9 @@ export const CaseStudy = () => {
           text={project.sections?.fourthFWImageWithOverlappedText?.overlappedText}
         />
       )}
-      {project.sections?.secondFWClaim && <CaseClaim text={project.sections?.secondFWClaim} />}
+      {project.sections?.secondFWClaim && (
+        <CaseClaim text={project.sections?.secondFWClaim} style={{ width: "85%", margin: "auto" }} />
+      )}
       <div className="work-container">
         {project.sections?.fifthFWImageWithCaption?.imagePath && (
           <CaseImg

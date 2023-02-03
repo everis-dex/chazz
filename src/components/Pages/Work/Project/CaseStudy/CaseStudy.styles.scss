@@ -86,9 +86,6 @@
 .fw-image {
   width: 100%;
 
-  img {
-    width: 100%;
-  }
   span {
     font-weight: 700;
     font-size: 24px;
@@ -102,10 +99,10 @@
       width: 100%;
     }
   }
-}
 
-.fw-image-text img {
-  width: 100%;
+  img {
+    width: 100%;
+  }
 }
 
 .fw-image-text .img-text-container {
@@ -135,7 +132,6 @@
   padding: 64px 0;
 }
 .section-left-column {
-  font-weight: 450;
   font-size: 24px;
   line-height: 33px;
   color: var(--black);
@@ -160,14 +156,12 @@
 
 //______________________________________________________
 .image-footer-text {
-  font-weight: 450;
-  padding: 20px 0 64px 0;
+  padding: 30px 0 64px 0;
   font-size: 16px;
   line-height: 22px;
   color: var(--black);
 }
 .image-half-footer-text {
-  font-weight: 450;
   padding: 20px 0 40px 0;
   font-size: 16px;
   line-height: 22px;
@@ -274,6 +268,7 @@
   }
   .section-flex-container2 {
     flex-direction: row;
+    gap: 30px;
     padding: 112px 0 0 0;
   }
   .section-flex-container {
@@ -282,8 +277,6 @@
   }
   .section-left-column {
     width: 50%;
-    padding-right: 5%;
-    font-weight: 450;
     font-size: 32px;
     line-height: 44px;
   }
@@ -312,12 +305,6 @@
   .img-text-container {
     padding: 0 5%;
     margin: -220px 0 160px 0;
-  }
-  .image-footer-text {
-    padding: 20px 0 112px 0;
-    font-weight: 450;
-    font-size: 16px;
-    line-height: 22px;
   }
 
   .fw-claim-final {
