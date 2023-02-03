@@ -11,16 +11,17 @@ type Props = {
   empty?: boolean;
   position: string;
   image?: string;
+  id?: string;
 };
 
-export const CaseSectionColumn = ({ title, text, empty = false, position, image }: Props) => {
+export const CaseSectionColumn = ({ title, text, empty = false, position, image, id }: Props) => {
   const columnPosition = empty ? `section-${position}-column-empty` : `section-${position}-column`;
 
   return (
     <>
       {!empty ? (
         image ? (
-          <div className={columnPosition}>
+          <div className={columnPosition} id={id}>
             <CaseImg src={image} alt="img-column" text={text} halfColumn />
           </div>
         ) : (

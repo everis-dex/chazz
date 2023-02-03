@@ -40,7 +40,7 @@ export const CaseStudy = () => {
       <div className="work-container">
         {project.sections?.secondFWImagePath && <CaseImg src={project.sections?.secondFWImagePath} alt="1º Roja" />}
         <div className="section-flex-container">
-          <CaseSectionColumn position="left" text={project.sections?.firstTCSection?.leftColumnIntro} />
+          <CaseSectionColumn position="left" text={project.sections?.firstTCSection?.leftColumnIntro} id="padding" />
           <CaseSectionColumn
             position="right"
             title={project.sections?.firstTCSection?.rightColumn.paragraphTitle}
