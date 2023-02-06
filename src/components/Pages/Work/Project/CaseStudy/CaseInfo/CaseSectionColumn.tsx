@@ -15,7 +15,7 @@ type Props = {
 
 export const CaseSectionColumn = ({ title, text, empty = false, position, image }: Props) => {
   const columnPosition = empty ? `section-${position}-column-empty` : `section-${position}-column`;
-  const style = { paddingRight: "5%" };
+  const style = position === "left" ? { paddingRight: "5%" } : {};
 
   return (
     <>
