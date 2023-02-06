@@ -13,15 +13,19 @@
     font-size: 32px;
     line-height: 40px;
     margin-top: 60px;
+    color: var(--pinkHover);
+
     span {
-      display: none;
-      font-size: 30px;
       margin-bottom: 10px;
+      font-size: 20px;
+      margin-bottom: 8px;
+      position: relative;
+      top: -2px;
     }
   }
 
   .section {
-    font-weight: 450;
+    font-weight: 300;
     font-size: 16px;
     line-height: 20px;
     color: var(--gray);
@@ -33,7 +37,6 @@
 
   .summary {
     margin: 0;
-    font-weight: 450;
     font-size: 16px;
     line-height: 24px;
   }
@@ -51,7 +54,6 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid var(--hrColor);
-    padding: 25px 0;
     margin: 0;
 
     span {
@@ -74,25 +76,43 @@
     margin-bottom: 45px;
 
     .title {
+      margin-top: 71px;
       font-size: 56px;
       line-height: 71px;
 
       span {
-        display: inline;
         position: relative;
         top: -5px;
+        font-size: 30px;
       }
     }
 
     .section {
       font-size: 24px;
       line-height: 30px;
-      margin-top: -14px;
+      margin-top: -2px;
+    }
+  }
+  .category-container {
+    margin: 70px 0;
+  }
+
+  .category-content {
+    display: grid;
+    grid-template-columns: 36% auto;
+    grid-gap: 10%;
+    align-items: start;
+
+    .summary {
+      font-size: 31px;
+      line-height: 42px;
+      width: 100%;
+      margin-top: 7px;
     }
   }
 
   .category-options {
-    margin-top: -30px;
+    margin-top: -15px;
 
     .accordion {
       font-weight: 500;
@@ -108,35 +128,19 @@
   }
 }
 
-@media (min-width: 1280px) {
-  .category-container {
-    margin: 70px 0;
-  }
-
-  .category-header {
-    .title {
-      margin-top: 71px;
-    }
-  }
+@media (min-width: 1440px) {
   .category-content {
-    display: grid;
-    grid-template-columns: 30% auto;
-    grid-gap: 10%;
-    align-items: start;
-
+    grid-template-columns: 34% auto;
     .summary {
-      font-weight: 500;
-      font-size: 24px;
-      line-height: 32px;
-      width: 90%;
+      font-size: 32px;
     }
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1920px) {
   .category-content {
     .summary {
-      width: 85%;
+      width: 90%;
     }
   }
 }

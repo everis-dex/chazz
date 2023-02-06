@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
 
-import { IProject, IWork } from "../../../../interfaces/cms";
-import { LineBreakerSelector } from "../../../shared/index";
-import { ProjectCard } from "../Project/Project";
-
 import { projects } from "../../../../content/index";
+import { IProject, IWork } from "../../../../interfaces/cms";
+
+import { LineBreakerSelector } from "../../../shared/index";
+import { ProjectCard } from "../Project/ProjectCard";
 
 const formats = {
   big: 0, // When the Project occupies two columns
@@ -16,7 +16,7 @@ const formats = {
 const imageConfig = { auto: "auto", half: "half" };
 
 // la configuración se escoge por cada row, por cada par de columnas
-let config = [formats.left, formats.big, formats.left, formats.right, formats.equal];
+let config = [formats.right, formats.big, formats.left, formats.right, formats.equal];
 
 export const ProjectsGrid = (workData: IWork) => {
   const columnCount: number = 2;
@@ -33,12 +33,12 @@ export const ProjectsGrid = (workData: IWork) => {
 
     switch (columnPosition) {
       case 0: // left column
-        // Reset configuration, head to next row
+        // Reset configuration, new row
         currentRow = currentColumn / columnCount;
         configuration = config[currentRow];
 
         if (configuration === formats.right) format = imageConfig.half;
-        if (configuration === formats.big) {
+        else if (configuration === formats.big) {
           columnFullWidth = "full-width";
           // Occupies entire row, so head to next row
           currentRow++;
@@ -54,16 +54,19 @@ export const ProjectsGrid = (workData: IWork) => {
   }
 
   return (
-    <>
-      <h1 className="work-header">{workData.title}</h1>
+    <div className="work-container">
+      <div className="work-header">
+        <h1>{workData.title}</h1>
+      </div>
       <div className="work-container--content">
         <div className="work-detail">
-          <LineBreakerSelector typedLines={workData.subtitle} />
+          <h2>
+            <LineBreakerSelector typedLines={workData.subtitle} />
+          </h2>
         </div>
 
         {projects &&
-          projects.map((proj, index: number) => {
-            const project = proj as IProject;
+          projects.map((project: IProject, index: number) => {
             const [format, columns] = handleProjectFormat();
             return (
               <Fragment key={index}>
@@ -72,6 +75,6 @@ export const ProjectsGrid = (workData: IWork) => {
             );
           })}
       </div>
-    </>
+    </div>
   );
 };

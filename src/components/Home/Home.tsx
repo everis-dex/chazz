@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { home } from "../../content/index";
-import { Categories, Footer, HomeHeader, Partners, Projects } from "./index";
-import { useEffect } from "react";
+import { Categories, HomeHeader, Partners, Projects } from "./index";
+import { Footer } from "../shared/index";
 
 export const Home = () => {
   const headerData = home.header;

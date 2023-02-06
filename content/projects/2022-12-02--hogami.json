@@ -1,12 +1,58 @@
 {
   "date": "2022-12-16T13:50:31.387Z",
   "media": {
-    "carrousel": "/uploads/hogami_home_web.jpg",
+    "carousel": "/uploads/hogami_home_web.jpg",
     "project": "/uploads/hogami_grid_web.jpg"
   },
   "title": "Hogami",
   "description": "Better Habitats With A Home Service Platform.",
   "subtitle": "Strategic Design, Branding, Digital Products, UX & UI",
-  "incarrousel": true,
-  "body": "When Leroy Merlin faced a slowdown in market growth, as well as threats from new competitors, they started looking to enter new markets. Localizing an opportunity with a new relationship model for a home service, Chazz created a digital platform which connects people who desire to improve their living spaces with specialized professionals. \n\n Because a home is a never-ending project, Hogami makes quality spaces come true accompanied by the right experts."
+  "incarousel": true,
+  "body": "When Leroy Merlin faced a slowdown in market growth, as well as threats from new competitors, they started looking to enter new markets. Localizing an opportunity with a new relationship model for a home service, Chazz created a digital platform which connects people who desire to improve their living spaces with specialized professionals. \n\n Because a home is a never-ending project, Hogami makes quality spaces come true accompanied by the right experts.",
+  "caseInfo": {
+    "title": "Making Mobility Easier in Any Territory.",
+    "services": "Services Research, Strategy Design, Brand, Product Design"
+  },
+  "sections": {
+    "firstFWImagePath": "/uploads/buff-portatil.jpg",
+    "firstFWClaim": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
+    "secondFWImagePath": "/uploads/buff-roja.png",
+    "firstTCSection": {
+      "leftColumnIntro": "Mobility is a saturated and* complex sector, and society needs a friendly proposal to* move easily under the* paradigm of sustainable travel.",
+      "rightColumn": {
+        "paragraphTitle": "The Big Challenge",
+        "paragraph": "Our focus was to bring a new product that helps people move around any spanish territory joining together technology and creativity.# Knowing consumers' needs and motivations we shaped a tangible travel experience, making possible that any kind of trip becomes an enchanting and seamless experience. dōcō adapts to diverse lifestyles allowing the user to search, plan and book their expected trip in an user-friendly way combining multimodal options of transport included in one single ticket.# dōcō’s essence is an holistic approach to the chaotic times we are living but it is also, in fact, a lifestyle itself that allows consumers to plan with no worries and no rush."
+      }
+    },
+    "thirthFWImagePath": "/uploads/buff-roja.png",
+    "rightColumnOnlyInfoSection": {
+      "paragraphTitle": "Our Comprehensive Solution",
+      "paragraph": "We created the mobility service solution that provides a wide range of co-partners with transport options such bicycles, scooters, motorcycles, taxis, VTCs, buses and trains, in order to empower multimodal mobility, and of course freedom.# We knew that an elevated product like this need a clear strategy. dōcō's value proposition is to promote multimodal mobility removing the uncertainty of any type of trip. So the service and the brand are inclusive. That is why no matter who we are or where we go, but dōcō can accompany us in an empathic way.# That is the reason why its logotype is friendly and its visual style flowed with a witty mood, and an AAA color palette, a complete icon set, and a unique typography that was designed to make real the visual ecosystem of this new brand by Renfe."
+    },
+    "fourthFWImageWithOverlappedText": {
+      "imagePath": "/uploads/buff-calle.jpg",
+      "overlappedText": "Cualquier lugar está*+ menos lejos."
+    },
+    "secondFWClaim": "dōcō is a lifestyle in itself for everyone who wants to feel comfortable and free.Without complications.",
+    "fifthFWImageWithCaption": {
+      "imagePath": "/uploads/buff-blanca.png",
+      "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+    },
+    "sixthFWImagePath": "/uploads/buff-marquesina.jpg",
+    "secondTCSection": {
+      "leftColumn": {
+        "imagePath": "/uploads/buff-personaje.png",
+        "overlappedText": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way."
+      },
+      "rightColumn": {
+        "imagePath": "/uploads/buff-linea.png",
+        "overlappedText": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way."
+      }
+    },
+    "seventhFWImagePath": "/uploads/buff-portatil.jpg",
+    "eigthFWImageWithCaption": {
+      "imagePath": "/uploads/buff-gris.png",
+      "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+    }
+  }
 }

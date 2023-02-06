@@ -1,17 +1,13 @@
-@import "./src/styles.scss";
-
 // MOBILE FIRST
 .chazz-header {
-  // background: url("./public/assets/first_frame.jpg");
   background-repeat: no-repeat;
-  // background-position: -330px -100px;
   overflow: hidden;
   position: relative;
   height: var(--app-height);
 
   .velo-in,
   .velo-out {
-    background: #ca8b9b94;
+    background-color: #ca8b9b94;
     z-index: 0;
     height: 100vh;
     transition: opacity 1s ease-in-out;
@@ -21,9 +17,14 @@
     position: absolute;
     top: 0;
     left: 0;
+    transition: background-color 1s ease-in-out;
   }
 
   .velo-out {
+    background-color: #ca8b9b00;
+  }
+
+  .nav-out {
     opacity: 0;
     transition: opacity 1s ease-in-out;
   }
@@ -32,18 +33,14 @@
     opacity: 1;
     transition: opacity 1s ease-in-out;
   }
-  .nav-out {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
 }
 
 .chazz-title {
   color: var(--white);
-  width: 70%;
+  width: 80%;
   padding-left: 5%;
   position: absolute;
-  top: 30%;
+  bottom: 30%;
   font-size: 23px;
   line-height: 1.2;
   transition: opacity 1s ease-in-out;
@@ -62,16 +59,24 @@
   }
 }
 
-.chazz-title-out {
-  color: var(--white);
-  width: 70%;
-  padding-left: 5%;
-  position: absolute;
-  top: 30%;
-  font-size: 23px;
-  line-height: 1.2;
+.simply-out {
   opacity: 0;
   transition: opacity 1s ease-in-out;
+}
+
+.simply-in {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.chazz-title-out {
+  color: var(--white);
+  width: 80%;
+  padding-left: 5%;
+  position: absolute;
+  bottom: 30%;
+  font-size: 23px;
+  line-height: 1.2;
 
   h1 {
     margin-bottom: 28px;
@@ -80,38 +85,9 @@
   }
 
   h4 {
-    margin-top: 12px;
+    margin-top: 16px;
     width: 245px;
     font-size: 24px;
-  }
-}
-
-.chazz-cookies {
-  // TODO: display
-  display: none;
-  background-color: var(--white);
-  height: 33%;
-  z-index: 10;
-  position: absolute;
-  width: 90%;
-  bottom: 3%;
-  padding: 16px;
-
-  p {
-    margin: 0;
-  }
-
-  button {
-    padding: 3% 29% 3% 29%;
-    margin-top: 13px;
-    color: var(--pink);
-    font-weight: 400;
-    font-size: 19px;
-    background-color: var(--black);
-
-    &:hover {
-      cursor: pointer;
-    }
   }
 }
 
@@ -126,16 +102,111 @@
   min-width: 100%;
   min-height: 100%;
 }
+
+// Player video switchers
+
+.player-video-desktop-switcher {
+  display: none;
+}
+
+.player-video-mobile-switcher {
+  display: block !important;
+  width: 50%;
+  position: relative;
+  top: 30px;
+}
+
+// Player video
+
+.player-video {
+  position: absolute;
+  align-items: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  cursor: none;
+
+  // Play
+  .play-icon-in,
+  .play-icon-out {
+    position: absolute;
+    top: 6px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12px solid var(--white);
+    margin-right: 13px;
+    transition: all 1s;
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.2));
+  }
+
+  .play-icon-in {
+    transform: rotate(-60deg);
+    opacity: 0;
+  }
+
+  .play-icon-out {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+
+  // Stop
+  .stop-icon-in {
+    position: absolute;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--white);
+    margin-right: 13px;
+    transform: rotate(0deg);
+    transition: all 1s;
+    opacity: 1;
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.2));
+  }
+
+  .stop-icon-out {
+    position: absolute;
+    top: 4px;
+    width: 6px;
+    height: 6px;
+    transform: rotate(-60deg);
+    transition: all 1s;
+    opacity: 0;
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.2));
+  }
+
+  // Text
+  .player-text {
+    color: var(--white);
+    font-size: 19px;
+    font-weight: 450;
+    margin-left: 20px;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+  }
+}
+
 // MEDIA QUERIES
+
+@media (width: 320px) {
+  .chazz-title {
+    width: 100%;
+  }
+
+  .chazz-title-out {
+    width: 100%;
+  }
+}
 
 @media (min-width: 768px) {
   .chazz-header {
     background-position: 30% -100px;
+    width: 100%;
   }
   .chazz-title,
   .chazz-title-out {
     width: 65%;
-    top: 55%;
+    top: auto;
+    bottom: 200px;
 
     h1 {
       font-size: 48px;
@@ -148,80 +219,104 @@
       margin-top: 0;
     }
   }
+}
 
-  @media (min-width: 1024px) {
-    .chazz-header {
-      max-height: 575px;
-      width: 100%;
-    }
-    .chazz-title,
-    .chazz-title-out {
-      width: 60%;
-      top: 40%
-    }
-  }
-  @media (min-width: 1280px) {
-    .chazz-header {
-      background-size: 1280px;
-      max-height: 720px;
-      background-position: 0 0%;
-    }
-
-    .chazz-title,
-    .chazz-title-out {
-      h1 {
-        line-height: 96.3px;
-        font-size: 76px;
-        position: relative;
-        top: -2rem;
-      }
-
-      h4 {
-        margin-top: -40px;
-        font-size: 29px;
-      }
-    }
+@media (min-width: 1024px) {
+  .player-video .play-icon-in,
+  .player-video .play-icon-out {
+    top: 2px;
   }
 
-  @media (min-width: 1440px) {
-    .chazz-header {
-      background-size: cover;
-      background-position: 0 0;
-      max-height: 810px;
-    }
-
-    .chazz-title,
-    .chazz-title-out {
-      width: 65%;
-      h1 {
-        font-size: 90px;
-      }
-
-      h4 {
-        font-size: 29px;
-      }
-    }
+  .player-video .stop-icon-in {
+    top: 4px;
   }
 
-  @media (min-width: 1920px) {
-    .chazz-header {
-      background-size: cover;
-      background-position: 0 -95px;
-      max-height: 1115px;
+  .player-video-desktop-switcher {
+    display: flex;
+  }
+
+  .player-video-mobile-switcher {
+    display: none !important;
+  }
+
+  .chazz-header {
+    max-height: 575px;
+    width: 100%;
+  }
+
+  .chazz-title,
+  .chazz-title-out {
+    width: 60%;
+    bottom: 49%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .chazz-header {
+    background-size: 1280px;
+    max-height: 1024px;
+    background-position: 0 0%;
+  }
+
+  .chazz-title,
+  .chazz-title-out {
+    top: auto;
+    bottom: 100px;
+    h1 {
+      line-height: 96.3px;
+      font-size: 76px;
+      position: relative;
+      top: -2rem;
+      width: 105%;
     }
 
-    .chazz-title h1 {
+    h4 {
+      margin-top: -40px;
+      font-size: 29px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .chazz-header {
+    background-size: cover;
+    background-position: 0 0;
+  }
+
+  .chazz-title,
+  .chazz-title-out {
+    width: 65%;
+    bottom: 170px;
+
+    h1 {
       font-size: 90px;
     }
-    .chazz-title h4 {
-      font-size: 33px;
-      margin-top: -33px;
-    }
 
-    .chazz-title,
-    .chazz-title-out {
-      width: 55%;
+    h4 {
+      font-size: 29px;
     }
+  }
+}
+
+@media (min-width: 1920px) {
+  .chazz-header {
+    background-size: cover;
+    background-position: 0 -95px;
+    max-height: 1115px;
+  }
+
+  .chazz-title h1 {
+    font-size: 90px;
+  }
+  .chazz-title h4,
+  .chazz-title-out h4 {
+    font-size: 33px;
+    margin-top: -33px;
+  }
+  .chazz-title,
+  .chazz-title-out {
+    bottom: 220px;
+    top: auto;
   }
 }
 

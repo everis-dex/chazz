@@ -1,0 +1,23 @@
+.background {
+  background-color: var(--lightGray);
+}
+
+.projects {
+  margin: 0 5%;
+
+  .icon-size {
+    width: 26px;
+    display: inline-flex;
+    margin-left: 10px;
+  }
+}
+
+// MEDIA QUERIES
+@media (min-width: 768px) {
+  .icon-size {
+    width: 30px;
+  }
+}
+
+@media (min-width: 1920px) {
+}
