@@ -2,9 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { thoughts, thoughtsPage } from "../../../content/index";
 import { IThought } from "../../../interfaces/cms";
-
-import { AllowCookies } from "../../Home";
-import { Footer, Nav } from "../../shared/index";
+import { AllowCookies, Footer, Nav } from "../../shared/index";
 import { Thought } from "./Thought/Thought";
 
 import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.svg";
@@ -40,6 +38,31 @@ export const Thoughts = () => {
     });
   }, [filters]);
 
+  // Filtering functions
+  const filterByCategory = (category: string) => selectedFilter === "All" || selectedFilter === category;
+
+  const filterByLength = (length: number) =>
+    thoughts.filter((t: IThought) => filterByCategory(t.category)).length > length;
+
+  // Components
+  const LessThoughts = () => (
+    <>
+      <RightArrow
+        stroke={!isHover ? "#191919" : "#fc82a3"}
+        className="icon-size"
+        style={{ transform: "rotate(180deg)", marginLeft: "-2px" }}
+      />
+      &nbsp;&nbsp; Less thoughts
+    </>
+  );
+
+  const MoreThoughts = () => (
+    <>
+      More thoughts &nbsp;&nbsp;
+      <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />
+    </>
+  );
+
   return (
     <>
       <Nav />
@@ -48,7 +71,11 @@ export const Thoughts = () => {
         {/* Header section */}
         <div className="thoughts-header">
           <h1 className="header-title">{thoughtsPage.title}</h1>
-          <img src={thoughtsPage.image} alt="Header" />
+          <picture>
+            <source media="(max-width: 768px)" srcSet="uploads/thoughts_bg-768.svg" />
+            <source media="(min-width: 768px)" srcSet={thoughtsPage.image} />
+            <img src={thoughtsPage.image} alt="Header" />
+          </picture>
         </div>
         {/* Filtering section */}
         <div className="thoughts-filtering" ref={filters}>
@@ -63,16 +90,17 @@ export const Thoughts = () => {
         <div className="thoughts">
           {thoughts
             // Show only the thoughts with selected category
-            .filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category)
+            .filter((t: IThought) => filterByCategory(t.category))
             .filter((t, index: number) => !filtering || index < 6) // If filtering, show only the first 6 thoughts
             .map((thought: IThought, index: number) => (
               <div className="thought" key={index}>
                 <Thought {...thought} />
               </div>
             ))}
+          {/* More | Less thoughts extender */}
           <div className="more-thoughts--div">
-            <span style={{ display: thoughts.filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category).length > 6 ? "block" : "none" }}>
-              {thoughts.filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category).length > 0 &&
+            <span style={{ display: filterByLength(6) ? "block" : "none" }}>
+              {filterByLength(0) && (
                 <a
                   href="#/"
                   className="more-thoughts"
@@ -80,27 +108,22 @@ export const Thoughts = () => {
                   onMouseLeave={() => setIsHover(false)}
                   onClick={() => setFiltering(!filtering)}
                 >
-                  {!filtering && (
-                    <RightArrow
-                      stroke={!isHover ? "#191919" : "#fc82a3"}
-                      className="icon-size"
-                      style={{ transform: "rotate(180deg)", marginLeft: "-2px" }}
-                    />
-                  )}
-                  {!filtering && <>&nbsp;&nbsp;</>}
-                  {filtering ? "More thoughts" : " Less thoughts"}
-                  {filtering && <>&nbsp;&nbsp;</>}
-                  {filtering && <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />}
+                  {filtering ? <MoreThoughts /> : <LessThoughts />}
                 </a>
-              }
+              )}
             </span>
-            {thoughts.filter((thought: IThought) => selectedFilter === "All" || selectedFilter === thought.category).length === 0 &&
-              <h2>No <span style={{ color: "var(--pinkHover)" }}>{selectedFilter != "All" ? selectedFilter.toLocaleLowerCase() : ""}</span> thoughts yet!</h2>
-            }
+            {thoughts.filter((t: IThought) => filterByCategory(t.category)).length === 0 && (
+              <h2>
+                No
+                <span className="selected-filter">
+                  {selectedFilter !== "All" ? ` ${selectedFilter.toLocaleLowerCase()} ` : " "}
+                </span>
+                thoughts yet!
+              </h2>
+            )}
           </div>
         </div>
       </div>
-
       <Footer />
     </>
   );

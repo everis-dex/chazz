@@ -13,10 +13,14 @@
     font-size: 32px;
     line-height: 40px;
     margin-top: 60px;
+    color: var(--pinkHover);
+
     span {
-      display: none;
-      font-size: 30px;
       margin-bottom: 10px;
+      font-size: 20px;
+      margin-bottom: 8px;
+      position: relative;
+      top: -2px;
     }
   }
 
@@ -50,7 +54,6 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid var(--hrColor);
-    // padding: 25px 0;
     margin: 0;
 
     span {
@@ -78,16 +81,16 @@
       line-height: 71px;
 
       span {
-        display: inline;
         position: relative;
         top: -5px;
+        font-size: 30px;
       }
     }
 
     .section {
       font-size: 24px;
       line-height: 30px;
-      margin-top: -14px;
+      margin-top: -2px;
     }
   }
   .category-container {
@@ -102,8 +105,9 @@
 
     .summary {
       font-size: 31px;
-      line-height: 32px;
+      line-height: 42px;
       width: 100%;
+      margin-top: 7px;
     }
   }
 

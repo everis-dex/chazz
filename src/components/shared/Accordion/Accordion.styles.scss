@@ -17,6 +17,7 @@
   align-items: center;
   padding: 20px 0;
 }
+
 .panel-work,
 .panel-services {
   max-height: 0;
@@ -32,6 +33,7 @@
     margin-bottom: 0;
   }
 }
+
 .panel-work {
   border-top: 1px solid lightgray;
 }
@@ -46,7 +48,6 @@
 }
 
 .accordion-arrow {
-  // transform: rotate(90deg);
   rotate: 0deg;
   transition: all 0.35s;
   width: 100%;

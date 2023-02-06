@@ -2,15 +2,13 @@ import React, { useEffect } from "react";
 
 import { categories, services } from "../../../content/index";
 import { ICategory, IServicesHeader } from "../../../interfaces/cms";
-import { AllowCookies } from "../../Home";
-import { FeaturedProjects, Footer, Nav } from "../../shared/index";
+import { AllowCookies, FeaturedProjects, Footer, Nav, Media } from "../../shared/index";
 import { Category } from "./Category/Category";
 
 import "./Services.styles.scss";
 
 export const Services = () => {
   const headerData: IServicesHeader = services.header;
-
   useEffect(() => window.scrollTo(0, 0), []);
 
   return (
@@ -21,7 +19,7 @@ export const Services = () => {
         <div className="services-header">
           <h1 className="header-title">{headerData.title}</h1>
           {headerData.subtitle && <h3 className="subtitle">{headerData.subtitle}</h3>}
-          <img loading="lazy" src={headerData.image} alt="Header" />
+          <Media src={headerData.image} alt="Header" style={{ width: "100%", height: "auto" }} />
         </div>
         {/* Categories section */}
         <div className="services-categories">
