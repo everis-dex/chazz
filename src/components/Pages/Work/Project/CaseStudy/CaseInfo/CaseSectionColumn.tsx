@@ -11,21 +11,21 @@ type Props = {
   empty?: boolean;
   position: string;
   image?: string;
-  id?: string;
 };
 
-export const CaseSectionColumn = ({ title, text, empty = false, position, image, id }: Props) => {
+export const CaseSectionColumn = ({ title, text, empty = false, position, image }: Props) => {
   const columnPosition = empty ? `section-${position}-column-empty` : `section-${position}-column`;
+  const style = { paddingRight: "5%" };
 
   return (
     <>
       {!empty ? (
         image ? (
-          <div className={columnPosition} id={id}>
+          <div className={columnPosition}>
             <CaseImg src={image} alt="img-column" text={text} halfColumn />
           </div>
         ) : (
-          <div className={columnPosition}>
+          <div className={columnPosition} style={style}>
             {title && <h3>{title}</h3>}
             <LineBreakerSelector typedLines={text} />
           </div>
