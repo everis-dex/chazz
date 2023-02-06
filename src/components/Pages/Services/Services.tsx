@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { categories, services } from "../../../content/index";
 import { ICategory, IServicesHeader } from "../../../interfaces/cms";
-import { AllowCookies, FeaturedProjects, Footer, Nav, Media } from "../../shared/index";
+import { AllowCookies, FeaturedProjects, Footer, LineBreakerSelector, Media, Nav } from "../../shared/index";
 import { Category } from "./Category/Category";
 
 import "./Services.styles.scss";
@@ -17,8 +17,11 @@ export const Services = () => {
       <AllowCookies />
       <div className="services-container">
         <div className="services-header">
-          <h1 className="header-title">{headerData.title}</h1>
+          <h1 className="header-title">
+            <LineBreakerSelector typedLines={headerData.title} />
+          </h1>
           {headerData.subtitle && <h3 className="subtitle">{headerData.subtitle}</h3>}
+
           <Media src={headerData.image} alt="Header" style={{ width: "100%", height: "auto" }} />
         </div>
         {/* Categories section */}
