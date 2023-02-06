@@ -9,11 +9,21 @@ type Props = {
   isBurgerMenuOpen: boolean;
   controlTextOptions: { play: string; stop: string };
   controlText: string;
+  setControlText: (a: string) => void;
 };
 
 export const VideoHeader = forwardRef(
   (
-    { isPlaying, setIsPlaying, isNavVisible, setIsNavVisible, controlTextOptions }: Props,
+    {
+      isPlaying,
+      setIsPlaying,
+      isNavVisible,
+      setIsNavVisible,
+      isBurgerMenuOpen,
+      controlTextOptions,
+      controlText,
+      setControlText
+    }: Props,
     ref: React.LegacyRef<HTMLVideoElement>
   ) => {
     useEffect(() => {
@@ -22,10 +32,9 @@ export const VideoHeader = forwardRef(
       }
     }, [isNavVisible, isPlaying, setIsNavVisible]);
 
-      const videoRef = useRef<HTMLVideoElement>(null);
-  const [controlText, setControlText] = useState<string>("Play");
-  const pixelatedCanvasRef = useRef<HTMLCanvasElement | null>(null)
-  const videoCanvasRef = useRef<HTMLCanvasElement | null>(null);
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const pixelatedCanvasRef = useRef<HTMLCanvasElement | null>(null);
+    const videoCanvasRef = useRef<HTMLCanvasElement | null>(null);
 
     function forcePause(): void {
       setIsPlaying(false);
@@ -43,86 +52,85 @@ export const VideoHeader = forwardRef(
       }
     };
 
-  //////////////////////////////////////////////////////////////////////////////////////////////////////
-  const videoWidth: number = window.innerWidth;
-  const videoHeight: number = window.innerHeight;
-  useEffect(() => {
+    const switchPlayPause = () => {
+      setIsPlaying(!isPlaying);
 
-    const videoCanvas = videoCanvasRef.current;
-    const pixelatedCanvas = pixelatedCanvasRef.current;
+      if (videoRef.current && isPlaying) {
+        videoRef.current.pause();
+        setIsNavVisible(!isNavVisible);
 
-    if (!videoCanvas) { return };
-    const videoCanvasContext = videoCanvas.getContext('2d');
-    if (!videoCanvasContext) { return };
-    const myVideo = new Image();
-    myVideo.src = "video.mp4";
-    myVideo.src = "image.jpg";
-    videoCanvasContext.drawImage(myVideo, 0, 0, videoWidth, videoHeight);
-
-    if (!pixelatedCanvas) { return };
-    const pixelatedCanvasContext = pixelatedCanvas.getContext('2d');
-    if (!pixelatedCanvasContext) { return };
-    pixelatedCanvasContext.beginPath();
-    pixelatedCanvasContext.fillStyle = "red";
-    console.log({ videoWidth, videoHeight });
-    videoCanvasContext.globalAlpha = 0.1;
-
-    const tiling: number = 18;
-    for (let x = 1; x < videoWidth; x += tiling) {
-      for (let y = 1; y < videoHeight; y += tiling) {
-        // Detectar el color del pixel
-        // const pixelData = videoCanvasContext.getImageData(0, 0, 1, 1).data;
-        // console.log(pixelData);
-        pixelatedCanvasContext.beginPath();
-        pixelatedCanvasContext.fillStyle = "rgb(225,225,225)";
-        pixelatedCanvasContext.strokeStyle = 'white';
-        pixelatedCanvasContext.fillRect(x, y, x + tiling - 1, y + tiling - 1);
-        pixelatedCanvasContext.globalAlpha = 0.1;
+        if (videoRef.current && !isPlaying) {
+          videoRef.current.play();
+          setControlText("Stop");
+          setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
+        }
       }
-    }
+    };
 
-  }, [])
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    const videoWidth: number = window.innerWidth;
+    const videoHeight: number = window.innerHeight;
 
-  //////////////////////////////////////////////////////////////////////////////////////////////////////
+    useEffect(() => {
+      const videoCanvas = videoCanvasRef.current;
+      const pixelatedCanvas = pixelatedCanvasRef.current;
 
-  return (
-    <>
-      {!isBurgerMenuOpen && (
-        <>
-          <div className="player-video-mobile-switcher">
-            <div className="player-video">
-              <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause}></div>
-              <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause}></div>
-              <span className="player-text" onClick={switchPlayPause}>
-                {controlText} reel
-              </span>
-            </div>
-          </div>
+      if (!videoCanvas) {
+        return;
+      }
+      const videoCanvasContext = videoCanvas.getContext("2d");
+      if (!videoCanvasContext) {
+        return;
+      }
+      const myVideo = new Image();
+      myVideo.src = "video.mp4";
+      myVideo.src = "image.jpg";
+      videoCanvasContext.drawImage(myVideo, 0, 0, videoWidth, videoHeight);
 
-          <div className="player-video-desktop-switcher">
-            <div className="player-video" ref={controlRef}>
-              <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause}></div>
-              <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause}></div>
-              <span className="player-text" onClick={switchPlayPause}>
-                {controlText} reel
-              </span>
-            </div>
-          </div>
-        </>
-      )}
-      <video
-        id="videoId"
-        className={`video-header video-header-${isPlaying ? "color" : "no-color"}`}
-        ref={videoRef}
-        onEnded={resetVideo}
-        onPause={forcePause}
-        preload="auto"
-      >
-        <source src="uploads/reel_chazz_1080.mp4" media="(min-width: 850px)" />
-        <source src="uploads/reel_chazz_540.mp4" />
-      </video>
-      {/* <canvas id="pixelatedCanvas" className="canvas" ref={pixelatedCanvasRef} width={videoWidth} height={videoHeight}></canvas> */}
-      {/* <canvas id="videoCanvas" className="canvas" ref={videoCanvasRef} width={videoWidth} height={videoHeight}></canvas> */}
-    </>
-  );
-};
+      if (!pixelatedCanvas) {
+        return;
+      }
+      const pixelatedCanvasContext = pixelatedCanvas.getContext("2d");
+      if (!pixelatedCanvasContext) {
+        return;
+      }
+      pixelatedCanvasContext.beginPath();
+      pixelatedCanvasContext.fillStyle = "red";
+      console.log({ videoWidth, videoHeight });
+      videoCanvasContext.globalAlpha = 0.1;
+
+      const tiling: number = 18;
+      for (let x = 1; x < videoWidth; x += tiling) {
+        for (let y = 1; y < videoHeight; y += tiling) {
+          // Detectar el color del pixel
+          // const pixelData = videoCanvasContext.getImageData(0, 0, 1, 1).data;
+          // console.log(pixelData);
+          pixelatedCanvasContext.beginPath();
+          pixelatedCanvasContext.fillStyle = "rgb(225,225,225)";
+          pixelatedCanvasContext.strokeStyle = "white";
+          pixelatedCanvasContext.fillRect(x, y, x + tiling - 1, y + tiling - 1);
+          pixelatedCanvasContext.globalAlpha = 0.1;
+        }
+      }
+    }, []);
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    return (
+      <>
+        <video
+          className={`video-header ${isPlaying ? "color" : "no-color"}`}
+          ref={ref}
+          onEnded={resetVideo}
+          onPause={forcePause}
+          preload="auto"
+        >
+          <source src="uploads/reel_chazz_1080.mp4" media="(min-width: 850px)" />
+          <source src="uploads/reel_chazz_540.mp4" />
+        </video>
+        {/* <canvas id="pixelatedCanvas" className="canvas" ref={pixelatedCanvasRef} width={videoWidth} height={videoHeight}></canvas> */}
+        {/* <canvas id="videoCanvas" className="canvas" ref={videoCanvasRef} width={videoWidth} height={videoHeight}></canvas> */}
+      </>
+    );
+  }
+);

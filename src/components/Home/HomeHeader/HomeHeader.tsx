@@ -115,6 +115,10 @@ export const HomeHeader = (headerData: IHomeHeader) => {
         setIsPlaying={setIsPlaying}
         isNavVisible={isNavVisible}
         setIsNavVisible={setIsNavVisible}
+        isBurgerMenuOpen={isBurgerMenuOpen}
+        controlTextOptions={controlTextOptions}
+        controlText={controlText}
+        setControlText={setControlText}
         ref={videoRef}
       />
 
