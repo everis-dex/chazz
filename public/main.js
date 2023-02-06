@@ -60,7 +60,6 @@ var getFilesContent = function (files, dirPath, folder) {
                     var date = new Date(datestring);
                     timestamp = date.getTime() / 1000;
                     contentJSON.id = timestamp;
-                    delete contentJSON.date;
                 }
                 else if (contentJSON.sort) {
                     contentJSON.id = parseInt(contentJSON.sort);

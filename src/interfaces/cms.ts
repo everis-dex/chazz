@@ -58,6 +58,12 @@ export interface IServicesProjects {
   more: string;
 }
 
+export interface IThoughtsPage {
+  title: string;
+  image: string;
+  categories: string[];
+}
+
 // ##############################
 // #         COMPONENTS
 // ##############################
@@ -84,15 +90,71 @@ export interface ICategoryAccordion {
 export interface IProject {
   id: number;
   title: string;
+  description: string;
+  subtitle: string;
+  body: string;
+  incarousel: boolean;
+  media: IProjectMedia;
+  caseInfo?: {
+    title: string;
+    services: string;
+  };
+  sections?: {
+    firstFWImagePath?: string;
+    firstFWClaim?: string;
+    secondFWImagePath?: string;
+    firstTCSection?: {
+      leftColumnIntro: string;
+      rightColumn: {
+        paragraphTitle: string;
+        paragraph: string;
+      };
+    };
+    thirthFWImagePath?: string;
+    rightColumnOnlyInfoSection?: {
+      paragraphTitle: string;
+      paragraph: string;
+    };
+    fourthFWImageWithOverlappedText?: {
+      imagePath: string;
+      overlappedText: string;
+    };
+    secondFWClaim?: string;
+    fifthFWImageWithCaption?: {
+      imagePath: string;
+      caption: string;
+    };
+    sixthFWImagePath?: string;
+    secondTCSection?: {
+      leftColumn: {
+        imagePath: string;
+        overlappedText: string;
+      };
+      rightColumn: {
+        imagePath: string;
+        overlappedText: string;
+      };
+    };
+    seventhFWImagePath?: string;
+    eigthFWImageWithCaption?: {
+      imagePath: string;
+      caption: string;
+    };
+  };
+}
+
+export interface ISlide {
+  id: number;
+  title: string;
   subtitle: string;
   media: IProjectMedia;
   description: string;
   body: string;
-  incarrousel: boolean;
+  incarousel: boolean;
 }
 
 export interface IProjectMedia {
-  carrousel: string;
+  carousel: string;
   project: string;
 }
 
@@ -127,4 +189,14 @@ export interface ISlide {
   title: string;
   subtitle: string;
   image: string;
+}
+
+export interface IThought {
+  date: string;
+  image: string;
+  title: string;
+  body: string;
+  category: string;
+  duration: string;
+  id: number;
 }

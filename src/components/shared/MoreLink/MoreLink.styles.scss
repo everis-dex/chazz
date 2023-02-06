@@ -1,0 +1,36 @@
+.more-link {
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 40px 0 75px 0;
+  font-size: 16px;
+  font-weight: 400;
+  .img {
+    width: 26px;
+  }
+}
+
+.more-link {
+  color: var(--black);
+
+  &:hover {
+    color: var(--pinkHover);
+  }
+}
+
+@media (min-width: 1280px) {
+  .more-link,
+  .more-link:hover {
+    font-size: 24px !important;
+    padding: 80px 0 !important;
+  }
+
+  .more-link {
+    color: var(--black);
+  }
+
+  .more-link:hover {
+    color: var(--pinkHover);
+  }
+}

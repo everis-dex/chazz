@@ -10,8 +10,6 @@
   transition: opacity 1s ease-in-out;
 }
 
-// MOBILE FIRST
-
 .chazz-logo {
   width: 118px;
   padding-left: 5%;
@@ -43,7 +41,7 @@
 }
 
 .active-pink {
-  color: var(--pinkHover);
+  color: var(--pinkStrong);
 }
 
 .active-black {
