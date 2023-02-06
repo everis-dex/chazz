@@ -4,18 +4,22 @@ import { LineBreakerSelector } from "../../../../../shared";
 
 import "../CaseStudy.styles.scss";
 
-type Props = { src: string; text?: string; alt?: string; halfColumn?: boolean };
+type Props = { src: string | undefined; text?: string; alt?: string; halfColumn?: boolean };
 
 export const CaseImg = ({ src, alt, text, halfColumn = false }: Props) => {
   return (
     <>
-      <div className="fw-image">
-        <img src={src} alt={alt} />
-      </div>
-      {text && (
-        <div className={halfColumn ? "image-half-footer-text" : "image-footer-text"}>
-          <LineBreakerSelector typedLines={text}></LineBreakerSelector>
-        </div>
+      {src && (
+        <>
+          <div className="fw-image">
+            <img src={src} alt={alt} />
+          </div>
+          {text && (
+            <div className={halfColumn ? "image-half-footer-text" : "image-footer-text"}>
+              <LineBreakerSelector typedLines={text} />
+            </div>
+          )}
+        </>
       )}
     </>
   );
@@ -28,7 +32,7 @@ export const CaseImgWithOverlappedText = ({ src, alt, text }: Props) => {
         {/* <img src={src} alt={alt} /> */}
         {text && (
           <span>
-            <LineBreakerSelector typedLines={text}></LineBreakerSelector>
+            <LineBreakerSelector typedLines={text} />
           </span>
         )}
       </div>
