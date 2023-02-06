@@ -9,6 +9,8 @@ import homeData from "./pages/home/home.json";
 import servicesData from "./pages/services/services.json";
 import workData from "./pages/work/work.json";
 import thoughtsPageData from "./pages/thoughts/thoughts.json";
+import privacyData from "./pages/policies/privacy/privacy.json";
+import cookieData from "./pages/policies/cookie/cookie.json";
 
 export const categories = categoriesData;
 export const getInTouch = getInTouchData;
@@ -21,3 +23,5 @@ export const services = servicesData;
 export const work = workData;
 export const thoughtsPage = thoughtsPageData;
 export const thoughts = thoughtsData;
+export const privacyPolicy = privacyData;
+export const cookiePolicy = cookieData;

@@ -101,6 +101,40 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: More, name: more, widget: string }
 
+  - name: privacy
+    label: Privacy Policy
+    folder: src/content/pages/policies/privacy
+    create: false
+    delete: false
+    extension: json
+    format: json
+    slug: "privacy"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: Articles
+        name: articles
+        widget: list
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Body, name: body, widget: string }
+
+  - name: cookie
+    label: Cookie Declaration
+    folder: src/content/pages/policies/cookie
+    create: false
+    delete: false
+    extension: json
+    format: json
+    slug: "cookie"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: Articles
+        name: articles
+        widget: list
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Body, name: body, widget: string }
+
   ##############################
   #         COMPONENTS
   ##############################

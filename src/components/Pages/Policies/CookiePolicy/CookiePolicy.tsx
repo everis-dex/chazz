@@ -1,18 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import { AllowCookies } from "../../../shared/AllowCookies/AllowCookies";
-import { Footer } from "../../../shared/Footer/Footer";
-import { Nav } from "../../../shared/Nav/Nav";
+import { cookiePolicy } from "../../../../content";
+import { IPolicy } from "../../../../interfaces/cms";
+
+import "./CookiePolicy.scss";
 
 export const CookiePolicy = () => {
-  useEffect(() => window.scrollTo(0, 0), []);
+  const cookie: IPolicy = cookiePolicy;
 
-  return (
-    <>
-      <Nav />
-      <AllowCookies />
-      <h2>CookiePolicy</h2>
-      <Footer />
-    </>
-  );
+  return <>{cookie.articles}</>;
 };

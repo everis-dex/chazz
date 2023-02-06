@@ -1,17 +1,36 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import { AllowCookies, Footer } from "../../../shared";
-import { Nav } from "../../../shared/Nav/Nav";
+import { privacyPolicy } from "../../../../content";
+import { IPolicy, IPolicyArticle } from "../../../../interfaces/cms";
+import "./PrivacyPolicy.scss";
 
 export const PrivacyPolicy = () => {
-  useEffect(() => window.scrollTo(0, 0), []);
+  const privacy: IPolicy = privacyPolicy;
+  console.log("🚀 ~ file: PrivacyPolicy.tsx:9 ~ PrivacyPolicy ~ privacy", privacy.articles);
 
   return (
     <>
-      <Nav />
-      <AllowCookies />
-      <h2>PrivacyPolicy</h2>
-      <Footer />
+      <div className="policy-container">
+        <div className="sidebar">
+          {privacy.articles.map((article: IPolicyArticle, index: number) => (
+            <a href={`#article${index}`} className="article-title" key={index}>
+              {article.title}
+            </a>
+          ))}
+        </div>
+        <div className="content">
+          {privacy.articles.map((article: IPolicyArticle, index: number) => (
+            <div className="article">
+              <div className="title" key={index} id={`article${index}`}>
+                {article.title}
+              </div>
+              <div className="body" key={index}>
+                {article.body}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 };
