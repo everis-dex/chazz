@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { categories, services } from "../../../content/index";
 import { ICategory, IServicesHeader } from "../../../interfaces/cms";
@@ -9,7 +9,19 @@ import "./Services.styles.scss";
 
 export const Services = () => {
   const headerData: IServicesHeader = services.header;
+  const [videoSource, setVideoSource] = useState<string>(
+    window.innerWidth < 1200 ? "uploads/thoughts_cabecera-768.mp4" : headerData.image
+  );
   useEffect(() => window.scrollTo(0, 0), []);
+
+  window.onresize = () => {
+    if (window.innerWidth < 1200) {
+      console.log("🚀 ~ file: Services.tsx:18 ~ Services ~ window.innerWidth", window.innerWidth);
+      setVideoSource("uploads/services_cabecera-768.mp4");
+    } else {
+      setVideoSource(headerData.image);
+    }
+  };
 
   return (
     <>
@@ -21,10 +33,7 @@ export const Services = () => {
             <LineBreakerSelector typedLines={headerData.title} />
           </h1>
           {headerData.subtitle && <h3 className="subtitle">{headerData.subtitle}</h3>}
-          <video autoPlay width="100%" height="auto" muted={true} loop>
-            <source media="(max-width: 768px)" type="video/mp4" src="uploads/services_cabecera-768.mp4" />
-            <source media="(min-width: 768px)" type="video/mp4" src={headerData.image} />
-          </video>
+          <video autoPlay width="100%" height="auto" muted={true} src={videoSource} />
         </div>
         {/* Categories section */}
         <div className="services-categories">

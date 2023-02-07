@@ -12,6 +12,9 @@ import "./Thoughts.styles.scss";
 export const Thoughts = () => {
   const [isHover, setIsHover] = useState<boolean>(false);
   const [filtering, setFiltering] = useState<boolean>(true);
+  const [videoSource, setVideoSource] = useState<string>(
+    window.innerWidth < 1200 ? "uploads/thoughts_cabecera-768.mp4" : thoughtsPage.image
+  );
   const [selectedFilter, setSelectedFilter] = useState<string>("All");
   const filters = useRef<HTMLDivElement>(null);
 
@@ -37,6 +40,15 @@ export const Thoughts = () => {
       };
     });
   }, [filters]);
+
+  window.onresize = () => {
+    if (window.innerWidth < 1200) {
+      console.log("🚀 ~ file: Services.tsx:18 ~ Services ~ window.innerWidth", window.innerWidth);
+      setVideoSource("uploads/thoughts_cabecera-768.mp4");
+    } else {
+      setVideoSource(thoughtsPage.image);
+    }
+  };
 
   // Filtering functions
   const filterByCategory = (category: string) => selectedFilter === "All" || selectedFilter === category;
@@ -71,10 +83,7 @@ export const Thoughts = () => {
         {/* Header section */}
         <div className="thoughts-header">
           <h1 className="header-title">{thoughtsPage.title}</h1>
-          <video autoPlay width="100%" height="auto" muted={true} loop>
-            <source media="(max-width: 768px)" type="video/mp4" src="uploads/thoughts_cabecera-768.mp4" />
-            <source media="(min-width: 768px)" type="video/mp4" src={thoughtsPage.image} />
-          </video>
+          <video autoPlay width="100%" height="auto" muted={true} src={videoSource} />
         </div>
         {/* Filtering section */}
         <div className="thoughts-filtering" ref={filters}>
