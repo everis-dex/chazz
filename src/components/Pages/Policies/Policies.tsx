@@ -35,9 +35,7 @@ export const Policies = () => {
           })}
         </div>
 
-        <div className="selected-content">
-          <Articles {...policies[policyIndex]} />
-        </div>
+        <Articles {...policies[policyIndex]} />
       </div>
       <Footer />
     </>
