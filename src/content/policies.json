@@ -9,45 +9,88 @@
       },
       {
         "title": "Collecting and processing your personal information",
-        "body": "We are committed to protecting and respecting your privacy. This policy explains how we use any personal information that you provide to us through our website (http://chazzdesign.com)."
+        "body": "For the purpose of this Privacy Policy, NTT DATA Spain SLU is a Data Controller of your personal information. Our legal basis for collecting and using your personal information, as described in this Privacy Policy, depends on the information we collect and the specific context in which we collect it. We may process your personal information because:"
       },
-      { "title": "What categories of personal information we collect", "body": "" },
-      { "title": "Why we collect personal information", "body": "" },
-      { "title": "How we collect your personal data", "body": "" },
-      { "title": "With whom we share the collected personal information", "body": "" },
-      { "title": "What are your rights as the owner of personal information", "body": "" },
-      { "title": "How can you exercise your rights as the owner of personal information", "body": "" },
-      { "title": "Location and transfer of your personal information", "body": "" },
-      { "title": "Security of your personal information", "body": "" },
-      { "title": "Links to third-party Websites", "body": "" },
-      { "title": "Protecting your child’s privacy.", "body": "" },
-      { "title": "Changes to this privacy policy", "body": "" },
-      { "title": "Contact us", "body": "" }
+      {
+        "title": "What categories of personal information we collect",
+        "body": "We collect the following categories of personal information that you choose to provide us on our Página web (http://es.nttdata.com):"
+      },
+      { "title": "Why we collect personal information", "body": "We use your data for:" },
+      { "title": "How we collect your personal data", "body": "We collect data in two ways:" },
+      {
+        "title": "With whom we share the collected personal information",
+        "body": "We employ third party companies and individuals ('Service Providers') to facilitate and make our website accessible to our visitors. We share and disclose your personal information with these tools. They use cookies and other tracking technologies. Such tools are created and managed by parties outside our control. As such, NTT DATA Spain SLU is not responsible for what information is actually captured by such third parties or how such third parties use and protect that information."
+      },
+      {
+        "title": "What are your rights as the owner of personal information",
+        "body": "You have the following data protection rights:"
+      },
+      {
+        "title": "How can you exercise your rights as the owner of personal information",
+        "body": "You may submit your requests to exercise your right under the GDPR by:"
+      },
+      {
+        "title": "Location and transfer of your personal information",
+        "body": "We use third party service providers including AOL Advertising, Google Analytics, Linkedin, Linkedin, Twitter, All such service providers are contractually bound to keep your personal information secure and confidential and to use it only for the above purposes, consistent with this Privacy Policy. You understand and accept that data protection legislation applicable to such service providers may not be as protective as in your country of residence. By accepting this Privacy Policy, you consent to such use of your personal information by these third party service providers. We will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information."
+      },
+      {
+        "title": "Security of your personal information",
+        "body": "We take appropriate technical measures for keeping your personal information confidential and protected against accidental or unlawful destruction or loss, alteration, unauthorised disclosure or access. We use technical safeguards measures including:"
+      },
+      {
+        "title": "Links to third-party Websites",
+        "body": "Our service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services."
+      },
+      {
+        "title": "Protecting your child’s privacy.",
+        "body": "Our Service does not address anyone under the age of 16 ('Children'). We do not knowingly collect personally identifiable information from anyone under the age of 16. If you are a parent or guardian and you are aware that your Children have provided us with Personal Data, please contact us. If we become aware that we have collected personal data from Children without verification of parental consent, we take steps to remove that information from our servers."
+      },
+      {
+        "title": "Changes to this privacy policy",
+        "body": "From time to time we may update this Privacy Policy. If we do, we will update the “last updated” sections at the top of the Privacy Policy. If we make material changes to this policy, we may notify you on our website, by a blog post, by email, or by any method we determine. Your continued use of this website or our service and/or continued provision of information to us will be subject to the terms of the then-current Privacy Policy."
+      },
+      {
+        "title": "Contact us",
+        "body": "If you have any questions about our privacy practices or this Policy, please contact us at"
+      }
     ],
     "id": 1674454140
   },
   {
-    "date": "2023-01-23T07:09:31.387Z",
+    "date": "2023-01-23T07:10:32.577Z",
     "title": "Cookie Declaration",
     "articles": [
       {
         "title": "Cookie declaration overview",
-        "body": "We are committed to protecting and respecting your privacy. This policy explains how we use any personal information that you provide to us through our website (http://chazzdesign.com)."
+        "body": "This website uses cookies. Cookies are small text files stored on your device (computer, tablet, smartphone, or another device) to enhance your experience on the website."
       },
       {
-        "title": "Collecting and processing your personal information",
-        "body": "We are committed to protecting and respecting your privacy. This policy explains how we use any personal information that you provide to us through our website (http://chazzdesign.com)."
+        "title": "Essential cookies",
+        "body": "We always use the essential cookies. They allow us to provide you with the essential features of our website, such as website navigation or logging in the secured areas. Using them is in your best interest, hence all the applicable personal data protection laws allow us to use them freely. We use the following essential cookies:"
       },
-      { "title": "Cookie declaration overview", "body": "" },
-      { "title": "Essential cookies", "body": "" },
-      { "title": "Analytics cookies", "body": "" },
-      { "title": "Advertising cookies", "body": "" },
-      { "title": "Social media cookies", "body": "" },
-      { "title": "Audio/video player cookies", "body": "" },
-      { "title": "Consent status", "body": "" },
-      { "title": "Deleting or disabling cookies", "body": "" },
-      { "title": "Changes to this cookie declaration", "body": "" }
+      {
+        "title": "Analytics cookies",
+        "body": "Analytics cookies provide us with information about the traffic and users’ behavior on our website. This includes the number of visitors, number of clicks to pages, and others. Most often, the data these cookies collect is anonymous."
+      },
+      {
+        "title": "Advertising cookies",
+        "body": "These cookies track your browsing behavior to enable us to show you personalized content and advertisements that are likely to be of interest to you. Depending on your information and only upon your permission, these cookies may group you with other users with similar interests and show you relevant ads and content. For more information on the advertising cookies we use, read our Privacy Policy."
+      },
+      {
+        "title": "Social media cookies",
+        "body": "These cookies allow social networks to record your behavior when using social engagement buttons (such as the “Like” button). The data these cookies collect is shared with third-party advertisers."
+      },
+      { "title": "Audio/video player cookies", "body": "--table--" },
+      { "title": "Consent status", "body": "Your current cookie consent status: Consent Given" },
+      {
+        "title": "Deleting or disabling cookies",
+        "body": "You may delete or disable cookies through your browser settings. However, you should keep in mind that deleting or disabling cookies may lead to inconvenience while using our website that would not have happened if you consented to the use of cookies."
+      },
+      {
+        "title": "Changes to this cookie declaration",
+        "body": "NTT DATA Spain SLU is may change this cookie declaration at any time without prior notice. That may happen due to changes in cookie regulations, changes in our website, or another reason. Ensure to check out this cookie declaration regularly to stay updated for any changes."
+      }
     ],
-    "id": 1674454140
+    "id": 1674454200
   }
 ]

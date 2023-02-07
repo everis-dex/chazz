@@ -1,50 +1,42 @@
 {
-  "date": "2023-01-23T07:09:31.387Z",
+  "date": "2023-01-23T07:10:32.577Z",
   "title": "Cookie Declaration",
   "articles": [
     {
       "title": "Cookie declaration overview",
-      "body": "We are committed to protecting and respecting your privacy. This policy explains how we use any personal information that you provide to us through our website (http://chazzdesign.com)."
-    },
-    {
-      "title": "Collecting and processing your personal information",
-      "body": "We are committed to protecting and respecting your privacy. This policy explains how we use any personal information that you provide to us through our website (http://chazzdesign.com)."
-    },
-    {
-      "title": "Cookie declaration overview",
-      "body": ""
+      "body": "This website uses cookies. Cookies are small text files stored on your device (computer, tablet, smartphone, or another device) to enhance your experience on the website."
     },
     {
       "title": "Essential cookies",
-      "body": ""
+      "body": "We always use the essential cookies. They allow us to provide you with the essential features of our website, such as website navigation or logging in the secured areas. Using them is in your best interest, hence all the applicable personal data protection laws allow us to use them freely. We use the following essential cookies:"
     },
     {
       "title": "Analytics cookies",
-      "body": ""
+      "body": "Analytics cookies provide us with information about the traffic and users’ behavior on our website. This includes the number of visitors, number of clicks to pages, and others. Most often, the data these cookies collect is anonymous."
     },
     {
       "title": "Advertising cookies",
-      "body": ""
+      "body": "These cookies track your browsing behavior to enable us to show you personalized content and advertisements that are likely to be of interest to you. Depending on your information and only upon your permission, these cookies may group you with other users with similar interests and show you relevant ads and content. For more information on the advertising cookies we use, read our Privacy Policy."
     },
     {
       "title": "Social media cookies",
-      "body": ""
+      "body": "These cookies allow social networks to record your behavior when using social engagement buttons (such as the “Like” button). The data these cookies collect is shared with third-party advertisers."
     },
     {
       "title": "Audio/video player cookies",
-      "body": ""
+      "body": "--table--"
     },
     {
       "title": "Consent status",
-      "body": ""
+      "body": "Your current cookie consent status: Consent Given"
     },
     {
       "title": "Deleting or disabling cookies",
-      "body": ""
+      "body": "You may delete or disable cookies through your browser settings. However, you should keep in mind that deleting or disabling cookies may lead to inconvenience while using our website that would not have happened if you consented to the use of cookies."
     },
     {
       "title": "Changes to this cookie declaration",
-      "body": ""
+      "body": "NTT DATA Spain SLU is may change this cookie declaration at any time without prior notice. That may happen due to changes in cookie regulations, changes in our website, or another reason. Ensure to check out this cookie declaration regularly to stay updated for any changes."
     }
   ]
 }
