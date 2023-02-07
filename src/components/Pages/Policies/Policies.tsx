@@ -4,7 +4,7 @@ import { policies } from "../../../content";
 import { IPolicy } from "../../../interfaces/cms";
 
 import { AllowCookies, Footer, LineBreakerSelector, Nav } from "../../shared";
-import { PrivacyPolicy } from "./PrivacyPolicy/PrivacyPolicy";
+import { Articles } from "./Articles/Articles";
 
 import "./Policies.scss";
 
@@ -26,9 +26,9 @@ export const Policies = () => {
 
         <div className="policies-selector">
           {policies.map((policy: IPolicy, index: number) => {
-            const selected: string = policyIndex === index ? "selected" : "";
+            const setSelected: string = policyIndex === index ? "selected" : "";
             return (
-              <span className={`filter-category ${selected}`} key={index} onClick={() => setPolicyIndex(index)}>
+              <span className={`filter-category ${setSelected}`} key={index} onClick={() => setPolicyIndex(index)}>
                 {policy.title}
               </span>
             );
@@ -36,7 +36,7 @@ export const Policies = () => {
         </div>
 
         <div className="selected-content">
-          <PrivacyPolicy {...policies[policyIndex]} />
+          <Articles {...policies[policyIndex]} />
         </div>
       </div>
       <Footer />
