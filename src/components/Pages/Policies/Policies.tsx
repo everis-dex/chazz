@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+
+import { policies } from "../../../content";
+import { IPolicy } from "../../../interfaces/cms";
 
 import { AllowCookies, Footer, LineBreakerSelector, Nav } from "../../shared";
-import { CookiePolicy } from "./CookiePolicy/CookiePolicy";
 import { PrivacyPolicy } from "./PrivacyPolicy/PrivacyPolicy";
 
 import "./Policies.scss";
@@ -9,7 +11,7 @@ import "./Policies.scss";
 export const Policies = () => {
   useEffect(() => window.scrollTo(0, 0), []);
   const title = "Privacy Policy+ & Cookie Declaration";
-  const privacyChosen = true;
+  const [policyIndex, setPolicyIndex] = useState<number>(0);
 
   return (
     <>
@@ -23,11 +25,19 @@ export const Policies = () => {
         </div>
 
         <div className="policies-selector">
-          <span className="filter-category selected">Privacy Policy</span>
-          <span className="filter-category">Cookie Declaration</span>
+          {policies.map((policy: IPolicy, index: number) => {
+            const selected: string = policyIndex === index ? "selected" : "";
+            return (
+              <span className={`filter-category ${selected}`} key={index} onClick={() => setPolicyIndex(index)}>
+                {policy.title}
+              </span>
+            );
+          })}
         </div>
 
-        <div className="selected-content">{privacyChosen ? <PrivacyPolicy /> : <CookiePolicy />}</div>
+        <div className="selected-content">
+          <PrivacyPolicy {...policies[policyIndex]} />
+        </div>
       </div>
       <Footer />
     </>
