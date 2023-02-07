@@ -71,11 +71,10 @@ export const Thoughts = () => {
         {/* Header section */}
         <div className="thoughts-header">
           <h1 className="header-title">{thoughtsPage.title}</h1>
-          <picture>
-            <source media="(max-width: 768px)" srcSet="uploads/thoughts_bg-768.svg" />
-            <source media="(min-width: 768px)" srcSet={thoughtsPage.image} />
-            <img src={thoughtsPage.image} alt="Header" />
-          </picture>
+          <video autoPlay width="100%" height="auto" muted={true} loop>
+            <source media="(max-width: 768px)" type="video/mp4" src="uploads/thoughts_cabecera-768.mp4" />
+            <source media="(min-width: 768px)" type="video/mp4" src={thoughtsPage.image} />
+          </video>
         </div>
         {/* Filtering section */}
         <div className="thoughts-filtering" ref={filters}>
