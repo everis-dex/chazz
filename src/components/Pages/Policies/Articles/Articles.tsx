@@ -27,13 +27,11 @@ export const Articles = (policy: IPolicy) => {
       </div>
       <div className="content">
         {policy.articles.map((article: IPolicyArticle, index: number) => (
-          <div className="article">
-            <div className="article-title" key={index} id={`article${index}`}>
+          <div className="article" key={index}>
+            <div className="article-title" id={`article${index}`}>
               {article.title}
             </div>
-            <div className="article-body" key={index}>
-              {article.body}
-            </div>
+            <div className="article-body">{article.body}</div>
           </div>
         ))}
       </div>
