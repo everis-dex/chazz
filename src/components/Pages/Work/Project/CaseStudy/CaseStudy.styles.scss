@@ -221,7 +221,15 @@
   }
 }
 // MEDIA QUERIES
-@media (min-width: 1280px) {
+@media (width: 1200px) {
+  .case-container-title h1 {
+    width: 100%;
+  }
+  .case-container-info {
+    padding: 0 0 0 8%;
+  }
+}
+@media (min-width: 1200px) {
   .work-header {
     margin-bottom: 0;
     font-size: 72px;
@@ -240,7 +248,7 @@
     }
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   //CSS -> CONTENEDOR TITULO:
   .case-container {
     padding: 107px 5%;
@@ -272,7 +280,7 @@
   }
   .case-container-info {
     width: 35%;
-    padding: 0 5%;
+    padding: 0 0 0 5%;
     grid-gap: 10px;
     margin-bottom: 0;
   }
