@@ -33,7 +33,7 @@ export const Services = () => {
             <LineBreakerSelector typedLines={headerData.title} />
           </h1>
           {headerData.subtitle && <h3 className="subtitle">{headerData.subtitle}</h3>}
-          <video autoPlay width="100%" height="auto" muted={true} src={videoSource} loop />
+          <video autoPlay className="video-height" muted={true} src={videoSource} loop />
         </div>
         {/* Categories section */}
         <div className="services-categories">
