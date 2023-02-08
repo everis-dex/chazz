@@ -73,12 +73,6 @@ export interface IPolicy {
 export interface IPolicyArticle {
   title: string;
   body: string;
-  accordions?: IAcordionArticle[];
-}
-export interface IAcordionArticle {
-  body: string;
-  title: string;
-  content?: string;
 }
 
 // ##############################

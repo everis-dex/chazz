@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Accordion } from "react-bootstrap";
-import { IPolicy, IPolicyArticle, IAcordionArticle } from "../../../../interfaces/cms";
+
+import { IPolicy, IPolicyArticle } from "../../../../interfaces/cms";
+import { Accordion } from "../../../shared/Accordion/Accordion";
 import "./Articles.scss";
 
 export const Articles = (policy: IPolicy) => {
@@ -21,7 +22,7 @@ export const Articles = (policy: IPolicy) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [window.innerWidth]);
+  }, []);
 
   return (
     <>
@@ -57,10 +58,9 @@ export const Articles = (policy: IPolicy) => {
         </div>
       ) : (
         <div className="content-mobile">
-          {policy.articles.map((article: IAcordionArticle, index: number) => (
+          {policy.articles.map((article: IPolicyArticle, index: number) => (
             <div key={index}>
-              <Accordion title="hola" content="adios"></Accordion> 
-              <h1>{article.body}</h1> <h1>🟣</h1>
+              <Accordion title={article.title} content={article.body} ourWork={false} />
             </div>
           ))}
         </div>
