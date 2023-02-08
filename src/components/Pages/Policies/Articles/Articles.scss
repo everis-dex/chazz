@@ -41,6 +41,14 @@
     }
   }
 }
+.global-content {
+  height: 700px;
+  width: 886px;
+  overflow-y: scroll;
+}
+.global-content::-webkit-scrollbar {
+  display: none;
+}
 
 @media (min-width: 768px) {
   .policy-container {
