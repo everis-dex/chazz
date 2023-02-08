@@ -10,7 +10,7 @@ import "./Services.styles.scss";
 export const Services = () => {
   const headerData: IServicesHeader = services.header;
   const [videoSource, setVideoSource] = useState<string>(
-    window.innerWidth < 1200 ? "uploads/thoughts_cabecera-768.mp4" : headerData.image
+    window.innerWidth < 1200 ? "uploads/services_cabecera-768.mp4" : headerData.image
   );
   useEffect(() => window.scrollTo(0, 0), []);
 
@@ -33,7 +33,7 @@ export const Services = () => {
             <LineBreakerSelector typedLines={headerData.title} />
           </h1>
           {headerData.subtitle && <h3 className="subtitle">{headerData.subtitle}</h3>}
-          <video autoPlay width="100%" height="auto" muted={true} src={videoSource} />
+          <video autoPlay width="100%" height="auto" muted={true} src={videoSource} loop />
         </div>
         {/* Categories section */}
         <div className="services-categories">
