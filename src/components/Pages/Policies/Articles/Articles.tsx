@@ -9,20 +9,13 @@ export const Articles = (policy: IPolicy) => {
   const [articleIndex, setArticleIndex] = useState<number>(0);
 
   //Creamos un estado con el valor del ancho de la pantalla (windowWidth):
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
   //Creamos una función que nos re calcula el ancho de la pantalla:
-  const handleResize = () => {
+  window.onresize = () => {
     setWindowWidth(window.innerWidth);
+    console.log(windowWidth);
   };
-  //Creamos un efecto para lanzar la función cada vez que detecte un cambio en el ancho del contenido
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <>
