@@ -10,7 +10,7 @@ import "./Services.styles.scss";
 export const Services = () => {
   const headerData: IServicesHeader = services.header;
   const [videoSource, setVideoSource] = useState<string>(
-    window.innerWidth < 1200 ? "uploads/services_cabecera.mp4" : headerData.image
+    window.innerWidth < 1200 ? "uploads/services_cabecera-768.mp4" : headerData.image
   );
   useEffect(() => window.scrollTo(0, 0), []);
 
