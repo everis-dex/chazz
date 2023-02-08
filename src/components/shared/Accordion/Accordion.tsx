@@ -32,7 +32,7 @@ export const Accordion = ({ title, content, ourWork }: Props) => {
 
   return (
     <div className={!ourWork ? "separator" : ""}>
-      <div className={ourWork ? "mobile-accordion" : ""}>
+      <div className={ourWork ? "mobile-accordion" : "another-accordion"}>
         <div
           className={openAccordion && !ourWork ? "accordion-open" : "accordion-close"}
           onClick={e => handleDropdown(e.target)}

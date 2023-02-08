@@ -100,8 +100,12 @@
   .mobile-accordion {
     display: none;
   }
+  .another-accordion {
+    margin-bottom: 0px!important;
+  }
   .separator {
     border-bottom: var(--hrColor) 1px solid;
+    padding-bottom: 22px;
   }
   .accordion-open,
   .accordion-close {
