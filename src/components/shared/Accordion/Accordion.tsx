@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import lessInfoIcon from "../../../assets/icn_lessinformation.svg";
 import moreInfoIcon from "../../../assets/icn_moreinformation.svg";
-import { LineBreakerSelector } from "../LineBreaker/LineBreakerSelector";
 
 import "./Accordion.styles.scss";
 
@@ -58,9 +57,7 @@ export const Accordion = ({ title, content, ourWork }: Props) => {
           </div>
         </div>
         <div className={ourWork ? "panel-work" : "panel-services"}>
-          <p>
-            <LineBreakerSelector typedLines={content} />
-          </p>
+          <p>{content}</p>
         </div>
       </div>
     </div>
