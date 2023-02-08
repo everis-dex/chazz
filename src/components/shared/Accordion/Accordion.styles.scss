@@ -79,6 +79,10 @@
   position: absolute;
   opacity: 1;
   z-index: -1;
+  overflow: hidden;
+  width: 84%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .text-fadeIn {
@@ -101,7 +105,7 @@
     display: none;
   }
   .another-accordion {
-    margin-bottom: 0px!important;
+    margin-bottom: 0px !important;
   }
   .separator {
     border-bottom: var(--hrColor) 1px solid;
@@ -111,6 +115,7 @@
   .accordion-close {
     padding: 35px 0 10px 0;
     font-size: 24px;
+    line-height: 35px;
   }
 
   .panel-services {
