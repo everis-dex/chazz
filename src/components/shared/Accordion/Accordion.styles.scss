@@ -10,6 +10,7 @@
   color: var(--black);
   display: flex;
   justify-content: space-between;
+  gap: 40px;
   width: 100%;
   transition: 0.4s;
   font-weight: 300;
@@ -50,6 +51,7 @@
 
 .accordion-arrow {
   rotate: 0deg;
+  width: 24px;
   transition: all 0.35s;
   margin-bottom: 1rem;
 }
@@ -75,11 +77,11 @@
 }
 
 .no-fading-text {
-  position: relative;
   opacity: 1;
   z-index: -1;
   overflow: hidden;
-  width: 84%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .text-fadeIn {
