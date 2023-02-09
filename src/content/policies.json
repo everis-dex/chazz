@@ -151,6 +151,35 @@
           {
             "type": "text",
             "content": "We always use the essential cookies. They allow us to provide you with the essential features of our website, such as website navigation or logging in the secured areas. Using them is in your best interest, hence all the applicable personal data protection laws allow us to use them freely. We use the following essential cookies:\n\n\nWe use other types of cookies only with your prior explicit consent. If you give us consent to store them on your computer, we do so. If you don’t consent to their use, we don’t use them. It’s that simple.\nWe don’t discriminate users based on consent.Your consent applies to the following domains: http://es.nttdata.com\nThe rest of the cookies we use are:"
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "name": "sxa_site",
+                "host": "VFS Global",
+                "expiration": "Anfitrión: es.nttdata.com\nExpiración: Sesión\nTipo: La primera galleta de la fiesta",
+                "service": "First party cookies are only set or retrieved by the website while you are visiting it, so they cannot normally be used to track activity or pass data from one site to another."
+              },
+              {
+                "name": "ARRAffinity",
+                "host": "Microsoft Azure",
+                "expiration": "Anfitrión: .es.nttdata.com\nExpiración: Sesión\nTipo: La primera galleta de la fiesta",
+                "service": "This cookie is set by websites run on the Windows Azure cloud platform. It is used for load balancing to make sure the visitor page requests are routed to the same server in any browsing session."
+              },
+              {
+                "name": "ARRAffinitySameSite",
+                "host": "VFS Global",
+                "expiration": "Anfitrión: .es.nttdata.com\nExpiración: Sesión\nTipo: La primera galleta de la fiesta",
+                "service": "These cookies are set by websites run on the Microsoft Azure cloud platform (which hosts our website). It is used for load balancing to make sure the visitor page requests are routed to the same server in any browsing session."
+              },
+              {
+                "name": "ln_or",
+                "host": "Linkedin",
+                "expiration": "Anfitrión: .es.nttdata.com\nExpiración: Sesión\nTipo: La primera galleta de la fiesta",
+                "service": "Pending"
+              }
+            ]
           }
         ]
       },

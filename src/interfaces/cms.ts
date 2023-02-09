@@ -78,9 +78,7 @@ export interface IPolicyArticle {
 export interface IPolicyBody {
   type: string;
   content?: string;
-  table?: {
-    row: IPolicyTableRow[];
-  };
+  rows?: IPolicyTableRow[];
 }
 
 export interface IPolicyTableRow {

@@ -1,13 +1,13 @@
 import React from "react";
 
-import { IPolicyBody } from "../../../../../interfaces/cms";
+import { IPolicyBody, IPolicyTableRow } from "../../../../../interfaces/cms";
 
 type Props = { body: IPolicyBody[] };
 
 export const BodyContent = ({ body }: Props) => {
   // Return structure based on body content type
 
-  function bodyType(b: IPolicyBody, index: number) {
+  function bodyType(b: IPolicyBody) {
     switch (b.type) {
       case "text":
         if (b.content) {
@@ -17,6 +17,30 @@ export const BodyContent = ({ body }: Props) => {
         break;
 
       case "table":
+        if (b.rows) {
+          return (
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Host</th>
+                  <th>Expiration</th>
+                  <th>Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                {b.rows.map((row: IPolicyTableRow, index: number) => (
+                  <tr key={index}>
+                    <td>{row.name}</td>
+                    <td>{row.host}</td>
+                    <td>{row.expiration}</td>
+                    <td>{row.service}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          );
+        }
         break;
 
       default:
@@ -24,5 +48,11 @@ export const BodyContent = ({ body }: Props) => {
     }
   }
 
-  return <>{body.map((body: IPolicyBody, index: number) => bodyType(body, index))}</>;
+  return (
+    <>
+      {body.map((body: IPolicyBody, index: number) => (
+        <div key={index}>{bodyType(body)}</div>
+      ))}
+    </>
+  );
 };

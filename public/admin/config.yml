@@ -91,8 +91,8 @@ collections:
             name: table
             widget: object
             fields:
-              - label: Row
-                name: row
+              - label: Rows
+                name: rows
                 widget: list
                 fields:
                   - { label: Name, name: name, widget: string }
