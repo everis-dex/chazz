@@ -58,9 +58,9 @@ export const Accordion = ({ title, content, ourWork }: Props) => {
           </div>
         </div>
         <div className={ourWork ? "panel-work" : "panel-services"}>
-          <p>
+          <div className="linebreaker">
             <LineBreakerSelector typedLines={content} />
-          </p>
+          </div>
         </div>
       </div>
     </div>
