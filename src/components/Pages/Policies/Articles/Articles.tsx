@@ -53,7 +53,7 @@ export const Articles = (policy: IPolicy) => {
         </div>
       ) : (
         <div className="content-mobile">
-          <Dropdown {...titles} />
+          <Dropdown content={titles} />
           {policy.articles.map((article: IPolicyArticle, index: number) => (
             <div key={index}>
               <Accordion title={article.title} content={article.body} ourWork={false} />
