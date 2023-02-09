@@ -4,7 +4,13 @@
   "articles": [
     {
       "title": "Cookie declaration overview",
-      "body": "This website uses cookies. Cookies are small text files stored on your device (computer, tablet, smartphone, or another device) to enhance your experience on the website."
+      "body": {
+        "paragraphs": [
+          {
+            "input": "This website uses cookies. Cookies are small text files stored on your device (computer, tablet, smartphone, or another device) to enhance your experience on the website."
+          }
+        ]
+      }
     },
     {
       "title": "Essential cookies",
