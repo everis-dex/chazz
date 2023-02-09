@@ -2,6 +2,8 @@ import React from "react";
 
 import { IPolicyBody, IPolicyTableRow } from "../../../../../interfaces/cms";
 
+import "./BodyContent.styles.scss";
+
 type Props = { body: IPolicyBody[] };
 
 export const BodyContent = ({ body }: Props) => {
@@ -49,10 +51,10 @@ export const BodyContent = ({ body }: Props) => {
   }
 
   return (
-    <>
+    <div className="body-content">
       {body.map((body: IPolicyBody, index: number) => (
         <div key={index}>{bodyType(body)}</div>
       ))}
-    </>
+    </div>
   );
 };

@@ -2,8 +2,9 @@ import React, { useState } from "react";
 
 import { IPolicy, IPolicyArticle } from "../../../../interfaces/cms";
 import { Accordion } from "../../../shared/index";
-import "./Articles.scss";
 import { BodyContent } from "./BodyContent/BodyContent";
+
+import "./Articles.styles.scss";
 
 export const Articles = (policy: IPolicy) => {
   // TODO: Se respeta el selected article para ambos policies

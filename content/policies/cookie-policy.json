@@ -16,7 +16,7 @@
       "body": [
         {
           "type": "text",
-          "content": "We always use the essential cookies. They allow us to provide you with the essential features of our website, such as website navigation or logging in the secured areas. Using them is in your best interest, hence all the applicable personal data protection laws allow us to use them freely. We use the following essential cookies:\n\n\nWe use other types of cookies only with your prior explicit consent. If you give us consent to store them on your computer, we do so. If you don’t consent to their use, we don’t use them. It’s that simple.\nWe don’t discriminate users based on consent.Your consent applies to the following domains: http://es.nttdata.com\nThe rest of the cookies we use are:"
+          "content": "We always use the essential cookies. They allow us to provide you with the essential features of our website, such as website navigation or logging in the secured areas. Using them is in your best interest, hence all the applicable personal data protection laws allow us to use them freely. We use the following essential cookies:"
         },
         {
           "type": "table",
@@ -46,6 +46,10 @@
               "service": "Pending"
             }
           ]
+        },
+        {
+          "type": "text",
+          "content": "We use other types of cookies only with your prior explicit consent. If you give us consent to store them on your computer, we do so. If you don’t consent to their use, we don’t use them. It’s that simple.\nWe don’t discriminate users based on consent.Your consent applies to the following domains: http://es.nttdata.com\nThe rest of the cookies we use are:"
         }
       ]
     },
