@@ -4,45 +4,84 @@
   "articles": [
     {
       "title": "Cookie declaration overview",
-      "body": {
-        "paragraphs": [
-          {
-            "input": "This website uses cookies. Cookies are small text files stored on your device (computer, tablet, smartphone, or another device) to enhance your experience on the website."
-          }
-        ]
-      }
+      "body": [
+        {
+          "type": "text",
+          "content": "This website uses cookies. Cookies are small text files stored on your device (computer, tablet, smartphone, or another device) to enhance your experience on the website.\n\nWebsites use cookies for many different purposes, including but not limited to:\n· Get information about the traffic on our website\n· Provide you with essential functionalities of our website\n· Track your browsing behavior\n· Track your engagement with social services\n· Collect information about how users use our website\n· Remember your preferences for our website\n· Personalize content and advertisements.\n\nWe use cookies according to applicable national and international laws.\nThis cookie declaration aims to inform you about our use of cookies, what types of cookies we use, and why we use them. We are committed to full transparency regarding your privacy while using our website. In the rest of this cookie declaration, you’ll find all the essential information about it.\n\nWe use the following types of cookies:\n· Essential\n· Analytics\n· Advertising\n· Social media\n· Comments\n· Audio/video player"
+        }
+      ]
     },
     {
       "title": "Essential cookies",
-      "body": "We always use the essential cookies. They allow us to provide you with the essential features of our website, such as website navigation or logging in the secured areas. Using them is in your best interest, hence all the applicable personal data protection laws allow us to use them freely. We use the following essential cookies:"
+      "body": [
+        {
+          "type": "text",
+          "content": "We always use the essential cookies. They allow us to provide you with the essential features of our website, such as website navigation or logging in the secured areas. Using them is in your best interest, hence all the applicable personal data protection laws allow us to use them freely. We use the following essential cookies:\n\n\nWe use other types of cookies only with your prior explicit consent. If you give us consent to store them on your computer, we do so. If you don’t consent to their use, we don’t use them. It’s that simple.\nWe don’t discriminate users based on consent.Your consent applies to the following domains: http://es.nttdata.com\nThe rest of the cookies we use are:"
+        }
+      ]
     },
     {
       "title": "Analytics cookies",
-      "body": "Analytics cookies provide us with information about the traffic and users’ behavior on our website. This includes the number of visitors, number of clicks to pages, and others. Most often, the data these cookies collect is anonymous."
+      "body": [
+        {
+          "type": "text",
+          "content": "Analytics cookies provide us with information about the traffic and users’ behavior on our website. This includes the number of visitors, number of clicks to pages, and others. Most often, the data these cookies collect is anonymous.\n\nHowever, in some cases, the data may be related to a pseudonymous identifier that may be related to your device. That may possibly make you identifiable and that’s why we ask you for consent before using analytics cookies."
+        }
+      ]
     },
     {
       "title": "Advertising cookies",
-      "body": "These cookies track your browsing behavior to enable us to show you personalized content and advertisements that are likely to be of interest to you. Depending on your information and only upon your permission, these cookies may group you with other users with similar interests and show you relevant ads and content. For more information on the advertising cookies we use, read our Privacy Policy."
+      "body": [
+        {
+          "type": "text",
+          "content": "These cookies track your browsing behavior to enable us to show you personalized content and advertisements that are likely to be of interest to you. Depending on your information and only upon your permission, these cookies may group you with other users with similar interests and show you relevant ads and content. For more information on the advertising cookies we use, read our Privacy Policy."
+        }
+      ]
     },
     {
       "title": "Social media cookies",
-      "body": "These cookies allow social networks to record your behavior when using social engagement buttons (such as the “Like” button). The data these cookies collect is shared with third-party advertisers."
+      "body": [
+        {
+          "type": "text",
+          "content": "These cookies allow social networks to record your behavior when using social engagement buttons (such as the \"Like\" button). The data these cookies collect is shared with third-party advertisers."
+        }
+      ]
     },
     {
       "title": "Audio/video player cookies",
-      "body": "--table--"
+      "body": [
+        {
+          "type": "text",
+          "content": ""
+        }
+      ]
     },
     {
       "title": "Consent status",
-      "body": "Your current cookie consent status: Consent Given"
+      "body": [
+        {
+          "type": "text",
+          "content": "Your current cookie consent status: Consent Given\nChange your consent Privacy"
+        }
+      ]
     },
     {
       "title": "Deleting or disabling cookies",
-      "body": "You may delete or disable cookies through your browser settings. However, you should keep in mind that deleting or disabling cookies may lead to inconvenience while using our website that would not have happened if you consented to the use of cookies."
+      "body": [
+        {
+          "type": "text",
+          "content": "You may delete or disable cookies through your browser settings. However, you should keep in mind that deleting or disabling cookies may lead to inconvenience while using our website that would not have happened if you consented to the use of cookies.\nOn the following links, you’ll find information about how to delete or disable cookies from your browser settings:\n\n· Chrome\n\n· Firefox\n\n· Safari (iOS)\n\n· Opera\n\n· Edge"
+        }
+      ]
     },
     {
       "title": "Changes to this cookie declaration",
-      "body": "NTT DATA Spain SLU is may change this cookie declaration at any time without prior notice. That may happen due to changes in cookie regulations, changes in our website, or another reason. Ensure to check out this cookie declaration regularly to stay updated for any changes."
+      "body": [
+        {
+          "type": "text",
+          "content": "NTT DATA Spain SLU is may change this cookie declaration at any time without prior notice. That may happen due to changes in cookie regulations, changes in our website, or another reason. Ensure to check out this cookie declaration regularly to stay updated for any changes.\n\nCookie declaration last updated on 21 Jan 2023"
+        }
+      ]
     }
   ]
 }

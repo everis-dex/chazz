@@ -76,6 +76,29 @@ collections:
       - { label: Page, name: page, widget: string }
       - { label: Title, name: title, widget: string }
       - { label: Subtitle, name: subtitle, widget: string, required: false }
+      - label: Body
+        name: body
+        widget: list
+        types:
+          - label: Text
+            name: text
+            widget: object
+            fields:
+              - label: Content
+                name: content
+                widget: text
+          - label: Table
+            name: table
+            widget: object
+            fields:
+              - label: Row
+                name: row
+                widget: list
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - { label: Host, name: host, widget: string }
+                  - { label: Expiration, name: expiration, widget: string }
+                  - { label: Service, name: service, widget: string }
 
   - name: services
     label: Services
@@ -291,30 +314,26 @@ collections:
           - { label: Title, name: title, widget: string }
           - label: Body
             name: body
-            widget: object
-            fields:
-              - label: Components
-                name: components
-                widget: list
-                types:
-                  - label: Text
-                    name: text
-                    widget: object
+            widget: list
+            types:
+              - label: Text
+                name: text
+                widget: object
+                fields:
+                  - label: Paragraph
+                    name: paragraph
+                    widget: list
                     fields:
-                      - label: Paragraph
-                        name: paragraph
-                        widget: list
-                        fields:
-                          - { label: Input, name: input, widget: text }
-                  - label: Table
-                    name: table
-                    widget: object
+                      - { label: Input, name: input, widget: text }
+              - label: Table
+                name: table
+                widget: object
+                fields:
+                  - label: Row
+                    name: row
+                    widget: list
                     fields:
-                      - label: Row
-                        name: row
-                        widget: list
-                        fields:
-                          - { label: Name, name: name, widget: string }
-                          - { label: Host, name: host, widget: string }
-                          - { label: Expiration, name: expiration, widget: string }
-                          - { label: Service, name: service, widget: string }
+                      - { label: Name, name: name, widget: string }
+                      - { label: Host, name: host, widget: string }
+                      - { label: Expiration, name: expiration, widget: string }
+                      - { label: Service, name: service, widget: string }

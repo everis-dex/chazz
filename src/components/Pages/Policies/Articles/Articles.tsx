@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { IPolicy, IPolicyArticle } from "../../../../interfaces/cms";
 import { Accordion } from "../../../shared/index";
 import "./Articles.scss";
+import { BodyContent } from "./BodyContent/BodyContent";
 
 export const Articles = (policy: IPolicy) => {
   // TODO: Se respeta el selected article para ambos policies
@@ -42,7 +43,9 @@ export const Articles = (policy: IPolicy) => {
                   <div className="article-title" id={`article${index}`}>
                     {article.title}
                   </div>
-                  <div className="article-body">{article.body}</div>
+                  <div className="article-body">
+                    <BodyContent body={article.body} />
+                  </div>
                 </div>
               ))}
             </div>
@@ -52,7 +55,11 @@ export const Articles = (policy: IPolicy) => {
         <div className="content-mobile">
           {policy.articles.map((article: IPolicyArticle, index: number) => (
             <div key={index}>
-              <Accordion title={article.title} content={article.body} ourWork={false} />
+              <Accordion
+                title={article.title}
+                content={typeof article.body === "string" ? article.body : ""}
+                ourWork={false}
+              />
             </div>
           ))}
         </div>

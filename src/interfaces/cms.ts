@@ -72,7 +72,22 @@ export interface IPolicy {
 
 export interface IPolicyArticle {
   title: string;
-  body: string;
+  body: IPolicyBody[];
+}
+
+export interface IPolicyBody {
+  type: string;
+  content?: string;
+  table?: {
+    row: IPolicyTableRow[];
+  };
+}
+
+export interface IPolicyTableRow {
+  name: string;
+  host: string;
+  expiration: string;
+  service: string;
 }
 
 // ##############################
