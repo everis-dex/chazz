@@ -59,6 +59,35 @@
         {
           "type": "text",
           "content": "Analytics cookies provide us with information about the traffic and users’ behavior on our website. This includes the number of visitors, number of clicks to pages, and others. Most often, the data these cookies collect is anonymous.\n\nHowever, in some cases, the data may be related to a pseudonymous identifier that may be related to your device. That may possibly make you identifiable and that’s why we ask you for consent before using analytics cookies."
+        },
+        {
+          "type": "table",
+          "rows": [
+            {
+              "name": "_ga",
+              "host": "Google Analytics",
+              "expiration": "Anfitrión: .nttdata.com\nExpiración: 2024-02-25\nTipo: First party cookie",
+              "service": "Google Analytics cookie enabling control of one-time visits. This cookie is installed the first time a user enters the website through a browser. When the user comes back to the website through the same browser, the cookie will consider him to be the same user. Only in the event that the user changes browser, will he be deemed to be a different user."
+            },
+            {
+              "name": "_gid",
+              "host": "Google Analytics",
+              "expiration": "Anfitrión: .nttdata.com\nExpiración: 2023-01-22\nTipo: First party cookie",
+              "service": "This cookie is installed by Google Analytics. The cookie is used to store information of how visitors use a website and helps in creating an analytics report of how the website is doing. The data collected including the number visitors, the source where they have come from, and the pages visited in an anonymous form"
+            },
+            {
+              "name": "_gat_UA-228909013-1",
+              "host": "Google Analytics",
+              "expiration": "Anfitrión: .linkedin.com\nExpiración: 2023-02-20\nTipo: Third party cookie",
+              "service": "This is a pattern type cookie set by Google Analytics, where the pattern element on the name contains the unique identity number of the account or website it relates to. It appears to be a variation of the _gat cookie which is used to limit the amount of data recorded by Google on high traffic volume websites."
+            },
+            {
+              "name": "AnalyticsSyncHistory",
+              "host": "Google Analytics",
+              "expiration": "Anfitrión: .linkedin.com\nExpiración: 2023-02-20\nTipo: Third party cookie",
+              "service": "Used to store information about the time a sync took place with the lms_analytics cookie"
+            }
+          ]
         }
       ]
     },
@@ -68,6 +97,17 @@
         {
           "type": "text",
           "content": "These cookies track your browsing behavior to enable us to show you personalized content and advertisements that are likely to be of interest to you. Depending on your information and only upon your permission, these cookies may group you with other users with similar interests and show you relevant ads and content. For more information on the advertising cookies we use, read our Privacy Policy."
+        },
+        {
+          "type": "table",
+          "rows": [
+            {
+              "name": "NID",
+              "host": "AOL Advertising",
+              "expiration": "Anfitrión: .google.com\nExpiración: 2023-07-23\nTipo: Third party cookie",
+              "service": "These cookies are used to deliver adverts more relevant to you and your interests. They are also used to limit the number of times you see an advertisement as well as help measure the effectiveness of the advertising campaign."
+            }
+          ]
         }
       ]
     },
@@ -77,6 +117,53 @@
         {
           "type": "text",
           "content": "These cookies allow social networks to record your behavior when using social engagement buttons (such as the \"Like\" button). The data these cookies collect is shared with third-party advertisers."
+        },
+        {
+          "type": "table",
+          "rows": [
+            {
+              "name": "li_sugr",
+              "host": "Google Analytics",
+              "expiration": "Anfitrión: .linkedin.com\nExpiración: 2023-04-21\nTipo: Third party cookie",
+              "service": "Used by Linked In for tracking"
+            },
+            {
+              "name": "",
+              "host": "",
+              "expiration": "Anfitrión: .ads.linkedin.com\nExpiración: Sesión\nTipo: Third party cookie",
+              "service": "There are many different types of cookies associated with this name, and a more detailed look at how it is used on a particular website is generally recommended. However, in most cases it will likely be used to store language preferences, potentially to serve up content in the stored language."
+            },
+            {
+              "name": "",
+              "host": "",
+              "expiration": "Anfitrión: .linkedin.com\nExpiración: 2024-01-21\nTipo: Third party cookie",
+              "service": "This cookie is used by LinkedIn for identifying the Browser ID. It is set from LinkedIn share buttons and ad tags."
+            },
+            {
+              "name": "",
+              "host": "",
+              "expiration": "Anfitrión: .linkedin.com\nExpiración: 2023-02-20\nTipo: Third party cookie",
+              "service": "This is a Microsoft MSN 1st party cookie that ensures the proper functioning of this website."
+            },
+            {
+              "name": "",
+              "host": "",
+              "expiration": "Anfitrión: .linkedin.com\nExpiración: 2023-02-20\nTipo: Third party cookie",
+              "service": "Used to track visitors on multiple websites, in order to present relevant advertisement based on the visitor's preferences."
+            },
+            {
+              "name": "",
+              "host": "",
+              "expiration": "",
+              "service": "There are many different types of cookies associated with this name, and a more detailed look at how it is used on a particular website is generally recommended. However, in most cases it will likely be used to store language preferences, potentially to serve up content in the stored language."
+            },
+            {
+              "name": "",
+              "host": "",
+              "expiration": "Anfitrión: .linkedin.com\nExpiración: Sesión\nTipo: Third party cookie",
+              "service": "Used by the social networking service, LinkedIn, for tracking the use of embedded services."
+            }
+          ]
         }
       ]
     },
@@ -84,8 +171,27 @@
       "title": "Audio/video player cookies",
       "body": [
         {
-          "type": "text",
-          "content": ""
+          "type": "table",
+          "rows": [
+            {
+              "name": "FirstTimeReferer",
+              "host": "Hihaho",
+              "expiration": "Anfitrión: .hihaho.com\nExpiración: 2024-02-25\nTipo: Third party cookie",
+              "service": ""
+            },
+            {
+              "name": "XSRF-TOKEN",
+              "host": "Hihaho",
+              "expiration": "Anfitrión: .hihaho.com\nExpiración: 2023-01-21\nTipo: Third party cookie",
+              "service": "Ensures visitor browsing-security by preventing cross-site request forgery. This cookie is essential for the security of the website and visitor."
+            },
+            {
+              "name": "bcookie",
+              "host": "Hihaho",
+              "expiration": "Anfitrión: .hihaho.com\nExpiración: 2023-01-21\nTipo: Third party cookie",
+              "service": ""
+            }
+          ]
         }
       ]
     },
