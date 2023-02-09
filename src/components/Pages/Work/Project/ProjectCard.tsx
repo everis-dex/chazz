@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import { IProject } from "../../../../interfaces/cms";
 import { Accordion, Media } from "../../../shared";
@@ -29,9 +28,8 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
 
       <div className="project-details">
         <div className="project-title-container">
-          <Link className="title" to={`/work/case/${data.id}`}>
-            {data.title} —
-          </Link>
+          {/* Sustituir span de title por Link, y cambiar en styles el hover de la clase title */}
+          <span className="title">{data.title} —</span>
           <span className="description">{data.description}</span>
         </div>
         <span className="properties">{data.subtitle}</span>
