@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { IPolicy, IPolicyArticle } from "../../../../interfaces/cms";
-import { Accordion, Dropdown } from "../../../shared/index";
+import { Accordion } from "../../../shared/index";
 import "./Articles.scss";
 
 export const Articles = (policy: IPolicy) => {
@@ -14,10 +14,7 @@ export const Articles = (policy: IPolicy) => {
   // Creamos una función que nos re calcula el ancho de la pantalla:
   window.onresize = () => {
     setWindowWidth(window.innerWidth);
-    console.log(windowWidth);
   };
-
-  const titles: string[] = policy.articles.map((article: IPolicyArticle) => article.title);
 
   return (
     <>
@@ -53,7 +50,6 @@ export const Articles = (policy: IPolicy) => {
         </div>
       ) : (
         <div className="content-mobile">
-          <Dropdown content={titles} />
           {policy.articles.map((article: IPolicyArticle, index: number) => (
             <div key={index}>
               <Accordion title={article.title} content={article.body} ourWork={false} />
