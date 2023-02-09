@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { IProject } from "../../../../interfaces/cms";
-import { Accordion } from "../../../shared/Accordion/Accordion";
-import { Media } from "../../../shared/index";
+import { Accordion, Media } from "../../../shared";
 
 import "./ProjectCard.styles.scss";
 

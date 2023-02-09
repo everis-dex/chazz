@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 
 import { IPolicy, IPolicyArticle } from "../../../../interfaces/cms";
-import { Accordion } from "../../../shared/Accordion/Accordion";
+import { Accordion, Dropdown } from "../../../shared/index";
 import "./Articles.scss";
 
 export const Articles = (policy: IPolicy) => {
-  // Se respeta el selected article para ambos policies
+  // TODO: Se respeta el selected article para ambos policies
   const [articleIndex, setArticleIndex] = useState<number>(0);
 
-  //Creamos un estado con el valor del ancho de la pantalla (windowWidth):
+  // Creamos un estado con el valor del ancho de la pantalla (windowWidth):
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
-  //Creamos una función que nos re calcula el ancho de la pantalla:
+  // Creamos una función que nos re calcula el ancho de la pantalla:
   window.onresize = () => {
     setWindowWidth(window.innerWidth);
     console.log(windowWidth);
   };
+
+  const titles: string[] = policy.articles.map((article: IPolicyArticle) => article.title);
 
   return (
     <>
@@ -51,6 +53,7 @@ export const Articles = (policy: IPolicy) => {
         </div>
       ) : (
         <div className="content-mobile">
+          <Dropdown {...titles} />
           {policy.articles.map((article: IPolicyArticle, index: number) => (
             <div key={index}>
               <Accordion title={article.title} content={article.body} ourWork={false} />
