@@ -52,7 +52,7 @@ export const Accordion = ({ title, content, ourWork }: Props) => {
               {accordionTitle[0]}
             </span>
           )}
-          <div className="accordion-arrow" style={{ zIndex: "-10" }}>
+          <div className={!ourWork ? "accordion-arrow" : "accordion-arrow-work"} style={{ zIndex: "-10" }}>
             <img className={openAccordion ? "icon-fadeIn" : "icon-fadeOut"} src={moreInfoIcon} alt="moreInformation" />
             <img className={!openAccordion ? "icon-fadeIn" : "icon-fadeOut"} src={lessInfoIcon} alt="lessInformation" />
           </div>
