@@ -1,26 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import "./Dropdown.styles.scss";
 
 type Props = { content: string[] };
 
 export const Dropdown = ({ content }: Props) => {
-  const [selectedOption, setSelectedOption] = useState<string>(content[0]);
+  const [selectedOption, setSelectedOption] = useState<number>(0);
+  const contentDiv = useRef<HTMLDivElement>(null);
 
-  function select(target: EventTarget): void {
-    const element = target as HTMLAnchorElement;
-    setSelectedOption(element.innerHTML);
+  // Display options when clicking on dropdown header
+  function display(): void {
+    if (contentDiv && contentDiv.current) {
+      contentDiv.current.style.display = "block";
+    }
+  }
+
+  // Set selected option and hide options
+  function select(option: number, target: EventTarget): void {
+    // Remove previous selected
+    if (contentDiv && contentDiv.current) {
+      contentDiv.current.childNodes.forEach((child: ChildNode) => {
+        const elem = child as HTMLInputElement;
+        elem.classList.remove("selected");
+      });
+      contentDiv.current.style.display = "none";
+    }
+
+    // Set selected option
+    setSelectedOption(option);
+    const element = target as HTMLInputElement;
+    element.classList.add("selected");
   }
 
   return (
     <div className="dropdown">
-      <button className="dropdown-header">{selectedOption}</button>
-      <div className="dropdown-content">
+      <button className="dropdown-header" onClick={display}>
+        {content[selectedOption]}
+      </button>
+      <div className="dropdown-content" ref={contentDiv}>
         {content.map((item: string, index: number) => {
           return (
-            <a href="#/" key={index} onClick={e => select(e.target)}>
+            <div key={index} onClick={e => select(index, e.target)}>
               {item}
-            </a>
+              <span className="okay">✓</span>
+            </div>
           );
         })}
       </div>
