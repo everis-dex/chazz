@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./LineBreaker.scss";
 
 type Props = {
@@ -11,14 +10,14 @@ export const BrokenLines = ({ brokenLines, lineBreakSymbol }: Props) => {
   return (
     <>
       {brokenLines.length > 0 && (
-        <h1>
+        <>
           {brokenLines.map((titleLine: string, index: number) => (
-            <div key={index}>
-              {titleLine.replace(lineBreakSymbol, "")}
+            <React.Fragment key={index}>
+              {titleLine.replace(new RegExp(`\\${lineBreakSymbol}`, "g"), "")}
               <br />
-            </div>
+            </React.Fragment>
           ))}
-        </h1>
+        </>
       )}
     </>
   );
