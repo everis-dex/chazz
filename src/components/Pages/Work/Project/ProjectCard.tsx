@@ -11,10 +11,11 @@ type Props = {
   format: string;
   columns?: string;
   full?: boolean;
-  setCaseStudyId: (a: number) => void;
 };
 
-export const ProjectCard = ({ data, format, columns, setCaseStudyId }: Props) => {
+export const ProjectCard = ({ data, format, columns }: Props) => {
+  const image = data.media.project;
+
   const bodyParagraphs = data.body;
   const bodyParagraphs1: string = bodyParagraphs.charCodeAt(0) === 10 ? bodyParagraphs.substring(1) : bodyParagraphs;
   const bodyParagraphs2: string = bodyParagraphs1.charCodeAt(0) === 13 ? bodyParagraphs1.substring(1) : bodyParagraphs1;
@@ -23,14 +24,13 @@ export const ProjectCard = ({ data, format, columns, setCaseStudyId }: Props) =>
   return (
     <div className={`project-container ${columns}`}>
       <div className={`project-media ${format === "half" ? "half" : ""}`}>
-        <Media src={data.media.project} style={{ width: "100%" }} alt={data.title} format={format} />
+        <Media src={image} style={{ width: "100%" }} alt={data.title} format={format} />
       </div>
 
       <div className="project-details">
         <div className="project-title-container">
-          <span className="title" onClick={() => setCaseStudyId(data.id)}>
-            {data.title} —
-          </span>
+          {/* Sustituir span de title por Link, y cambiar en styles el hover de la clase title */}
+          <span className="title">{data.title} —</span>
           <span className="description">{data.description}</span>
         </div>
         <span className="properties">{data.subtitle}</span>

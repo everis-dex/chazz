@@ -1,0 +1,363 @@
+.work-container {
+  max-width: 100%;
+}
+
+.header-nav {
+  display: block;
+  height: 10vh;
+  position: relative;
+  z-index: 1;
+  padding-right: 5%;
+}
+
+.work-container {
+  margin: 0 5%;
+}
+
+.work-header {
+  margin-top: 6%;
+  border-top: 1px solid var(--black);
+  h1 {
+    margin: 25px 0 20px 0;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 43px;
+  }
+}
+
+.work-container--content {
+  width: auto;
+  margin-top: 0;
+  display: grid;
+
+  .work-detail {
+    margin-bottom: 7vh;
+    width: 90vw;
+    font-weight: 500;
+    line-height: 131.3%;
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+}
+
+//CSS -> CONTENEDOR TITULO:
+.case-container {
+  padding: 17px 5%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.case-container-title h1 {
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-size: 40px;
+  line-height: 48px;
+  color: var(--black);
+}
+
+.case-container-info {
+  display: grid;
+  grid-gap: 20px;
+  margin-bottom: 40px;
+}
+
+.case-info {
+  span {
+    font-size: 12px;
+    line-height: 17px;
+    color: var(--gray);
+  }
+  div {
+    font-size: 16px;
+    line-height: 23px;
+    color: var(--black);
+  }
+}
+
+//CSS -> CLAIM SECTION:
+.fw-claim {
+  padding: 15% 5%;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 38px;
+  text-align: center;
+  color: var(--black);
+}
+
+//CSS -> FULL WIDTH IMAGE:
+.fw-image {
+  width: 100%;
+
+  span {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+    color: var(--white);
+  }
+  .fw-image-text {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+  img {
+    width: 100%;
+  }
+}
+.fw-image-text {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fw-image-text {
+  img {
+    width: 100%;
+  }
+  .img-text-container {
+    width: 100%;
+    position: relative;
+    height: auto;
+    padding: 0 5%;
+    color: var(--white);
+    margin: -88px 0 44px 0;
+  }
+}
+
+.fw-image-text span {
+  padding: 152px 5% 24px 5%;
+  display: block;
+  color: var(--white);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 26px;
+}
+
+//CSS -> SECTION FLEX CONTAINER:
+.section-flex-container {
+  display: flex;
+  flex-direction: column;
+  padding: 64px 0;
+}
+.section-flex-container2 {
+  display: flex;
+  flex-direction: column;
+  padding: 64px 0;
+}
+.section-left-column {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 33px;
+  color: var(--black);
+  padding-bottom: 80px;
+}
+
+.section-right-column {
+  color: var(--black);
+
+  h3 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+
+  div {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+//______________________________________________________
+.image-footer-text {
+  padding: 40px 0 130px 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--black);
+}
+.image-half-footer-text {
+  padding: 20px 0 40px 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--black);
+}
+
+.separation {
+  padding-top: 32px;
+}
+
+.separation2 {
+  padding-top: 64px;
+}
+
+.fw-claim-final {
+  padding: 38px 0;
+  margin: 0 5%;
+  max-width: 100%;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--black);
+}
+
+.back-button {
+  padding: 0 5%;
+  text-decoration: none;
+  background: none;
+  color: inherit;
+  border: none;
+  font-size: 16px;
+  display: block;
+  margin: -30px 0 100px 0;
+  font-weight: 400;
+  &:hover {
+    color: var(--pinkHover);
+  }
+}
+// MEDIA QUERIES
+@media (min-width: 1280px) {
+  .work-header {
+    margin-bottom: 0;
+    font-size: 72px;
+  }
+  .work-container--content {
+    margin: 0 0 10% 0;
+    grid-template-columns: 49% 49%;
+    grid-gap: 0% 2%;
+
+    .work-detail {
+      width: 100%;
+
+      h1 {
+        font-size: 40px;
+      }
+    }
+  }
+}
+@media (min-width: 769px) {
+  //CSS -> CONTENEDOR TITULO:
+  .case-container {
+    padding: 107px 5%;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+  }
+  .case-container-title {
+    width: 65%;
+    h1 {
+      width: 90%;
+      font-size: 72px;
+      line-height: 86px;
+    }
+  }
+  .case-info {
+    span {
+      font-size: 16px;
+      line-height: 29px;
+    }
+    div {
+      width: 100%;
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
+  .subtitle-section {
+    padding: 10px;
+  }
+  .case-container-info {
+    width: 35%;
+    padding: 0 5%;
+    grid-gap: 10px;
+    margin-bottom: 0;
+  }
+  //CSS -> CLAIM SECTION:
+  .fw-claim {
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  //CSS -> SECTION FLEX CONTAINER:
+  .section-flex-container {
+    flex-direction: row;
+    padding: 112px 0;
+  }
+  .section-flex-container2 {
+    flex-direction: row;
+    gap: 30px;
+    padding: 112px 0 0 0;
+  }
+  .section-flex-container {
+    flex-direction: row;
+    padding: 112px 0;
+  }
+  .section-left-column {
+    width: 50%;
+    font-size: 32px;
+    line-height: 44px;
+
+    &#padding {
+      padding-right: 5%;
+    }
+  }
+  .section-right-column {
+    width: 50%;
+
+    h3 {
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    span {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+  .section-left-column-empty {
+    width: 50%;
+  }
+  .fw-image-text {
+    height: 800px;
+  }
+
+  .fw-image-text span {
+    min-height: 230px;
+    padding: 575px 5% 88px 5%;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 60px;
+  }
+  .img-text-container {
+    padding: 0 5%;
+    margin: -220px 0 160px 0;
+  }
+
+  .fw-claim-final {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .separation {
+    padding-top: 98px;
+  }
+  .separation2 {
+    padding-top: 142px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .work-container--content {
+    .work-detail {
+      width: 85%;
+    }
+  }
+}

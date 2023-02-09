@@ -78,7 +78,9 @@ export const HomeHeader = (headerData: IHomeHeader) => {
         </div>
         <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
           <div className={isPlaying ? "simply-out" : ""}>
-            <LineBreakerSelector typedLines={headerData.title} />
+            <h1>
+              <LineBreakerSelector typedLines={headerData.title} />
+            </h1>
             <h4>{headerData.subtitle}</h4>
           </div>
           {!isBurgerMenuOpen && (

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import lessInfoIcon from "../../../assets/icn_lessinformation.svg";
 import moreInfoIcon from "../../../assets/icn_moreinformation.svg";
+import { LineBreakerSelector } from "../LineBreaker/LineBreakerSelector";
 
 import "./Accordion.styles.scss";
 
@@ -31,7 +32,7 @@ export const Accordion = ({ title, content, ourWork }: Props) => {
 
   return (
     <div className={!ourWork ? "separator" : ""}>
-      <div className={ourWork ? "mobile-accordion" : ""}>
+      <div className={ourWork ? "mobile-accordion" : "another-accordion"}>
         <div
           className={openAccordion && !ourWork ? "accordion-open" : "accordion-close"}
           onClick={e => handleDropdown(e.target)}
@@ -57,7 +58,9 @@ export const Accordion = ({ title, content, ourWork }: Props) => {
           </div>
         </div>
         <div className={ourWork ? "panel-work" : "panel-services"}>
-          <p>{content}</p>
+          <div className="linebreaker">
+            <LineBreakerSelector typedLines={content} />
+          </div>
         </div>
       </div>
     </div>
