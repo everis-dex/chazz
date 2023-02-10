@@ -31,7 +31,7 @@ export const BodyContent = ({ body }: Props) => {
         break;
 
       case "table":
-        if (b.rows && windowWidth >= 720) {
+        if (b.rows && windowWidth > 768) {
           return (
             <table>
               <thead>
@@ -52,20 +52,6 @@ export const BodyContent = ({ body }: Props) => {
                   </tr>
                 ))}
               </tbody>
-            </table>
-          );
-        } else {
-          return (
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Host</th>
-                  <th>Expiration</th>
-                  <th>Service</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
             </table>
           );
         }
