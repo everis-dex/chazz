@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactDOMServer from "react-dom/server";
 
 import { IPolicy, IPolicyArticle } from "../../../../interfaces/cms";
 import { Accordion } from "../../../shared/index";
@@ -54,15 +55,14 @@ export const Articles = (policy: IPolicy) => {
         </div>
       ) : (
         <div className="content-mobile">
-          {policy.articles.map((article: IPolicyArticle, index: number) => (
-            <div key={index}>
-              <Accordion
-                title={article.title}
-                content={typeof article.body === "string" ? article.body : ""}
-                ourWork={false}
-              />
-            </div>
-          ))}
+          {policy.articles.map((article: IPolicyArticle, index: number) => {
+            const html = ReactDOMServer.renderToString(<BodyContent body={article.body} />);
+            return (
+              <div key={index}>
+                <Accordion title={article.title} ourWork={false} html={html} />
+              </div>
+            );
+          })}
         </div>
       )}
     </>

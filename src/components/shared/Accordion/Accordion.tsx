@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import lessInfoIcon from "../../../assets/icn_lessinformation.svg";
 import moreInfoIcon from "../../../assets/icn_moreinformation.svg";
@@ -6,10 +6,11 @@ import { LineBreakerSelector } from "../LineBreaker/LineBreakerSelector";
 
 import "./Accordion.styles.scss";
 
-type Props = { title: string; content: string; ourWork: boolean };
+type Props = { title: string; content?: string; ourWork: boolean; html?: string };
 
-export const Accordion = ({ title, content, ourWork }: Props) => {
+export const Accordion = ({ title, content, ourWork, html }: Props) => {
   const [openAccordion, setOpenAccordion] = useState<boolean>(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const defaultDropdownText: string[] = ["More information", "Less information"];
   const accordionTitle: string[] = title === "" ? defaultDropdownText : [title, title];
@@ -29,6 +30,13 @@ export const Accordion = ({ title, content, ourWork }: Props) => {
     }
     setOpenAccordion(!openAccordion);
   }
+
+  useEffect(() => {
+    if (contentRef && contentRef.current) {
+      const container = contentRef.current as HTMLElement;
+      if (html) container.innerHTML = html;
+    }
+  }, [html]);
 
   return (
     <div className={!ourWork ? "separator" : ""}>
@@ -57,10 +65,12 @@ export const Accordion = ({ title, content, ourWork }: Props) => {
             <img className={!openAccordion ? "icon-fadeIn" : "icon-fadeOut"} src={lessInfoIcon} alt="lessInformation" />
           </div>
         </div>
-        <div className={ourWork ? "panel-work" : "panel-services"}>
-          <div className="linebreaker">
-            <LineBreakerSelector typedLines={content} />
-          </div>
+        <div className={ourWork ? "panel-work" : "panel-services"} ref={contentRef}>
+          {content && (
+            <div className="linebreaker">
+              <LineBreakerSelector typedLines={content} />
+            </div>
+          )}
         </div>
       </div>
     </div>
