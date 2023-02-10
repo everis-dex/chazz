@@ -1,4 +1,5 @@
 .body-content {
+  padding-top: 20px;
   table {
     margin: 40px 0;
     width: 100%;
@@ -17,5 +18,12 @@
       border-bottom: 1px solid var(--black);
       margin-bottom: 60px;
     }
+  }
+}
+
+// MEDIA QUERIES
+@media (min-width: 768px) {
+  .body-content {
+    padding-top: 0px;
   }
 }

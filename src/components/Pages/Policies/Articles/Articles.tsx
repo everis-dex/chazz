@@ -8,6 +8,7 @@ import { BodyContent } from "./BodyContent/BodyContent";
 import "./Articles.styles.scss";
 
 export const Articles = (policy: IPolicy) => {
+  const [mostrar, setMostrar] = useState<boolean>(true);
   // TODO: Se respeta el selected article para ambos policies
   const [articleIndex, setArticleIndex] = useState<number>(0);
 
@@ -56,29 +57,39 @@ export const Articles = (policy: IPolicy) => {
       ) : (
         <div className="policy-container">
           <div className="content-mobile">
-            <Dropdown content={policy.articles.map(article => article.title)} />
-            {/* {policy.articles.map((article: IPolicyArticle, index: number) => {
-              const html = ReactDOMServer.renderToString(<BodyContent body={article.body} />);
-              return (
-                <div key={index}>
-                  <Accordion title={article.title} ourWork={false} html={html} />
-                </div>
-              );
-            })} */}
-            <div className="global-content">
-              <div className="content">
-                {policy.articles.map((article: IPolicyArticle, index: number) => (
-                  <div className="article" key={index}>
-                    <div className="article-title" id={`article${index}`}>
-                      {article.title}
+            <button style={{ margin: "2px 2px 2px 2px", width: "97%" }} onClick={() => setMostrar(!mostrar)}>
+              Mostrar/Ocultar Acordeón
+            </button>
+            {!mostrar ? (
+              <>
+                {policy.articles.map((article: IPolicyArticle, index: number) => {
+                  const html = ReactDOMServer.renderToString(<BodyContent body={article.body} />);
+                  return (
+                    <div key={index}>
+                      <Accordion title={article.title} ourWork={false} html={html} />
                     </div>
-                    <div className="article-body">
-                      <BodyContent body={article.body} />
-                    </div>
+                  );
+                })}{" "}
+              </>
+            ) : (
+              <>
+                <Dropdown content={policy.articles.map(article => article.title)} />
+                <div className="global-content">
+                  <div className="content">
+                    {policy.articles.map((article: IPolicyArticle, index: number) => (
+                      <div className="article" key={index}>
+                        <div className="article-title" id={`article${index}`}>
+                          {article.title}
+                        </div>
+                        <div className="article-body">
+                          <BodyContent body={article.body} />
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
