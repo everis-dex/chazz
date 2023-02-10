@@ -83,7 +83,7 @@ export const Thoughts = () => {
         {/* Header section */}
         <div className="thoughts-header">
           <h1 className="header-title">{thoughtsPage.title}</h1>
-          <video autoPlay className="video-height" muted={true} src={videoSource} loop playsInline/>
+          <video autoPlay className="video-height" muted={true} src={videoSource} loop />
         </div>
         {/* Filtering section */}
         <div className="thoughts-filtering" ref={filters}>

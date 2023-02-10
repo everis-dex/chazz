@@ -64,6 +64,30 @@ export interface IThoughtsPage {
   categories: string[];
 }
 
+// Policies
+export interface IPolicy {
+  title: string;
+  articles: IPolicyArticle[];
+}
+
+export interface IPolicyArticle {
+  title: string;
+  body: IPolicyBody[];
+}
+
+export interface IPolicyBody {
+  type: string;
+  content?: string;
+  rows?: IPolicyTableRow[];
+}
+
+export interface IPolicyTableRow {
+  name: string;
+  host: string;
+  expiration: string;
+  service: string;
+}
+
 // ##############################
 // #         COMPONENTS
 // ##############################
