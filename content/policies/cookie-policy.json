@@ -128,38 +128,38 @@
               "service": "Used by Linked In for tracking"
             },
             {
-              "name": "",
-              "host": "",
+              "name": "lang",
+              "host": "Twitter",
               "expiration": "Anfitrión: .ads.linkedin.com\nExpiración: Sesión\nTipo: Third party cookie",
               "service": "There are many different types of cookies associated with this name, and a more detailed look at how it is used on a particular website is generally recommended. However, in most cases it will likely be used to store language preferences, potentially to serve up content in the stored language."
             },
             {
-              "name": "",
-              "host": "",
+              "name": "bcookie",
+              "host": "Google Analytics",
               "expiration": "Anfitrión: .linkedin.com\nExpiración: 2024-01-21\nTipo: Third party cookie",
               "service": "This cookie is used by LinkedIn for identifying the Browser ID. It is set from LinkedIn share buttons and ad tags."
             },
             {
-              "name": "",
-              "host": "",
+              "name": "lidc",
+              "host": "Linkedin",
               "expiration": "Anfitrión: .linkedin.com\nExpiración: 2023-02-20\nTipo: Third party cookie",
               "service": "This is a Microsoft MSN 1st party cookie that ensures the proper functioning of this website."
             },
             {
-              "name": "",
-              "host": "",
+              "name": "UserMatchHistory",
+              "host": "Linkedin",
               "expiration": "Anfitrión: .linkedin.com\nExpiración: 2023-02-20\nTipo: Third party cookie",
               "service": "Used to track visitors on multiple websites, in order to present relevant advertisement based on the visitor's preferences."
             },
             {
-              "name": "",
-              "host": "",
-              "expiration": "",
+              "name": "lang",
+              "host": "Twitter",
+              "expiration": "Anfitrión: .linkedin.com\nExpiración: Sesión\nTipo: Third party cookie",
               "service": "There are many different types of cookies associated with this name, and a more detailed look at how it is used on a particular website is generally recommended. However, in most cases it will likely be used to store language preferences, potentially to serve up content in the stored language."
             },
             {
-              "name": "",
-              "host": "",
+              "name": "bscookie",
+              "host": "Linkedin",
               "expiration": "Anfitrión: .linkedin.com\nExpiración: Sesión\nTipo: Third party cookie",
               "service": "Used by the social networking service, LinkedIn, for tracking the use of embedded services."
             }
