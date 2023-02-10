@@ -11,7 +11,11 @@ export const Dropdown = ({ content }: Props) => {
   // Display options when clicking on dropdown header
   function display(): void {
     if (contentDiv && contentDiv.current) {
-      contentDiv.current.style.display = "block";
+      if (contentDiv.current.style.display === "block") {
+        contentDiv.current.style.display = "none";
+      } else {
+        contentDiv.current.style.display = "block";
+      }
     }
   }
 
@@ -41,7 +45,7 @@ export const Dropdown = ({ content }: Props) => {
         {content.map((item: string, index: number) => {
           return (
             <div key={index} onClick={e => select(index, e.target)}>
-              {item}
+              <a href={`#article${index}`}>{item}</a>
               <span className="okay">✓</span>
             </div>
           );

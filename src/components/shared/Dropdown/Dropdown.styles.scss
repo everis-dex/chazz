@@ -21,7 +21,8 @@
   width: 100%;
   z-index: 1;
 
-  div {
+  div,
+  a {
     color: var(--black);
     padding: 16px 5px;
     text-decoration: none;
