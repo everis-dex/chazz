@@ -17,7 +17,7 @@
   font-size: 16px;
   line-height: 20px;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px 0 26px 0;
 }
 
 .panel-work,
@@ -54,6 +54,12 @@
   width: 24px;
   transition: all 0.35s;
   margin-bottom: 1rem;
+}
+.accordion-arrow-work {
+  rotate: 0deg;
+  transition: all 0.35s;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .icon-fadeIn {
