@@ -13,6 +13,9 @@
   line-height: 20px;
   width: 100%;
   border-bottom: 2px solid var(--borderGray);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dropdown-content {
@@ -33,13 +36,14 @@
     font-size: 16px;
     line-height: 20px;
 
-    &.selected .okay {
-      display: block;
-    }
-
     span {
       display: none;
       color: var(--pinkStrong);
+      &.selected {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+      }
     }
   }
 }

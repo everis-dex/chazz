@@ -20,22 +20,10 @@ export const Dropdown = ({ content }: Props) => {
   }
 
   // Set selected option and hide options
-  function select(option: number, target: EventTarget): void {
-    // Remove previous selected
-    if (contentDiv && contentDiv.current) {
-      contentDiv.current.childNodes.forEach((child: ChildNode) => {
-        const elem = child as HTMLInputElement;
-        elem.classList.remove("selected");
-      });
-      contentDiv.current.style.display = "none";
-    }
-
-    // Set selected option
-    setSelectedOption(option);
-    const element = target as HTMLInputElement;
-    element.classList.add("selected");
+  function select(index: number): void {
+    setSelectedOption(index);
+    if (contentDiv && contentDiv.current) contentDiv.current.style.display = "none";
   }
-
   return (
     <div className="dropdown">
       <button className="dropdown-header" onClick={display}>
@@ -44,9 +32,9 @@ export const Dropdown = ({ content }: Props) => {
       <div className="dropdown-content" ref={contentDiv}>
         {content.map((item: string, index: number) => {
           return (
-            <div key={index} onClick={e => select(index, e.target)}>
+            <div key={index} onClick={() => select(index)}>
               <a href={`#article${index}`}>{item}</a>
-              <span className="okay">✓</span>
+              <span className={"okay" + (index === selectedOption ? " selected" : "")}>✓</span>
             </div>
           );
         })}
