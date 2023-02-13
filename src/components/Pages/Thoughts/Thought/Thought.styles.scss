@@ -28,6 +28,8 @@
     img {
       width: 10px;
       height: 16px;
+      position: relative;
+      top: -5px;
     }
   }
 
@@ -37,6 +39,10 @@
     font-size: 16px;
     line-height: 24px;
     margin-right: 13px;
+  }
+  .thought-subtitle {
+    position: relative;
+    top: -40px;
   }
 
   .thought-details {
