@@ -235,7 +235,7 @@ collections:
         widget: list
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Content, name: content, widget: string }
+          - { label: Content, name: content, widget: text }
 
   - name: office
     label: Office

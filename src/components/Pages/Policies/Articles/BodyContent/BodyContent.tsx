@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { IPolicyBody, IPolicyTableRow } from "../../../../../interfaces/cms";
+import { paragraphSymbol } from "../../../../../constants";
 
 import "./BodyContent.styles.scss";
 
@@ -25,7 +26,7 @@ export const BodyContent = ({ body }: Props) => {
     switch (b.type) {
       case "text":
         if (b.content) {
-          const paragraphs = b.content.split(/\n/);
+          const paragraphs = b.content.split(paragraphSymbol);
           return <>{paragraphs.map((p: string, index: number) => (p !== "" ? <div key={index}>{p}</div> : <br />))}</>;
         }
         break;
