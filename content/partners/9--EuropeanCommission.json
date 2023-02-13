@@ -1,6 +1,6 @@
 {
   "name": "European_Commission",
-  "logo": "uploads/logo_comision_europea.svg",
+  "logo": "/uploads/logo_comision_europea.svg",
   "scale": "100",
   "website": "https://commission.europa.eu/",
   "sort": "3"

@@ -219,8 +219,10 @@ export interface IThought {
   date: string;
   image: string;
   title: string;
-  body: string;
+  subtitle: string;
   category: string;
   duration: string;
+  details: { subtitle: string; author: string };
+  body: string;
   id: number;
 }

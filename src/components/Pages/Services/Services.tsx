@@ -10,14 +10,14 @@ import "./Services.styles.scss";
 export const Services = () => {
   const headerData: IServicesHeader = services.header;
   const [videoSource, setVideoSource] = useState<string>(
-    window.innerWidth < 1200 ? "uploads/services_cabecera-768.mp4" : headerData.image
+    window.innerWidth < 1200 ? "/uploads/services_cabecera-768.mp4" : headerData.image
   );
   useEffect(() => window.scrollTo(0, 0), []);
 
   window.onresize = () => {
     if (window.innerWidth < 1200) {
       console.log("🚀 ~ file: Services.tsx:18 ~ Services ~ window.innerWidth", window.innerWidth);
-      setVideoSource("uploads/services_cabecera-768.mp4");
+      setVideoSource("/uploads/services_cabecera-768.mp4");
     } else {
       setVideoSource(headerData.image);
     }
