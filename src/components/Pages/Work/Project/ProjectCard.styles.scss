@@ -177,59 +177,6 @@
     }
   }
 }
-@media (min-width: 1280px) {
-  .project-container {
-    width: auto;
-    position: relative;
-    top: -36px;
-
-    &.full-width {
-      grid-column: 1/3;
-
-      .non-accordion {
-        columns: 2;
-        column-gap: 2%;
-      }
-    }
-  }
-
-  .project-media {
-    img {
-      height: 576px;
-      max-height: 576px;
-    }
-    video {
-      height: 576px;
-    }
-  }
-  .half {
-    height: 288px;
-    img {
-      height: 288px;
-    }
-    video {
-      height: 288px;
-    }
-  }
-
-  .project-details {
-    margin: 34px 0 23px 0;
-    font-size: 24px;
-    span {
-      font-size: 24px;
-      padding-bottom: 2px;
-    }
-    .body {
-      font-size: 16px;
-    }
-
-    .project-title-container {
-      span {
-        font-size: 24px;
-      }
-    }
-  }
-}
 
 @media (min-width: 1440px) {
   .project-media {

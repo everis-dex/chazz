@@ -138,33 +138,6 @@
   .categories {
     grid-template-columns: 50% 51%;
     gap: 6%;
-
-    .categories-title {
-      h2 {
-        font-size: 34px;
-      }
-      h1 {
-        width: 88%;
-      }
-      .h1 {
-        font-size: 40px !important;
-      }
-    }
-
-    .categories-sections {
-      width: 86%;
-      h2 {
-        font-size: 40px;
-      }
-      h2 + p {
-        font-size: 24px;
-      }
-
-      p {
-        font-size: 20px;
-        line-height: 1.4;
-      }
-    }
   }
 }
 
