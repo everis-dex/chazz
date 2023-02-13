@@ -65,15 +65,17 @@
 
     img {
       width: 100%;
-      margin: 50px 0 10px 0;
+      margin: 50px 0 15px 0;
     }
 
     blockquote {
       width: 100%;
       border-top: 1px solid var(--black);
       border-bottom: 1px solid var(--black);
-      padding: 20px 0;
+      padding: 20px 0 15px 0;
       margin: 40px 0;
+      padding-left: 0.8rem;
+      text-indent: -0.8rem;
 
       p {
         font-weight: 500;
@@ -96,7 +98,9 @@
       font-size: 70px;
       line-height: 81px;
     }
-
+    .study-details {
+      margin: 30px 0 0 0;
+    }
     img {
       width: 100%;
       margin-bottom: 90px;
