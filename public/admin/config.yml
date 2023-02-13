@@ -116,7 +116,7 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: string }
       - { label: Subtitle, name: subtitle, widget: string }
-      - { label: Body, name: body, widget: markdown }
+      - { label: Body, name: body, widget: text }
       - {
           label: "In carousel",
           name: incarousel,
@@ -229,7 +229,7 @@ collections:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
       - { label: Section, name: section, widget: string }
-      - { label: Body, name: body, widget: markdown }
+      - { label: Body, name: body, widget: text }
       - label: Accordions
         name: accordions
         widget: list
@@ -310,5 +310,5 @@ collections:
                     fields:
                       - { label: Name, name: name, widget: string }
                       - { label: Host, name: host, widget: string }
-                      - { label: Expiration, name: expiration, widget: string }
+                      - { label: Expiration, name: expiration, widget: text }
                       - { label: Service, name: service, widget: string }
