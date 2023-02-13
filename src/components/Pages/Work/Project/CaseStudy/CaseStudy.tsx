@@ -75,39 +75,49 @@ export const CaseStudy = () => {
                   text={projectSections.fourthFWImageWithOverlappedText?.overlappedText}
                 />
               )}
-              <CaseClaim text={projectSections.secondFWClaim} style={{ width: "85%", margin: "auto" }} />
+              {projectSections.secondFWClaim && (
+                <CaseClaim text={projectSections.secondFWClaim} style={{ width: "85%", margin: "auto" }} />
+              )}
 
               {/* Second SECTION */}
               <div className="work-container">
-                <CaseImg
-                  src={projectSections.fifthFWImageWithCaption?.imagePath}
-                  alt="Blanca"
-                  text={projectSections.fifthFWImageWithCaption?.caption}
-                />
+                {projectSections.fifthFWImageWithCaption && (
+                  <CaseImg
+                    src={projectSections.fifthFWImageWithCaption?.imagePath}
+                    alt="Blanca"
+                    text={projectSections.fifthFWImageWithCaption?.caption}
+                  />
+                )}
               </div>
-              <CaseImg src={projectSections.sixthFWImagePath} alt="Marquesina" />
+              {projectSections.sixthFWImagePath && <CaseImg src={projectSections.sixthFWImagePath} alt="Marquesina" />}
 
               {/* Third SECTION */}
               <div className="work-container">
-                <div className="section-flex-container2">
-                  <CaseSectionColumn
-                    position="left"
-                    image={projectSections.secondTCSection?.leftColumn.imagePath}
-                    text={projectSections.secondTCSection?.leftColumn.overlappedText}
-                  />
-                  <CaseSectionColumn
-                    position="right"
-                    image={projectSections.secondTCSection?.rightColumn.imagePath}
-                    text={projectSections.secondTCSection?.rightColumn.overlappedText}
-                  />
-                </div>
-                <CaseImg src={projectSections.seventhFWImagePath} alt="Portatil" />
+                {projectSections.secondTCSection && (
+                  <div className="section-flex-container2">
+                    <CaseSectionColumn
+                      position="left"
+                      image={projectSections.secondTCSection?.leftColumn.imagePath}
+                      text={projectSections.secondTCSection?.leftColumn.overlappedText}
+                    />
+                    <CaseSectionColumn
+                      position="right"
+                      image={projectSections.secondTCSection?.rightColumn.imagePath}
+                      text={projectSections.secondTCSection?.rightColumn.overlappedText}
+                    />
+                  </div>
+                )}
+                {projectSections.seventhFWImagePath && (
+                  <CaseImg src={projectSections.seventhFWImagePath} alt="Portatil" />
+                )}
                 <div className="separation" />
-                <CaseImg
-                  src={projectSections.eigthFWImageWithCaption?.imagePath}
-                  alt="GRIS"
-                  text={projectSections.eigthFWImageWithCaption?.caption}
-                />
+                {projectSections.eigthFWImageWithCaption && (
+                  <CaseImg
+                    src={projectSections.eigthFWImageWithCaption?.imagePath}
+                    alt="GRIS"
+                    text={projectSections.eigthFWImageWithCaption?.caption}
+                  />
+                )}
               </div>
             </>
           )}
