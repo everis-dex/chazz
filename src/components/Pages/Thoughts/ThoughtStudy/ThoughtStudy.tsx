@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 
-import { Nav } from "../../../shared";
+import { Nav, Footer } from "../../../shared";
 import { Months } from "../../../../constants";
 import { thoughts } from "../../../../content";
 import { IThought } from "../../../../interfaces/cms";
@@ -18,25 +19,30 @@ export const ThoughtStudy = () => {
   return (
     <>
       <Nav />
-      <div className="thought-container">
-        <img src={thought.image} alt="" />
-        <div className="thought-content">
-          <div className="thought-title">
-            <h2>{thought.title}</h2>
-            <img alt="" src="assets/icon-left_arrow.svg" />
-          </div>
-          <p className="thought-subtitle">{thought.body}</p>
-
-          <div className="thought-details">
+      <div className="study-container">
+        <div className="study-header">
+          <h1 className="header-title">{thought.title}</h1>
+          <div className="study-details">
             <span className="date">{date}</span>
             <span className="dot">·</span>
             <span className="duration">{thought.duration} read</span>
           </div>
+          <img src={thought.image} alt="" />
+        </div>
+        <div className="study-content">
+          <div className="content-summary">
+            <h2>{thought.details.subtitle}</h2>
+            <p>{thought.details.author}</p>
+          </div>
+          <div className="content-body">
+            <ReactMarkdown>{thought.body}</ReactMarkdown>
+          </div>
         </div>
       </div>
-      <Link to="/work" className="back-button">
+      <Link to="/thoughts" className="back-button">
         ← Back
       </Link>
+      <Footer />
     </>
   );
 };
