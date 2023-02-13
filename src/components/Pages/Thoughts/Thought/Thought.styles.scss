@@ -2,6 +2,8 @@
   display: block;
   border-bottom: 1px solid var(--black);
   padding: 17px 0 40px 0;
+  text-decoration: none;
+  color: var(--black);
 
   img {
     object-fit: cover;
@@ -18,8 +20,6 @@
     justify-content: space-between;
     align-items: baseline;
     padding: 20px 0 10px 0;
-    text-decoration: none;
-    color: var(--black);
     h2 {
       font-weight: 700;
       font-size: 24px;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link, useParams } from "react-router-dom";
 
@@ -10,6 +10,8 @@ import { Footer, LineBreakerSelector, Nav } from "../../../shared";
 import "./ThoughtStudy.styles.scss";
 
 export const ThoughtStudy = () => {
+  useEffect(() => window.scrollTo(0, 0), []);
+
   const { id } = useParams();
   const filteredThoughts = thoughts.filter(thought => thought.id === (id ? parseInt(id) : 0));
   const thought: IThought = filteredThoughts[0] as IThought;

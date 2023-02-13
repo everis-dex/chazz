@@ -11,13 +11,13 @@ export const Thought = (thought: IThought) => {
   const date: string = Months[formattedDate.getMonth()] + " " + formattedDate.getDate();
 
   return (
-    <div className="thought-container">
+    <Link to={`/thoughts/${thought.id}`} className="thought-container">
       <img src={thought.image} alt="" />
       <div className="thought-content">
-        <Link to={`/thoughts/${thought.id}`} className="thought-title">
+        <div className="thought-title">
           <h2>{thought.title}</h2>
           <img alt="" src="assets/icon-left_arrow.svg" />
-        </Link>
+        </div>
         <p className="thought-subtitle">{thought.subtitle}</p>
 
         <div className="thought-details">
@@ -26,6 +26,6 @@ export const Thought = (thought: IThought) => {
           <span className="duration">{thought.duration} read</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
