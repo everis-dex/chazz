@@ -1,11 +1,11 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import { Link, useParams } from "react-router-dom";
 
-import { Nav, Footer } from "../../../shared";
 import { Months } from "../../../../constants";
 import { thoughts } from "../../../../content";
 import { IThought } from "../../../../interfaces/cms";
+import { Footer, LineBreakerSelector, Nav } from "../../../shared";
 
 import "./ThoughtStudy.styles.scss";
 
@@ -31,8 +31,12 @@ export const ThoughtStudy = () => {
         </div>
         <div className="study-content">
           <div className="content-summary">
-            <h2>{thought.details.subtitle}</h2>
-            <p>{thought.details.author}</p>
+            <h2>
+              <LineBreakerSelector typedLines={thought.details.subtitle} />
+            </h2>
+            <p>
+              <LineBreakerSelector typedLines={thought.details.author} />
+            </p>
           </div>
           <div className="content-body">
             <ReactMarkdown>{thought.body}</ReactMarkdown>
