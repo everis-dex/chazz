@@ -81,6 +81,7 @@ export const BodyContent = ({ body }: Props) => {
             );
           }
         }
+        break;
       default:
         return <></>;
     }
