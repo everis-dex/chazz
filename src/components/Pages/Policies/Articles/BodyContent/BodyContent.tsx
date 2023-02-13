@@ -31,31 +31,57 @@ export const BodyContent = ({ body }: Props) => {
         break;
 
       case "table":
-        if (b.rows && windowWidth > 768) {
-          return (
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Host</th>
-                  <th>Expiration</th>
-                  <th>Service</th>
-                </tr>
-              </thead>
-              <tbody>
-                {b.rows.map((row: IPolicyTableRow, index: number) => (
-                  <tr key={index}>
-                    <td>{row.name}</td>
-                    <td>{row.host}</td>
-                    <td>{row.expiration}</td>
-                    <td>{row.service}</td>
+        if (b.rows) {
+          if (windowWidth >= 720) {
+            return (
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Host</th>
+                    <th>Expiration</th>
+                    <th>Service</th>
                   </tr>
+                </thead>
+                <tbody>
+                  {b.rows.map((row: IPolicyTableRow, index: number) => (
+                    <tr key={index}>
+                      <td>{row.name}</td>
+                      <td>{row.host}</td>
+                      <td>{row.expiration}</td>
+                      <td>{row.service}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            );
+          } else {
+            return (
+              <>
+                {b.rows.map((row: IPolicyTableRow, index: number) => (
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Host</th>
+                        <th>Expiration</th>
+                        <th>Service</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr key={index}>
+                        <td>{row.name}</td>
+                        <td>{row.host}</td>
+                        <td>{row.expiration}</td>
+                        <td>{row.service}</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 ))}
-              </tbody>
-            </table>
-          );
+              </>
+            );
+          }
         }
-        break;
       default:
         return <></>;
     }
