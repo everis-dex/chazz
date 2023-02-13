@@ -44,29 +44,35 @@ export const CaseStudy = () => {
 
           {projectSections && (
             <>
-              <CaseImg src={projectSections.firstFWImagePath} alt="Portatil" />
-              <CaseClaim text={projectSections.firstFWClaim} />
+              {projectSections.firstFWImagePath && <CaseImg src={projectSections.firstFWImagePath} alt="Portatil" />}
+              {projectSections.firstFWClaim && <CaseClaim text={projectSections.firstFWClaim} />}
 
               {/* First SECTION */}
               <div className="work-container">
-                <CaseImg src={projectSections.secondFWImagePath} alt="1º Roja" />
-                <div className="section-flex-container">
-                  <CaseSectionColumn position="left" text={projectSections.firstTCSection?.leftColumnIntro} />
-                  <CaseSectionColumn
-                    position="right"
-                    title={projectSections.firstTCSection?.rightColumn.paragraphTitle}
-                    text={projectSections.firstTCSection?.rightColumn.paragraph}
-                  />
-                </div>
-                <CaseImg src={projectSections.thirthFWImagePath} alt="Portatil" />
-                <div className="section-flex-container">
-                  <CaseSectionColumn position="left" empty />
-                  <CaseSectionColumn
-                    position="right"
-                    title={projectSections.rightColumnOnlyInfoSection?.paragraphTitle}
-                    text={projectSections.rightColumnOnlyInfoSection?.paragraph}
-                  />
-                </div>
+                {projectSections.secondFWImagePath && <CaseImg src={projectSections.secondFWImagePath} alt="1º Roja" />}
+                {projectSections.firstTCSection && (
+                  <div className="section-flex-container">
+                    <CaseSectionColumn position="left" text={projectSections.firstTCSection?.leftColumnIntro} />
+                    <CaseSectionColumn
+                      position="right"
+                      title={projectSections.firstTCSection?.rightColumn.paragraphTitle}
+                      text={projectSections.firstTCSection?.rightColumn.paragraph}
+                    />
+                  </div>
+                )}
+                {projectSections.thirthFWImagePath && (
+                  <CaseImg src={projectSections.thirthFWImagePath} alt="Portatil" />
+                )}
+                {projectSections.rightColumnOnlyInfoSection && (
+                  <div className="section-flex-container">
+                    <CaseSectionColumn position="left" empty />
+                    <CaseSectionColumn
+                      position="right"
+                      title={projectSections.rightColumnOnlyInfoSection?.paragraphTitle}
+                      text={projectSections.rightColumnOnlyInfoSection?.paragraph}
+                    />
+                  </div>
+                )}
               </div>
               {projectSections.fourthFWImageWithOverlappedText?.imagePath && (
                 <CaseImgWithOverlappedText
