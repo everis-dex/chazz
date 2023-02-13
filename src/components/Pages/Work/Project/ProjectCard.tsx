@@ -6,12 +6,7 @@ import { Accordion, Media } from "../../../shared";
 
 import "./ProjectCard.styles.scss";
 
-type Props = {
-  data: IProject;
-  format: string;
-  columns?: string;
-  full?: boolean;
-};
+type Props = { data: IProject; format: string; columns?: string };
 
 export const ProjectCard = ({ data, format, columns }: Props) => {
   const image = data.media.project;
