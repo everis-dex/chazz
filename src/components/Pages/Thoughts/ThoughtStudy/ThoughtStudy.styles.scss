@@ -44,7 +44,8 @@
       line-height: 39px;
       margin-bottom: 30px;
     }
-    p {
+    h6 {
+      font-weight: 100;
       font-size: 16px;
       line-height: 23px;
     }
@@ -52,6 +53,11 @@
 
   .content-body {
     display: block;
+
+    p {
+      font-size: 16px;
+      line-height: 24px;
+    }
 
     strong {
       font-weight: 700;
@@ -63,9 +69,6 @@
     }
 
     blockquote {
-      font-weight: 500;
-      font-size: 24px;
-      line-height: 30px;
       width: 100%;
       border-top: 1px solid var(--black);
       border-bottom: 1px solid var(--black);
@@ -73,6 +76,9 @@
       margin: 40px 0;
 
       p {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 30px;
         margin: 0;
         padding: 10px 0;
       }
@@ -101,7 +107,7 @@
   .study-content {
     display: grid;
     grid-template-columns: 25% auto;
-    grid-gap: 15%;
+    grid-gap: 150px;
 
     .content-summary {
       h2 {
@@ -109,7 +115,7 @@
         line-height: 46px;
         margin: 0 0 40px 0;
       }
-      p {
+      h6 {
         font-size: 24px;
         line-height: 33px;
       }
@@ -119,8 +125,11 @@
   .content-body {
     blockquote {
       margin: 60px 0;
-      font-size: 32px;
-      line-height: 40px;
+
+      p {
+        font-size: 32px !important;
+        line-height: 40px !important;
+      }
     }
   }
 }

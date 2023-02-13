@@ -16,6 +16,9 @@ export const ThoughtStudy = () => {
   const formattedDate = new Date(thought.date);
   const date: string = Months[formattedDate.getMonth()] + " " + formattedDate.getDate();
 
+  // const images = document.getElementsByTagName("img");
+  // console.log(images);
+
   return (
     <>
       <Nav />
@@ -34,9 +37,9 @@ export const ThoughtStudy = () => {
             <h2>
               <LineBreakerSelector typedLines={thought.details.subtitle} />
             </h2>
-            <p>
+            <h6>
               <LineBreakerSelector typedLines={thought.details.author} />
-            </p>
+            </h6>
           </div>
           <div className="content-body">
             <ReactMarkdown>{thought.body}</ReactMarkdown>
