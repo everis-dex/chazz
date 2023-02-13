@@ -1,9 +1,9 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 
 import { IProject } from "../../../../interfaces/cms";
-import { Accordion } from "../../../shared/Accordion/Accordion";
-import { Media } from "../../../shared/index";
+import { Accordion, Media } from "../../../shared/index";
 
 import "./ProjectCard.styles.scss";
 
@@ -16,6 +16,7 @@ type Props = {
 
 export const ProjectCard = ({ data, format, columns }: Props) => {
   const image = data.media.project;
+  const caseURL = "case/" + data.id;
 
   const bodyParagraphs = data.body;
   const bodyParagraphs1: string = bodyParagraphs.charCodeAt(0) === 10 ? bodyParagraphs.substring(1) : bodyParagraphs;
@@ -30,7 +31,8 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
 
       <div className="project-details">
         <div className="project-title-container">
-          <Link className="title" to={`/work/case/${data.id}`}>
+          {/* Sustituir span de title por Link, y cambiar en styles el hover de la clase title */}
+          <Link to={caseURL} className="title">
             {data.title} —
           </Link>
           <span className="description">{data.description}</span>

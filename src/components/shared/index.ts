@@ -1,3 +1,4 @@
+export * from "./Accordion/Accordion";
 export * from "./AllowCookies/AllowCookies";
 export * from "./DividingLine/DividingLine";
 export * from "./FeaturedProjects/FeaturedProjects";

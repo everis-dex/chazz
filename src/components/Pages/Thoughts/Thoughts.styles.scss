@@ -14,8 +14,10 @@
     line-height: 43px;
     color: var(--black);
   }
-  img {
+
+  .video-height {
     width: 100%;
+    height: 138px;
     object-fit: cover;
   }
 }
@@ -81,9 +83,13 @@
     .header-title {
       font-size: 72px;
       line-height: 77px;
+      margin: 25px 0 60px 0;
     }
-    img {
-      height: auto;
+
+    .video-height {
+      width: 100%;
+      height: 272px;
+      pointer-events: none;
     }
   }
   .thoughts-filtering {
@@ -116,6 +122,9 @@
     .header-title {
       font-size: 72px;
       line-height: 77px;
+    }
+    .video-height {
+      height: auto;
     }
   }
 }
