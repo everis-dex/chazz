@@ -51,10 +51,9 @@
       margin-top: 0;
       font-weight: 400;
     }
-
     .title:hover {
-      // color: var(--pink);
-      // cursor: pointer;
+      color: var(--pink);
+      cursor: pointer;
     }
     .description {
       font-weight: 400;
@@ -124,7 +123,7 @@
     margin-top: -5px;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
   .project-container {
     width: auto;
     position: relative;

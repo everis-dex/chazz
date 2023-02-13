@@ -2,8 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { Home } from "./components/Home/Home";
-import { Policies, Services, Thoughts, Work } from "./components/Pages";
-import { CaseStudy } from "./components/Pages/Work/Project/CaseStudy/CaseStudy";
+import { CaseStudy, Policies, Services, Thoughts, ThoughtStudy, Work } from "./components/Pages";
 
 const App = () => {
   return (
@@ -14,6 +13,7 @@ const App = () => {
         <Route path="/work" element={<Work />} />
         <Route path="/work/case/:id" element={<CaseStudy />} />
         <Route path="/thoughts" element={<Thoughts />} />
+        <Route path="/thoughts/:id" element={<ThoughtStudy />} />
         <Route path="/policies" element={<Policies />} />
         <Route path="*" element={<Home />} />
       </Routes>

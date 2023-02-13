@@ -20,7 +20,7 @@ export const LineBreakerSelector = ({ typedLines }: Props) => {
   const finalDesktopBrokenLines: string[] = [];
 
   mobileBrokenLines.forEach(line => {
-    if (line.includes("#")) {
+    if (line.includes(paragraphSymbol)) {
       const stringToArray = line.split(paragraphSymbol);
       stringToArray.forEach(element => {
         finalMobileBrokenLines.push(element);
@@ -31,7 +31,7 @@ export const LineBreakerSelector = ({ typedLines }: Props) => {
     }
   });
   desktopBrokenLines.forEach(line => {
-    if (line.includes("#")) {
+    if (line.includes(paragraphSymbol)) {
       const stringToArray = line.split(paragraphSymbol);
       stringToArray.forEach(element => {
         finalDesktopBrokenLines.push(element);

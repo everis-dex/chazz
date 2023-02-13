@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 import { IPolicyBody, IPolicyTableRow } from "../../../../../interfaces/cms";
 
@@ -11,7 +12,6 @@ export const BodyContent = ({ body }: Props) => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
   // Creamos una función que nos re calcula el ancho de la pantalla:
-
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -25,8 +25,7 @@ export const BodyContent = ({ body }: Props) => {
     switch (b.type) {
       case "text":
         if (b.content) {
-          const paragraphs = b.content.split(/\n/);
-          return <>{paragraphs.map((p: string, index: number) => (p !== "" ? <div key={index}>{p}</div> : <br />))}</>;
+          return <ReactMarkdown>{b.content}</ReactMarkdown>;
         }
         break;
 

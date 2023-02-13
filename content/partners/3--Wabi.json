@@ -1,6 +1,6 @@
 {
   "name": "Wabi",
-  "logo": "uploads/logo_wabi.svg",
+  "logo": "/uploads/logo_wabi.svg",
   "scale": "70",
   "website": "https://www.wabicar.com/en/",
   "sort": "9"
