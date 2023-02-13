@@ -299,7 +299,7 @@ collections:
                 fields:
                   - label: Content
                     name: content
-                    widget: text
+                    widget: markdown
               - label: Table
                 name: table
                 widget: object

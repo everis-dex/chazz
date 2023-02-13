@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 import { IPolicyBody, IPolicyTableRow } from "../../../../../interfaces/cms";
-import { paragraphSymbol } from "../../../../../constants";
 
 import "./BodyContent.styles.scss";
 
@@ -12,7 +12,6 @@ export const BodyContent = ({ body }: Props) => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
   // Creamos una función que nos re calcula el ancho de la pantalla:
-
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -26,8 +25,7 @@ export const BodyContent = ({ body }: Props) => {
     switch (b.type) {
       case "text":
         if (b.content) {
-          const paragraphs = b.content.split(paragraphSymbol);
-          return <>{paragraphs.map((p: string, index: number) => (p !== "" ? <div key={index}>{p}</div> : <br />))}</>;
+          return <ReactMarkdown>{b.content}</ReactMarkdown>;
         }
         break;
 
@@ -44,14 +42,22 @@ export const BodyContent = ({ body }: Props) => {
                 </tr>
               </thead>
               <tbody>
-                {b.rows.map((row: IPolicyTableRow, index: number) => (
-                  <tr key={index}>
-                    <td>{row.name}</td>
-                    <td>{row.host}</td>
-                    <td>{row.expiration}</td>
-                    <td>{row.service}</td>
-                  </tr>
-                ))}
+                {b.rows.map((row: IPolicyTableRow, index: number) => {
+                  const expiration = row.expiration.split("\n");
+                  return (
+                    <tr key={index}>
+                      <td>{row.name}</td>
+                      <td>{row.host}</td>
+                      <td>
+                        {/* Divide in different lines */}
+                        {expiration.map((p: string, index: number) => (
+                          <div key={index}>{p}</div>
+                        ))}
+                      </td>
+                      <td>{row.service}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           );
