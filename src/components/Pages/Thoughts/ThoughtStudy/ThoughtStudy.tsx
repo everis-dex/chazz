@@ -18,8 +18,20 @@ export const ThoughtStudy = () => {
   const formattedDate = new Date(thought.date);
   const date: string = Months[formattedDate.getMonth()] + " " + formattedDate.getDate();
 
-  // const images = document.getElementsByTagName("img");
-  // console.log(images);
+  const images = document.getElementsByTagName("img");
+
+  useEffect(() => {
+    // Display each image's title as image caption
+    [...images].forEach((image: HTMLImageElement) => {
+      const parent = image.parentElement;
+      if (parent && parent.childElementCount <= 1) {
+        const caption = document.createElement("p");
+        caption.innerHTML = image.title;
+        caption.style.marginBottom = "40px";
+        parent.appendChild(caption);
+      }
+    });
+  }, [images]);
 
   return (
     <>
