@@ -1,16 +1,15 @@
 import { RoutesInfo } from "./interfaces/routes";
+import { services, thoughtsPage, work } from "./content";
 
-export const routesInfo: RoutesInfo[] = [
-  { id: 0, name: "We are", route: "/" },
-  { id: 1, name: "Services", route: "/services" },
-  { id: 2, name: "Work", route: "/work" },
-  { id: 3, name: "Thoughts", route: "/thoughts" },
-  { id: 4, name: "Privacy Policy", route: "/privacy_policy" },
-  { id: 5, name: "Cookie Policy", route: "/cookie_policy" }
+const routesInfo: RoutesInfo[] = [
+  { id: 0, name: "We are", route: "/", published: true },
+  { id: 1, name: "Services", route: "/services", published: services.published },
+  { id: 2, name: "Work", route: "/work", published: work.published },
+  { id: 3, name: "Thoughts", route: "/thoughts", published: thoughtsPage.published }
 ];
 
-// select here which nav options are available
-export const availableRouteIDs: number[] = [0, 1, 2];
+// select here which nav options are
+export const availableRoutes: RoutesInfo[] = routesInfo.filter((route: RoutesInfo) => route.published);
 
 export const desktopLineBreakSymbol: string = "+";
 export const mobileLineBreakSymbol: string = "*";
