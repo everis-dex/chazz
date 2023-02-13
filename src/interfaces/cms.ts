@@ -5,6 +5,7 @@
 // Home page
 export interface IHome {
   page: string;
+  published: boolean;
   header: IHomeHeader;
   categories: IHomeSection;
   projects: IHomeProjects;
@@ -36,6 +37,7 @@ export interface IHomeFooter extends IHomeSection {
 // Work page
 export interface IWork {
   page: string;
+  published: boolean;
   title: string;
   subtitle: string;
 }
@@ -43,6 +45,7 @@ export interface IWork {
 // Services page
 export interface IServices {
   page: string;
+  published: boolean;
   header: IServicesHeader;
   projects: IServicesProjects;
 }
@@ -59,6 +62,8 @@ export interface IServicesProjects {
 }
 
 export interface IThoughtsPage {
+  page: string;
+  published: boolean;
   title: string;
   image: string;
   categories: string[];

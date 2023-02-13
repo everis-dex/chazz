@@ -22,6 +22,7 @@ collections:
     format: json
     fields: # Fields for each document
       - { label: Page, name: page, widget: string }
+      - { label: Published, name: published, widget: boolean, default: true }
       - label: Header
         name: header
         widget: object # For widgets, see https://www.netlifycms.org/docs/widgets/
@@ -74,6 +75,7 @@ collections:
     format: json
     fields:
       - { label: Page, name: page, widget: string }
+      - { label: Published, name: published, widget: boolean, default: true }
       - { label: Title, name: title, widget: string }
       - { label: Subtitle, name: subtitle, widget: string, required: false }
 
@@ -87,6 +89,7 @@ collections:
     slug: "services"
     fields:
       - { label: Page, name: page, widget: string }
+      - { label: Published, name: published, widget: boolean, default: true }
       - label: Header
         name: header
         widget: object
@@ -100,6 +103,24 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: More, name: more, widget: string }
+
+  - name: thoughts
+    label: Thoughts
+    folder: src/content/pages/thoughts
+    create: false
+    delete: false
+    extension: json
+    format: json
+    slug: "thoughts"
+    fields:
+      - { label: Page, name: page, widget: string }
+      - { label: Published, name: published, widget: boolean, default: true }
+      - { label: Image, name: image, widget: image }
+      - label: Categories
+        name: categories
+        widget: list
+        fields:
+          - { label: Cateogry, name: cateogry, widget: string }
 
   ##############################
   #         COMPONENTS
