@@ -13,7 +13,7 @@ export const Thoughts = () => {
   const [isHover, setIsHover] = useState<boolean>(false);
   const [filtering, setFiltering] = useState<boolean>(true);
   const [videoSource, setVideoSource] = useState<string>(
-    window.innerWidth < 1200 ? "uploads/thoughts_cabecera-768.mp4" : thoughtsPage.image
+    window.innerWidth < 1200 ? "/uploads/thoughts_cabecera-768.mp4" : thoughtsPage.image
   );
   const [selectedFilter, setSelectedFilter] = useState<string>("All");
   const filters = useRef<HTMLDivElement>(null);
@@ -44,7 +44,7 @@ export const Thoughts = () => {
   window.onresize = () => {
     if (window.innerWidth < 1200) {
       console.log("🚀 ~ file: Services.tsx:18 ~ Services ~ window.innerWidth", window.innerWidth);
-      setVideoSource("uploads/thoughts_cabecera-768.mp4");
+      setVideoSource("/uploads/thoughts_cabecera-768.mp4");
     } else {
       setVideoSource(thoughtsPage.image);
     }
