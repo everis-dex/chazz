@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import { policies } from "../../../content";
 import { IPolicy } from "../../../interfaces/cms";
@@ -10,8 +11,13 @@ import "./Policies.scss";
 
 export const Policies = () => {
   useEffect(() => window.scrollTo(0, 0), []);
+
+  // Set initial policy and crete useState
+  const { id } = useParams();
+  const selectedPolicy = id ? Math.min(parseInt(id), policies.length - 1) : 0;
+  const [policyIndex, setPolicyIndex] = useState<number>(selectedPolicy);
+
   const title = "Privacy Policy+ & Cookie Declaration";
-  const [policyIndex, setPolicyIndex] = useState<number>(0);
 
   return (
     <>

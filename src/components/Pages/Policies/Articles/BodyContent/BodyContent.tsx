@@ -21,67 +21,64 @@ export const BodyContent = ({ body }: Props) => {
   }, []);
 
   // Return structure based on body content type
-  function bodyType(b: IPolicyBody) {
+  function bodyType(b: IPolicyBody): JSX.Element {
     switch (b.type) {
       case "text":
-        if (b.content) {
-          return <ReactMarkdown>{b.content}</ReactMarkdown>;
-        }
-        break;
+        if (!b.content) return <></>;
+        return <ReactMarkdown>{b.content}</ReactMarkdown>;
 
       case "table":
-        if (b.rows) {
-          if (windowWidth >= 720) {
-            return (
-              <table>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Host</th>
-                    <th>Expiration</th>
-                    <th>Service</th>
+        if (!b.rows) return <></>;
+        if (windowWidth >= 720) {
+          return (
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Host</th>
+                  <th>Expiration</th>
+                  <th>Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                {b.rows.map((row: IPolicyTableRow, index: number) => (
+                  <tr key={index}>
+                    <td>{row.name}</td>
+                    <td>{row.host}</td>
+                    <td>{row.expiration}</td>
+                    <td>{row.service}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {b.rows.map((row: IPolicyTableRow, index: number) => (
+                ))}
+              </tbody>
+            </table>
+          );
+        } else {
+          return (
+            <>
+              {b.rows.map((row: IPolicyTableRow, index: number) => (
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Host</th>
+                      <th>Expiration</th>
+                      <th>Service</th>
+                    </tr>
+                  </thead>
+                  <tbody>
                     <tr key={index}>
                       <td>{row.name}</td>
                       <td>{row.host}</td>
                       <td>{row.expiration}</td>
                       <td>{row.service}</td>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            );
-          } else {
-            return (
-              <>
-                {b.rows.map((row: IPolicyTableRow, index: number) => (
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Host</th>
-                        <th>Expiration</th>
-                        <th>Service</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr key={index}>
-                        <td>{row.name}</td>
-                        <td>{row.host}</td>
-                        <td>{row.expiration}</td>
-                        <td>{row.service}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                ))}
-              </>
-            );
-          }
+                  </tbody>
+                </table>
+              ))}
+            </>
+          );
         }
-        break;
+
       default:
         return <></>;
     }

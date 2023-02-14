@@ -15,7 +15,8 @@ const App = () => {
         {work.published && <Route path="/work/case/:id" element={<CaseStudy />} />}
         {thoughtsPage.published && <Route path="/thoughts" element={<Thoughts />} />}
         {thoughtsPage.published && <Route path="/thoughts/:id" element={<ThoughtStudy />} />}
-        <Route path="/policies" element={<Policies />} />
+        <Route path="/policies/" element={<Policies />} />
+        <Route path="/policies/:id" element={<Policies />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>
