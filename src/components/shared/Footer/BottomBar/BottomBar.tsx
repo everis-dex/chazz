@@ -13,15 +13,13 @@ export const BottomBar = () => {
       </div>
       <div className="footer-item">
         <div className="item">© Chazz {currentYear}</div>
-        {/* For now, must be hidden*/}
-
-        {/* <a className="item" href="/#">
+        <a className="item" href="/policies/0">
           Privacy Policy
         </a>
-        <a className="item" href="/#">
+        <a className="item" href="/policies/1">
           Cookie Policy
         </a>
-        <a className="item" href="/#">
+        {/* <a className="item" href="/#">
           Cookie Settings
         </a> */}
       </div>

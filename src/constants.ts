@@ -13,7 +13,7 @@ export const availableRoutes: RoutesInfo[] = routesInfo.filter((route: RoutesInf
 
 export const desktopLineBreakSymbol: string = "+";
 export const mobileLineBreakSymbol: string = "*";
-export const paragraphSymbol: string = "#";
+export const paragraphSymbol: string = "\n";
 
 // Navigation bar Display Modes
 export const DisplayModes = {

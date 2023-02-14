@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { Home } from "./components/Home/Home";
-import { CaseStudy, Services, Thoughts, ThoughtStudy, Work } from "./components/Pages";
+import { CaseStudy, Policies, Services, Thoughts, ThoughtStudy, Work } from "./components/Pages";
 import { services, thoughtsPage, work } from "./content";
 
 const App = () => {
@@ -15,6 +15,8 @@ const App = () => {
         {work.published && <Route path="/work/case/:id" element={<CaseStudy />} />}
         {thoughtsPage.published && <Route path="/thoughts" element={<Thoughts />} />}
         {thoughtsPage.published && <Route path="/thoughts/:id" element={<ThoughtStudy />} />}
+        <Route path="/policies/" element={<Policies />} />
+        <Route path="/policies/:id" element={<Policies />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>

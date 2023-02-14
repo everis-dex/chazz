@@ -68,7 +68,7 @@ collections:
   - name: work
     label: Work
     folder: src/content/pages/work
-    create: false
+    create: true
     delete: false
     slug: "work"
     extension: json
@@ -131,12 +131,13 @@ collections:
     slug: "proj-{{year}}-{{month}}-{{day}}--{{title}}"
     extension: json
     format: json
+    create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: string }
       - { label: Subtitle, name: subtitle, widget: string }
-      - { label: Body, name: body, widget: markdown }
+      - { label: Body, name: body, widget: text }
       - {
           label: In carousel,
           name: incarousel,
@@ -230,6 +231,7 @@ collections:
     slug: "{{sort}}--{{partner}}"
     extension: json
     format: json
+    create: true
     fields:
       - { label: Name, name: name, widget: string }
       - { label: Logo, name: logo, widget: image }
@@ -243,17 +245,18 @@ collections:
     slug: "cat-{{year}}-{{month}}-{{day}}--{{title}}"
     extension: json
     format: json
+    create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
       - { label: Section, name: section, widget: string }
-      - { label: Body, name: body, widget: markdown }
+      - { label: Body, name: body, widget: text }
       - label: Accordions
         name: accordions
         widget: list
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Content, name: content, widget: string }
+          - { label: Content, name: content, widget: text }
 
   - name: office
     label: Office
@@ -261,6 +264,7 @@ collections:
     slug: "of-{{year}}-{{month}}-{{day}}--{{city}}"
     extension: json
     format: json
+    create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: City, name: city, widget: string }
@@ -274,6 +278,7 @@ collections:
     slug: "st-{{year}}-{{month}}-{{day}}--{{city}}"
     extension: json
     format: json
+    create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: City, name: city, widget: string }
@@ -284,10 +289,50 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}--{{title}}"
     extension: json
     format: json
+    create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
       - { label: Emeal, name: email, widget: string }
+
+  - name: policies
+    label: Policies
+    folder: content/policies
+    slug: "{{title}}-policy"
+    extension: json
+    format: json
+    create: true
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Title, name: title, widget: string }
+      - label: Articles
+        name: articles
+        widget: list
+        fields:
+          - { label: Title, name: title, widget: string }
+          - label: Body
+            name: body
+            widget: list
+            types:
+              - label: Text
+                name: text
+                widget: object
+                fields:
+                  - label: Content
+                    name: content
+                    widget: markdown
+              - label: Table
+                name: table
+                widget: object
+                fields:
+                  - label: Rows
+                    name: rows
+                    widget: list
+                    fields:
+                      - { label: Name, name: name, widget: string }
+                      - { label: Host, name: host, widget: string }
+                      - { label: Expiration, name: expiration, widget: text }
+                      - { label: Service, name: service, widget: string }
 
   - name: thought
     label: Thought
