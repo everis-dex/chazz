@@ -60,7 +60,7 @@ export const ThoughtStudy = () => {
           </div>
         </div>
       </div>
-      <Link to="/thoughts" className="back-button">
+      <Link to="/thoughts" className="th-back-button">
         ← Back
       </Link>
       <Footer />

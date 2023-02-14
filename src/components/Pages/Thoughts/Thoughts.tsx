@@ -10,6 +10,8 @@ import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.s
 import "./Thoughts.styles.scss";
 
 export const Thoughts = () => {
+  useEffect(() => window.scrollTo(0, 0), []);
+
   const [isHover, setIsHover] = useState<boolean>(false);
   const [filtering, setFiltering] = useState<boolean>(true);
   const [videoSource, setVideoSource] = useState<string>(getVideoSource());

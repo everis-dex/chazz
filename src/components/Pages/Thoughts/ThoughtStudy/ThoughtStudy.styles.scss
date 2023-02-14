@@ -94,8 +94,19 @@
   }
 }
 
-.back-button {
+.th-back-button {
+  padding: 0 5%;
+  text-decoration: none;
+  background: none;
+  color: inherit;
+  border: none;
+  font-size: 16px;
+  display: block;
   margin: 100px 0 !important;
+  font-weight: 400;
+  &:hover {
+    color: var(--pinkHover);
+  }
 }
 
 @media (min-width: 768px) {
