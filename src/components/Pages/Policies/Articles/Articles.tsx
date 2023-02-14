@@ -14,9 +14,7 @@ export const Articles = ({ policy, resetArticle }: Props) => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
   // Creamos una función que nos re calcula el ancho de la pantalla:
-  window.onresize = () => {
-    setWindowWidth(window.innerWidth);
-  };
+  window.onresize = () => setWindowWidth(window.innerWidth);
 
   const [articleIndex, setArticleIndex] = useState<number>(0);
 
