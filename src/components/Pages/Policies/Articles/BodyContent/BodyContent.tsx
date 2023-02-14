@@ -54,28 +54,30 @@ export const BodyContent = ({ body }: Props) => {
           );
         } else {
           return (
-            <>
+            <div className="body-type--table">
               {b.rows.map((row: IPolicyTableRow, index: number) => (
                 <table key={index}>
-                  <thead>
+                  <tbody>
                     <tr>
                       <th>Name</th>
-                      <th>Host</th>
-                      <th>Expiration</th>
-                      <th>Service</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr key={index}>
                       <td>{row.name}</td>
+                    </tr>
+                    <tr>
+                      <th>Host</th>
                       <td>{row.host}</td>
+                    </tr>
+                    <tr>
+                      <th>Expiration</th>
                       <td>{row.expiration}</td>
-                      <td>{row.service}</td>
+                    </tr>
+                    <tr>
+                      <th>Service</th>
+                      <td className="last">{row.service}</td>
                     </tr>
                   </tbody>
                 </table>
               ))}
-            </>
+            </div>
           );
         }
 
