@@ -67,13 +67,19 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   }
   window.addEventListener("resize", appHeight);
   appHeight();
+  //onWheel
+  const handleOnWheel: React.WheelEventHandler<HTMLDivElement> = e => {
+    if (e.deltaY > 0) {
+      console.log("XD");
+    }
+  };
 
   return (
     <div className="chazz-header">
-      <div className={isPlaying ? "velo-out" : "velo-in"}>
+      <div className={isPlaying ? "velo-out" : "velo-in"} onWheel={handleOnWheel}>
         <div className={isPlaying ? "simply-out" : "simply-in"}>
           <span className={isPlaying ? "nav-out" : "nav-in"}>
-            <Nav isPlaying={isPlaying} darkMode AlertNavParent={AlertNavParent} />
+            <Nav isPlaying={isPlaying} AlertNavParent={AlertNavParent} />
           </span>
         </div>
         <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
