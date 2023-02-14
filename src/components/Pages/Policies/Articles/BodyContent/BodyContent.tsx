@@ -56,7 +56,7 @@ export const BodyContent = ({ body }: Props) => {
           return (
             <>
               {b.rows.map((row: IPolicyTableRow, index: number) => (
-                <table>
+                <table key={index}>
                   <thead>
                     <tr>
                       <th>Name</th>
