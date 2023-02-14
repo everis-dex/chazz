@@ -17,7 +17,15 @@ export const Policies = () => {
   const selectedPolicy = id ? Math.min(parseInt(id), policies.length - 1) : 0;
   const [policyIndex, setPolicyIndex] = useState<number>(selectedPolicy);
 
+  const [resetAtricleTrigger, setResetAtricleTrigger] = useState<number>(0);
   const title = "Privacy Policy+ & Cookie Declaration";
+
+  function changePolicy(index: number) {
+    // Reset selected article in policy
+    setResetAtricleTrigger(resetAtricleTrigger => resetAtricleTrigger + 1);
+    // Change selected policy
+    setPolicyIndex(index);
+  }
 
   return (
     <>
@@ -34,14 +42,14 @@ export const Policies = () => {
           {policies.map((policy: IPolicy, index: number) => {
             const setSelected: string = policyIndex === index ? "selected" : "";
             return (
-              <span className={`filter-category ${setSelected}`} key={index} onClick={() => setPolicyIndex(index)}>
+              <span className={`filter-category ${setSelected}`} key={index} onClick={() => changePolicy(index)}>
                 {policy.title}
               </span>
             );
           })}
         </div>
 
-        <Articles {...policies[policyIndex]} />
+        <Articles policy={policies[policyIndex]} resetArticle={resetAtricleTrigger} />
       </div>
       <Footer />
     </>
