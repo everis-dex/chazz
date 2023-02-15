@@ -50,7 +50,7 @@ export const CaseStudy = () => {
                     // overlappedText
                     // caption
                     if (section.image !== undefined && section.margin !== undefined) {
-                      if (section.overlappedText !== undefined) {
+                      if (section.overlappedText) {
                         content = <CaseImgWithOverlappedText src={section.image} text={section.overlappedText} />;
                       } else {
                         content = (

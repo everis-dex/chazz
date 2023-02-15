@@ -16,22 +16,17 @@ type Props = {
 
 export const CaseSectionColumn = ({ title, text, empty = false, position, src, caption }: Props) => {
   const columnPosition = empty ? `section-${position}-column-empty` : `section-${position}-column`;
-  const style = position === "left" ? { marginRight: "5%" } : {};
 
   return (
     <>
       {!empty ? (
         src ? (
-          <div className={columnPosition} style={style}>
+          <div className={columnPosition}>
             <CaseImg src={src} alt="img-column" text={caption} halfColumn />
           </div>
         ) : (
           <div className={columnPosition}>
-            {title && (
-              <h3>
-                <LineBreakerSelector typedLines={title} />
-              </h3>
-            )}
+            {title && <h3>{title}</h3>}
             {text && <LineBreakerSelector typedLines={text} />}
           </div>
         )

@@ -264,13 +264,13 @@
 
   //CSS -> SECTION FLEX CONTAINER:
   .section-flex-container {
-    grid-template-columns: 40% auto;
+    grid-template-columns: 40% 40%;
     padding: 112px 0;
-    gap: 10%;
+    gap: 15%;
   }
 
   .section-flex-container1 {
-    grid-template-columns: 40% auto;
+    grid-template-columns: 46% auto;
     gap: 30px;
     padding: 112px 0 0 0;
   }
