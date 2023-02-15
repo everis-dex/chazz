@@ -1,4 +1,5 @@
 // MOBILE FIRST
+
 .chazz-header {
   background-repeat: no-repeat;
   overflow: hidden;
@@ -252,6 +253,9 @@
 }
 
 @media (min-width: 1200px) {
+  .no-scroll {
+    overflow: hidden;
+  }
   .chazz-header {
     background-size: 12px;
     max-height: 1024px;

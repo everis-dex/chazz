@@ -13,6 +13,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
   const [controlText, setControlText] = useState<string>(controlTextOptions.play);
+  const [navHeight, setNavHeight] = useState<number>(25);
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const controlRef = useRef<HTMLDivElement>(null);
@@ -70,16 +71,24 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   //onWheel
   const handleOnWheel: React.WheelEventHandler<HTMLDivElement> = e => {
     if (e.deltaY > 0) {
-      console.log("XD");
+      //alert("XD");
+      if (navHeight > 10) {
+        setNavHeight(navHeight - 1);
+      } else {
+        document.body.classList.remove("no-scroll");
+      }
     }
   };
-
+  useEffect(() => {
+    // Agregar la clase al body para ocultar el overflow
+    document.body.classList.add("no-scroll");
+  }, []);
   return (
-    <div className="chazz-header">
+    <div className="chazz-header" onWheel={handleOnWheel}>
       <div className={isPlaying ? "velo-out" : "velo-in"} onWheel={handleOnWheel}>
         <div className={isPlaying ? "simply-out" : "simply-in"}>
           <span className={isPlaying ? "nav-out" : "nav-in"}>
-            <Nav isPlaying={isPlaying} AlertNavParent={AlertNavParent} />
+            <Nav isPlaying={isPlaying} AlertNavParent={AlertNavParent} height={navHeight} />
           </span>
         </div>
         <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
