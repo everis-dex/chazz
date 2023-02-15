@@ -14,7 +14,7 @@ export const CaseStudy = () => {
   const { id } = useParams();
   const filteredProjects = projects.filter(project => project.id === (id ? parseInt(id) : 0));
   const project: IProject = filteredProjects[0] as IProject;
-  const projectSections = project.sections;
+  const projectSections = project.caseInfo.sections;
 
   return (
     <>
