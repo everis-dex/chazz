@@ -123,7 +123,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           )}
         </div>
       </div>
-      {!isBurgerMenuOpen && (
+      {animationComplete && (
         <div className="player-video-desktop-switcher">
           <div className="player-video" ref={controlRef}>
             <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
