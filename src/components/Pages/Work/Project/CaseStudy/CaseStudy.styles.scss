@@ -1,7 +1,6 @@
 .work-container {
   max-width: 100%;
   margin: 0 5%;
-  padding-bottom: 32px;
 }
 
 .header-nav {
@@ -24,7 +23,7 @@
 }
 
 .case-study--section {
-  padding-bottom: 32px;
+  padding-bottom: 64px;
 }
 
 //CSS -> CONTENEDOR TITULO:
@@ -137,7 +136,7 @@
   font-size: 24px;
   line-height: 33px;
   color: var(--black);
-  padding: 32px 0;
+  padding: 0 0 32px 0;
 }
 
 .section-left-column-empty {
@@ -162,7 +161,7 @@
 
 //______________________________________________________
 .image-footer-text {
-  padding: 40px 0 0 0;
+  padding: 32px 0 0 0;
   font-size: 16px;
   line-height: 22px;
   color: var(--black);
@@ -193,7 +192,7 @@
   border: none;
   font-size: 16px;
   display: block;
-  margin: 50px 0 100px 0;
+  margin: 30px 0 100px 0;
   font-weight: 400;
   &:hover {
     color: var(--pinkHover);
@@ -247,6 +246,7 @@
   }
   //CSS -> CLAIM SECTION:
   .fw-claim {
+    padding: 15% 5%;
     font-weight: 300;
     font-size: 40px;
     line-height: 48px;
