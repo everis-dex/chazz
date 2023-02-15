@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { Home } from "./components/Home/Home";
+import { Footer } from "./components/shared";
 import { CaseStudy, Policies, Services, Thoughts, ThoughtStudy, Work } from "./components/Pages";
 import { services, thoughtsPage, work } from "./content";
 
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/policies/:id?" element={<Policies />} />
         <Route path="*" element={<Home />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };

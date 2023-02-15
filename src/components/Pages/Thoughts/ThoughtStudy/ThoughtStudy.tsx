@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { Months } from "../../../../constants";
 import { thoughts } from "../../../../content";
 import { IThought } from "../../../../interfaces/cms";
-import { Footer, LineBreakerSelector, Nav } from "../../../shared";
+import { LineBreakerSelector, Nav } from "../../../shared";
 
 import "./ThoughtStudy.styles.scss";
 
@@ -63,7 +63,6 @@ export const ThoughtStudy = () => {
       <Link to="/thoughts" className="th-back-button">
         ← Back
       </Link>
-      <Footer />
     </>
   );
 };

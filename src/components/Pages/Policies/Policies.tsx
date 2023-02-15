@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { policies } from "../../../content";
 import { IPolicy } from "../../../interfaces/cms";
 
-import { AllowCookies, Footer, LineBreakerSelector, Nav } from "../../shared";
+import { AllowCookies, LineBreakerSelector, Nav } from "../../shared";
 import { Articles } from "./Articles/Articles";
 
 import "./Policies.scss";
@@ -51,7 +51,6 @@ export const Policies = () => {
 
         <Articles policy={policies[policyIndex]} resetArticle={resetAtricleTrigger} />
       </div>
-      <Footer />
     </>
   );
 };

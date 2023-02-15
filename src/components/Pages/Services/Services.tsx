@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { categories, services } from "../../../content/index";
 import { ICategory, IServicesHeader } from "../../../interfaces/cms";
-import { AllowCookies, FeaturedProjects, Footer, LineBreakerSelector, Nav } from "../../shared/index";
+import { AllowCookies, FeaturedProjects, LineBreakerSelector, Nav } from "../../shared/index";
 import { Category } from "./Category/Category";
 
 import "./Services.styles.scss";
@@ -41,7 +41,6 @@ export const Services = () => {
       </div>
       {/* Projects section */}
       <FeaturedProjects />
-      <Footer />
     </>
   );
 };
