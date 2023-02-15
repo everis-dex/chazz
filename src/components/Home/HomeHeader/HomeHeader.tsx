@@ -14,6 +14,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
   const [controlText, setControlText] = useState<string>(controlTextOptions.play);
   const [navHeight, setNavHeight] = useState<number>(25);
+  const [titleLeft, setTitleLeft] = useState<number>(100);
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const controlRef = useRef<HTMLDivElement>(null);
@@ -72,8 +73,9 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const handleOnWheel: React.WheelEventHandler<HTMLDivElement> = e => {
     if (e.deltaY > 0) {
       //alert("XD");
-      if (navHeight > 10) {
-        setNavHeight(navHeight - 1);
+      if (titleLeft > 16) {
+        if (navHeight > 10) setNavHeight(navHeight - 1);
+        setTitleLeft(titleLeft - 4);
       } else {
         document.body.classList.remove("no-scroll");
       }
@@ -91,7 +93,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
             <Nav isPlaying={isPlaying} AlertNavParent={AlertNavParent} height={navHeight} />
           </span>
         </div>
-        <div className={isPlaying ? "chazz-title-out" : "chazz-title"}>
+        <div className={isPlaying ? "chazz-title-out" : "chazz-title"} style={{ left: `${titleLeft}%` }}>
           <div className={isPlaying ? "simply-out" : ""}>
             <h1>
               <LineBreakerSelector typedLines={headerData.title} />
