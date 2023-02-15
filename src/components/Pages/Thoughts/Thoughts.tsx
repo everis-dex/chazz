@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { thoughts, thoughtsPage } from "../../../content/index";
 import { IThought } from "../../../interfaces/cms";
-import { AllowCookies, Footer, Nav } from "../../shared/index";
+import { AllowCookies, Footer, LineBreakerSelector, Nav } from "../../shared/index";
 import { Thought } from "./Thought/Thought";
 
 import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.svg";
@@ -79,7 +79,9 @@ export const Thoughts = () => {
       <div className="thoughts-container">
         {/* Header section */}
         <div className="thoughts-header">
-          <h1 className="header-title">{thoughtsPage.title}</h1>
+          <h1 className="header-title">
+            <LineBreakerSelector typedLines={thoughtsPage.title} />
+          </h1>
           <video autoPlay className="video-height" muted={true} src={videoSource} loop playsInline />
         </div>
         {/* Filtering section */}
