@@ -9,8 +9,10 @@ type Props = { isPlaying?: boolean; darkMode?: boolean; AlertNavParent?: (a: boo
 
 export const Nav = ({ isPlaying = false, darkMode = false, AlertNavParent }: Props) => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
-  const { color, activeStyle } = darkMode ? DisplayModes.dark : DisplayModes.light;
   const [root] = useState(document.getElementById("root"));
+
+  const displayMode = darkMode ? DisplayModes.dark : DisplayModes.light;
+  const { color } = displayMode;
 
   function toggleMenu(): void {
     if (isPlaying) return;
@@ -29,8 +31,8 @@ export const Nav = ({ isPlaying = false, darkMode = false, AlertNavParent }: Pro
   return (
     <div className="header-nav">
       <ChazzLogo color={color} isBurgerMenuOpen={isBurgerMenuOpen} />
-      <DesktopMenu color={color} activeStyle={activeStyle} />
-      <BurgerMenu isBurgerMenuOpen={isBurgerMenuOpen} toggleMenu={toggleMenu} color={color} />
+      <DesktopMenu {...displayMode} />
+      <BurgerMenu color={color} isBurgerMenuOpen={isBurgerMenuOpen} toggleMenu={toggleMenu} />
     </div>
   );
 };

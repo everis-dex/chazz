@@ -9,7 +9,7 @@ import "./BurgerMenuOptions.styles.scss";
 
 type Props = {
   isBurgerMenuOpen: boolean;
-  toggleMenu: (e: React.MouseEvent) => void;
+  toggleMenu: () => void;
 };
 
 export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu }: Props) => {
