@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { projects } from "../../../../../content/index";
-import { IProject } from "../../../../../interfaces/cms";
+import { IProject, IProjectSection, IProjectSectionColumn } from "../../../../../interfaces/cms";
 import { FeaturedProjects, LineBreakerSelector, Nav } from "../../../../shared";
 import { CaseClaim, CaseImg, CaseImgWithOverlappedText, CaseInfo, CaseSectionColumn } from "./CaseInfo/index";
 
@@ -41,87 +41,76 @@ export const CaseStudy = () => {
 
           {projectSections && (
             <>
-              {projectSections.firstFWImagePath && <CaseImg src={projectSections.firstFWImagePath} alt="Portatil" />}
-              {projectSections.firstFWClaim && <CaseClaim text={projectSections.firstFWClaim} />}
+              {projectSections.map((section: IProjectSection, index: number) => {
+                let content = <></>;
+                switch (section.type) {
+                  case "FWImage":
+                    // image
+                    // margin
+                    // overlappedText
+                    // caption
+                    if (section.image !== undefined && section.margin !== undefined) {
+                      if (section.overlappedText !== undefined) {
+                        content = <CaseImgWithOverlappedText src={section.image} text={section.overlappedText} />;
+                      } else {
+                        content = (
+                          <CaseImg
+                            src={section.image}
+                            text={section.caption ? section.caption : ""}
+                            margin={section.margin}
+                          />
+                        );
+                      }
+                    }
+                    break;
 
-              {/* First SECTION */}
-              <div className="work-container">
-                {projectSections.secondFWImagePath && <CaseImg src={projectSections.secondFWImagePath} alt="1º Roja" />}
-                {projectSections.firstTCSection && (
-                  <div className="section-flex-container">
-                    <CaseSectionColumn position="left" text={projectSections.firstTCSection?.leftColumnIntro} />
-                    <CaseSectionColumn
-                      position="right"
-                      title={projectSections.firstTCSection?.rightColumn.paragraphTitle}
-                      text={projectSections.firstTCSection?.rightColumn.paragraph}
-                    />
-                  </div>
-                )}
-                {projectSections.thirthFWImagePath && (
-                  <CaseImg src={projectSections.thirthFWImagePath} alt="Portatil" />
-                )}
-                {projectSections.rightColumnOnlyInfoSection && (
-                  <div className="section-flex-container">
-                    <CaseSectionColumn position="left" empty />
-                    <CaseSectionColumn
-                      position="right"
-                      title={projectSections.rightColumnOnlyInfoSection?.paragraphTitle}
-                      text={projectSections.rightColumnOnlyInfoSection?.paragraph}
-                    />
-                  </div>
-                )}
-              </div>
-              {projectSections.fourthFWImageWithOverlappedText?.imagePath && (
-                <CaseImgWithOverlappedText
-                  src={projectSections.fourthFWImageWithOverlappedText?.imagePath}
-                  alt="ImgWithOverlappedText"
-                  text={projectSections.fourthFWImageWithOverlappedText?.overlappedText}
-                />
-              )}
-              {projectSections.secondFWClaim && (
-                <CaseClaim text={projectSections.secondFWClaim} style={{ width: "85%", margin: "auto" }} />
-              )}
+                  case "claim":
+                    // text
+                    // margin
+                    if (section.text !== undefined && section.margin !== undefined) {
+                      content = <CaseClaim text={section.text} margin={section.margin} />;
+                    }
+                    break;
 
-              {/* Second SECTION */}
-              <div className="work-container">
-                {projectSections.fifthFWImageWithCaption && (
-                  <CaseImg
-                    src={projectSections.fifthFWImageWithCaption?.imagePath}
-                    alt="Blanca"
-                    text={projectSections.fifthFWImageWithCaption?.caption}
-                  />
-                )}
-              </div>
-              {projectSections.sixthFWImagePath && <CaseImg src={projectSections.sixthFWImagePath} alt="Marquesina" />}
+                  case "columns": // Array
+                    // image
+                    // caption
+                    // title
+                    // body
+                    if (section.column) {
+                      content = (
+                        <div className="work-container">
+                          <div className="section-flex-container">
+                            {section.column.map((column: IProjectSectionColumn, index: number) => {
+                              const position = index % 2 === 0 ? "left" : "right";
+                              const empty: boolean = column.title && column.body && column.image ? true : false;
+                              return (
+                                <React.Fragment key={index}>
+                                  <CaseSectionColumn
+                                    src={column.image}
+                                    title={column.title}
+                                    empty={empty}
+                                    caption={column.caption}
+                                    text={column.body}
+                                    position={position}
+                                  />
+                                </React.Fragment>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    }
+                    break;
+                }
 
-              {/* Third SECTION */}
-              <div className="work-container">
-                {projectSections.secondTCSection && (
-                  <div className="section-flex-container2">
-                    <CaseSectionColumn
-                      position="left"
-                      image={projectSections.secondTCSection?.leftColumn.imagePath}
-                      text={projectSections.secondTCSection?.leftColumn.overlappedText}
-                    />
-                    <CaseSectionColumn
-                      position="right"
-                      image={projectSections.secondTCSection?.rightColumn.imagePath}
-                      text={projectSections.secondTCSection?.rightColumn.overlappedText}
-                    />
+                return (
+                  <div className="section" key={index}>
+                    {content}
+                    {/* <div className="separation" /> */}
                   </div>
-                )}
-                {projectSections.seventhFWImagePath && (
-                  <CaseImg src={projectSections.seventhFWImagePath} alt="Portatil" />
-                )}
-                <div className="separation" />
-                {projectSections.eigthFWImageWithCaption && (
-                  <CaseImg
-                    src={projectSections.eigthFWImageWithCaption?.imagePath}
-                    alt="GRIS"
-                    text={projectSections.eigthFWImageWithCaption?.caption}
-                  />
-                )}
-              </div>
+                );
+              })}
             </>
           )}
         </>

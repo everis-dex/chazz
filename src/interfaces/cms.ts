@@ -123,51 +123,26 @@ export interface IProject {
   caseInfo: {
     title: string;
     services: string;
-    sections?: {
-      firstFWImagePath?: string;
-      firstFWClaim?: string;
-      secondFWImagePath?: string;
-      firstTCSection?: {
-        leftColumnIntro: string;
-        rightColumn: {
-          paragraphTitle: string;
-          paragraph: string;
-        };
-      };
-      thirthFWImagePath?: string;
-      rightColumnOnlyInfoSection?: {
-        paragraphTitle: string;
-        paragraph: string;
-      };
-      fourthFWImageWithOverlappedText?: {
-        imagePath: string;
-        overlappedText: string;
-      };
-      secondFWClaim?: string;
-      fifthFWImageWithCaption?: {
-        imagePath: string;
-        caption: string;
-      };
-      sixthFWImagePath?: string;
-      secondTCSection?: {
-        leftColumn: {
-          imagePath: string;
-          overlappedText: string;
-        };
-        rightColumn: {
-          imagePath: string;
-          overlappedText: string;
-        };
-      };
-      seventhFWImagePath?: string;
-      eigthFWImageWithCaption?: {
-        imagePath: string;
-        caption: string;
-      };
-    };
+    sections: IProjectSection[];
   };
 }
 
+export interface IProjectSection {
+  type: string;
+  image?: string;
+  margin?: boolean;
+  text?: string;
+  overlappedText?: string;
+  caption?: string;
+  column?: IProjectSectionColumn[];
+}
+
+export interface IProjectSectionColumn {
+  image: string;
+  caption: string;
+  title: string;
+  body: string;
+}
 export interface IProjectDetails {
   description: string;
   subtitle: string;

@@ -1,5 +1,6 @@
 .work-container {
   max-width: 100%;
+  margin: 0 5%;
 }
 
 .header-nav {
@@ -8,10 +9,6 @@
   position: relative;
   z-index: 1;
   padding-right: 5%;
-}
-
-.work-container {
-  margin: 0 5%;
 }
 
 .work-header {
@@ -109,6 +106,7 @@
     width: 100%;
   }
 }
+
 .fw-image-text {
   width: 100%;
   background-position: center;
@@ -141,15 +139,12 @@
 
 //CSS -> SECTION FLEX CONTAINER:
 .section-flex-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 10%;
   padding: 64px 0;
 }
-.section-flex-container2 {
-  display: flex;
-  flex-direction: column;
-  padding: 64px 0;
-}
+
 .section-left-column {
   font-weight: 300;
   font-size: 24px;
@@ -230,6 +225,7 @@
     height: 100%;
     flex-direction: row;
   }
+
   .case-container-title {
     width: 65%;
     h1 {
@@ -268,30 +264,24 @@
 
   //CSS -> SECTION FLEX CONTAINER:
   .section-flex-container {
-    flex-direction: row;
+    grid-template-columns: 40% auto;
     padding: 112px 0;
+    gap: 10%;
   }
-  .section-flex-container2 {
-    flex-direction: row;
+
+  .section-flex-container1 {
+    grid-template-columns: 40% auto;
     gap: 30px;
     padding: 112px 0 0 0;
   }
-  .section-flex-container {
-    flex-direction: row;
-    padding: 112px 0;
-  }
+
   .section-left-column {
-    width: 50%;
     font-size: 32px;
     line-height: 44px;
-
-    &#padding {
-      padding-right: 5%;
-    }
+    padding: 0;
   }
-  .section-right-column {
-    width: 50%;
 
+  .section-right-column {
     h3 {
       font-size: 24px;
       line-height: 30px;
@@ -333,6 +323,13 @@
   }
   .separation2 {
     padding-top: 142px;
+  }
+
+  .case-img {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 @media (min-width: 1200px) {

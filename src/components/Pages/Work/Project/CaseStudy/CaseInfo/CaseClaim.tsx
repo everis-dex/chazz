@@ -4,9 +4,11 @@ import { LineBreakerSelector } from "../../../../../shared/index";
 
 import "../CaseStudy.styles.scss";
 
-type Props = { text: string; style?: object };
+type Props = { text: string; margin?: boolean };
 
-export const CaseClaim = ({ text, style }: Props) => {
+export const CaseClaim = ({ text, margin }: Props) => {
+  const style = margin ? { width: "85%", margin: "auto" } : {};
+
   return (
     <>
       {text && (
