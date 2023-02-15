@@ -3,15 +3,8 @@ import { Link, useParams } from "react-router-dom";
 
 import { projects } from "../../../../../content/index";
 import { IProject } from "../../../../../interfaces/cms";
-import { FeaturedProjects, Nav } from "../../../../shared";
-import {
-  CaseClaim,
-  CaseImg,
-  CaseImgWithOverlappedText,
-  CaseInfo,
-  CaseInfoTitle,
-  CaseSectionColumn
-} from "./CaseInfo/index";
+import { FeaturedProjects, LineBreakerSelector, Nav } from "../../../../shared";
+import { CaseClaim, CaseImg, CaseImgWithOverlappedText, CaseInfo, CaseSectionColumn } from "./CaseInfo/index";
 
 import "./CaseStudy.styles.scss";
 
@@ -30,7 +23,11 @@ export const CaseStudy = () => {
         <>
           <div className="case-container">
             <div className="case-container-title">
-              {project.caseInfo && <CaseInfoTitle text={project.caseInfo.title} />}
+              {project.caseInfo && (
+                <h1>
+                  <LineBreakerSelector typedLines={project.caseInfo.title} />
+                </h1>
+              )}
             </div>
             <div className="case-container-info">
               <div className="subtitle-section">

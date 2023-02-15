@@ -4,7 +4,7 @@ import { LineBreakerSelector } from "../../../../../shared";
 
 import "../CaseStudy.styles.scss";
 
-type Props = { src: string | undefined; text?: string; alt?: string; halfColumn?: boolean };
+type Props = { src: string; text?: string; alt?: string; halfColumn?: boolean };
 
 export const CaseImg = ({ src, alt, text, halfColumn = false }: Props) => {
   return (

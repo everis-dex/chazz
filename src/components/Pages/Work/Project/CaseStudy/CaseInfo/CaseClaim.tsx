@@ -4,7 +4,7 @@ import { LineBreakerSelector } from "../../../../../shared/index";
 
 import "../CaseStudy.styles.scss";
 
-type Props = { text: string | undefined; style?: object };
+type Props = { text: string; style?: object };
 
 export const CaseClaim = ({ text, style }: Props) => {
   return (
