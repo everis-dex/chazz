@@ -19,6 +19,7 @@ const App = () => {
         <Route path="/policies/:id?" element={<Policies />} />
         <Route path="*" element={<Home />} />
       </Routes>
+      {/* Common footer in all pages */}
       <Footer />
     </Router>
   );
