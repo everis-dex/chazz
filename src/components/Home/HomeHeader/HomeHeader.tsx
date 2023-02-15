@@ -15,22 +15,28 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const [controlText, setControlText] = useState<string>(controlTextOptions.play);
   const [navHeight, setNavHeight] = useState<number>(25);
   const [titleLeft, setTitleLeft] = useState<number>(100);
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+  const [animationComplete, setAnimationComplete] = useState<boolean>(false);
+  // Creamos una función que nos re calcula el ancho de la pantalla:
+  window.onresize = () => setWindowWidth(window.innerWidth);
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const controlRef = useRef<HTMLDivElement>(null);
 
   const switchPlayPause = () => {
-    setIsPlaying(!isPlaying);
+    if (animationComplete) {
+      setIsPlaying(!isPlaying);
 
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-        setIsNavVisible(!isNavVisible);
-        setControlText(controlTextOptions.play);
-      } else {
-        videoRef.current.play();
-        setControlText(controlTextOptions.stop);
-        setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
+      if (videoRef.current) {
+        if (isPlaying) {
+          videoRef.current.pause();
+          setIsNavVisible(!isNavVisible);
+          setControlText(controlTextOptions.play);
+        } else {
+          videoRef.current.play();
+          setControlText(controlTextOptions.stop);
+          setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
+        }
       }
     }
   };
@@ -77,6 +83,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
         if (navHeight > 10) setNavHeight(navHeight - 1);
         setTitleLeft(titleLeft - 4);
       } else {
+        setAnimationComplete(true);
         document.body.classList.remove("no-scroll");
       }
     }
@@ -93,7 +100,10 @@ export const HomeHeader = (headerData: IHomeHeader) => {
             <Nav isPlaying={isPlaying} AlertNavParent={AlertNavParent} height={navHeight} />
           </span>
         </div>
-        <div className={isPlaying ? "chazz-title-out" : "chazz-title"} style={{ left: `${titleLeft}%` }}>
+        <div
+          className={isPlaying ? "chazz-title-out" : "chazz-title"}
+          style={windowWidth >= 1200 ? { left: `${titleLeft}%` } : {}}
+        >
           <div className={isPlaying ? "simply-out" : ""}>
             <h1>
               <LineBreakerSelector typedLines={headerData.title} />
