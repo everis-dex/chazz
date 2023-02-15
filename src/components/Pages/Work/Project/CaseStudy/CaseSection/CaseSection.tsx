@@ -11,12 +11,7 @@ export const CaseSection = (section: IProjectSection) => {
       if (fwImage.overlappedText) {
         return <SectionImageWithOverlappedText src={fwImage.image} text={fwImage.overlappedText} />;
       } else {
-        return (
-          <>
-            <SectionImage src={fwImage.image} text={fwImage.caption} margin={fwImage.margin} />;
-            <div className="separation" />
-          </>
-        );
+        return <SectionImage src={fwImage.image} text={fwImage.caption} margin={fwImage.margin} />;
       }
 
     case "claim":
@@ -31,7 +26,7 @@ export const CaseSection = (section: IProjectSection) => {
             {columns.map((column: ISectionColumn, index: number) => {
               const { image, title, caption, body } = column;
               const position = index % 2 === 0 ? "left" : "right";
-              const empty: boolean = column.title && column.body && column.image ? true : false;
+              const empty: boolean = image === "" && caption === "" && body === "" && title === "";
               return (
                 <Fragment key={index}>
                   <SectionColumn

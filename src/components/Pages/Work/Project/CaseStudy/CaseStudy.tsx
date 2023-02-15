@@ -43,7 +43,7 @@ export const CaseStudy = () => {
           {projectSections && (
             <>
               {projectSections.map((section: IProjectSection, index: number) => (
-                <div className="section" key={index}>
+                <div className="case-study--section" key={index}>
                   <CaseSection {...section} />
                 </div>
               ))}

@@ -1,6 +1,7 @@
 .work-container {
   max-width: 100%;
   margin: 0 5%;
+  padding-bottom: 32px;
 }
 
 .header-nav {
@@ -20,6 +21,10 @@
     font-size: 40px;
     line-height: 43px;
   }
+}
+
+.case-study--section {
+  padding-bottom: 32px;
 }
 
 //CSS -> CONTENEDOR TITULO:
@@ -60,7 +65,7 @@
 
 //CSS -> CLAIM SECTION:
 .fw-claim {
-  padding: 15% 5%;
+  padding: 20% 5%;
   font-weight: 300;
   font-size: 32px;
   line-height: 38px;
@@ -124,8 +129,7 @@
 .section-flex-container {
   display: grid;
   grid-template-columns: 100%;
-  grid-gap: 10%;
-  padding: 64px 0;
+  grid-gap: 32px;
 }
 
 .section-left-column {
@@ -133,7 +137,11 @@
   font-size: 24px;
   line-height: 33px;
   color: var(--black);
-  padding-bottom: 80px;
+  padding: 32px 0;
+}
+
+.section-left-column-empty {
+  padding: 0 !important;
 }
 
 .section-right-column {
@@ -154,24 +162,17 @@
 
 //______________________________________________________
 .image-footer-text {
-  padding: 40px 0;
+  padding: 40px 0 0 0;
   font-size: 16px;
   line-height: 22px;
   color: var(--black);
 }
+
 .image-half-footer-text {
-  padding: 20px 0 40px 0;
+  padding: 20px 0;
   font-size: 16px;
   line-height: 22px;
   color: var(--black);
-}
-
-.separation {
-  padding-top: 32px;
-}
-
-.separation2 {
-  padding-top: 64px;
 }
 
 .fw-claim-final {
@@ -192,7 +193,7 @@
   border: none;
   font-size: 16px;
   display: block;
-  margin: -30px 0 100px 0;
+  margin: 50px 0 100px 0;
   font-weight: 400;
   &:hover {
     color: var(--pinkHover);
@@ -201,6 +202,13 @@
 // MEDIA QUERIES
 
 @media (min-width: 769px) {
+  .back-button {
+    margin: 0 0 100px 0;
+  }
+  .case-study--section {
+    padding-bottom: 110px;
+  }
+
   //CSS -> CONTENEDOR TITULO:
   .case-container {
     padding: 107px 5%;
@@ -247,15 +255,8 @@
 
   //CSS -> SECTION FLEX CONTAINER:
   .section-flex-container {
-    grid-template-columns: 40% 40%;
-    padding: 0 0 112px 0;
-    gap: 15%;
-  }
-
-  .section-flex-container1 {
-    grid-template-columns: 46% auto;
-    gap: 30px;
-    padding: 112px 0 0 0;
+    grid-template-columns: 43% 43%;
+    grid-gap: 14%;
   }
 
   .section-left-column {
@@ -275,9 +276,6 @@
       font-size: 16px;
       line-height: 22px;
     }
-  }
-  .section-left-column-empty {
-    width: 50%;
   }
   .fw-image-text {
     height: 600px;
@@ -309,6 +307,7 @@
   }
 
   .case-img {
+    padding-top: 32px;
     display: flex;
     height: 100%;
     flex-direction: column;
