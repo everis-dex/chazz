@@ -22,23 +22,6 @@
   }
 }
 
-.work-container--content {
-  width: auto;
-  margin-top: 0;
-  display: grid;
-
-  .work-detail {
-    margin-bottom: 7vh;
-    width: 90vw;
-    font-weight: 500;
-    line-height: 131.3%;
-
-    h1 {
-      font-size: 24px;
-    }
-  }
-}
-
 //CSS -> CONTENEDOR TITULO:
 .case-container {
   padding: 17px 5%;
@@ -171,7 +154,7 @@
 
 //______________________________________________________
 .image-footer-text {
-  padding: 40px 0 130px 0;
+  padding: 40px 0;
   font-size: 16px;
   line-height: 22px;
   color: var(--black);
@@ -265,7 +248,7 @@
   //CSS -> SECTION FLEX CONTAINER:
   .section-flex-container {
     grid-template-columns: 40% 40%;
-    padding: 112px 0;
+    padding: 0 0 112px 0;
     gap: 15%;
   }
 

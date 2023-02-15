@@ -127,22 +127,31 @@ export interface IProject {
   };
 }
 
+// Project sections
 export interface IProjectSection {
   type: string;
-  image?: string;
-  margin?: boolean;
-  text?: string;
-  overlappedText?: string;
-  caption?: string;
-  column?: IProjectSectionColumn[];
+  content: ISectionClaim | ISectionFWImage | ISectionColumn[];
 }
 
-export interface IProjectSectionColumn {
+export interface ISectionClaim {
+  text: string;
+  margin: boolean;
+}
+
+export interface ISectionFWImage {
+  image: string;
+  margin: boolean;
+  overlappedText: string;
+  caption: string;
+}
+
+export interface ISectionColumn {
   image: string;
   caption: string;
   title: string;
   body: string;
 }
+
 export interface IProjectDetails {
   description: string;
   subtitle: string;

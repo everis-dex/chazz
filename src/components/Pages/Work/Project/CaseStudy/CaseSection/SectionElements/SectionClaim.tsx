@@ -1,12 +1,10 @@
 import React from "react";
 
-import { LineBreakerSelector } from "../../../../../shared/index";
-
-import "../CaseStudy.styles.scss";
+import { LineBreakerSelector } from "../../../../../../shared/index";
 
 type Props = { text: string; margin?: boolean };
 
-export const CaseClaim = ({ text, margin }: Props) => {
+export const SectionClaim = ({ text, margin = false }: Props) => {
   const style = margin ? { width: "85%", margin: "auto" } : {};
 
   return (

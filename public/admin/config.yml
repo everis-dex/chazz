@@ -154,6 +154,7 @@ collections:
             fields:
               - { label: Carrousel, name: carousel, widget: image }
               - { label: Project, name: project, widget: image }
+
       - label: Case Info
         name: caseInfo
         widget: object
@@ -168,24 +169,32 @@ collections:
                 name: FWImage
                 widget: object
                 fields:
-                  - { label: Image, name: image, widget: image }
-                  - { label: Margin, name: margin, widget: boolean, default: true }
-                  - { label: Overlapped Text, name: overlappedText, widget: string, required: false }
-                  - { label: Caption, name: caption, widget: text, required: false }
+                  - label: Content
+                    name: content
+                    widget: object
+                    fields:
+                      - { label: Image, name: image, widget: image }
+                      - { label: Margin, name: margin, widget: boolean, default: true }
+                      - { label: Overlapped Text, name: overlappedText, widget: string, required: false }
+                      - { label: Caption, name: caption, widget: text, required: false }
 
               - label: Claim
                 name: claim
                 widget: object
                 fields:
-                  - { label: Text, name: text, widget: text }
-                  - { label: Margin, name: margin, widget: boolean, default: true }
+                  - label: Content
+                    name: content
+                    widget: object
+                    fields:
+                      - { label: Text, name: text, widget: text }
+                      - { label: Margin, name: margin, widget: boolean, default: true }
 
               - label: Columns
                 name: columns
                 widget: list
                 fields:
-                  - label: Column
-                    name: column
+                  - label: Content
+                    name: content
                     widget: list
                     types:
                       - { label: Image, name: image, widget: image, required: false }

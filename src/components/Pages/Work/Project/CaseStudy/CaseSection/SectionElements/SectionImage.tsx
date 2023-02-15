@@ -1,12 +1,10 @@
 import React from "react";
 
-import { LineBreakerSelector } from "../../../../../shared";
-
-import "../CaseStudy.styles.scss";
+import { LineBreakerSelector } from "../../../../../../shared";
 
 type Props = { src: string; text?: string; alt?: string; halfColumn?: boolean; margin?: boolean };
 
-export const CaseImg = ({ src, alt = "", text, halfColumn = false, margin = false }: Props) => {
+export const SectionImage = ({ src, alt = "", text, halfColumn = false, margin = false }: Props) => {
   const style = margin ? { margin: "0 5%" } : {};
   return (
     <>
@@ -26,7 +24,7 @@ export const CaseImg = ({ src, alt = "", text, halfColumn = false, margin = fals
   );
 };
 
-export const CaseImgWithOverlappedText = ({ src, text }: Props) => {
+export const SectionImageWithOverlappedText = ({ src, text }: Props) => {
   return (
     <>
       <div className="fw-image-text" style={{ backgroundImage: `url(${src})` }}>

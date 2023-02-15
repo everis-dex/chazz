@@ -15,20 +15,22 @@
       "sections": [
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "claim",
-          "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
-          "margin": false
+          "content": {
+            "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
+            "margin": false
+          }
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "",
               "caption": "",
@@ -43,10 +45,13 @@
             }
           ]
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             { "image": "", "caption": "", "title": "", "body": "" },
             {
               "image": "",
@@ -58,33 +63,36 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-calle.jpg",
-          "margin": false,
-          "overlappedText": "Cualquier lugar está*+ menos lejos.",
-          "caption": ""
+          "content": {
+            "image": "/uploads/buff-calle.jpg",
+            "margin": false,
+            "overlappedText": "Cualquier lugar está*+ menos lejos.",
+            "caption": ""
+          }
         },
         {
           "type": "claim",
-          "text": "Creating a new mobility service adapted to society and environment’s needs.",
-          "margin": true
+          "content": {
+            "text": "Creating a new mobility service adapted to society and environment’s needs.",
+            "margin": true
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-blanca.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-blanca.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-marquesina.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-marquesina.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "/uploads/buff-personaje.png",
               "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.",
@@ -101,17 +109,16 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": true,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": true, "overlappedText": "", "caption": "" }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-gris.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-gris.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          }
         }
       ]
     },
@@ -128,25 +135,27 @@
       "body": "Renfe and Chazz worked together with the objective of creating a new mobility as a service value proposition adapted to society needs under the paradigm of sustainable travel. The mobility sector is a fragmented and complex, so we shaped a tangible travel experience, making possible that any kind of trip becomes an enchanting and seamless experience walk. \nThat is why dōcō is not only technology, but also empathy, since it adapts to diverse lifestyles allowing the user to search, plan and book their expected trip in a short and user-friendly way combining multimodal options of transport included in one single ticket."
     },
     "caseInfo": {
-      "title": "Making Mobility Easier in Any Territory.",
-      "services": "Services Research, Strategy Design, Brand, Product Design",
+      "title": "Making Mobility* Easier in Any* Territory.",
+      "services": "Research, Strategy Design,* Brand, Product Design",
       "sections": [
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "claim",
-          "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
-          "margin": false
+          "content": {
+            "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
+            "margin": false
+          }
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "",
               "caption": "",
@@ -161,10 +170,13 @@
             }
           ]
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             { "image": "", "caption": "", "title": "", "body": "" },
             {
               "image": "",
@@ -176,33 +188,36 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-calle.jpg",
-          "margin": true,
-          "overlappedText": "Cualquier lugar está*+ menos lejos.",
-          "caption": ""
+          "content": {
+            "image": "/uploads/buff-calle.jpg",
+            "margin": false,
+            "overlappedText": "Cualquier lugar está*+ menos lejos.",
+            "caption": ""
+          }
         },
         {
           "type": "claim",
-          "text": "Creating a new mobility service adapted to society and environment’s needs.",
-          "margin": true
+          "content": {
+            "text": "Creating a new mobility service adapted to society and environment’s needs.",
+            "margin": true
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-blanca.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-blanca.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-marquesina.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-marquesina.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "/uploads/buff-personaje.png",
               "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.",
@@ -219,17 +234,16 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": true,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": true, "overlappedText": "", "caption": "" }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-gris.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-gris.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          }
         }
       ]
     },
@@ -251,20 +265,22 @@
       "sections": [
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "claim",
-          "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
-          "margin": false
+          "content": {
+            "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
+            "margin": false
+          }
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "",
               "caption": "",
@@ -279,10 +295,13 @@
             }
           ]
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             { "image": "", "caption": "", "title": "", "body": "" },
             {
               "image": "",
@@ -294,33 +313,36 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-calle.jpg",
-          "margin": true,
-          "overlappedText": "Cualquier lugar está*+ menos lejos.",
-          "caption": ""
+          "content": {
+            "image": "/uploads/buff-calle.jpg",
+            "margin": false,
+            "overlappedText": "Cualquier lugar está*+ menos lejos.",
+            "caption": ""
+          }
         },
         {
           "type": "claim",
-          "text": "Creating a new mobility service adapted to society and environment’s needs.",
-          "margin": true
+          "content": {
+            "text": "Creating a new mobility service adapted to society and environment’s needs.",
+            "margin": true
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-blanca.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-blanca.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-marquesina.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-marquesina.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "/uploads/buff-personaje.png",
               "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.",
@@ -337,17 +359,16 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": true,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": true, "overlappedText": "", "caption": "" }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-gris.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-gris.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          }
         }
       ]
     },
@@ -369,20 +390,22 @@
       "sections": [
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "claim",
-          "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
-          "margin": false
+          "content": {
+            "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
+            "margin": false
+          }
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "",
               "caption": "",
@@ -397,10 +420,13 @@
             }
           ]
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             { "image": "", "caption": "", "title": "", "body": "" },
             {
               "image": "",
@@ -412,33 +438,36 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-calle.jpg",
-          "margin": true,
-          "overlappedText": "Cualquier lugar está*+ menos lejos.",
-          "caption": ""
+          "content": {
+            "image": "/uploads/buff-calle.jpg",
+            "margin": false,
+            "overlappedText": "Cualquier lugar está*+ menos lejos.",
+            "caption": ""
+          }
         },
         {
           "type": "claim",
-          "text": "Creating a new mobility service adapted to society and environment’s needs.",
-          "margin": true
+          "content": {
+            "text": "Creating a new mobility service adapted to society and environment’s needs.",
+            "margin": true
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-blanca.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-blanca.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-marquesina.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-marquesina.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "/uploads/buff-personaje.png",
               "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.",
@@ -455,17 +484,16 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": true,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": true, "overlappedText": "", "caption": "" }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-gris.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-gris.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          }
         }
       ]
     },
@@ -487,20 +515,22 @@
       "sections": [
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "claim",
-          "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
-          "margin": false
+          "content": {
+            "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
+            "margin": false
+          }
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "",
               "caption": "",
@@ -515,10 +545,13 @@
             }
           ]
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             { "image": "", "caption": "", "title": "", "body": "" },
             {
               "image": "",
@@ -530,33 +563,36 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-calle.jpg",
-          "margin": true,
-          "overlappedText": "Cualquier lugar está*+ menos lejos.",
-          "caption": ""
+          "content": {
+            "image": "/uploads/buff-calle.jpg",
+            "margin": false,
+            "overlappedText": "Cualquier lugar está*+ menos lejos.",
+            "caption": ""
+          }
         },
         {
           "type": "claim",
-          "text": "Creating a new mobility service adapted to society and environment’s needs.",
-          "margin": true
+          "content": {
+            "text": "Creating a new mobility service adapted to society and environment’s needs.",
+            "margin": true
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-blanca.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-blanca.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-marquesina.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-marquesina.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "/uploads/buff-personaje.png",
               "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.",
@@ -573,17 +609,16 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": true,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": true, "overlappedText": "", "caption": "" }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-gris.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-gris.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          }
         }
       ]
     },
@@ -605,20 +640,22 @@
       "sections": [
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "claim",
-          "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
-          "margin": false
+          "content": {
+            "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
+            "margin": false
+          }
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "",
               "caption": "",
@@ -633,10 +670,13 @@
             }
           ]
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             { "image": "", "caption": "", "title": "", "body": "" },
             {
               "image": "",
@@ -648,33 +688,36 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-calle.jpg",
-          "margin": true,
-          "overlappedText": "Cualquier lugar está*+ menos lejos.",
-          "caption": ""
+          "content": {
+            "image": "/uploads/buff-calle.jpg",
+            "margin": false,
+            "overlappedText": "Cualquier lugar está*+ menos lejos.",
+            "caption": ""
+          }
         },
         {
           "type": "claim",
-          "text": "Creating a new mobility service adapted to society and environment’s needs.",
-          "margin": true
+          "content": {
+            "text": "Creating a new mobility service adapted to society and environment’s needs.",
+            "margin": true
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-blanca.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-blanca.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-marquesina.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-marquesina.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "/uploads/buff-personaje.png",
               "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.",
@@ -691,17 +734,16 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": true,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": true, "overlappedText": "", "caption": "" }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-gris.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-gris.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          }
         }
       ]
     },
@@ -723,20 +765,22 @@
       "sections": [
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "claim",
-          "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
-          "margin": false
+          "content": {
+            "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
+            "margin": false
+          }
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "",
               "caption": "",
@@ -751,10 +795,13 @@
             }
           ]
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             { "image": "", "caption": "", "title": "", "body": "" },
             {
               "image": "",
@@ -766,33 +813,36 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-calle.jpg",
-          "margin": true,
-          "overlappedText": "Cualquier lugar está*+ menos lejos.",
-          "caption": ""
+          "content": {
+            "image": "/uploads/buff-calle.jpg",
+            "margin": false,
+            "overlappedText": "Cualquier lugar está*+ menos lejos.",
+            "caption": ""
+          }
         },
         {
           "type": "claim",
-          "text": "Creating a new mobility service adapted to society and environment’s needs.",
-          "margin": true
+          "content": {
+            "text": "Creating a new mobility service adapted to society and environment’s needs.",
+            "margin": true
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-blanca.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-blanca.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-marquesina.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-marquesina.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "/uploads/buff-personaje.png",
               "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.",
@@ -809,17 +859,16 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": true,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": true, "overlappedText": "", "caption": "" }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-gris.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-gris.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          }
         }
       ]
     },
@@ -841,20 +890,22 @@
       "sections": [
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "claim",
-          "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
-          "margin": false
+          "content": {
+            "text": "Developing the* complete Mobility As A* Service’s project with*+ Renfe, the Spanish* leader in rail transport.",
+            "margin": false
+          }
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "",
               "caption": "",
@@ -869,10 +920,13 @@
             }
           ]
         },
-        { "type": "FWImage", "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" },
+        {
+          "type": "FWImage",
+          "content": { "image": "/uploads/buff-roja.png", "margin": true, "overlappedText": "", "caption": "" }
+        },
         {
           "type": "columns",
-          "column": [
+          "content": [
             { "image": "", "caption": "", "title": "", "body": "" },
             {
               "image": "",
@@ -884,33 +938,36 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-calle.jpg",
-          "margin": true,
-          "overlappedText": "Cualquier lugar está*+ menos lejos.",
-          "caption": ""
+          "content": {
+            "image": "/uploads/buff-calle.jpg",
+            "margin": false,
+            "overlappedText": "Cualquier lugar está*+ menos lejos.",
+            "caption": ""
+          }
         },
         {
           "type": "claim",
-          "text": "Creating a new mobility service adapted to society and environment’s needs.",
-          "margin": true
+          "content": {
+            "text": "Creating a new mobility service adapted to society and environment’s needs.",
+            "margin": true
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-blanca.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-blanca.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color* palette, a complete icon set, and a unique typography was designed to make real."
+          }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-marquesina.jpg",
-          "margin": false,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-marquesina.jpg", "margin": false, "overlappedText": "", "caption": "" }
         },
         {
           "type": "columns",
-          "column": [
+          "content": [
             {
               "image": "/uploads/buff-personaje.png",
               "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.",
@@ -927,17 +984,16 @@
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-portatil.jpg",
-          "margin": true,
-          "overlappedText": "",
-          "caption": ""
+          "content": { "image": "/uploads/buff-portatil.jpg", "margin": true, "overlappedText": "", "caption": "" }
         },
         {
           "type": "FWImage",
-          "image": "/uploads/buff-gris.png",
-          "margin": true,
-          "overlappedText": "",
-          "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          "content": {
+            "image": "/uploads/buff-gris.png",
+            "margin": true,
+            "overlappedText": "",
+            "caption": "So the service and the brand are inclusive. Because no matter who we are or where we go, but dōcō can accompany us in an empathic way.+* That is why its logotype is friendly and its visual style flowed with a witty mood. An AAA color palette, a complete icon set, and a unique typography was designed to make real."
+          }
         }
       ]
     },

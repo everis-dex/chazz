@@ -1,9 +1,7 @@
 import React from "react";
 
-import { LineBreakerSelector } from "../../../../../shared/index";
-import { CaseImg } from "./CaseImg";
-
-import "../CaseStudy.styles.scss";
+import { LineBreakerSelector } from "../../../../../../shared/index";
+import { SectionImage } from "./SectionImage";
 
 type Props = {
   title?: string;
@@ -14,7 +12,7 @@ type Props = {
   caption?: string;
 };
 
-export const CaseSectionColumn = ({ title, text, empty = false, position, src, caption }: Props) => {
+export const SectionColumn = ({ title, text, empty = false, position, src, caption }: Props) => {
   const columnPosition = empty ? `section-${position}-column-empty` : `section-${position}-column`;
 
   return (
@@ -22,7 +20,7 @@ export const CaseSectionColumn = ({ title, text, empty = false, position, src, c
       {!empty ? (
         src ? (
           <div className={columnPosition}>
-            <CaseImg src={src} alt="img-column" text={caption} halfColumn />
+            <SectionImage src={src} alt="img-column" text={caption} halfColumn />
           </div>
         ) : (
           <div className={columnPosition}>
