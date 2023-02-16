@@ -11,11 +11,8 @@ export const Dropdown = ({ content }: Props) => {
   // Display options when clicking on dropdown header
   function display(): void {
     if (contentDiv && contentDiv.current) {
-      if (contentDiv.current.style.display === "block") {
-        contentDiv.current.style.display = "none";
-      } else {
-        contentDiv.current.style.display = "block";
-      }
+      const display = contentDiv.current.style.display;
+      contentDiv.current.style.display = display === "block" ? "none" : display;
     }
   }
 
@@ -24,20 +21,19 @@ export const Dropdown = ({ content }: Props) => {
     setSelectedOption(index);
     if (contentDiv && contentDiv.current) contentDiv.current.style.display = "none";
   }
+
   return (
     <div className="dropdown">
       <button className="dropdown-header" onClick={display}>
         {content[selectedOption]}
       </button>
       <div className="dropdown-content" ref={contentDiv}>
-        {content.map((item: string, index: number) => {
-          return (
-            <div key={index} onClick={() => select(index)}>
-              <a href={`#article${index}`}>{item}</a>
-              <span className={"okay" + (index === selectedOption ? " selected" : "")}>✓</span>
-            </div>
-          );
-        })}
+        {content.map((item: string, index: number) => (
+          <div key={index} onClick={() => select(index)}>
+            <a href={`#article${index}`}>{item}</a>
+            <span className={"okay" + (index === selectedOption ? " selected" : "")}>✓</span>
+          </div>
+        ))}
       </div>
     </div>
   );

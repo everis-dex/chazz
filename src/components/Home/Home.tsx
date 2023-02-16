@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 
 import { home } from "../../content/index";
 import { Categories, HomeHeader, Partners, Projects } from "./index";
-import { Footer } from "../shared/index";
 
 export const Home = () => {
   const headerData = home.header;
@@ -18,7 +17,6 @@ export const Home = () => {
       <Categories {...categoriesData} />
       <Projects {...projectsData} />
       <Partners {...partnersData} />
-      <Footer />
     </>
   );
 };

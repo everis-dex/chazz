@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import lessInfoIcon from "../../../assets/icn_lessinformation.svg";
 import moreInfoIcon from "../../../assets/icn_moreinformation.svg";
-import { LineBreakerSelector } from "../LineBreaker/LineBreakerSelector";
+import { LineBreakerSelector } from "../index";
 
 import "./Accordion.styles.scss";
 

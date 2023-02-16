@@ -5,16 +5,11 @@ import { BrokenLines } from "./BrokenLines";
 
 import "./LineBreaker.scss";
 
-type Props = { typedLines?: string };
+type Props = { typedLines: string };
 
 export const LineBreakerSelector = ({ typedLines }: Props) => {
-  var desktopBrokenLines: string[] = [];
-  var mobileBrokenLines: string[] = [];
-
-  if (typedLines) {
-    desktopBrokenLines = typedLines.split(desktopLineBreakSymbol);
-    mobileBrokenLines = typedLines.split(mobileLineBreakSymbol);
-  }
+  const desktopBrokenLines = typedLines.split(desktopLineBreakSymbol);
+  const mobileBrokenLines = typedLines.split(mobileLineBreakSymbol);
 
   const finalMobileBrokenLines: string[] = [];
   const finalDesktopBrokenLines: string[] = [];
@@ -30,6 +25,7 @@ export const LineBreakerSelector = ({ typedLines }: Props) => {
       finalMobileBrokenLines.push(line);
     }
   });
+
   desktopBrokenLines.forEach(line => {
     if (line.includes(paragraphSymbol)) {
       const stringToArray = line.split(paragraphSymbol);

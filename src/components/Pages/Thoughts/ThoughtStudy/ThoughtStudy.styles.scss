@@ -59,6 +59,7 @@
     p {
       font-size: 16px;
       line-height: 24px;
+      font-weight: 300;
     }
 
     strong {
@@ -70,6 +71,10 @@
       margin: 50px 0 15px 0;
     }
 
+    ol {
+      font-weight: 300;
+    }
+    
     ol,
     ul {
       font-size: 16px;

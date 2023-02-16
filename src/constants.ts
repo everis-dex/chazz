@@ -8,9 +8,10 @@ const routesInfo: RoutesInfo[] = [
   { id: 3, name: "Thoughts", route: "/thoughts", published: thoughtsPage.published }
 ];
 
-// select here which nav options are
+// Which nav options available
 export const availableRoutes: RoutesInfo[] = routesInfo.filter((route: RoutesInfo) => route.published);
 
+// Break symbols for each device
 export const desktopLineBreakSymbol: string = "+";
 export const mobileLineBreakSymbol: string = "*";
 export const paragraphSymbol: string = "\n";
@@ -27,9 +28,7 @@ export const DisplayModes = {
   }
 };
 
-type Dictionary = {
-  [key: number]: string;
-};
+type Dictionary = { [key: number]: string };
 export const Months: Dictionary = {
   0: "Jan",
   1: "Feb",
