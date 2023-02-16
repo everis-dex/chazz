@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import Lottie from "lottie-react";
 import { CarouselSlide } from "./CarouselSlide";
-
+import dragCursor from "../../../../../assets/1676471383.833592.json";
 import { projects } from "../../../../../content/index";
 import { IProject } from "../../../../../interfaces/cms";
 
@@ -15,7 +15,20 @@ type Props = { title: string };
 export const Carousel = ({ title }: Props) => {
   const slides: IProject[] = [...projects];
   const featuredSlides: IProject[] = slides.filter(slide => slide.incarousel).slice(0, 5);
+  const [isMouseInside, setIsMouseInside] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  const handleMouseEnter = () => {
+    setIsMouseInside(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsMouseInside(false);
+  };
+
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    setMousePosition({ x: event.clientX, y: event.clientY });
+  };
   return (
     <>
       <div className="carouselTitle">
@@ -23,8 +36,26 @@ export const Carousel = ({ title }: Props) => {
       </div>
 
       <div id="carousel" className="carousel">
-        <div className="pagination" />
-        <div className="slides">
+        <div
+          className="slides"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onMouseMove={handleMouseMove}
+        >
+          {isMouseInside ? (
+            <Lottie
+              animationData={dragCursor}
+              loop={false}
+              autoplay
+              style={{
+                position: "fixed",
+                left: mousePosition.x,
+                top: mousePosition.y,
+                width: 100,
+                height: 100
+              }}
+            />
+          ) : null}
           <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={1.1}

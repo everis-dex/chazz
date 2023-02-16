@@ -14,12 +14,25 @@ interface MediaStyle {
 export const CarouselSlide = (props: IProject) => {
   const [mediaStyle, setMediaStyle] = useState<MediaStyle>();
   const screenWidth: number = window.innerWidth;
+  const [isMouseInside, setIsMouseInside] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  const handleMouseEnter = () => {
+    setIsMouseInside(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsMouseInside(false);
+  };
+
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    setMousePosition({ x: event.clientX, y: event.clientY });
+  };
   useEffect(() => {
     const pointerURL = window.location.origin + "/uploads/drag-pointer.svg";
     const commonProps = {
       objectFit: "cover",
-      cursor: `url(${pointerURL}), auto`
+      cursor: "" // `url(${pointerURL}), auto`
     };
 
     function resizeSlides(): void {
