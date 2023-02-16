@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-
 import { IHomeHeader } from "../../../interfaces/cms";
 import { AllowCookies, LineBreakerSelector, Nav } from "../../shared/index";
 import { VideoHeader } from "./VideoHeader/VideoHeader";
-
 import "./HomeHeader.styles.scss";
 
 const controlTextOptions = { play: "Play", stop: "Stop" };
@@ -67,7 +65,33 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   }
   window.addEventListener("resize", appHeight);
   appHeight();
+  //--------------------------------------------------------------------------------------------------
+  const [scrollControl, setScrollControl] = useState<boolean>(false);
+  const [scrollCounter, setScrollCounter] = useState<number>(0);
 
+  const handlerScrollCounter = () => {
+    setScrollCounter(count => count + 1);
+    if (scrollCounter > 20) {
+      setScrollControl(true);
+    }
+  };
+  const handlerScrollControll = () => {
+    if (scrollControl === false) {
+      document.body.style.overflow = "hidden";
+      console.log("🐱‍👤");
+    } else {
+      document.body.style.overflow = "unset";
+      console.log("✨");
+    }
+  };
+  useEffect(() => {
+    handlerScrollControll();
+    window.addEventListener("wheel", handlerScrollCounter);
+    return () => {
+      window.removeEventListener("wheel", handlerScrollCounter);
+    };
+  }, [scrollCounter]);
+  //--------------------------------------------------------------------------------------------------
   return (
     <div className="chazz-header">
       <div className={isPlaying ? "velo-out" : "velo-in"}>
@@ -80,6 +104,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           <div className={isPlaying ? "simply-out" : ""}>
             <h1>
               <LineBreakerSelector typedLines={headerData.title} />
+              {scrollCounter}
             </h1>
             <h4>{headerData.subtitle}</h4>
           </div>

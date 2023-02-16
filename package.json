@@ -17,6 +17,7 @@
     "react-dom": "^16.12.0",
     "react-markdown": "^8.0.5",
     "react-scripts": "^5.0.1",
+    "react-scroll-parallax": "^3.3.2",
     "swiper": "^8.4.5",
     "typeface-raleway": "0.0.75"
   },

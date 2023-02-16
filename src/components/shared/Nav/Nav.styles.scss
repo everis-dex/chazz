@@ -51,6 +51,9 @@
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
+  .header-nav {
+    background: var(--white);
+  }
   .chazz-logo {
     width: 162px;
     top: 30px;
@@ -80,7 +83,7 @@
 
   .nav ul li a {
     text-decoration: none;
-    color: var(--white);
+    color: var(--black);
     font-weight: 300;
 
     &:hover {
