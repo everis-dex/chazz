@@ -80,8 +80,8 @@ export const HomeHeader = (headerData: IHomeHeader) => {
     if (e.deltaY > 0) {
       //alert("XD");
       if (titleLeft > 16) {
-        if (navHeight > 10) setNavHeight(navHeight - 1);
-        setTitleLeft(titleLeft - 4);
+        if (navHeight > 10) setNavHeight(10);
+        setTitleLeft(16);
       } else {
         setAnimationComplete(true);
         document.body.classList.remove("no-scroll");
