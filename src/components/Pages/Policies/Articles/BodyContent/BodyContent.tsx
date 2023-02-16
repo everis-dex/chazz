@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 import { IPolicyBody, IPolicyTableRow } from "../../../../../interfaces/cms";
 
@@ -11,7 +12,6 @@ export const BodyContent = ({ body }: Props) => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
   // Creamos una función que nos re calcula el ancho de la pantalla:
-
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -21,17 +21,15 @@ export const BodyContent = ({ body }: Props) => {
   }, []);
 
   // Return structure based on body content type
-  function bodyType(b: IPolicyBody) {
+  function bodyType(b: IPolicyBody): JSX.Element {
     switch (b.type) {
       case "text":
-        if (b.content) {
-          const paragraphs = b.content.split(/\n/);
-          return <>{paragraphs.map((p: string, index: number) => (p !== "" ? <div key={index}>{p}</div> : <br />))}</>;
-        }
-        break;
+        if (!b.content) return <></>;
+        return <ReactMarkdown>{b.content}</ReactMarkdown>;
 
       case "table":
-        if (b.rows && windowWidth > 768) {
+        if (!b.rows) return <></>;
+        if (windowWidth >= 720) {
           return (
             <table>
               <thead>
@@ -54,8 +52,35 @@ export const BodyContent = ({ body }: Props) => {
               </tbody>
             </table>
           );
+        } else {
+          return (
+            <div className="body-type--table">
+              {b.rows.map((row: IPolicyTableRow, index: number) => (
+                <table key={index}>
+                  <tbody>
+                    <tr>
+                      <th>Name</th>
+                      <td>{row.name}</td>
+                    </tr>
+                    <tr>
+                      <th>Host</th>
+                      <td>{row.host}</td>
+                    </tr>
+                    <tr>
+                      <th>Expiration</th>
+                      <td>{row.expiration}</td>
+                    </tr>
+                    <tr>
+                      <th>Service</th>
+                      <td className="last">{row.service}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              ))}
+            </div>
+          );
         }
-        break;
+
       default:
         return <></>;
     }

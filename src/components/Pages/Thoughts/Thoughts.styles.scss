@@ -43,6 +43,7 @@
 
     &.selected {
       color: var(--pinkStrong);
+      font-weight: 400;
     }
   }
 }
@@ -100,6 +101,7 @@
       font-size: 24px;
       line-height: 29px;
       transition: color 0.2s;
+      font-weight: 300;
 
       &:hover {
         cursor: pointer;
@@ -117,7 +119,7 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
   .thoughts-header {
     .header-title {
       font-size: 72px;

@@ -251,6 +251,32 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .chazz-header {
+    background-size: 12px;
+    max-height: 1024px;
+    background-position: 0 0%;
+  }
+
+  .chazz-title,
+  .chazz-title-out {
+    top: auto;
+    bottom: 100px;
+    width: 65%;
+    h1 {
+      line-height: 96.3px;
+      font-size: 76px;
+      position: relative;
+      top: -2rem;
+      width: 105%;
+    }
+
+    h4 {
+      margin-top: -40px;
+      font-size: 29px;
+    }
+  }
+}
 @media (min-width: 1280px) {
   .chazz-header {
     background-size: 1280px;
