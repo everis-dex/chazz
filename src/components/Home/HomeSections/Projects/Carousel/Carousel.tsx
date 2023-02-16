@@ -42,20 +42,6 @@ export const Carousel = ({ title }: Props) => {
           onMouseLeave={handleMouseLeave}
           onMouseMove={handleMouseMove}
         >
-          {isMouseInside ? (
-            <Lottie
-              animationData={dragCursor}
-              loop={false}
-              autoplay
-              style={{
-                position: "fixed",
-                left: mousePosition.x,
-                top: mousePosition.y,
-                width: 100,
-                height: 100
-              }}
-            />
-          ) : null}
           <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={1.1}
@@ -83,6 +69,22 @@ export const Carousel = ({ title }: Props) => {
                 </SwiperSlide>
               );
             })}
+            {isMouseInside ? (
+              <Lottie
+                animationData={dragCursor}
+                loop={false}
+                autoplay
+                style={{
+                  position: "fixed",
+                  left: mousePosition.x + 1,
+                  top: mousePosition.y,
+                  width: 100,
+                  height: 100,
+                  zIndex: 10,
+                  transition: "transform 0.1s ease-out"
+                }}
+              />
+            ) : null}
           </Swiper>
         </div>
       </div>

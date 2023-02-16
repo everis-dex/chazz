@@ -32,7 +32,7 @@ export const CarouselSlide = (props: IProject) => {
     const pointerURL = window.location.origin + "/uploads/drag-pointer.svg";
     const commonProps = {
       objectFit: "cover",
-      cursor: "" // `url(${pointerURL}), auto`
+      cursor: "none" // `url(${pointerURL}), auto`
     };
 
     function resizeSlides(): void {
