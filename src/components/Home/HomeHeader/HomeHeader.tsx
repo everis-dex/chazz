@@ -78,9 +78,8 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   //onWheel
   const handleOnWheel: React.WheelEventHandler<HTMLDivElement> = e => {
     if (e.deltaY > 0) {
-      //alert("XD");
       if (titleLeft > 16) {
-        if (navHeight > 10) setNavHeight(10);
+        if (navHeight > 11) setNavHeight(11);
         setTitleLeft(16);
       } else {
         setAnimationComplete(true);

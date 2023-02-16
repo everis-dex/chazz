@@ -101,7 +101,12 @@
     width: 153px;
 
     svg {
-      width: 153px;
+      position: relative;
+      height: 8vh;
+      top: 8vh;
+      display: flex;
+      width: auto;
+      // width: 153px;
     }
   }
   .nav ul li {
