@@ -13,6 +13,7 @@ export const Nav = ({ isPlaying = false, darkMode = false, AlertNavParent }: Pro
 
   const displayMode = darkMode ? DisplayModes.dark : DisplayModes.light;
   const { color } = displayMode;
+  const logoColor = isBurgerMenuOpen ? "white" : color;
 
   function toggleMenu(): void {
     if (isPlaying) return;
@@ -30,7 +31,7 @@ export const Nav = ({ isPlaying = false, darkMode = false, AlertNavParent }: Pro
 
   return (
     <div className="header-nav">
-      <ChazzLogo color={color} isBurgerMenuOpen={isBurgerMenuOpen} />
+      <ChazzLogo color={logoColor} />
       <DesktopMenu {...displayMode} />
       <BurgerMenu color={color} isBurgerMenuOpen={isBurgerMenuOpen} toggleMenu={toggleMenu} />
     </div>

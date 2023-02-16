@@ -1,20 +1,10 @@
 .policies-container {
-  width: 100%;
-  padding: 0 5%;
   scroll-behavior: smooth;
   margin-bottom: 100px;
 }
 
-.policies-header {
-  margin-top: 6%;
-  border-top: 1px solid var(--black);
-
-  .header-title {
-    margin: 25px 0 60px 0;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 43px;
-  }
+.page-header .header-title {
+  margin: 25px 0 60px 0;
 }
 
 .policies-selector {

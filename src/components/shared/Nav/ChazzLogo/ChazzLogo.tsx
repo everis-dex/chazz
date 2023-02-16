@@ -5,13 +5,13 @@ import { ReactComponent as Logo } from "../../../../assets/Chazz_Logo.svg";
 
 import "../Nav.styles.scss";
 
-type Props = { color: string; isBurgerMenuOpen: boolean };
+type Props = { color: string };
 
-export const ChazzLogo = ({ color, isBurgerMenuOpen }: Props) => {
+export const ChazzLogo = ({ color }: Props) => {
   return (
     <div className="chazz-logo">
       <Link to="/">
-        <Logo fill={isBurgerMenuOpen ? "white" : color} style={{ position: isBurgerMenuOpen ? "fixed" : "inherit" }} />
+        <Logo fill={color} />
       </Link>
     </div>
   );

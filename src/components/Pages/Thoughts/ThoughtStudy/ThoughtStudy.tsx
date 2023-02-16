@@ -36,8 +36,8 @@ export const ThoughtStudy = () => {
   return (
     <>
       <Nav />
-      <div className="study-container">
-        <div className="study-header">
+      <div className="page-container">
+        <div className="page-header study-header">
           <h1 className="header-title">{thought.title}</h1>
           <div className="study-details">
             <span className="date">{date}</span>
