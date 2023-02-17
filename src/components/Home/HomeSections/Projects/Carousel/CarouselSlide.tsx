@@ -18,7 +18,7 @@ export const CarouselSlide = (project: IProject) => {
   useEffect(() => {
     const pointerURL = window.location.origin + "/uploads/drag-pointer.svg";
     const commonProps = {
-      objectFit: "cover",
+      objectFit: "cover"
       // cursor: `url(${pointerURL}), auto`
     };
 

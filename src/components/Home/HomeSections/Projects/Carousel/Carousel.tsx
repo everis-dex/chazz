@@ -13,7 +13,7 @@ import "./Carousel.styles.scss";
 
 // const urlBase = window.origin + "/uploads/";
 const urlBase = window.origin + "/uploads/animations/";
-const sequence = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13'];
+const sequence = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13"];
 const velocidad = 50;
 
 type Props = { title: string };
@@ -25,8 +25,6 @@ export const Carousel = ({ title }: Props) => {
   const [counter, setCounter] = useState(0);
 
   const animatedCursorRef = useRef<HTMLDivElement>(null);
-
-
 
   useEffect(() => {
     if (cursorState === "Enter") {
@@ -58,15 +56,14 @@ export const Carousel = ({ title }: Props) => {
     if (cursorState === "Out") {
       setCounter(0);
     }
-
   }, [cursorState, setCursorState, counter, setCounter]);
-
-
 
   return (
     <>
       <div className="carouselTitle">
-        <div style={{ position: "absolute" }} ref={animatedCursorRef}><img src={urlBase + "icon-drag_pointer-in-" + sequence[counter] + ".png"}></img></div>
+        <div style={{ position: "absolute" }} ref={animatedCursorRef}>
+          <img src={urlBase + "icon-drag_pointer-in-" + sequence[counter] + ".png"}></img>
+        </div>
         <h3>{counter}</h3>
         <h3>{title}</h3>
       </div>
@@ -74,12 +71,23 @@ export const Carousel = ({ title }: Props) => {
       <div
         id="carousel"
         className="carousel"
-        onMouseEnter={() => { setCounter(0); setCursorState("Enter") }}
-        onMouseLeave={() => { setCounter(sequence.length); setCursorState("Leave") }}
+        onMouseEnter={() => {
+          setCounter(0);
+          setCursorState("Enter");
+        }}
+        onMouseLeave={() => {
+          setCounter(sequence.length);
+          setCursorState("Leave");
+        }}
       >
         <div className="pagination" />
 
-        <div className="slides" style={{ cursor: 'url("https://cdn.sstatic.net/Img/teams/teams-illo-free-sidebar-promo.svg?v=47faa659a05e"), auto' }}>
+        <div
+          className="slides"
+          style={{
+            cursor: 'url("https://cdn.sstatic.net/Img/teams/teams-illo-free-sidebar-promo.svg?v=47faa659a05e"), auto'
+          }}
+        >
           <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={1.1}
