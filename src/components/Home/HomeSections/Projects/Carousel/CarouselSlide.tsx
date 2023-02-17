@@ -11,15 +11,17 @@ interface MediaStyle {
   // cursor: string;
 }
 
-export const CarouselSlide = (project: IProject) => {
+type Props = { project: IProject; cursor: string };
+
+export const CarouselSlide = ({ project, cursor }: Props) => {
   const [mediaStyle, setMediaStyle] = useState<MediaStyle>();
   const screenWidth: number = window.innerWidth;
 
   useEffect(() => {
     // const pointerURL = window.location.origin + "/uploads/drag-pointer.svg";
     const commonProps = {
-      objectFit: "cover"
-      // cursor: `url(${pointerURL}), auto`
+      objectFit: "cover",
+      cursor: `url(${cursor}), auto`
     };
 
     function resizeSlides(): void {
@@ -35,7 +37,7 @@ export const CarouselSlide = (project: IProject) => {
     return () => {
       window.removeEventListener("resize", resizeSlides);
     };
-  }, [setMediaStyle, screenWidth]);
+  }, [setMediaStyle, screenWidth, cursor]);
 
   return (
     <>

@@ -14,7 +14,7 @@ import "./Carousel.styles.scss";
 // const urlBase = window.origin + "/uploads/";
 const urlBase = window.origin + "/uploads/animations/";
 const sequence = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13"];
-const velocidad = 50;
+const velocidad = 70;
 
 type Props = { title: string };
 export const Carousel = ({ title }: Props) => {
@@ -29,33 +29,23 @@ export const Carousel = ({ title }: Props) => {
   useEffect(() => {
     if (cursorState === "Enter") {
       for (let numero = 0; numero < sequence.length; numero++) {
-        setTimeout(() => {
-          setCounter(counter + 1);
-        }, velocidad);
+        setTimeout(() => setCounter(counter + 1), velocidad);
       }
-      setTimeout(() => {
-        setCursorState("Stay");
-      }, sequence.length * velocidad);
+      setTimeout(() => setCursorState("Stay"), sequence.length * velocidad);
     }
 
-    if (cursorState === "Stay") {
-      setCounter(sequence.length - 1);
-    }
+    if (cursorState === "Stay") setCounter(sequence.length - 1);
 
     if (cursorState === "Leave") {
       for (let numero = 0; numero < sequence.length; numero++) {
-        setTimeout(() => {
-          setCounter(counter - 1);
-        }, velocidad);
+        setTimeout(() => setCounter(counter - 1), velocidad);
       }
       setTimeout(() => {
         setCursorState("Out");
       }, sequence.length * velocidad);
     }
 
-    if (cursorState === "Out") {
-      setCounter(0);
-    }
+    if (cursorState === "Out") setCounter(0);
   }, [cursorState, setCursorState, counter, setCounter]);
 
   return (
@@ -85,7 +75,7 @@ export const Carousel = ({ title }: Props) => {
         <div
           className="slides"
           style={{
-            cursor: 'url("https://cdn.sstatic.net/Img/teams/teams-illo-free-sidebar-promo.svg?v=47faa659a05e"), auto'
+            cursor: `url(${urlBase + "icon-drag_pointer-in-" + sequence[counter] + ".png"}), auto`
           }}
         >
           <Swiper
@@ -98,10 +88,10 @@ export const Carousel = ({ title }: Props) => {
               clickable: true
             }}
             loop
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false
-            }}
+            // autoplay={{
+            //   delay: 3000,
+            //   disableOnInteraction: false
+            // }}
             breakpoints={{
               1200: { slidesPerView: 2.1 },
               1920: { slidesPerView: 3.1 }
@@ -109,9 +99,10 @@ export const Carousel = ({ title }: Props) => {
             initialSlide={0}
           >
             {featuredSlides.map((slide: IProject, index: number) => {
+              const cursorURL = (urlBase + "icon-drag_pointer-in-" + sequence[counter] + ".png") as string;
               return (
                 <SwiperSlide key={index}>
-                  <CarouselSlide {...slide} />
+                  <CarouselSlide project={slide} cursor={cursorURL} />
                 </SwiperSlide>
               );
             })}
