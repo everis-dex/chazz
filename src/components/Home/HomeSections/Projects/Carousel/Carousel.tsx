@@ -29,7 +29,6 @@ export const Carousel = ({ title }: Props) => {
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     setMousePosition({ x: event.clientX, y: event.clientY });
   };
-
   return (
     <>
       <div className="carouselTitle">
@@ -82,7 +81,7 @@ export const Carousel = ({ title }: Props) => {
                   width: 100,
                   height: 100,
                   zIndex: 10,
-                  transition: "transform 0.01s ease-out"
+                  transition: "transform 0.1s ease-out"
                 }}
               />
             ) : null}
