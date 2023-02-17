@@ -62,7 +62,7 @@ export const Carousel = ({ title }: Props) => {
     <>
       <div className="carouselTitle">
         <div style={{ position: "absolute" }} ref={animatedCursorRef}>
-          <img src={urlBase + "icon-drag_pointer-in-" + sequence[counter] + ".png"}></img>
+          <img src={urlBase + "icon-drag_pointer-in-" + sequence[counter] + ".png"} alt="" />
         </div>
         <h3>{counter}</h3>
         <h3>{title}</h3>
