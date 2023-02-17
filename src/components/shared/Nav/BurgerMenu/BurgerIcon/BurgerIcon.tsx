@@ -4,7 +4,7 @@ import "./BurgerIcon.styles.scss";
 
 type Props = {
   isBurgerMenuOpen: boolean;
-  toggleMenu: (event: React.MouseEvent) => void;
+  toggleMenu: () => void;
   color: string;
 };
 

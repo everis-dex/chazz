@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import lessInfoIcon from "../../../assets/icn_lessinformation.svg";
 import moreInfoIcon from "../../../assets/icn_moreinformation.svg";
+import { LineBreakerSelector } from "../index";
 
 import "./Accordion.styles.scss";
 
-type Props = { title: string; content: string; ourWork: boolean };
+type Props = { title: string; content?: string; ourWork: boolean; html?: string };
 
-export const Accordion = ({ title, content, ourWork }: Props) => {
+export const Accordion = ({ title, content, ourWork, html }: Props) => {
   const [openAccordion, setOpenAccordion] = useState<boolean>(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const defaultDropdownText: string[] = ["More information", "Less information"];
   const accordionTitle: string[] = title === "" ? defaultDropdownText : [title, title];
@@ -29,9 +31,16 @@ export const Accordion = ({ title, content, ourWork }: Props) => {
     setOpenAccordion(!openAccordion);
   }
 
+  useEffect(() => {
+    if (contentRef && contentRef.current) {
+      const container = contentRef.current as HTMLElement;
+      if (html) container.innerHTML = html;
+    }
+  }, [html]);
+
   return (
     <div className={!ourWork ? "separator" : ""}>
-      <div className={ourWork ? "mobile-accordion" : ""}>
+      <div className={ourWork ? "mobile-accordion" : "another-accordion"}>
         <div
           className={openAccordion && !ourWork ? "accordion-open" : "accordion-close"}
           onClick={e => handleDropdown(e.target)}
@@ -51,13 +60,17 @@ export const Accordion = ({ title, content, ourWork }: Props) => {
               {accordionTitle[0]}
             </span>
           )}
-          <div className="accordion-arrow" style={{ zIndex: "-10" }}>
+          <div className={!ourWork ? "accordion-arrow" : "accordion-arrow-work"} style={{ zIndex: "-10" }}>
             <img className={openAccordion ? "icon-fadeIn" : "icon-fadeOut"} src={moreInfoIcon} alt="moreInformation" />
             <img className={!openAccordion ? "icon-fadeIn" : "icon-fadeOut"} src={lessInfoIcon} alt="lessInformation" />
           </div>
         </div>
-        <div className={ourWork ? "panel-work" : "panel-services"}>
-          <p>{content}</p>
+        <div className={ourWork ? "panel-work" : "panel-services"} ref={contentRef}>
+          {content && (
+            <div className="linebreaker">
+              <LineBreakerSelector typedLines={content} />
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -1,5 +1,7 @@
 {
-  "title": "Rethinking the present, delivering the future.",
-  "image": "uploads/thoughts_bg.svg",
+  "page": "Thoughts",
+  "published": true,
+  "title": "Rethinking the present,+ delivering the future.",
+  "image": "/uploads/thoughts_cabecera.mp4",
   "categories": ["Technology", "Health", "Mobility", "Society", "Sustainibility"]
 }

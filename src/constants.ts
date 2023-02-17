@@ -1,20 +1,20 @@
 import { RoutesInfo } from "./interfaces/routes";
+import { services, thoughtsPage, work } from "./content";
 
-export const routesInfo: RoutesInfo[] = [
-  { id: 0, name: "We are", route: "/" },
-  { id: 1, name: "Services", route: "/services" },
-  { id: 2, name: "Work", route: "/work" },
-  { id: 3, name: "Thoughts", route: "/thoughts" },
-  { id: 4, name: "Privacy Policy", route: "/privacy_policy" },
-  { id: 5, name: "Cookie Policy", route: "/cookie_policy" }
+const routesInfo: RoutesInfo[] = [
+  { id: 0, name: "We are", route: "/", published: true },
+  { id: 1, name: "Services", route: "/services", published: services.published },
+  { id: 2, name: "Work", route: "/work", published: work.published },
+  { id: 3, name: "Thoughts", route: "/thoughts", published: thoughtsPage.published }
 ];
 
-// select here which nav options are available
-export const availableRouteIDs: number[] = [0, 2];
+// Which nav options available
+export const availableRoutes: RoutesInfo[] = routesInfo.filter((route: RoutesInfo) => route.published);
 
+// Break symbols for each device
 export const desktopLineBreakSymbol: string = "+";
 export const mobileLineBreakSymbol: string = "*";
-export const paragraphSymbol: string = "#";
+export const paragraphSymbol: string = "\n";
 
 // Navigation bar Display Modes
 export const DisplayModes = {
@@ -28,9 +28,7 @@ export const DisplayModes = {
   }
 };
 
-type Dictionary = {
-  [key: number]: string;
-};
+type Dictionary = { [key: number]: string };
 export const Months: Dictionary = {
   0: "Jan",
   1: "Feb",

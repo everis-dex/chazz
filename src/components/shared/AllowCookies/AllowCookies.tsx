@@ -21,8 +21,7 @@ export const AllowCookies = () => {
       <p>
         <strong>We use cookies to improve your browsing experience. </strong>
         If you want to know more, read more in our &nbsp;
-        {/* <a href="/privacy_policy">Privacy Policy</a> and <a href="/cookie_policy">Cookie Policy</a>. */}
-        <a href="#/">Privacy Policy</a> and <a href="#/">Cookie Policy</a>.
+        <a href="/policies/0">Privacy Policy</a> and <a href="/policies/1">Cookie Policy</a>.
       </p>
       <button onClick={handleAllowCookies}>Allow cookies</button>
     </div>

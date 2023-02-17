@@ -19,7 +19,7 @@ const velocidad = 50;
 type Props = { title: string };
 export const Carousel = ({ title }: Props) => {
   const slides: IProject[] = [...projects];
-  const featuredSlides: IProject[] = slides.filter(slide => slide.incarousel).slice(0, 5);
+  const featuredSlides: IProject[] = slides.filter(slide => slide.details.incarousel).slice(0, 5);
 
   const [cursorState, setCursorState] = useState<string>("");
   const [counter, setCounter] = useState(0);
@@ -95,7 +95,7 @@ export const Carousel = ({ title }: Props) => {
               disableOnInteraction: false
             }}
             breakpoints={{
-              1280: { slidesPerView: 2.1 },
+              1200: { slidesPerView: 2.1 },
               1920: { slidesPerView: 3.1 }
             }}
             initialSlide={0}

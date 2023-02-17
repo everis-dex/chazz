@@ -3,31 +3,23 @@
   "title": "Create",
   "section": "Strategy & Design",
   "body": "Deep exploring to design and rethink brands, services and business models, inspired by people and environment needs.",
-  "summary": "Making real ideas that matter is our way of contributing society and brands. From creativity to technology, and from the unknow to the beloved.",
+  "summary": "Making real ideas that matter is our way of contributing to society and brands with foresight. From human to technology, from creativity to business, and from the unkhown to the beloved.",
   "accordions": [
     {
-      "title": "Research and Behavioural",
-      "content": "Exploring human behavior to understand needs and motivations converted into insights to feed the Ideation and Conceptualization phases. Qualitative, and Quantitative, Human and Business. We combine methodologies and perspectives to provide the right direction."
+      "title": "Research",
+      "content": "Exploring human behavior to understand needs, motivations and emotions converted into insights to feed the Ideation and Conceptualization process.\nWe combine the Qualitative and Quantitative. Human and Business. Through different lenses, methodologies and perspectives that enhance our conception of design as a means for value creation at every single level."
     },
     {
-      "title": "Strategic Design",
-      "content": "Creating opportunity territories based on facts and designing value propositions that meets human needs and companies’ expectations. Merging business, human and technology perspectives, we co-create with our customers new products, services and business models that we validate with real users to reduce the uncertainty in the implementation phases."
+      "title": "Strategic & Futures Design",
+      "content": "Anticipating opportunity territories and designing value propositions that meets human needs and companies’ expectations merging a triple businesses, human and technology perspective. Looking into the future, to change realities and lead into the present.\nWe co -create with our customers new business models, phygital experiences and products & services. We validate it with people to embrace complexity by humanizing reality."
     },
     {
-      "title": "Branding",
-      "content": "Creating and transforming companies and institutions to anticipate society and environmental needs are the focus of our understanding of branding. A key discipline in this changing context where audiences must connect emotionally. \nWe know the traditional approach to branding is no longer enough, so we empower brands in every possible touchpoint. Because brands are experiences."
+      "title": "Brand Experience Strategy",
+      "content": "Creating and transforming companies and institutions to anticipate personal, social and environmental needs is the focus of our understanding of branding. A key discipline in this changing context where audiences must connect emotionally.\nWe know the traditional approach of branding is no longer enough, so we empower brands in every possible touchpoint along the whole customer experience. Because brands create meaningful experiences."
     },
     {
-      "title": "Digital Products, UX & UI",
-      "content": "In a hyper connecting world not every digital product is valid. We deeply believe that the impact of technology should be always positive, so we go ahead designing and building accessible and useful human and environment centered ones."
-    },
-    {
-      "title": "Start-up as a service",
-      "content": "End2End approach to launch into the market a new value proposition in a short time to market. We combine new methodologies like Lean start-up, Service Design and Growth Hacking with our implementation capabilities to deliver a fast-track MVP creation, implementation and beta launch into the market."
-    },
-    {
-      "title": "Trends & Foresight",
-      "content": "Anticipating the future is basic for those companies with a real purpose. We study future trends and recap insights with foresight’s strategies.\nTo be ready for what will come is a step ahead, but also it prepares business to be ready for the unknow, and now."
+      "title": "Digital Products",
+      "content": "Believing that the impact of technology should be always positive, relevant and meaningful. As part of our DNA, technology will always be an ally and facilitator at the service of the customer experience and the business.\nWe go beyond designing digital products with the perfect blend of user experience and understanding of human behavior and business needs. We make tangible the meaningful value proposition through seamless and scalable technologies to deliver impactful solutions."
     }
   ]
 }

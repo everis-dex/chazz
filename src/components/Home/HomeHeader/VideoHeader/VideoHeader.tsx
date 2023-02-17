@@ -47,8 +47,8 @@ export const VideoHeader = forwardRef(
         onPause={forcePause}
         preload="auto"
       >
-        <source src="uploads/reel_chazz_1080.mp4" media="(min-width: 850px)" />
-        <source src="uploads/reel_chazz_540.mp4" />
+        <source src="/uploads/reel_chazz_1080.mp4" media="(min-width: 850px)" />
+        <source src="/uploads/reel_chazz_540.mp4" />
       </video>
     );
   }

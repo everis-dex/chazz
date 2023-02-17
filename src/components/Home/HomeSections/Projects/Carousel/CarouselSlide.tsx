@@ -11,7 +11,7 @@ interface MediaStyle {
   // cursor: string;
 }
 
-export const CarouselSlide = (props: IProject) => {
+export const CarouselSlide = (project: IProject) => {
   const [mediaStyle, setMediaStyle] = useState<MediaStyle>();
   const screenWidth: number = window.innerWidth;
 
@@ -40,12 +40,16 @@ export const CarouselSlide = (props: IProject) => {
   return (
     <>
       <Link to="/work">
-        <Media src={props.media.carousel} style={mediaStyle || { width: "0px", height: "auto" }} alt={props.title} />
+        <Media
+          src={project.details.media.carousel}
+          style={mediaStyle || { width: "0px", height: "auto" }}
+          alt={project.title}
+        />
       </Link>
       <p className="title">
-        <strong>{props.title}</strong> — {props.description}
+        <strong>{project.title}</strong> — {project.details.description}
       </p>
-      <p className="properties">{props.subtitle}</p>
+      <p className="properties">{project.details.subtitle}</p>
     </>
   );
 };

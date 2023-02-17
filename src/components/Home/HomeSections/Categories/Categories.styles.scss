@@ -49,6 +49,7 @@
     p {
       font-size: 16px;
       padding-right: 24px;
+      font-weight: 300;
     }
 
     hr {
@@ -101,9 +102,9 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
   .categories {
-    grid-template-columns: 50% 51%;
+    grid-template-columns: 51% 50%;
     gap: 6%;
 
     .categories-title {
@@ -132,6 +133,12 @@
         line-height: 1.4;
       }
     }
+  }
+}
+@media (min-width: 1280px) {
+  .categories {
+    grid-template-columns: 50% 51%;
+    gap: 6%;
   }
 }
 
