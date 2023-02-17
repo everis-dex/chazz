@@ -27,25 +27,25 @@ export const Carousel = ({ title }: Props) => {
   const animatedCursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (cursorState === "Enter") {
-      for (let numero = 0; numero < sequence.length; numero++) {
-        setTimeout(() => setCounter(counter + 1), velocidad);
-      }
-      setTimeout(() => setCursorState("Stay"), sequence.length * velocidad);
+    switch (cursorState) {
+      case "Enter":
+        sequence.forEach(i => setTimeout(() => setCounter(counter + 1), velocidad));
+        setTimeout(() => setCursorState("Stay"), sequence.length * velocidad);
+        break;
+
+      case "Stay":
+        setCounter(sequence.length - 1);
+        break;
+
+      case "Leave":
+        sequence.forEach(i => setTimeout(() => setCounter(counter - 1), velocidad));
+        setTimeout(() => setCursorState("Out"), sequence.length * velocidad);
+        break;
+
+      case "Out":
+        setCounter(0);
+        break;
     }
-
-    if (cursorState === "Stay") setCounter(sequence.length - 1);
-
-    if (cursorState === "Leave") {
-      for (let numero = 0; numero < sequence.length; numero++) {
-        setTimeout(() => setCounter(counter - 1), velocidad);
-      }
-      setTimeout(() => {
-        setCursorState("Out");
-      }, sequence.length * velocidad);
-    }
-
-    if (cursorState === "Out") setCounter(0);
   }, [cursorState, setCursorState, counter, setCounter]);
 
   return (
