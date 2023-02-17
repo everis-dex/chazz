@@ -13,7 +13,7 @@ import "./Carousel.styles.scss";
 
 // const urlBase = window.origin + "/uploads/";
 const urlBase = window.origin + "/uploads/animations/";
-const sequence = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13"];
+const sequence = ["03", "04", "05", "06", "07", "08", "09", "10"];
 const velocidad = 70;
 
 type Props = { title: string };
@@ -52,7 +52,7 @@ export const Carousel = ({ title }: Props) => {
     <>
       <div className="carouselTitle">
         <div style={{ position: "absolute" }} ref={animatedCursorRef}>
-          <img src={urlBase + "icon-drag_pointer-in-" + sequence[counter] + ".png"} alt="" />
+          <img src={urlBase + "icon-drag_pointer-in-" + sequence[counter] + ".cur"} alt="" />
         </div>
         <h3>{counter}</h3>
         <h3>{title}</h3>
@@ -75,7 +75,7 @@ export const Carousel = ({ title }: Props) => {
         <div
           className="slides"
           style={{
-            cursor: `url(${urlBase + "icon-drag_pointer-in-" + sequence[counter] + ".png"}), auto`
+            cursor: `url(${urlBase + "icon-drag_pointer-in-" + sequence[counter] + ".cur"}), auto`
           }}
         >
           <Swiper
@@ -99,7 +99,7 @@ export const Carousel = ({ title }: Props) => {
             initialSlide={0}
           >
             {featuredSlides.map((slide: IProject, index: number) => {
-              const cursorURL = (urlBase + "icon-drag_pointer-in-" + sequence[counter] + ".png") as string;
+              const cursorURL = urlBase + "icon-drag_pointer-in-" + sequence[counter] + ".cur";
               return (
                 <SwiperSlide key={index}>
                   <CarouselSlide project={slide} cursor={cursorURL} />
