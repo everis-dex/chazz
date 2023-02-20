@@ -49,6 +49,9 @@
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
+  .header-nav {
+    background: var(--white);
+  }
   .nav {
     margin-top: 36px;
     display: flex !important;
