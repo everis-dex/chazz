@@ -8,7 +8,7 @@ import "./Categories.styles.scss";
 
 export const Categories = (categoriesData: IHomeSection) => {
   return (
-    <div className="background">
+    <div className="background" data-aos="fade-up">
       <div className="categories">
         <div className="categories-title">
           <h1>
@@ -19,7 +19,7 @@ export const Categories = (categoriesData: IHomeSection) => {
           </h2>
         </div>
 
-        <div className="categories-sections">
+        <div className="categories-sections" data-aos="fade-up">
           {categories.map((category: ICategory, index: number) => (
             <div key={index}>
               {/* Category content properties */}

@@ -4,6 +4,10 @@ import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "typeface-raleway";
 import "./index.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 const App = React.lazy(() => import("./App"));
 
