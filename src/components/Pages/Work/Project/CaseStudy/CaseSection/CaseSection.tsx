@@ -21,7 +21,7 @@ export const CaseSection = (section: IProjectSection) => {
     case "columns":
       const columns = section.content as ISectionColumn[];
       return (
-        <div className="work-container">
+        <div className="page-container">
           <div className="section-flex-container">
             {columns.map((column: ISectionColumn, index: number) => {
               const { image, title, caption, body } = column;

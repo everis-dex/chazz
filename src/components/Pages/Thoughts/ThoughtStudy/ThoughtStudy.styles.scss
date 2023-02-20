@@ -1,20 +1,4 @@
-.study-container {
-  width: 100%;
-  padding: 0 5%;
-}
-
 .study-header {
-  margin-top: 6%;
-  border-top: 1px solid var(--black);
-
-  .header-title {
-    margin: 25px 0 20px 0;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 46px;
-    color: var(--black);
-  }
-
   .study-details {
     display: flex;
     gap: 5px;

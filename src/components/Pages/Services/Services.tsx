@@ -22,8 +22,8 @@ export const Services = () => {
     <>
       <Nav />
       <AllowCookies />
-      <div className="services-container">
-        <div className="services-header">
+      <div className="page-container">
+        <div className="page-header services-header">
           <h1 className="header-title">
             <LineBreakerSelector typedLines={headerData.title} />
           </h1>
