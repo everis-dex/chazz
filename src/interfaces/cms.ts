@@ -69,6 +69,30 @@ export interface IThoughtsPage {
   categories: string[];
 }
 
+// Policies
+export interface IPolicy {
+  title: string;
+  articles: IPolicyArticle[];
+}
+
+export interface IPolicyArticle {
+  title: string;
+  body: IPolicyBody[];
+}
+
+export interface IPolicyBody {
+  type: string;
+  content?: string;
+  rows?: IPolicyTableRow[];
+}
+
+export interface IPolicyTableRow {
+  name: string;
+  host: string;
+  expiration: string;
+  service: string;
+}
+
 // ##############################
 // #         COMPONENTS
 // ##############################
@@ -95,57 +119,45 @@ export interface ICategoryAccordion {
 export interface IProject {
   id: number;
   title: string;
+  details: IProjectDetails;
+  caseInfo: {
+    title: string;
+    services: string;
+    sections: IProjectSection[];
+  };
+}
+
+// Project sections
+export interface IProjectSection {
+  type: string;
+  content: ISectionClaim | ISectionFWImage | ISectionColumn[];
+}
+
+export interface ISectionClaim {
+  text: string;
+  margin: boolean;
+}
+
+export interface ISectionFWImage {
+  image: string;
+  margin: boolean;
+  overlappedText: string;
+  caption: string;
+}
+
+export interface ISectionColumn {
+  image: string;
+  caption: string;
+  title: string;
+  body: string;
+}
+
+export interface IProjectDetails {
   description: string;
   subtitle: string;
   body: string;
   incarousel: boolean;
   media: IProjectMedia;
-  caseInfo?: {
-    title: string;
-    services: string;
-  };
-  sections?: {
-    firstFWImagePath?: string;
-    firstFWClaim?: string;
-    secondFWImagePath?: string;
-    firstTCSection?: {
-      leftColumnIntro: string;
-      rightColumn: {
-        paragraphTitle: string;
-        paragraph: string;
-      };
-    };
-    thirthFWImagePath?: string;
-    rightColumnOnlyInfoSection?: {
-      paragraphTitle: string;
-      paragraph: string;
-    };
-    fourthFWImageWithOverlappedText?: {
-      imagePath: string;
-      overlappedText: string;
-    };
-    secondFWClaim?: string;
-    fifthFWImageWithCaption?: {
-      imagePath: string;
-      caption: string;
-    };
-    sixthFWImagePath?: string;
-    secondTCSection?: {
-      leftColumn: {
-        imagePath: string;
-        overlappedText: string;
-      };
-      rightColumn: {
-        imagePath: string;
-        overlappedText: string;
-      };
-    };
-    seventhFWImagePath?: string;
-    eigthFWImageWithCaption?: {
-      imagePath: string;
-      caption: string;
-    };
-  };
 }
 
 export interface ISlide {

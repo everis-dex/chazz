@@ -146,6 +146,8 @@ All useful information for developers is explained here.
 
 <div id="NetlifyCMS-config"></div>
 
+<br>
+
 ### Netlify CMS configuration
 
 Netlify CMS stores all the content inside the repository, so no database is required. The configuration for it is located in `public/admin/` with:
@@ -161,7 +163,7 @@ The content required for this webpage is divided into 2 types:
 With that, the content generated in the CMS is saved into two separated folders.
 
 - `src/content/pages/` for the pages with one subfolder per page. Each file is generated as `.json`.
-- `content/` folder for components with one subfolder per collection. Each file is generated as `.md`.
+- `content/` folder for components with one subfolder per collection. Each file is generated as `.json`.
 
 <br>
 
@@ -173,22 +175,21 @@ With that, the content generated in the CMS is saved into two separated folders.
 
 ### Data management (main.ts file)
 
-Pages are automatically read as they are generated because they are created as [JSON](https://www.json.org/json-es.html) inside `content/pages/` folder. So they are imported and used in the required React components as the default.
+Pages are automatically read as they are generated because they are created as [JSON](https://www.json.org/json-es.html) inside `src/content/pages/` folder. So they are imported and used in the required React components as the default.
 
-For components, because they come in `.md` files and it is necessary to group the content in a single file, the `main.ts` file has been created. This files does the following:
+For components, as there is one `.json` file for each component, it is necessary to group the content in a single file, the `main.ts` file has been created. This files does the following:
 
 1. Reads all subfolders inside `content/` (matching CMS collections).
 2. For each subfolder, reads the content of the files inside it (CMS entries).
-3. Parses the content from `.md` to object properties based on the collection (folder).
-4. Creates an id for each object.
-5. Sorts all object extracted from all files by the generated id.
-6. Creates a `.json` file with all the sorted objects (component data) and stores it in `src/content/` so that it can be imported in the app.
+3. Creates an id for each entry.
+4. Sorts all entries extracted from all files by the generated id.
+5. Creates a `.json` file with all the sorted entries and stores it in `src/content/{collection}` so that it can be imported in the app.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-"body": "<!-- MARKDOWN LINKS & IMAGES -->
+
+<!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[product-screenshot]: images/screenshot.png
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
 [netlify-url]: https://www.netlify.com/

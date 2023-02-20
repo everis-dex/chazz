@@ -1,5 +1,4 @@
 .project-container {
-  display: block;
   margin-bottom: 3vh;
   width: 90vw;
   &.full-width {
@@ -51,10 +50,9 @@
       margin-top: 0;
       font-weight: 400;
     }
-
     .title:hover {
-      // color: var(--pink);
-      // cursor: pointer;
+      color: var(--pink);
+      cursor: pointer;
     }
     .description {
       font-weight: 400;
@@ -101,6 +99,7 @@
   .project-container {
     margin-bottom: 10vh;
   }
+
   .project-details {
     .project-title-container {
       display: block;
@@ -127,8 +126,6 @@
 @media (min-width: 1200px) {
   .project-container {
     width: auto;
-    position: relative;
-    top: -36px;
 
     &.full-width {
       grid-column: 1/3;

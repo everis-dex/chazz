@@ -14,7 +14,7 @@ import "./Carousel.styles.scss";
 type Props = { title: string };
 export const Carousel = ({ title }: Props) => {
   const slides: IProject[] = [...projects];
-  const featuredSlides: IProject[] = slides.filter(slide => slide.incarousel).slice(0, 5);
+  const featuredSlides: IProject[] = slides.filter(slide => slide.details.incarousel).slice(0, 5);
 
   return (
     <>

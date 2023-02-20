@@ -40,10 +40,6 @@
     line-height: 24px;
     margin-right: 13px;
   }
-  .thought-subtitle {
-    position: relative;
-    top: -40px;
-  }
 
   .thought-details {
     display: flex;
@@ -70,9 +66,8 @@
 
   .thought-content {
     margin-left: 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: max-content;
 
     .thought-title h2 {
       font-size: 32px;
