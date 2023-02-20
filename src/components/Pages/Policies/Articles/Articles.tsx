@@ -18,6 +18,16 @@ export const Articles = ({ policy, resetArticle }: Props) => {
 
   const [articleIndex, setArticleIndex] = useState<number>(0);
 
+  function setArticleScroll(index: number) {
+    setArticleIndex(index);
+    const article = document.getElementById(`article${index}`);
+    const global = document.getElementById("global");
+    if (global && article) {
+      global.scrollTop = article.offsetTop - 30;
+      article?.scrollIntoView();
+    }
+  }
+
   useEffect(() => {
     if (resetArticle) setArticleIndex(0);
   }, [resetArticle]);
@@ -25,7 +35,9 @@ export const Articles = ({ policy, resetArticle }: Props) => {
   return (
     <>
       {windowWidth >= 720 ? (
+        // Desktop format
         <div className="policy-container">
+          {/* Sidebar */}
           <div className="sidebar">
             {policy.articles.map((article: IPolicyArticle, index: number) => {
               const setSelected: string = articleIndex === index ? "selected" : "";
@@ -34,14 +46,15 @@ export const Articles = ({ policy, resetArticle }: Props) => {
                   href={`#article${index}`}
                   className={`article-title ${setSelected}`}
                   key={index}
-                  onClick={() => setArticleIndex(index)}
+                  onClick={() => setArticleScroll(index)}
                 >
                   {article.title}
                 </a>
               );
             })}
           </div>
-          <div className="global-content">
+          {/* Articles content */}
+          <div className="global-content" id="global">
             <div className="content">
               {policy.articles.map((article: IPolicyArticle, index: number) => (
                 <div className="article" key={index}>
@@ -57,6 +70,7 @@ export const Articles = ({ policy, resetArticle }: Props) => {
           </div>
         </div>
       ) : (
+        // Mobile format
         <div className="policy-container">
           <div className="content-mobile">
             {policy.articles.map((article: IPolicyArticle, index: number) => {
