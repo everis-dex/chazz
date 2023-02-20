@@ -21,7 +21,7 @@ export const ChazzLogo = ({ color, isBurgerMenuOpen, height }: Props) => {
   return (
     <div className="chazz-logo">
       <Link to="/">
-        <Logo fill={isBurgerMenuOpen ? "white" : color} style={style} />
+        <Logo fill={color} style={style} />
       </Link>
     </div>
   );

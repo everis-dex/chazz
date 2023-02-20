@@ -5,10 +5,11 @@ import { availableRoutes } from "../../../../constants";
 
 import "../Nav.styles.scss";
 
-type Props = { color: string; activeStyle: string };
+type DisplayMode = { color: string; activeStyle: string };
 
-export const DesktopMenu = ({ color, activeStyle }: Props) => {
-  var currentPage = "/".concat(window.location.pathname.split("/")[1]);
+export const DesktopMenu = (displayMode: DisplayMode) => {
+  const { color, activeStyle } = displayMode;
+  const currentPage = "/".concat(window.location.pathname.split("/")[1]);
 
   return (
     <div className="nav">

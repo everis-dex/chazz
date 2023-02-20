@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { work } from "../../../content/index";
-import { Footer, Nav } from "../../shared/index";
+import { Nav } from "../../shared/index";
 import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 
 import "./Work.styles.scss";
@@ -13,7 +13,6 @@ export const Work = () => {
     <>
       <Nav />
       <ProjectsGrid {...work} />
-      <Footer />
     </>
   );
 };

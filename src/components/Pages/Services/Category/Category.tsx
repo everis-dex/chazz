@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { ICategory, ICategoryAccordion } from "../../../../interfaces/cms";
-import { Accordion } from "../../../shared/Accordion/Accordion";
+import { Accordion } from "../../../shared";
 
 import "./Category.styles.scss";
 

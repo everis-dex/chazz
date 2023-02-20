@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { Months } from "../../../../constants";
 import { thoughts } from "../../../../content";
 import { IThought } from "../../../../interfaces/cms";
-import { Footer, LineBreakerSelector, Nav } from "../../../shared";
+import { LineBreakerSelector, Nav } from "../../../shared";
 
 import "./ThoughtStudy.styles.scss";
 
@@ -36,8 +36,8 @@ export const ThoughtStudy = () => {
   return (
     <>
       <Nav />
-      <div className="study-container">
-        <div className="study-header">
+      <div className="page-container">
+        <div className="page-header study-header">
           <h1 className="header-title">{thought.title}</h1>
           <div className="study-details">
             <span className="date">{date}</span>
@@ -60,10 +60,9 @@ export const ThoughtStudy = () => {
           </div>
         </div>
       </div>
-      <Link to="/thoughts" className="back-button">
+      <Link to="/thoughts" className="th-back-button">
         ← Back
       </Link>
-      <Footer />
     </>
   );
 };
