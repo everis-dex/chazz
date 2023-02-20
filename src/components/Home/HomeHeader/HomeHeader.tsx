@@ -13,7 +13,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
   const [controlText, setControlText] = useState<string>(controlTextOptions.play);
-  const [navHeight, setNavHeight] = useState<number>(25);
+  const [navHeight, setNavHeight] = useState<number>(window.innerWidth > 768 ? 25 : 11);
   const [titleLeft, setTitleLeft] = useState<number>(100);
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const [animationComplete, setAnimationComplete] = useState<boolean>(false);
@@ -94,7 +94,12 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       <div className={isPlaying ? "velo-out" : "velo-in"}>
         <div className={isPlaying ? "simply-out" : "simply-in"}>
           <span className={isPlaying ? "nav-out" : "nav-in"}>
-            <Nav isPlaying={isPlaying} AlertNavParent={AlertNavParent} height={navHeight} />
+            <Nav
+              isPlaying={isPlaying}
+              AlertNavParent={AlertNavParent}
+              height={navHeight}
+              darkMode={window.innerWidth < 768}
+            />
           </span>
         </div>
         <div
