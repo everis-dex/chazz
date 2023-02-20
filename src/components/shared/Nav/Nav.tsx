@@ -7,7 +7,7 @@ import "./Nav.styles.scss";
 
 type Props = { isPlaying?: boolean; darkMode?: boolean; AlertNavParent?: (a: boolean) => void; height?: number };
 
-export const Nav = ({ isPlaying = false, darkMode = false, AlertNavParent, height = 10 }: Props) => {
+export const Nav = ({ isPlaying = false, darkMode = false, AlertNavParent, height = 11 }: Props) => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
   const [root] = useState(document.getElementById("root"));
 
@@ -31,7 +31,7 @@ export const Nav = ({ isPlaying = false, darkMode = false, AlertNavParent, heigh
 
   return (
     <div className="header-nav" style={{ height: `${height}vh` }}>
-      <ChazzLogo color={logoColor} />
+      <ChazzLogo color={logoColor} isBurgerMenuOpen={isBurgerMenuOpen} height={height} />
       <DesktopMenu {...displayMode} />
       <BurgerMenu isBurgerMenuOpen={isBurgerMenuOpen} toggleMenu={toggleMenu} color={color} />
     </div>

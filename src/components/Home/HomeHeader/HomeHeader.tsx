@@ -17,6 +17,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const [titleLeft, setTitleLeft] = useState<number>(100);
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const [animationComplete, setAnimationComplete] = useState<boolean>(false);
+
   // Creamos una función que nos re calcula el ancho de la pantalla:
   window.onresize = () => setWindowWidth(window.innerWidth);
 
@@ -72,7 +73,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   useEffect(() => {
     setTimeout(() => {
       if (titleLeft > 16) {
-        if (navHeight > 10) setNavHeight(10);
+        if (navHeight > 11) setNavHeight(11);
         setTitleLeft(16);
       } else {
         setAnimationComplete(true);
@@ -87,9 +88,6 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   }
   window.addEventListener("resize", appHeight);
   appHeight();
-
-  // Agregar la clase al body para ocultar el overflow
-  useEffect(() => document.body.classList.add("no-scroll"), []);
 
   return (
     <div className="chazz-header">
