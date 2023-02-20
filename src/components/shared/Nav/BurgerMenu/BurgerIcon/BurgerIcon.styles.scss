@@ -38,12 +38,10 @@ input#open-close:checked + .toggle-button-pages:after {
 
 // Homepage Burger Icon
 .toggle-button {
-  display: block;
   width: 26px;
   margin-right: 5%;
   height: 26px;
   position: relative;
-  cursor: pointer;
 }
 
 .toggle-button:before,

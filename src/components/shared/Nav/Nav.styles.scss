@@ -2,9 +2,15 @@
 
 .header-nav {
   display: flex;
-  height: 10vh;
-  padding-right: 5%;
+  align-items: center;
   justify-content: space-between;
+  padding-right: 5%;
+  height: 10vh;
+
+  .chazz-logo {
+    padding-left: 5%;
+    z-index: 99;
+  }
 }
 
 .fade-in {
@@ -15,21 +21,6 @@
 .fade-out {
   opacity: 0;
   transition: opacity 1s ease-in-out;
-}
-
-.chazz-logo {
-  width: 118px;
-  padding-left: 5%;
-  display: block;
-  float: left;
-  position: relative;
-  top: 40px;
-  z-index: 99;
-
-  svg {
-    width: 118px;
-    height: auto;
-  }
 }
 
 .nav {
@@ -58,15 +49,6 @@
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
-  .chazz-logo {
-    width: 162px;
-    top: 30px;
-
-    svg {
-      width: 162px;
-    }
-  }
-
   .nav {
     margin-top: 36px;
     display: flex !important;
@@ -105,26 +87,12 @@
 }
 
 @media (min-width: 1200px) {
-  .chazz-logo {
-    width: 153px;
-
-    svg {
-      width: 153px;
-    }
-  }
   .nav ul li {
     margin-right: 36px;
   }
 }
 
 @media (min-width: 1920px) {
-  .chazz-logo {
-    width: 200px;
-    svg {
-      width: 200px;
-    }
-  }
-
   .nav {
     margin-top: 40px;
     margin-right: 1%;
