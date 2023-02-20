@@ -1,0 +1,148 @@
+.study-header {
+  .study-details {
+    display: flex;
+    gap: 5px;
+    // margin: 30px 0;
+
+    span {
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--gray);
+      font-weight: 300;
+    }
+  }
+
+  img {
+    width: 100%;
+    margin: 20px 0 30px 0;
+  }
+}
+
+.study-content {
+  display: block;
+
+  .content-summary {
+    margin-bottom: 40px;
+    margin-top: -16px;
+
+    h2 {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 39px;
+      margin-bottom: 30px;
+    }
+    h6 {
+      font-weight: 100;
+      font-size: 16px;
+      line-height: 23px;
+    }
+  }
+
+  .content-body {
+    display: block;
+
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 300;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    img {
+      width: 100%;
+      margin: 50px 0 15px 0;
+    }
+
+    ol {
+      font-weight: 300;
+    }
+
+    ol,
+    ul {
+      font-size: 16px;
+    }
+
+    blockquote {
+      width: 100%;
+      border-top: 1px solid var(--black);
+      border-bottom: 1px solid var(--black);
+      padding: 20px 0 15px 0;
+      margin: 40px 0;
+      padding-left: 1.1rem;
+      text-indent: -1.1rem;
+
+      p {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 30px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.th-back-button {
+  padding: 0 5%;
+  text-decoration: none;
+  background: none;
+  color: inherit;
+  border: none;
+  font-size: 16px;
+  display: block;
+  margin: 100px 0 !important;
+  font-weight: 300;
+  &:hover {
+    color: var(--pinkHover);
+  }
+}
+
+@media (min-width: 768px) {
+  .study-header {
+    .header-title {
+      margin: 25px 0 20px 0;
+      font-size: 70px;
+      line-height: 81px;
+    }
+    .study-details {
+      margin: 30px 0 0 0;
+    }
+    img {
+      width: 100%;
+      margin-bottom: 90px;
+    }
+  }
+
+  .study-content {
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-gap: 150px;
+
+    .content-summary {
+      h2 {
+        font-size: 40px;
+        line-height: 46px;
+        margin: 0 0 40px 0;
+      }
+      h6 {
+        font-size: 24px;
+        line-height: 33px;
+      }
+    }
+  }
+
+  .content-body {
+    blockquote {
+      margin: 60px 0;
+      padding-left: 1.4rem;
+      text-indent: -1.4rem;
+
+      p {
+        font-size: 32px !important;
+        line-height: 40px !important;
+      }
+    }
+  }
+}

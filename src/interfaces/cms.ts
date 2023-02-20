@@ -5,6 +5,7 @@
 // Home page
 export interface IHome {
   page: string;
+  published: boolean;
   header: IHomeHeader;
   categories: IHomeSection;
   projects: IHomeProjects;
@@ -36,6 +37,7 @@ export interface IHomeFooter extends IHomeSection {
 // Work page
 export interface IWork {
   page: string;
+  published: boolean;
   title: string;
   subtitle: string;
 }
@@ -43,6 +45,7 @@ export interface IWork {
 // Services page
 export interface IServices {
   page: string;
+  published: boolean;
   header: IServicesHeader;
   projects: IServicesProjects;
 }
@@ -59,9 +62,35 @@ export interface IServicesProjects {
 }
 
 export interface IThoughtsPage {
+  page: string;
+  published: boolean;
   title: string;
   image: string;
   categories: string[];
+}
+
+// Policies
+export interface IPolicy {
+  title: string;
+  articles: IPolicyArticle[];
+}
+
+export interface IPolicyArticle {
+  title: string;
+  body: IPolicyBody[];
+}
+
+export interface IPolicyBody {
+  type: string;
+  content?: string;
+  rows?: IPolicyTableRow[];
+}
+
+export interface IPolicyTableRow {
+  name: string;
+  host: string;
+  expiration: string;
+  service: string;
 }
 
 // ##############################
@@ -90,57 +119,45 @@ export interface ICategoryAccordion {
 export interface IProject {
   id: number;
   title: string;
+  details: IProjectDetails;
+  caseInfo: {
+    title: string;
+    services: string;
+    sections: IProjectSection[];
+  };
+}
+
+// Project sections
+export interface IProjectSection {
+  type: string;
+  content: ISectionClaim | ISectionFWImage | ISectionColumn[];
+}
+
+export interface ISectionClaim {
+  text: string;
+  margin: boolean;
+}
+
+export interface ISectionFWImage {
+  image: string;
+  margin: boolean;
+  overlappedText: string;
+  caption: string;
+}
+
+export interface ISectionColumn {
+  image: string;
+  caption: string;
+  title: string;
+  body: string;
+}
+
+export interface IProjectDetails {
   description: string;
   subtitle: string;
   body: string;
   incarousel: boolean;
   media: IProjectMedia;
-  caseInfo?: {
-    title: string;
-    services: string;
-  };
-  sections?: {
-    firstFWImagePath?: string;
-    firstFWClaim?: string;
-    secondFWImagePath?: string;
-    firstTCSection?: {
-      leftColumnIntro: string;
-      rightColumn: {
-        paragraphTitle: string;
-        paragraph: string;
-      };
-    };
-    thirthFWImagePath?: string;
-    rightColumnOnlyInfoSection?: {
-      paragraphTitle: string;
-      paragraph: string;
-    };
-    fourthFWImageWithOverlappedText?: {
-      imagePath: string;
-      overlappedText: string;
-    };
-    secondFWClaim?: string;
-    fifthFWImageWithCaption?: {
-      imagePath: string;
-      caption: string;
-    };
-    sixthFWImagePath?: string;
-    secondTCSection?: {
-      leftColumn: {
-        imagePath: string;
-        overlappedText: string;
-      };
-      rightColumn: {
-        imagePath: string;
-        overlappedText: string;
-      };
-    };
-    seventhFWImagePath?: string;
-    eigthFWImageWithCaption?: {
-      imagePath: string;
-      caption: string;
-    };
-  };
 }
 
 export interface ISlide {
@@ -195,8 +212,10 @@ export interface IThought {
   date: string;
   image: string;
   title: string;
-  body: string;
+  subtitle: string;
   category: string;
   duration: string;
+  details: { subtitle: string; author: string };
+  body: string;
   id: number;
 }

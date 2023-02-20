@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { thoughts, thoughtsPage } from "../../../content/index";
 import { IThought } from "../../../interfaces/cms";
-import { AllowCookies, Footer, Nav } from "../../shared/index";
+import { AllowCookies, LineBreakerSelector, Nav } from "../../shared/index";
 import { Thought } from "./Thought/Thought";
 
 import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.svg";
@@ -10,13 +10,19 @@ import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.s
 import "./Thoughts.styles.scss";
 
 export const Thoughts = () => {
+  useEffect(() => window.scrollTo(0, 0), []);
+
   const [isHover, setIsHover] = useState<boolean>(false);
   const [filtering, setFiltering] = useState<boolean>(true);
-  const [videoSource, setVideoSource] = useState<string>(
-    window.innerWidth < 1200 ? "uploads/thoughts_cabecera-768.mp4" : thoughtsPage.image
-  );
+  const [videoSource, setVideoSource] = useState<string>(getVideoSource());
   const [selectedFilter, setSelectedFilter] = useState<string>("All");
   const filters = useRef<HTMLDivElement>(null);
+
+  function getVideoSource(): string {
+    return window.innerWidth < 1200 ? "/uploads/thoughts_cabecera-768.mp4" : thoughtsPage.image;
+  }
+
+  window.onresize = () => setVideoSource(getVideoSource());
 
   useEffect(() => {
     if (!filters || !filters.current) return;
@@ -40,15 +46,6 @@ export const Thoughts = () => {
       };
     });
   }, [filters]);
-
-  window.onresize = () => {
-    if (window.innerWidth < 1200) {
-      console.log("🚀 ~ file: Services.tsx:18 ~ Services ~ window.innerWidth", window.innerWidth);
-      setVideoSource("uploads/thoughts_cabecera-768.mp4");
-    } else {
-      setVideoSource(thoughtsPage.image);
-    }
-  };
 
   // Filtering functions
   const filterByCategory = (category: string) => selectedFilter === "All" || selectedFilter === category;
@@ -79,11 +76,13 @@ export const Thoughts = () => {
     <>
       <Nav />
       <AllowCookies />
-      <div className="thoughts-container">
+      <div className="page-container">
         {/* Header section */}
-        <div className="thoughts-header">
-          <h1 className="header-title">{thoughtsPage.title}</h1>
-          <video autoPlay className="video-height" muted={true} src={videoSource} loop playsInline/>
+        <div className="page-header">
+          <h1 className="header-title">
+            <LineBreakerSelector typedLines={thoughtsPage.title} />
+          </h1>
+          <video autoPlay className="video-height" muted={true} src={videoSource} loop playsInline />
         </div>
         {/* Filtering section */}
         <div className="thoughts-filtering" ref={filters}>
@@ -132,7 +131,6 @@ export const Thoughts = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

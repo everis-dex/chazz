@@ -5,12 +5,15 @@ import { BurgerMenu, ChazzLogo, DesktopMenu } from "./index";
 
 import "./Nav.styles.scss";
 
-type Props = { isPlaying?: boolean; darkMode?: boolean; AlertNavParent?: (a: boolean) => void };
+type Props = { isPlaying?: boolean; darkMode?: boolean; AlertNavParent?: (a: boolean) => void; height?: number };
 
-export const Nav = ({ isPlaying = false, darkMode = false, AlertNavParent }: Props) => {
+export const Nav = ({ isPlaying = false, darkMode = false, AlertNavParent, height = 11 }: Props) => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
-  const { color, activeStyle } = darkMode ? DisplayModes.dark : DisplayModes.light;
   const [root] = useState(document.getElementById("root"));
+
+  const displayMode = darkMode ? DisplayModes.dark : DisplayModes.light;
+  const { color } = displayMode;
+  const logoColor = isBurgerMenuOpen ? "white" : color;
 
   function toggleMenu(): void {
     if (isPlaying) return;
@@ -27,10 +30,10 @@ export const Nav = ({ isPlaying = false, darkMode = false, AlertNavParent }: Pro
   }
 
   return (
-    <div className="header-nav">
-      <ChazzLogo color={color} isBurgerMenuOpen={isBurgerMenuOpen} />
-      <DesktopMenu color={color} activeStyle={activeStyle} />
-      <BurgerMenu isBurgerMenuOpen={isBurgerMenuOpen} toggleMenu={toggleMenu} color={color} />
+    <div className="header-nav" style={{ height: `${height}vh` }}>
+      <ChazzLogo color={logoColor} height={height} />
+      <DesktopMenu {...displayMode} />
+      <BurgerMenu isBurgerMenuOpen={isBurgerMenuOpen} toggleMenu={toggleMenu} color={logoColor} />
     </div>
   );
 };

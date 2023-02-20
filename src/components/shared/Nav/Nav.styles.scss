@@ -1,5 +1,19 @@
 @import "../../../styles.scss";
 
+.header-nav {
+  display: flex;
+  transition: height 1s;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 5%;
+  height: 10vh;
+
+  .chazz-logo {
+    padding-left: 5%;
+    z-index: 99;
+  }
+}
+
 .fade-in {
   opacity: 1;
   transition: opacity 1s ease-in-out;
@@ -8,21 +22,6 @@
 .fade-out {
   opacity: 0;
   transition: opacity 1s ease-in-out;
-}
-
-.chazz-logo {
-  width: 118px;
-  padding-left: 5%;
-  display: block;
-  float: left;
-  position: relative;
-  top: 40px;
-  z-index: 99;
-
-  svg {
-    width: 118px;
-    height: auto;
-  }
 }
 
 .nav {
@@ -51,41 +50,44 @@
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
-  .chazz-logo {
-    width: 162px;
-    top: 30px;
+  .header-nav {
+    background-color: var(--white);
 
-    svg {
-      width: 162px;
+    .chazz-logo {
+      position: relative;
+      align-self: flex-end;
+      display: flex;
+      margin-bottom: 25px;
     }
   }
 
   .nav {
-    margin-top: 36px;
+    margin: 25px 0;
+    align-self: flex-start;
     display: flex !important;
-    float: right;
     padding-left: 0;
-  }
-  .nav ul {
-    display: flex;
-  }
 
-  .nav ul li {
-    list-style-type: none;
-    margin-right: 30px;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
+    ul {
+      display: flex;
 
-  .nav ul li a {
-    text-decoration: none;
-    color: var(--white);
-    font-weight: 300;
+      li {
+        list-style-type: none;
+        margin-right: 30px;
+        &:last-child {
+          margin-right: 0;
+        }
 
-    &:hover {
-      text-decoration: none;
-      color: var(--black);
+        a {
+          text-decoration: none;
+          color: var(--white);
+          font-weight: 300;
+
+          &:hover {
+            text-decoration: none;
+            color: var(--black);
+          }
+        }
+      }
     }
   }
 }
@@ -96,27 +98,13 @@
   }
 }
 
-@media (min-width: 1280px) {
-  .chazz-logo {
-    width: 153px;
-
-    svg {
-      width: 153px;
-    }
-  }
+@media (min-width: 1200px) {
   .nav ul li {
     margin-right: 36px;
   }
 }
 
 @media (min-width: 1920px) {
-  .chazz-logo {
-    width: 200px;
-    svg {
-      width: 200px;
-    }
-  }
-
   .nav {
     margin-top: 40px;
     margin-right: 1%;

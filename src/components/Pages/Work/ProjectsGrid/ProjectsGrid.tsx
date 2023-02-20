@@ -54,8 +54,8 @@ export const ProjectsGrid = (workData: IWork) => {
   }
 
   return (
-    <div className="work-container">
-      <div className="work-header">
+    <div className="page-container">
+      <div className="page-header">
         <h1>{workData.title}</h1>
       </div>
       <div className="work-container--content">
