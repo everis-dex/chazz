@@ -8,8 +8,8 @@ import "./Categories.styles.scss";
 
 export const Categories = (categoriesData: IHomeSection) => {
   return (
-    <div className="background" data-aos="fade-up">
-      <div className="categories">
+    <div className="background">
+      <div className="categories" data-aos="fade-up">
         <div className="categories-title">
           <h1>
             <strong>{categoriesData.title}</strong> <br />
