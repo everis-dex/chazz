@@ -19,31 +19,13 @@ input#open-close:checked + .toggle-button:after {
   width: 100%;
 }
 
-input#open-close:checked + .toggle-button-pages:before,
-input#open-close:checked + .toggle-button-pages:after {
-  top: calc(100% / 2);
-  height: 1px;
-  border-bottom: 0;
-}
-
-input#open-close:checked + .toggle-button-pages:before {
-  transform: rotate(45deg);
-  width: 100%;
-}
-
-input#open-close:checked + .toggle-button-pages:after {
-  transform: rotate(-45deg);
-  width: 100%;
-}
-
 // Homepage Burger Icon
+
 .toggle-button {
-  display: block;
   width: 26px;
   margin-right: 5%;
   height: 26px;
   position: relative;
-  cursor: pointer;
 }
 
 .toggle-button:before,
@@ -54,53 +36,24 @@ input#open-close:checked + .toggle-button-pages:after {
   width: 100%;
   box-sizing: border-box;
   transition: all 0.2s ease-out;
+  border-top: 2px solid var(--white);
 }
 
 .toggle-button:before {
   top: calc(100% / 3);
   border-radius: 100px;
-  border-top: 2px solid var(--white);
   background-color: transparent;
 }
 
 .toggle-button:after {
   border-radius: 100px;
   background-color: var(--white);
-  border-top: 2px solid var(--white);
   bottom: calc(100% / 4);
   width: 80%;
   right: 0;
 }
 
-.toggle-button-pages {
-  display: block;
-  width: 26px;
-  margin-right: 5%;
-  height: 26px;
-  position: relative;
-  cursor: pointer;
-  box-sizing: border-box;
-
-  &:before,
-  &:after {
-    position: absolute;
-    display: block;
-    content: " ";
-    width: 100%;
-    box-sizing: border-box;
-    transition: all 0.2s ease-out;
-    border-radius: 100px;
-    border-top: 2px solid var(--black);
-  }
-
-  &:before {
-    top: calc(100% / 3);
-    background-color: transparent;
-  }
-
-  &:after {
-    bottom: calc(100% / 4);
-    width: 80%;
-    right: 0;
-  }
+.toggle-button.pages:before,
+.toggle-button.pages:after {
+  border-top: 2px solid var(--black);
 }

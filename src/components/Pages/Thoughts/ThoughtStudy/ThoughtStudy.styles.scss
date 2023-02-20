@@ -1,20 +1,4 @@
-.study-container {
-  width: 100%;
-  padding: 0 5%;
-}
-
 .study-header {
-  margin-top: 6%;
-  border-top: 1px solid var(--black);
-
-  .header-title {
-    margin: 25px 0 20px 0;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 46px;
-    color: var(--black);
-  }
-
   .study-details {
     display: flex;
     gap: 5px;
@@ -24,6 +8,7 @@
       font-size: 16px;
       line-height: 24px;
       color: var(--gray);
+      font-weight: 300;
     }
   }
 
@@ -74,7 +59,7 @@
     ol {
       font-weight: 300;
     }
-    
+
     ol,
     ul {
       font-size: 16px;
@@ -108,7 +93,7 @@
   font-size: 16px;
   display: block;
   margin: 100px 0 !important;
-  font-weight: 400;
+  font-weight: 300;
   &:hover {
     color: var(--pinkHover);
   }

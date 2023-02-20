@@ -20,7 +20,7 @@ export const BurgerIcon = ({ isBurgerMenuOpen, toggleMenu, color }: Props) => {
       <input id="open-close" name="open-close" type="checkbox" value="" />
       <label
         htmlFor="open-close"
-        className={iconColor === "white" ? "toggle-button" : "toggle-button-pages"}
+        className={`toggle-button ${iconColor === "white" ? "" : "pages"}`}
         onClick={toggleMenu}
       />
     </>

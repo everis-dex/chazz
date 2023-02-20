@@ -1,27 +1,3 @@
-.work-container {
-  max-width: 100%;
-  margin: 0 5%;
-}
-
-.header-nav {
-  display: block;
-  height: 10vh;
-  position: relative;
-  z-index: 1;
-  padding-right: 5%;
-}
-
-.work-header {
-  margin-top: 6%;
-  border-top: 1px solid var(--black);
-  h1 {
-    margin: 25px 0 20px 0;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 43px;
-  }
-}
-
 .case-study--section {
   padding-bottom: 64px;
 }
@@ -196,7 +172,7 @@
   font-size: 16px;
   display: block;
   margin: 30px 0 100px 0;
-  font-weight: 400;
+  font-weight: 300;
   &:hover {
     color: var(--pinkHover);
   }
@@ -317,25 +293,12 @@
     justify-content: space-between;
   }
 }
-@media (min-width: 1200px) {
-  .work-header {
-    margin-bottom: 0;
-    font-size: 72px;
-  }
 
+@media (min-width: 1200px) {
   .work-container--content {
     margin: 0 0 10% 0;
-    grid-template-columns: 49% 49%;
-    grid-gap: 0% 2%;
-
-    .work-detail {
-      width: 100%;
-
-      h1 {
-        font-size: 40px;
-      }
-    }
   }
+
   .fw-image-text {
     height: 800px;
   }
@@ -352,12 +315,5 @@
   }
   .case-container-info {
     padding: 0 0 0 8%;
-  }
-}
-@media (min-width: 1440px) {
-  .work-container--content {
-    .work-detail {
-      width: 85%;
-    }
   }
 }
