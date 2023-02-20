@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { IHomeHeader } from "../../../interfaces/cms";
-import { AllowCookies, LineBreakerSelector, Nav } from "../../shared/index";
+import { AllowCookies, Nav } from "../../shared/index";
 import { VideoHeader } from "./VideoHeader/VideoHeader";
 
 import "./HomeHeader.styles.scss";
@@ -25,20 +25,18 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const controlRef = useRef<HTMLDivElement>(null);
 
   const switchPlayPause = () => {
-    if (animationComplete) {
-      setIsPlaying(!isPlaying);
+    if (!animationComplete) return;
+    setIsPlaying(!isPlaying);
+    if (!videoRef.current) return;
 
-      if (videoRef.current) {
-        if (isPlaying) {
-          videoRef.current.pause();
-          setIsNavVisible(!isNavVisible);
-          setControlText(controlTextOptions.play);
-        } else {
-          videoRef.current.play();
-          setControlText(controlTextOptions.stop);
-          setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
-        }
-      }
+    if (isPlaying) {
+      videoRef.current.pause();
+      setIsNavVisible(!isNavVisible);
+      setControlText(controlTextOptions.play);
+    } else {
+      videoRef.current.play();
+      setControlText(controlTextOptions.stop);
+      setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
     }
   };
 
@@ -72,9 +70,9 @@ export const HomeHeader = (headerData: IHomeHeader) => {
 
   useEffect(() => {
     setTimeout(() => {
-      if (titleLeft > 16) {
+      if (titleLeft > 0) {
         if (navHeight > 11) setNavHeight(11);
-        setTitleLeft(16);
+        setTitleLeft(0);
       } else {
         setAnimationComplete(true);
         document.body.classList.remove("no-scroll");
@@ -83,8 +81,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   }, [navHeight, titleLeft]);
 
   function appHeight(): void {
-    const doc = document.documentElement;
-    doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+    document.documentElement?.style.setProperty("--app-height", `${window.innerHeight}px`);
   }
   window.addEventListener("resize", appHeight);
   appHeight();
@@ -102,14 +99,9 @@ export const HomeHeader = (headerData: IHomeHeader) => {
             />
           </span>
         </div>
-        <div
-          className={isPlaying ? "chazz-title-out" : "chazz-title"}
-          style={windowWidth >= 1200 ? { left: `${titleLeft}%` } : {}}
-        >
+        <div className="chazz-title" style={windowWidth >= 1200 ? { left: `${titleLeft}vw` } : {}}>
           <div className={isPlaying ? "simply-out" : ""}>
-            <h1>
-              <LineBreakerSelector typedLines={headerData.title} />
-            </h1>
+            <h1>{headerData.title}</h1>
             <h4>{headerData.subtitle}</h4>
           </div>
           {!isBurgerMenuOpen && (
