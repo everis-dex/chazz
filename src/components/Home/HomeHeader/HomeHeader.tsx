@@ -17,6 +17,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const [titleLeft, setTitleLeft] = useState<number>(100);
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const [animationComplete, setAnimationComplete] = useState<boolean>(false);
+
   // Creamos una función que nos re calcula el ancho de la pantalla:
   window.onresize = () => setWindowWidth(window.innerWidth);
 
@@ -79,7 +80,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
         document.body.classList.remove("no-scroll");
       }
     }, 1000);
-  }, []);
+  }, [navHeight, titleLeft]);
 
   function appHeight(): void {
     const doc = document.documentElement;
@@ -87,25 +88,10 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   }
   window.addEventListener("resize", appHeight);
   appHeight();
-  //onWheel
-  // const handleOnWheel: React.WheelEventHandler<HTMLDivElement> = e => {
-  //   if (e.deltaY > 0) {
-  //     if (titleLeft > 16) {
-  //       if (navHeight > 11) setNavHeight(11);
-  //       setTitleLeft(16);
-  //     } else {
-  //       setAnimationComplete(true);
-  //       document.body.classList.remove("no-scroll");
-  //     }
-  //   }
-  // };
-  // useEffect(() => {
-  //   // Agregar la clase al body para ocultar el overflow
-  //   document.body.classList.add("no-scroll");
-  // }, []);
+
   return (
-    <div className="chazz-header" /*onWheel={handleOnWheel}*/>
-      <div className={isPlaying ? "velo-out" : "velo-in"} /*onWheel={handleOnWheel}*/>
+    <div className="chazz-header">
+      <div className={isPlaying ? "velo-out" : "velo-in"}>
         <div className={isPlaying ? "simply-out" : "simply-in"}>
           <span className={isPlaying ? "nav-out" : "nav-in"}>
             <Nav isPlaying={isPlaying} AlertNavParent={AlertNavParent} height={navHeight} />
