@@ -9,8 +9,8 @@ import "./Categories.styles.scss";
 export const Categories = (categoriesData: IHomeSection) => {
   return (
     <div className="background">
-      <div className="categories" data-aos="fade-up">
-        <div className="categories-title">
+      <div className="categories">
+        <div className="categories-title" data-aos="fade-up">
           <h1>
             <strong>{categoriesData.title}</strong> <br />
           </h1>
@@ -19,9 +19,9 @@ export const Categories = (categoriesData: IHomeSection) => {
           </h2>
         </div>
 
-        <div className="categories-sections" data-aos="fade-up">
+        <div className="categories-sections">
           {categories.map((category: ICategory, index: number) => (
-            <div key={index}>
+            <div key={index} data-aos="fade-up">
               {/* Category content properties */}
               {category.title && <h2>{category.title}</h2>}
               {category.section && <p>{category.section}</p>}
