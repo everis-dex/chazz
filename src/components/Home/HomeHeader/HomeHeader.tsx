@@ -79,7 +79,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
         document.body.classList.remove("no-scroll");
       }
     }, 1000);
-  }, []);
+  }, [navHeight, titleLeft]);
 
   function appHeight(): void {
     const doc = document.documentElement;
@@ -88,10 +88,9 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   window.addEventListener("resize", appHeight);
   appHeight();
 
-  useEffect(() => {
-    // Agregar la clase al body para ocultar el overflow
-    document.body.classList.add("no-scroll");
-  }, []);
+  // Agregar la clase al body para ocultar el overflow
+  useEffect(() => document.body.classList.add("no-scroll"), []);
+
   return (
     <div className="chazz-header">
       <div className={isPlaying ? "velo-out" : "velo-in"}>
