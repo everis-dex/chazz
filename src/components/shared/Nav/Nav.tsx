@@ -31,7 +31,7 @@ export const Nav = ({ isPlaying = false, darkMode = false, AlertNavParent, heigh
 
   return (
     <div className="header-nav" style={{ height: `${height}vh` }}>
-      <ChazzLogo color={logoColor} isBurgerMenuOpen={isBurgerMenuOpen} />
+      <ChazzLogo color={logoColor} />
       <DesktopMenu {...displayMode} />
       <BurgerMenu isBurgerMenuOpen={isBurgerMenuOpen} toggleMenu={toggleMenu} color={color} />
     </div>

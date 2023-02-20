@@ -2,6 +2,7 @@
 
 .header-nav {
   display: flex;
+  transition: height 1s;
   align-items: center;
   justify-content: space-between;
   padding-right: 5%;
@@ -49,6 +50,10 @@
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
+  .header-nav {
+    background-color: var(--white);
+  }
+
   .nav {
     margin-top: 36px;
     display: flex !important;
