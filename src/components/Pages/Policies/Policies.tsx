@@ -31,8 +31,8 @@ export const Policies = () => {
     <>
       <Nav />
       <AllowCookies />
-      <div className="policies-container">
-        <div className="policies-header">
+      <div className="page-container policies-container">
+        <div className="page-header">
           <h1 className="header-title">
             <LineBreakerSelector typedLines={title} />
           </h1>

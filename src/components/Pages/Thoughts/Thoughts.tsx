@@ -76,9 +76,9 @@ export const Thoughts = () => {
     <>
       <Nav />
       <AllowCookies />
-      <div className="thoughts-container">
+      <div className="page-container">
         {/* Header section */}
-        <div className="thoughts-header">
+        <div className="page-header">
           <h1 className="header-title">
             <LineBreakerSelector typedLines={thoughtsPage.title} />
           </h1>
