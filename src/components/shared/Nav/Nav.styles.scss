@@ -9,6 +9,9 @@
   height: 10vh;
 
   .chazz-logo {
+    margin-bottom: 25px;
+    display: flex;
+    align-self: flex-end;
     padding-left: 5%;
     z-index: 99;
   }
@@ -55,9 +58,9 @@
   }
 
   .nav {
-    margin-top: 36px;
+    margin-top: 26px;
+    align-self: flex-start;
     display: flex !important;
-    float: right;
     padding-left: 0;
 
     ul {
