@@ -84,9 +84,10 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   };
 
   useEffect(() => {
-    // Agregar la clase al body para ocultar el overflow
+    window.scrollTo({ top: 0, behavior: "smooth" });
     window.scrollTo(0, 0);
-    // document.body.classList.add("no-scroll");
+    // Agregar la clase al body para ocultar el overflow
+    document.body.classList.add("no-scroll");
   }, []);
 
   function appHeight(): void {

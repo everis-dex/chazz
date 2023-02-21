@@ -8,9 +8,12 @@ import { Category } from "./Category/Category";
 import "./Services.styles.scss";
 
 export const Services = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.body.classList.remove("no-scroll");
+  }, []);
   const headerData: IServicesHeader = services.header;
   const [videoSource, setVideoSource] = useState<string>(getVideoSource());
-  useEffect(() => window.scrollTo(0, 0), []);
 
   function getVideoSource(): string {
     return window.innerWidth < 1200 ? "/uploads/services_cabecera-768.mp4" : headerData.image;

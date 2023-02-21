@@ -10,7 +10,10 @@ import { Articles } from "./Articles/Articles";
 import "./Policies.scss";
 
 export const Policies = () => {
-  useEffect(() => window.scrollTo(0, 0), []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.body.classList.remove("no-scroll");
+  }, []);
 
   // Set initial policy and crete useState
   const { id } = useParams();

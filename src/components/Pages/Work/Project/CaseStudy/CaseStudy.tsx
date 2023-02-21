@@ -10,7 +10,10 @@ import { SectionInfo, CaseSection } from "./CaseSection/index";
 import "./CaseStudy.styles.scss";
 
 export const CaseStudy = () => {
-  useEffect(() => window.scrollTo(0, 0), []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.body.classList.remove("no-scroll");
+  }, []);
 
   const { id } = useParams();
   const filteredProjects = projects.filter(project => project.id === (id ? parseInt(id) : 0));
