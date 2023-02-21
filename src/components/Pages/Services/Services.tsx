@@ -35,14 +35,17 @@ export const Services = () => {
             src={videoSource}
             loop
             playsInline
-            data-aos="fade-up"
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-offset="0"
             data-aos-once="true"
+            data-aos-duration="700"
           />
         </div>
         {/* Categories section */}
         <div className="services-categories">
           {categories.map((category: ICategory, index: number) => (
-            <div className="category" key={index}>
+            <div className="category" key={index} data-aos="fade-up" data-aos-once="true">
               <Category {...category} />
             </div>
           ))}
