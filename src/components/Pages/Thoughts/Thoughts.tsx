@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { thoughts, thoughtsPage } from "../../../content/index";
-import { IThought } from "../../../interfaces/cms";
+import { IThought, IPageHeader } from "../../../interfaces/cms";
 import { AllowCookies, LineBreakerSelector, Nav } from "../../shared/index";
 import { Thought } from "./Thought/Thought";
 
@@ -11,6 +11,7 @@ import "./Thoughts.styles.scss";
 
 export const Thoughts = () => {
   useEffect(() => window.scrollTo(0, 0), []);
+  const headerData: IPageHeader = thoughtsPage.header;
 
   const [isHover, setIsHover] = useState<boolean>(false);
   const [filtering, setFiltering] = useState<boolean>(true);
@@ -19,7 +20,7 @@ export const Thoughts = () => {
   const filters = useRef<HTMLDivElement>(null);
 
   function getVideoSource(): string {
-    return window.innerWidth < 1200 ? "/uploads/thoughts_cabecera-768.mp4" : thoughtsPage.image;
+    return window.innerWidth < 1200 ? "/uploads/thoughts_cabecera-768.mp4" : headerData.image;
   }
 
   window.onresize = () => setVideoSource(getVideoSource());
@@ -80,7 +81,7 @@ export const Thoughts = () => {
         {/* Header section */}
         <div className="page-header">
           <h1 className="header-title">
-            <LineBreakerSelector typedLines={thoughtsPage.title} />
+            <LineBreakerSelector typedLines={headerData.title} />
           </h1>
           <video autoPlay className="video-height" muted={true} src={videoSource} loop playsInline />
         </div>

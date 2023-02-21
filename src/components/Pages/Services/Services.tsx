@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 
 import { categories, services } from "../../../content/index";
-import { ICategory, IServicesHeader } from "../../../interfaces/cms";
+import { ICategory, IPageHeader } from "../../../interfaces/cms";
 import { AllowCookies, FeaturedProjects, LineBreakerSelector, Nav } from "../../shared/index";
 import { Category } from "./Category/Category";
 
 import "./Services.styles.scss";
 
 export const Services = () => {
-  const headerData: IServicesHeader = services.header;
+  const headerData: IPageHeader = services.header;
   const [videoSource, setVideoSource] = useState<string>(getVideoSource());
   useEffect(() => window.scrollTo(0, 0), []);
 

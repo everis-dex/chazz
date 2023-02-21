@@ -46,11 +46,11 @@ export interface IWork {
 export interface IServices {
   page: string;
   published: boolean;
-  header: IServicesHeader;
+  header: IPageHeader;
   projects: IServicesProjects;
 }
 
-export interface IServicesHeader {
+export interface IPageHeader {
   title: string;
   subtitle: string;
   image: string;
@@ -64,8 +64,7 @@ export interface IServicesProjects {
 export interface IThoughtsPage {
   page: string;
   published: boolean;
-  title: string;
-  image: string;
+  header: IPageHeader;
   categories: string[];
 }
 
