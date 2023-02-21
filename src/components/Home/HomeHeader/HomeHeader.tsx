@@ -82,12 +82,23 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       if (animationComplete) setTimeout(() => document.body.classList.remove("no-scroll"), 1000);
     }
   };
+  function reload() {
+    // Agregar la clase al body para ocultar el overflow
+    console.log("🚀 ~ file: HomeHeader.tsx:89 ~ useEffect ~ window.top:", window);
+    console.log("🚀 ~ file: HomeHeader.tsx:89 ~ useEffect ~ window.top:", window.pageYOffset);
+    if (window.pageYOffset !== 0) window.scrollTo(0, 0);
+    else {
+      document.body.classList.add("no-scroll");
+    }
+    setTimeout(() => {
+      document.body.classList.add("no-scroll");
+    }, 500);
+  }
+
+  document.addEventListener("load", reload);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    window.scrollTo(0, 0);
-    // Agregar la clase al body para ocultar el overflow
-    document.body.classList.add("no-scroll");
+    reload();
   }, []);
 
   function appHeight(): void {
