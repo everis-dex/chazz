@@ -88,10 +88,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       }
     }
   };
-  useEffect(() => {
-    // Agregar la clase al body para ocultar el overflow
-    document.body.classList.add("no-scroll");
-  }, []);
+
   return (
     <div className="chazz-header" onWheel={handleOnWheel}>
       <div className={isPlaying ? "velo-out" : "velo-in"} onWheel={handleOnWheel}>

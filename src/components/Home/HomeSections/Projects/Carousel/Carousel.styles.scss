@@ -1,7 +1,3 @@
-.carousel:hover {
-  cursor: none;
-}
-
 .carouselTitle {
   h3 {
     font-size: 24px;
@@ -66,7 +62,7 @@
       width: auto;
     }
     .slides {
-      cursor: "none";
+      cursor: none;
     }
   }
   .properties {

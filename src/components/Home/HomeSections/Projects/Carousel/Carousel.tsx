@@ -36,6 +36,7 @@ export const Carousel = ({ title }: Props) => {
       </div>
 
       <div id="carousel" className="carousel">
+        <div className="pagination" />
         <div
           className="slides"
           onMouseEnter={handleMouseEnter}
@@ -76,12 +77,13 @@ export const Carousel = ({ title }: Props) => {
                 autoplay
                 style={{
                   position: "fixed",
-                  left: mousePosition.x + 1,
-                  top: mousePosition.y,
-                  width: 100,
-                  height: 100,
-                  zIndex: 10,
-                  transition: "transform 0.1s ease-out"
+                  left: mousePosition.x - 35,
+                  top: mousePosition.y - 18,
+                  width: 106,
+                  height: 106,
+                  zIndex: 9999,
+                  transition: "transform 0.1s ease-out",
+                  pointerEvents: "none"
                 }}
               />
             ) : null}
