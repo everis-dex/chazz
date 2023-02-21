@@ -30,7 +30,7 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
           data-aos-easing="ease-in-back"
           data-aos-offset="0"
           data-aos-once="true"
-          data-aos-duration="700"
+          data-aos-duration="2000"
         />
       </div>
 
