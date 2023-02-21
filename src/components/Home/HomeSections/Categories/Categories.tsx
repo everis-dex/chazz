@@ -10,7 +10,7 @@ export const Categories = (categoriesData: IHomeSection) => {
   return (
     <div className="background">
       <div className="categories">
-        <div className="categories-title" data-aos="fade-up" data-aos-once="false">
+        <div className="categories-title" data-aos="fade-up" data-aos-once="true">
           <h1>
             <strong>{categoriesData.title}</strong> <br />
           </h1>
@@ -21,7 +21,7 @@ export const Categories = (categoriesData: IHomeSection) => {
 
         <div className="categories-sections">
           {categories.map((category: ICategory, index: number) => (
-            <div key={index} data-aos="fade-up" data-aos-once="false">
+            <div key={index} data-aos="fade-up" data-aos-once="true">
               {/* Category content properties */}
               {category.title && <h2>{category.title}</h2>}
               {category.section && <p>{category.section}</p>}
