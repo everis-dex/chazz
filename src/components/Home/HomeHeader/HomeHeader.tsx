@@ -85,6 +85,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
 
   useEffect(() => {
     // Agregar la clase al body para ocultar el overflow
+    window.scrollTo(0, 0);
     document.body.classList.add("no-scroll");
   }, []);
 
