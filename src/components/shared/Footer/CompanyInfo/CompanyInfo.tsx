@@ -10,13 +10,13 @@ export const CompanyInfo = (footerData: IHomeFooter) => {
   return (
     <div className="we-are-section">
       <div className="we-are-grid">
-        <h2>
+        <h2 data-aos="fade-up" data-aos-once="false">
           <strong>{footerData.title}</strong>
         </h2>
         <Offices title={footerData.offices} />
-        <DividingLine />
+        <DividingLine data-aos="fade-up" data-aos-once="false" />
         <Studios title={footerData.studios} />
-        <DividingLine />
+        <DividingLine data-aos="fade-up" data-aos-once="false" />
         <GetInTouch title={footerData.touch} />
       </div>
     </div>

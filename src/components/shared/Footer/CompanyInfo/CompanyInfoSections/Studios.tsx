@@ -16,7 +16,12 @@ export const Studios = ({ title }: Props) => {
   return (
     <div className="studios-container">
       <p className="section-title">{title}</p>
-      <div className="studios-grid" style={{ gridTemplateRows: `repeat(${gridRows}, 1fr)` }}>
+      <div
+        className="studios-grid"
+        style={{ gridTemplateRows: `repeat(${gridRows}, 1fr)` }}
+        data-aos="fade-up"
+        data-aos-once="false"
+      >
         {studios.map((studio, index: number) => (
           <div className="studios-info city" key={index}>
             {studio.city}
@@ -26,7 +31,7 @@ export const Studios = ({ title }: Props) => {
           <LinkedEmail email="tangity@nttdata.com" />
         </div>
       </div>
-      <div className="mobile-email">
+      <div className="mobile-email" data-aos="fade-up" data-aos-once="false">
         <LinkedEmail email="tangity@nttdata.com" />
       </div>
     </div>

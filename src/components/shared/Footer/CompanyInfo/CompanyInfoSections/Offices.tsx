@@ -11,12 +11,12 @@ type Props = { title: string };
 export const Offices = ({ title }: Props) => {
   return (
     <>
-      <p className="section-title" id="section-title-offices">
+      <p className="section-title" id="section-title-offices" data-aos="fade-up" data-aos-once="false">
         {title}
       </p>
       <div className="offices-container">
         {offices.map((office: IOffice, index: number) => (
-          <div className="offices-info" key={index}>
+          <div className="offices-info" key={index} data-aos="fade-up" data-aos-once="false">
             <p className="city">{office.city}</p>
             {!office.phone.includes('"') && <LinkedPhone phone={office.phone} />}
             {!office.email.includes('"') && <LinkedEmail email={office.email} />}
