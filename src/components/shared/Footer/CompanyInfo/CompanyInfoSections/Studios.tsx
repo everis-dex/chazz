@@ -5,7 +5,9 @@ import { LinkedEmail } from "./footerLinks";
 
 import "../CompanyInfo.styles.scss";
 
-export const Studios = (studios: IStudio[]) => {
+type Props = { studios: IStudio[] };
+
+export const Studios = ({ studios }: Props) => {
   const gridColumns = window.innerWidth > 480 ? 3 : 2;
   // Dynamically define the number of rows so that there's always the required amount of columns (gridColumns)
   const division = studios.length / gridColumns;

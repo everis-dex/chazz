@@ -14,9 +14,9 @@ export const CompanyInfo = (footerData: IFooter) => {
         <h2>
           <strong>{title}</strong>
         </h2>
-        <Offices {...offices} />
+        <Offices offices={offices} />
         <DividingLine />
-        <Studios {...studios} />
+        <Studios studios={studios} />
         <DividingLine />
         <GetInTouch touches={touch} socials={social} />
       </div>

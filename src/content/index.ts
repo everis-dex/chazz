@@ -1,13 +1,13 @@
 import categoriesData from "./categories.json";
-import partnersData from "./partners.json";
-import projectsData from "./projects.json";
-import homeData from "./pages/home/home.json";
-import thoughtsData from "./thoughts.json";
-import servicesData from "./pages/services/services.json";
-import workData from "./pages/work/work.json";
-import thoughtsPageData from "./pages/thoughts/thoughts.json";
-import policiesData from "./policies.json";
 import footerData from "./pages/footer/footer.json";
+import homeData from "./pages/home/home.json";
+import servicesData from "./pages/services/services.json";
+import thoughtsPageData from "./pages/thoughts/thoughts.json";
+import workData from "./pages/work/work.json";
+import partnersData from "./partners.json";
+import policiesData from "./policies.json";
+import projectsData from "./projects.json";
+import thoughtsData from "./thoughts.json";
 
 export const categories = categoriesData;
 export const partners = partnersData;

@@ -5,7 +5,9 @@ import { LinkedEmail, LinkedMap, LinkedPhone } from "./footerLinks";
 
 import "../CompanyInfo.styles.scss";
 
-export const Offices = (offices: IOffice[]) => {
+type Props = { offices: IOffice[] };
+
+export const Offices = ({ offices }: Props) => {
   return (
     <>
       <p className="section-title" id="section-title-offices">
