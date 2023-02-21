@@ -1,16 +1,13 @@
 import React from "react";
 
-import { home } from "../../../../../content/index";
 import { ISocial } from "../../../../../interfaces/cms";
 import { LinkedRRSS } from "./footerLinks";
 
 import "../CompanyInfo.styles.scss";
 
-type Props = { showTitle: boolean };
+type Props = { showTitle: boolean; socials: ISocial[] };
 
-export const RRSS = ({ showTitle }: Props) => {
-  const socials: ISocial[] = home.footer.social;
-
+export const RRSS = ({ showTitle, socials }: Props) => {
   return (
     <div className="in-touch-info">
       {showTitle && <p className="in-touch-subtitle">Social</p>}

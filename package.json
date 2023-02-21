@@ -1,7 +1,54 @@
 {
   "name": "chazz",
   "version": "0.1.0",
-  "homepage": "https://chazz-design.netlify.com/",
+  "description": "Chazz homepage redesign with Netlify CMS",
+  "homepage": "https://chazzdesign.com/",
+  "keywords": [
+    "redesign",
+    "figma",
+    "react",
+    "netlify CMS",
+    "netlify"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/everis-dex/chazz.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/everis-dex/chazz/issues"
+  },
+  "contributors": [
+    {
+      "name": "Adriana Basterra Ruiz",
+      "email": "adriana.basterraruiz@emeal.nttdata.com"
+    },
+    {
+      "name": "Angel Javier Lalana Cubelos",
+      "email": "angeljavier.lalanacubelos@emeal.nttdata.com"
+    },
+    {
+      "name": "Rocio Fernandez Ferreras",
+      "email": "rocio.fernandez.ferreras@emeal.nttdata.com"
+    },
+    {
+      "name": "Sergio Soteras Serrano",
+      "email": "sergio.soterasserrano@emeal.nttdata.com"
+    },
+    {
+      "name": "Alejandro Arteaga Hernández",
+      "email": "alejandro.arteagahernandez@emeal.nttdata.com"
+    }
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "prettier": "npx prettier --write ./src",
+    "server": "tsc public/main.ts && node public/main.js && npm run prettier",
+    "min-server": "node public/main.js && npm run prettier",
+    "build": "node public/main.js && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -21,14 +68,14 @@
     "swiper": "^8.4.5",
     "typeface-raleway": "0.0.75"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "prettier": "npx prettier --write ./src",
-    "server": "tsc public/main.ts && node public/main.js && npm run prettier",
-    "min-server": "node public/main.js && npm run prettier",
-    "build": "node public/main.js && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "gh-pages": "^2.1.1",
+    "prettier": "2.8.1",
+    "react-router-dom": "^6.4.4",
+    "sass": "^1.56.1",
+    "source-map-loader": "^4.0.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.4"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,14 +91,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^2.1.1",
-    "prettier": "2.8.1",
-    "react-router-dom": "^6.4.4",
-    "sass": "^1.56.1",
-    "source-map-loader": "^4.0.1",
-    "ts-loader": "^9.4.2",
-    "typescript": "^4.9.4"
   }
 }

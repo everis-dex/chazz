@@ -49,21 +49,6 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Subtitle, name: subtitle, widget: string, required: false }
-      - label: Footer
-        name: footer
-        widget: object
-        fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Subtitle, name: subtitle, widget: string, required: false }
-          - { label: Offices, name: offices, widget: string }
-          - { label: Studios, name: studios, widget: string }
-          - { label: Get in touch, name: touch, widget: string }
-          - label: Social
-            name: social
-            widget: list
-            fields:
-              - { label: Name, name: name, widget: string }
-              - { label: Link, name: link, widget: string }
 
   - name: work
     label: Work
@@ -77,7 +62,7 @@ collections:
       - { label: Page, name: page, widget: string }
       - { label: Published, name: published, widget: boolean, default: true }
       - { label: Title, name: title, widget: string }
-      - { label: Subtitle, name: subtitle, widget: string, required: false }
+      - { label: Subtitle, name: subtitle, widget: text, required: false }
 
   - name: services
     label: Services
@@ -115,12 +100,71 @@ collections:
     fields:
       - { label: Page, name: page, widget: string }
       - { label: Published, name: published, widget: boolean, default: true }
-      - { label: Image, name: image, widget: image }
+      - label: Header
+        name: header
+        widget: object
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string, required: false }
+          - { label: Image, name: image, widget: image }
       - label: Categories
         name: categories
         widget: list
         fields:
           - { label: Cateogry, name: cateogry, widget: string }
+
+  - name: footer
+    label: Footer
+    folder: src/content/pages/footer
+    create: false
+    delete: false
+    extension: json
+    format: json
+    slug: "footer"
+    fields:
+      - { label: Page, name: page, widget: string }
+      - { label: Published, name: published, widget: boolean, default: true }
+      - { label: Title, name: title, widget: string }
+      - label: Offices
+        name: offices
+        widget: object
+        fields:
+          - { label: Title, name: title, widget: string }
+          - label: Content
+            name: content
+            widget: list
+            fields:
+              - { label: City, name: city, widget: string }
+              - { label: Phone, name: phone, widget: string, required: false }
+              - { label: Email, name: email, widget: string }
+              - { label: Address, name: address, widget: string }
+      - label: Studios
+        name: studios
+        widget: object
+        fields:
+          - { label: Title, name: title, widget: string }
+          - label: Content
+            name: content
+            widget: list
+            fields:
+              - { label: City, name: city, widget: string }
+      - label: Get in touch
+        name: get_in_touch
+        widget: object
+        fields:
+          - { label: Title, name: title, widget: string }
+          - label: Content
+            name: content
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Emeal, name: email, widget: string }
+      - label: Social
+        name: social
+        widget: list
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Link, name: link, widget: string }
 
   ##############################
   #         COMPONENTS
@@ -196,7 +240,7 @@ collections:
                   - label: Content
                     name: content
                     widget: list
-                    types:
+                    fields:
                       - { label: Image, name: image, widget: image, required: false }
                       - { label: Caption, name: caption, widget: string, required: false }
                       - { label: Title, name: title, widget: string, required: false }
@@ -234,43 +278,6 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Content, name: content, widget: text }
-
-  - name: office
-    label: Office
-    folder: content/offices
-    slug: "of-{{year}}-{{month}}-{{day}}--{{city}}"
-    extension: json
-    format: json
-    create: true
-    fields:
-      - { label: Publish Date, name: date, widget: datetime }
-      - { label: City, name: city, widget: string }
-      - { label: Phone, name: phone, widget: string, required: false }
-      - { label: Email, name: email, widget: string }
-      - { label: Address, name: address, widget: string }
-
-  - name: studio
-    label: Studio
-    folder: content/studios
-    slug: "st-{{year}}-{{month}}-{{day}}--{{city}}"
-    extension: json
-    format: json
-    create: true
-    fields:
-      - { label: Publish Date, name: date, widget: datetime }
-      - { label: City, name: city, widget: string }
-
-  - name: get_in_touch
-    label: Get in touch
-    folder: content/get-in-touch
-    slug: "{{year}}-{{month}}-{{day}}--{{title}}"
-    extension: json
-    format: json
-    create: true
-    fields:
-      - { label: Publish Date, name: date, widget: datetime }
-      - { label: Title, name: title, widget: string }
-      - { label: Emeal, name: email, widget: string }
 
   - name: policies
     label: Policies

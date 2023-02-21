@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { ReactComponent as Logo } from "../../../../assets/Chazz_Logo.svg";
+import { ReactComponent as Logo1 } from "../../../../assets/Chazz_logov2.svg";
+import { ReactComponent as Logo2 } from "../../../../assets/NTT_Logo.svg";
 
 import "../Nav.styles.scss";
 
@@ -17,7 +18,8 @@ export const ChazzLogo = ({ color, height }: Props) => {
   return (
     <div className="chazz-logo">
       <Link to="/">
-        <Logo fill={color} style={style} />
+        <Logo1 fill={color} style={style} />
+        {height <= 11 && <Logo2 fill={color} style={{ width: "5vh" }} />}
       </Link>
     </div>
   );
