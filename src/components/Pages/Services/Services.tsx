@@ -24,11 +24,20 @@ export const Services = () => {
       <AllowCookies />
       <div className="page-container">
         <div className="page-header services-header">
-          <h1 className="header-title">
+          <h1 className="header-title" data-aos="fade-up" data-aos-once="true">
             <LineBreakerSelector typedLines={headerData.title} />
           </h1>
           {headerData.subtitle && <h3 className="subtitle">{headerData.subtitle}</h3>}
-          <video autoPlay className="video-height" muted={true} src={videoSource} loop playsInline />
+          <video
+            autoPlay
+            className="video-height"
+            muted={true}
+            src={videoSource}
+            loop
+            playsInline
+            data-aos="fade-up"
+            data-aos-once="true"
+          />
         </div>
         {/* Categories section */}
         <div className="services-categories">
