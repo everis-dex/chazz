@@ -20,7 +20,7 @@ export const Studios = ({ title }: Props) => {
         className="studios-grid"
         style={{ gridTemplateRows: `repeat(${gridRows}, 1fr)` }}
         data-aos="fade-up"
-        data-aos-once="false"
+        data-aos-once="true"
       >
         {studios.map((studio, index: number) => (
           <div className="studios-info city" key={index}>

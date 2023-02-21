@@ -18,12 +18,12 @@ export const Carousel = ({ title }: Props) => {
 
   return (
     <>
-      <div className="carouselTitle">
+      <div className="carouselTitle" data-aos="fade-up" data-aos-once="true">
         <h3>{title}</h3>
       </div>
 
       <div id="carousel" className="carousel">
-        <div className="pagination" />
+        <div className="pagination" data-aos="fade-up" data-aos-once="true" />
         <div className="slides">
           <Swiper
             modules={[Pagination, Autoplay]}
@@ -47,7 +47,7 @@ export const Carousel = ({ title }: Props) => {
           >
             {featuredSlides.map((slide: IProject, index: number) => {
               return (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} data-aos="fade-up" data-aos-once="true">
                   <CarouselSlide {...slide} />
                 </SwiperSlide>
               );
