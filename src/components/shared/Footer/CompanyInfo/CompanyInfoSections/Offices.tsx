@@ -1,18 +1,15 @@
 import React from "react";
 
-import { offices } from "../../../../../content/index";
 import { IOffice } from "../../../../../interfaces/cms";
 import { LinkedEmail, LinkedMap, LinkedPhone } from "./footerLinks";
 
 import "../CompanyInfo.styles.scss";
 
-type Props = { title: string };
-
-export const Offices = ({ title }: Props) => {
+export const Offices = (offices: IOffice[]) => {
   return (
     <>
       <p className="section-title" id="section-title-offices">
-        {title}
+        CHAZZ OFFICES
       </p>
       <div className="offices-container">
         {offices.map((office: IOffice, index: number) => (

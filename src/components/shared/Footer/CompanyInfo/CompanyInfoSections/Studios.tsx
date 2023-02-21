@@ -1,13 +1,11 @@
 import React from "react";
 
-import { studios } from "../../../../../content/index";
+import { IStudio } from "../../../../../interfaces/cms";
 import { LinkedEmail } from "./footerLinks";
 
 import "../CompanyInfo.styles.scss";
 
-type Props = { title: string };
-
-export const Studios = ({ title }: Props) => {
+export const Studios = (studios: IStudio[]) => {
   const gridColumns = window.innerWidth > 480 ? 3 : 2;
   // Dynamically define the number of rows so that there's always the required amount of columns (gridColumns)
   const division = studios.length / gridColumns;
@@ -15,7 +13,7 @@ export const Studios = ({ title }: Props) => {
 
   return (
     <div className="studios-container">
-      <p className="section-title">{title}</p>
+      <p className="section-title">NDDN NETWORK</p>
       <div className="studios-grid" style={{ gridTemplateRows: `repeat(${gridRows}, 1fr)` }}>
         {studios.map((studio, index: number) => (
           <div className="studios-info city" key={index}>

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 import { availableRoutes } from "../../../../../constants";
 import { DividingLine } from "../../../DividingLine/DividingLine";
-import { RRSS } from "../../../Footer/CompanyInfo/CompanyInfoSections/RRSS";
+import { footer } from "../../../../../content";
+import { RRSS } from "../../../Footer/CompanyInfo";
 
 import "./BurgerMenuOptions.styles.scss";
 
@@ -13,6 +14,7 @@ type Props = {
 };
 
 export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu }: Props) => {
+  const socials = footer.social;
   const currentMenuOption = "/" + window.location.pathname.split("/")[1];
 
   return (
@@ -35,7 +37,7 @@ export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu }: Props) => {
         })}
       </ul>
       <DividingLine />
-      <RRSS showTitle={false} />
+      <RRSS showTitle={false} socials={socials} />
     </nav>
   );
 };

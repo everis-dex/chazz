@@ -10,7 +10,6 @@ export interface IHome {
   categories: IHomeSection;
   projects: IHomeProjects;
   partners: IHomeSection;
-  footer: IHomeFooter;
 }
 
 // Home sections
@@ -27,10 +26,11 @@ export interface IHomeProjects extends IHomeSection {
   more: string;
 }
 
-export interface IHomeFooter extends IHomeSection {
-  offices: string;
-  touch: string;
-  studios: string;
+export interface IFooter {
+  title: string;
+  offices: IOffice[];
+  touch: ITouch[];
+  studios: IStudio[];
   social: ISocial[];
 }
 
@@ -95,11 +95,6 @@ export interface IPolicyTableRow {
 // ##############################
 // #         COMPONENTS
 // ##############################
-
-export interface ISocial {
-  name: string;
-  link: string;
-}
 
 export interface ICategory {
   id: number;
@@ -183,7 +178,6 @@ export interface IPartner {
 }
 
 export interface IOffice {
-  id: number;
   city: string;
   phone: string;
   email: string;
@@ -191,14 +185,17 @@ export interface IOffice {
 }
 
 export interface IStudio {
-  id: number;
   city: string;
 }
 
 export interface ITouch {
-  id: number;
   title: string;
   email: string;
+}
+
+export interface ISocial {
+  name: string;
+  link: string;
 }
 
 export interface ISlide {

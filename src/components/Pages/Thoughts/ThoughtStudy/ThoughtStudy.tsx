@@ -13,7 +13,7 @@ export const ThoughtStudy = () => {
   useEffect(() => window.scrollTo(0, 0), []);
 
   const { id } = useParams();
-  const filteredThoughts = thoughts.filter(thought => thought.id === (id ? parseInt(id) : 0));
+  const filteredThoughts = thoughts.filter((thought: IThought) => thought.id === (id ? parseInt(id) : 0));
   const thought: IThought = filteredThoughts[0] as IThought;
   const formattedDate = new Date(thought.date);
   const date: string = Months[formattedDate.getMonth()] + " " + formattedDate.getDate();
