@@ -196,7 +196,7 @@ collections:
                   - label: Content
                     name: content
                     widget: list
-                    types:
+                    fields:
                       - { label: Image, name: image, widget: image, required: false }
                       - { label: Caption, name: caption, widget: string, required: false }
                       - { label: Title, name: title, widget: string, required: false }
