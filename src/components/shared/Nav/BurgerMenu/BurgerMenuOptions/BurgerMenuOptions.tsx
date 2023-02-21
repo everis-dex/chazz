@@ -9,26 +9,30 @@ import "./BurgerMenuOptions.styles.scss";
 
 type Props = {
   isBurgerMenuOpen: boolean;
-  toggleMenu: (e: React.MouseEvent) => void;
+  toggleMenu: () => void;
 };
 
 export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu }: Props) => {
-  const currentMenuOption = window.location.pathname.split("/")[1];
+  const currentMenuOption = "/" + window.location.pathname.split("/")[1];
 
   return (
     <nav className={`burger-nav ${isBurgerMenuOpen ? "active" : ""}`}>
       <ul className="burger-ul">
-        {availableRoutes.map(route => (
-          <li className="burger-li" key={route.id}>
-            {route.route !== currentMenuOption ? (
-              <Link className="burger-a" to={route.route} onClick={toggleMenu}>
-                {route.name}
-              </Link>
-            ) : (
-              <span className="burger-active">{route.name}</span>
-            )}
-          </li>
-        ))}
+        {availableRoutes.map(route => {
+          return (
+            <li className="burger-li" key={route.id}>
+              {route.route !== currentMenuOption ? (
+                <Link className="burger-a" to={route.route} onClick={toggleMenu}>
+                  {route.name}
+                </Link>
+              ) : (
+                <span className="burger-active" onClick={toggleMenu}>
+                  {route.name}
+                </span>
+              )}
+            </li>
+          );
+        })}
       </ul>
       <DividingLine />
       <RRSS showTitle={false} />

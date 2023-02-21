@@ -68,7 +68,7 @@ collections:
   - name: work
     label: Work
     folder: src/content/pages/work
-    create: false
+    create: true
     delete: false
     slug: "work"
     extension: json
@@ -131,98 +131,76 @@ collections:
     slug: "proj-{{year}}-{{month}}-{{day}}--{{title}}"
     extension: json
     format: json
+    create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
-      - { label: Description, name: description, widget: string }
-      - { label: Subtitle, name: subtitle, widget: string }
-      - { label: Body, name: body, widget: markdown }
-      - {
-          label: In carousel,
-          name: incarousel,
-          widget: boolean,
-          hint: Determines whether this project is shown in the homepage carousel. (Max. 5 projects)"
-        }
-      - label: Media
-        name: media
+      - label: Details
+        name: details
         widget: object
         fields:
-          - { label: Carrousel, name: carousel, widget: image }
-          - { label: Project, name: project, widget: image }
+          - { label: Description, name: description, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string }
+          - { label: Body, name: body, widget: text }
+          - {
+              label: In carousel,
+              name: incarousel,
+              widget: boolean,
+              hint: Determines whether this project is shown in the homepage carousel. (Max. 5 projects)
+            }
+          - label: Media
+            name: media
+            widget: object
+            fields:
+              - { label: Carrousel, name: carousel, widget: image }
+              - { label: Project, name: project, widget: image }
+
       - label: Case Info
         name: caseInfo
         widget: object
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Services, name: services, widget: string }
-      - label: Sections
-        name: sections
-        widget: object
-        fields:
-          - { label: First Full-Width Image, name: firstFWImagePath, widget: image, required: false }
-          - { label: First Full-Width Claim, name: firstFWClaim, widget: string, required: false }
-          - { label: Second Full-Width Image, name: secondFWImagePath, widget: image, required: false }
-          - label: FirstTwo Columns Section
-            name: firstTCSection
-            widget: object
-            required: false
-            fields:
-              - { label: Left Column Intro, name: leftColumnIntro, widget: string }
-              - label: Right Column
-                name: rightColumn
+          - label: Sections
+            name: sections
+            widget: list
+            types:
+              - label: Full-Width Image
+                name: FWImage
                 widget: object
                 fields:
-                  - { label: Paragraph Title, name: paragraphTitle, widget: string }
-                  - { label: Paragraph, name: paragraph, widget: string }
-          - { label: Third Full-Width Image, name: thirdFWImage, widget: image, required: false }
-          - label: Right Column Only Info
-            name: rightColumnOnlyInfo
-            widget: object
-            required: false
-            fields:
-              - { label: ParagraphTitle, name: paragraphTitle, widget: string }
-              - { label: Paragraph, name: paragraph, widget: string }
-          - label: Fouth Full-Width Image With Overlapped Text
-            name: fouthFWImageWithOverlappedText
-            widget: object
-            required: false
-            fields:
-              - { label: image Url, name: imagePath, widget: image }
-              - { label: Overlapped Text, name: overlappedText, widget: string, required: false }
-          - { label: Second Full-Width Claim, name: secondFWClaim, widget: string, required: false }
-          - label: Fifth Full-Width Image With Caption
-            name: fifthFWImageWithCaption
-            widget: object
-            required: false
-            fields:
-              - { label: image Url, name: imagePath, widget: image }
-              - { label: Caption, name: caption, widget: string }
-          - { label: Sixth Full-Width Image, name: sixthFWImagePath, widget: image, required: false }
-          - label: Second Two Columns Section
-            name: secondTCSection
-            widget: object
-            required: false
-            fields:
-              - label: Left Column
-                name: leftColumn
+                  - label: Content
+                    name: content
+                    widget: object
+                    fields:
+                      - { label: Image, name: image, widget: image }
+                      - { label: Margin, name: margin, widget: boolean, default: true }
+                      - { label: Overlapped Text, name: overlappedText, widget: string, required: false }
+                      - { label: Caption, name: caption, widget: text, required: false }
+
+              - label: Claim
+                name: claim
                 widget: object
                 fields:
-                  - { label: Left Column Image, name: imagePath, widget: image }
-                  - { label: Left Column Caption, name: caption, widget: string }
-              - label: Right Column
-                name: rightColumn
-                widget: object
+                  - label: Content
+                    name: content
+                    widget: object
+                    fields:
+                      - { label: Text, name: text, widget: text }
+                      - { label: Margin, name: margin, widget: boolean, default: true }
+
+              - label: Columns
+                name: columns
+                widget: list
                 fields:
-                  - { label: Right Column Image, name: imagePath, widget: image }
-                  - { label: Right Column Caption, name: caption, widget: string }
-          - { label: Seventh Full-Width Image, name: seventhFWImage, widget: image }
-          - label: Eigth Full-Width Image
-            name: eigthFWImage
-            widget: object
-            required: false
-            fields:
-              - { label: Image, name: imagePath, widget: image }
-              - { label: Caption, name: Caption, widget: string }
+                  - label: Content
+                    name: content
+                    widget: list
+                    types:
+                      - { label: Image, name: image, widget: image, required: false }
+                      - { label: Caption, name: caption, widget: string, required: false }
+                      - { label: Title, name: title, widget: string, required: false }
+                      - { label: Body, name: body, widget: text, required: false }
 
   - name: partner
     label: Partner
@@ -230,6 +208,7 @@ collections:
     slug: "{{sort}}--{{partner}}"
     extension: json
     format: json
+    create: true
     fields:
       - { label: Name, name: name, widget: string }
       - { label: Logo, name: logo, widget: image }
@@ -243,17 +222,18 @@ collections:
     slug: "cat-{{year}}-{{month}}-{{day}}--{{title}}"
     extension: json
     format: json
+    create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
       - { label: Section, name: section, widget: string }
-      - { label: Body, name: body, widget: markdown }
+      - { label: Body, name: body, widget: text }
       - label: Accordions
         name: accordions
         widget: list
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Content, name: content, widget: string }
+          - { label: Content, name: content, widget: text }
 
   - name: office
     label: Office
@@ -261,6 +241,7 @@ collections:
     slug: "of-{{year}}-{{month}}-{{day}}--{{city}}"
     extension: json
     format: json
+    create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: City, name: city, widget: string }
@@ -274,6 +255,7 @@ collections:
     slug: "st-{{year}}-{{month}}-{{day}}--{{city}}"
     extension: json
     format: json
+    create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: City, name: city, widget: string }
@@ -284,10 +266,50 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}--{{title}}"
     extension: json
     format: json
+    create: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
       - { label: Emeal, name: email, widget: string }
+
+  - name: policies
+    label: Policies
+    folder: content/policies
+    slug: "{{title}}-policy"
+    extension: json
+    format: json
+    create: true
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Title, name: title, widget: string }
+      - label: Articles
+        name: articles
+        widget: list
+        fields:
+          - { label: Title, name: title, widget: string }
+          - label: Body
+            name: body
+            widget: list
+            types:
+              - label: Text
+                name: text
+                widget: object
+                fields:
+                  - label: Content
+                    name: content
+                    widget: markdown
+              - label: Table
+                name: table
+                widget: object
+                fields:
+                  - label: Rows
+                    name: rows
+                    widget: list
+                    fields:
+                      - { label: Name, name: name, widget: string }
+                      - { label: Host, name: host, widget: string }
+                      - { label: Expiration, name: expiration, widget: text }
+                      - { label: Service, name: service, widget: string }
 
   - name: thought
     label: Thought
