@@ -10,7 +10,7 @@ export const FeaturedProjects = () => {
   const projectsData: IServicesProjects = services.projects;
 
   return (
-    <div className="featured-projects">
+    <div className="featured-projects" data-aos="fade-up" data-aos-once="true">
       {projectsData.title && <h1 className="header">{projectsData.title}</h1>}
       <div className="project-list">
         {projects.map(

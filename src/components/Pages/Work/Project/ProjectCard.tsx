@@ -21,22 +21,38 @@ export const ProjectCard = ({ data, format, columns }: Props) => {
   return (
     <div className={`project-container ${columns}`}>
       <div className={`project-media ${format === "half" ? "half" : ""}`}>
-        <Media src={image} style={{ width: "100%" }} alt={data.title} format={format} />
+        <Media
+          src={image}
+          style={{ width: "100%" }}
+          alt={data.title}
+          format={format}
+          data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-offset="0"
+          data-aos-once="true"
+          data-aos-duration="2000"
+        />
       </div>
 
       <div className="project-details">
         <div className="project-title-container">
           {/* Sustituir span de title por Link, y cambiar en styles el hover de la clase title */}
-          <Link to={caseURL} className="title">
+          <Link to={caseURL} className="title" data-aos="fade-up" data-aos-once="true">
             {data.title} —
           </Link>
-          <span className="description">{projectDetails.description}</span>
+          <span className="description" data-aos="fade-up" data-aos-once="true">
+            {projectDetails.description}
+          </span>
         </div>
-        <span className="properties">{projectDetails.subtitle}</span>
+        <span className="properties" data-aos="fade-up" data-aos-once="true">
+          {projectDetails.subtitle}
+        </span>
       </div>
       {/* Accordion */}
       <Accordion title="" content={bodyParagraphs} ourWork={true} />
-      <div className="non-accordion">{bodyParagraphs3}</div>
+      <div className="non-accordion" data-aos="fade-up" data-aos-once="true">
+        {bodyParagraphs3}
+      </div>
     </div>
   );
 };

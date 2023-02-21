@@ -10,7 +10,10 @@ import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.s
 import "./Thoughts.styles.scss";
 
 export const Thoughts = () => {
-  useEffect(() => window.scrollTo(0, 0), []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.body.classList.remove("no-scroll");
+  }, []);
   const headerData: IPageHeader = thoughtsPage.header;
 
   const [isHover, setIsHover] = useState<boolean>(false);
@@ -80,28 +83,40 @@ export const Thoughts = () => {
       <div className="page-container">
         {/* Header section */}
         <div className="page-header">
-          <h1 className="header-title">
+          <h1 className="header-title" data-aos="fade-up" data-aos-once="true">
             <LineBreakerSelector typedLines={headerData.title} />
           </h1>
-          <video autoPlay className="video-height" muted={true} src={videoSource} loop playsInline />
+          <video
+            autoPlay
+            className="video-height"
+            muted={true}
+            src={videoSource}
+            loop
+            playsInline
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-offset="0"
+            data-aos-once="true"
+            data-aos-duration="700"
+          />
         </div>
         {/* Filtering section */}
-        <div className="thoughts-filtering" ref={filters}>
+        <div className="thoughts-filtering" ref={filters} data-aos="fade-up" data-aos-once="true">
           <span className="filter-category selected">All</span>
           {thoughtsPage.categories.map((category: string, index: number) => (
-            <span className="filter-category" key={index}>
+            <span className="filter-category" key={index} data-aos="fade-up" data-aos-once="true">
               {category}
             </span>
           ))}
         </div>
         {/* Thoughts section */}
-        <div className="thoughts">
+        <div className="thoughts" data-aos="fade-up" data-aos-once="true">
           {thoughts
             // Show only the thoughts with selected category
             .filter((t: IThought) => filterByCategory(t.category))
             .filter((t, index: number) => !filtering || index < 6) // If filtering, show only the first 6 thoughts
             .map((thought: IThought, index: number) => (
-              <div className="thought" key={index}>
+              <div className="thought" key={index} data-aos="fade-up" data-aos-once="true">
                 <Thought {...thought} />
               </div>
             ))}
@@ -121,7 +136,7 @@ export const Thoughts = () => {
               )}
             </span>
             {thoughts.filter((t: IThought) => filterByCategory(t.category)).length === 0 && (
-              <h2>
+              <h2 data-aos="fade-up" data-aos-once="true">
                 No
                 <span className="selected-filter">
                   {selectedFilter !== "All" ? ` ${selectedFilter.toLocaleLowerCase()} ` : " "}

@@ -7,7 +7,10 @@ import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 import "./Work.styles.scss";
 
 export const Work = () => {
-  useEffect(() => window.scrollTo(0, 0), []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.body.classList.remove("no-scroll");
+  }, []);
 
   return (
     <>

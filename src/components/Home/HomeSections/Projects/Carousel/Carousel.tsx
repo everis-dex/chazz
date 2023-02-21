@@ -18,11 +18,11 @@ export const Carousel = ({ title }: Props) => {
 
   return (
     <>
-      <div className="carouselTitle">
+      <div className="carouselTitle" data-aos="fade-up" data-aos-once="true">
         <h3>{title}</h3>
       </div>
 
-      <div id="carousel" className="carousel">
+      <div id="carousel" className="carousel" data-aos="fade-up" data-aos-once="true">
         <div className="pagination" />
         <div className="slides">
           <Swiper

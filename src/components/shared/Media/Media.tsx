@@ -47,11 +47,27 @@ export const Media = ({ src, style, alt, format }: Props) => {
               preload="auto"
               playsInline
               src={src}
+              data-aos="fade-zoom-in"
+              data-aos-easing="ease-in-back"
+              data-aos-offset="0"
+              data-aos-once="true"
+              data-aos-duration="700"
             >
               Video not supported.
             </video>
           )}
-          {supportedImageTags.includes(extension) && <img style={style} src={src} alt={alt} />}
+          {supportedImageTags.includes(extension) && (
+            <img
+              style={style}
+              src={src}
+              alt={alt}
+              data-aos="fade-zoom-in"
+              data-aos-easing="ease-in-back"
+              data-aos-offset="0"
+              data-aos-once="true"
+              data-aos-duration="700"
+            />
+          )}
           {extension === "json" && (
             <>{lottie ? <Lottie animationData={lottie} loop={true} autoplay={true} /> : <>Loading</>}</>
           )}
