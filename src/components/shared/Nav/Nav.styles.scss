@@ -11,6 +11,13 @@
   .chazz-logo {
     padding-left: 5%;
     z-index: 99;
+    a {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      gap: 5px;
+      align-items: flex-end;
+    }
   }
 }
 
