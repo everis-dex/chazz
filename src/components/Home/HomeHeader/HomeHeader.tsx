@@ -68,17 +68,26 @@ export const HomeHeader = (headerData: IHomeHeader) => {
     };
   }, []);
 
-  useEffect(() => {
-    setTimeout(() => {
-      if (titleLeft > 0) {
-        if (navHeight > 11) setNavHeight(11);
-        setTitleLeft(0);
-      } else {
+  const handleOnWheel: React.WheelEventHandler<HTMLDivElement> = e => {
+    if (e.deltaY > 0) {
+      if (navHeight > 10) setNavHeight(navHeight - 2);
+      else setNavHeight(10);
+
+      if (titleLeft > 0) setTitleLeft(titleLeft - 8 >= 0 ? titleLeft - 8 : 0);
+      else setTitleLeft(0);
+
+      if (titleLeft === 0 && navHeight === 10) {
         setAnimationComplete(true);
-        document.body.classList.remove("no-scroll");
       }
-    }, 1000);
-  }, [navHeight, titleLeft]);
+      if (animationComplete) setTimeout(() => document.body.classList.remove("no-scroll"), 1000);
+    }
+  };
+
+  useEffect(() => {
+    // Agregar la clase al body para ocultar el overflow
+    window.scrollTo(0, 0);
+    document.body.classList.add("no-scroll");
+  }, []);
 
   function appHeight(): void {
     document.documentElement?.style.setProperty("--app-height", `${window.innerHeight}px`);
@@ -87,8 +96,8 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   appHeight();
 
   return (
-    <div className="chazz-header">
-      <div className={isPlaying ? "velo-out" : "velo-in"}>
+    <div className="chazz-header" onWheel={handleOnWheel}>
+      <div className={isPlaying ? "velo-out" : "velo-in"} onWheel={handleOnWheel}>
         <div className={isPlaying ? "simply-out" : "simply-in"}>
           <span className={isPlaying ? "nav-out" : "nav-in"}>
             <Nav
