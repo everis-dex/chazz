@@ -35,7 +35,7 @@ export const Carousel = ({ title }: Props) => {
         <h3>{title}</h3>
       </div>
 
-      <div id="carousel" className="carousel" data-aos="fade-up" data-aos-once="true">
+      <div className="carousel">
         <div className="pagination" />
         <div
           className="slides"
