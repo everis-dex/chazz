@@ -251,8 +251,8 @@ collections:
   - name: partner
     label: Partner
     folder: content/partners
-    slug: "{{sort}}--{{partner}}"
-    summary: "{{sort}} - {{partner}}"
+    slug: "{{sort}}--{{name}}"
+    summary: "{{sort}} - {{name}}"
     extension: json
     format: json
     create: true
