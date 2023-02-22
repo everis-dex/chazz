@@ -15,11 +15,12 @@ collections:
   - name: home # Used in routes
     label: Home # Used in the UI
     folder: src/content/pages/home # Where the documents are stored, relative to the repo root
-    create: false # Allow users to create new documents in this collection
-    delete: false # Allow users to delete existing documents in this collection
     slug: "home" # Filename template. Default is {{slug}}, a url-safe version of the post's title.
+    summary: "{{page}}" # Name displayed in CMS as entry. Default is first string of widget "string"
     extension: json
     format: json
+    create: false # Allow users to create new documents in this collection
+    delete: false # Allow users to delete existing documents in this collection
     fields: # Fields for each document
       - { label: Page, name: page, widget: string }
       - { label: Published, name: published, widget: boolean, default: true }
@@ -49,44 +50,30 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Subtitle, name: subtitle, widget: string, required: false }
-      - label: Footer
-        name: footer
-        widget: object
-        fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Subtitle, name: subtitle, widget: string, required: false }
-          - { label: Offices, name: offices, widget: string }
-          - { label: Studios, name: studios, widget: string }
-          - { label: Get in touch, name: touch, widget: string }
-          - label: Social
-            name: social
-            widget: list
-            fields:
-              - { label: Name, name: name, widget: string }
-              - { label: Link, name: link, widget: string }
 
   - name: work
     label: Work
     folder: src/content/pages/work
-    create: true
-    delete: false
     slug: "work"
+    summary: "{{page}}"
     extension: json
     format: json
+    create: false
+    delete: false
     fields:
       - { label: Page, name: page, widget: string }
       - { label: Published, name: published, widget: boolean, default: true }
       - { label: Title, name: title, widget: string }
-      - { label: Subtitle, name: subtitle, widget: string, required: false }
+      - { label: Subtitle, name: subtitle, widget: text, required: false }
 
   - name: services
     label: Services
     folder: src/content/pages/services
-    create: false
-    delete: false
+    slug: "services"
     extension: json
     format: json
-    slug: "services"
+    create: false
+    delete: false
     fields:
       - { label: Page, name: page, widget: string }
       - { label: Published, name: published, widget: boolean, default: true }
@@ -107,20 +94,78 @@ collections:
   - name: thoughts
     label: Thoughts
     folder: src/content/pages/thoughts
-    create: false
-    delete: false
+    slug: "thoughts"
     extension: json
     format: json
-    slug: "thoughts"
+    create: false
+    delete: false
     fields:
       - { label: Page, name: page, widget: string }
       - { label: Published, name: published, widget: boolean, default: true }
-      - { label: Image, name: image, widget: image }
+      - label: Header
+        name: header
+        widget: object
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string, required: false }
+          - { label: Image, name: image, widget: image }
       - label: Categories
         name: categories
         widget: list
         fields:
           - { label: Cateogry, name: cateogry, widget: string }
+
+  - name: footer
+    label: Footer
+    folder: src/content/pages/footer
+    slug: "footer"
+    extension: json
+    format: json
+    create: false
+    delete: false
+    fields:
+      - { label: Page, name: page, widget: string }
+      - { label: Title, name: title, widget: string }
+      - label: Offices
+        name: offices
+        widget: object
+        fields:
+          - { label: Title, name: title, widget: string }
+          - label: Content
+            name: content
+            widget: list
+            fields:
+              - { label: City, name: city, widget: string }
+              - { label: Phone, name: phone, widget: string, required: false }
+              - { label: Email, name: email, widget: string }
+              - { label: Address, name: address, widget: string }
+      - label: Studios
+        name: studios
+        widget: object
+        fields:
+          - { label: Title, name: title, widget: string }
+          - label: Content
+            name: content
+            widget: list
+            fields:
+              - { label: City, name: city, widget: string }
+      - label: Get in touch
+        name: get_in_touch
+        widget: object
+        fields:
+          - { label: Title, name: title, widget: string }
+          - label: Content
+            name: content
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Emeal, name: email, widget: string }
+      - label: Social
+        name: social
+        widget: list
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Link, name: link, widget: string }
 
   ##############################
   #         COMPONENTS
@@ -132,6 +177,7 @@ collections:
     extension: json
     format: json
     create: true
+    delete: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
@@ -196,7 +242,7 @@ collections:
                   - label: Content
                     name: content
                     widget: list
-                    types:
+                    fields:
                       - { label: Image, name: image, widget: image, required: false }
                       - { label: Caption, name: caption, widget: string, required: false }
                       - { label: Title, name: title, widget: string, required: false }
@@ -205,10 +251,12 @@ collections:
   - name: partner
     label: Partner
     folder: content/partners
-    slug: "{{sort}}--{{partner}}"
+    slug: "{{sort}}--{{name}}"
+    summary: "{{sort}} - {{name}}"
     extension: json
     format: json
     create: true
+    delete: true
     fields:
       - { label: Name, name: name, widget: string }
       - { label: Logo, name: logo, widget: image }
@@ -223,6 +271,7 @@ collections:
     extension: json
     format: json
     create: true
+    delete: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
@@ -235,43 +284,6 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: Content, name: content, widget: text }
 
-  - name: office
-    label: Office
-    folder: content/offices
-    slug: "of-{{year}}-{{month}}-{{day}}--{{city}}"
-    extension: json
-    format: json
-    create: true
-    fields:
-      - { label: Publish Date, name: date, widget: datetime }
-      - { label: City, name: city, widget: string }
-      - { label: Phone, name: phone, widget: string, required: false }
-      - { label: Email, name: email, widget: string }
-      - { label: Address, name: address, widget: string }
-
-  - name: studio
-    label: Studio
-    folder: content/studios
-    slug: "st-{{year}}-{{month}}-{{day}}--{{city}}"
-    extension: json
-    format: json
-    create: true
-    fields:
-      - { label: Publish Date, name: date, widget: datetime }
-      - { label: City, name: city, widget: string }
-
-  - name: get_in_touch
-    label: Get in touch
-    folder: content/get-in-touch
-    slug: "{{year}}-{{month}}-{{day}}--{{title}}"
-    extension: json
-    format: json
-    create: true
-    fields:
-      - { label: Publish Date, name: date, widget: datetime }
-      - { label: Title, name: title, widget: string }
-      - { label: Emeal, name: email, widget: string }
-
   - name: policies
     label: Policies
     folder: content/policies
@@ -279,6 +291,7 @@ collections:
     extension: json
     format: json
     create: true
+    delete: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
@@ -317,6 +330,8 @@ collections:
     slug: "th-{{year}}-{{month}}-{{day}}--{{title}}"
     extension: json
     format: json
+    create: true
+    delete: true
     fields:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Category, name: category, widget: string }

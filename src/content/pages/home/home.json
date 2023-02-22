@@ -2,13 +2,13 @@
   "page": "Home",
   "published": true,
   "header": {
-    "title": "Empowering brands for real impact.",
+    "title": "Humanizing complexity for real impact.",
     "subtitle": "Hybrid & Strategic Digital Agency",
     "media": "/uploads/reel_chazz_1080.mp4"
   },
   "projects": {
     "title": "Featured Projects",
-    "subtitle": "eatured Proeatured Proeatured Proeatured Proeatured Proeatured Proeatured Proeatured Proeatured Proeatured Proeatured Proeatured Proeatured Proeatured Proeatured Proeatured Proeatured Proeatured Proeatured Proeatured Pro",
+    "subtitle": "",
     "more": "More projects"
   },
   "categories": {
@@ -18,26 +18,5 @@
   "partners": {
     "title": "Partners in crime",
     "subtitle": ""
-  },
-  "footer": {
-    "title": "We are part of NTT DATA Design Network, NDDN.",
-    "subtitle": "",
-    "offices": "CHAZZ OFFICES",
-    "touch": "GET IN TOUCH",
-    "studios": "NDDN NETWORK",
-    "social": [
-      {
-        "name": "Linkedin",
-        "link": "https://www.linkedin.com/company/chazz"
-      },
-      {
-        "link": "https://instagram.com/chazzmadrid",
-        "name": "Instagram"
-      },
-      {
-        "link": "https://medium.com/@ChazzDesign",
-        "name": "Medium"
-      }
-    ]
   }
 }

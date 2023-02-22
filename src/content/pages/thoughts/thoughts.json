@@ -1,7 +1,10 @@
 {
   "page": "Thoughts",
   "published": true,
-  "title": "Rethinking the present,+ delivering the future.",
-  "image": "/uploads/thoughts_cabecera.mp4",
+  "header": {
+    "title": "Rethinking the present,+ delivering the future.",
+    "subtitle": "",
+    "image": "/uploads/thoughts_cabecera.mp4"
+  },
   "categories": ["Technology", "Health", "Mobility", "Society", "Sustainibility"]
 }

@@ -1,22 +1,21 @@
 import React from "react";
 
-import { offices } from "../../../../../content/index";
 import { IOffice } from "../../../../../interfaces/cms";
 import { LinkedEmail, LinkedMap, LinkedPhone } from "./footerLinks";
 
 import "../CompanyInfo.styles.scss";
 
-type Props = { title: string };
+type Props = { offices: IOffice[] };
 
-export const Offices = ({ title }: Props) => {
+export const Offices = ({ offices }: Props) => {
   return (
     <>
-      <p className="section-title" id="section-title-offices">
-        {title}
+      <p className="section-title" id="section-title-offices" data-aos="fade-up" data-aos-once="true">
+        CHAZZ OFFICES
       </p>
       <div className="offices-container">
         {offices.map((office: IOffice, index: number) => (
-          <div className="offices-info" key={index}>
+          <div className="offices-info" key={index} data-aos="fade-up" data-aos-once="true">
             <p className="city">{office.city}</p>
             {!office.phone.includes('"') && <LinkedPhone phone={office.phone} />}
             {!office.email.includes('"') && <LinkedEmail email={office.email} />}
