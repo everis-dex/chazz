@@ -69,7 +69,7 @@ export const ProjectsGrid = (workData: IWork) => {
           projects.map((project: IProject, index: number) => {
             const [format, columns] = handleProjectFormat();
             return (
-              <Fragment key={index} data-aos="fade-up" data-aos-once="true">
+              <Fragment key={index}>
                 <ProjectCard data={project} format={format} columns={columns} />
               </Fragment>
             );

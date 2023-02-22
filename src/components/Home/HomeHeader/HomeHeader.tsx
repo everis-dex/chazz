@@ -84,8 +84,6 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   };
   function reload() {
     // Agregar la clase al body para ocultar el overflow
-    console.log("🚀 ~ file: HomeHeader.tsx:89 ~ useEffect ~ window.top:", window);
-    console.log("🚀 ~ file: HomeHeader.tsx:89 ~ useEffect ~ window.top:", window.pageYOffset);
     if (window.pageYOffset !== 0) window.scrollTo(0, 0);
     else {
       document.body.classList.add("no-scroll");
