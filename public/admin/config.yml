@@ -119,6 +119,7 @@ collections:
     label: Footer
     folder: src/content/pages/footer
     slug: "footer"
+    summary: "{{page}}"
     extension: json
     format: json
     create: false
