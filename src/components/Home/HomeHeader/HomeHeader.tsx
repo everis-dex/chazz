@@ -16,10 +16,13 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const [navHeight, setNavHeight] = useState<number>(window.innerWidth > 768 ? 25 : 11);
   const [titleLeft, setTitleLeft] = useState<number>(100);
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-  const [animationComplete, setAnimationComplete] = useState<boolean>(false);
+  const [animationComplete, setAnimationComplete] = useState<boolean>(windowWidth > 1200 ? false : true);
 
   // Creamos una función que nos re calcula el ancho de la pantalla:
-  window.onresize = () => setWindowWidth(window.innerWidth);
+  window.onresize = () => {
+    setWindowWidth(window.innerWidth);
+    if (windowWidth < 1200) setAnimationComplete(true);
+  };
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const controlRef = useRef<HTMLDivElement>(null);
