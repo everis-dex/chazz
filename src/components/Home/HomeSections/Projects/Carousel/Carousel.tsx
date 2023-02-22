@@ -3,7 +3,7 @@ import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Lottie from "lottie-react";
 import { CarouselSlide } from "./CarouselSlide";
-import dragCursor from "../../../../../assets/1676471383.833592.json";
+import dragCursor from "../../../../../assets/dragCursor.json";
 import { projects } from "../../../../../content/index";
 import { IProject } from "../../../../../interfaces/cms";
 
