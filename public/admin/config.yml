@@ -128,38 +128,23 @@ collections:
       - { label: Title, name: title, widget: string }
       - label: Offices
         name: offices
-        widget: object
+        widget: list
         fields:
-          - { label: Title, name: title, widget: string }
-          - label: Content
-            name: content
-            widget: list
-            fields:
-              - { label: City, name: city, widget: string }
-              - { label: Phone, name: phone, widget: string, required: false }
-              - { label: Email, name: email, widget: string }
-              - { label: Address, name: address, widget: string }
+          - { label: City, name: city, widget: string }
+          - { label: Phone, name: phone, widget: string, required: false }
+          - { label: Email, name: email, widget: string }
+          - { label: Address, name: address, widget: string }
       - label: Studios
         name: studios
-        widget: object
+        widget: list
         fields:
-          - { label: Title, name: title, widget: string }
-          - label: Content
-            name: content
-            widget: list
-            fields:
-              - { label: City, name: city, widget: string }
+          - { label: City, name: city, widget: string }
       - label: Get in touch
-        name: get_in_touch
-        widget: object
+        name: touch
+        widget: list
         fields:
           - { label: Title, name: title, widget: string }
-          - label: Content
-            name: content
-            widget: list
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Emeal, name: email, widget: string }
+          - { label: Emeal, name: email, widget: string }
       - label: Social
         name: social
         widget: list
@@ -284,6 +269,29 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: Content, name: content, widget: text }
 
+  - name: thought
+    label: Thought
+    folder: content/thoughts
+    slug: "th-{{year}}-{{month}}-{{day}}--{{title}}"
+    extension: json
+    format: json
+    create: true
+    delete: true
+    fields:
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Category, name: category, widget: string }
+      - { label: Image, name: image, widget: image }
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string }
+      - { label: Duration, name: duration, widget: string }
+      - label: Details
+        name: details
+        widget: object
+        fields:
+          - { label: Subtitle, name: subtitle, widget: string }
+          - { label: Author, name: author, widget: string }
+      - { label: Body, name: body, widget: markdown }
+
   - name: policies
     label: Policies
     folder: content/policies
@@ -323,26 +331,3 @@ collections:
                       - { label: Host, name: host, widget: string }
                       - { label: Expiration, name: expiration, widget: text }
                       - { label: Service, name: service, widget: string }
-
-  - name: thought
-    label: Thought
-    folder: content/thoughts
-    slug: "th-{{year}}-{{month}}-{{day}}--{{title}}"
-    extension: json
-    format: json
-    create: true
-    delete: true
-    fields:
-      - { label: Publish Date, name: date, widget: datetime }
-      - { label: Category, name: category, widget: string }
-      - { label: Image, name: image, widget: image }
-      - { label: Title, name: title, widget: string }
-      - { label: Subtitle, name: subtitle, widget: string }
-      - { label: Duration, name: duration, widget: string }
-      - label: Details
-        name: details
-        widget: object
-        fields:
-          - { label: Subtitle, name: subtitle, widget: string }
-          - { label: Author, name: author, widget: string }
-      - { label: Body, name: body, widget: markdown }
