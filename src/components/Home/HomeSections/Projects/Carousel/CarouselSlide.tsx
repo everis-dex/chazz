@@ -18,7 +18,7 @@ export const CarouselSlide = (project: IProject) => {
   useEffect(() => {
     const commonProps = {
       objectFit: "cover",
-      cursor: "url('assets/drag-pointer.svg'), auto",
+      cursor: "url('assets/icn-drag_pointer.svg'), auto",
       width: "100%"
     };
 
