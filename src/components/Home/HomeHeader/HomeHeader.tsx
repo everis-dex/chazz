@@ -9,18 +9,24 @@ import "./HomeHeader.styles.scss";
 const controlTextOptions = { play: "Play", stop: "Stop" };
 
 export const HomeHeader = (headerData: IHomeHeader) => {
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+
+  // Video states
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [controlText, setControlText] = useState<string>(controlTextOptions.play);
+
+  // Nav bar / burger menu states
   const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
-  const [controlText, setControlText] = useState<string>(controlTextOptions.play);
-  const [navHeight, setNavHeight] = useState<number>(window.innerWidth > 768 ? 25 : 11);
-  const [titleLeft, setTitleLeft] = useState<number>(100);
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-  const [animationComplete, setAnimationComplete] = useState<boolean>(windowWidth > 1200 ? false : true);
 
-  // Creamos una función que nos re calcula el ancho de la pantalla:
+  // Animation states
+  const [titleLeft, setTitleLeft] = useState<number>(100);
+  const [navHeight, setNavHeight] = useState<number>(windowWidth > 1200 ? 25 : 11);
+  const [animationComplete, setAnimationComplete] = useState<boolean>(windowWidth < 1200);
+
   window.onresize = () => {
     setWindowWidth(window.innerWidth);
+    // If device is mobile, animation is already completed (disabled)
     if (windowWidth < 1200) setAnimationComplete(true);
   };
 
@@ -34,8 +40,8 @@ export const HomeHeader = (headerData: IHomeHeader) => {
 
     if (isPlaying) {
       videoRef.current.pause();
-      setIsNavVisible(!isNavVisible);
       setControlText(controlTextOptions.play);
+      setIsNavVisible(!isNavVisible);
     } else {
       videoRef.current.play();
       setControlText(controlTextOptions.stop);
@@ -45,10 +51,14 @@ export const HomeHeader = (headerData: IHomeHeader) => {
 
   const AlertNavParent = (value: boolean): void => setIsBurgerMenuOpen(value);
 
-  useEffect(() => {
-    const handleMouseMove = (event: any): void => {
-      if (!controlRef.current) return;
+  function pauseVideo(): void {
+    setIsPlaying(false);
+    setControlText(controlTextOptions.play);
+  }
 
+  useEffect(() => {
+    function handleMouseMove(event: any): void {
+      if (!controlRef.current) return;
       if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
         const scrollFinalY = event.pageY - 10;
         const scrollFinalX = event.pageX - 50;
@@ -64,7 +74,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       } else {
         controlRef.current.style.opacity = "0";
       }
-    };
+    }
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
@@ -89,12 +99,9 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   function reload() {
     // Agregar la clase al body para ocultar el overflow
     if (window.pageYOffset !== 0) window.scrollTo(0, 0);
-    else {
-      document.body.classList.add("no-scroll");
-    }
-    setTimeout(() => {
-      document.body.classList.add("no-scroll");
-    }, 500);
+    else document.body.classList.add("no-scroll");
+
+    setTimeout(() => document.body.classList.add("no-scroll"), 500);
   }
 
   document.addEventListener("load", reload);
@@ -105,6 +112,10 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   }
   window.addEventListener("resize", appHeight);
   appHeight();
+
+  useEffect(() => {
+    if (!isPlaying && !isNavVisible) setIsNavVisible(true);
+  }, [isNavVisible, isPlaying, setIsNavVisible]);
 
   const PlayerControler = () => (
     <>
@@ -125,7 +136,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
               isPlaying={isPlaying}
               AlertNavParent={AlertNavParent}
               height={navHeight}
-              darkMode={window.innerWidth < 768}
+              darkMode={windowWidth < 768}
             />
           </span>
         </div>
@@ -153,18 +164,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
 
       {!isPlaying && <img src="/assets/first_frame.jpg" alt="" className="grayscale" />}
 
-      <VideoHeader
-        isPlaying={isPlaying}
-        setIsPlaying={setIsPlaying}
-        isNavVisible={isNavVisible}
-        setIsNavVisible={setIsNavVisible}
-        isBurgerMenuOpen={isBurgerMenuOpen}
-        controlTextOptions={controlTextOptions}
-        controlText={controlText}
-        setControlText={setControlText}
-        ref={videoRef}
-      />
-
+      <VideoHeader isPlaying={isPlaying} pauseVideo={pauseVideo} ref={videoRef} />
       <AllowCookies />
     </div>
   );
