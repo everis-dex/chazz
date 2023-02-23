@@ -151,7 +151,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
         </div>
       )}
 
-      {!isPlaying && <img src="/uploads/first_frame.jpg" alt="" className="grayscale" />}
+      {!isPlaying && <img src="/assets/first_frame.jpg" alt="" className="grayscale" />}
 
       <VideoHeader
         isPlaying={isPlaying}

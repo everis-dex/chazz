@@ -16,10 +16,9 @@ export const CarouselSlide = (project: IProject) => {
   const screenWidth: number = window.innerWidth;
 
   useEffect(() => {
-    const pointerURL = window.location.origin + "/uploads/drag-pointer.svg";
     const commonProps = {
       objectFit: "cover",
-      cursor: `url(${pointerURL}), auto`,
+      cursor: "url('assets/drag-pointer.svg'), auto",
       width: "100%"
     };
 
