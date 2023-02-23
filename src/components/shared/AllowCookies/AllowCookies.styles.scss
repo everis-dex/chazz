@@ -1,5 +1,4 @@
-.chazz-cookies,
-.fade-out-cookies {
+.chazz-cookies {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -7,7 +6,6 @@
   background-color: var(--white);
   height: auto;
   z-index: 10;
-  position: absolute;
   width: 90%;
   bottom: 3%;
   left: 5%;
@@ -18,13 +16,11 @@
   p {
     margin: 0 10px;
     font-size: 16px;
-
     a {
       color: var(--black);
-    }
-
-    a:hover {
-      color: var(--pink);
+      &:hover {
+        color: var(--pink);
+      }
     }
   }
 
@@ -35,35 +31,12 @@
     font-weight: 700;
     font-size: 19px;
     background-color: var(--black);
-    cursor: pointer;
-    -webkit-appearance: media-slider !important;
-  }
 
-  button:hover {
-    color: var(--black);
-    background-color: var(--pink);
-    border: 2px solid var(--pink);
-  }
-}
-
-.fade-out-cookies {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: space-around;
-  background-color: var(--white);
-  height: auto;
-  z-index: 10;
-  position: absolute;
-  width: 90%;
-  bottom: -10%;
-  left: 5%;
-  position: fixed;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-
-  .p {
-    color: white;
+    &:hover {
+      color: var(--black);
+      background-color: var(--pink);
+      border: 2px solid var(--pink);
+    }
   }
 }
 
