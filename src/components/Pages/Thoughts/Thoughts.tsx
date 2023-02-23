@@ -6,7 +6,7 @@ import { ScrollToTop } from "../../../utils/utils";
 import { AllowCookies, LineBreakerSelector, Media, Nav } from "../../shared";
 import { Thought } from "./Thought/Thought";
 
-import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.svg";
+import { ReactComponent as RightArrow } from "../../../assets/icn-right_arrow.svg";
 
 import "./Thoughts.styles.scss";
 

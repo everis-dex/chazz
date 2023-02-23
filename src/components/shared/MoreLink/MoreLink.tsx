@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.svg";
+import { ReactComponent as RightArrow } from "../../../assets/icn-right_arrow.svg";
 
 import "./MoreLink.styles.scss";
 

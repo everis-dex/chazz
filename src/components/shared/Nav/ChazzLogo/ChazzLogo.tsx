@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { ReactComponent as Chazz } from "../../../../assets/Chazz_logov2.svg";
+import { ReactComponent as Chazz } from "../../../../assets/logo-chazz.svg";
 import { ReactComponent as NTTCompany } from "../../../../assets/NTT_Logo.svg";
 
 import "../Nav.styles.scss";

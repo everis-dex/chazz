@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/everis-dex/chazz">
-    <img src="./src/assets/Chazz_Logo.svg" alt="Logo" height="40">
+    <img src="./src/assets/logo-chazz_readme.svg" alt="Logo" height="40">
   </a>
 
 <h3 align="center"><strong>Chazz</strong></h3>
