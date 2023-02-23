@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import { Partner } from "./Partner";
 
@@ -16,7 +16,9 @@ export const Partners = (partnersData: IHomeSection) => {
       </div>
       <div className="partners-container">
         {partners.map((partner: IPartner, index: number) => (
-          <Partner partner={partner} index={index} />
+          <div className="partner" key={index}>
+            <Partner partner={partner} index={index} />
+          </div>
         ))}
       </div>
     </div>

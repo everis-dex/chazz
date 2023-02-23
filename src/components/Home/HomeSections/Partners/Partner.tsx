@@ -13,8 +13,6 @@ export const Partner = ({ partner, index }: Props) => {
 
   return (
     <div
-      className="partner"
-      key={index}
       data-aos="fade-zoom-in"
       data-aos-easing="ease-in-back"
       data-aos-offset="0"
