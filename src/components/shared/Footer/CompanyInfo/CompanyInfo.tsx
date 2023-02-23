@@ -8,6 +8,7 @@ import "./CompanyInfo.styles.scss";
 
 export const CompanyInfo = (footerData: IFooter) => {
   const { title, offices, studios, touch, social } = footerData;
+
   return (
     <div className="we-are-section" data-aos="fade-up" data-aos-once="true">
       <div className="we-are-grid">

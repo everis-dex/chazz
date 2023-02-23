@@ -12,8 +12,7 @@ export const Nav = ({ isPlaying = false, darkMode = false, AlertNavParent, heigh
   const [root] = useState(document.getElementById("root"));
 
   const displayMode = darkMode ? DisplayModes.dark : DisplayModes.light;
-  const { color } = displayMode;
-  const logoColor = isBurgerMenuOpen ? "white" : color;
+  const logoColor = isBurgerMenuOpen ? "white" : displayMode.color;
 
   function toggleMenu(): void {
     if (isPlaying) return;
