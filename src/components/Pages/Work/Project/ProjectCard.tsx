@@ -6,24 +6,24 @@ import { Accordion, LineBreakerSelector, Media } from "../../../shared";
 
 import "./ProjectCard.styles.scss";
 
-type Props = { data: IProject; format: string; columns?: string };
+type Props = { project: IProject; format: string; columns?: string };
 
-export const ProjectCard = ({ data, format, columns }: Props) => {
-  const projectDetails: IProjectDetails = data.details;
+export const ProjectCard = ({ project, format, columns }: Props) => {
+  const projectDetails: IProjectDetails = project.details;
   const image = projectDetails.media.project;
-  const caseURL = "case/" + data.id;
+  const caseURL = "case/" + project.id;
 
   return (
     <div className={`project-container ${columns}`}>
       <div className={`project-media ${format === "half" ? "half" : ""}`}>
-        <Media src={image} alt={data.title} format={format} />
+        <Media src={image} alt={project.title} format={format} />
       </div>
 
       <div className="project-details">
         <div className="project-title-container">
           {/* Replace span of title by Link, and change the hover of the title class in styles */}
           <Link to={caseURL} className="title" data-aos="fade-up" data-aos-once="true">
-            {data.title} —
+            {project.title} —
           </Link>
           <span className="description" data-aos="fade-up" data-aos-once="true">
             {projectDetails.description}

@@ -70,7 +70,7 @@ export const ProjectsGrid = (workData: IWork) => {
             const [format, columns] = handleProjectFormat();
             return (
               <Fragment key={index}>
-                <ProjectCard data={project} format={format} columns={columns} />
+                <ProjectCard project={project} format={format} columns={columns} />
               </Fragment>
             );
           })}
