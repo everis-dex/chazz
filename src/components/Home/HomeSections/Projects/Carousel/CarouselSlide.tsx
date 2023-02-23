@@ -19,12 +19,13 @@ export const CarouselSlide = (project: IProject) => {
     const pointerURL = window.location.origin + "/uploads/drag-pointer.svg";
     const commonProps = {
       objectFit: "cover",
-      cursor: `url(${pointerURL}), auto`
+      cursor: `url(${pointerURL}), auto`,
+      width: "100%"
     };
 
     function resizeSlides(): void {
-      const smallScreen = { width: "100%", height: "288px" };
-      const largeScreen = { width: "100%", height: "666px" };
+      const smallScreen = { height: "288px" };
+      const largeScreen = { height: "666px" };
 
       const selectedStyles = screenWidth < 768 ? smallScreen : largeScreen;
       setMediaStyle({ ...commonProps, ...selectedStyles });
@@ -42,7 +43,7 @@ export const CarouselSlide = (project: IProject) => {
       <Link to="/work">
         <Media
           src={project.details.media.carousel}
-          style={mediaStyle || { width: "0px", height: "auto" }}
+          style={mediaStyle || { width: "100%", height: "auto" }}
           alt={project.title}
         />
       </Link>

@@ -1,34 +1,32 @@
+import Lottie from "lottie-react";
 import React, { useState } from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Lottie from "lottie-react";
-import { CarouselSlide } from "./CarouselSlide";
+
 import dragCursor from "../../../../../assets/dragCursor.json";
 import { projects } from "../../../../../content/index";
 import { IProject } from "../../../../../interfaces/cms";
+import { CarouselSlide } from "./CarouselSlide";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "./Carousel.styles.scss";
 
 type Props = { title: string };
+
 export const Carousel = ({ title }: Props) => {
-  const slides: IProject[] = [...projects];
-  const featuredSlides: IProject[] = slides.filter(slide => slide.details.incarousel).slice(0, 5);
+  const featuredSlides: IProject[] = projects.filter(project => project.details.incarousel).slice(0, 5);
   const [isMouseInside, setIsMouseInside] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const handleMouseEnter = () => {
-    setIsMouseInside(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsMouseInside(false);
-  };
+  // Mouse movement events
+  const handleMouseEnter = () => setIsMouseInside(true);
+  const handleMouseLeave = () => setIsMouseInside(false);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     setMousePosition({ x: event.clientX, y: event.clientY });
   };
+
   return (
     <>
       <div className="carouselTitle" data-aos="fade-up" data-aos-once="true">
@@ -70,7 +68,7 @@ export const Carousel = ({ title }: Props) => {
                 </SwiperSlide>
               );
             })}
-            {isMouseInside ? (
+            {isMouseInside && (
               <Lottie
                 animationData={dragCursor}
                 loop={false}
@@ -86,7 +84,7 @@ export const Carousel = ({ title }: Props) => {
                   pointerEvents: "none"
                 }}
               />
-            ) : null}
+            )}
           </Swiper>
         </div>
       </div>
