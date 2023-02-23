@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { thoughts, thoughtsPage } from "../../../content/index";
+import { IPageHeader, IThought } from "../../../interfaces/cms";
 import { ScrollToTop } from "../../../utils/utils";
-import { IThought, IPageHeader } from "../../../interfaces/cms";
-import { AllowCookies, LineBreakerSelector, Nav } from "../../shared/index";
+import { AllowCookies, LineBreakerSelector, Media, Nav } from "../../shared";
 import { Thought } from "./Thought/Thought";
 
 import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.svg";
@@ -59,7 +59,7 @@ export const Thoughts = () => {
   const LessThoughts = () => (
     <>
       <RightArrow
-        stroke={!isHover ? "#191919" : "#fc82a3"}
+        stroke={isHover ? "#fc82a3" : "#191919"}
         className="icon-size"
         style={{ transform: "rotate(180deg)", marginLeft: "-2px" }}
       />
@@ -70,7 +70,7 @@ export const Thoughts = () => {
   const MoreThoughts = () => (
     <>
       More thoughts &nbsp;&nbsp;
-      <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />
+      <RightArrow stroke={isHover ? "#fc82a3" : "#191919"} className="icon-size" />
     </>
   );
 
@@ -84,19 +84,7 @@ export const Thoughts = () => {
           <h1 className="header-title" data-aos="fade-up" data-aos-once="true">
             <LineBreakerSelector typedLines={headerData.title} />
           </h1>
-          <video
-            autoPlay
-            className="video-height"
-            muted={true}
-            src={videoSource}
-            loop
-            playsInline
-            data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-offset="0"
-            data-aos-once="true"
-            data-aos-duration="700"
-          />
+          <Media src={videoSource} alt="Header" className="video-height" />
         </div>
         {/* Filtering section */}
         <div className="thoughts-filtering" ref={filters} data-aos="fade-up" data-aos-once="true">

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { categories, services } from "../../../content/index";
 import { ICategory, IPageHeader } from "../../../interfaces/cms";
 import { ScrollToTop } from "../../../utils/utils";
-import { AllowCookies, FeaturedProjects, LineBreakerSelector, Nav } from "../../shared/index";
+import { AllowCookies, FeaturedProjects, LineBreakerSelector, Media, Nav } from "../../shared";
 import { Category } from "./Category/Category";
 
 import "./Services.styles.scss";
@@ -29,19 +29,7 @@ export const Services = () => {
             <LineBreakerSelector typedLines={headerData.title} />
           </h1>
           {headerData.subtitle && <h3 className="subtitle">{headerData.subtitle}</h3>}
-          <video
-            autoPlay
-            className="video-height"
-            muted={true}
-            src={videoSource}
-            loop
-            playsInline
-            data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-offset="0"
-            data-aos-once="true"
-            data-aos-duration="700"
-          />
+          <Media src={videoSource} alt="Header" className="video-height" />
         </div>
         {/* Categories section */}
         <div className="services-categories">

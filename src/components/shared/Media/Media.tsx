@@ -6,12 +6,13 @@ const supportedImageTags: Array<string> = ["jpg", "jpeg", "gif", "png", "apng", 
 
 type Props = {
   src: string;
-  style: { width: string; height?: string };
+  style?: { width: string; height?: string };
+  className?: string;
   alt: string;
   format?: string;
 };
 
-export const Media = ({ src, style, alt, format }: Props) => {
+export const Media = ({ src, style = { width: "100%", height: "auto" }, className, alt, format }: Props) => {
   const [lottie, setLottie] = useState<Object | null>(null);
 
   if (window.innerWidth > 1900 && format === "auto") style.height = "auto";
@@ -38,6 +39,7 @@ export const Media = ({ src, style, alt, format }: Props) => {
         <>
           {supportedVideoTags.includes(extension) && (
             <video
+              className={className}
               width={style.width}
               height="auto"
               onError={error => console.error(error)}
@@ -58,6 +60,7 @@ export const Media = ({ src, style, alt, format }: Props) => {
           )}
           {supportedImageTags.includes(extension) && (
             <img
+              className={className}
               style={style}
               src={src}
               alt={alt}

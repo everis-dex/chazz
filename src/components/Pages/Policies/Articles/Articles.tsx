@@ -28,6 +28,7 @@ export const Articles = ({ policy, resetArticle }: Props) => {
     }
   }
 
+  // If tab changed to another policy, set selected article to 0
   useEffect(() => {
     if (resetArticle) setArticleIndex(0);
   }, [resetArticle]);
