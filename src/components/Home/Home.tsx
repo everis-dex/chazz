@@ -4,8 +4,21 @@ import { home } from "../../content/index";
 import { Categories, HomeHeader, Partners, Projects } from "./index";
 
 export const Home = () => {
-  useEffect(() => window.scrollTo(0, 0), []);
   const { header, categories, projects, partners } = home;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    function appHeight(): void {
+      document.documentElement?.style.setProperty("--app-height", `${window.innerHeight}px`);
+    }
+    appHeight();
+    window.addEventListener("resize", appHeight);
+
+    return () => {
+      window.removeEventListener("resize", appHeight);
+    };
+  }, []);
 
   return (
     <>

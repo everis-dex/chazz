@@ -19,10 +19,14 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
 
-  // Animation states
+  // Entrance animation states
   const [titleLeft, setTitleLeft] = useState<number>(100);
   const [navHeight, setNavHeight] = useState<number>(windowWidth < 1200 ? 11 : 25);
   const [animationComplete, setAnimationComplete] = useState<boolean>(windowWidth < 1200);
+
+  // References
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const controlRef = useRef<HTMLDivElement>(null);
 
   // ---- Methods
 
@@ -32,13 +36,8 @@ export const HomeHeader = (headerData: IHomeHeader) => {
     if (windowWidth < 1200) setAnimationComplete(true);
   };
 
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const controlRef = useRef<HTMLDivElement>(null);
-
-  const switchPlayPause = () => {
-    if (!animationComplete) return;
-    setIsPlaying(!isPlaying);
-    if (!videoRef.current) return;
+  function switchPlayPause(): void {
+    if (!animationComplete || !videoRef.current) return;
 
     if (isPlaying) {
       videoRef.current.pause();
@@ -49,42 +48,16 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       setControlText(controlTextOptions.stop);
       setTimeout(() => setIsNavVisible(!isNavVisible), 1000);
     }
-  };
-
-  // Handler functions for children components
-  function AlertNavParent(value: boolean): void {
-    setIsBurgerMenuOpen(value);
+    setIsPlaying(!isPlaying);
   }
 
+  // Handler function for children components
   function pauseVideo(): void {
     setIsPlaying(false);
     setControlText(controlTextOptions.play);
   }
 
-  useEffect(() => {
-    function handleMouseMove(event: any): void {
-      if (!controlRef.current) return;
-      if (event.clientY > 70 && event.clientX < window.innerWidth - 120) {
-        const scrollFinalY = event.pageY - 10;
-        const scrollFinalX = event.pageX - 50;
-
-        if (window.innerWidth >= 1024) {
-          controlRef.current.style.top = scrollFinalY.toString().concat("px");
-          controlRef.current.style.left = scrollFinalX.toString().concat("px");
-          controlRef.current.style.opacity = "1";
-        } else {
-          controlRef.current.style.top = (window.innerHeight - 40).toString().concat("px");
-          controlRef.current.style.left = "5%";
-        }
-      } else {
-        controlRef.current.style.opacity = "0";
-      }
-    }
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
+  // Event functions
 
   const handleOnWheel: React.WheelEventHandler<HTMLDivElement> = e => {
     if (e.deltaY > 0) {
@@ -102,25 +75,41 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   };
 
   function reload() {
-    // Agregar la clase al body para ocultar el overflow
     if (window.pageYOffset !== 0) window.scrollTo(0, 0);
     else document.body.classList.add("no-scroll");
 
     setTimeout(() => document.body.classList.add("no-scroll"), 500);
   }
-
+  reload();
   document.addEventListener("load", reload);
-  useEffect(() => reload(), []);
 
-  function appHeight(): void {
-    document.documentElement?.style.setProperty("--app-height", `${window.innerHeight}px`);
-  }
-  window.addEventListener("resize", appHeight);
-  appHeight();
+  // ---- useEffects
 
   useEffect(() => {
     if (!isPlaying && !isNavVisible) setIsNavVisible(true);
   }, [isNavVisible, isPlaying, setIsNavVisible]);
+
+  // Make the Play / Stop reel text follow cursor
+  useEffect(() => {
+    function handleMouseMove(e: MouseEvent): void {
+      if (!controlRef.current) return;
+      // Desktop format
+      if (window.innerWidth >= 1024) {
+        controlRef.current.style.top = e.pageY - 10 + "px";
+        controlRef.current.style.left = e.pageX - 50 + "px";
+        controlRef.current.style.opacity = "1";
+      }
+      // Mobile format
+      else {
+        controlRef.current.style.top = window.innerHeight - 40 + "px";
+        controlRef.current.style.left = "5%";
+      }
+    }
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   const PlayerControler = () => (
     <>
@@ -139,7 +128,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           <span className={isPlaying ? "nav-out" : "nav-in"}>
             <Nav
               isPlaying={isPlaying}
-              AlertNavParent={AlertNavParent}
+              displayBurgerMenu={setIsBurgerMenuOpen}
               height={navHeight}
               darkMode={windowWidth < 768}
             />
@@ -150,6 +139,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
             <h1>{headerData.title}</h1>
             <h4>{headerData.subtitle}</h4>
           </div>
+          {/* Mobile format for Play / Stop reel */}
           {!isBurgerMenuOpen && (
             <div className="player-video-mobile-switcher">
               <div className="player-video">
@@ -159,6 +149,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           )}
         </div>
       </div>
+      {/* Desktop format for Play / Stop reel */}
       {animationComplete && (
         <div className="player-video-desktop-switcher">
           <div className="player-video" ref={controlRef}>
@@ -166,7 +157,6 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           </div>
         </div>
       )}
-
       {!isPlaying && <img src="/assets/first_frame.jpg" alt="" className="grayscale" />}
 
       <VideoHeader isPlaying={isPlaying} pauseVideo={pauseVideo} ref={videoRef} />
