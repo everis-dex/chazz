@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { categories, services } from "../../../content/index";
 import { ICategory, IPageHeader } from "../../../interfaces/cms";
+import { ScrollToTop } from "../../../utils/utils";
 import { AllowCookies, FeaturedProjects, LineBreakerSelector, Nav } from "../../shared/index";
 import { Category } from "./Category/Category";
 
 import "./Services.styles.scss";
 
 export const Services = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.classList.remove("no-scroll");
-  }, []);
+  ScrollToTop();
   const headerData: IPageHeader = services.header;
   const [videoSource, setVideoSource] = useState<string>(getVideoSource());
 
