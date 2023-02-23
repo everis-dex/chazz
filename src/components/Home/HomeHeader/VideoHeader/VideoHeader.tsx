@@ -7,6 +7,7 @@ export const VideoHeader = forwardRef(({ isPlaying, pauseVideo }: Props, ref: an
   function resetVideo(): void {
     pauseVideo();
     const videoRef = ref as React.RefObject<HTMLVideoElement>;
+    // Set video playing time to 0
     if (videoRef && videoRef.current) videoRef.current.currentTime = 0;
   }
 

@@ -15,14 +15,16 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [controlText, setControlText] = useState<string>(controlTextOptions.play);
 
-  // Nav bar / burger menu states
+  // Nav / burger menu states
   const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
 
   // Animation states
   const [titleLeft, setTitleLeft] = useState<number>(100);
-  const [navHeight, setNavHeight] = useState<number>(windowWidth > 1200 ? 25 : 11);
+  const [navHeight, setNavHeight] = useState<number>(windowWidth < 1200 ? 11 : 25);
   const [animationComplete, setAnimationComplete] = useState<boolean>(windowWidth < 1200);
+
+  // ---- Methods
 
   window.onresize = () => {
     setWindowWidth(window.innerWidth);
@@ -49,7 +51,10 @@ export const HomeHeader = (headerData: IHomeHeader) => {
     }
   };
 
-  const AlertNavParent = (value: boolean): void => setIsBurgerMenuOpen(value);
+  // Handler functions for children components
+  function AlertNavParent(value: boolean): void {
+    setIsBurgerMenuOpen(value);
+  }
 
   function pauseVideo(): void {
     setIsPlaying(false);
