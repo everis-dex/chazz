@@ -4,19 +4,15 @@ import { home } from "../../content/index";
 import { Categories, HomeHeader, Partners, Projects } from "./index";
 
 export const Home = () => {
-  const headerData = home.header;
-  const categoriesData = home.categories;
-  const projectsData = home.projects;
-  const partnersData = home.partners;
-
   useEffect(() => window.scrollTo(0, 0), []);
+  const { header, categories, projects, partners } = home;
 
   return (
     <>
-      <HomeHeader {...headerData} />
-      <Categories {...categoriesData} />
-      <Projects {...projectsData} />
-      <Partners {...partnersData} />
+      <HomeHeader {...header} />
+      <Categories {...categories} />
+      <Projects {...projects} />
+      <Partners {...partners} />
     </>
   );
 };

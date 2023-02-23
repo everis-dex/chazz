@@ -85,6 +85,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       if (animationComplete) setTimeout(() => document.body.classList.remove("no-scroll"), 1000);
     }
   };
+
   function reload() {
     // Agregar la clase al body para ocultar el overflow
     if (window.pageYOffset !== 0) window.scrollTo(0, 0);
@@ -97,16 +98,23 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   }
 
   document.addEventListener("load", reload);
-
-  useEffect(() => {
-    reload();
-  }, []);
+  useEffect(() => reload(), []);
 
   function appHeight(): void {
     document.documentElement?.style.setProperty("--app-height", `${window.innerHeight}px`);
   }
   window.addEventListener("resize", appHeight);
   appHeight();
+
+  const PlayerControler = () => (
+    <>
+      <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
+      <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
+      <span className="player-text" onClick={switchPlayPause}>
+        {controlText} reel
+      </span>
+    </>
+  );
 
   return (
     <div className="chazz-header" onWheel={handleOnWheel}>
@@ -129,11 +137,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           {!isBurgerMenuOpen && (
             <div className="player-video-mobile-switcher">
               <div className="player-video">
-                <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
-                <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
-                <span className="player-text" onClick={switchPlayPause}>
-                  {controlText} reel
-                </span>
+                <PlayerControler />
               </div>
             </div>
           )}
@@ -142,11 +146,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       {animationComplete && (
         <div className="player-video-desktop-switcher">
           <div className="player-video" ref={controlRef}>
-            <div className={`play-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
-            <div className={`stop-icon-${isPlaying ? "in" : "out"}`} onClick={switchPlayPause} />
-            <span className="player-text" onClick={switchPlayPause}>
-              {controlText} reel
-            </span>
+            <PlayerControler />
           </div>
         </div>
       )}

@@ -18,9 +18,7 @@ export const VideoHeader = forwardRef(
     ref: React.LegacyRef<HTMLVideoElement>
   ) => {
     useEffect(() => {
-      if (!isPlaying && !isNavVisible) {
-        setIsNavVisible(true);
-      }
+      if (!isPlaying && !isNavVisible) setIsNavVisible(true);
     }, [isNavVisible, isPlaying, setIsNavVisible]);
 
     function forcePause(): void {
@@ -33,9 +31,7 @@ export const VideoHeader = forwardRef(
       setControlText("Play");
       if (ref) {
         const newRef = ref as React.RefObject<HTMLVideoElement>;
-        if (newRef.current) {
-          newRef.current.currentTime = 0;
-        }
+        if (newRef.current) newRef.current.currentTime = 0;
       }
     };
 
