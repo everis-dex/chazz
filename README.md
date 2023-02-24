@@ -100,13 +100,13 @@ Scripts that can be ran using `npm run _command_`.
   ```
   npx prettier --write ./src
   ```
-- _server:_ transpile the `main.ts` file to javascript, execute the generated `main.js` and format files
-  ```
-  tsc public/main.ts && node public/main.js && npm run prettier
-  ```
 - _min-server:_ execute `main.js` and format files
   ```
   node public/main.js && npm run prettier
+  ```
+- _server:_ transpile the `main.ts` file to javascript, execute the generated `main.js` and format files
+  ```
+  tsc public/main.ts && npm run min-server
   ```
 - _build:_ transpile the `main.ts` file to javascript, execute the generated `main.js`, format files and do the build.
   ```

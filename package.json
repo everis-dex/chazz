@@ -43,8 +43,8 @@
   "scripts": {
     "start": "react-scripts start",
     "prettier": "npx prettier --write ./src",
-    "server": "tsc public/main.ts && node public/main.js && npm run prettier",
     "min-server": "node public/main.js && npm run prettier",
+    "server": "tsc public/main.ts && npm run min-server",
     "build": "node public/main.js && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
