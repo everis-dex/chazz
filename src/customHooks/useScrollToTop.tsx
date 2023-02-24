@@ -3,7 +3,6 @@ import { useLocation } from "react-router";
 
 export function useScrollToTop(): void | undefined {
   const location = useLocation();
-  console.log(location);
   useEffect(() => {
     document.body.classList.remove("no-scroll");
     if (location.pathname === "/" || location.key === "default") document.body.classList.add("no-scroll");
