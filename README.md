@@ -28,6 +28,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#3rd-party-libraries">Built With</a></li>
         <li><a href="#package-scripts">Package scripts</a></li>
         <li><a href="#directory-structure">Directory structure</a></li>
       </ul>
@@ -56,11 +57,9 @@
 
 ## 📌 About The Project
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-
 This is a project made for the improvement of the `Chazz` website, an NTT Data Company. The design, frontend and data management are changed for a better looking.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
 
 ### Built With
 
@@ -76,6 +75,17 @@ This is a project made for the improvement of the `Chazz` website, an NTT Data C
 
 <br>
 
+<!-- 3RD PARTY LIBRARIES -->
+<div id="3rd-party-libraries"></div>
+
+### 3rd party libraries
+
+- **Swiper**: Touch slider for carousel effect. [Docs](https://swiperjs.com/)
+- **Aos**: Animate elements on scroll. [Docs](https://michalsnik.github.io/aos/)
+
+<br>
+
+<!-- PACKAGE SCRIPTS -->
 <div id="package-scripts"></div>
 
 ### Package scripts
@@ -109,21 +119,22 @@ Scripts that can be ran using `npm run _command_`.
 
 ### Directory structure
 
+Structure and functionality of the main directories of this project.
+
 ```
 .
-├── build                   # Compiled files
-├── content                 # CMS components content
-├── src                     # Source files
-│   ├── assets
-│   ├── components
-│   ├── content
-│   ├── fonts
-│   ├── interfaces
+├── content                 # Entries of each CMS component
+├── src
+│   ├── assets              # Svg files to be imported as React components or lotties
+│   ├── components          # Pages and shared components
+│   ├── content             # CMS pages content and processed components data
 │   ├── ...
-│   └── netlify.toml
-├── utils                   # Tools and utilities
+│   ├── utils               # Tools and utilities
+│   ├── ...
+│   └── netlify.toml        # Netlify configuration
 ├── .env                    # Environment variables
 ├── custom.d.ts             # Custom ts types
+├── ...
 └── README.md
 ```
 
@@ -162,16 +173,15 @@ Some utils need to be installed in order to use the software. This is how to ins
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- How does it work -->
+<!-- HOW DOES IT WORK -->
 <div id="how-it-works"></div>
 
 ## 🔬 How does it work
 
 All useful information for developers is explained here.
 
+<!-- NETLIFY CMS CONFIG -->
 <div id="NetlifyCMS-config"></div>
-
-<br>
 
 ### Netlify CMS configuration
 
@@ -196,6 +206,7 @@ With that, the content generated in the CMS is saved into two separated folders.
 
 <br>
 
+<!-- DATA MANAGEMENT -->
 <div id="data-management"></div>
 
 ### Data management (main.ts file)
@@ -213,7 +224,7 @@ For components, as there is one `.json` file for each component, it is necessary
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+<!-- @see: https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/

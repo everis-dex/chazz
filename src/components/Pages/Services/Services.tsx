@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { categories, services } from "../../../content/index";
 import { ICategory, IPageHeader } from "../../../interfaces/cms";
-import { ScrollToTop } from "../../../../utils/utils";
+import { ScrollToTop } from "../../../utils/utils";
 import { AllowCookies, FeaturedProjects, LineBreakerSelector, Media, Nav } from "../../shared";
 import { Category } from "./Category/Category";
 

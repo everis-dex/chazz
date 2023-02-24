@@ -1,7 +1,7 @@
 import React from "react";
 
 import { work } from "../../../content/index";
-import { ScrollToTop } from "../../../../utils/utils";
+import { ScrollToTop } from "../../../utils/utils";
 import { Nav } from "../../shared/index";
 import { ProjectsGrid } from "./ProjectsGrid/ProjectsGrid";
 

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { thoughts, thoughtsPage } from "../../../content/index";
 import { IPageHeader, IThought } from "../../../interfaces/cms";
-import { ScrollToTop } from "../../../../utils/utils";
+import { ScrollToTop } from "../../../utils/utils";
 import { AllowCookies, LineBreakerSelector, Media, Nav } from "../../shared";
 import { Thought } from "./Thought/Thought";
 
