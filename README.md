@@ -82,6 +82,7 @@ This is a project made for the improvement of the `Chazz` website, an NTT Data C
 
 - **Swiper**: Touch slider for carousel effect. [Docs](https://swiperjs.com/)
 - **Aos**: Animate elements on scroll. [Docs](https://michalsnik.github.io/aos/)
+- **Lottie React**: Render lotties on web app. [Docs](https://lottiereact.com/)
 
 <br>
 
