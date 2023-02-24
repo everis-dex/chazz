@@ -46,8 +46,8 @@
   .chazz-cookies {
     flex-direction: row;
     align-items: baseline;
-    height: 82px;
-    padding: 13px 24px;
+    height: 92px;
+    padding: 11px 24px;
     justify-content: space-between;
     p {
       margin: 0;
@@ -64,7 +64,10 @@
 
 @media (min-width: 1200px) {
   .chazz-cookies {
-    height: 64px;
+    padding: 24px 24px;
     width: 96%;
+    button {
+      width: 11rem;
+    }
   }
 }
