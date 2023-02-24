@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { thoughts, thoughtsPage } from "../../../content/index";
 import { IPageHeader, IThought } from "../../../interfaces/cms";
-import { useScrollToTop } from "../../../utils/utils";
 import { AllowCookies, LineBreakerSelector, Media, Nav } from "../../shared";
 import { Thought } from "./Thought/Thought";
 
@@ -11,7 +10,6 @@ import { ReactComponent as RightArrow } from "../../../assets/icn-right_arrow.sv
 import "./Thoughts.styles.scss";
 
 export const Thoughts = () => {
-  useScrollToTop();
   const headerData: IPageHeader = thoughtsPage.header;
 
   const [isHover, setIsHover] = useState<boolean>(false);

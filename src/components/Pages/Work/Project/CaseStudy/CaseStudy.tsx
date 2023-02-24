@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 
 import { projects } from "../../../../../content/index";
 import { IProject, IProjectSection } from "../../../../../interfaces/cms";
-import { useScrollToTop } from "../../../../../utils/utils";
 
 import { FeaturedProjects, LineBreakerSelector, Nav } from "../../../../shared";
 import { CaseSection, SectionInfo } from "./CaseSection/index";
@@ -11,8 +10,6 @@ import { CaseSection, SectionInfo } from "./CaseSection/index";
 import "./CaseStudy.styles.scss";
 
 export const CaseStudy = () => {
-  useScrollToTop();
-
   const { id } = useParams();
   const filteredProjects = projects.filter(project => project.id === (id ? parseInt(id) : 0));
   const project: IProject = filteredProjects[0] as IProject;

@@ -3,15 +3,13 @@ import { useParams } from "react-router-dom";
 
 import { policies } from "../../../content";
 import { IPolicy } from "../../../interfaces/cms";
-import { useScrollToTop } from "../../../utils/utils";
+
 import { AllowCookies, LineBreakerSelector, Nav } from "../../shared";
 import { Articles } from "./Articles/Articles";
 
 import "./Policies.scss";
 
 export const Policies = () => {
-  useScrollToTop();
-
   // Set initial policy and crete useState
   const { id } = useParams();
   const selectedPolicy = id ? Math.min(parseInt(id), policies.length - 1) : 0;

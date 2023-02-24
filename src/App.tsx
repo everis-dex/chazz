@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import { Home } from "./components/Home/Home";
 import { CaseStudy, Policies, Services, Thoughts, ThoughtStudy, Work } from "./components/Pages";
@@ -10,7 +10,7 @@ import { useScrollToTop } from "./utils/utils";
 const App = () => {
   useScrollToTop();
   return (
-    <Router>
+    <>
       <Routes>
         <Route path="/" element={<Home />} />
         {services.published && <Route path="/services" element={<Services />} />}
@@ -23,7 +23,7 @@ const App = () => {
       </Routes>
       {/* Common footer in all pages */}
       <Footer />
-    </Router>
+    </>
   );
 };
 
