@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { Months } from "../../../../constants";
 import { thoughts } from "../../../../content";
 import { IThought } from "../../../../interfaces/cms";
-import { ScrollToTop } from "../../../../utils/utils";
+import { ScrollToTop } from "../../../../../utils/utils";
 import { LineBreakerSelector, Nav } from "../../../shared";
 
 import "./ThoughtStudy.styles.scss";

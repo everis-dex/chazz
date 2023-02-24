@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import { policies } from "../../../content";
 import { IPolicy } from "../../../interfaces/cms";
-import { ScrollToTop } from "../../../utils/utils";
+import { ScrollToTop } from "../../../../utils/utils";
 import { AllowCookies, LineBreakerSelector, Nav } from "../../shared";
 import { Articles } from "./Articles/Articles";
 

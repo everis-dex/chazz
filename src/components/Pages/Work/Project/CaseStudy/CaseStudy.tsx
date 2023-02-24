@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 import { projects } from "../../../../../content/index";
 import { IProject, IProjectSection } from "../../../../../interfaces/cms";
-import { ScrollToTop } from "../../../../../utils/utils";
+import { ScrollToTop } from "../../../../../../utils/utils";
 
 import { FeaturedProjects, LineBreakerSelector, Nav } from "../../../../shared";
 import { CaseSection, SectionInfo } from "./CaseSection/index";

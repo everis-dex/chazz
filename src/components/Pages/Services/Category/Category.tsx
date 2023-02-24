@@ -1,7 +1,7 @@
 import React from "react";
 
 import { ICategory, ICategoryAccordion } from "../../../../interfaces/cms";
-import { ScrollToTop } from "../../../../utils/utils";
+import { ScrollToTop } from "../../../../../utils/utils";
 import { Accordion } from "../../../shared";
 
 import "./Category.styles.scss";

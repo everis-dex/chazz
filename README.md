@@ -29,6 +29,7 @@
       <ul>
         <li><a href="#built-with">Built With</a></li>
         <li><a href="#package-scripts">Package scripts</a></li>
+        <li><a href="#directory-structure">Directory structure</a></li>
       </ul>
     </li>
     <li>
@@ -101,6 +102,30 @@ Scripts that can be ran using `npm run _command_`.
   ```
   npm run server && react-scripts build
   ```
+
+<br>
+
+<div id="directory-structure"></div>
+
+### Directory structure
+
+```
+.
+├── build                   # Compiled files
+├── content                 # CMS components content
+├── src                     # Source files
+│   ├── assets
+│   ├── components
+│   ├── content
+│   ├── fonts
+│   ├── interfaces
+│   ├── ...
+│   └── netlify.toml
+├── utils                   # Tools and utilities
+├── .env                    # Environment variables
+├── custom.d.ts             # Custom ts types
+└── README.md
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
