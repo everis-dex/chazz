@@ -4,17 +4,17 @@
   background-color: var(--lightGray);
 }
 
-.categories-title,
-.categories-sections {
-  flex: 0 0 auto;
-  width: 100%;
-}
-
 .categories {
   margin: 0 5%;
   padding-bottom: 100px;
   display: grid;
   grid-template-columns: 100%;
+
+  .categories-title,
+  .categories-sections {
+    flex: 0 0 auto;
+    width: 100%;
+  }
 
   .categories-title {
     margin-top: 60px;
@@ -32,7 +32,6 @@
 
   .categories-sections {
     margin-top: 20%;
-
     h2 {
       margin-bottom: 6px;
       font-size: 32px;
@@ -135,6 +134,7 @@
     }
   }
 }
+
 @media (min-width: 1280px) {
   .categories {
     grid-template-columns: 50% 51%;

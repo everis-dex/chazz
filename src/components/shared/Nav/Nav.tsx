@@ -5,19 +5,18 @@ import { BurgerMenu, ChazzLogo, DesktopMenu } from "./index";
 
 import "./Nav.styles.scss";
 
-type Props = { isPlaying?: boolean; darkMode?: boolean; AlertNavParent?: (a: boolean) => void; height?: number };
+type Props = { isPlaying?: boolean; darkMode?: boolean; displayBurgerMenu?: (a: boolean) => void; height?: number };
 
-export const Nav = ({ isPlaying = false, darkMode = false, AlertNavParent, height = 11 }: Props) => {
+export const Nav = ({ isPlaying = false, darkMode = false, displayBurgerMenu, height = 11 }: Props) => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
   const [root] = useState(document.getElementById("root"));
 
   const displayMode = darkMode ? DisplayModes.dark : DisplayModes.light;
-  const { color } = displayMode;
-  const logoColor = isBurgerMenuOpen ? "white" : color;
+  const logoColor = isBurgerMenuOpen ? "white" : displayMode.color;
 
   function toggleMenu(): void {
     if (isPlaying) return;
-    if (AlertNavParent) AlertNavParent(!isBurgerMenuOpen);
+    if (displayBurgerMenu) displayBurgerMenu(!isBurgerMenuOpen);
 
     setIsBurgerMenuOpen(!isBurgerMenuOpen);
     handleRootBehavior();

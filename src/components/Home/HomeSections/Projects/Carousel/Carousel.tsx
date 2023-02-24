@@ -1,34 +1,31 @@
+import Lottie from "lottie-react";
 import React, { useState } from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Lottie from "lottie-react";
-import { CarouselSlide } from "./CarouselSlide";
-import dragCursor from "../../../../../assets/dragCursor.json";
+
+import dragCursor from "../../../../../assets/lottie-drag_cursor.json";
 import { projects } from "../../../../../content/index";
 import { IProject } from "../../../../../interfaces/cms";
+import { CarouselSlide } from "./CarouselSlide";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "./Carousel.styles.scss";
 
 type Props = { title: string };
+
 export const Carousel = ({ title }: Props) => {
-  const slides: IProject[] = [...projects];
-  const featuredSlides: IProject[] = slides.filter(slide => slide.details.incarousel).slice(0, 5);
+  const featuredSlides: IProject[] = projects.filter(project => project.details.incarousel).slice(0, 5);
   const [isMouseInside, setIsMouseInside] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const handleMouseEnter = () => {
-    setIsMouseInside(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsMouseInside(false);
-  };
-
+  // Mouse movement events
+  const handleMouseEnter = () => setIsMouseInside(true);
+  const handleMouseLeave = () => setIsMouseInside(false);
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     setMousePosition({ x: event.clientX, y: event.clientY });
   };
+
   return (
     <>
       <div className="carouselTitle" data-aos="fade-up" data-aos-once="true">
@@ -48,29 +45,21 @@ export const Carousel = ({ title }: Props) => {
             slidesPerView={1.1}
             spaceBetween={14}
             navigation
-            pagination={{
-              el: ".pagination",
-              clickable: true
-            }}
             loop
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false
-            }}
+            pagination={{ el: ".pagination", clickable: true }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
             breakpoints={{
               1200: { slidesPerView: 2.1 },
               1920: { slidesPerView: 3.1 }
             }}
             initialSlide={0}
           >
-            {featuredSlides.map((slide: IProject, index: number) => {
-              return (
-                <SwiperSlide key={index}>
-                  <CarouselSlide {...slide} />
-                </SwiperSlide>
-              );
-            })}
-            {isMouseInside ? (
+            {featuredSlides.map((slide: IProject, index: number) => (
+              <SwiperSlide key={index}>
+                <CarouselSlide {...slide} />
+              </SwiperSlide>
+            ))}
+            {isMouseInside && (
               <Lottie
                 animationData={dragCursor}
                 loop={false}
@@ -86,7 +75,7 @@ export const Carousel = ({ title }: Props) => {
                   pointerEvents: "none"
                 }}
               />
-            ) : null}
+            )}
           </Swiper>
         </div>
       </div>

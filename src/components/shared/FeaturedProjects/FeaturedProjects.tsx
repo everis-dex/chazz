@@ -13,6 +13,7 @@ export const FeaturedProjects = () => {
     <div className="featured-projects" data-aos="fade-up" data-aos-once="true">
       {projectsData.title && <h1 className="header">{projectsData.title}</h1>}
       <div className="project-list">
+        {/* List first 4 projects */}
         {projects.map(
           (project: IProject, index: number) =>
             index >= 4 && (

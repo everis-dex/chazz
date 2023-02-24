@@ -1,10 +1,7 @@
 import React, { Fragment } from "react";
 import "./LineBreaker.scss";
 
-type Props = {
-  brokenLines: string[];
-  lineBreakSymbol: string;
-};
+type Props = { brokenLines: string[]; lineBreakSymbol: string };
 
 export const BrokenLines = ({ brokenLines, lineBreakSymbol }: Props) => {
   return (

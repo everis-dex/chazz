@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { availableRoutes } from "../../../../constants";
+import { RoutesInfo } from "../../../../interfaces/routes";
 
 import "../Nav.styles.scss";
 
@@ -14,7 +15,7 @@ export const DesktopMenu = (displayMode: DisplayMode) => {
   return (
     <div className="nav">
       <ul>
-        {availableRoutes.map(route => (
+        {availableRoutes.map((route: RoutesInfo) => (
           <li key={route.id}>
             {route.name && (
               <>

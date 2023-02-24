@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import AOS from "aos";
 
 import App from "./App";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "typeface-raleway";
 import "./index.css";
-import AOS from "aos";
 import "aos/dist/aos.css";
 
+// Initialize animation library
 AOS.init();
 
 ReactDOM.render(

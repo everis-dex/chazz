@@ -6,7 +6,6 @@
   background-color: var(--white);
   height: auto;
   z-index: 10;
-  position: absolute;
   width: 90%;
   bottom: 3%;
   left: 5%;
@@ -17,13 +16,11 @@
   p {
     margin: 0 10px;
     font-size: 16px;
-
     a {
       color: var(--black);
-    }
-
-    a:hover {
-      color: var(--pink);
+      &:hover {
+        color: var(--pink);
+      }
     }
   }
 
@@ -34,14 +31,12 @@
     font-weight: 700;
     font-size: 19px;
     background-color: var(--black);
-    cursor: pointer;
-    -webkit-appearance: media-slider !important;
-  }
 
-  button:hover {
-    color: var(--black);
-    background-color: var(--pink);
-    border: 2px solid var(--pink);
+    &:hover {
+      color: var(--black);
+      background-color: var(--pink);
+      border: 2px solid var(--pink);
+    }
   }
 }
 
@@ -51,8 +46,8 @@
   .chazz-cookies {
     flex-direction: row;
     align-items: baseline;
-    height: 92px;
-    padding: 11px 24px;
+    height: 82px;
+    padding: 13px 24px;
     justify-content: space-between;
     p {
       margin: 0;
@@ -69,10 +64,7 @@
 
 @media (min-width: 1200px) {
   .chazz-cookies {
-    padding: 24px 24px;
+    height: 64px;
     width: 96%;
-    button {
-      width: 11rem;
-    }
   }
 }

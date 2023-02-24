@@ -16,7 +16,7 @@ export const Dropdown = ({ content }: Props) => {
     }
   }
 
-  // Set selected option and hide options
+  // Hide options & set selected one
   function select(index: number): void {
     setSelectedOption(index);
     if (contentDiv && contentDiv.current) contentDiv.current.style.display = "none";

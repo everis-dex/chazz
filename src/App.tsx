@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { Home } from "./components/Home/Home";
-import { Footer } from "./components/shared";
 import { CaseStudy, Policies, Services, Thoughts, ThoughtStudy, Work } from "./components/Pages";
+import { Footer } from "./components/shared";
 import { services, thoughtsPage, work } from "./content";
 
 const App = () => {
