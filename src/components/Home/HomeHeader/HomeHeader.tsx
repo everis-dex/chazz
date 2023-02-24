@@ -92,7 +92,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   // Make the Play / Stop reel text follow cursor
   useEffect(() => {
     function handleMouseMove(e: MouseEvent): void {
-      if (!controlRef.current) return;
+      if (!controlRef.current || e.clientY < 90 || e.clientX > window.innerWidth - 120) return;
       // Desktop format
       if (window.innerWidth >= 1024) {
         controlRef.current.style.top = e.pageY - 10 + "px";
