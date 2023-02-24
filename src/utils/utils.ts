@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 
-export function ScrollToTop(): void {
+export function useScrollToTop(): void | undefined {
   useEffect(() => {
-    window.scrollTo(0, 0);
     document.body.classList.remove("no-scroll");
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 200);
   }, []);
 }

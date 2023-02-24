@@ -1,13 +1,13 @@
 import React from "react";
 
 import { ICategory, ICategoryAccordion } from "../../../../interfaces/cms";
-import { ScrollToTop } from "../../../../utils/utils";
+import { useScrollToTop } from "../../../../utils/utils";
 import { Accordion } from "../../../shared";
 
 import "./Category.styles.scss";
 
 export const Category = (category: ICategory) => {
-  ScrollToTop();
+  useScrollToTop();
 
   return (
     <div className="category-container">
