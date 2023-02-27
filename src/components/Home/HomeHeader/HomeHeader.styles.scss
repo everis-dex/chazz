@@ -208,6 +208,11 @@
 
   .player-video-desktop-switcher {
     display: flex;
+
+    .player-video {
+      top: 11vh;
+      left: 1vw;
+    }
   }
 
   .player-video-mobile-switcher {

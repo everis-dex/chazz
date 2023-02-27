@@ -64,10 +64,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       if (e.deltaY > 0) {
         setNavHeight(Math.max(navHeight - 2, 10));
         setTitleLeft(Math.max(titleLeft - 8, 0));
-        // Desktop format
-        if (controlRef && controlRef.current) {
-          controlRef.current.style.top = 90 + "px";
-        }
+
         if (titleLeft === 0 && navHeight === 10) {
           setAnimationComplete(true);
           setTimeout(() => document.body.classList.remove("no-scroll"), 1000);
