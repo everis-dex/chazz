@@ -60,7 +60,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   // Event functions
 
   const handleOnWheel: React.WheelEventHandler<HTMLDivElement> = e => {
-    if (!isPlaying) {
+    if (!isPlaying && windowWidth > 1200) {
       if (e.deltaY > 0) {
         setNavHeight(Math.max(navHeight - 2, 10));
         setTitleLeft(Math.max(titleLeft - 8, 0));
