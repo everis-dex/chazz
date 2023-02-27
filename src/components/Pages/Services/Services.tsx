@@ -32,7 +32,7 @@ export const Services = () => {
         {/* Categories section */}
         <div className="services-categories">
           {categories.map((category: ICategory, index: number) => (
-            <div className="category" key={index} data-aos="fade-up" data-aos-once="true">
+            <div className="category" key={index} data-aos="fade-up" data-aos-once="true" data-aos-offset="0">
               <Category {...category} />
             </div>
           ))}

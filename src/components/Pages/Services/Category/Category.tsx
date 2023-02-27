@@ -21,11 +21,14 @@ export const Category = (category: ICategory) => {
       <div className="category-content">
         <div className="summary">{category.summary}</div>
         <div className="category-options">
-          {category.accordions.map((accordion: ICategoryAccordion, index: number) => (
-            <div key={index}>
-              <Accordion title={accordion.title} content={accordion.content} ourWork={false} />
-            </div>
-          ))}
+          {category.accordions.map((accordion: ICategoryAccordion, index: number) => {
+            const duration: number = 100 * index + 700;
+            return (
+              <div key={index} data-aos="fade-up" data-aos-once="true" data-aos-duration={duration.toString()}>
+                <Accordion title={accordion.title} content={accordion.content} ourWork={false} />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
