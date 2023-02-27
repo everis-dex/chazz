@@ -7,8 +7,6 @@ export const Home = () => {
   const { header, categories, projects, partners } = home;
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-
     function appHeight(): void {
       document.documentElement?.style.setProperty("--app-height", `${window.innerHeight}px`);
     }
