@@ -100,5 +100,11 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
-  "include": ["src/**/*.ts", "src/components", "custom.d.ts", "src/components/Pages/Services"]
+  "include": [
+    "src/**/*.ts",
+    "src/components",
+    "custom.d.ts",
+    "src/components/Pages/Services",
+    "src/customHooks/useScrollToTop.tsx"
+  ]
 }

@@ -10,11 +10,6 @@ import { LineBreakerSelector, Nav } from "../../../shared";
 import "./ThoughtStudy.styles.scss";
 
 export const ThoughtStudy = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.classList.remove("no-scroll");
-  }, []);
-
   const { id } = useParams();
   const filteredThoughts = thoughts.filter((thought: IThought) => thought.id === (id ? parseInt(id) : 0));
   const thought: IThought = filteredThoughts[0] as IThought;

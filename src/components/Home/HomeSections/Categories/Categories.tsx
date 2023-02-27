@@ -26,7 +26,7 @@ export const Categories = (categoriesData: IHomeSection) => {
               {category.title && <h2>{category.title}</h2>}
               {category.section && <p>{category.section}</p>}
               {category.body && <p>{category.body}</p>}
-              {/* Separator line */}
+              {/* Separator line for all except last item*/}
               {index < categories.length - 1 && <hr />}
             </div>
           ))}

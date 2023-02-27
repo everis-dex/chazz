@@ -16,16 +16,8 @@ export const Partners = (partnersData: IHomeSection) => {
       </div>
       <div className="partners-container">
         {partners.map((partner: IPartner, index: number) => (
-          <div
-            className="partner"
-            key={index}
-            data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-offset="0"
-            data-aos-once="true"
-            data-aos-duration="700"
-          >
-            <Partner {...partner} />
+          <div className="partner" key={index}>
+            <Partner partner={partner} index={index} />
           </div>
         ))}
       </div>

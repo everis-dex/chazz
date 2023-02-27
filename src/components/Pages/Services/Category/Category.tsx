@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { ICategory, ICategoryAccordion } from "../../../../interfaces/cms";
 import { Accordion } from "../../../shared";
@@ -6,11 +6,6 @@ import { Accordion } from "../../../shared";
 import "./Category.styles.scss";
 
 export const Category = (category: ICategory) => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.classList.remove("no-scroll");
-  }, []);
-
   return (
     <div className="category-container">
       {/* Header */}

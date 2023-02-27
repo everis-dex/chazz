@@ -5,11 +5,11 @@ import "./footerLinks.styles.scss";
 type Props = { phone: string };
 
 export const LinkedPhone = ({ phone }: Props) => {
-  const phonecall: string = `tel:${phone}`;
+  const phoneCall: string = `tel:${phone}`;
 
   return (
     <p className="phone">
-      <a className="footerLink" href={phonecall}>
+      <a className="footerLink" href={phoneCall}>
         {phone}
       </a>
     </p>

@@ -16,7 +16,7 @@ export const Thought = (thought: IThought) => {
       <div className="thought-content">
         <div className="thought-title">
           <h2>{thought.title}</h2>
-          <img alt="" src="assets/icon-left_arrow.svg" />
+          <img alt="" src="assets/icn-left_arrow.svg" />
         </div>
         <p className="thought-subtitle">{thought.subtitle}</p>
 

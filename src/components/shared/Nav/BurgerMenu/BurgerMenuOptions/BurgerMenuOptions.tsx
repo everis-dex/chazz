@@ -37,7 +37,7 @@ export const BurgerMenuOptions = ({ isBurgerMenuOpen, toggleMenu }: Props) => {
         })}
       </ul>
       <DividingLine />
-      <RRSS showTitle={false} socials={socials} />
+      <RRSS socials={socials} />
     </nav>
   );
 };

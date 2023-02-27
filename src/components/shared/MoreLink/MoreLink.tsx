@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.svg";
+import { ReactComponent as RightArrow } from "../../../assets/icn-right_arrow.svg";
 
 import "./MoreLink.styles.scss";
 
@@ -13,7 +13,7 @@ export const MoreLink = ({ text, link }: Props) => {
   return (
     <Link to={link} className="more-link" onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
       <span>{text}</span>
-      <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />
+      <RightArrow stroke={isHover ? "#fc82a3" : "#191919"} className="icon-size" />
     </Link>
   );
 };
