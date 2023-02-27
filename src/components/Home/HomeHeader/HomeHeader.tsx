@@ -62,28 +62,24 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   const handleOnWheel: React.WheelEventHandler<HTMLDivElement> = e => {
     if (!isPlaying) {
       if (e.deltaY > 0) {
-        if (navHeight > 10) setNavHeight(navHeight - 2);
-        else setNavHeight(10);
-
-        if (titleLeft > 0) setTitleLeft(titleLeft - 8 >= 0 ? titleLeft - 8 : 0);
-        else setTitleLeft(0);
-
+        setNavHeight(Math.max(navHeight - 2, 10));
+        setTitleLeft(Math.max(titleLeft - 8, 0));
+        // Desktop format
+        if (controlRef && controlRef.current) {
+          controlRef.current.style.top = 90 + "px";
+        }
         if (titleLeft === 0 && navHeight === 10) {
           setAnimationComplete(true);
           setTimeout(() => document.body.classList.remove("no-scroll"), 1000);
         }
       } else {
         setAnimationComplete(false);
-        if (navHeight < 25) setNavHeight(navHeight + 2 > 25 ? 25 : navHeight + 2);
-        else setNavHeight(25);
-
-        if (titleLeft < 100) setTitleLeft(titleLeft + 8 <= 100 ? titleLeft + 8 : 100);
-        else setTitleLeft(100);
+        setNavHeight(Math.min(navHeight + 2, 25));
+        setTitleLeft(Math.min(titleLeft + 8, 100));
 
         if (titleLeft === 100 && navHeight === 25) {
           document.body.classList.add("no-scroll");
         }
-        //if (!animationComplete)
       }
     }
   };
@@ -97,11 +93,11 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   // Make the Play / Stop reel text follow cursor
   useEffect(() => {
     function handleMouseMove(e: MouseEvent): void {
-      if (!controlRef.current || e.clientY < 90 || e.clientX > window.innerWidth - 120) return;
+      if (!controlRef.current) return;
       // Desktop format
       if (window.innerWidth >= 1024) {
-        controlRef.current.style.top = e.pageY - 10 + "px";
-        controlRef.current.style.left = e.pageX - 50 + "px";
+        controlRef.current.style.top = Math.max(e.pageY - 10, 90) + "px";
+        controlRef.current.style.left = Math.min(e.pageX - 50, window.innerWidth - 120) + "px";
         controlRef.current.style.opacity = "1";
       }
       // Mobile format
