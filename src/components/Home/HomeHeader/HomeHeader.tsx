@@ -74,15 +74,6 @@ export const HomeHeader = (headerData: IHomeHeader) => {
     }
   };
 
-  function reload() {
-    if (window.pageYOffset !== 0) window.scrollTo(0, 0);
-    else document.body.classList.add("no-scroll");
-
-    setTimeout(() => document.body.classList.add("no-scroll"), 500);
-  }
-  reload();
-  document.addEventListener("load", reload);
-
   // ---- useEffects
 
   useEffect(() => {
