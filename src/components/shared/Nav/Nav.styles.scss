@@ -16,7 +16,7 @@
       justify-content: flex-start;
       flex-direction: row;
       gap: 5px;
-      align-items: flex-end;
+      // align-items: flex-end;
     }
   }
 }
@@ -62,20 +62,22 @@
 
     .chazz-logo {
       position: relative;
-      align-self: flex-end;
+      // align-self: flex-end;
       display: flex;
-      margin-bottom: 25px;
+      // margin-bottom: 25px;
     }
   }
 
   .nav {
-    margin: 25px 0;
-    align-self: flex-start;
+    // margin: 25px 0;
+    // align-self: flex-start;
     display: flex !important;
     padding-left: 0;
 
     ul {
       display: flex;
+      margin: 0;
+      
       li {
         list-style-type: none;
         margin-right: 30px;
