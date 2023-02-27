@@ -74,12 +74,6 @@ export const HomeHeader = (headerData: IHomeHeader) => {
     }
   };
 
-  function reload() {
-    document.body.classList.add("no-scroll");
-  }
-  reload();
-  document.addEventListener("load", reload);
-
   // ---- useEffects
 
   useEffect(() => {
