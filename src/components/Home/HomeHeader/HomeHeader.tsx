@@ -74,7 +74,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
         }
       } else {
         setAnimationComplete(false);
-        if (navHeight < 25) setNavHeight(navHeight + 2);
+        if (navHeight < 25) setNavHeight(navHeight + 2 > 25 ? 25 : navHeight + 2);
         else setNavHeight(25);
 
         if (titleLeft < 100) setTitleLeft(titleLeft + 8 <= 100 ? titleLeft + 8 : 100);
