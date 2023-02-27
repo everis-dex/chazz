@@ -60,17 +60,31 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   // Event functions
 
   const handleOnWheel: React.WheelEventHandler<HTMLDivElement> = e => {
-    if (e.deltaY > 0) {
-      if (navHeight > 10) setNavHeight(navHeight - 2);
-      else setNavHeight(10);
+    if (!isPlaying) {
+      if (e.deltaY > 0) {
+        if (navHeight > 10) setNavHeight(navHeight - 2);
+        else setNavHeight(10);
 
-      if (titleLeft > 0) setTitleLeft(titleLeft - 8 >= 0 ? titleLeft - 8 : 0);
-      else setTitleLeft(0);
+        if (titleLeft > 0) setTitleLeft(titleLeft - 8 >= 0 ? titleLeft - 8 : 0);
+        else setTitleLeft(0);
 
-      if (titleLeft === 0 && navHeight === 10) {
-        setAnimationComplete(true);
+        if (titleLeft === 0 && navHeight === 10) {
+          setAnimationComplete(true);
+          setTimeout(() => document.body.classList.remove("no-scroll"), 1000);
+        }
+      } else {
+        setAnimationComplete(false);
+        if (navHeight < 25) setNavHeight(navHeight + 2);
+        else setNavHeight(25);
+
+        if (titleLeft < 100) setTitleLeft(titleLeft + 8 <= 100 ? titleLeft + 8 : 100);
+        else setTitleLeft(100);
+
+        if (titleLeft === 100 && navHeight === 25) {
+          document.body.classList.add("no-scroll");
+        }
+        //if (!animationComplete)
       }
-      if (animationComplete) setTimeout(() => document.body.classList.remove("no-scroll"), 1000);
     }
   };
 
