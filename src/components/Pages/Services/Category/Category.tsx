@@ -22,9 +22,9 @@ export const Category = (category: ICategory) => {
         <div className="summary">{category.summary}</div>
         <div className="category-options">
           {category.accordions.map((accordion: ICategoryAccordion, index: number) => {
-            const duration: number = 100 * index + 700;
+            const duration: number = 100 * index + 400;
             return (
-              <div key={index} data-aos="fade-up" data-aos-duration={duration.toString()}>
+              <div key={index} data-aos="fade-up" data-aos-offset="-200" data-aos-duration={duration.toString()}>
                 <Accordion title={accordion.title} content={accordion.content} ourWork={false} />
               </div>
             );
