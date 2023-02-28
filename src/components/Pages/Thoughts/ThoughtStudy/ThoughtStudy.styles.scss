@@ -73,7 +73,7 @@
 
   .content-body {
     display: block;
-
+    margin-bottom: 178px;
     p {
       font-size: 16px;
       line-height: 24px;
@@ -114,21 +114,6 @@
         margin: 0;
       }
     }
-  }
-}
-
-.th-back-button {
-  padding: 0 5%;
-  text-decoration: none;
-  background: none;
-  color: inherit;
-  border: none;
-  font-size: 16px;
-  display: block;
-  margin: 100px 0 !important;
-  font-weight: 300;
-  &:hover {
-    color: var(--pinkHover);
   }
 }
 

@@ -14,8 +14,9 @@
     width: 160px;
     a {
       display: flex;
-      justify-content: flex-start;
       flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-end;
       gap: 5px;
     }
   }
@@ -115,7 +116,6 @@
 
 @media (min-width: 1920px) {
   .nav {
-    margin-top: 40px;
     margin-right: 1%;
   }
 }
