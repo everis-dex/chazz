@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { Months } from "../../../../constants";
 import { thoughts } from "../../../../content";
@@ -74,9 +74,6 @@ export const ThoughtStudy = () => {
           </div>
         </div>
       </div>
-      <Link to="/thoughts" className="th-back-button">
-        ← Back
-      </Link>
     </>
   );
 };
