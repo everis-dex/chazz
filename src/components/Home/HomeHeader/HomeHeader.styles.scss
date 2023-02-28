@@ -246,12 +246,8 @@
     width: 100%;
   }
 
-  .chazz-title {
-    bottom: 4vh;
-
-    h4 {
-      left: initial;
-    }
+  .chazz-title h4 {
+    left: initial;
   }
 }
 
@@ -305,16 +301,19 @@
   .chazz-header {
     background-size: cover;
     background-position: 0 -95px;
+  }
+  .chazz-header,
+  .chazz-title {
     max-height: 1115px;
   }
-
   .chazz-title h4 {
     font-size: 33px;
   }
 }
 
 @media (min-width: 2560px) {
-  .chazz-header {
+  .chazz-header,
+  .chazz-title {
     max-height: 1430px;
   }
 }
