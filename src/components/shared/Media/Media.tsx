@@ -56,16 +56,7 @@ export const Media = ({ src, style = { width: "100%", height: "auto" }, classNam
             </video>
           )}
           {supportedImageTags.includes(extension) && (
-            <img
-              className={className}
-              style={style}
-              src={src}
-              alt={alt}
-              data-aos="fade-zoom-in"
-              data-aos-easing="ease-in-back"
-              data-aos-offset="0"
-              data-aos-duration="700"
-            />
+            <img className={className} style={style} src={src} alt={alt} data-aos="fade-up" data-aos-delay="300" />
           )}
           {extension === "json" && (
             <>{lottie ? <Lottie animationData={lottie} loop={true} autoplay={true} /> : <>Loading</>}</>
