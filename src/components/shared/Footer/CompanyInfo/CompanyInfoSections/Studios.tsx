@@ -18,7 +18,7 @@ export const Studios = ({ studios }: Props) => {
     <div className="studios-container">
       <p className="section-title">NDDN NETWORK</p>
       {/* Desktop format */}
-      <div className="studios-grid" style={gridStyle} data-aos="fade-up">
+      <div className="studios-grid" style={gridStyle} data-aos="fade-up" data-aos-delay="-500">
         {studios.map((studio, index: number) => (
           <div className="studios-info city" key={index}>
             {studio.city}
@@ -29,7 +29,7 @@ export const Studios = ({ studios }: Props) => {
         </div>
       </div>
       {/* Mobile format */}
-      <div className="mobile-email" data-aos="fade-up">
+      <div className="mobile-email" data-aos="fade-up" data-aos-delay="-500">
         <LinkedEmail email="tangity@nttdata.com" />
       </div>
     </div>

@@ -50,7 +50,6 @@ export const Media = ({ src, style = { width: "100%", height: "auto" }, classNam
               playsInline
               src={src}
               data-aos="fade-up"
-              data-aos-delay="300"
             >
               Video not supported.
             </video>
