@@ -295,12 +295,14 @@ collections:
             name: socials
             widget: list
             fields:
+              - { label: Name, name: name, widget: string }
               - { label: Icon, name: icon, widget: image }
               - { label: Link, name: link, widget: string }
       - label: Socials
         name: socials
         widget: list
         fields:
+          - { label: Name, name: name, widget: string }
           - { label: Icon, name: icon, widget: image }
           - { label: Link, name: link, widget: string }
       - { label: Body, name: body, widget: markdown }

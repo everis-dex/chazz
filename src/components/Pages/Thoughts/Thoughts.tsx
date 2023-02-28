@@ -85,22 +85,22 @@ export const Thoughts = () => {
           <Media src={videoSource} alt="Header" className="video-height" />
         </div>
         {/* Filtering section */}
-        <div className="thoughts-filtering" ref={filters} data-aos="fade-up">
+        <div className="thoughts-filtering" ref={filters} data-aos="fade-up" data-aos-offset="0">
           <span className="filter-category selected">All</span>
           {thoughtsPage.categories.map((category: string, index: number) => (
-            <span className="filter-category" key={index} data-aos="fade-up">
+            <span className="filter-category" key={index}>
               {category}
             </span>
           ))}
         </div>
         {/* Thoughts section */}
-        <div className="thoughts" data-aos="fade-up">
+        <div className="thoughts" data-aos="fade-up" data-aos-offset="0">
           {thoughts
             // Show only the thoughts with selected category
             .filter((t: IThought) => filterByCategory(t.category))
             .filter((t, index: number) => !filtering || index < 6) // If filtering, show only the first 6 thoughts
             .map((thought: IThought, index: number) => (
-              <div className="thought" key={index} data-aos="fade-up">
+              <div className="thought" key={index} data-aos="fade-up" data-aos-offset="0">
                 <Thought {...thought} />
               </div>
             ))}
