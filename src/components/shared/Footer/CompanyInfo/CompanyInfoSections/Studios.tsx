@@ -29,7 +29,7 @@ export const Studios = ({ studios }: Props) => {
         </div>
       </div>
       {/* Mobile format */}
-      <div className="mobile-email" data-aos="fade-up" data-aos-once="false">
+      <div className="mobile-email" data-aos="fade-up">
         <LinkedEmail email="tangity@nttdata.com" />
       </div>
     </div>
