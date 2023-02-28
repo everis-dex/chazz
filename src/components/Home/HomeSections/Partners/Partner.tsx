@@ -16,7 +16,6 @@ export const Partner = ({ partner, index }: Props) => {
       data-aos="fade-zoom-in"
       data-aos-easing="ease-in-back"
       data-aos-offset="0"
-      data-aos-once="true"
       data-aos-duration={duration.toString()}
     >
       <a href={website}>

@@ -10,9 +10,9 @@ export const CompanyInfo = (footerData: IFooter) => {
   const { title, offices, studios, touch, social } = footerData;
 
   return (
-    <div className="we-are-section" data-aos="fade-up" data-aos-once="true">
+    <div className="we-are-section" data-aos="fade-up">
       <div className="we-are-grid">
-        <h2 data-aos="fade-up" data-aos-once="true">
+        <h2 data-aos="fade-up">
           <strong>{title}</strong>
         </h2>
         <Offices offices={offices} />

@@ -52,7 +52,6 @@ export const Media = ({ src, style = { width: "100%", height: "auto" }, classNam
               data-aos="fade-zoom-in"
               data-aos-easing="ease-in-back"
               data-aos-offset="0"
-              data-aos-once="true"
               data-aos-duration="700"
             >
               Video not supported.
@@ -67,7 +66,6 @@ export const Media = ({ src, style = { width: "100%", height: "auto" }, classNam
               data-aos="fade-zoom-in"
               data-aos-easing="ease-in-back"
               data-aos-offset="0"
-              data-aos-once="true"
               data-aos-duration="700"
             />
           )}

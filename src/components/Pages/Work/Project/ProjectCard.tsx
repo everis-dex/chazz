@@ -22,20 +22,20 @@ export const ProjectCard = ({ project, format, columns }: Props) => {
       <div className="project-details">
         <div className="project-title-container">
           {/* Replace span of title by Link, and change the hover of the title class in styles */}
-          <Link to={caseURL} className="title" data-aos="fade-up" data-aos-once="true">
+          <Link to={caseURL} className="title" data-aos="fade-up">
             {project.title} —
           </Link>
-          <span className="description" data-aos="fade-up" data-aos-once="true">
+          <span className="description" data-aos="fade-up">
             {projectDetails.description}
           </span>
         </div>
-        <span className="properties" data-aos="fade-up" data-aos-once="true">
+        <span className="properties" data-aos="fade-up">
           {projectDetails.subtitle}
         </span>
       </div>
       {/* Accordion */}
       <Accordion title="" content={projectDetails.body} ourWork={true} />
-      <div className="non-accordion" data-aos="fade-up" data-aos-once="true">
+      <div className="non-accordion" data-aos="fade-up">
         <div className="linebreaker">
           <LineBreakerSelector typedLines={projectDetails.body} />
         </div>

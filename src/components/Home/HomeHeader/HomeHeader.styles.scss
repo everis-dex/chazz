@@ -165,11 +165,10 @@
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
-  
   // Player video
   .player-video {
     .play-icon-in,
-    .play-icon-out, 
+    .play-icon-out,
     .stop-icon-out {
       left: 3px;
       top: 1px;
@@ -228,7 +227,6 @@
     top: 7px;
   }
 
-
   .player-video-desktop-switcher {
     display: flex;
 
@@ -251,7 +249,7 @@
     bottom: 9vh;
 
     h4 {
-    left: initial;
+      left: initial;
     }
   }
 }

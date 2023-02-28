@@ -79,28 +79,28 @@ export const Thoughts = () => {
       <div className="page-container">
         {/* Header section */}
         <div className="page-header">
-          <h1 className="header-title" data-aos="fade-up" data-aos-once="true">
+          <h1 className="header-title" data-aos="fade-up">
             <LineBreakerSelector typedLines={headerData.title} />
           </h1>
           <Media src={videoSource} alt="Header" className="video-height" />
         </div>
         {/* Filtering section */}
-        <div className="thoughts-filtering" ref={filters} data-aos="fade-up" data-aos-once="true">
+        <div className="thoughts-filtering" ref={filters} data-aos="fade-up">
           <span className="filter-category selected">All</span>
           {thoughtsPage.categories.map((category: string, index: number) => (
-            <span className="filter-category" key={index} data-aos="fade-up" data-aos-once="true">
+            <span className="filter-category" key={index} data-aos="fade-up">
               {category}
             </span>
           ))}
         </div>
         {/* Thoughts section */}
-        <div className="thoughts" data-aos="fade-up" data-aos-once="true">
+        <div className="thoughts" data-aos="fade-up">
           {thoughts
             // Show only the thoughts with selected category
             .filter((t: IThought) => filterByCategory(t.category))
             .filter((t, index: number) => !filtering || index < 6) // If filtering, show only the first 6 thoughts
             .map((thought: IThought, index: number) => (
-              <div className="thought" key={index} data-aos="fade-up" data-aos-once="true">
+              <div className="thought" key={index} data-aos="fade-up">
                 <Thought {...thought} />
               </div>
             ))}
@@ -120,7 +120,7 @@ export const Thoughts = () => {
               )}
             </span>
             {thoughts.filter((t: IThought) => filterByCategory(t.category)).length === 0 && (
-              <h2 data-aos="fade-up" data-aos-once="true">
+              <h2 data-aos="fade-up">
                 No
                 <span className="selected-filter">
                   {selectedFilter !== "All" ? ` ${selectedFilter.toLocaleLowerCase()} ` : " "}

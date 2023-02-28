@@ -10,7 +10,9 @@ import "aos/dist/aos.css";
 import { BrowserRouter } from "react-router-dom";
 
 // Initialize animation library
-AOS.init();
+AOS.init({
+  once: "true"
+});
 
 ReactDOM.render(
   <React.Suspense fallback={<p>Loading</p>}>

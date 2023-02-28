@@ -18,7 +18,7 @@ export const Studios = ({ studios }: Props) => {
     <div className="studios-container">
       <p className="section-title">NDDN NETWORK</p>
       {/* Desktop format */}
-      <div className="studios-grid" style={gridStyle} data-aos="fade-up" data-aos-once="true">
+      <div className="studios-grid" style={gridStyle} data-aos="fade-up">
         {studios.map((studio, index: number) => (
           <div className="studios-info city" key={index}>
             {studio.city}

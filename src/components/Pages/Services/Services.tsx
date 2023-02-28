@@ -23,7 +23,7 @@ export const Services = () => {
       <AllowCookies />
       <div className="page-container">
         <div className="page-header services-header">
-          <h1 className="header-title" data-aos="fade-up" data-aos-once="true">
+          <h1 className="header-title" data-aos="fade-up">
             <LineBreakerSelector typedLines={headerData.title} />
           </h1>
           {headerData.subtitle && <h3 className="subtitle">{headerData.subtitle}</h3>}
@@ -32,7 +32,7 @@ export const Services = () => {
         {/* Categories section */}
         <div className="services-categories">
           {categories.map((category: ICategory, index: number) => (
-            <div className="category" key={index} data-aos="fade-up" data-aos-once="true" data-aos-offset="0">
+            <div className="category" key={index} data-aos="fade-up" data-aos-offset="0">
               <Category {...category} />
             </div>
           ))}

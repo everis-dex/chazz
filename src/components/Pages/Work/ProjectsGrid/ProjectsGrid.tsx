@@ -55,11 +55,11 @@ export const ProjectsGrid = (workData: IWork) => {
 
   return (
     <div className="page-container">
-      <div className="page-header" data-aos="fade-up" data-aos-once="true">
+      <div className="page-header" data-aos="fade-up">
         <h1>{workData.title}</h1>
       </div>
       <div className="work-container--content">
-        <div className="work-detail" data-aos="fade-up" data-aos-once="true">
+        <div className="work-detail" data-aos="fade-up">
           <h2>
             <LineBreakerSelector typedLines={workData.subtitle} />
           </h2>

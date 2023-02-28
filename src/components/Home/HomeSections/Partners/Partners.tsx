@@ -10,7 +10,7 @@ import "./Partners.styles.scss";
 export const Partners = (partnersData: IHomeSection) => {
   return (
     <div className="partners-section">
-      <div className="titles" data-aos="fade-up" data-aos-once="true">
+      <div className="titles" data-aos="fade-up">
         {partnersData.title && <h3>{partnersData.title}</h3>}
         {partnersData.subtitle && <p>{partnersData.subtitle}</p>}
       </div>
