@@ -10,11 +10,16 @@ export const SectionImage = ({ src, alt = "", text, halfColumn = false, margin =
     <>
       {src && (
         <div className="case-img" style={style}>
-          <div className="fw-image">
+          <div className="fw-image" data-aos="fade-up" data-aos-once="false">
             <img src={src} alt={alt} />
           </div>
           {text && (
-            <div className={halfColumn ? "image-half-footer-text" : "image-footer-text"} style={!margin ? style : {}}>
+            <div
+              className={halfColumn ? "image-half-footer-text" : "image-footer-text"}
+              style={!margin ? style : {}}
+              data-aos="fade-up"
+              data-aos-once="false"
+            >
               <LineBreakerSelector typedLines={text} />
             </div>
           )}
@@ -27,7 +32,12 @@ export const SectionImage = ({ src, alt = "", text, halfColumn = false, margin =
 export const SectionImageWithOverlappedText = ({ src, text }: Props) => {
   return (
     <>
-      <div className="fw-image-text" style={{ backgroundImage: `url(${src})` }}>
+      <div
+        className="fw-image-text"
+        style={{ backgroundImage: `url(${src})` }}
+        data-aos="fade-up"
+        data-aos-once="false"
+      >
         {text && (
           <span>
             <LineBreakerSelector typedLines={text} />

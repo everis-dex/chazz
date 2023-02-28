@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { projects } from "../../../../../content/index";
 import { IProject, IProjectSection } from "../../../../../interfaces/cms";
@@ -49,9 +49,7 @@ export const CaseStudy = () => {
           )}
         </>
       )}
-      <Link to="/work" className="back-button">
-        ← Back
-      </Link>
+
       <FeaturedProjects />
     </>
   );

@@ -23,7 +23,7 @@ export const SectionColumn = ({ title, text, empty = false, position, src, capti
             <SectionImage src={src} alt="img-column" text={caption} halfColumn />
           </div>
         ) : (
-          <div className={columnPosition}>
+          <div className={columnPosition} data-aos="fade-up" data-aos-once="false">
             {title && <h3>{title}</h3>}
             {text && <LineBreakerSelector typedLines={text} />}
           </div>
