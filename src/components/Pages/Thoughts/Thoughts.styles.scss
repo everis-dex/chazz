@@ -60,19 +60,6 @@
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
-  .thoughts-header {
-    .header-title {
-      font-size: 72px;
-      line-height: 77px;
-      margin: 25px 0 60px 0;
-    }
-
-    .video-height {
-      width: 100%;
-      height: 272px;
-      pointer-events: none;
-    }
-  }
   .thoughts-filtering {
     padding: 100px 0 60px 0;
     gap: 30px;
