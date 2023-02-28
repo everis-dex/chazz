@@ -14,7 +14,7 @@ export const ProjectCard = ({ project, format, columns }: Props) => {
   const caseURL = "case/" + project.id;
 
   return (
-    <div className={`project-container ${columns}`}>
+    <div className={`project-container ${columns}`} data-aos="fade-up" data-aos-once="true">
       <div className={`project-media ${format === "half" ? "half" : ""}`}>
         <Media src={image} alt={project.title} format={format} />
       </div>
