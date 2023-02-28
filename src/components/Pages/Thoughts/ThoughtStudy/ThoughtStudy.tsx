@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { Months } from "../../../../constants";
 import { thoughts } from "../../../../content";
@@ -53,7 +53,7 @@ export const ThoughtStudy = () => {
           </div>
           <img src={thought.image} alt="" />
         </div>
-        <div className="study-content">
+        <div className="study-content" data-aos="fade-up" data-aos-once="false">
           <div className="content-summary">
             <h2>
               <LineBreakerSelector typedLines={thought.details.subtitle} />
@@ -74,9 +74,6 @@ export const ThoughtStudy = () => {
           </div>
         </div>
       </div>
-      <Link to="/thoughts" className="th-back-button">
-        ← Back
-      </Link>
     </>
   );
 };
