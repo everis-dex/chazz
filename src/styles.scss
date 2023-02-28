@@ -1,4 +1,4 @@
-@import "./assets/fonts.scss";
+@import "./fonts/fonts.scss";
 
 /*************** COLORS and FONTS ***************/
 
@@ -18,6 +18,16 @@
     color: black;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    line-height: 1.2;
+  }
+
   h4 {
     font-weight: 300;
   }
@@ -34,4 +44,9 @@ body {
   font-weight: 100;
   font-size: 1.1em !important;
   line-height: 135%;
+  cursor: url("/assets/icn-drag_pointer.svg"), auto !important;
+
+  a:hover {
+    cursor: url("/assets/icn-drag_pointer.svg"), auto !important;
+  }
 }

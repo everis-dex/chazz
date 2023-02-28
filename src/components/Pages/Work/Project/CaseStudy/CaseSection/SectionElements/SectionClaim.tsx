@@ -10,7 +10,7 @@ export const SectionClaim = ({ text, margin = false }: Props) => {
   return (
     <>
       {text && (
-        <div className="fw-claim" style={style}>
+        <div className="fw-claim" style={style} data-aos="fade-up" data-aos-once="false">
           <h1>
             <LineBreakerSelector typedLines={text} />
           </h1>

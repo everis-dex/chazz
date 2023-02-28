@@ -1,20 +1,15 @@
-import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import React from "react";
+import { useParams } from "react-router-dom";
 
 import { projects } from "../../../../../content/index";
 import { IProject, IProjectSection } from "../../../../../interfaces/cms";
 
 import { FeaturedProjects, LineBreakerSelector, Nav } from "../../../../shared";
-import { SectionInfo, CaseSection } from "./CaseSection/index";
+import { CaseSection, SectionInfo } from "./CaseSection/index";
 
 import "./CaseStudy.styles.scss";
 
 export const CaseStudy = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.classList.remove("no-scroll");
-  }, []);
-
   const { id } = useParams();
   const filteredProjects = projects.filter(project => project.id === (id ? parseInt(id) : 0));
   const project: IProject = filteredProjects[0] as IProject;
@@ -54,9 +49,7 @@ export const CaseStudy = () => {
           )}
         </>
       )}
-      <Link to="/work" className="back-button">
-        ← Back
-      </Link>
+
       <FeaturedProjects />
     </>
   );

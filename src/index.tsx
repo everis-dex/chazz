@@ -1,19 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import AOS from "aos";
 
 import App from "./App";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "typeface-raleway";
 import "./index.css";
-import AOS from "aos";
 import "aos/dist/aos.css";
+import { BrowserRouter } from "react-router-dom";
 
-AOS.init();
+// Initialize animation library
+AOS.init({
+  once: "true"
+});
 
 ReactDOM.render(
   <React.Suspense fallback={<p>Loading</p>}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.Suspense>,
   document.getElementById("root")
 );

@@ -8,10 +8,8 @@ import "./BodyContent.styles.scss";
 type Props = { body: IPolicyBody[] };
 
 export const BodyContent = ({ body }: Props) => {
-  // Creamos un estado con el valor del ancho de la pantalla (windowWidth):
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
-  // Creamos una función que nos re calcula el ancho de la pantalla:
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -29,6 +27,7 @@ export const BodyContent = ({ body }: Props) => {
 
       case "table":
         if (!b.rows) return <></>;
+        // Desktop mode
         if (windowWidth >= 720) {
           return (
             <table>
@@ -52,6 +51,7 @@ export const BodyContent = ({ body }: Props) => {
               </tbody>
             </table>
           );
+          // Mobile mode
         } else {
           return (
             <div className="body-type--table">

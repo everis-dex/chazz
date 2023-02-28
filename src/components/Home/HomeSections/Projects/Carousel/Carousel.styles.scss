@@ -1,13 +1,5 @@
-.carouselTitle {
-  h3 {
-    font-size: 24px;
-  }
-}
-
-.carouselPagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.carouselTitle h3 {
+  font-size: 24px;
 }
 
 .swiper-pagination-bullet {
@@ -66,25 +58,19 @@
     }
   }
   .properties {
+    font-size: 24px;
     padding-right: 40px;
     padding-bottom: 5px;
   }
 }
 
 @media (min-width: 1200px) {
-  .carouselTitle {
-    h3 {
-      font-size: 32px;
-    }
+  .carouselTitle h3 {
+    font-size: 32px;
   }
-
   .title {
     font-size: 24px;
     line-height: 1.5;
-  }
-
-  .properties {
-    font-size: 24px;
   }
 }
 
@@ -93,7 +79,6 @@
     font-size: 28px;
   }
   .properties {
-    font-size: 28px;
     padding-bottom: 10px;
   }
   .carouselTitle h3 {

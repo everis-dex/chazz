@@ -12,16 +12,13 @@ export const Studios = ({ studios }: Props) => {
   // Dynamically define the number of rows so that there's always the required amount of columns (gridColumns)
   const division = studios.length / gridColumns;
   const gridRows: number = division % 1 === 0 ? division : Math.floor(division) + 1;
+  const gridStyle = { gridTemplateRows: `repeat(${gridRows}, 1fr)` };
 
   return (
     <div className="studios-container">
       <p className="section-title">NDDN NETWORK</p>
-      <div
-        className="studios-grid"
-        style={{ gridTemplateRows: `repeat(${gridRows}, 1fr)` }}
-        data-aos="fade-up"
-        data-aos-once="true"
-      >
+      {/* Desktop format */}
+      <div className="studios-grid" style={gridStyle} data-aos="fade-up">
         {studios.map((studio, index: number) => (
           <div className="studios-info city" key={index}>
             {studio.city}
@@ -31,7 +28,8 @@ export const Studios = ({ studios }: Props) => {
           <LinkedEmail email="tangity@nttdata.com" />
         </div>
       </div>
-      <div className="mobile-email" data-aos="fade-up" data-aos-once="false">
+      {/* Mobile format */}
+      <div className="mobile-email" data-aos="fade-up">
         <LinkedEmail email="tangity@nttdata.com" />
       </div>
     </div>

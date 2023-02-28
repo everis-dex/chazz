@@ -163,20 +163,6 @@
   color: var(--black);
 }
 
-.back-button {
-  padding: 0 5%;
-  text-decoration: none;
-  background: none;
-  color: inherit;
-  border: none;
-  font-size: 16px;
-  display: block;
-  margin: 30px 0 100px 0;
-  font-weight: 300;
-  &:hover {
-    color: var(--pinkHover);
-  }
-}
 // MEDIA QUERIES
 
 @media (min-width: 769px) {

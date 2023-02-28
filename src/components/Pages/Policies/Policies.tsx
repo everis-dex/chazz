@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { policies } from "../../../content";
@@ -10,11 +10,6 @@ import { Articles } from "./Articles/Articles";
 import "./Policies.scss";
 
 export const Policies = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.classList.remove("no-scroll");
-  }, []);
-
   // Set initial policy and crete useState
   const { id } = useParams();
   const selectedPolicy = id ? Math.min(parseInt(id), policies.length - 1) : 0;
@@ -23,10 +18,9 @@ export const Policies = () => {
   const [resetAtricleTrigger, setResetAtricleTrigger] = useState<number>(0);
   const title = "Privacy Policy+ & Cookie Declaration";
 
+  // Reset selected article in each policy by triggering a number change
   function changePolicy(index: number) {
-    // Reset selected article in policy
     setResetAtricleTrigger(resetAtricleTrigger => resetAtricleTrigger + 1);
-    // Change selected policy
     setPolicyIndex(index);
   }
 
@@ -51,7 +45,6 @@ export const Policies = () => {
             );
           })}
         </div>
-
         <Articles policy={policies[policyIndex]} resetArticle={resetAtricleTrigger} />
       </div>
     </>

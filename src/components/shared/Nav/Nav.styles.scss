@@ -11,12 +11,12 @@
   .chazz-logo {
     padding-left: 5%;
     z-index: 99;
+    width: 160px;
     a {
       display: flex;
       justify-content: flex-start;
       flex-direction: row;
       gap: 5px;
-      align-items: flex-end;
     }
   }
 }
@@ -59,23 +59,25 @@
 @media (min-width: 768px) {
   .header-nav {
     background-color: var(--white);
+    padding-bottom: 3vh;
 
     .chazz-logo {
       position: relative;
-      align-self: flex-end;
       display: flex;
-      margin-bottom: 25px;
+      align-self: flex-end;
     }
   }
 
   .nav {
-    margin: 25px 0;
-    align-self: flex-start;
     display: flex !important;
+    align-self: flex-start;
     padding-left: 0;
+    height: 10vh;
 
     ul {
       display: flex;
+      align-items: center;
+      margin: 0;
 
       li {
         list-style-type: none;

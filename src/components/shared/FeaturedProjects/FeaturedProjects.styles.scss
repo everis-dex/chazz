@@ -63,22 +63,20 @@
 
 // MEDIA QUERIES
 @media (min-width: 768px) {
-  .featured-projects {
-    .project-list {
-      margin-top: 10px;
-      display: grid;
-      grid-gap: 30px;
-      overflow: hidden;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 100%;
+  .featured-projects .project-list {
+    margin-top: 10px;
+    display: grid;
+    grid-gap: 30px;
+    overflow: hidden;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100%;
 
-      .project {
-        img {
-          height: 230px;
-        }
-        .title span {
-          display: contents;
-        }
+    .project {
+      img {
+        height: 230px;
+      }
+      .title span {
+        display: contents;
       }
     }
   }

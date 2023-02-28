@@ -1,19 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { thoughts, thoughtsPage } from "../../../content/index";
-import { IThought, IPageHeader } from "../../../interfaces/cms";
-import { AllowCookies, LineBreakerSelector, Nav } from "../../shared/index";
+import { IPageHeader, IThought } from "../../../interfaces/cms";
+import { AllowCookies, LineBreakerSelector, Media, Nav } from "../../shared";
 import { Thought } from "./Thought/Thought";
 
-import { ReactComponent as RightArrow } from "../../../assets/icon-right_arrow.svg";
+import { ReactComponent as RightArrow } from "../../../assets/icn-right_arrow.svg";
 
 import "./Thoughts.styles.scss";
 
 export const Thoughts = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.classList.remove("no-scroll");
-  }, []);
   const headerData: IPageHeader = thoughtsPage.header;
 
   const [isHover, setIsHover] = useState<boolean>(false);
@@ -61,7 +57,7 @@ export const Thoughts = () => {
   const LessThoughts = () => (
     <>
       <RightArrow
-        stroke={!isHover ? "#191919" : "#fc82a3"}
+        stroke={isHover ? "#fc82a3" : "#191919"}
         className="icon-size"
         style={{ transform: "rotate(180deg)", marginLeft: "-2px" }}
       />
@@ -72,7 +68,7 @@ export const Thoughts = () => {
   const MoreThoughts = () => (
     <>
       More thoughts &nbsp;&nbsp;
-      <RightArrow stroke={!isHover ? "#191919" : "#fc82a3"} className="icon-size" />
+      <RightArrow stroke={isHover ? "#fc82a3" : "#191919"} className="icon-size" />
     </>
   );
 
@@ -83,40 +79,28 @@ export const Thoughts = () => {
       <div className="page-container">
         {/* Header section */}
         <div className="page-header">
-          <h1 className="header-title" data-aos="fade-up" data-aos-once="true">
+          <h1 className="header-title" data-aos="fade-up">
             <LineBreakerSelector typedLines={headerData.title} />
           </h1>
-          <video
-            autoPlay
-            className="video-height"
-            muted={true}
-            src={videoSource}
-            loop
-            playsInline
-            data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-offset="0"
-            data-aos-once="true"
-            data-aos-duration="700"
-          />
+          <Media src={videoSource} alt="Header" className="video-height" />
         </div>
         {/* Filtering section */}
-        <div className="thoughts-filtering" ref={filters} data-aos="fade-up" data-aos-once="true">
+        <div className="thoughts-filtering" ref={filters} data-aos="fade-up">
           <span className="filter-category selected">All</span>
           {thoughtsPage.categories.map((category: string, index: number) => (
-            <span className="filter-category" key={index} data-aos="fade-up" data-aos-once="true">
+            <span className="filter-category" key={index} data-aos="fade-up">
               {category}
             </span>
           ))}
         </div>
         {/* Thoughts section */}
-        <div className="thoughts" data-aos="fade-up" data-aos-once="true">
+        <div className="thoughts" data-aos="fade-up">
           {thoughts
             // Show only the thoughts with selected category
             .filter((t: IThought) => filterByCategory(t.category))
             .filter((t, index: number) => !filtering || index < 6) // If filtering, show only the first 6 thoughts
             .map((thought: IThought, index: number) => (
-              <div className="thought" key={index} data-aos="fade-up" data-aos-once="true">
+              <div className="thought" key={index} data-aos="fade-up">
                 <Thought {...thought} />
               </div>
             ))}
@@ -136,7 +120,7 @@ export const Thoughts = () => {
               )}
             </span>
             {thoughts.filter((t: IThought) => filterByCategory(t.category)).length === 0 && (
-              <h2 data-aos="fade-up" data-aos-once="true">
+              <h2 data-aos="fade-up">
                 No
                 <span className="selected-filter">
                   {selectedFilter !== "All" ? ` ${selectedFilter.toLocaleLowerCase()} ` : " "}

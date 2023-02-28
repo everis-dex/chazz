@@ -10,22 +10,14 @@ import "./Partners.styles.scss";
 export const Partners = (partnersData: IHomeSection) => {
   return (
     <div className="partners-section">
-      <div className="titles" data-aos="fade-up" data-aos-once="true">
+      <div className="titles" data-aos="fade-up">
         {partnersData.title && <h3>{partnersData.title}</h3>}
         {partnersData.subtitle && <p>{partnersData.subtitle}</p>}
       </div>
       <div className="partners-container">
         {partners.map((partner: IPartner, index: number) => (
-          <div
-            className="partner"
-            key={index}
-            data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-offset="0"
-            data-aos-once="true"
-            data-aos-duration="700"
-          >
-            <Partner {...partner} />
+          <div className="partner" key={index}>
+            <Partner partner={partner} index={index} />
           </div>
         ))}
       </div>
