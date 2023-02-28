@@ -49,10 +49,8 @@ export const Media = ({ src, style = { width: "100%", height: "auto" }, classNam
               preload="auto"
               playsInline
               src={src}
-              data-aos="fade-zoom-in"
-              data-aos-easing="ease-in-back"
-              data-aos-offset="0"
-              data-aos-duration="700"
+              data-aos="fade-up"
+              data-aos-delay="300"
             >
               Video not supported.
             </video>
