@@ -27,6 +27,9 @@
             });
           }
         });
+        if (window.localStorage) {
+          window.netlifyIdentity.init();
+        }
       }
     </script>
   </body>

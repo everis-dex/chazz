@@ -93,7 +93,9 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       if (!controlRef.current) return;
       // Desktop format
       if (window.innerWidth >= 1024) {
-        controlRef.current.style.top = Math.max(e.pageY - 10, 90) + "px";
+        // Get page height to adjust cursor limits to navbar height - 11vh
+        const height = document.documentElement.clientHeight * 0.11;
+        controlRef.current.style.top = Math.max(e.pageY - 10, height) + "px";
         controlRef.current.style.left = Math.min(e.pageX - 50, window.innerWidth - 120) + "px";
         controlRef.current.style.opacity = "1";
       }
