@@ -53,7 +53,7 @@ export const ThoughtStudy = () => {
           </div>
           <img src={thought.image} alt="" />
         </div>
-        <div className="study-content">
+        <div className="study-content" data-aos="fade-up" data-aos-once="false">
           <div className="content-summary">
             <h2>
               <LineBreakerSelector typedLines={thought.details.subtitle} />
