@@ -211,7 +211,14 @@ export interface IThought {
   subtitle: string;
   category: string;
   duration: string;
-  details: { subtitle: string; author: string };
+  details: { subtitle: string; author: string; socials: IThoughtSocial[] };
+  socials: IThoughtSocial[];
   body: string;
   id: number;
+}
+
+export interface IThoughtSocial {
+  name: string;
+  icon: string;
+  link: string;
 }

@@ -291,6 +291,18 @@ collections:
         fields:
           - { label: Subtitle, name: subtitle, widget: string }
           - { label: Author, name: author, widget: string }
+          - label: Socials
+            name: socials
+            widget: list
+            fields:
+              - { label: Icon, name: icon, widget: image }
+              - { label: Link, name: link, widget: string }
+      - label: Socials
+        name: socials
+        widget: list
+        fields:
+          - { label: Icon, name: icon, widget: image }
+          - { label: Link, name: link, widget: string }
       - { label: Body, name: body, widget: markdown }
 
   - name: policies

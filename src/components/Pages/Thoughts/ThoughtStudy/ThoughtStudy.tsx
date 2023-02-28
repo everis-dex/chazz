@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 
 import { Months } from "../../../../constants";
 import { thoughts } from "../../../../content";
-import { IThought } from "../../../../interfaces/cms";
+import { IThought, IThoughtSocial } from "../../../../interfaces/cms";
 import { LineBreakerSelector, Nav } from "../../../shared";
 
 import "./ThoughtStudy.styles.scss";
@@ -36,7 +36,16 @@ export const ThoughtStudy = () => {
       <Nav />
       <div className="page-container">
         <div className="page-header study-header">
-          <h1 className="header-title">{thought.title}</h1>
+          <div className="header-content">
+            <h1 className="header-title">{thought.title}</h1>
+            <div className="socials">
+              {thought.socials.map((social: IThoughtSocial, index: number) => (
+                <a href={social.link} className="social" key={index}>
+                  <img src={social.icon} alt={social.name} />
+                </a>
+              ))}
+            </div>
+          </div>
           <div className="study-details">
             <span className="date">{date}</span>
             <span className="dot">·</span>
@@ -52,6 +61,13 @@ export const ThoughtStudy = () => {
             <h6>
               <LineBreakerSelector typedLines={thought.details.author} />
             </h6>
+            <div className="socials">
+              {thought.details.socials.map((social: IThoughtSocial, index: number) => (
+                <a href={social.link} className="social" key={index}>
+                  <img src={social.icon} alt={social.name} />
+                </a>
+              ))}
+            </div>
           </div>
           <div className="content-body">
             <ReactMarkdown>{thought.body}</ReactMarkdown>
