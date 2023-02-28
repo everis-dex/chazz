@@ -19,26 +19,17 @@
       //   See https://docs.netlify.com/visitor-access/identity/
       // -->
       if (window.netlifyIdentity) {
-        console.log("✅ Netlify identity");
         // As using arrow functions, it requires modern JavaScript, not compatible with IE11
         window.netlifyIdentity.on("init", user => {
           if (!user) {
-            console.log("❌ user");
             window.netlifyIdentity.on("login", () => {
               document.location.href = "/admin/";
             });
-          } else {
-            console.log("✅ a user");
           }
         });
         if (window.localStorage) {
-          console.log("✅ local storage");
           window.netlifyIdentity.init();
-        } else {
-          console.log("❌ local storage");
         }
-      } else {
-        console.log("❌ Netlify identity");
       }
     </script>
   </body>
