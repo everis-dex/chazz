@@ -168,6 +168,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           </div>
         </div>
       )}
+      {!isPlaying && <img src="/assets/first_frame.jpg" alt="" className="grayscale" />}
       <VideoHeader isPlaying={isPlaying} pauseVideo={pauseVideo} ref={videoRef} />
       <AllowCookies />
     </div>
