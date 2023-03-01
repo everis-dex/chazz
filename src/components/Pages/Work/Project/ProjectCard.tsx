@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import { IProject, IProjectDetails } from "../../../../interfaces/cms";
 import { Accordion, LineBreakerSelector, Media } from "../../../shared";
@@ -11,7 +11,7 @@ type Props = { project: IProject; format: string; columns?: string };
 export const ProjectCard = ({ project, format, columns }: Props) => {
   const projectDetails: IProjectDetails = project.details;
   const image = projectDetails.media.project;
-  const caseURL = "case/" + project.id;
+  // const caseURL = "case/" + project.id;
 
   return (
     <div className={`project-container ${columns}`} data-aos="fade-up" data-aos-once="false">
@@ -22,9 +22,7 @@ export const ProjectCard = ({ project, format, columns }: Props) => {
       <div className="project-details" data-aos="fade-up" data-aos-once="false">
         <div className="project-title-container">
           {/* Replace span of title by Link, and change the hover of the title class in styles */}
-          <Link to={caseURL} className="title">
-            {project.title} —
-          </Link>
+          <span className="title">{project.title} —</span>
           <span className="description">{projectDetails.description}</span>
         </div>
         <span className="properties">{projectDetails.subtitle}</span>
