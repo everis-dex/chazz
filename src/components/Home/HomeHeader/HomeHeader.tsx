@@ -14,6 +14,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
   // Video states
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [controlText, setControlText] = useState<string>(controlTextOptions.play);
+  const [isMouseInside, setIsMouseInside] = useState<boolean>(false);
 
   // Nav / burger menu states
   const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
@@ -56,7 +57,13 @@ export const HomeHeader = (headerData: IHomeHeader) => {
     setIsPlaying(false);
     setControlText(controlTextOptions.play);
   }
+  const handlerNavEnter = () => {
+    if (!isPlaying) setIsMouseInside(true);
+  };
 
+  const handlerNavLeave = () => {
+    setIsMouseInside(false);
+  };
   // Event functions
 
   const handleOnWheel: React.WheelEventHandler<HTMLDivElement> = e => {
@@ -94,7 +101,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
       // Desktop format
       if (window.innerWidth >= 1024) {
         // Get page height to adjust cursor limits to navbar height - 11vh
-        const height = document.documentElement.clientHeight * 0.11;
+        const height = !isPlaying ? document.documentElement.clientHeight * 0.11 : 0;
         controlRef.current.style.top = Math.max(e.pageY - 10, height) + "px";
         controlRef.current.style.left = Math.min(e.pageX - 50, window.innerWidth - 120) + "px";
         controlRef.current.style.opacity = "1";
@@ -109,7 +116,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [isPlaying]);
 
   const PlayerControler = () => (
     <>
@@ -125,7 +132,11 @@ export const HomeHeader = (headerData: IHomeHeader) => {
     <div className="chazz-header" onWheel={handleOnWheel}>
       <div className={isPlaying ? "velo-out" : "velo-in"} onWheel={handleOnWheel}>
         <div className={isPlaying ? "simply-out" : "simply-in"}>
-          <span className={isPlaying ? "nav-out" : "nav-in"}>
+          <span
+            className={isPlaying ? "nav-out" : "nav-in"}
+            onMouseEnter={handlerNavEnter}
+            onMouseLeave={handlerNavLeave}
+          >
             <Nav
               isPlaying={isPlaying}
               displayBurgerMenu={setIsBurgerMenuOpen}
@@ -150,7 +161,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
         </div>
       </div>
       {/* Desktop format for Play / Stop reel */}
-      {animationComplete && (
+      {animationComplete && !isMouseInside && (
         <div className="player-video-desktop-switcher">
           <div className="player-video" ref={controlRef}>
             <PlayerControler />
