@@ -160,6 +160,7 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           )}
         </div>
       </div>
+
       {/* Desktop format for Play / Stop reel */}
       {animationComplete && !isMouseInside && (
         <div className="player-video-desktop-switcher">
@@ -168,7 +169,10 @@ export const HomeHeader = (headerData: IHomeHeader) => {
           </div>
         </div>
       )}
+
+      {/* For iPhone users, display image of first frame as video doesn't show it in first place */}
       {!isPlaying && <img src="/assets/first_frame.jpg" alt="" className="grayscale" />}
+
       <VideoHeader isPlaying={isPlaying} pauseVideo={pauseVideo} ref={videoRef} />
       <AllowCookies />
     </div>
