@@ -186,8 +186,8 @@
   }
 
   .chazz-title {
+    max-height: 575px;
     bottom: auto;
-    max-height: 1024px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -265,6 +265,7 @@
     transition: left 1s;
     height: 100%;
     top: 10vh;
+    max-height: 1024px;
     div {
       width: 100vw;
     }
