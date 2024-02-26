@@ -9,3 +9,4 @@ export * from "./Media/Media";
 export * from "./MoreLink/MoreLink";
 export * from "./Nav/Nav";
 export * from "./Accordion/Accordion";
+export * from "./VideoPresentation/VideoPresentation";
