@@ -1,7 +1,7 @@
-// VideoPresentation.tsx
 import React, { useEffect, useRef } from "react";
 import "./VideoPresentation.styles.scss";
 
+const VIDEO_URL = "https://tangity.global/";
 export const VideoPresentation = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -12,8 +12,23 @@ export const VideoPresentation = () => {
     }
   };
 
+  const openNewWindow = () => {
+    window.open(VIDEO_URL, "_blank"); // "_blank" abre en una nueva pestaña o ventana
+  };
+
   useEffect(() => {
     playVideo();
+
+    const videoElement = videoRef.current;
+    if (videoElement) {
+      videoElement.addEventListener("click", openNewWindow);
+    }
+
+    return () => {
+      if (videoElement) {
+        videoElement.removeEventListener("click", openNewWindow);
+      }
+    };
   }, []);
 
   return (
